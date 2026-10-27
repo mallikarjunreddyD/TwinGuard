@@ -23,5 +23,3 @@ datasets/ground_truth/*.json
 datasets/**/*.ply
 datasets/**/*.bag
 datasets/**/*.zip
-README.md
-docs 
