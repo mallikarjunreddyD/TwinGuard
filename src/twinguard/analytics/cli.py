@@ -16,6 +16,8 @@ def add_commands(sub):
             "--reference", type=Path, default=Path("configs/analytics/accepted_reference.json")
         )
         p.add_argument("--calibration", type=Path)
+        p.add_argument("--improved-calibration", type=Path)
+        p.add_argument("--methods", nargs="+", choices=["B1", "B2", "B3", "B3.1"])
         p.add_argument("--output-dir", type=Path, required=True)
         if name == "register":
             p.add_argument(
@@ -55,12 +57,21 @@ def execute(args):
         reference = load_reference(args.reference)
         calibration = json.loads(args.calibration.read_text()) if args.calibration else None
         methods = (
-            None
+            args.methods
             if args.analytics_command == "geometry"
             else ["B2" if args.method == "point_to_point" else "B3"]
         )
         analyze_geometry(
-            args.baseline, args.current, config, reference, args.output_dir, calibration, methods
+            args.baseline,
+            args.current,
+            config,
+            reference,
+            args.output_dir,
+            calibration,
+            methods,
+            json.loads(args.improved_calibration.read_text())
+            if args.improved_calibration
+            else None,
         )
     elif args.analytics_command == "calibrate-operating":
         from .operating import calibrate_operating

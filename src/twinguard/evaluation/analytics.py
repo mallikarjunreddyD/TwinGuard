@@ -87,7 +87,7 @@ def evaluate_e1(data: Path, predictions: Path, trial):
     )
     positive = trial["amplitude_m"] != 0 or trial.get("support", False)
     rows = []
-    for method in ("B1", "B2", "B3"):
+    for method in [name for name in ("B1", "B2", "B3", "B3.1") if (predictions / name).is_dir()]:
         registration = json.loads((predictions / method / "registration.json").read_text())
         geometry = json.loads((predictions / method / "geometry.json").read_text())
         estimated = np.asarray(registration["transform"]["matrix"])

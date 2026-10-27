@@ -47,6 +47,10 @@ class PatchEstimate(Contract):
     uncertainty_score_m: Nonnegative | None
     engineering_margin_m: Number | None
     threshold_m: Nonnegative
+    raw_displacement_m: Number | None = None
+    registration_component_m: Number | None = None
+    scale_m: Nonnegative | None = None
+    calibration_support: int = Field(default=0, ge=0)
     significant: bool | None
     status: Status
     quality_flags: list[str]
@@ -69,7 +73,7 @@ class GeometryResult(Contract):
     baseline_capture_id: ID
     current_capture_id: ID
     acquired_at: UTC
-    method: Literal["nearest_neighbor", "patch_screening"]
+    method: Literal["nearest_neighbor", "patch_screening", "multiscale_calibrated"]
     algorithm_version: ID = "v1"
     registration_id: ID
     reference_id: ID
@@ -80,6 +84,10 @@ class GeometryResult(Contract):
     regions: list[GeometryRegion]
     significant: bool | None
     sensitivity_statement: str
+    measurement_basis: Literal["absolute", "localized_relative"] = "absolute"
+    reinspection_candidate: bool = False
+    processing_configuration_sha256: str | None = None
+    quality_flags: list[str] = Field(default_factory=list)
     runtime_s: Nonnegative
 
 

@@ -56,6 +56,7 @@ def analyze_geometry(
     output: Path,
     calibration=None,
     methods=None,
+    improved_calibration=None,
 ):
     import open3d as o3d
 
@@ -67,18 +68,38 @@ def analyze_geometry(
     current = load_scan(current_path, configuration)
     reports = {}
     methods = methods or ["B1", "B2", "B3"]
+    registration_cache: dict[str, tuple] = {}
     for label in methods:
-        method = {"B1": "pose_only", "B2": "point_to_point", "B3": "robust_point_to_plane"}[label]
-        registration, registered = register(baseline, current, configuration, reference, method)
-        geometry = detect_geometry(
-            baseline,
-            registered,
-            registration,
-            reference,
-            configuration,
-            calibration,
-            "patch_screening" if label == "B3" else "nearest_neighbor",
-        )
+        method = {
+            "B1": "pose_only",
+            "B2": "point_to_point",
+            "B3": "robust_point_to_plane",
+            "B3.1": "point_to_point",
+        }[label]
+        if method in registration_cache:
+            cached, registered = registration_cache[method]
+            registration = cached.model_copy(deep=True)
+        else:
+            registration, registered = register(baseline, current, configuration, reference, method)
+            registration_cache[method] = (registration.model_copy(deep=True), registered)
+        if label == "B3.1":
+            from .geometric_improved import detect_improved
+
+            if improved_calibration is None:
+                raise ValueError("B3.1 requires a frozen healthy calibration")
+            geometry = detect_improved(
+                baseline, registered, registration, reference, configuration, improved_calibration
+            )
+        else:
+            geometry = detect_geometry(
+                baseline,
+                registered,
+                registration,
+                reference,
+                configuration,
+                calibration,
+                "patch_screening" if label == "B3" else "nearest_neighbor",
+            )
         # Measurement time belongs to the current acquisition, not the baseline.
         geometry.acquired_at = current.record.acquired_at
         for region in geometry.regions:
@@ -137,6 +158,8 @@ def analyze_geometry(
             "threshold_m": configuration.change_threshold_m,
         },
     )
+    if improved_calibration is not None:
+        save_json(output / "improved_calibration.json", improved_calibration)
     save_json(output / "runtime.json", {"runtime_s": time.perf_counter() - start})
     seal_predictions(
         output,

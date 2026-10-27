@@ -122,6 +122,49 @@
       "title": "Threshold M",
       "type": "number"
     },
+    "raw_displacement_m": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Raw Displacement M"
+    },
+    "registration_component_m": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Registration Component M"
+    },
+    "scale_m": {
+      "anyOf": [
+        {
+          "minimum": 0,
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Scale M"
+    },
+    "calibration_support": {
+      "default": 0,
+      "minimum": 0,
+      "title": "Calibration Support",
+      "type": "integer"
+    },
     "significant": {
       "anyOf": [
         {

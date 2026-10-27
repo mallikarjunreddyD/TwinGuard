@@ -419,6 +419,49 @@
           "title": "Threshold M",
           "type": "number"
         },
+        "raw_displacement_m": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Raw Displacement M"
+        },
+        "registration_component_m": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Registration Component M"
+        },
+        "scale_m": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Scale M"
+        },
+        "calibration_support": {
+          "default": 0,
+          "minimum": 0,
+          "title": "Calibration Support",
+          "type": "integer"
+        },
         "significant": {
           "anyOf": [
             {
@@ -504,7 +547,8 @@
     "method": {
       "enum": [
         "nearest_neighbor",
-        "patch_screening"
+        "patch_screening",
+        "multiscale_calibrated"
       ],
       "title": "Method",
       "type": "string"
@@ -592,6 +636,39 @@
     "sensitivity_statement": {
       "title": "Sensitivity Statement",
       "type": "string"
+    },
+    "measurement_basis": {
+      "default": "absolute",
+      "enum": [
+        "absolute",
+        "localized_relative"
+      ],
+      "title": "Measurement Basis",
+      "type": "string"
+    },
+    "reinspection_candidate": {
+      "default": false,
+      "title": "Reinspection Candidate",
+      "type": "boolean"
+    },
+    "processing_configuration_sha256": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Processing Configuration Sha256"
+    },
+    "quality_flags": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Quality Flags",
+      "type": "array"
     },
     "runtime_s": {
       "minimum": 0,
