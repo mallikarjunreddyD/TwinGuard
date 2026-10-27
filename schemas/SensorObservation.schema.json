@@ -1,0 +1,173 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0",
+      "default": "1.0.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "acquired_at": {
+      "format": "date-time",
+      "title": "Acquired At",
+      "type": "string"
+    },
+    "received_at": {
+      "format": "date-time",
+      "title": "Received At",
+      "type": "string"
+    },
+    "processed_at": {
+      "anyOf": [
+        {
+          "format": "date-time",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Processed At"
+    },
+    "sequence_number": {
+      "anyOf": [
+        {
+          "minimum": 0,
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Sequence Number"
+    },
+    "clock_quality": {
+      "default": "unknown",
+      "enum": [
+        "synchronized",
+        "uncertain",
+        "unknown"
+      ],
+      "title": "Clock Quality",
+      "type": "string"
+    },
+    "delivery_status": {
+      "default": "normal",
+      "enum": [
+        "normal",
+        "late",
+        "missing",
+        "duplicate",
+        "out_of_order"
+      ],
+      "title": "Delivery Status",
+      "type": "string"
+    },
+    "observation_id": {
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Observation Id",
+      "type": "string"
+    },
+    "sensor_id": {
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Sensor Id",
+      "type": "string"
+    },
+    "asset_id": {
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Asset Id",
+      "type": "string"
+    },
+    "measurement_type": {
+      "enum": [
+        "temperature",
+        "pressure",
+        "vibration_rms",
+        "operating_load",
+        "vector"
+      ],
+      "title": "Measurement Type",
+      "type": "string"
+    },
+    "value": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "items": {
+            "type": "number"
+          },
+          "type": "array"
+        }
+      ],
+      "title": "Value"
+    },
+    "unit": {
+      "enum": [
+        "degC",
+        "Pa",
+        "m/s2",
+        "1",
+        "m"
+      ],
+      "title": "Unit",
+      "type": "string"
+    },
+    "uncertainty": {
+      "anyOf": [
+        {
+          "minimum": 0,
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Uncertainty"
+    },
+    "quality": {
+      "enum": [
+        "good",
+        "degraded",
+        "invalid",
+        "unknown"
+      ],
+      "title": "Quality",
+      "type": "string"
+    },
+    "provenance_id": {
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Provenance Id",
+      "type": "string"
+    },
+    "location_reference": {
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Location Reference",
+      "type": "string"
+    }
+  },
+  "required": [
+    "acquired_at",
+    "received_at",
+    "observation_id",
+    "sensor_id",
+    "asset_id",
+    "measurement_type",
+    "value",
+    "unit",
+    "quality",
+    "provenance_id",
+    "location_reference"
+  ],
+  "title": "SensorObservation",
+  "type": "object"
+}

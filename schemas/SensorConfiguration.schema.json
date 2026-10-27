@@ -1,0 +1,52 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0",
+      "default": "1.0.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "sensor_id": {
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Sensor Id",
+      "type": "string"
+    },
+    "asset_id": {
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Asset Id",
+      "type": "string"
+    },
+    "source_type": {
+      "enum": [
+        "synthetic",
+        "public_real_world",
+        "hybrid",
+        "physical_experimental"
+      ],
+      "title": "Source Type",
+      "type": "string"
+    },
+    "configuration_version": {
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Configuration Version",
+      "type": "string"
+    },
+    "description": {
+      "title": "Description",
+      "type": "string"
+    }
+  },
+  "required": [
+    "sensor_id",
+    "asset_id",
+    "source_type",
+    "configuration_version",
+    "description"
+  ],
+  "title": "SensorConfiguration",
+  "type": "object"
+}

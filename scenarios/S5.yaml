@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0.0",
+  "scenario_id": "S5",
+  "version": "v1",
+  "description": "Recent fixed sensor event with prior inspection \u2014 synthetic test configuration, not calibrated safety limits",
+  "plant_model_reference": "plant-01",
+  "asset_ids": [
+    "wall-01"
+  ],
+  "simulation_start": "2026-01-01T00:00:00+00:00",
+  "duration_s": 120,
+  "time_step_s": 1,
+  "random_seed": 47,
+  "operating_profile": [
+    {
+      "offset_s": 0,
+      "normalized_load": 0.5
+    }
+  ],
+  "sensor_config_ids": [
+    "temperature-01",
+    "pressure-01",
+    "lidar-01",
+    "thermal-01"
+  ],
+  "inspections": [
+    {
+      "sensor_id": "lidar-01",
+      "offset_s": -3600,
+      "modality": "lidar"
+    },
+    {
+      "sensor_id": "thermal-01",
+      "offset_s": 60,
+      "modality": "thermal"
+    }
+  ],
+  "fault_config_references": [
+    "fault-S5"
+  ],
+  "dataset": {
+    "dataset_id": "synthetic-S5",
+    "source_type": "synthetic",
+    "description": "Synthetic Phase 0 configuration fixture; no measurements generated"
+  },
+  "output_directory": "experiments/outputs/S5"
+}

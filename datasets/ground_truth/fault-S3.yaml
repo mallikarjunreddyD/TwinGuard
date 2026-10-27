@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0.0",
+  "fault_id": "fault-S3",
+  "asset_id": "wall-01",
+  "category": "thermal_hotspot",
+  "start_at": "2026-01-01T00:00:30+00:00",
+  "end_at": "2026-01-01T00:01:30+00:00",
+  "severity_parameters": {
+    "delta_temperature_c": 12
+  },
+  "affected_region_id": "region-01",
+  "true_displacement_m": null,
+  "true_process_deviation": 12,
+  "deviation_unit": "degC",
+  "ground_truth_artifacts": []
+}

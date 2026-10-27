@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "experiment_id": "E1",
+  "version": "v1",
+  "inputs": [
+    "reference cloud",
+    "current cloud",
+    "acquisition metadata",
+    "registration configuration"
+  ],
+  "outputs": [
+    "registered cloud",
+    "change map",
+    "detection regions",
+    "displacement estimates",
+    "registration quality",
+    "runtime"
+  ],
+  "planned_metrics": [
+    "displacement error",
+    "precision",
+    "recall",
+    "false-positive rate",
+    "localization error",
+    "runtime"
+  ],
+  "baseline": "Rigid registration plus nearest-neighbor distance; implementation pending",
+  "implementation_status": "not_implemented"
+}

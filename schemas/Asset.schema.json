@@ -1,0 +1,212 @@
+{
+  "$defs": {
+    "Artifact": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0.0",
+          "default": "1.0.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "artifact_id": {
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+          "title": "Artifact Id",
+          "type": "string"
+        },
+        "uri": {
+          "minLength": 1,
+          "title": "Uri",
+          "type": "string"
+        },
+        "media_type": {
+          "title": "Media Type",
+          "type": "string"
+        },
+        "sha256": {
+          "anyOf": [
+            {
+              "pattern": "^[a-f0-9]{64}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Sha256"
+        }
+      },
+      "required": [
+        "artifact_id",
+        "uri",
+        "media_type"
+      ],
+      "title": "Artifact",
+      "type": "object"
+    },
+    "Frame": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "enum": [
+            "world",
+            "asset_local",
+            "sensor_local",
+            "registered_world"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "reference_id": {
+          "title": "Reference Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "kind",
+        "reference_id"
+      ],
+      "title": "Frame",
+      "type": "object"
+    },
+    "Transform": {
+      "additionalProperties": false,
+      "properties": {
+        "source": {
+          "$ref": "#/$defs/Frame"
+        },
+        "target": {
+          "$ref": "#/$defs/Frame"
+        },
+        "matrix": {
+          "items": {
+            "items": {
+              "type": "number"
+            },
+            "type": "array"
+          },
+          "title": "Matrix",
+          "type": "array"
+        }
+      },
+      "required": [
+        "source",
+        "target",
+        "matrix"
+      ],
+      "title": "Transform",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0",
+      "default": "1.0.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "asset_id": {
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Asset Id",
+      "type": "string"
+    },
+    "name": {
+      "title": "Name",
+      "type": "string"
+    },
+    "asset_type": {
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Asset Type",
+      "type": "string"
+    },
+    "parent_asset_id": {
+      "anyOf": [
+        {
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Parent Asset Id"
+    },
+    "geometry": {
+      "$ref": "#/$defs/Artifact"
+    },
+    "coordinate_frame": {
+      "$ref": "#/$defs/Frame"
+    },
+    "pose": {
+      "$ref": "#/$defs/Transform"
+    },
+    "material": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "title": "Material",
+      "type": "object"
+    },
+    "sensor_ids": {
+      "items": {
+        "minLength": 1,
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+        "type": "string"
+      },
+      "title": "Sensor Ids",
+      "type": "array"
+    },
+    "operating_reference_id": {
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Operating Reference Id",
+      "type": "string"
+    },
+    "baseline_geometry_version": {
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Baseline Geometry Version",
+      "type": "string"
+    },
+    "inspection_region_ids": {
+      "items": {
+        "minLength": 1,
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+        "type": "string"
+      },
+      "title": "Inspection Region Ids",
+      "type": "array"
+    },
+    "criticality": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Criticality"
+    }
+  },
+  "required": [
+    "asset_id",
+    "name",
+    "asset_type",
+    "geometry",
+    "coordinate_frame",
+    "pose",
+    "operating_reference_id",
+    "baseline_geometry_version"
+  ],
+  "title": "Asset",
+  "type": "object"
+}

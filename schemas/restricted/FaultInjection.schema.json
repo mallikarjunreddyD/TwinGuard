@@ -1,0 +1,159 @@
+{
+  "$defs": {
+    "Artifact": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0.0",
+          "default": "1.0.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "artifact_id": {
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+          "title": "Artifact Id",
+          "type": "string"
+        },
+        "uri": {
+          "minLength": 1,
+          "title": "Uri",
+          "type": "string"
+        },
+        "media_type": {
+          "title": "Media Type",
+          "type": "string"
+        },
+        "sha256": {
+          "anyOf": [
+            {
+              "pattern": "^[a-f0-9]{64}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Sha256"
+        }
+      },
+      "required": [
+        "artifact_id",
+        "uri",
+        "media_type"
+      ],
+      "title": "Artifact",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0",
+      "default": "1.0.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "fault_id": {
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Fault Id",
+      "type": "string"
+    },
+    "asset_id": {
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Asset Id",
+      "type": "string"
+    },
+    "category": {
+      "enum": [
+        "localized_geometric_deformation",
+        "structural_support_displacement",
+        "thermal_hotspot",
+        "abnormal_process_measurement"
+      ],
+      "title": "Category",
+      "type": "string"
+    },
+    "start_at": {
+      "format": "date-time",
+      "title": "Start At",
+      "type": "string"
+    },
+    "end_at": {
+      "format": "date-time",
+      "title": "End At",
+      "type": "string"
+    },
+    "severity_parameters": {
+      "additionalProperties": {
+        "type": "number"
+      },
+      "title": "Severity Parameters",
+      "type": "object"
+    },
+    "affected_region_id": {
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Affected Region Id",
+      "type": "string"
+    },
+    "true_displacement_m": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "True Displacement M"
+    },
+    "true_process_deviation": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "True Process Deviation"
+    },
+    "deviation_unit": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Deviation Unit"
+    },
+    "ground_truth_artifacts": {
+      "items": {
+        "$ref": "#/$defs/Artifact"
+      },
+      "title": "Ground Truth Artifacts",
+      "type": "array"
+    }
+  },
+  "required": [
+    "fault_id",
+    "asset_id",
+    "category",
+    "start_at",
+    "end_at",
+    "severity_parameters",
+    "affected_region_id",
+    "ground_truth_artifacts"
+  ],
+  "title": "FaultInjection",
+  "type": "object"
+}

@@ -1,0 +1,128 @@
+{
+  "$defs": {
+    "OperatingVariable": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0.0",
+          "default": "1.0.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "value": {
+          "title": "Value",
+          "type": "number"
+        },
+        "unit": {
+          "minLength": 1,
+          "title": "Unit",
+          "type": "string"
+        },
+        "uncertainty": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Uncertainty"
+        }
+      },
+      "required": [
+        "value",
+        "unit"
+      ],
+      "title": "OperatingVariable",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0",
+      "default": "1.0.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "state_id": {
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "State Id",
+      "type": "string"
+    },
+    "timestamp": {
+      "format": "date-time",
+      "title": "Timestamp",
+      "type": "string"
+    },
+    "plant_id": {
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Plant Id",
+      "type": "string"
+    },
+    "operating_mode": {
+      "enum": [
+        "shutdown",
+        "startup",
+        "steady_operation",
+        "load_transition",
+        "abnormal_operation"
+      ],
+      "title": "Operating Mode",
+      "type": "string"
+    },
+    "normalized_load": {
+      "maximum": 1,
+      "minimum": 0,
+      "title": "Normalized Load",
+      "type": "number"
+    },
+    "process_pressure_pa": {
+      "minimum": 0,
+      "title": "Process Pressure Pa",
+      "type": "number"
+    },
+    "process_temperature_c": {
+      "minimum": -273.15,
+      "title": "Process Temperature C",
+      "type": "number"
+    },
+    "ambient_temperature_c": {
+      "minimum": -273.15,
+      "title": "Ambient Temperature C",
+      "type": "number"
+    },
+    "asset_variables": {
+      "patternProperties": {
+        "^[A-Za-z0-9][A-Za-z0-9_.:-]*$": {
+          "additionalProperties": {
+            "$ref": "#/$defs/OperatingVariable"
+          },
+          "type": "object"
+        }
+      },
+      "propertyNames": {
+        "minLength": 1
+      },
+      "title": "Asset Variables",
+      "type": "object"
+    }
+  },
+  "required": [
+    "state_id",
+    "timestamp",
+    "plant_id",
+    "operating_mode",
+    "normalized_load",
+    "process_pressure_pa",
+    "process_temperature_c",
+    "ambient_temperature_c"
+  ],
+  "title": "PlantState",
+  "type": "object"
+}

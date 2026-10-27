@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0.0",
+  "dataset_id": "fixture-01",
+  "source_type": "synthetic",
+  "description": "Hand-authored synthetic schema test fixture; not plant simulation output",
+  "artifacts": [
+    {
+      "artifact_id": "obs-01",
+      "uri": "datasets/synthetic/observation.json",
+      "media_type": "application/json"
+    }
+  ]
+}

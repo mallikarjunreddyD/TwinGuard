@@ -1,0 +1,274 @@
+{
+  "$defs": {
+    "Artifact": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0.0",
+          "default": "1.0.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "artifact_id": {
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+          "title": "Artifact Id",
+          "type": "string"
+        },
+        "uri": {
+          "minLength": 1,
+          "title": "Uri",
+          "type": "string"
+        },
+        "media_type": {
+          "title": "Media Type",
+          "type": "string"
+        },
+        "sha256": {
+          "anyOf": [
+            {
+              "pattern": "^[a-f0-9]{64}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Sha256"
+        }
+      },
+      "required": [
+        "artifact_id",
+        "uri",
+        "media_type"
+      ],
+      "title": "Artifact",
+      "type": "object"
+    },
+    "Frame": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "enum": [
+            "world",
+            "asset_local",
+            "sensor_local",
+            "registered_world"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "reference_id": {
+          "title": "Reference Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "kind",
+        "reference_id"
+      ],
+      "title": "Frame",
+      "type": "object"
+    },
+    "Transform": {
+      "additionalProperties": false,
+      "properties": {
+        "source": {
+          "$ref": "#/$defs/Frame"
+        },
+        "target": {
+          "$ref": "#/$defs/Frame"
+        },
+        "matrix": {
+          "items": {
+            "items": {
+              "type": "number"
+            },
+            "type": "array"
+          },
+          "title": "Matrix",
+          "type": "array"
+        }
+      },
+      "required": [
+        "source",
+        "target",
+        "matrix"
+      ],
+      "title": "Transform",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0",
+      "default": "1.0.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "acquired_at": {
+      "format": "date-time",
+      "title": "Acquired At",
+      "type": "string"
+    },
+    "received_at": {
+      "format": "date-time",
+      "title": "Received At",
+      "type": "string"
+    },
+    "processed_at": {
+      "anyOf": [
+        {
+          "format": "date-time",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Processed At"
+    },
+    "sequence_number": {
+      "anyOf": [
+        {
+          "minimum": 0,
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Sequence Number"
+    },
+    "clock_quality": {
+      "default": "unknown",
+      "enum": [
+        "synchronized",
+        "uncertain",
+        "unknown"
+      ],
+      "title": "Clock Quality",
+      "type": "string"
+    },
+    "delivery_status": {
+      "default": "normal",
+      "enum": [
+        "normal",
+        "late",
+        "missing",
+        "duplicate",
+        "out_of_order"
+      ],
+      "title": "Delivery Status",
+      "type": "string"
+    },
+    "capture_id": {
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Capture Id",
+      "type": "string"
+    },
+    "mission_id": {
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Mission Id",
+      "type": "string"
+    },
+    "asset_ids": {
+      "items": {
+        "minLength": 1,
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+        "type": "string"
+      },
+      "minItems": 1,
+      "title": "Asset Ids",
+      "type": "array"
+    },
+    "region_ids": {
+      "items": {
+        "minLength": 1,
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+        "type": "string"
+      },
+      "title": "Region Ids",
+      "type": "array"
+    },
+    "sensor_id": {
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Sensor Id",
+      "type": "string"
+    },
+    "modality": {
+      "enum": [
+        "lidar",
+        "thermal",
+        "rgb"
+      ],
+      "title": "Modality",
+      "type": "string"
+    },
+    "artifact": {
+      "$ref": "#/$defs/Artifact"
+    },
+    "coordinate_frame": {
+      "$ref": "#/$defs/Frame"
+    },
+    "sensor_pose": {
+      "$ref": "#/$defs/Transform"
+    },
+    "calibration_id": {
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Calibration Id",
+      "type": "string"
+    },
+    "coverage_fraction": {
+      "anyOf": [
+        {
+          "maximum": 1,
+          "minimum": 0,
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Coverage Fraction"
+    },
+    "quality_indicators": {
+      "additionalProperties": {
+        "type": "number"
+      },
+      "title": "Quality Indicators",
+      "type": "object"
+    },
+    "provenance_id": {
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Provenance Id",
+      "type": "string"
+    }
+  },
+  "required": [
+    "acquired_at",
+    "received_at",
+    "capture_id",
+    "mission_id",
+    "asset_ids",
+    "sensor_id",
+    "modality",
+    "artifact",
+    "coordinate_frame",
+    "sensor_pose",
+    "calibration_id",
+    "provenance_id"
+  ],
+  "title": "InspectionCapture",
+  "type": "object"
+}

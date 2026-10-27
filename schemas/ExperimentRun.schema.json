@@ -1,0 +1,214 @@
+{
+  "$defs": {
+    "Artifact": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0.0",
+          "default": "1.0.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "artifact_id": {
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+          "title": "Artifact Id",
+          "type": "string"
+        },
+        "uri": {
+          "minLength": 1,
+          "title": "Uri",
+          "type": "string"
+        },
+        "media_type": {
+          "title": "Media Type",
+          "type": "string"
+        },
+        "sha256": {
+          "anyOf": [
+            {
+              "pattern": "^[a-f0-9]{64}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Sha256"
+        }
+      },
+      "required": [
+        "artifact_id",
+        "uri",
+        "media_type"
+      ],
+      "title": "Artifact",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0",
+      "default": "1.0.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "experiment_id": {
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Experiment Id",
+      "type": "string"
+    },
+    "run_id": {
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Run Id",
+      "type": "string"
+    },
+    "scenario_id": {
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Scenario Id",
+      "type": "string"
+    },
+    "dataset_id": {
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Dataset Id",
+      "type": "string"
+    },
+    "dataset_provenance_reference": {
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Dataset Provenance Reference",
+      "type": "string"
+    },
+    "dataset_source_type": {
+      "enum": [
+        "synthetic",
+        "public_real_world",
+        "hybrid",
+        "physical_experimental"
+      ],
+      "title": "Dataset Source Type",
+      "type": "string"
+    },
+    "random_seed": {
+      "minimum": 0,
+      "title": "Random Seed",
+      "type": "integer"
+    },
+    "software_version": {
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Software Version",
+      "type": "string"
+    },
+    "git_commit": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Git Commit"
+    },
+    "configuration_version": {
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Configuration Version",
+      "type": "string"
+    },
+    "algorithm_references": {
+      "items": {
+        "minLength": 1,
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+        "type": "string"
+      },
+      "title": "Algorithm References",
+      "type": "array"
+    },
+    "configuration_references": {
+      "items": {
+        "minLength": 1,
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+        "type": "string"
+      },
+      "title": "Configuration References",
+      "type": "array"
+    },
+    "started_at": {
+      "format": "date-time",
+      "title": "Started At",
+      "type": "string"
+    },
+    "ended_at": {
+      "anyOf": [
+        {
+          "format": "date-time",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Ended At"
+    },
+    "outputs": {
+      "items": {
+        "$ref": "#/$defs/Artifact"
+      },
+      "title": "Outputs",
+      "type": "array"
+    },
+    "evaluation_status": {
+      "enum": [
+        "pending",
+        "not_implemented",
+        "completed",
+        "failed"
+      ],
+      "title": "Evaluation Status",
+      "type": "string"
+    },
+    "metric_artifacts": {
+      "items": {
+        "$ref": "#/$defs/Artifact"
+      },
+      "title": "Metric Artifacts",
+      "type": "array"
+    },
+    "test_result_artifacts": {
+      "items": {
+        "$ref": "#/$defs/Artifact"
+      },
+      "title": "Test Result Artifacts",
+      "type": "array"
+    }
+  },
+  "required": [
+    "experiment_id",
+    "run_id",
+    "scenario_id",
+    "dataset_id",
+    "dataset_provenance_reference",
+    "dataset_source_type",
+    "random_seed",
+    "software_version",
+    "configuration_version",
+    "algorithm_references",
+    "configuration_references",
+    "started_at",
+    "outputs",
+    "evaluation_status",
+    "metric_artifacts"
+  ],
+  "title": "ExperimentRun",
+  "type": "object"
+}

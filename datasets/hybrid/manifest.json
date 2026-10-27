@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "dataset_id": "hybrid-pending",
+  "source_type": "hybrid",
+  "description": "Manifest template only; no hybrid data generated",
+  "real_source_ids": [
+    "public-pending"
+  ],
+  "synthetic_transformations": [
+    "PENDING: select transformation and record parameters"
+  ]
+}

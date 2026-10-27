@@ -1,0 +1,342 @@
+{
+  "$defs": {
+    "Artifact": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0.0",
+          "default": "1.0.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "artifact_id": {
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+          "title": "Artifact Id",
+          "type": "string"
+        },
+        "uri": {
+          "minLength": 1,
+          "title": "Uri",
+          "type": "string"
+        },
+        "media_type": {
+          "title": "Media Type",
+          "type": "string"
+        },
+        "sha256": {
+          "anyOf": [
+            {
+              "pattern": "^[a-f0-9]{64}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Sha256"
+        }
+      },
+      "required": [
+        "artifact_id",
+        "uri",
+        "media_type"
+      ],
+      "title": "Artifact",
+      "type": "object"
+    },
+    "DatasetProvenance": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0.0",
+          "default": "1.0.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "dataset_id": {
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+          "title": "Dataset Id",
+          "type": "string"
+        },
+        "source_type": {
+          "enum": [
+            "synthetic",
+            "public_real_world",
+            "hybrid",
+            "physical_experimental"
+          ],
+          "title": "Source Type",
+          "type": "string"
+        },
+        "description": {
+          "title": "Description",
+          "type": "string"
+        },
+        "license": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "License"
+        },
+        "source_uri": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Source Uri"
+        },
+        "real_source_ids": {
+          "items": {
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+            "type": "string"
+          },
+          "title": "Real Source Ids",
+          "type": "array"
+        },
+        "synthetic_transformations": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Synthetic Transformations",
+          "type": "array"
+        },
+        "artifacts": {
+          "items": {
+            "$ref": "#/$defs/Artifact"
+          },
+          "title": "Artifacts",
+          "type": "array"
+        }
+      },
+      "required": [
+        "dataset_id",
+        "source_type",
+        "description"
+      ],
+      "title": "DatasetProvenance",
+      "type": "object"
+    },
+    "InspectionSchedule": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0.0",
+          "default": "1.0.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "sensor_id": {
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+          "title": "Sensor Id",
+          "type": "string"
+        },
+        "offset_s": {
+          "title": "Offset S",
+          "type": "number"
+        },
+        "modality": {
+          "enum": [
+            "lidar",
+            "thermal",
+            "rgb"
+          ],
+          "title": "Modality",
+          "type": "string"
+        }
+      },
+      "required": [
+        "sensor_id",
+        "offset_s",
+        "modality"
+      ],
+      "title": "InspectionSchedule",
+      "type": "object"
+    },
+    "OperatingPoint": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0.0",
+          "default": "1.0.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "operating_mode": {
+          "default": "steady_operation",
+          "enum": [
+            "shutdown",
+            "startup",
+            "steady_operation",
+            "load_transition",
+            "abnormal_operation"
+          ],
+          "title": "Operating Mode",
+          "type": "string"
+        },
+        "offset_s": {
+          "minimum": 0,
+          "title": "Offset S",
+          "type": "number"
+        },
+        "normalized_load": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Normalized Load",
+          "type": "number"
+        },
+        "temperature_reference_delta_c": {
+          "default": 0,
+          "title": "Temperature Reference Delta C",
+          "type": "number"
+        },
+        "displacement_reference_delta_m": {
+          "default": 0,
+          "title": "Displacement Reference Delta M",
+          "type": "number"
+        }
+      },
+      "required": [
+        "offset_s",
+        "normalized_load"
+      ],
+      "title": "OperatingPoint",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0",
+      "default": "1.0.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "scenario_id": {
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Scenario Id",
+      "type": "string"
+    },
+    "version": {
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Version",
+      "type": "string"
+    },
+    "description": {
+      "title": "Description",
+      "type": "string"
+    },
+    "plant_model_reference": {
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Plant Model Reference",
+      "type": "string"
+    },
+    "asset_ids": {
+      "items": {
+        "minLength": 1,
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+        "type": "string"
+      },
+      "minItems": 1,
+      "title": "Asset Ids",
+      "type": "array"
+    },
+    "simulation_start": {
+      "format": "date-time",
+      "title": "Simulation Start",
+      "type": "string"
+    },
+    "duration_s": {
+      "exclusiveMinimum": 0,
+      "title": "Duration S",
+      "type": "number"
+    },
+    "time_step_s": {
+      "exclusiveMinimum": 0,
+      "title": "Time Step S",
+      "type": "number"
+    },
+    "random_seed": {
+      "minimum": 0,
+      "title": "Random Seed",
+      "type": "integer"
+    },
+    "operating_profile": {
+      "items": {
+        "$ref": "#/$defs/OperatingPoint"
+      },
+      "minItems": 1,
+      "title": "Operating Profile",
+      "type": "array"
+    },
+    "sensor_config_ids": {
+      "items": {
+        "minLength": 1,
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+        "type": "string"
+      },
+      "title": "Sensor Config Ids",
+      "type": "array"
+    },
+    "inspections": {
+      "items": {
+        "$ref": "#/$defs/InspectionSchedule"
+      },
+      "title": "Inspections",
+      "type": "array"
+    },
+    "fault_config_references": {
+      "items": {
+        "minLength": 1,
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+        "type": "string"
+      },
+      "title": "Fault Config References",
+      "type": "array"
+    },
+    "dataset": {
+      "$ref": "#/$defs/DatasetProvenance"
+    },
+    "output_directory": {
+      "title": "Output Directory",
+      "type": "string"
+    }
+  },
+  "required": [
+    "scenario_id",
+    "version",
+    "description",
+    "plant_model_reference",
+    "asset_ids",
+    "simulation_start",
+    "duration_s",
+    "time_step_s",
+    "random_seed",
+    "operating_profile",
+    "sensor_config_ids",
+    "inspections",
+    "fault_config_references",
+    "dataset",
+    "output_directory"
+  ],
+  "title": "ScenarioDefinition",
+  "type": "object"
+}

@@ -1,0 +1,68 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0",
+      "default": "1.0.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "experiment_id": {
+      "enum": [
+        "E1",
+        "E2",
+        "E3",
+        "E4"
+      ],
+      "title": "Experiment Id",
+      "type": "string"
+    },
+    "version": {
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Version",
+      "type": "string"
+    },
+    "inputs": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Inputs",
+      "type": "array"
+    },
+    "outputs": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Outputs",
+      "type": "array"
+    },
+    "planned_metrics": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Planned Metrics",
+      "type": "array"
+    },
+    "baseline": {
+      "title": "Baseline",
+      "type": "string"
+    },
+    "implementation_status": {
+      "const": "not_implemented",
+      "default": "not_implemented",
+      "title": "Implementation Status",
+      "type": "string"
+    }
+  },
+  "required": [
+    "experiment_id",
+    "version",
+    "inputs",
+    "outputs",
+    "planned_metrics",
+    "baseline"
+  ],
+  "title": "ExperimentDefinition",
+  "type": "object"
+}

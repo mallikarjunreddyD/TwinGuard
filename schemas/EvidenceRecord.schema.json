@@ -1,0 +1,128 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0",
+      "default": "1.0.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "evidence_id": {
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Evidence Id",
+      "type": "string"
+    },
+    "asset_id": {
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Asset Id",
+      "type": "string"
+    },
+    "source_id": {
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Source Id",
+      "type": "string"
+    },
+    "modality": {
+      "enum": [
+        "fixed_sensor",
+        "geometric",
+        "thermal",
+        "rgb"
+      ],
+      "title": "Modality",
+      "type": "string"
+    },
+    "acquired_at": {
+      "format": "date-time",
+      "title": "Acquired At",
+      "type": "string"
+    },
+    "processed_at": {
+      "format": "date-time",
+      "title": "Processed At",
+      "type": "string"
+    },
+    "hypothesis_id": {
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Hypothesis Id",
+      "type": "string"
+    },
+    "quality": {
+      "enum": [
+        "good",
+        "degraded",
+        "unknown",
+        "invalid"
+      ],
+      "title": "Quality",
+      "type": "string"
+    },
+    "uncertainty": {
+      "anyOf": [
+        {
+          "minimum": 0,
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Uncertainty"
+    },
+    "uncertainty_unit": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Uncertainty Unit"
+    },
+    "operating_context_id": {
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Operating Context Id",
+      "type": "string"
+    },
+    "validity": {
+      "enum": [
+        "valid",
+        "stale",
+        "invalid",
+        "missing",
+        "inconclusive"
+      ],
+      "title": "Validity",
+      "type": "string"
+    },
+    "provenance_id": {
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Provenance Id",
+      "type": "string"
+    }
+  },
+  "required": [
+    "evidence_id",
+    "asset_id",
+    "source_id",
+    "modality",
+    "acquired_at",
+    "processed_at",
+    "hypothesis_id",
+    "quality",
+    "operating_context_id",
+    "validity",
+    "provenance_id"
+  ],
+  "title": "EvidenceRecord",
+  "type": "object"
+}

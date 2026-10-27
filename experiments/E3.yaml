@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0.0",
+  "experiment_id": "E3",
+  "version": "v1",
+  "inputs": [
+    "fixed observations",
+    "geometric detections",
+    "thermal evidence",
+    "operating context",
+    "validity metadata"
+  ],
+  "outputs": [
+    "assessments",
+    "supporting evidence",
+    "actions",
+    "confidence quality"
+  ],
+  "planned_metrics": [
+    "critical-event detection",
+    "missed-event rate",
+    "false escalations",
+    "stale and missing evidence handling",
+    "decision latency"
+  ],
+  "baseline": "Latest-value rule versus validity-aware hazard policy; pending",
+  "implementation_status": "not_implemented"
+}

@@ -1,0 +1,8 @@
+{
+  "schema_version": "1.0.0",
+  "dataset_id": "public-pending",
+  "source_type": "public_real_world",
+  "description": "Manifest template only; no dataset acquired or validated",
+  "license": "PENDING: select and verify before use",
+  "source_uri": "urn:twinguard:pending:public-selection"
+}

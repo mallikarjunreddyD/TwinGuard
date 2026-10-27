@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0.0",
+  "experiment_id": "E2",
+  "version": "v1",
+  "inputs": [
+    "measurement history",
+    "operating profile",
+    "reference model configuration"
+  ],
+  "outputs": [
+    "expected measurements",
+    "residuals",
+    "abnormal events"
+  ],
+  "planned_metrics": [
+    "false-positive rate",
+    "recall",
+    "residual prediction error",
+    "load-transition performance"
+  ],
+  "baseline": "Fixed threshold versus operating-state residual model; pending",
+  "implementation_status": "not_implemented"
+}

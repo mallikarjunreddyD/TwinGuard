@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0.0",
+  "observation_id": "obs-01",
+  "sensor_id": "temperature-01",
+  "asset_id": "wall-01",
+  "acquired_at": "2026-01-01T00:00:00+00:00",
+  "received_at": "2026-01-01T00:00:01+00:00",
+  "measurement_type": "temperature",
+  "value": 80,
+  "unit": "degC",
+  "uncertainty": 0.5,
+  "quality": "good",
+  "provenance_id": "fixture-01",
+  "location_reference": "region-01"
+}

@@ -1,0 +1,9 @@
+{
+  "configuration_version": "v1",
+  "plant_id": "plant-01",
+  "coordinate_convention": "right-handed ENU local origin; not georeferenced",
+  "length_unit": "m",
+  "angle_unit": "rad",
+  "timezone": "UTC",
+  "runtime_phase": 0
+}

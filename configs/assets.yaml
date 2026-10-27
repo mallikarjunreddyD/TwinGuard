@@ -1,0 +1,62 @@
+[
+  {
+    "schema_version": "1.0.0",
+    "asset_id": "wall-01",
+    "name": "Synthetic boiler water-wall panel",
+    "asset_type": "boiler_water_wall_panel",
+    "geometry": {
+      "artifact_id": "geometry-01",
+      "uri": "fixtures/geometry-pending",
+      "media_type": "application/octet-stream"
+    },
+    "coordinate_frame": {
+      "kind": "asset_local",
+      "reference_id": "wall-01"
+    },
+    "pose": {
+      "source": {
+        "kind": "asset_local",
+        "reference_id": "wall-01"
+      },
+      "target": {
+        "kind": "world",
+        "reference_id": "plant-01"
+      },
+      "matrix": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ]
+    },
+    "operating_reference_id": "reference-01",
+    "baseline_geometry_version": "v1",
+    "sensor_ids": [
+      "temperature-01",
+      "pressure-01"
+    ],
+    "inspection_region_ids": [
+      "region-01"
+    ]
+  }
+]

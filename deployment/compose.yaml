@@ -1,0 +1,8 @@
+services:
+  api:
+    build:
+      context: ..
+      dockerfile: deployment/Dockerfile
+    ports:
+      - "127.0.0.1:${TWINGUARD_PORT:-8000}:8000"
+    restart: unless-stopped
