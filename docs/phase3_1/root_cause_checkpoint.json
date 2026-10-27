@@ -1,0 +1,9 @@
+{
+  "saved_at": "2026-10-27T15:58:04.315407+00:00",
+  "files": {
+    "src/twinguard/analytics/geometry.py": "796371c934517d1cc26df4373349ba76e96ec5d77057a956a4f0e7c61bde7e1d",
+    "src/twinguard/analytics/registration.py": "0500d18f4e3bd1e8ce832617f4dfd37f95bc64df607636923c7d4472b79be79f",
+    "docs/PHASE3_1_ROOT_CAUSE.md": "a0f3e731aa34c56c308925b2adc57178fd121ba8586c30f4214f6065177bc28a"
+  },
+  "diagnostic_trials": 140
+}

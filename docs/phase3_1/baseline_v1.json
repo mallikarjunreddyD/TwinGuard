@@ -1,0 +1,1161 @@
+{
+  "source_commit": "775fc11ec860aaa0232e32d651de25d40bc69308",
+  "baseline_branch": "phase-3",
+  "software_version": "0.4.0",
+  "configuration": {
+    "schema_version": "1.0.0",
+    "configuration_id": "analytics-v1",
+    "voxel_m": 0.01,
+    "min_range_m": 0.1,
+    "max_range_m": 20.0,
+    "statistical_outliers": false,
+    "outlier_neighbors": 20,
+    "outlier_std_ratio": 3.0,
+    "normal_radius_m": 0.26,
+    "min_correspondences": 40,
+    "stable_min_points": 60,
+    "min_fitness": 0.25,
+    "max_inlier_rmse_m": 0.08,
+    "min_conditioning": 1e-05,
+    "max_translation_correction_m": 0.5,
+    "max_rotation_correction_rad": 0.2,
+    "max_repeatability_m": 0.04,
+    "registration_scales_m": [
+      0.15,
+      0.08,
+      0.04
+    ],
+    "registration_iterations": 35,
+    "robust_scale_m": 0.025,
+    "roi_margin_m": 0.18,
+    "patch_radius_m": 0.18,
+    "patch_spacing_m": 0.12,
+    "min_patch_points": 8,
+    "min_common_coverage": 0.25,
+    "min_common_cells": 3,
+    "max_roughness_m": 0.015,
+    "max_projection_m": 0.08,
+    "change_threshold_m": 0.005,
+    "nearest_threshold_m": 0.025,
+    "uncertainty_floor_m": 0.004,
+    "uncertainty_multiplier": 1.5,
+    "min_region_patches": 2,
+    "min_valid_patch_fraction": 0.1,
+    "monitored_assets": [
+      "BW-01",
+      "SUP-01"
+    ],
+    "operating_k": 5.0,
+    "load_age_limit_s": 6.0,
+    "max_delay_s": 5.0,
+    "operating_min_scale_temperature": 0.4,
+    "operating_min_scale_pressure": 500.0,
+    "lag_candidates_s": [
+      0.0,
+      5.0,
+      10.0,
+      15.0,
+      20.0,
+      25.0,
+      30.0,
+      45.0,
+      60.0
+    ],
+    "thermal_threshold_c": 4.0,
+    "thermal_min_pixels": 4,
+    "thermal_min_training_frames": 4,
+    "thermal_max_pose_delta_m": 0.15,
+    "thermal_max_rotation_delta_rad": 0.08,
+    "thermal_min_valid_fraction": 0.15
+  },
+  "file_sha256": {
+    "src/twinguard/analytics/registration.py": "0500d18f4e3bd1e8ce832617f4dfd37f95bc64df607636923c7d4472b79be79f",
+    "src/twinguard/analytics/geometry.py": "796371c934517d1cc26df4373349ba76e96ec5d77057a956a4f0e7c61bde7e1d",
+    "src/twinguard/analytics/config.py": "538c05f27d266854e23473ea7aa3ca63746673f91abbd8a5b5a1658fc8373937",
+    "configs/experiments/E1.yaml": "e9ebb9cbcdf18d9e4b7577166abafbf0659875f758f6494b19a7a5d33519f60b"
+  },
+  "original_report_sha256": "1301f674c5a918c29b783079c5bbf7abea40cf6578c0b2cd2b7b1bb1f3d5b0d3",
+  "partition_configuration": {
+    "schema_version": "1.0.0",
+    "partition_id": "phase31-v1",
+    "diagnostic_seeds": [
+      1100,
+      1101,
+      1102,
+      1103
+    ],
+    "development_seeds": [
+      2100,
+      2101,
+      2102,
+      2103,
+      2104,
+      2105,
+      2106,
+      2107,
+      2108,
+      2109
+    ],
+    "healthy_calibration_seeds": [
+      2200,
+      2201,
+      2202,
+      2203,
+      2204,
+      2205,
+      2206,
+      2207,
+      2208,
+      2209,
+      2210,
+      2211,
+      2212,
+      2213,
+      2214,
+      2215,
+      2216,
+      2217,
+      2218,
+      2219,
+      2220,
+      2221,
+      2222,
+      2223,
+      2224,
+      2225,
+      2226,
+      2227,
+      2228,
+      2229
+    ],
+    "heldout_seeds": [
+      4100,
+      4101,
+      4102,
+      4103,
+      4104,
+      4105,
+      4106,
+      4107,
+      4108,
+      4109,
+      4110,
+      4111,
+      4112,
+      4113,
+      4114,
+      4115,
+      4116,
+      4117,
+      4118,
+      4119,
+      4120,
+      4121,
+      4122,
+      4123,
+      4124,
+      4125,
+      4126,
+      4127,
+      4128,
+      4129
+    ],
+    "amplitudes_m": [
+      0,
+      0.01,
+      0.02,
+      0.03,
+      0.05
+    ],
+    "fidelities": [
+      "L0",
+      "L1",
+      "L2"
+    ],
+    "views": [
+      "same",
+      "changed"
+    ],
+    "robustness_views": [
+      "partial",
+      "high_pose",
+      "low_overlap"
+    ],
+    "heldout_fault_variation": "center x alternates -0.10/+0.10 m, z 1.10/1.30 m; extents x .35/.45 m, z .45/.55 m; original peak and compact cubic kernel unchanged",
+    "coverage_categories": {
+      "fully_occluded": "0 valid ROI returns",
+      "insufficient": "min returns <12 or common occupied fraction <0.1",
+      "marginal": "common occupied fraction <0.25",
+      "adequate": "otherwise"
+    },
+    "selection_rule": "Freeze after development; no updates after held-out metrics; no statistical confidence interval claimed for engineering scores"
+  },
+  "reproduced_report": "/home/mallikarjun/workspace/TwinGuard/experiments/outputs/phase3_1/baseline-reproduction/report.json",
+  "runtime_s": 183.14909063401865,
+  "metrics": {
+    "B1": {
+      "trials": 154,
+      "positive_trials": 124,
+      "negative_trials": 30,
+      "true_positive": 36,
+      "false_positive": 13,
+      "false_negative": 88,
+      "true_negative": 17,
+      "precision": 0.18875502008032127,
+      "recall": 0.2903225806451613,
+      "false_positive_rate": 0.43333333333333335,
+      "registration_failure_fraction": 0.2077922077922078,
+      "inconclusive_fraction": 0.33766233766233766,
+      "translation_error_mm_mean": 39.70678093883722,
+      "rotation_error_deg_mean": 0.5807197053689741,
+      "displacement_mae_mm": 10.644965930938586,
+      "displacement_rmse_mm": 14.83234446565264,
+      "qualified_patch_error_count": 3077,
+      "engineering_score_empirical_coverage": 0.0,
+      "observable_only": {
+        "trials": 151,
+        "positive_trials": 121,
+        "negative_trials": 30,
+        "true_positive": 36,
+        "false_positive": 13,
+        "false_negative": 85,
+        "true_negative": 17,
+        "precision": 0.7346938775510204,
+        "recall": 0.2975206611570248,
+        "false_positive_rate": 0.43333333333333335
+      },
+      "recall_wilson_95": [
+        0.21768665116080693,
+        0.3755599915595595
+      ],
+      "fpr_wilson_95": [
+        0.2737723743061511,
+        0.6080299045459127
+      ],
+      "mean_registration_runtime_s": 0.01734583908480338,
+      "negative_inconclusive_trials": 10,
+      "qualified_healthy_false_positive_rate": 0.65,
+      "qualified_healthy_trials": 20,
+      "event_precision": 0.7346938775510204,
+      "region_precision": 0.18875502008032127,
+      "region_true_positive": 47,
+      "region_false_positive": 202,
+      "mean_region_centroid_localization_error_m": 0.2051021306189541,
+      "by_fidelity": {
+        "L0": {
+          "trials": 50,
+          "positive_trials": 40,
+          "negative_trials": 10,
+          "true_positive": 10,
+          "false_positive": 5,
+          "false_negative": 30,
+          "true_negative": 5,
+          "precision": 0.6666666666666666,
+          "recall": 0.25,
+          "false_positive_rate": 0.5
+        },
+        "L1": {
+          "trials": 51,
+          "positive_trials": 41,
+          "negative_trials": 10,
+          "true_positive": 25,
+          "false_positive": 8,
+          "false_negative": 16,
+          "true_negative": 2,
+          "precision": 0.7575757575757576,
+          "recall": 0.6097560975609756,
+          "false_positive_rate": 0.8
+        },
+        "L2": {
+          "trials": 53,
+          "positive_trials": 43,
+          "negative_trials": 10,
+          "true_positive": 1,
+          "false_positive": 0,
+          "false_negative": 42,
+          "true_negative": 10,
+          "precision": 1.0,
+          "recall": 0.023255813953488372,
+          "false_positive_rate": 0.0
+        }
+      },
+      "by_amplitude_mm": {
+        "0": {
+          "trials": 30,
+          "positive_trials": 0,
+          "negative_trials": 30,
+          "true_positive": 0,
+          "false_positive": 13,
+          "false_negative": 0,
+          "true_negative": 17,
+          "precision": 0.0,
+          "recall": null,
+          "false_positive_rate": 0.43333333333333335
+        },
+        "10": {
+          "trials": 30,
+          "positive_trials": 30,
+          "negative_trials": 0,
+          "true_positive": 5,
+          "false_positive": 0,
+          "false_negative": 25,
+          "true_negative": 0,
+          "precision": 1.0,
+          "recall": 0.16666666666666666,
+          "false_positive_rate": null
+        },
+        "20": {
+          "trials": 30,
+          "positive_trials": 30,
+          "negative_trials": 0,
+          "true_positive": 7,
+          "false_positive": 0,
+          "false_negative": 23,
+          "true_negative": 0,
+          "precision": 1.0,
+          "recall": 0.23333333333333334,
+          "false_positive_rate": null
+        },
+        "30": {
+          "trials": 33,
+          "positive_trials": 33,
+          "negative_trials": 0,
+          "true_positive": 6,
+          "false_positive": 0,
+          "false_negative": 27,
+          "true_negative": 0,
+          "precision": 1.0,
+          "recall": 0.18181818181818182,
+          "false_positive_rate": null
+        },
+        "50": {
+          "trials": 30,
+          "positive_trials": 30,
+          "negative_trials": 0,
+          "true_positive": 18,
+          "false_positive": 0,
+          "false_negative": 12,
+          "true_negative": 0,
+          "precision": 1.0,
+          "recall": 0.6,
+          "false_positive_rate": null
+        }
+      }
+    },
+    "B2": {
+      "trials": 154,
+      "positive_trials": 124,
+      "negative_trials": 30,
+      "true_positive": 26,
+      "false_positive": 13,
+      "false_negative": 98,
+      "true_negative": 17,
+      "precision": 0.1658291457286432,
+      "recall": 0.20967741935483872,
+      "false_positive_rate": 0.43333333333333335,
+      "registration_failure_fraction": 0.006493506493506494,
+      "inconclusive_fraction": 0.33116883116883117,
+      "translation_error_mm_mean": 28.059930204807984,
+      "rotation_error_deg_mean": 0.3282843043964212,
+      "displacement_mae_mm": 6.4894000691187665,
+      "displacement_rmse_mm": 9.420024246509605,
+      "qualified_patch_error_count": 3196,
+      "engineering_score_empirical_coverage": 0.0,
+      "observable_only": {
+        "trials": 151,
+        "positive_trials": 121,
+        "negative_trials": 30,
+        "true_positive": 26,
+        "false_positive": 13,
+        "false_negative": 95,
+        "true_negative": 17,
+        "precision": 0.6666666666666666,
+        "recall": 0.21487603305785125,
+        "false_positive_rate": 0.43333333333333335
+      },
+      "recall_wilson_95": [
+        0.1472978818443016,
+        0.28950516192235964
+      ],
+      "fpr_wilson_95": [
+        0.2737723743061511,
+        0.6080299045459127
+      ],
+      "mean_registration_runtime_s": 0.07641882065028956,
+      "negative_inconclusive_trials": 9,
+      "qualified_healthy_false_positive_rate": 0.5238095238095238,
+      "qualified_healthy_trials": 21,
+      "event_precision": 0.6666666666666666,
+      "region_precision": 0.1658291457286432,
+      "region_true_positive": 33,
+      "region_false_positive": 166,
+      "mean_region_centroid_localization_error_m": 0.219796419370322,
+      "by_fidelity": {
+        "L0": {
+          "trials": 50,
+          "positive_trials": 40,
+          "negative_trials": 10,
+          "true_positive": 10,
+          "false_positive": 5,
+          "false_negative": 30,
+          "true_negative": 5,
+          "precision": 0.6666666666666666,
+          "recall": 0.25,
+          "false_positive_rate": 0.5
+        },
+        "L1": {
+          "trials": 51,
+          "positive_trials": 41,
+          "negative_trials": 10,
+          "true_positive": 16,
+          "false_positive": 5,
+          "false_negative": 25,
+          "true_negative": 5,
+          "precision": 0.7619047619047619,
+          "recall": 0.3902439024390244,
+          "false_positive_rate": 0.5
+        },
+        "L2": {
+          "trials": 53,
+          "positive_trials": 43,
+          "negative_trials": 10,
+          "true_positive": 0,
+          "false_positive": 3,
+          "false_negative": 43,
+          "true_negative": 7,
+          "precision": 0.0,
+          "recall": 0.0,
+          "false_positive_rate": 0.3
+        }
+      },
+      "by_amplitude_mm": {
+        "0": {
+          "trials": 30,
+          "positive_trials": 0,
+          "negative_trials": 30,
+          "true_positive": 0,
+          "false_positive": 13,
+          "false_negative": 0,
+          "true_negative": 17,
+          "precision": 0.0,
+          "recall": null,
+          "false_positive_rate": 0.43333333333333335
+        },
+        "10": {
+          "trials": 30,
+          "positive_trials": 30,
+          "negative_trials": 0,
+          "true_positive": 2,
+          "false_positive": 0,
+          "false_negative": 28,
+          "true_negative": 0,
+          "precision": 1.0,
+          "recall": 0.06666666666666667,
+          "false_positive_rate": null
+        },
+        "20": {
+          "trials": 30,
+          "positive_trials": 30,
+          "negative_trials": 0,
+          "true_positive": 2,
+          "false_positive": 0,
+          "false_negative": 28,
+          "true_negative": 0,
+          "precision": 1.0,
+          "recall": 0.06666666666666667,
+          "false_positive_rate": null
+        },
+        "30": {
+          "trials": 33,
+          "positive_trials": 33,
+          "negative_trials": 0,
+          "true_positive": 2,
+          "false_positive": 0,
+          "false_negative": 31,
+          "true_negative": 0,
+          "precision": 1.0,
+          "recall": 0.06060606060606061,
+          "false_positive_rate": null
+        },
+        "50": {
+          "trials": 30,
+          "positive_trials": 30,
+          "negative_trials": 0,
+          "true_positive": 20,
+          "false_positive": 0,
+          "false_negative": 10,
+          "true_negative": 0,
+          "precision": 1.0,
+          "recall": 0.6666666666666666,
+          "false_positive_rate": null
+        }
+      }
+    },
+    "B3": {
+      "trials": 154,
+      "positive_trials": 124,
+      "negative_trials": 30,
+      "true_positive": 31,
+      "false_positive": 0,
+      "false_negative": 93,
+      "true_negative": 30,
+      "precision": 0.8,
+      "recall": 0.25,
+      "false_positive_rate": 0.0,
+      "registration_failure_fraction": 0.06493506493506493,
+      "inconclusive_fraction": 0.35064935064935066,
+      "translation_error_mm_mean": 28.91735243812259,
+      "rotation_error_deg_mean": 0.599623473944103,
+      "displacement_mae_mm": 2.9562980282567297,
+      "displacement_rmse_mm": 4.428870937831135,
+      "qualified_patch_error_count": 3236,
+      "engineering_score_empirical_coverage": 0.9947466007416563,
+      "observable_only": {
+        "trials": 151,
+        "positive_trials": 121,
+        "negative_trials": 30,
+        "true_positive": 31,
+        "false_positive": 0,
+        "false_negative": 90,
+        "true_negative": 30,
+        "precision": 1.0,
+        "recall": 0.256198347107438,
+        "false_positive_rate": 0.0
+      },
+      "recall_wilson_95": [
+        0.18207534390170776,
+        0.33294949934180607
+      ],
+      "fpr_wilson_95": [
+        0.0,
+        0.113517091390478
+      ],
+      "mean_registration_runtime_s": 0.03211011294828873,
+      "negative_inconclusive_trials": 11,
+      "qualified_healthy_false_positive_rate": 0.0,
+      "qualified_healthy_trials": 19,
+      "event_precision": 1.0,
+      "region_precision": 0.8,
+      "region_true_positive": 32,
+      "region_false_positive": 8,
+      "mean_region_centroid_localization_error_m": 0.05576072602196101,
+      "by_fidelity": {
+        "L0": {
+          "trials": 50,
+          "positive_trials": 40,
+          "negative_trials": 10,
+          "true_positive": 15,
+          "false_positive": 0,
+          "false_negative": 25,
+          "true_negative": 10,
+          "precision": 1.0,
+          "recall": 0.375,
+          "false_positive_rate": 0.0
+        },
+        "L1": {
+          "trials": 51,
+          "positive_trials": 41,
+          "negative_trials": 10,
+          "true_positive": 15,
+          "false_positive": 0,
+          "false_negative": 26,
+          "true_negative": 10,
+          "precision": 1.0,
+          "recall": 0.36585365853658536,
+          "false_positive_rate": 0.0
+        },
+        "L2": {
+          "trials": 53,
+          "positive_trials": 43,
+          "negative_trials": 10,
+          "true_positive": 1,
+          "false_positive": 0,
+          "false_negative": 42,
+          "true_negative": 10,
+          "precision": 1.0,
+          "recall": 0.023255813953488372,
+          "false_positive_rate": 0.0
+        }
+      },
+      "by_amplitude_mm": {
+        "0": {
+          "trials": 30,
+          "positive_trials": 0,
+          "negative_trials": 30,
+          "true_positive": 0,
+          "false_positive": 0,
+          "false_negative": 0,
+          "true_negative": 30,
+          "precision": null,
+          "recall": null,
+          "false_positive_rate": 0.0
+        },
+        "10": {
+          "trials": 30,
+          "positive_trials": 30,
+          "negative_trials": 0,
+          "true_positive": 0,
+          "false_positive": 0,
+          "false_negative": 30,
+          "true_negative": 0,
+          "precision": null,
+          "recall": 0.0,
+          "false_positive_rate": null
+        },
+        "20": {
+          "trials": 30,
+          "positive_trials": 30,
+          "negative_trials": 0,
+          "true_positive": 0,
+          "false_positive": 0,
+          "false_negative": 30,
+          "true_negative": 0,
+          "precision": null,
+          "recall": 0.0,
+          "false_positive_rate": null
+        },
+        "30": {
+          "trials": 33,
+          "positive_trials": 33,
+          "negative_trials": 0,
+          "true_positive": 11,
+          "false_positive": 0,
+          "false_negative": 22,
+          "true_negative": 0,
+          "precision": 1.0,
+          "recall": 0.3333333333333333,
+          "false_positive_rate": null
+        },
+        "50": {
+          "trials": 30,
+          "positive_trials": 30,
+          "negative_trials": 0,
+          "true_positive": 20,
+          "false_positive": 0,
+          "false_negative": 10,
+          "true_negative": 0,
+          "precision": 1.0,
+          "recall": 0.6666666666666666,
+          "false_positive_rate": null
+        }
+      }
+    }
+  },
+  "comparison": {
+    "B1": {
+      "recall": [
+        0.2903225806451613,
+        0.2903225806451613
+      ],
+      "false_positive_rate": [
+        0.43333333333333335,
+        0.43333333333333335
+      ],
+      "region_precision": [
+        0.18875502008032127,
+        0.18875502008032127
+      ],
+      "inconclusive_fraction": [
+        0.33766233766233766,
+        0.33766233766233766
+      ],
+      "translation_error_mm_mean": [
+        39.70678093883722,
+        39.70678093883722
+      ]
+    },
+    "B2": {
+      "recall": [
+        0.20967741935483872,
+        0.20967741935483872
+      ],
+      "false_positive_rate": [
+        0.43333333333333335,
+        0.43333333333333335
+      ],
+      "region_precision": [
+        0.1658291457286432,
+        0.1658291457286432
+      ],
+      "inconclusive_fraction": [
+        0.33116883116883117,
+        0.33116883116883117
+      ],
+      "translation_error_mm_mean": [
+        28.059930204807984,
+        28.059930204807984
+      ]
+    },
+    "B3": {
+      "recall": [
+        0.25,
+        0.25
+      ],
+      "false_positive_rate": [
+        0.0,
+        0.0
+      ],
+      "region_precision": [
+        0.8,
+        0.8
+      ],
+      "inconclusive_fraction": [
+        0.35064935064935066,
+        0.35064935064935066
+      ],
+      "translation_error_mm_mean": [
+        28.91735243812259,
+        28.91735243812259
+      ]
+    }
+  },
+  "manifests": {
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0011/manifest.json": "139b5ae370188c01a44e01f244d8cf01d31ef1f1cac3ec0bb426012548a8d8f8",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0101/manifest.json": "99de47e552ef8508c56e15b552369bcde0427695deda89d0eae075cbd50ff2ab",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0147/manifest.json": "1db35da565016dfd0bf35df41641f4138560342053bcfddf08299b963fe16774",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0030/manifest.json": "a5799ad7272be6cfa97b8f22b23766e73d6b060d4ddf645eca17800591f44d59",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0085/manifest.json": "83710a39837982fd09fde6ee97bbcf19c5278503b363af52969d30bd1e942fed",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0022/manifest.json": "6832ed9992dc03aa6f35991d31524f001d7282333db35be33b4978577e04cfb7",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0001/manifest.json": "207323c8e229850067e73d0926d44993762008f4b482c225f946113df2b038ad",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0037/manifest.json": "a2246b86d8fc43312c178ac8fa2ae5eef928d049710b639b21af755999103e57",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0110/manifest.json": "7d97d79a41cd7b4c03991664047232bcdf2498530e66ce1a93f38708a3acd542",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/calibration-52/manifest.json": "f163ba23738f3862159c6b4e73be38edcbe0c6e946a73e2cdb6f57b05868a714",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0095/manifest.json": "184c87351d58f8cca652c6c4773e1f929e24c009d4ca57868df66df3dfca0e07",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0033/manifest.json": "6dab11febae3f4868efc29cc4ff8d8ddaf397d8a746d6b74db983977a136880c",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0093/manifest.json": "8dccde545c9d936c9cd4517668a2d6c9ab82e56f9d9a387eea5285658d389118",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0032/manifest.json": "c3cef6fef4b4a55001d788274cde0b36f929da2fa5a6f982562d5393efa8ec51",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0063/manifest.json": "c281a6561bcaac18b6e1478778ad071e5d656e60242fb5e2cb4ac6377c8fb88d",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0141/manifest.json": "ff6c939eed5b8eb19ffc4605d75de8eb80a895391d6ee64bcf2104184d51fc34",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0117/manifest.json": "03541464f94de31c37edb64e0bf28b9ef6319fe18eada76d0285bd4186ef2c9c",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0060/manifest.json": "76ab0320ce7c1a6a270672bcec132e734521d60b0952dead1be64d4762020997",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0137/manifest.json": "abfae4ca229f36ae1d6ebd8f3452812ea179ac74af07e1c72257b057dd2c0a57",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0119/manifest.json": "81b7aff4d950fe8a2537e718293ecdaa9a0c80f66007acfc45815479956c0768",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0052/manifest.json": "1c7cfa68963c41e5f82ffe48f44ab4c7630dc0d16deb2e3b20b8198997bf33c5",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0084/manifest.json": "4619d0b1fa524a4064090b61c69f1e7cde7cb6067df17f3a7b8b8752c61aa296",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0113/manifest.json": "6482e6272ba0bc868a7f583a425704e4a4a29c79bd9331fead410484d506553a",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0078/manifest.json": "86a50d2e7f395a3186af2700255efc48ecec4ae3eeaf5e3117defd3ce39f2648",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0031/manifest.json": "efa69e9d141753e16ed9e838c58c5afa74f5c5a3521d01ba123b3d2df3a74e97",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0116/manifest.json": "f30a20a0352b4f6b0e6a049e767c925c83bfd42b493ea44bfd7df7e07a0505b8",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0008/manifest.json": "9a4d3bee2f612c7f327838bbe17065bed095d4b3d8315f4ff75234cfe1bc78b6",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0044/manifest.json": "a36f28b8ddbd18f6592a78eed880997cac49b84aa58d2ad62f82850afffa421e",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0007/manifest.json": "752347527988b65191d6497190a21c7f87fa0f9894bedcced482738f88dbbae3",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0034/manifest.json": "6ea17865ea6734b285589ea684649dee83bbfcc1d269919783cc018d54222263",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0041/manifest.json": "422ff4a405a6835f248337207f1175212a1acaf0659e1e0a5466eccbb5535068",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0142/manifest.json": "1bede2ef911dc0a827d69ec1a9a412902897c5f6141afb9adda273de6d666006",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0118/manifest.json": "94526a165a0edaa2e6122f15610e72037c22ae3e70ff8b1170009c668e211361",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0064/manifest.json": "6d08126e8d3d99ccb2bc2a40d02d1dd679f2e2283d719823939f9ff81a3d952c",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/calibration-53/manifest.json": "7128fdb8e90c72a1aeb3d304c21194cec330ede415ac82c827def57228ab25a8",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0010/manifest.json": "368e01243b3a6a4e2bf220eb86392ecb915c08c4a5d3fb88ec4c2b7ed72da2cd",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0005/manifest.json": "7d2286b764e08ba80aa60c98cce2b2ac488180d1b93d65ca82121647a85ad8a3",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0042/manifest.json": "ab6273e074b84e30c87a81d0f44cb4e28f8b6a8120c32f866579ed7fb9c46e83",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0014/manifest.json": "52d60467437a19f864d5aff24395e8cbccd6aa117a37b6c2764a297011b272a3",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/calibration-50/manifest.json": "edf7e1fac9703072253dae9c8c0066fc1015d4f45437f91e9848494650671ac5",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0012/manifest.json": "bcccd3fd6329772c45b72ba1a57564744527b9c5934dde68465226b3d08e4ef8",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0152/manifest.json": "b6914adc307a9e85b0dc1be2e5568ee10e7cc90a45e1e72e50dd6fe6ad159707",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0067/manifest.json": "87ac9e414b1062008b89576ab102b19bdd9f81f9867ef8c6cac04e2234babedd",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0106/manifest.json": "0c9e8df80a74d83c04f8cbcb3a04c6e3117b5c7fecc75bfdb9e9615b16678e34",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0024/manifest.json": "f1e803ecf0a2fa430b7f6500c7a3a9c6f3d66b529f586429407b006c035f7d1d",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0104/manifest.json": "e2a18de529aeb96308c13f02d83b4b00836116d1ab2ac90ed0a6e42c7625d578",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0124/manifest.json": "f35c3439d7f7d44346ea9c2f9cfa7f90b741a99aeebd36bba1901888ddf626bc",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0029/manifest.json": "5843c25c51d1ce0301b72ae8e3b446447c2f7bb50f8982d82dbc385b3cebb78c",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0138/manifest.json": "18b00ba2d0a0cf49da16d8b9f293af21745785266b7322dfb576e29d8f56b046",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0126/manifest.json": "6e0b7ad89084203f50ec493670eccef3f6919a28c4f8271b36abad65c90d0b1a",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0107/manifest.json": "77c23d363d4b1f758eb816c87dc5b3c4d22cc84bb1614850b8f99649b3d3977a",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0071/manifest.json": "6ea4a2c55997697b54445bd442e4c0b7c0e1711adbe26cdb16faa4a5715a9b10",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0018/manifest.json": "40072d0ec8a87457f14d2d119db7459bc1c7d96d08bf580917580320461c478a",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0103/manifest.json": "8ee91a8aa749da159d6c8de0d39254d4ad6461c8016a59da7ce83a8a27359180",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0109/manifest.json": "b11a692ad2042ab17b52f7937aae8fbe2221971a62c95cb441aea303b83e6bde",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0140/manifest.json": "12e827f8c661df0ab3a24e069cc326ca24e9c747272e0a38bb31b7f216c3f456",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0043/manifest.json": "a46844aca8cc9e80a72e76f7c9e0e89d9a64a5154e71a973964971e98c27c38b",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0098/manifest.json": "6ebf3ca8dd12f2906e09ce4acafa5ac31c2d13bd81c78444310bdaf324c6c7ec",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0077/manifest.json": "b610b75893c04f72426f4e0c8fac452360400af7ca38a2f5f2a9d9fff68d5bdf",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0105/manifest.json": "49a8a6ef56ff8d8662a9ad1f6516d1978561b7c46f3a670439f9b06a5647c7f4",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0039/manifest.json": "2932b84ffcf0a415a1e8bf40e0e36927d67240933bbabead50d5850b392f9224",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0070/manifest.json": "57c0f4b3e8e69acb94529f2860c11a7f8187e505cce9112909030606d771cc1a",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0087/manifest.json": "f0d5b4b893dcb821cb39b3024a52d68c75f3f92f79887ed2d25a50ebdcc4c393",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0132/manifest.json": "efba419544f39734f115d0271257cef6a12ef4223b2ada90c7b0ae3d37f350b6",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0040/manifest.json": "0ccad141a5bfe73739c1c54e1d5fb7ab4d88d8425337bcbcd8eb49568d8d7814",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0062/manifest.json": "3745aaf1100de7267e74eac525e6ce15a178268d7c9cf5d09b2c3a5bd373b1e3",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0021/manifest.json": "ee0244041d902fa8046e3cdf789af9e4b8b95f4b72e9c122e36d7848f70c67a8",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0145/manifest.json": "e2d24262503c5a34385b9d134549e03af752a4af256c9c35e82d9c6407810ce8",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0123/manifest.json": "f88e69d690afb9872ed9ecc824c648658fea55d4b7e479807d7f4724b8ae250a",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0048/manifest.json": "b202c3ea03112d0ca72baf6cae67021e778369ad302a8a4a69ea22fbf08d7eeb",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0088/manifest.json": "d66428af1e88fe4aa92d7c675f3b4c99e1fced2bf81ace8be0d34af302c54b73",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0028/manifest.json": "373d2b60917857f5b77e72454ce1ea24fcbffbd845575fbd2a517ccbabb7afab",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0115/manifest.json": "c6f9488e6e652cebf493b90cd66e1e4c0dcf7714ff015bc5e6f0e3fa9cfa1ecc",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0139/manifest.json": "d7ee0c9695d8aae66293e2ca2386b34acb4681eaba14f9db38aad521eac22c63",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0099/manifest.json": "5252aba093eea4860ed0f808820cea990eca09583acc1f0cf6af67af0df1ad95",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0046/manifest.json": "5ef2635075437c95f0ede6ea2d86d5fb3c4f81be6af451302c3c4618e10f3e7c",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0056/manifest.json": "f31c84b57e2bd5c758d1a6e0a8fe382e6aeaf6f08c1000cb4e5c2e31e9dac5ba",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0023/manifest.json": "47ec45cb2942b178b8f5a1fbda8f42b18a37b0fd039d2441d1669d099af4638b",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0100/manifest.json": "8b752e742fe1977826e9737628b6d251e0f9d83adac120879682c652b461e1b4",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0050/manifest.json": "2a0ac191bb28ca037e1f78a04e3853d82155ca02c008825f1720729517441cd5",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0020/manifest.json": "41aaff596b033fe3926732922c609ff261c68b781416ca0a5fe5d221858652cb",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0003/manifest.json": "e9d48a35c52fc67524d19141187519d0b1ec7dc278ba0a3becaa75c9cad743e2",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0135/manifest.json": "5d4a62186223cb20a2d9d2aa1426bfbfd069ad5370f60c3937662c329f0dd897",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0076/manifest.json": "ae815764a34acb8e803a5a58e067a9b395908ea160c47991a81c74f2608d16b0",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0083/manifest.json": "d492f2f5ab9d3712542fdd30e506020770976fa03a24ea369fe23a7e05096cbb",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0102/manifest.json": "cd371d6bf1d084d20f6a4a036f4c5407b304585522f713ed33014fd0de728040",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0120/manifest.json": "c10a8c5413806e1c8867d09f57e124031dd9873a419d26d10897e75018c60be4",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0073/manifest.json": "f74b76b9417a7389983bd80ac398f9c5661903dd94f58800b85741016d69c906",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0013/manifest.json": "6797dbd592d9c1aa05befb09434c08a10ef997d56570619549ad09271ce910ea",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0108/manifest.json": "9aa7cf06a848550b969f4bce7e733ca9ea91a35e5e3fa067d27580df27a92029",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0082/manifest.json": "b3deb70d983f0343fb2674ff66911a7519a367a5cba11750152e37edb6584c4d",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0066/manifest.json": "6fc04d1d940e934b8568fce13d033387412aa547234b66287e4bbb4fda59c87e",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0096/manifest.json": "94d8faac89cdb13711def48098080b358fdb2bd3a2fafe41c8e04828aaebed5f",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0016/manifest.json": "8ded7e3abbde0dc27f4d74a9f0dd41533814e062d1d063e1407a13c5c3e1ff8d",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0002/manifest.json": "5a8949dc7a6bdd04f0aaaf051b4593053e9413f7a8eb047bc718914b54a85d0b",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0025/manifest.json": "bf06d0800ee5f0764fac06bb4b39ad0c68bf5799fb87e1212ea1d6cb9776c632",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0148/manifest.json": "005ab8a4c72d293fdd428f67043f582f245c965309c5910ffe301deab6f6d428",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0074/manifest.json": "88fcd79fe805cd04289f6ee0394eaf473610fb24089e07f3315aafef0be705f7",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0038/manifest.json": "fc149334c9726f56dcebb33cd307ee1afc0e0b1557553f11f55a2db18081c2c4",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0090/manifest.json": "bc028716846fb85d6d55ab61384e9e5c3a5977809fee5961c28faed64172a49e",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0004/manifest.json": "0b5f25c424ca576b001d184e24b28128e010a3243d0983cd5e3dbd2267b5f10c",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0136/manifest.json": "f475bc3a557729ff713fe8e33a72da514d7bd4b3cd5b921651dad31c1eb37df8",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/calibration-51/manifest.json": "46e54a1d3fc1441e641fe0e6a47541c5720e2aa8d32c961251ff7ab9f478eb23",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0068/manifest.json": "f2efa0ff058b1a6ff1715ab2fac0426b148e06d95c9aaa486fb3c281e4069e2d",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0122/manifest.json": "ad9d410ea3a668b512c73cc453ae86e10bb03be34c6e98698f52b2321057e240",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0006/manifest.json": "6a9614c6856713685eb2b452ea50e60515a8c945ebe49987a6a2230eaeb5e0f2",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0080/manifest.json": "fcf5df5d559a4d2fde3ee3fa5efa8a409d16ed2effe1af4ef5eed518c9cc9c2e",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0053/manifest.json": "a542e49dc145d0608bd63a4a025808d9d915a552c35a37583c628da78e70c1e8",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0072/manifest.json": "ac9d45deffd9e99728a058c6655aa29041102694984f17e5f430cda892d18046",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0133/manifest.json": "89f9a99415c462b5fa61421906075678cb96247ee10b4423d35c1395d4d66410",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0027/manifest.json": "a1130faf97d8584b06b7f9585283614b9d521be4035d4bcd6668ff3505578032",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0130/manifest.json": "550f2ade43f6d9b7e047486fa15d739e213ee3245790eea3e0d45a9f713dd464",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0121/manifest.json": "44882ddb15308cb2c039128c3b470ecebb2d5da5d5ab8bb1e40f8a2481cf350b",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0058/manifest.json": "079c0291ff8464931de6a90e1220bee002f7fdafadb9005b4126da9d2fe65722",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0035/manifest.json": "b00cd159077302265b37600f9eec9d5b3e06152ee13a08ae4affb4c7d8ca7f13",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0009/manifest.json": "c4db3a2dcd7cb6477e9d3ef6c205d0f04cff5a2362e1608a9ed81e06b54e81f2",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0153/manifest.json": "4933969909951a61906871a8066afde8b6777e9ebc886f2e16388fe21ff9a931",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0134/manifest.json": "f21d9bd683e4573bea60beccf1ccbde93f4574d7b87129a2b6882ef2d7a73434",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0131/manifest.json": "599e83b4bfc2f27c685bac6289f3c145b4be02a334716714881df0470bfa3454",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0069/manifest.json": "ed25a76b0b95e7429947fe7236b8f36143891eae7056ea2d6d0de516f421598d",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0015/manifest.json": "14a5d8ec8a9e8e4257e5b6064b77df9b72659dc5c607186280f2096bdfce3175",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0146/manifest.json": "7452edf32ef13524ecff02cb9b072815d45d9d6fd946eb2f42386b1feefa8e31",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0092/manifest.json": "cb1ca0b9e0968cdd298339eb0a425787be3bf4e171ae70a9387e351f87510af7",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0047/manifest.json": "a2394a297282cc1529fae03e433ffb85623fb30ee2eb792ae6879e34784571b5",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0026/manifest.json": "0c3b7494273265025322a0e4b91c7ec0ee344928d5f329bee829013f7497b649",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0065/manifest.json": "7d095083df8f63f685fe745c683f5781026c2980ce5bebad611ecc3084311b8f",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0150/manifest.json": "5ce758db524af0f60aa48ad82936286e2f49b6f4058512993f8fed5b123bcb11",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0112/manifest.json": "1032a21522848afc029ce34ba0c79dc2b9bd0ff51769d24014ae249dbfcb0cc8",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0143/manifest.json": "8169fee8de952d54104f465f2322505c843063f1e74d3b8bff6f4aab63fc51d1",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0045/manifest.json": "7a23e240c92b00e93022c352684555e836d4ba70c972142f354e3c2d87d86d32",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0017/manifest.json": "e51130c2ce942ae8dcf688bd3852c7f26dabd569fe93e4350210fa5b38ba39b7",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0019/manifest.json": "7d6f35f2e74b0644a4fe45f15e3a52d3f832ddb06d87b259b7d7b8bf217a3e78",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0089/manifest.json": "24bfcebbc7de9c3ccab783d02ab96f3de39b03bbadaf91f4ff04a2f740d0ae03",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0111/manifest.json": "d8ef86da3d37913b454fe6572e866c26e4b5caa9ba3e2b1e437e074c73398ae2",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0081/manifest.json": "24a8a5b20bad1216fced19dd75803841e445a11832c8323df6220895e690ac93",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0054/manifest.json": "904d96c23208b18bf9138c3a0c8ee1a682bb1a617d9026b7ac827b5447bc1a5a",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0000/manifest.json": "c593dd3f1b728b652238c1c3257ff99e2be09849edbc18ea61f9e4bfa718b468",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0097/manifest.json": "9bb0a6722ef10041d4e9762665d02d6deb5c096ef7c7318c6d12833d9ef6ad06",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0125/manifest.json": "eabdc1c6f1484697306b9481a838dda63dcc530d19c3d247755319bfd1d874aa",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0059/manifest.json": "b7bf4f2e7409b0f2bfcda730de205f0c8eb20dc0a18f8f69513b256615f7cb2f",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0055/manifest.json": "b4596cb2a9af46cdbc5b6feeeee1424b651051bebe9bcacef17e90ee746036f1",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0144/manifest.json": "987852133477dc58682ecb16fc44feda8ddd5ae2220d5e4cd44c792febe244d2",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0129/manifest.json": "430348d78782c4f628d48920185dedec701c4f62b682af8853cf8cb3a2cbc2e9",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0075/manifest.json": "e7d24265c1e27843fed1ba500ba00f167e2601342121e47581f539b13af94654",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0094/manifest.json": "724fb3b8d3f43607b6bd1ead42f031ad035c653ea6238ca6b5a7433b42740d20",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0114/manifest.json": "271279ad3922ec2833f75f24f9cb45ad8fb7a001654ee4e9f34352e6b3db4f17",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0149/manifest.json": "d1f341ac59efe71b8543a173238b6206efc905882807ce6747f3dd3e84170fcf",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0128/manifest.json": "3618eb79b8a0e7b30f9439d6a2ba3fbbf79b6957c8313df685ce2f7fd18f5af3",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0079/manifest.json": "1948b27fa3d8fce6c82d91d08adec09a02b184fa4fdc77fdbfa05c325d8077db",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/calibration-54/manifest.json": "8d0110a76d4d5fcba220ecbf37d7384803bf71c44bb041adaf1f7f2e34e7587d",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0057/manifest.json": "758607fa64c4c2f25fa17cb1aa97c089ff713e6604a7e3b879565eb4b244edf6",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0061/manifest.json": "a5b2a63b8844f20e87c196dce3a6578b975b6eabff041421637957fe8d381b3c",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0049/manifest.json": "33dd4ac0c37d9b652ec1d18118f199989ffa42f117f15767ff33f885d1ef4a3e",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0091/manifest.json": "1667e238ab87c14e3fe285a413e50cea2accdc26f48eb1a17bbc83a7600e3178",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0127/manifest.json": "8c8c31105db73734367777e40df00ce834020c51e9356edfe621b4a7deb57e60",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0086/manifest.json": "86603c63dd96e6f115f4c2e475bce9f47e3cfaa824d18eb898f5412909b7cf38",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0151/manifest.json": "8d6d8ce8e9e4785f8589dc06133a9ff0b6abac0235225bb2eb278ccee780765d",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0036/manifest.json": "114766a99174a21f275afd3c2c3f6ba29699152c600b6269afc1f03c6e53fba6",
+    "experiments/outputs/phase3_1/baseline-reproduction/datasets/e1-trial-0051/manifest.json": "1e03921046af9887592911766ef49de1a6c3597f219f849ed65d961adb6a19ca"
+  },
+  "calibration": {
+    "schema_version": "1.0.0",
+    "calibration_id": "geometry-1f03fe08354c14a2",
+    "training_datasets": [
+      "observations-calibration-50-18726f2f386307b3",
+      "observations-calibration-51-b0826201f6e90c1a",
+      "observations-calibration-52-084a76dae2163032",
+      "observations-calibration-53-510f3427b23a719e",
+      "observations-calibration-54-aaea9f711fdf483c"
+    ],
+    "valid_patch_samples": 1136,
+    "uncertainty_floor_m": 0.009324846118599413,
+    "threshold_m": 0.005,
+    "status": "empirical_healthy_controls",
+    "interpretation": "estimated variability score; correlated patches are not independent trials; no 95 percent interval claim"
+  },
+  "sensor_presets": {
+    "L0": {
+      "schema_version": "1.0.0",
+      "sensor_id": "lidar-01",
+      "asset_id": "BW-01",
+      "source_type": "synthetic",
+      "configuration_version": "v1",
+      "description": "Assumed virtual instrument; not commercial hardware calibration",
+      "modality": "lidar",
+      "coordinate_frame": {
+        "kind": "sensor_local",
+        "reference_id": "lidar-01"
+      },
+      "pose": {
+        "source": {
+          "kind": "sensor_local",
+          "reference_id": "lidar-01"
+        },
+        "target": {
+          "kind": "world",
+          "reference_id": "plant-01"
+        },
+        "matrix": [
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            -1.0,
+            0.0,
+            0.0,
+            3.4
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            1.65
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      "acquisition_parameters": {},
+      "calibration_reference": "assumed-v1",
+      "noise_model_reference": null,
+      "measurement_configuration": {},
+      "backend": "open3d",
+      "min_range_m": 0.1,
+      "max_range_m": 20.0,
+      "noise": {
+        "schema_version": "1.0.0",
+        "sigma": 0.0,
+        "range_slope": 0.0,
+        "bias": 0.0,
+        "angular_sigma_rad": 0.0,
+        "quantum": 0.0,
+        "dropout": 0.0,
+        "incidence_dropout": 0.0,
+        "outlier_probability": 0.0,
+        "outlier_scale": 0.0
+      },
+      "pose_error": {
+        "schema_version": "1.0.0",
+        "translation_sigma_m": 0.0,
+        "rotation_sigma_rad": 0.0,
+        "translation_bias_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "rotation_bias_rad": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "reception_delay_s": 0.1,
+      "channels": 16,
+      "horizontal_samples": 720,
+      "vertical_min_rad": -0.4,
+      "vertical_max_rad": 0.4,
+      "horizontal_fov_rad": 1.4,
+      "sweep_center_rad": 0.0
+    },
+    "L1": {
+      "schema_version": "1.0.0",
+      "sensor_id": "lidar-01",
+      "asset_id": "BW-01",
+      "source_type": "synthetic",
+      "configuration_version": "v1",
+      "description": "Assumed virtual instrument; not commercial hardware calibration",
+      "modality": "lidar",
+      "coordinate_frame": {
+        "kind": "sensor_local",
+        "reference_id": "lidar-01"
+      },
+      "pose": {
+        "source": {
+          "kind": "sensor_local",
+          "reference_id": "lidar-01"
+        },
+        "target": {
+          "kind": "world",
+          "reference_id": "plant-01"
+        },
+        "matrix": [
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            -1.0,
+            0.0,
+            0.0,
+            3.4
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            1.65
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      "acquisition_parameters": {},
+      "calibration_reference": "assumed-v1",
+      "noise_model_reference": null,
+      "measurement_configuration": {},
+      "backend": "open3d",
+      "min_range_m": 0.1,
+      "max_range_m": 20.0,
+      "noise": {
+        "schema_version": "1.0.0",
+        "sigma": 0.003,
+        "range_slope": 0.0003,
+        "bias": 0.0,
+        "angular_sigma_rad": 0.0003,
+        "quantum": 0.0,
+        "dropout": 0.015,
+        "incidence_dropout": 0.0,
+        "outlier_probability": 0.0,
+        "outlier_scale": 0.0
+      },
+      "pose_error": {
+        "schema_version": "1.0.0",
+        "translation_sigma_m": 0.01,
+        "rotation_sigma_rad": 0.002,
+        "translation_bias_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "rotation_bias_rad": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "reception_delay_s": 0.1,
+      "channels": 16,
+      "horizontal_samples": 720,
+      "vertical_min_rad": -0.4,
+      "vertical_max_rad": 0.4,
+      "horizontal_fov_rad": 1.4,
+      "sweep_center_rad": 0.0
+    },
+    "L2": {
+      "schema_version": "1.0.0",
+      "sensor_id": "lidar-01",
+      "asset_id": "BW-01",
+      "source_type": "synthetic",
+      "configuration_version": "v1",
+      "description": "Assumed virtual instrument; not commercial hardware calibration",
+      "modality": "lidar",
+      "coordinate_frame": {
+        "kind": "sensor_local",
+        "reference_id": "lidar-01"
+      },
+      "pose": {
+        "source": {
+          "kind": "sensor_local",
+          "reference_id": "lidar-01"
+        },
+        "target": {
+          "kind": "world",
+          "reference_id": "plant-01"
+        },
+        "matrix": [
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            -1.0,
+            0.0,
+            0.0,
+            3.4
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            1.65
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      "acquisition_parameters": {},
+      "calibration_reference": "assumed-v1",
+      "noise_model_reference": null,
+      "measurement_configuration": {},
+      "backend": "open3d",
+      "min_range_m": 0.1,
+      "max_range_m": 20.0,
+      "noise": {
+        "schema_version": "1.0.0",
+        "sigma": 0.02,
+        "range_slope": 0.002,
+        "bias": 0.0,
+        "angular_sigma_rad": 0.003,
+        "quantum": 0.0,
+        "dropout": 0.2,
+        "incidence_dropout": 0.15,
+        "outlier_probability": 0.01,
+        "outlier_scale": 0.15
+      },
+      "pose_error": {
+        "schema_version": "1.0.0",
+        "translation_sigma_m": 0.04,
+        "rotation_sigma_rad": 0.01,
+        "translation_bias_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "rotation_bias_rad": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "reception_delay_s": 0.1,
+      "channels": 16,
+      "horizontal_samples": 720,
+      "vertical_min_rad": -0.4,
+      "vertical_max_rad": 0.4,
+      "horizontal_fov_rad": 1.0,
+      "sweep_center_rad": 0.0
+    }
+  }
+}
