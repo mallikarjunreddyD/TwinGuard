@@ -142,6 +142,171 @@
       },
       "title": "Ground Truth Artifacts",
       "type": "array"
+    },
+    "center_local_m": {
+      "default": [
+        0,
+        0,
+        1.2
+      ],
+      "maxItems": 3,
+      "minItems": 3,
+      "prefixItems": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "number"
+        },
+        {
+          "type": "number"
+        }
+      ],
+      "title": "Center Local M",
+      "type": "array"
+    },
+    "extent_m": {
+      "default": [
+        0.4,
+        0.1,
+        0.5
+      ],
+      "maxItems": 3,
+      "minItems": 3,
+      "prefixItems": [
+        {
+          "minimum": 0,
+          "type": "number"
+        },
+        {
+          "minimum": 0,
+          "type": "number"
+        },
+        {
+          "minimum": 0,
+          "type": "number"
+        }
+      ],
+      "title": "Extent M",
+      "type": "array"
+    },
+    "direction": {
+      "default": [
+        0,
+        1,
+        0
+      ],
+      "maxItems": 3,
+      "minItems": 3,
+      "prefixItems": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "number"
+        },
+        {
+          "type": "number"
+        }
+      ],
+      "title": "Direction",
+      "type": "array"
+    },
+    "displacement_vector_m": {
+      "anyOf": [
+        {
+          "maxItems": 3,
+          "minItems": 3,
+          "prefixItems": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "type": "array"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Displacement Vector M"
+    },
+    "evolution": {
+      "default": "step",
+      "enum": [
+        "step",
+        "linear"
+      ],
+      "title": "Evolution",
+      "type": "string"
+    },
+    "growth_duration_s": {
+      "default": 0,
+      "minimum": 0,
+      "title": "Growth Duration S",
+      "type": "number"
+    },
+    "persistence": {
+      "anyOf": [
+        {
+          "enum": [
+            "persistent",
+            "recover"
+          ],
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Persistence"
+    },
+    "recovery_duration_s": {
+      "default": 0,
+      "minimum": 0,
+      "title": "Recovery Duration S",
+      "type": "number"
+    },
+    "repair_at": {
+      "anyOf": [
+        {
+          "format": "date-time",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Repair At"
+    },
+    "process_variable": {
+      "default": "pressure_pa",
+      "enum": [
+        "pressure_pa",
+        "temperature_c"
+      ],
+      "title": "Process Variable",
+      "type": "string"
+    },
+    "target_value": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Target Value"
     }
   },
   "required": [

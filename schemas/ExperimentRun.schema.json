@@ -184,6 +184,28 @@
       "title": "Metric Artifacts",
       "type": "array"
     },
+    "implementation_status": {
+      "default": "not_implemented",
+      "enum": [
+        "not_implemented",
+        "in_progress",
+        "implemented",
+        "validated"
+      ],
+      "title": "Implementation Status",
+      "type": "string"
+    },
+    "run_outcome": {
+      "default": "pending",
+      "enum": [
+        "pending",
+        "passed",
+        "failed",
+        "error"
+      ],
+      "title": "Run Outcome",
+      "type": "string"
+    },
     "test_result_artifacts": {
       "items": {
         "$ref": "#/$defs/Artifact"

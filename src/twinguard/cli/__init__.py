@@ -37,9 +37,16 @@ def main(argv=None):
     data.add_argument("--kind", choices=sorted(PUBLIC_MODELS), required=True)
     export = sub.add_parser("export-schemas")
     export.add_argument("--output", type=Path)
+    from twinguard.plant.cli import add_commands
+
+    add_commands(sub)
     args = parser.parse_args(argv)
     try:
-        if args.command == "doctor":
+        if args.command == "plant":
+            from twinguard.plant.cli import execute
+
+            execute(args)
+        elif args.command == "doctor":
             for module in ("pydantic", "numpy", "yaml", "fastapi", "uvicorn"):
                 importlib.import_module(module)
             missing = [p for p in DIRECTORIES if not (args.root / p).is_dir()]

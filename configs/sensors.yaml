@@ -1,28 +1,28 @@
 [
   {
     "sensor_id": "temperature-01",
-    "asset_id": "wall-01",
+    "asset_id": "BW-01",
     "source_type": "synthetic",
     "configuration_version": "v1",
     "description": "Configuration only; sensor not implemented"
   },
   {
     "sensor_id": "pressure-01",
-    "asset_id": "wall-01",
+    "asset_id": "BW-01",
     "source_type": "synthetic",
     "configuration_version": "v1",
     "description": "Configuration only; sensor not implemented"
   },
   {
     "sensor_id": "lidar-01",
-    "asset_id": "wall-01",
+    "asset_id": "BW-01",
     "source_type": "synthetic",
     "configuration_version": "v1",
     "description": "Configuration only; sensor not implemented"
   },
   {
     "sensor_id": "thermal-01",
-    "asset_id": "wall-01",
+    "asset_id": "BW-01",
     "source_type": "synthetic",
     "configuration_version": "v1",
     "description": "Configuration only; sensor not implemented"

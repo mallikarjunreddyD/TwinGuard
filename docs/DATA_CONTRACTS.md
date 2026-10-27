@@ -31,3 +31,12 @@ UTC ISO-8601 timestamps must include Z or +00:00; naive and nonzero-offset input
 Severity green/amber/red/unknown is separate from confidence supported/limited/insufficient/unknown. Unknown carries no healthy implication. Evidence validity is valid/stale/invalid/missing/inconclusive. Numeric detection confidence requires a confidence method reference; that reference alone does not establish calibration.
 
 Public real-world manifests require license/source URI. Hybrid manifests require both real_source_ids and synthetic_transformations. Pending example manifests are templates and confer no external-data validation. Real and simulated records use identical public models and provenance references; analytics has no label/source-specific algorithm in Phase 0.
+
+
+## Phase 1 compatible extensions (package 0.2.0)
+
+Public observation shapes and units are unchanged. The schema_version remains 1.0.0: additions are optional fields or widened management-status enums, with coordinated schema regeneration and package upgrade. Old payloads load in the new package; old strict binaries may reject payloads using new fields/status values. Upgrade consumers before producing these additions. No claim of forward compatibility with frozen Phase 0 validators is made.
+
+SensorConfiguration adds optional modality, coordinate_frame, pose, acquisition_parameters, calibration_reference, noise_model_reference and measurement_configuration. A supplied pose must map that sensor's local frame to its associated asset or a world frame. FaultInjection adds explicit spatial/evolution/persistence parameters; see FAULT_INJECTION.md. ExperimentDefinition implementation maturity now allows not_implemented/in_progress/implemented/validated. ExperimentRun carries an independent optional maturity field and run_outcome pending/passed/failed/error, while preserving its original evaluation_status. E1–E4 configurations remain not_implemented.
+
+PlantConfig and SimulationManifest are simulator/controller configuration schemas; GroundTruthSnapshot is exported under schemas/restricted. Read views and snapshot dataclasses are deliberately excluded from analytics serialization. NPZ fields and mesh files hold physical state, not noisy observations. Hash-verified replay references are relative to the run root. Baseline GLB uses node transforms, while exported PLY/current GLB vertices are already world coordinates; do not transform them twice.

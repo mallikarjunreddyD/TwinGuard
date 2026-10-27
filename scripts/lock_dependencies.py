@@ -6,7 +6,7 @@ from packaging.requirements import Requirement
 from packaging.utils import canonicalize_name
 
 runtime = set()
-pending = ["pydantic", "numpy", "PyYAML", "fastapi", "uvicorn"]
+pending = ["pydantic", "numpy", "PyYAML", "fastapi", "uvicorn", "trimesh"]
 while pending:
     name = canonicalize_name(pending.pop())
     if name in runtime:

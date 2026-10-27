@@ -1,14 +1,16 @@
-# Phase dependencies and acceptance gates
+# Canonical phases and gates
 
-| Phase | Depends on | Work and acceptance gate |
+| Phase | Scope | Dependencies and acceptance gate |
 |---|---|---|
-| 0 foundation | None | Install package; contracts/schema export; S0–S5 validate; spatial/time/isolation tests; API/CLI; deployment configuration and documentation. Actual outcomes/limitations in VALIDATION.md |
-| 1 plant | 0 | Versioned geometry and operating-state simulation; private controlled faults; deterministic replay and physical plausibility tests |
-| 2 sensing | 1 | LiDAR/thermal/IoT adapters with uncertainty/calibration; identical synthetic/physical interfaces and no label leakage |
-| 3 analytics | 2 | Registration, deformation and operating-state residuals; E1/E2 baselines and independent evaluation |
-| 4 fusion | 3 | Validity-aware temporal/hazard policies; E3 stale/missing/critical-event tests and confidence calibration |
-| 5 inspection | 4 | Risk prioritization and viewpoint/coverage planning; constrained planning and measurable coverage benefit |
-| 6 integration | 2–5 | Storage/replay, edge dashboard, offline behavior and latency; E4 and resource-budget validation |
-| 7 validation | 1–6 | Independent public, physical and industrial relevant-environment trials; defensible evidence register, documented failure modes |
+| 0 | Architecture, data contracts, and development environment | Versioned contracts; spatial/time/isolation tests; API/CLI; reproducible setup. Historical evidence: VALIDATION.md |
+| 1 | Industrial plant digital twin and fault simulation | Phase 0; executable seven-asset world, operating dynamics, physical faults, persistent state, isolated truth, export/replay and measured checks. Evidence: PHASE1_VALIDATION.md |
+| 2 | Virtual LiDAR, thermal, and IoT sensing | Phase 1 physical read port; calibration, uncertainty, partial/noisy acquisition, identical synthetic/real observation interfaces and no label leakage |
+| 3 | Registration, geometric change detection, and operating-state analytics | Phase 2; E1/E2 baselines and independent evaluation |
+| 4 | Hazard-aware and temporally consistent evidence fusion | Phase 3; E3 stale/missing/critical-event tests and confidence calibration |
+| 5 | Edge platform, industrial communication, and dashboard | Phases 2–4; storage/replay, MQTT/OPC UA where required, offline/resource/latency behavior and E4 integration |
+| 6 | Risk-adaptive inspection and viewpoint planning | Phases 4–5; constrained prioritization and measurable coverage benefit |
+| 7 | Experimental validation and TRL evidence package | Phases 1–6; independent public, physical and relevant-environment evidence; reproducible procedures and failure analysis |
 
-Phase 1 inputs are the exported Asset, PlantState, ScenarioDefinition, FaultInjection, SensorObservation, InspectionCapture, DatasetProvenance and ExperimentRun schemas; configs/system.yaml, assets.yaml, sensors.yaml; S0–S5 and private fault fixtures. Implement producers behind the existing interfaces without changing public payloads. New physical parameters belong in versioned controller configuration, never analytics observations. Resolve decisions in ASSUMPTIONS_AND_LIMITATIONS before treating configuration values as physical engineering models. This delivery stops at Phase 0.
+This numbering supersedes the Phase 0 planning order that placed inspection at 5 and integration at 6. Historical validation records describe the implementation at their original date and are retained.
+
+Phase 2 entry points are `PlantSimulator.sensing_reader().read_at(time_s)` and `PhysicalStateReader`. Read views expose world-space triangle surfaces, per-vertex temperatures and process variables without injection labels. SensorConfiguration supplies optional modality, frame, pose, acquisition, measurement, calibration and noise references. Mesh and state metadata carry world/model references. The sensor layer must implement calibration, ray intersections, thermal projection/interpolation, timing, uncertainty and noise. Those algorithms remain missing by design. It must emit existing public observations through analytics_json; truth geometry/state objects are never analytics inputs. No Phase 2 acquisition is implemented here.

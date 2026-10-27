@@ -1,0 +1,272 @@
+{
+  "$defs": {
+    "AssetSpec": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0.0",
+          "default": "1.0.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "asset_id": {
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+          "title": "Asset Id",
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "water_wall",
+            "drum",
+            "pipe",
+            "support",
+            "valve",
+            "reference"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "origin_m": {
+          "maxItems": 3,
+          "minItems": 3,
+          "prefixItems": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "title": "Origin M",
+          "type": "array"
+        },
+        "parent_asset_id": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Parent Asset Id"
+        },
+        "dimensions_m": {
+          "additionalProperties": {
+            "exclusiveMinimum": 0,
+            "type": "number"
+          },
+          "title": "Dimensions M",
+          "type": "object"
+        },
+        "alpha_per_k": {
+          "default": 1.2e-05,
+          "minimum": 0,
+          "title": "Alpha Per K",
+          "type": "number"
+        },
+        "expansion_axis": {
+          "default": 2,
+          "enum": [
+            0,
+            1,
+            2
+          ],
+          "title": "Expansion Axis",
+          "type": "integer"
+        },
+        "temperature_source": {
+          "default": "process",
+          "enum": [
+            "process",
+            "ambient"
+          ],
+          "title": "Temperature Source",
+          "type": "string"
+        },
+        "material": {
+          "default": "illustrative steel",
+          "title": "Material",
+          "type": "string"
+        },
+        "inspectable_regions": {
+          "items": {
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+            "type": "string"
+          },
+          "title": "Inspectable Regions",
+          "type": "array"
+        }
+      },
+      "required": [
+        "asset_id",
+        "kind",
+        "origin_m",
+        "dimensions_m"
+      ],
+      "title": "AssetSpec",
+      "type": "object"
+    },
+    "DynamicsConfig": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0.0",
+          "default": "1.0.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "reference_load": {
+          "default": 0.5,
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Reference Load",
+          "type": "number"
+        },
+        "reference_temperature_c": {
+          "default": 180,
+          "title": "Reference Temperature C",
+          "type": "number"
+        },
+        "reference_pressure_pa": {
+          "default": 800000,
+          "minimum": 0,
+          "title": "Reference Pressure Pa",
+          "type": "number"
+        },
+        "ambient_temperature_c": {
+          "default": 25,
+          "title": "Ambient Temperature C",
+          "type": "number"
+        },
+        "temperature_gain_c": {
+          "default": 100,
+          "minimum": 0,
+          "title": "Temperature Gain C",
+          "type": "number"
+        },
+        "pressure_gain_pa": {
+          "default": 600000,
+          "minimum": 0,
+          "title": "Pressure Gain Pa",
+          "type": "number"
+        },
+        "temperature_tau_s": {
+          "default": 25,
+          "exclusiveMinimum": 0,
+          "title": "Temperature Tau S",
+          "type": "number"
+        },
+        "pressure_tau_s": {
+          "default": 15,
+          "exclusiveMinimum": 0,
+          "title": "Pressure Tau S",
+          "type": "number"
+        },
+        "process_variation_c": {
+          "default": 0,
+          "minimum": 0,
+          "title": "Process Variation C",
+          "type": "number"
+        },
+        "variation_period_s": {
+          "default": 60,
+          "exclusiveMinimum": 0,
+          "title": "Variation Period S",
+          "type": "number"
+        }
+      },
+      "title": "DynamicsConfig",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0",
+      "default": "1.0.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "plant_id": {
+      "default": "plant-01",
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Plant Id",
+      "type": "string"
+    },
+    "model_version": {
+      "default": "v1",
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Model Version",
+      "type": "string"
+    },
+    "configuration_version": {
+      "default": "v1",
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Configuration Version",
+      "type": "string"
+    },
+    "asset_aliases": {
+      "patternProperties": {
+        "^[A-Za-z0-9][A-Za-z0-9_.:-]*$": {
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+          "type": "string"
+        }
+      },
+      "propertyNames": {
+        "minLength": 1
+      },
+      "title": "Asset Aliases",
+      "type": "object"
+    },
+    "panel_segments_x": {
+      "default": 60,
+      "maximum": 200,
+      "minimum": 20,
+      "title": "Panel Segments X",
+      "type": "integer"
+    },
+    "panel_segments_z": {
+      "default": 80,
+      "maximum": 250,
+      "minimum": 20,
+      "title": "Panel Segments Z",
+      "type": "integer"
+    },
+    "radial_sections": {
+      "default": 16,
+      "maximum": 64,
+      "minimum": 8,
+      "title": "Radial Sections",
+      "type": "integer"
+    },
+    "dynamics": {
+      "$ref": "#/$defs/DynamicsConfig"
+    },
+    "assets": {
+      "items": {
+        "$ref": "#/$defs/AssetSpec"
+      },
+      "minItems": 7,
+      "title": "Assets",
+      "type": "array"
+    }
+  },
+  "required": [
+    "assets"
+  ],
+  "title": "PlantConfig",
+  "type": "object"
+}

@@ -23,7 +23,7 @@ from twinguard.core.contracts import (
     EvidenceRecord,
 )
 from twinguard.core.config import load_scenario
-from twinguard.core.registry import ALL_MODELS, export_schemas
+from twinguard.core.registry import ALL_MODELS, RESTRICTED_MODELS, export_schemas
 from twinguard.core.serialization import analytics_json, write_ground_truth, write_observation
 from twinguard.core.spatial import Frame, Transform
 from twinguard.core.time import observation_age, is_fresh, simulated_time
@@ -252,7 +252,7 @@ def test_schemas(tmp_path):
     export_schemas(tmp_path)
     for name, model in ALL_MODELS.items():
         path = (
-            tmp_path / ("restricted/" if name == "FaultInjection" else "") / f"{name}.schema.json"
+            tmp_path / ("restricted/" if name in RESTRICTED_MODELS else "") / f"{name}.schema.json"
         )
         schema = json.loads(path.read_text())
         assert schema == model.model_json_schema()
@@ -422,7 +422,7 @@ def test_no_restricted_imports_in_consumers():
     import ast
 
     for module in ("analytics", "fusion", "inspection", "api"):
-        for path in (ROOT / "src/twinguard" / module).glob("*.py"):
+        for path in (ROOT / "src/twinguard" / module).rglob("*.py"):
             tree = ast.parse(path.read_text())
             for node in ast.walk(tree):
                 if isinstance(node, ast.ImportFrom):

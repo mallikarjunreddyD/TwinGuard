@@ -49,8 +49,13 @@
       "type": "string"
     },
     "implementation_status": {
-      "const": "not_implemented",
       "default": "not_implemented",
+      "enum": [
+        "not_implemented",
+        "in_progress",
+        "implemented",
+        "validated"
+      ],
       "title": "Implementation Status",
       "type": "string"
     }

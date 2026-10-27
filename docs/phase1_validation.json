@@ -1,0 +1,263 @@
+{
+  "label": "SIMULATION GROUND TRUTH: numerical implementation validation, not sensing accuracy",
+  "geometry": [
+    {
+      "asset_id": "BW-01",
+      "vertices": 26756,
+      "faces": 53456,
+      "world_bounds_m": [
+        [
+          -0.9450000000000001,
+          -0.13,
+          0.35
+        ],
+        [
+          0.9450000000000001,
+          0.0,
+          2.75
+        ]
+      ],
+      "watertight": true,
+      "min_triangle_area_m2": 0.00026337193472177056
+    },
+    {
+      "asset_id": "DR-01",
+      "vertices": 66,
+      "faces": 128,
+      "world_bounds_m": [
+        [
+          -1.05,
+          -0.32,
+          2.73
+        ],
+        [
+          1.05,
+          0.32,
+          3.3699999999999997
+        ]
+      ],
+      "watertight": true,
+      "min_triangle_area_m2": 0.009988624487225728
+    },
+    {
+      "asset_id": "SP-01",
+      "vertices": 102,
+      "faces": 192,
+      "world_bounds_m": [
+        [
+          0.9,
+          -0.065,
+          1.285
+        ],
+        [
+          1.715,
+          0.065,
+          3.1149999999999998
+        ]
+      ],
+      "watertight": true,
+      "min_triangle_area_m2": 0.0008084187508712498
+    },
+    {
+      "asset_id": "SP-02",
+      "vertices": 136,
+      "faces": 256,
+      "world_bounds_m": [
+        [
+          -1.715,
+          -0.065,
+          0.285
+        ],
+        [
+          -0.9,
+          0.065,
+          3.115
+        ]
+      ],
+      "watertight": true,
+      "min_triangle_area_m2": 0.0008084187508712461
+    },
+    {
+      "asset_id": "SUP-01",
+      "vertices": 24,
+      "faces": 36,
+      "world_bounds_m": [
+        [
+          -1.21,
+          -0.46,
+          0.0
+        ],
+        [
+          1.21,
+          -0.34,
+          3.15
+        ]
+      ],
+      "watertight": true,
+      "min_triangle_area_m2": 0.007200000000000006
+    },
+    {
+      "asset_id": "VL-01",
+      "vertices": 76,
+      "faces": 140,
+      "world_bounds_m": [
+        [
+          1.4549999999999998,
+          -0.13,
+          1.9549999999999998
+        ],
+        [
+          1.845,
+          0.28,
+          2.3449999999999998
+        ]
+      ],
+      "watertight": true,
+      "min_triangle_area_m2": 0.00114127838379435
+    },
+    {
+      "asset_id": "REF-01",
+      "vertices": 24,
+      "faces": 36,
+      "world_bounds_m": [
+        [
+          2.25,
+          -1.05,
+          0.0
+        ],
+        [
+          2.95,
+          -0.95,
+          2.8
+        ]
+      ],
+      "watertight": true,
+      "min_triangle_area_m2": 0.004999999999999983
+    }
+  ],
+  "runs": {
+    "S0": {
+      "total_generation_runtime_s": 0.23094598000170663,
+      "export_runtime_s": 0.15533186998800375,
+      "time_grid_samples": 121,
+      "snapshot_times_s": [
+        0,
+        60,
+        120.0
+      ]
+    },
+    "S1": {
+      "total_generation_runtime_s": 0.22946699601016007,
+      "export_runtime_s": 0.15893790300469846,
+      "time_grid_samples": 121,
+      "snapshot_times_s": [
+        0,
+        60,
+        120.0
+      ]
+    },
+    "S2": {
+      "total_generation_runtime_s": 0.24760506799793802,
+      "export_runtime_s": 0.16749172800336964,
+      "time_grid_samples": 121,
+      "snapshot_times_s": [
+        0,
+        60,
+        120.0
+      ]
+    },
+    "S3": {
+      "total_generation_runtime_s": 0.24741400199127384,
+      "export_runtime_s": 0.16958022100152448,
+      "time_grid_samples": 121,
+      "snapshot_times_s": [
+        0,
+        60,
+        120.0
+      ]
+    },
+    "S4": {
+      "total_generation_runtime_s": 0.23895294198882766,
+      "export_runtime_s": 0.16229030198883265,
+      "time_grid_samples": 121,
+      "snapshot_times_s": [
+        0,
+        60,
+        120.0
+      ]
+    },
+    "S5": {
+      "total_generation_runtime_s": 0.2711422290012706,
+      "export_runtime_s": 0.19471948902355507,
+      "time_grid_samples": 121,
+      "snapshot_times_s": [
+        -3600.0,
+        0,
+        60,
+        120.0
+      ]
+    }
+  },
+  "deformation": [
+    {
+      "configured_m": 0.01,
+      "measured_mesh_peak_m": 0.010000000000000002,
+      "absolute_error_m": 1.734723475976807e-18,
+      "tolerance_m": 1e-10,
+      "pass": true
+    },
+    {
+      "configured_m": 0.02,
+      "measured_mesh_peak_m": 0.020000000000000004,
+      "absolute_error_m": 3.469446951953614e-18,
+      "tolerance_m": 1e-10,
+      "pass": true
+    },
+    {
+      "configured_m": 0.03,
+      "measured_mesh_peak_m": 0.03,
+      "absolute_error_m": 0.0,
+      "tolerance_m": 1e-10,
+      "pass": true
+    },
+    {
+      "configured_m": 0.05,
+      "measured_mesh_peak_m": 0.05,
+      "absolute_error_m": 0.0,
+      "tolerance_m": 1e-10,
+      "pass": true
+    }
+  ],
+  "thermal_expansion": {
+    "time_s": 60,
+    "temperature_change_c": 18.633974416117667,
+    "analytical_m": 0.0005366584631841888,
+    "measured_extent_change_m": 0.0005366584631842919,
+    "absolute_error_m": 1.0310762660337147e-16,
+    "tolerance_m": 1e-12,
+    "pass": true
+  },
+  "support_translation": {
+    "configured_m": [
+      0.02,
+      -0.01,
+      0.005
+    ],
+    "measured_mean_m": [
+      0.020000000000000018,
+      -0.010000000000000009,
+      0.004999999999999929
+    ],
+    "max_absolute_error_m": 1.0668549377257364e-16,
+    "tolerance_m": 1e-12,
+    "pass": true
+  },
+  "reproducibility": {
+    "bitwise_mesh_equal": true,
+    "operating_state_equal": true
+  },
+  "total_runtime_s": 5.633084478002274,
+  "process_peak_rss_mib": 250.99609375,
+  "memory_scope": "Linux process peak RSS, includes exports and Matplotlib rendering; not an isolated simulator memory benchmark",
+  "all_numerical_checks_pass": true
+}

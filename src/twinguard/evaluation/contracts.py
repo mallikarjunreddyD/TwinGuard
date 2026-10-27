@@ -2,7 +2,7 @@
 
 from typing import Annotated, Literal, Protocol
 from pydantic import Field, model_validator
-from twinguard.core.contracts import Contract, ID, Number, Artifact
+from twinguard.core.contracts import Contract, ID, Number, Nonnegative, Artifact
 from twinguard.core.time import UTC
 
 
@@ -24,12 +24,34 @@ class FaultInjection(Contract):
     deviation_unit: str | None = None
     ground_truth_artifacts: list[Artifact]
 
+    center_local_m: tuple[Number, Number, Number] = (0, 0, 1.2)
+    extent_m: tuple[Nonnegative, Nonnegative, Nonnegative] = (0.4, 0.1, 0.5)
+    direction: tuple[Number, Number, Number] = (0, 1, 0)
+    displacement_vector_m: tuple[Number, Number, Number] | None = None
+    evolution: Literal["step", "linear"] = "step"
+    growth_duration_s: Nonnegative = 0
+    persistence: Literal["persistent", "recover"] | None = None
+    recovery_duration_s: Nonnegative = 0
+    repair_at: UTC | None = None
+    process_variable: Literal["pressure_pa", "temperature_c"] = "pressure_pa"
+    target_value: Number | None = None
+
     @model_validator(mode="after")
     def interval(self):
         if self.end_at <= self.start_at:
             raise ValueError("Fault end must follow start")
         if self.true_process_deviation is not None and not self.deviation_unit:
             raise ValueError("Process deviation requires unit")
+        if any(x <= 0 for x in self.extent_m):
+            raise ValueError("Fault extents must be positive")
+        if sum(x * x for x in self.direction) == 0:
+            raise ValueError("Fault direction must be nonzero")
+        if self.growth_duration_s > (self.end_at - self.start_at).total_seconds():
+            raise ValueError("Growth interval exceeds injection interval")
+        if self.evolution == "linear" and self.growth_duration_s == 0:
+            raise ValueError("Linear evolution requires positive growth duration")
+        if self.repair_at is not None and self.repair_at < self.start_at:
+            raise ValueError("Repair precedes initiation")
         return self
 
 
@@ -40,7 +62,9 @@ class ExperimentDefinition(Contract):
     outputs: list[str]
     planned_metrics: list[str]
     baseline: str
-    implementation_status: Literal["not_implemented"] = "not_implemented"
+    implementation_status: Literal["not_implemented", "in_progress", "implemented", "validated"] = (
+        "not_implemented"
+    )
 
 
 class ExperimentRun(Contract):
@@ -63,6 +87,10 @@ class ExperimentRun(Contract):
     outputs: list[Artifact]
     evaluation_status: Literal["pending", "not_implemented", "completed", "failed"]
     metric_artifacts: list[Artifact]
+    implementation_status: Literal["not_implemented", "in_progress", "implemented", "validated"] = (
+        "not_implemented"
+    )
+    run_outcome: Literal["pending", "passed", "failed", "error"] = "pending"
     test_result_artifacts: list[Artifact] = Field(default_factory=list)
 
     @model_validator(mode="after")
@@ -88,3 +116,25 @@ def artifact_path(experiment_id: str, run_id: str, artifact_id: str) -> str:
     for identifier in (experiment_id, run_id, artifact_id):
         TypeAdapter(ID).validate_python(identifier)
     return f"experiments/outputs/{experiment_id}/{run_id}/{artifact_id}"
+
+
+class FaultState(Contract):
+    fault_id: ID
+    asset_id: ID
+    category: str
+    factor: Annotated[float, Field(ge=0, le=1)]
+    present: bool
+    configuration: FaultInjection
+    applied_peak_displacement_m: Nonnegative | None = None
+    applied_translation_m: tuple[Number, Number, Number] | None = None
+    applied_peak_temperature_delta_c: Number | None = None
+    actual_process_value: Number | None = None
+
+
+class GroundTruthSnapshot(Contract):
+    truth_id: ID
+    run_id: ID
+    scenario_id: ID
+    timestamp: UTC
+    time_s: Number
+    fault_states: list[FaultState]

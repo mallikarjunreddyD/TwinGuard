@@ -1,0 +1,491 @@
+{
+  "$defs": {
+    "Artifact": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0.0",
+          "default": "1.0.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "artifact_id": {
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+          "title": "Artifact Id",
+          "type": "string"
+        },
+        "uri": {
+          "minLength": 1,
+          "title": "Uri",
+          "type": "string"
+        },
+        "media_type": {
+          "title": "Media Type",
+          "type": "string"
+        },
+        "sha256": {
+          "anyOf": [
+            {
+              "pattern": "^[a-f0-9]{64}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Sha256"
+        }
+      },
+      "required": [
+        "artifact_id",
+        "uri",
+        "media_type"
+      ],
+      "title": "Artifact",
+      "type": "object"
+    },
+    "FaultInjection": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0.0",
+          "default": "1.0.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "fault_id": {
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+          "title": "Fault Id",
+          "type": "string"
+        },
+        "asset_id": {
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+          "title": "Asset Id",
+          "type": "string"
+        },
+        "category": {
+          "enum": [
+            "localized_geometric_deformation",
+            "structural_support_displacement",
+            "thermal_hotspot",
+            "abnormal_process_measurement"
+          ],
+          "title": "Category",
+          "type": "string"
+        },
+        "start_at": {
+          "format": "date-time",
+          "title": "Start At",
+          "type": "string"
+        },
+        "end_at": {
+          "format": "date-time",
+          "title": "End At",
+          "type": "string"
+        },
+        "severity_parameters": {
+          "additionalProperties": {
+            "type": "number"
+          },
+          "title": "Severity Parameters",
+          "type": "object"
+        },
+        "affected_region_id": {
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+          "title": "Affected Region Id",
+          "type": "string"
+        },
+        "true_displacement_m": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "True Displacement M"
+        },
+        "true_process_deviation": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "True Process Deviation"
+        },
+        "deviation_unit": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Deviation Unit"
+        },
+        "ground_truth_artifacts": {
+          "items": {
+            "$ref": "#/$defs/Artifact"
+          },
+          "title": "Ground Truth Artifacts",
+          "type": "array"
+        },
+        "center_local_m": {
+          "default": [
+            0,
+            0,
+            1.2
+          ],
+          "maxItems": 3,
+          "minItems": 3,
+          "prefixItems": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "title": "Center Local M",
+          "type": "array"
+        },
+        "extent_m": {
+          "default": [
+            0.4,
+            0.1,
+            0.5
+          ],
+          "maxItems": 3,
+          "minItems": 3,
+          "prefixItems": [
+            {
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "minimum": 0,
+              "type": "number"
+            }
+          ],
+          "title": "Extent M",
+          "type": "array"
+        },
+        "direction": {
+          "default": [
+            0,
+            1,
+            0
+          ],
+          "maxItems": 3,
+          "minItems": 3,
+          "prefixItems": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "title": "Direction",
+          "type": "array"
+        },
+        "displacement_vector_m": {
+          "anyOf": [
+            {
+              "maxItems": 3,
+              "minItems": 3,
+              "prefixItems": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                }
+              ],
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Displacement Vector M"
+        },
+        "evolution": {
+          "default": "step",
+          "enum": [
+            "step",
+            "linear"
+          ],
+          "title": "Evolution",
+          "type": "string"
+        },
+        "growth_duration_s": {
+          "default": 0,
+          "minimum": 0,
+          "title": "Growth Duration S",
+          "type": "number"
+        },
+        "persistence": {
+          "anyOf": [
+            {
+              "enum": [
+                "persistent",
+                "recover"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Persistence"
+        },
+        "recovery_duration_s": {
+          "default": 0,
+          "minimum": 0,
+          "title": "Recovery Duration S",
+          "type": "number"
+        },
+        "repair_at": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Repair At"
+        },
+        "process_variable": {
+          "default": "pressure_pa",
+          "enum": [
+            "pressure_pa",
+            "temperature_c"
+          ],
+          "title": "Process Variable",
+          "type": "string"
+        },
+        "target_value": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Target Value"
+        }
+      },
+      "required": [
+        "fault_id",
+        "asset_id",
+        "category",
+        "start_at",
+        "end_at",
+        "severity_parameters",
+        "affected_region_id",
+        "ground_truth_artifacts"
+      ],
+      "title": "FaultInjection",
+      "type": "object"
+    },
+    "FaultState": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0.0",
+          "default": "1.0.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "fault_id": {
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+          "title": "Fault Id",
+          "type": "string"
+        },
+        "asset_id": {
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+          "title": "Asset Id",
+          "type": "string"
+        },
+        "category": {
+          "title": "Category",
+          "type": "string"
+        },
+        "factor": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Factor",
+          "type": "number"
+        },
+        "present": {
+          "title": "Present",
+          "type": "boolean"
+        },
+        "configuration": {
+          "$ref": "#/$defs/FaultInjection"
+        },
+        "applied_peak_displacement_m": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Applied Peak Displacement M"
+        },
+        "applied_translation_m": {
+          "anyOf": [
+            {
+              "maxItems": 3,
+              "minItems": 3,
+              "prefixItems": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                }
+              ],
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Applied Translation M"
+        },
+        "applied_peak_temperature_delta_c": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Applied Peak Temperature Delta C"
+        },
+        "actual_process_value": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Actual Process Value"
+        }
+      },
+      "required": [
+        "fault_id",
+        "asset_id",
+        "category",
+        "factor",
+        "present",
+        "configuration"
+      ],
+      "title": "FaultState",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0",
+      "default": "1.0.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "truth_id": {
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Truth Id",
+      "type": "string"
+    },
+    "run_id": {
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Run Id",
+      "type": "string"
+    },
+    "scenario_id": {
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Scenario Id",
+      "type": "string"
+    },
+    "timestamp": {
+      "format": "date-time",
+      "title": "Timestamp",
+      "type": "string"
+    },
+    "time_s": {
+      "title": "Time S",
+      "type": "number"
+    },
+    "fault_states": {
+      "items": {
+        "$ref": "#/$defs/FaultState"
+      },
+      "title": "Fault States",
+      "type": "array"
+    }
+  },
+  "required": [
+    "truth_id",
+    "run_id",
+    "scenario_id",
+    "timestamp",
+    "time_s",
+    "fault_states"
+  ],
+  "title": "GroundTruthSnapshot",
+  "type": "object"
+}

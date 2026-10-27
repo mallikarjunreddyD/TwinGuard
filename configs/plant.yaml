@@ -1,0 +1,112 @@
+{
+  "plant_id": "plant-01",
+  "model_version": "v1",
+  "configuration_version": "v1",
+  "assets": [
+    {
+      "asset_id": "BW-01",
+      "kind": "water_wall",
+      "origin_m": [
+        0,
+        0,
+        0.35
+      ],
+      "dimensions_m": {
+        "width": 1.8,
+        "height": 2.4,
+        "thickness": 0.04,
+        "tube_radius": 0.045,
+        "tube_spacing": 0.15
+      }
+    },
+    {
+      "asset_id": "DR-01",
+      "kind": "drum",
+      "origin_m": [
+        0,
+        0,
+        3.05
+      ],
+      "dimensions_m": {
+        "length": 2.1,
+        "radius": 0.32
+      }
+    },
+    {
+      "asset_id": "SP-01",
+      "kind": "pipe",
+      "origin_m": [
+        1.05,
+        0,
+        3.05
+      ],
+      "dimensions_m": {
+        "length": 0.6,
+        "drop": 1.7,
+        "radius": 0.065,
+        "connection_length": 0.75
+      }
+    },
+    {
+      "asset_id": "SP-02",
+      "kind": "pipe",
+      "origin_m": [
+        -1.05,
+        0,
+        0.35
+      ],
+      "dimensions_m": {
+        "length": 0.6,
+        "drop": 2.7,
+        "radius": 0.065,
+        "connection_length": 0.15
+      }
+    },
+    {
+      "asset_id": "SUP-01",
+      "kind": "support",
+      "origin_m": [
+        0,
+        -0.4,
+        0
+      ],
+      "dimensions_m": {
+        "width": 2.3,
+        "height": 3.15,
+        "beam": 0.12
+      },
+      "alpha_per_k": 0,
+      "temperature_source": "ambient"
+    },
+    {
+      "asset_id": "VL-01",
+      "kind": "valve",
+      "origin_m": [
+        0.6,
+        0,
+        -0.9
+      ],
+      "dimensions_m": {
+        "radius": 0.13,
+        "length": 0.28
+      },
+      "parent_asset_id": "SP-01"
+    },
+    {
+      "asset_id": "REF-01",
+      "kind": "reference",
+      "origin_m": [
+        2.6,
+        -1,
+        0
+      ],
+      "dimensions_m": {
+        "width": 0.6,
+        "height": 2.8,
+        "beam": 0.1
+      },
+      "alpha_per_k": 0,
+      "temperature_source": "ambient"
+    }
+  ]
+}

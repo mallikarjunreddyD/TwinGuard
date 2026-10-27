@@ -293,3 +293,27 @@ class SensorConfiguration(Contract):
     source_type: Literal["synthetic", "public_real_world", "hybrid", "physical_experimental"]
     configuration_version: ID
     description: str
+
+    modality: Literal["lidar", "thermal", "rgb", "iot"] | None = None
+    coordinate_frame: Frame | None = None
+    pose: Transform | None = None
+    acquisition_parameters: dict[str, Number | str | bool] = Field(default_factory=dict)
+    calibration_reference: ID | None = None
+    noise_model_reference: ID | None = None
+    measurement_configuration: dict[str, Number | str | bool] = Field(default_factory=dict)
+
+    @model_validator(mode="after")
+    def sensor_pose(self):
+        if self.pose is not None:
+            if self.coordinate_frame is None or self.pose.source != self.coordinate_frame:
+                raise ValueError("Sensor pose source must match sensor coordinate frame")
+            if self.coordinate_frame != Frame(kind="sensor_local", reference_id=self.sensor_id):
+                raise ValueError("Sensor frame must reference this sensor")
+            if self.pose.target.kind not in ("world", "asset_local"):
+                raise ValueError("Sensor pose target must be world or parent asset")
+            if (
+                self.pose.target.kind == "asset_local"
+                and self.pose.target.reference_id != self.asset_id
+            ):
+                raise ValueError("Sensor pose must reference associated asset")
+        return self

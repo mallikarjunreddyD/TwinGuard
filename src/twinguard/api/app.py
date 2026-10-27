@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from twinguard import __version__, SCHEMA_VERSION
 
-app = FastAPI(title="TwinGuard Phase 0", version=__version__)
+app = FastAPI(title="TwinGuard Phase 1", version=__version__)
 
 
 @app.get("/health")
@@ -17,16 +17,18 @@ def version():
 @app.get("/capabilities")
 def capabilities():
     return {
-        "phase": 0,
+        "phase": 1,
         "implemented": [
             "contracts",
             "configuration_validation",
             "spatial_transforms",
             "utc_utilities",
             "schema_export",
+            "plant_simulation",
+            "fault_injection",
+            "geometry_export",
         ],
         "pending": [
-            "plant_simulation",
             "virtual_sensing",
             "registration",
             "anomaly_detection",

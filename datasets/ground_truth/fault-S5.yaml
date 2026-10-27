@@ -1,16 +1,18 @@
 {
   "schema_version": "1.0.0",
   "fault_id": "fault-S5",
-  "asset_id": "wall-01",
+  "asset_id": "BW-01",
   "category": "abnormal_process_measurement",
   "start_at": "2026-01-01T00:01:30+00:00",
   "end_at": "2026-01-01T00:02:00+00:00",
   "severity_parameters": {
     "pressure_deviation_pa": 200000
   },
-  "affected_region_id": "region-01",
+  "affected_region_id": "surface",
   "true_displacement_m": null,
   "true_process_deviation": 200000,
   "deviation_unit": "Pa",
-  "ground_truth_artifacts": []
+  "ground_truth_artifacts": [],
+  "persistence": "recover",
+  "recovery_duration_s": 10
 }

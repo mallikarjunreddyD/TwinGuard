@@ -1,7 +1,14 @@
 from pathlib import Path
 import json
 from twinguard.core import contracts
-from twinguard.evaluation.contracts import FaultInjection, ExperimentDefinition, ExperimentRun
+from twinguard.evaluation.contracts import (
+    FaultInjection,
+    ExperimentDefinition,
+    ExperimentRun,
+    GroundTruthSnapshot,
+)
+from twinguard.plant.config import PlantConfig
+from twinguard.plant.contracts import SimulationManifest
 
 PUBLIC_MODELS = {
     name: getattr(contracts, name)
@@ -19,11 +26,13 @@ PUBLIC_MODELS = {
     )
 }
 CONFIG_MODELS = {
+    "PlantConfig": PlantConfig,
+    "SimulationManifest": SimulationManifest,
     "ScenarioDefinition": contracts.ScenarioDefinition,
     "ExperimentDefinition": ExperimentDefinition,
     "ExperimentRun": ExperimentRun,
 }
-RESTRICTED_MODELS = {"FaultInjection": FaultInjection}
+RESTRICTED_MODELS = {"FaultInjection": FaultInjection, "GroundTruthSnapshot": GroundTruthSnapshot}
 ALL_MODELS = PUBLIC_MODELS | CONFIG_MODELS | RESTRICTED_MODELS
 
 

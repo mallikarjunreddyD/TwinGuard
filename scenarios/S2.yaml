@@ -1,11 +1,17 @@
 {
   "schema_version": "1.0.0",
   "scenario_id": "S2",
-  "version": "v1",
+  "version": "v2",
   "description": "Localized water-wall deformation: 0.030 m \u2014 synthetic test configuration, not calibrated safety limits",
   "plant_model_reference": "plant-01",
   "asset_ids": [
-    "wall-01"
+    "BW-01",
+    "DR-01",
+    "SP-01",
+    "SP-02",
+    "SUP-01",
+    "VL-01",
+    "REF-01"
   ],
   "simulation_start": "2026-01-01T00:00:00+00:00",
   "duration_s": 120,
@@ -30,6 +36,11 @@
       "modality": "lidar"
     },
     {
+      "sensor_id": "lidar-01",
+      "offset_s": 60,
+      "modality": "lidar"
+    },
+    {
       "sensor_id": "thermal-01",
       "offset_s": 60,
       "modality": "thermal"
@@ -41,7 +52,7 @@
   "dataset": {
     "dataset_id": "synthetic-S2",
     "source_type": "synthetic",
-    "description": "Synthetic Phase 0 configuration fixture; no measurements generated"
+    "description": "Synthetic physical-plant simulation configuration; generated states are not sensor observations"
   },
   "output_directory": "experiments/outputs/S2"
 }

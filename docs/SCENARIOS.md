@@ -1,16 +1,22 @@
-# Scenarios
+# Scenarios and replay
 
-S0–S5 are small synthetic test configurations, not simulation outputs or calibrated industrial limits. Each records version, plant/assets, UTC start, duration, step, seed, operating profile, sensor configuration IDs, inspection schedule, fault references, dataset provenance and output location.
+S0–S5 v2 are executable synthetic plant scenarios, not calibrated industrial limits. Each records ID/version, canonical seven-asset plant, UTC start, duration/step, seed, load profile, sensor configurations, inspection schedule, private injection references, provenance and output location. The deprecated wall-01 alias still validates historical fixtures; runtime resolves it to BW-01.
 
-| ID | Intended future behavior |
+| Scenario | Implemented behavior |
 |---|---|
-| S0 | Healthy steady operation, no faults |
-| S1 | Load rises 0.5 to 0.8 at 60 s; expected temperature/displacement reference changes 8 degC/0.002 m |
-| S2 | Localized wall deformation 0.030 m, restricted fault-S2 |
-| S3 | Hotspot +12 degC relative to operating reference, restricted fault-S3 |
-| S4 | Process pressure deviation +200000 Pa; label is a future critical-event test, not an engineered threshold |
-| S5 | LiDAR inspection at -3600 s with a recent fixed-sensor context; process event at +90 s in fault-S5; complete temporal semantics pending Phase 4 |
+| S0 | Steady load 0.5, process reference T/P, no fault |
+| S1 | Load ramps 0.5→0.8 over 60 s; coupled lagged T/P; normal axial expansion; no fault |
+| S2 | Baseline LiDAR event at 0 s; wall bulge begins 30 s, grows to 30 mm at 60 s; second LiDAR event at 60 s; structural change persists after end_at=90 s |
+| S3 | Local +12 degC thermal residual, injection 30–90 s, ten-second recovery |
+| S4 | Process pressure residual +200000 Pa, injection 30–90 s, ten-second recovery; no fabricated geometry/hotspot |
+| S5 | LiDAR event at -3600 s; process disturbance starts +90 s and remains active through the run end at 120 s; no freshness decision |
 
-Negative inspection offsets explicitly represent historical captures; operating profile offsets are ordered, unique, begin at zero and stay inside the simulation duration. Future streams must use simulated acquisition times while recording actual or replay reception time consistently. Fault intervals must lie within the scenario, and asset/sensor references must exist. `load_scenario` checks the repository catalog; standalone JSON Schema validation checks shape only and cannot resolve references.
+These events schedule future sensor acquisition only; no scans, camera images or noisy measurements are produced. Negative inspection offsets reference an initial historical plant held at initial conditions before t=0. Defaults export 0, 60, run end and every scheduled inspection time, while the process trace follows the exact time grid including a final partial interval if necessary. Snapshot geometry is generated only at selected times.
 
-Run `twinguard validate-config scenarios/S2.yaml`; `twinguard list-scenarios` validates and lists the collection. Controller configurations and faults must be given only to the simulator/evaluator. Future replay must record the scenario/configuration versions, input hashes, seed, package/environment lock and Git revision in ExperimentRun and retain artifact checksums. Pinning seeds alone does not promise identical outputs across library versions or hardware. Phase 0 round-trip tests establish configuration preservation only; simulator reproducibility is pending.
+`load_scenario` validates against configs/assets.yaml and sensors.yaml and checks private fault intervals/references. PlantConfig separately validates geometry dimensions and topology. Simulator construction resolves aliases and rejects physical faults on absent/inappropriate assets. `twinguard validate-config` preserves the Phase 0 metadata check; simulation also validates plant/fault feasibility.
+
+Example independent profiles P0–P4 reside under configs/profiles; they are full valid scenario configurations. Run them with `twinguard plant simulate --scenario configs/profiles/P2.yaml --output-dir output/P2`. Operating profiles are linearly interpolated and first-order responses evaluated analytically; elapsed wall-clock time never controls simulation time.
+
+Runs save a complete plant configuration, private scenario/fault copies, versions, Git commit/dirty flag, source-tree digest, seed, provenance, timestamps and SHA256 artifacts. `load_run` verifies artifact hashes before reconstructing the world independently of repository configuration files. Numerical repeatability is asserted within the pinned environment. Wall-clock timestamps/runtime and container build bytes are not claimed to be identical between runs. The source digest identifies dirty code; preserve or commit the matching source for long-term replay.
+
+Artifact IDs derive from relative paths and remain stable as snapshots are added. Time tokens preserve full binary-float round-trip precision. Each snapshot export appends a matching restricted truth record before refreshing artifact checksums.

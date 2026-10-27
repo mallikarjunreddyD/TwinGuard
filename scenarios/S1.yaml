@@ -1,11 +1,17 @@
 {
   "schema_version": "1.0.0",
   "scenario_id": "S1",
-  "version": "v1",
+  "version": "v2",
   "description": "Normal load transition \u2014 synthetic test configuration, not calibrated safety limits",
   "plant_model_reference": "plant-01",
   "asset_ids": [
-    "wall-01"
+    "BW-01",
+    "DR-01",
+    "SP-01",
+    "SP-02",
+    "SUP-01",
+    "VL-01",
+    "REF-01"
   ],
   "simulation_start": "2026-01-01T00:00:00+00:00",
   "duration_s": 120,
@@ -14,14 +20,13 @@
   "operating_profile": [
     {
       "offset_s": 0,
-      "normalized_load": 0.5
+      "normalized_load": 0.5,
+      "operating_mode": "load_transition"
     },
     {
       "offset_s": 60,
       "normalized_load": 0.8,
-      "temperature_reference_delta_c": 8,
-      "displacement_reference_delta_m": 0.002,
-      "operating_mode": "load_transition"
+      "operating_mode": "steady_operation"
     }
   ],
   "sensor_config_ids": [
@@ -46,7 +51,7 @@
   "dataset": {
     "dataset_id": "synthetic-S1",
     "source_type": "synthetic",
-    "description": "Synthetic Phase 0 configuration fixture; no measurements generated"
+    "description": "Synthetic physical-plant simulation configuration; generated states are not sensor observations"
   },
   "output_directory": "experiments/outputs/S1"
 }
