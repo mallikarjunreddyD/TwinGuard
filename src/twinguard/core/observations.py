@@ -88,7 +88,7 @@ def load_capture_arrays(root: Path, record: InspectionCapture):
     allowed = (
         {"points_m", "valid_returns"}
         if record.modality == "lidar"
-        else {"temperature_c", "valid_mask"}
+        else {"temperature_c", "valid_mask", "saturation_mask", "pixel_status"}
     )
     if not set(arrays) <= allowed:
         raise ValueError("Unexpected or privileged arrays in public artifact")
@@ -114,4 +114,24 @@ def load_capture_arrays(root: Path, record: InspectionCapture):
             or not np.isnan(temperature[~mask]).all()
         ):
             raise ValueError("Invalid thermal array/mask")
+        if "saturation_mask" in arrays:
+            saturated = arrays["saturation_mask"]
+            if (
+                saturated.shape != mask.shape
+                or saturated.dtype != np.bool_
+                or np.any(saturated & ~mask)
+            ):
+                raise ValueError("Invalid saturation mask")
+        if "pixel_status" in arrays:
+            status = arrays["pixel_status"]
+            if (
+                status.shape != mask.shape
+                or not np.isin(status, [0, 1, 2, 3]).all()
+                or not np.array_equal(np.isin(status, [1, 3]), mask)
+            ):
+                raise ValueError("Invalid thermal pixel classification")
+            if "saturation_mask" not in arrays or not np.array_equal(
+                status == 3, arrays["saturation_mask"]
+            ):
+                raise ValueError("Saturation/status mismatch")
     return arrays

@@ -88,6 +88,8 @@ class ThermalSensor:
                 "emissivity": c.emissivity,
                 "reflected_temperature_c": c.reflected_temperature_c,
                 "noise_std_c": c.noise.sigma,
+                "measurement_min_c": c.measurement_min_c,
+                "measurement_max_c": c.measurement_max_c,
                 "range_min_m": c.min_range_m,
                 "range_max_m": c.max_range_m,
             },
@@ -97,6 +99,9 @@ class ThermalSensor:
                 "valid_fraction": float(valid.mean()),
                 "saturated_pixels": int(saturated.sum()),
             },
+        )
+        pixel_status = np.where(~visible, 0, np.where(~valid, 2, np.where(saturated, 3, 1))).astype(
+            np.uint8
         )
         shape = (c.height, c.width)
         truth = {
@@ -109,6 +114,11 @@ class ThermalSensor:
         }
         return CaptureProduct(
             record,
-            {"temperature_c": measured.reshape(shape), "valid_mask": valid.reshape(shape)},
+            {
+                "temperature_c": measured.reshape(shape),
+                "valid_mask": valid.reshape(shape),
+                "saturation_mask": saturated.reshape(shape),
+                "pixel_status": pixel_status.reshape(shape),
+            },
             truth,
         )

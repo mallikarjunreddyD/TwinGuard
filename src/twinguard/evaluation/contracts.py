@@ -62,6 +62,7 @@ class ExperimentDefinition(Contract):
     outputs: list[str]
     planned_metrics: list[str]
     baseline: str
+    benchmark_reference: str | None = None
     implementation_status: Literal["not_implemented", "in_progress", "implemented", "validated"] = (
         "not_implemented"
     )
@@ -138,3 +139,25 @@ class GroundTruthSnapshot(Contract):
     timestamp: UTC
     time_s: Number
     fault_states: list[FaultState]
+
+
+class ExperimentBenchmark(Contract):
+    benchmark_id: ID
+    experiment_id: Literal["E1", "E2"]
+    analytics_config: str
+    accepted_reference: str
+    calibration_seeds: list[Annotated[int, Field(ge=0)]] = Field(min_length=1)
+    evaluation_seeds: list[Annotated[int, Field(ge=0)]] = Field(min_length=1)
+    fidelities: list[Literal["L0", "L1", "L2"]] = Field(default=["L1"])
+    amplitudes_m: list[Nonnegative] = Field(default_factory=lambda: [0.0])
+    viewpoints: list[Literal["same", "changed"]] = Field(default=["changed"])
+    robustness_viewpoints: list[Literal["partial", "high_pose", "low_overlap"]] = Field(
+        default_factory=list
+    )
+    include_support: bool = False
+
+    @model_validator(mode="after")
+    def split(self):
+        if set(self.calibration_seeds) & set(self.evaluation_seeds):
+            raise ValueError("Calibration/evaluation seeds must be disjoint")
+        return self

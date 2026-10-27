@@ -6,12 +6,16 @@ from twinguard.evaluation.contracts import (
     ExperimentDefinition,
     ExperimentRun,
     GroundTruthSnapshot,
+    ExperimentBenchmark,
 )
 from twinguard.plant.config import PlantConfig
 from twinguard.plant.contracts import SimulationManifest
 
 from twinguard.core.observations import ObservationManifest
 from twinguard.sensing.config import AcquisitionConfig
+
+from twinguard.core import analytics_contracts
+from twinguard.analytics.config import AnalyticsConfig
 
 PUBLIC_MODELS = {
     name: getattr(contracts, name)
@@ -29,7 +33,23 @@ PUBLIC_MODELS = {
     )
 }
 PUBLIC_MODELS["ObservationManifest"] = ObservationManifest
+PUBLIC_MODELS.update(
+    {
+        name: getattr(analytics_contracts, name)
+        for name in (
+            "RegistrationResult",
+            "PatchEstimate",
+            "GeometryRegion",
+            "GeometryResult",
+            "OperatingPrediction",
+            "ThermalRegion",
+            "ThermalResult",
+        )
+    }
+)
 CONFIG_MODELS = {
+    "AnalyticsConfig": AnalyticsConfig,
+    "ExperimentBenchmark": ExperimentBenchmark,
     "AcquisitionConfig": AcquisitionConfig,
     "PlantConfig": PlantConfig,
     "SimulationManifest": SimulationManifest,

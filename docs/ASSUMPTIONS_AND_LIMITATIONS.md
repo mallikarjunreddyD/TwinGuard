@@ -13,3 +13,8 @@ Developer review decisions: confirm the Phase 1 plant geometry/material model an
 Open3D CPU virtual sensing is implemented in Phase 2. OpenCV-dependent processing, React, UAV simulation, MQTT/OPC UA, databases, GPU services and Phase 3–7 algorithms remain pending. Phase 1 numerical/geometry checks do not validate physical behavior. Docker execution depends on an accessible daemon; exact verification outcomes are recorded separately.
 
 Phase 2 noise, emissivity, camera geometry, delivery loss and pose errors are controlled assumptions, not calibrated hardware parameters. LiDAR is instantaneous first-return sensing without multipath/material response; thermal uses a grey-body approximation; vibration is load-dependent phenomenology. See the three sensor-model documents for limitations. Numeric self-consistency against simulator references does not establish real-world accuracy.
+
+
+## Phase 3 update
+
+Phase 3 limits: the accepted as-built and test scenes share a synthetic geometry source; registration can retain bias despite quality gates. B3 missed all tested 10/20 mm faults. Unknown coverage is not health, uncertainty scores are not calibrated confidence intervals, and healthy FPR must be read with abstention. Thermal residual calibration requires similar views and quantitative unsaturated pixels. Operating models require healthy calibration coverage and causal measured load. Sensor degradation can trigger residuals without equipment damage. No physical metrology, hazard classification or Phase 4 fusion is established.

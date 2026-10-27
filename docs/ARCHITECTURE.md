@@ -36,3 +36,8 @@ Phase 1 implementation details are in PLANT_MODEL.md, PHYSICS_MODEL.md and FAULT
 
 
 Phase 2 layers: the acquisition controller alone receives the label-free physical read port; imaging sensors raycast first visible triangles and IoT models sample actual process/spatial fields. Capture envelopes separate public records/allowlisted arrays from private references. Public ingestion lives in core.observations and imports neither plant nor evaluator modules. Privileged evaluation/sensing.py computes measurement-model errors and attaches exact plant truth separately. Analytics consumers cannot import the sensing implementation or physical read port. The metadata API advertises implemented capabilities but exposes no sensing, analysis, private-data or fusion endpoints. Optional Open3D dependencies are isolated from the minimal API container.
+
+
+## Phase 3 update
+
+Phase 3 implementation update: analytics consumes only core public records/artifacts plus explicit accepted-reference/calibration data. core.boundaries rejects imports of plant, sensing implementations, evaluation or private scenario controls from consumers. evaluation/experiments orchestrates privileged generation and subsequent truth-free inference; evaluation/analytics verifies persisted prediction seals before reading labels. Analytics, experiment and reporting CLI commands are implemented. API remains metadata-only and optional Open3D/SciPy do not enter its minimal image. Historical pending-analytics statements above describe the Phase 2 handoff.

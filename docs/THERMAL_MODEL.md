@@ -11,3 +11,8 @@ The numeric temperature_c array and boolean valid_mask in NPZ are the measuremen
 Apparent-model RMSE measures stochastic instrument effects relative to this assumed radiometric equation. The separate difference from physical surface temperature includes emissivity/reflection effects and can be much larger; neither is physical camera calibration. The report exposes both, avoiding a claim of commercial ±2 degC performance. No independent random hotspot or anomaly overlay is generated.
 
 Limitations: no wavelength-specific spectral response, distance-dependent atmospheric attenuation, humidity, specular multi-bounce reflection, exposure integration, lens blur/distortion, emissivity maps, camera self-heating or validated calibration. Surface fields are the Phase 1 vertex approximation; local hotspots do not trigger a solved thermal/mechanical feedback. Camera acquisition is instantaneous. Noise/pose settings are assumed and require physical validation before industrial accuracy claims.
+
+
+## Phase 3 update
+
+Phase 3 correction: valid_mask now means available measured pixels, including clipped values. Public saturation_mask and pixel_status identify clipping separately. Quantitative analytics uses status 1 and excludes status 3 saturation. Legacy captures without explicit saturation arrays are conservatively inconclusive; see OPERATING_ANALYTICS.md.

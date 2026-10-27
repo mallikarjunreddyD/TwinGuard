@@ -1,0 +1,620 @@
+{
+  "$defs": {
+    "Artifact": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0.0",
+          "default": "1.0.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "artifact_id": {
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+          "title": "Artifact Id",
+          "type": "string"
+        },
+        "uri": {
+          "minLength": 1,
+          "title": "Uri",
+          "type": "string"
+        },
+        "media_type": {
+          "title": "Media Type",
+          "type": "string"
+        },
+        "sha256": {
+          "anyOf": [
+            {
+              "pattern": "^[a-f0-9]{64}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Sha256"
+        }
+      },
+      "required": [
+        "artifact_id",
+        "uri",
+        "media_type"
+      ],
+      "title": "Artifact",
+      "type": "object"
+    },
+    "GeometricDetection": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0.0",
+          "default": "1.0.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "detection_id": {
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+          "title": "Detection Id",
+          "type": "string"
+        },
+        "asset_id": {
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+          "title": "Asset Id",
+          "type": "string"
+        },
+        "baseline_capture_id": {
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+          "title": "Baseline Capture Id",
+          "type": "string"
+        },
+        "current_capture_id": {
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+          "title": "Current Capture Id",
+          "type": "string"
+        },
+        "region_id": {
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+          "title": "Region Id",
+          "type": "string"
+        },
+        "displacement_m": {
+          "title": "Displacement M",
+          "type": "number"
+        },
+        "displacement_uncertainty_m": {
+          "minimum": 0,
+          "title": "Displacement Uncertainty M",
+          "type": "number"
+        },
+        "quality_status": {
+          "enum": [
+            "good",
+            "partial",
+            "invalid",
+            "unknown"
+          ],
+          "title": "Quality Status",
+          "type": "string"
+        },
+        "algorithm_id": {
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+          "title": "Algorithm Id",
+          "type": "string"
+        },
+        "algorithm_version": {
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+          "title": "Algorithm Version",
+          "type": "string"
+        },
+        "detected_at": {
+          "format": "date-time",
+          "title": "Detected At",
+          "type": "string"
+        },
+        "confidence": {
+          "anyOf": [
+            {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Confidence"
+        },
+        "confidence_method": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Confidence Method"
+        },
+        "artifacts": {
+          "items": {
+            "$ref": "#/$defs/Artifact"
+          },
+          "title": "Artifacts",
+          "type": "array"
+        }
+      },
+      "required": [
+        "detection_id",
+        "asset_id",
+        "baseline_capture_id",
+        "current_capture_id",
+        "region_id",
+        "displacement_m",
+        "displacement_uncertainty_m",
+        "quality_status",
+        "algorithm_id",
+        "algorithm_version",
+        "detected_at"
+      ],
+      "title": "GeometricDetection",
+      "type": "object"
+    },
+    "GeometryRegion": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0.0",
+          "default": "1.0.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "region_id": {
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+          "title": "Region Id",
+          "type": "string"
+        },
+        "asset_id": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Asset Id"
+        },
+        "association_status": {
+          "enum": [
+            "associated",
+            "ambiguous"
+          ],
+          "title": "Association Status",
+          "type": "string"
+        },
+        "bounds_world_m": {
+          "maxItems": 2,
+          "minItems": 2,
+          "prefixItems": [
+            {
+              "maxItems": 3,
+              "minItems": 3,
+              "prefixItems": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                }
+              ],
+              "type": "array"
+            },
+            {
+              "maxItems": 3,
+              "minItems": 3,
+              "prefixItems": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                }
+              ],
+              "type": "array"
+            }
+          ],
+          "title": "Bounds World M",
+          "type": "array"
+        },
+        "representative_displacement_m": {
+          "title": "Representative Displacement M",
+          "type": "number"
+        },
+        "uncertainty_score_m": {
+          "minimum": 0,
+          "title": "Uncertainty Score M",
+          "type": "number"
+        },
+        "patch_ids": {
+          "items": {
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+            "type": "string"
+          },
+          "title": "Patch Ids",
+          "type": "array"
+        },
+        "area_estimate_m2": {
+          "minimum": 0,
+          "title": "Area Estimate M2",
+          "type": "number"
+        },
+        "legacy_detection": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/GeometricDetection"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "required": [
+        "region_id",
+        "asset_id",
+        "association_status",
+        "bounds_world_m",
+        "representative_displacement_m",
+        "uncertainty_score_m",
+        "patch_ids",
+        "area_estimate_m2"
+      ],
+      "title": "GeometryRegion",
+      "type": "object"
+    },
+    "PatchEstimate": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0.0",
+          "default": "1.0.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "patch_id": {
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+          "title": "Patch Id",
+          "type": "string"
+        },
+        "asset_id": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Asset Id"
+        },
+        "center_world_m": {
+          "maxItems": 3,
+          "minItems": 3,
+          "prefixItems": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "title": "Center World M",
+          "type": "array"
+        },
+        "normal_world": {
+          "maxItems": 3,
+          "minItems": 3,
+          "prefixItems": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "title": "Normal World",
+          "type": "array"
+        },
+        "direction": {
+          "enum": [
+            "oriented",
+            "unsigned",
+            "unreliable"
+          ],
+          "title": "Direction",
+          "type": "string"
+        },
+        "baseline_points": {
+          "title": "Baseline Points",
+          "type": "integer"
+        },
+        "current_points": {
+          "title": "Current Points",
+          "type": "integer"
+        },
+        "common_coverage": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Common Coverage",
+          "type": "number"
+        },
+        "displacement_m": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Displacement M"
+        },
+        "uncertainty_score_m": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Uncertainty Score M"
+        },
+        "engineering_margin_m": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Engineering Margin M"
+        },
+        "threshold_m": {
+          "minimum": 0,
+          "title": "Threshold M",
+          "type": "number"
+        },
+        "significant": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Significant"
+        },
+        "status": {
+          "enum": [
+            "valid",
+            "inconclusive",
+            "invalid",
+            "insufficient_coverage",
+            "out_of_reference_range"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "quality_flags": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Quality Flags",
+          "type": "array"
+        }
+      },
+      "required": [
+        "patch_id",
+        "asset_id",
+        "center_world_m",
+        "normal_world",
+        "direction",
+        "baseline_points",
+        "current_points",
+        "common_coverage",
+        "displacement_m",
+        "uncertainty_score_m",
+        "engineering_margin_m",
+        "threshold_m",
+        "significant",
+        "status",
+        "quality_flags"
+      ],
+      "title": "PatchEstimate",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0",
+      "default": "1.0.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "analysis_id": {
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Analysis Id",
+      "type": "string"
+    },
+    "baseline_capture_id": {
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Baseline Capture Id",
+      "type": "string"
+    },
+    "current_capture_id": {
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Current Capture Id",
+      "type": "string"
+    },
+    "acquired_at": {
+      "format": "date-time",
+      "title": "Acquired At",
+      "type": "string"
+    },
+    "method": {
+      "enum": [
+        "nearest_neighbor",
+        "patch_screening"
+      ],
+      "title": "Method",
+      "type": "string"
+    },
+    "algorithm_version": {
+      "default": "v1",
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Algorithm Version",
+      "type": "string"
+    },
+    "registration_id": {
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Registration Id",
+      "type": "string"
+    },
+    "reference_id": {
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Reference Id",
+      "type": "string"
+    },
+    "calibration_id": {
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Calibration Id",
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "valid",
+        "inconclusive",
+        "invalid",
+        "insufficient_coverage",
+        "out_of_reference_range"
+      ],
+      "title": "Status",
+      "type": "string"
+    },
+    "asset_statuses": {
+      "patternProperties": {
+        "^[A-Za-z0-9][A-Za-z0-9_.:-]*$": {
+          "enum": [
+            "valid",
+            "inconclusive",
+            "invalid",
+            "insufficient_coverage",
+            "out_of_reference_range"
+          ],
+          "type": "string"
+        }
+      },
+      "propertyNames": {
+        "minLength": 1
+      },
+      "title": "Asset Statuses",
+      "type": "object"
+    },
+    "patches": {
+      "items": {
+        "$ref": "#/$defs/PatchEstimate"
+      },
+      "title": "Patches",
+      "type": "array"
+    },
+    "regions": {
+      "items": {
+        "$ref": "#/$defs/GeometryRegion"
+      },
+      "title": "Regions",
+      "type": "array"
+    },
+    "significant": {
+      "anyOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Significant"
+    },
+    "sensitivity_statement": {
+      "title": "Sensitivity Statement",
+      "type": "string"
+    },
+    "runtime_s": {
+      "minimum": 0,
+      "title": "Runtime S",
+      "type": "number"
+    }
+  },
+  "required": [
+    "analysis_id",
+    "baseline_capture_id",
+    "current_capture_id",
+    "acquired_at",
+    "method",
+    "registration_id",
+    "reference_id",
+    "calibration_id",
+    "status",
+    "patches",
+    "regions",
+    "significant",
+    "sensitivity_statement",
+    "runtime_s"
+  ],
+  "title": "GeometryResult",
+  "type": "object"
+}

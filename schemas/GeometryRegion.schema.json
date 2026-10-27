@@ -1,0 +1,297 @@
+{
+  "$defs": {
+    "Artifact": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0.0",
+          "default": "1.0.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "artifact_id": {
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+          "title": "Artifact Id",
+          "type": "string"
+        },
+        "uri": {
+          "minLength": 1,
+          "title": "Uri",
+          "type": "string"
+        },
+        "media_type": {
+          "title": "Media Type",
+          "type": "string"
+        },
+        "sha256": {
+          "anyOf": [
+            {
+              "pattern": "^[a-f0-9]{64}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Sha256"
+        }
+      },
+      "required": [
+        "artifact_id",
+        "uri",
+        "media_type"
+      ],
+      "title": "Artifact",
+      "type": "object"
+    },
+    "GeometricDetection": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0.0",
+          "default": "1.0.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "detection_id": {
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+          "title": "Detection Id",
+          "type": "string"
+        },
+        "asset_id": {
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+          "title": "Asset Id",
+          "type": "string"
+        },
+        "baseline_capture_id": {
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+          "title": "Baseline Capture Id",
+          "type": "string"
+        },
+        "current_capture_id": {
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+          "title": "Current Capture Id",
+          "type": "string"
+        },
+        "region_id": {
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+          "title": "Region Id",
+          "type": "string"
+        },
+        "displacement_m": {
+          "title": "Displacement M",
+          "type": "number"
+        },
+        "displacement_uncertainty_m": {
+          "minimum": 0,
+          "title": "Displacement Uncertainty M",
+          "type": "number"
+        },
+        "quality_status": {
+          "enum": [
+            "good",
+            "partial",
+            "invalid",
+            "unknown"
+          ],
+          "title": "Quality Status",
+          "type": "string"
+        },
+        "algorithm_id": {
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+          "title": "Algorithm Id",
+          "type": "string"
+        },
+        "algorithm_version": {
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+          "title": "Algorithm Version",
+          "type": "string"
+        },
+        "detected_at": {
+          "format": "date-time",
+          "title": "Detected At",
+          "type": "string"
+        },
+        "confidence": {
+          "anyOf": [
+            {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Confidence"
+        },
+        "confidence_method": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Confidence Method"
+        },
+        "artifacts": {
+          "items": {
+            "$ref": "#/$defs/Artifact"
+          },
+          "title": "Artifacts",
+          "type": "array"
+        }
+      },
+      "required": [
+        "detection_id",
+        "asset_id",
+        "baseline_capture_id",
+        "current_capture_id",
+        "region_id",
+        "displacement_m",
+        "displacement_uncertainty_m",
+        "quality_status",
+        "algorithm_id",
+        "algorithm_version",
+        "detected_at"
+      ],
+      "title": "GeometricDetection",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0",
+      "default": "1.0.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "region_id": {
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Region Id",
+      "type": "string"
+    },
+    "asset_id": {
+      "anyOf": [
+        {
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Asset Id"
+    },
+    "association_status": {
+      "enum": [
+        "associated",
+        "ambiguous"
+      ],
+      "title": "Association Status",
+      "type": "string"
+    },
+    "bounds_world_m": {
+      "maxItems": 2,
+      "minItems": 2,
+      "prefixItems": [
+        {
+          "maxItems": 3,
+          "minItems": 3,
+          "prefixItems": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "type": "array"
+        },
+        {
+          "maxItems": 3,
+          "minItems": 3,
+          "prefixItems": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "type": "array"
+        }
+      ],
+      "title": "Bounds World M",
+      "type": "array"
+    },
+    "representative_displacement_m": {
+      "title": "Representative Displacement M",
+      "type": "number"
+    },
+    "uncertainty_score_m": {
+      "minimum": 0,
+      "title": "Uncertainty Score M",
+      "type": "number"
+    },
+    "patch_ids": {
+      "items": {
+        "minLength": 1,
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+        "type": "string"
+      },
+      "title": "Patch Ids",
+      "type": "array"
+    },
+    "area_estimate_m2": {
+      "minimum": 0,
+      "title": "Area Estimate M2",
+      "type": "number"
+    },
+    "legacy_detection": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/GeometricDetection"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    }
+  },
+  "required": [
+    "region_id",
+    "asset_id",
+    "association_status",
+    "bounds_world_m",
+    "representative_displacement_m",
+    "uncertainty_score_m",
+    "patch_ids",
+    "area_estimate_m2"
+  ],
+  "title": "GeometryRegion",
+  "type": "object"
+}

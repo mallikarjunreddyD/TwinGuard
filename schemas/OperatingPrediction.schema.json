@@ -1,0 +1,164 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0",
+      "default": "1.0.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "prediction_id": {
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Prediction Id",
+      "type": "string"
+    },
+    "observation_id": {
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Observation Id",
+      "type": "string"
+    },
+    "sensor_id": {
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Sensor Id",
+      "type": "string"
+    },
+    "asset_id": {
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Asset Id",
+      "type": "string"
+    },
+    "acquired_at": {
+      "format": "date-time",
+      "title": "Acquired At",
+      "type": "string"
+    },
+    "available_at": {
+      "format": "date-time",
+      "title": "Available At",
+      "type": "string"
+    },
+    "model_id": {
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Model Id",
+      "type": "string"
+    },
+    "method": {
+      "enum": [
+        "static",
+        "conditioned",
+        "conditioned_quality"
+      ],
+      "title": "Method",
+      "type": "string"
+    },
+    "observed_value": {
+      "title": "Observed Value",
+      "type": "number"
+    },
+    "estimated_reference": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Estimated Reference"
+    },
+    "residual": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Residual"
+    },
+    "uncertainty_score": {
+      "anyOf": [
+        {
+          "minimum": 0,
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Uncertainty Score"
+    },
+    "threshold": {
+      "anyOf": [
+        {
+          "minimum": 0,
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Threshold"
+    },
+    "unit": {
+      "title": "Unit",
+      "type": "string"
+    },
+    "significant": {
+      "anyOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Significant"
+    },
+    "status": {
+      "enum": [
+        "valid",
+        "inconclusive",
+        "invalid",
+        "insufficient_coverage",
+        "out_of_reference_range"
+      ],
+      "title": "Status",
+      "type": "string"
+    },
+    "quality_flags": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Quality Flags",
+      "type": "array"
+    }
+  },
+  "required": [
+    "prediction_id",
+    "observation_id",
+    "sensor_id",
+    "asset_id",
+    "acquired_at",
+    "available_at",
+    "model_id",
+    "method",
+    "observed_value",
+    "estimated_reference",
+    "residual",
+    "uncertainty_score",
+    "threshold",
+    "unit",
+    "significant",
+    "status",
+    "quality_flags"
+  ],
+  "title": "OperatingPrediction",
+  "type": "object"
+}

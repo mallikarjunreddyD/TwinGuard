@@ -1,0 +1,201 @@
+{
+  "$defs": {
+    "ThermalRegion": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0.0",
+          "default": "1.0.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "region_id": {
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+          "title": "Region Id",
+          "type": "string"
+        },
+        "image_bounds": {
+          "maxItems": 4,
+          "minItems": 4,
+          "prefixItems": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "integer"
+            },
+            {
+              "type": "integer"
+            },
+            {
+              "type": "integer"
+            }
+          ],
+          "title": "Image Bounds",
+          "type": "array"
+        },
+        "pixel_count": {
+          "title": "Pixel Count",
+          "type": "integer"
+        },
+        "asset_id": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Asset Id"
+        },
+        "association_status": {
+          "enum": [
+            "associated",
+            "image_only",
+            "ambiguous"
+          ],
+          "title": "Association Status",
+          "type": "string"
+        },
+        "peak_residual_c": {
+          "title": "Peak Residual C",
+          "type": "number"
+        },
+        "median_residual_c": {
+          "title": "Median Residual C",
+          "type": "number"
+        },
+        "uncertainty_score_c": {
+          "minimum": 0,
+          "title": "Uncertainty Score C",
+          "type": "number"
+        }
+      },
+      "required": [
+        "region_id",
+        "image_bounds",
+        "pixel_count",
+        "asset_id",
+        "association_status",
+        "peak_residual_c",
+        "median_residual_c",
+        "uncertainty_score_c"
+      ],
+      "title": "ThermalRegion",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0",
+      "default": "1.0.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "analysis_id": {
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Analysis Id",
+      "type": "string"
+    },
+    "capture_id": {
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Capture Id",
+      "type": "string"
+    },
+    "acquired_at": {
+      "format": "date-time",
+      "title": "Acquired At",
+      "type": "string"
+    },
+    "model_id": {
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Model Id",
+      "type": "string"
+    },
+    "method": {
+      "enum": [
+        "static",
+        "conditioned"
+      ],
+      "title": "Method",
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "valid",
+        "inconclusive",
+        "invalid",
+        "insufficient_coverage",
+        "out_of_reference_range"
+      ],
+      "title": "Status",
+      "type": "string"
+    },
+    "valid_pixels": {
+      "title": "Valid Pixels",
+      "type": "integer"
+    },
+    "saturated_pixels": {
+      "title": "Saturated Pixels",
+      "type": "integer"
+    },
+    "total_pixels": {
+      "title": "Total Pixels",
+      "type": "integer"
+    },
+    "saturation_known": {
+      "title": "Saturation Known",
+      "type": "boolean"
+    },
+    "regions": {
+      "items": {
+        "$ref": "#/$defs/ThermalRegion"
+      },
+      "title": "Regions",
+      "type": "array"
+    },
+    "significant": {
+      "anyOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Significant"
+    },
+    "quality_flags": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Quality Flags",
+      "type": "array"
+    }
+  },
+  "required": [
+    "analysis_id",
+    "capture_id",
+    "acquired_at",
+    "model_id",
+    "method",
+    "status",
+    "valid_pixels",
+    "saturated_pixels",
+    "total_pixels",
+    "saturation_known",
+    "regions",
+    "significant",
+    "quality_flags"
+  ],
+  "title": "ThermalResult",
+  "type": "object"
+}

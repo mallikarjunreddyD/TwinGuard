@@ -1,1 +1,1 @@
-"""TwinGuard analytics boundary; algorithms beyond Phase 0 remain pending."""
+"""Truth-free qualified geometry, thermal and operating analytics (Phase 3)."""

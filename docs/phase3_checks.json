@@ -1,0 +1,33 @@
+{
+  "checked_at": "2026-10-27T14:53:53.424416+00:00",
+  "software_version": "0.4.0",
+  "branch": "phase-3-analytics",
+  "pytest": {
+    "passed": 160,
+    "failed": 0,
+    "warnings": 1,
+    "runtime_s": 21.41,
+    "warning": "Existing Starlette/httpx test-client deprecation"
+  },
+  "ruff_lint": "passed: src tests scripts",
+  "ruff_format": "passed: 72 files",
+  "mypy": "passed: 62 source files",
+  "pip_check": "passed",
+  "git_diff_check": "passed",
+  "doctor": "passed",
+  "schema_export": "passed",
+  "sealed_prediction_directories_verified": 184,
+  "result_models_revalidated": 924,
+  "analytics_cli_subcommands": "all six passed",
+  "scenario_public_smoke": "S0-S4 passed; legacy thermal inconclusive",
+  "docker": {
+    "image": "twinguard-phase3-api",
+    "build": "passed",
+    "compose_health": "healthy",
+    "http_endpoints": "health, version and capabilities returned 200",
+    "cleanup": "temporary stack/mirror stopped; ports 18765/18767 closed"
+  },
+  "physical_validation": "not performed",
+  "E3_E4": "not implemented",
+  "committed": false
+}

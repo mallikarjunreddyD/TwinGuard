@@ -1,0 +1,115 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0",
+      "default": "1.0.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "benchmark_id": {
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Benchmark Id",
+      "type": "string"
+    },
+    "experiment_id": {
+      "enum": [
+        "E1",
+        "E2"
+      ],
+      "title": "Experiment Id",
+      "type": "string"
+    },
+    "analytics_config": {
+      "title": "Analytics Config",
+      "type": "string"
+    },
+    "accepted_reference": {
+      "title": "Accepted Reference",
+      "type": "string"
+    },
+    "calibration_seeds": {
+      "items": {
+        "minimum": 0,
+        "type": "integer"
+      },
+      "minItems": 1,
+      "title": "Calibration Seeds",
+      "type": "array"
+    },
+    "evaluation_seeds": {
+      "items": {
+        "minimum": 0,
+        "type": "integer"
+      },
+      "minItems": 1,
+      "title": "Evaluation Seeds",
+      "type": "array"
+    },
+    "fidelities": {
+      "default": [
+        "L1"
+      ],
+      "items": {
+        "enum": [
+          "L0",
+          "L1",
+          "L2"
+        ],
+        "type": "string"
+      },
+      "title": "Fidelities",
+      "type": "array"
+    },
+    "amplitudes_m": {
+      "items": {
+        "minimum": 0,
+        "type": "number"
+      },
+      "title": "Amplitudes M",
+      "type": "array"
+    },
+    "viewpoints": {
+      "default": [
+        "changed"
+      ],
+      "items": {
+        "enum": [
+          "same",
+          "changed"
+        ],
+        "type": "string"
+      },
+      "title": "Viewpoints",
+      "type": "array"
+    },
+    "robustness_viewpoints": {
+      "items": {
+        "enum": [
+          "partial",
+          "high_pose",
+          "low_overlap"
+        ],
+        "type": "string"
+      },
+      "title": "Robustness Viewpoints",
+      "type": "array"
+    },
+    "include_support": {
+      "default": false,
+      "title": "Include Support",
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "benchmark_id",
+    "experiment_id",
+    "analytics_config",
+    "accepted_reference",
+    "calibration_seeds",
+    "evaluation_seeds"
+  ],
+  "title": "ExperimentBenchmark",
+  "type": "object"
+}

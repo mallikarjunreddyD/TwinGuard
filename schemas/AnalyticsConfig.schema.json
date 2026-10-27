@@ -1,0 +1,301 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0",
+      "default": "1.0.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "configuration_id": {
+      "default": "analytics-v1",
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Configuration Id",
+      "type": "string"
+    },
+    "voxel_m": {
+      "default": 0.01,
+      "exclusiveMinimum": 0,
+      "title": "Voxel M",
+      "type": "number"
+    },
+    "min_range_m": {
+      "default": 0.1,
+      "minimum": 0,
+      "title": "Min Range M",
+      "type": "number"
+    },
+    "max_range_m": {
+      "default": 20,
+      "exclusiveMinimum": 0,
+      "title": "Max Range M",
+      "type": "number"
+    },
+    "statistical_outliers": {
+      "default": false,
+      "title": "Statistical Outliers",
+      "type": "boolean"
+    },
+    "outlier_neighbors": {
+      "default": 20,
+      "minimum": 3,
+      "title": "Outlier Neighbors",
+      "type": "integer"
+    },
+    "outlier_std_ratio": {
+      "default": 3,
+      "exclusiveMinimum": 0,
+      "title": "Outlier Std Ratio",
+      "type": "number"
+    },
+    "normal_radius_m": {
+      "default": 0.26,
+      "exclusiveMinimum": 0,
+      "title": "Normal Radius M",
+      "type": "number"
+    },
+    "min_correspondences": {
+      "default": 40,
+      "minimum": 6,
+      "title": "Min Correspondences",
+      "type": "integer"
+    },
+    "stable_min_points": {
+      "default": 60,
+      "minimum": 6,
+      "title": "Stable Min Points",
+      "type": "integer"
+    },
+    "min_fitness": {
+      "default": 0.25,
+      "maximum": 1,
+      "minimum": 0,
+      "title": "Min Fitness",
+      "type": "number"
+    },
+    "max_inlier_rmse_m": {
+      "default": 0.08,
+      "exclusiveMinimum": 0,
+      "title": "Max Inlier Rmse M",
+      "type": "number"
+    },
+    "min_conditioning": {
+      "default": 1e-05,
+      "exclusiveMinimum": 0,
+      "title": "Min Conditioning",
+      "type": "number"
+    },
+    "max_translation_correction_m": {
+      "default": 0.5,
+      "exclusiveMinimum": 0,
+      "title": "Max Translation Correction M",
+      "type": "number"
+    },
+    "max_rotation_correction_rad": {
+      "default": 0.2,
+      "exclusiveMinimum": 0,
+      "title": "Max Rotation Correction Rad",
+      "type": "number"
+    },
+    "max_repeatability_m": {
+      "default": 0.04,
+      "exclusiveMinimum": 0,
+      "title": "Max Repeatability M",
+      "type": "number"
+    },
+    "registration_scales_m": {
+      "items": {
+        "exclusiveMinimum": 0,
+        "type": "number"
+      },
+      "title": "Registration Scales M",
+      "type": "array"
+    },
+    "registration_iterations": {
+      "default": 35,
+      "maximum": 500,
+      "minimum": 1,
+      "title": "Registration Iterations",
+      "type": "integer"
+    },
+    "robust_scale_m": {
+      "default": 0.025,
+      "exclusiveMinimum": 0,
+      "title": "Robust Scale M",
+      "type": "number"
+    },
+    "roi_margin_m": {
+      "default": 0.18,
+      "minimum": 0,
+      "title": "Roi Margin M",
+      "type": "number"
+    },
+    "patch_radius_m": {
+      "default": 0.18,
+      "exclusiveMinimum": 0,
+      "title": "Patch Radius M",
+      "type": "number"
+    },
+    "patch_spacing_m": {
+      "default": 0.12,
+      "exclusiveMinimum": 0,
+      "title": "Patch Spacing M",
+      "type": "number"
+    },
+    "min_patch_points": {
+      "default": 8,
+      "minimum": 3,
+      "title": "Min Patch Points",
+      "type": "integer"
+    },
+    "min_common_coverage": {
+      "default": 0.25,
+      "maximum": 1,
+      "minimum": 0,
+      "title": "Min Common Coverage",
+      "type": "number"
+    },
+    "min_common_cells": {
+      "default": 3,
+      "minimum": 1,
+      "title": "Min Common Cells",
+      "type": "integer"
+    },
+    "max_roughness_m": {
+      "default": 0.015,
+      "exclusiveMinimum": 0,
+      "title": "Max Roughness M",
+      "type": "number"
+    },
+    "max_projection_m": {
+      "default": 0.08,
+      "exclusiveMinimum": 0,
+      "title": "Max Projection M",
+      "type": "number"
+    },
+    "change_threshold_m": {
+      "default": 0.005,
+      "exclusiveMinimum": 0,
+      "title": "Change Threshold M",
+      "type": "number"
+    },
+    "nearest_threshold_m": {
+      "default": 0.025,
+      "exclusiveMinimum": 0,
+      "title": "Nearest Threshold M",
+      "type": "number"
+    },
+    "uncertainty_floor_m": {
+      "default": 0.004,
+      "exclusiveMinimum": 0,
+      "title": "Uncertainty Floor M",
+      "type": "number"
+    },
+    "uncertainty_multiplier": {
+      "default": 1.5,
+      "exclusiveMinimum": 0,
+      "title": "Uncertainty Multiplier",
+      "type": "number"
+    },
+    "min_region_patches": {
+      "default": 2,
+      "minimum": 1,
+      "title": "Min Region Patches",
+      "type": "integer"
+    },
+    "min_valid_patch_fraction": {
+      "default": 0.1,
+      "maximum": 1,
+      "minimum": 0,
+      "title": "Min Valid Patch Fraction",
+      "type": "number"
+    },
+    "monitored_assets": {
+      "items": {
+        "minLength": 1,
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+        "type": "string"
+      },
+      "title": "Monitored Assets",
+      "type": "array"
+    },
+    "operating_k": {
+      "default": 5,
+      "exclusiveMinimum": 0,
+      "title": "Operating K",
+      "type": "number"
+    },
+    "load_age_limit_s": {
+      "default": 6,
+      "exclusiveMinimum": 0,
+      "title": "Load Age Limit S",
+      "type": "number"
+    },
+    "max_delay_s": {
+      "default": 5,
+      "exclusiveMinimum": 0,
+      "title": "Max Delay S",
+      "type": "number"
+    },
+    "operating_min_scale_temperature": {
+      "default": 0.4,
+      "exclusiveMinimum": 0,
+      "title": "Operating Min Scale Temperature",
+      "type": "number"
+    },
+    "operating_min_scale_pressure": {
+      "default": 500,
+      "exclusiveMinimum": 0,
+      "title": "Operating Min Scale Pressure",
+      "type": "number"
+    },
+    "lag_candidates_s": {
+      "items": {
+        "minimum": 0,
+        "type": "number"
+      },
+      "title": "Lag Candidates S",
+      "type": "array"
+    },
+    "thermal_threshold_c": {
+      "default": 4,
+      "exclusiveMinimum": 0,
+      "title": "Thermal Threshold C",
+      "type": "number"
+    },
+    "thermal_min_pixels": {
+      "default": 4,
+      "minimum": 1,
+      "title": "Thermal Min Pixels",
+      "type": "integer"
+    },
+    "thermal_min_training_frames": {
+      "default": 4,
+      "minimum": 2,
+      "title": "Thermal Min Training Frames",
+      "type": "integer"
+    },
+    "thermal_max_pose_delta_m": {
+      "default": 0.15,
+      "exclusiveMinimum": 0,
+      "title": "Thermal Max Pose Delta M",
+      "type": "number"
+    },
+    "thermal_max_rotation_delta_rad": {
+      "default": 0.08,
+      "exclusiveMinimum": 0,
+      "title": "Thermal Max Rotation Delta Rad",
+      "type": "number"
+    },
+    "thermal_min_valid_fraction": {
+      "default": 0.15,
+      "maximum": 1,
+      "minimum": 0,
+      "title": "Thermal Min Valid Fraction",
+      "type": "number"
+    }
+  },
+  "title": "AnalyticsConfig",
+  "type": "object"
+}

@@ -17,7 +17,10 @@ from twinguard.core.serialization import analytics_json
 from twinguard import __version__
 from .config import AcquisitionConfig
 
-PUBLIC_KEYS = {"lidar": {"points_m", "valid_returns"}, "thermal": {"temperature_c", "valid_mask"}}
+PUBLIC_KEYS = {
+    "lidar": {"points_m", "valid_returns"},
+    "thermal": {"temperature_c", "valid_mask", "saturation_mask", "pixel_status"},
+}
 
 
 def artifact(root, path):

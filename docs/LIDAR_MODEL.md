@@ -13,3 +13,8 @@ True acquisition pose comes from the controller/event override. Reported pose is
 L0 suppresses stochastic noise/pose error for verification; L1 is small-noise incomplete sensing; moderate increases noise/outliers; L2 increases noise, pose errors/dropout and narrows FoV. Narrowing FoV concentrates more rays on the plant, so a degraded scan can have more valid returns while covering fewer angles. Return fraction is not surface-area coverage. Model settings and measured outcomes are both reported, never substituted for each other.
 
 NPZ exports only points_m and valid_returns; PLY contains measured XYZ. Known asset_ids in the capture are the configured target association, not a claim that every point belongs to that asset. Ideal range-error zero is the difference from the backend's own noiseless intersection reference; geometric numerical correctness is checked separately against known geometry. Runtime has no motion distortion, rolling sweep timestamps, reflectance/intensity calibration, multipath, multiple returns, atmospheric scattering or UAV flight dynamics. No registration or deformation detection is performed.
+
+
+## Phase 3 update
+
+Phase 3 correction: private evaluator artifacts retain all ray hit positions/asset IDs and valid-return flags separately. The deformation audit can distinguish hit-ray count from retained quantitative coverage. Public target IDs remain intended inspection metadata, not per-point segmentation. See REGISTRATION.md and PHASE3_VALIDATION.md.

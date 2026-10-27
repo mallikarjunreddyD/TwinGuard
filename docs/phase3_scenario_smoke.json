@@ -1,0 +1,61 @@
+[
+  {
+    "scenario": "S0",
+    "public_records": 432,
+    "operating": {
+      "inconclusive": 6,
+      "valid": 361
+    },
+    "thermal": [
+      "inconclusive"
+    ]
+  },
+  {
+    "scenario": "S1",
+    "public_records": 433,
+    "operating": {
+      "inconclusive": 8,
+      "valid": 360
+    },
+    "thermal": [
+      "inconclusive"
+    ]
+  },
+  {
+    "scenario": "S2",
+    "public_records": 436,
+    "geometry": {
+      "B1": "valid",
+      "B2": "valid",
+      "B3": "valid"
+    },
+    "operating": {
+      "inconclusive": 2,
+      "valid": 367
+    },
+    "thermal": [
+      "inconclusive"
+    ]
+  },
+  {
+    "scenario": "S3",
+    "public_records": 441,
+    "operating": {
+      "valid": 371
+    },
+    "thermal": [
+      "inconclusive"
+    ]
+  },
+  {
+    "scenario": "S4",
+    "public_records": 431,
+    "operating": {
+      "inconclusive": 8,
+      "valid": 358
+    },
+    "thermal": [
+      "inconclusive"
+    ]
+  }
+]

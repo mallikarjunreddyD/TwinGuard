@@ -48,6 +48,18 @@
       "title": "Baseline",
       "type": "string"
     },
+    "benchmark_reference": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Benchmark Reference"
+    },
     "implementation_status": {
       "default": "not_implemented",
       "enum": [

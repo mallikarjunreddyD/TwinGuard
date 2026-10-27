@@ -1,0 +1,43 @@
+{
+  "analytics_config": "configs/analytics/default.yaml",
+  "accepted_reference": "configs/analytics/accepted_reference.json",
+  "experiment_id": "E1",
+  "calibration_seeds": [
+    50,
+    51,
+    52,
+    53,
+    54
+  ],
+  "evaluation_seeds": [
+    200,
+    201,
+    202,
+    203,
+    204
+  ],
+  "fidelities": [
+    "L0",
+    "L1",
+    "L2"
+  ],
+  "amplitudes_m": [
+    0,
+    0.01,
+    0.02,
+    0.03,
+    0.05
+  ],
+  "viewpoints": [
+    "same",
+    "changed"
+  ],
+  "robustness_viewpoints": [
+    "partial",
+    "high_pose",
+    "low_overlap"
+  ],
+  "include_support": true,
+  "benchmark_id": "E1-v1",
+  "schema_version": "1.0.0"
+}

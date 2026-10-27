@@ -43,9 +43,22 @@ def main(argv=None):
     from twinguard.sensing.cli import add_commands as add_sensing_commands
 
     add_sensing_commands(sub)
+    from twinguard.analytics.cli import add_commands as add_analytics
+    from twinguard.evaluation.cli import add_commands as add_experiments
+
+    add_analytics(sub)
+    add_experiments(sub)
     args = parser.parse_args(argv)
     try:
-        if args.command == "sensing":
+        if args.command == "analytics":
+            from twinguard.analytics.cli import execute
+
+            execute(args)
+        elif args.command == "experiment":
+            from twinguard.evaluation.cli import execute
+
+            execute(args)
+        elif args.command == "sensing":
             from twinguard.sensing.cli import execute
 
             execute(args)

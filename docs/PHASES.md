@@ -17,3 +17,8 @@ Phase 2 entry points are `PlantSimulator.sensing_reader().read_at(time_s)` and `
 
 
 Phase 2 evidence is recorded in PHASE2_VALIDATION.md. Phase 3 receives InspectionCapture/SensorObservation records through core.observations.load_public_observations and measured arrays through load_capture_arrays. Baseline/current scan IDs, reported poses/standard deviations, intrinsics, numeric thermal arrays/masks and UTC measured process streams are sufficient to start analytics without simulator access. Point matching, registration, operating-reference fitting, change detection and anomaly classification remain Phase 3 work. Only the separate evaluator may use evaluation_private references and exact fault records. No missing sensing contract requires Phase 3 to access true poses or hidden expected operating values.
+
+
+## Phase 3 update
+
+Phase 3 is now implemented and validated in PHASE3_VALIDATION.md; earlier statements above about pending analytics are historical handoff context. Public observations now support ICP, geometric regions and operating/thermal residuals without simulator truth. E1/E2 run; E3/E4 remain pending. Phase 4 must preserve missing/invalid/OOR qualifications and cannot equate no detection with healthy equipment.

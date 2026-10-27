@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "experiment_id": "E1",
-  "version": "v1",
+  "version": "v2",
   "inputs": [
     "reference cloud",
     "current cloud",
@@ -24,6 +24,7 @@
     "localization error",
     "runtime"
   ],
-  "baseline": "Rigid registration plus nearest-neighbor distance; implementation pending",
-  "implementation_status": "not_implemented"
+  "baseline": "Observed-data baseline and proposed comparison; see docs/EXPERIMENTS.md",
+  "implementation_status": "implemented",
+  "benchmark_reference": "configs/experiments/E1.yaml"
 }

@@ -21,3 +21,8 @@ Implemented seven-asset parametric geometry, load-driven operating states, axial
 ## Phase 2 virtual-sensing evidence
 
 Implemented and tested Open3D CPU first-hit LiDAR/thermal visibility, radiometric vertex interpolation, configurable noise/pose uncertainty, nine-channel IoT sampling and replay transport effects. Numeric comparisons, actual measured plots and repeat-order evidence appear in PHASE2_VALIDATION.md and phase2_sensing_validation.json. Known-plane/occlusion checks establish numerical correctness under the model; comparisons to assumed noise/radiometric references establish synthetic consistency only. They do not establish physical sensor calibration, commercial instrument accuracy, industrial fault-detection reliability or TRL 6. Independent public-data and physical/relevant-environment validation remain pending. E1–E4 remain not_implemented.
+
+
+## Phase 3 update
+
+Phase 3 software evidence: actual CPU Open3D registration, patch geometric screening, numeric thermal residual regions, healthy-only dynamic operating fits, truth-isolated inference and full synthetic E1/E2 comparisons are implemented. See PHASE3_VALIDATION.md and its 154-pair/30-sequence records. This demonstrates controlled software functions, with limited small-change sensitivity and qualified missing/OOR handling. It is not independent physical accuracy or a new TRL assignment. E3 fusion and E4 integration are still pending.

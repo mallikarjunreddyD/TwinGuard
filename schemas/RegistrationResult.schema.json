@@ -1,0 +1,261 @@
+{
+  "$defs": {
+    "Artifact": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0.0",
+          "default": "1.0.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "artifact_id": {
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+          "title": "Artifact Id",
+          "type": "string"
+        },
+        "uri": {
+          "minLength": 1,
+          "title": "Uri",
+          "type": "string"
+        },
+        "media_type": {
+          "title": "Media Type",
+          "type": "string"
+        },
+        "sha256": {
+          "anyOf": [
+            {
+              "pattern": "^[a-f0-9]{64}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Sha256"
+        }
+      },
+      "required": [
+        "artifact_id",
+        "uri",
+        "media_type"
+      ],
+      "title": "Artifact",
+      "type": "object"
+    },
+    "Frame": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "enum": [
+            "world",
+            "asset_local",
+            "sensor_local",
+            "registered_world"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "reference_id": {
+          "title": "Reference Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "kind",
+        "reference_id"
+      ],
+      "title": "Frame",
+      "type": "object"
+    },
+    "Transform": {
+      "additionalProperties": false,
+      "properties": {
+        "source": {
+          "$ref": "#/$defs/Frame"
+        },
+        "target": {
+          "$ref": "#/$defs/Frame"
+        },
+        "matrix": {
+          "items": {
+            "items": {
+              "type": "number"
+            },
+            "type": "array"
+          },
+          "title": "Matrix",
+          "type": "array"
+        }
+      },
+      "required": [
+        "source",
+        "target",
+        "matrix"
+      ],
+      "title": "Transform",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0",
+      "default": "1.0.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "registration_id": {
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Registration Id",
+      "type": "string"
+    },
+    "baseline_capture_id": {
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Baseline Capture Id",
+      "type": "string"
+    },
+    "current_capture_id": {
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Current Capture Id",
+      "type": "string"
+    },
+    "transform_convention": {
+      "const": "T_baseline_current",
+      "default": "T_baseline_current",
+      "title": "Transform Convention",
+      "type": "string"
+    },
+    "transform": {
+      "$ref": "#/$defs/Transform"
+    },
+    "method": {
+      "enum": [
+        "pose_only",
+        "point_to_point",
+        "robust_point_to_plane"
+      ],
+      "title": "Method",
+      "type": "string"
+    },
+    "algorithm_version": {
+      "default": "v1",
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Algorithm Version",
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "valid",
+        "inconclusive",
+        "invalid",
+        "insufficient_coverage",
+        "out_of_reference_range"
+      ],
+      "title": "Status",
+      "type": "string"
+    },
+    "converged": {
+      "title": "Converged",
+      "type": "boolean"
+    },
+    "fitness": {
+      "maximum": 1,
+      "minimum": 0,
+      "title": "Fitness",
+      "type": "number"
+    },
+    "inlier_rmse_m": {
+      "anyOf": [
+        {
+          "minimum": 0,
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Inlier Rmse M"
+    },
+    "correspondence_count": {
+      "minimum": 0,
+      "title": "Correspondence Count",
+      "type": "integer"
+    },
+    "conditioning_ratio": {
+      "minimum": 0,
+      "title": "Conditioning Ratio",
+      "type": "number"
+    },
+    "uncertainty_score_m": {
+      "minimum": 0,
+      "title": "Uncertainty Score M",
+      "type": "number"
+    },
+    "repeatability_m": {
+      "minimum": 0,
+      "title": "Repeatability M",
+      "type": "number"
+    },
+    "quality_flags": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Quality Flags",
+      "type": "array"
+    },
+    "runtime_s": {
+      "minimum": 0,
+      "title": "Runtime S",
+      "type": "number"
+    },
+    "registered_artifact": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/Artifact"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "registered_coordinate_frame": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/Frame"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    }
+  },
+  "required": [
+    "registration_id",
+    "baseline_capture_id",
+    "current_capture_id",
+    "transform",
+    "method",
+    "status",
+    "converged",
+    "fitness",
+    "inlier_rmse_m",
+    "correspondence_count",
+    "conditioning_ratio",
+    "uncertainty_score_m",
+    "repeatability_m",
+    "quality_flags",
+    "runtime_s"
+  ],
+  "title": "RegistrationResult",
+  "type": "object"
+}

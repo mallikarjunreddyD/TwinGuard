@@ -111,7 +111,14 @@ class LidarSensor:
                 "return_fraction": float(valid.mean()),
             },
         )
+        all_world = matrix[:3, 3] + (directions * safe[:, None]) @ matrix[:3, :3].T
+        all_world[~visible] = np.nan
+        all_assets = np.full(len(visible), "", dtype="U64")
+        all_assets[visible] = scene.asset_ids[hits.triangle_id[visible]]
         truth = {
+            "all_hit_world_m": all_world,
+            "all_hit_asset_ids": all_assets,
+            "all_valid_returns": valid,
             "true_pose": actual_pose.matrix,
             "noiseless_range_m": hits.distance_m[valid],
             "measured_range_m": measured[valid],

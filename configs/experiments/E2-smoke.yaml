@@ -1,0 +1,13 @@
+{
+  "analytics_config": "configs/analytics/default.yaml",
+  "accepted_reference": "configs/analytics/accepted_reference.json",
+  "experiment_id": "E2",
+  "calibration_seeds": [
+    60
+  ],
+  "evaluation_seeds": [
+    300
+  ],
+  "benchmark_id": "E2-smoke-v1",
+  "schema_version": "1.0.0"
+}

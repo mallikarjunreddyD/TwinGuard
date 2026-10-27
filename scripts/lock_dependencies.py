@@ -38,6 +38,7 @@ header = "# Validated Python 3.12 Linux environment; regenerate with scripts/loc
 for filename, names in [
     ("requirements-runtime.lock", runtime),
     ("requirements-sensing.lock", runtime | closure(["open3d"])),
+    ("requirements-analytics.lock", runtime | closure(["open3d", "scipy"])),
     ("requirements-dev.lock", set(installed) - {"twinguard", "pip", "setuptools"}),
 ]:
     Path(filename).write_text(

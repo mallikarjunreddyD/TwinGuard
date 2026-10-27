@@ -1,0 +1,26 @@
+{
+  "analytics_config": "configs/analytics/default.yaml",
+  "accepted_reference": "configs/analytics/accepted_reference.json",
+  "experiment_id": "E1",
+  "calibration_seeds": [
+    50
+  ],
+  "evaluation_seeds": [
+    200
+  ],
+  "fidelities": [
+    "L1"
+  ],
+  "amplitudes_m": [
+    0,
+    0.03,
+    0.05
+  ],
+  "viewpoints": [
+    "changed"
+  ],
+  "robustness_viewpoints": [],
+  "include_support": true,
+  "benchmark_id": "E1-smoke-v1",
+  "schema_version": "1.0.0"
+}

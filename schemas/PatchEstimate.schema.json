@@ -1,0 +1,174 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0",
+      "default": "1.0.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "patch_id": {
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Patch Id",
+      "type": "string"
+    },
+    "asset_id": {
+      "anyOf": [
+        {
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Asset Id"
+    },
+    "center_world_m": {
+      "maxItems": 3,
+      "minItems": 3,
+      "prefixItems": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "number"
+        },
+        {
+          "type": "number"
+        }
+      ],
+      "title": "Center World M",
+      "type": "array"
+    },
+    "normal_world": {
+      "maxItems": 3,
+      "minItems": 3,
+      "prefixItems": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "number"
+        },
+        {
+          "type": "number"
+        }
+      ],
+      "title": "Normal World",
+      "type": "array"
+    },
+    "direction": {
+      "enum": [
+        "oriented",
+        "unsigned",
+        "unreliable"
+      ],
+      "title": "Direction",
+      "type": "string"
+    },
+    "baseline_points": {
+      "title": "Baseline Points",
+      "type": "integer"
+    },
+    "current_points": {
+      "title": "Current Points",
+      "type": "integer"
+    },
+    "common_coverage": {
+      "maximum": 1,
+      "minimum": 0,
+      "title": "Common Coverage",
+      "type": "number"
+    },
+    "displacement_m": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Displacement M"
+    },
+    "uncertainty_score_m": {
+      "anyOf": [
+        {
+          "minimum": 0,
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Uncertainty Score M"
+    },
+    "engineering_margin_m": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Engineering Margin M"
+    },
+    "threshold_m": {
+      "minimum": 0,
+      "title": "Threshold M",
+      "type": "number"
+    },
+    "significant": {
+      "anyOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Significant"
+    },
+    "status": {
+      "enum": [
+        "valid",
+        "inconclusive",
+        "invalid",
+        "insufficient_coverage",
+        "out_of_reference_range"
+      ],
+      "title": "Status",
+      "type": "string"
+    },
+    "quality_flags": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Quality Flags",
+      "type": "array"
+    }
+  },
+  "required": [
+    "patch_id",
+    "asset_id",
+    "center_world_m",
+    "normal_world",
+    "direction",
+    "baseline_points",
+    "current_points",
+    "common_coverage",
+    "displacement_m",
+    "uncertainty_score_m",
+    "engineering_margin_m",
+    "threshold_m",
+    "significant",
+    "status",
+    "quality_flags"
+  ],
+  "title": "PatchEstimate",
+  "type": "object"
+}
