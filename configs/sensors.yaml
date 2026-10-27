@@ -4,27 +4,98 @@
     "asset_id": "BW-01",
     "source_type": "synthetic",
     "configuration_version": "v1",
-    "description": "Configuration only; sensor not implemented"
+    "modality": "iot",
+    "calibration_reference": "assumed-v1",
+    "description": "Virtual sensor implementation; acquisition parameters in configs/sensing/L1.yaml"
   },
   {
     "sensor_id": "pressure-01",
     "asset_id": "BW-01",
     "source_type": "synthetic",
     "configuration_version": "v1",
-    "description": "Configuration only; sensor not implemented"
+    "modality": "iot",
+    "calibration_reference": "assumed-v1",
+    "description": "Virtual sensor implementation; acquisition parameters in configs/sensing/L1.yaml"
   },
   {
     "sensor_id": "lidar-01",
     "asset_id": "BW-01",
     "source_type": "synthetic",
     "configuration_version": "v1",
-    "description": "Configuration only; sensor not implemented"
+    "modality": "lidar",
+    "calibration_reference": "assumed-v1",
+    "description": "Virtual sensor implementation; acquisition parameters in configs/sensing/L1.yaml"
   },
   {
     "sensor_id": "thermal-01",
     "asset_id": "BW-01",
     "source_type": "synthetic",
     "configuration_version": "v1",
-    "description": "Configuration only; sensor not implemented"
+    "modality": "thermal",
+    "calibration_reference": "assumed-v1",
+    "description": "Virtual sensor implementation; acquisition parameters in configs/sensing/L1.yaml"
+  },
+  {
+    "sensor_id": "load-01",
+    "asset_id": "DR-01",
+    "source_type": "synthetic",
+    "configuration_version": "v1",
+    "modality": "iot",
+    "calibration_reference": "assumed-v1",
+    "description": "Virtual sensor implementation; acquisition parameters in configs/sensing/L1.yaml"
+  },
+  {
+    "sensor_id": "vibration-01",
+    "asset_id": "SUP-01",
+    "source_type": "synthetic",
+    "configuration_version": "v1",
+    "modality": "iot",
+    "calibration_reference": "assumed-v1",
+    "description": "Virtual sensor implementation; acquisition parameters in configs/sensing/L1.yaml"
+  },
+  {
+    "sensor_id": "wall-thermometer",
+    "asset_id": "BW-01",
+    "source_type": "synthetic",
+    "configuration_version": "v1",
+    "modality": "iot",
+    "calibration_reference": "assumed-v1",
+    "description": "Virtual sensor implementation; acquisition parameters in configs/sensing/L1.yaml"
+  },
+  {
+    "sensor_id": "drum-thermometer",
+    "asset_id": "DR-01",
+    "source_type": "synthetic",
+    "configuration_version": "v1",
+    "modality": "iot",
+    "calibration_reference": "assumed-v1",
+    "description": "Virtual sensor implementation; acquisition parameters in configs/sensing/L1.yaml"
+  },
+  {
+    "sensor_id": "pipe-temperature",
+    "asset_id": "SP-01",
+    "source_type": "synthetic",
+    "configuration_version": "v1",
+    "modality": "iot",
+    "calibration_reference": "assumed-v1",
+    "description": "Virtual sensor implementation; acquisition parameters in configs/sensing/L1.yaml"
+  },
+  {
+    "sensor_id": "pressure-02",
+    "asset_id": "SP-02",
+    "source_type": "synthetic",
+    "configuration_version": "v1",
+    "modality": "iot",
+    "calibration_reference": "assumed-v1",
+    "description": "Virtual sensor implementation; acquisition parameters in configs/sensing/L1.yaml"
+  },
+  {
+    "sensor_id": "vibration-02",
+    "asset_id": "DR-01",
+    "source_type": "synthetic",
+    "configuration_version": "v1",
+    "modality": "iot",
+    "calibration_reference": "assumed-v1",
+    "description": "Virtual sensor implementation; acquisition parameters in configs/sensing/L1.yaml"
   }
 ]

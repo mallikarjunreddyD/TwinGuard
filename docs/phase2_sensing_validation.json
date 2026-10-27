@@ -1,0 +1,1873 @@
+{
+  "label": "Virtual sensor-model validation against separately stored modeled references; not physical accuracy or fault detection",
+  "backend": "Open3D CPU RaycastingScene 0.19.0",
+  "runs": {
+    "S0-L1": {
+      "validation_kind": "restricted virtual sensor model verification; no physical calibration or anomaly detection",
+      "scenario_id": "S0",
+      "fidelity": "L1",
+      "lidar": {
+        "S0-lidar-01-t_0": {
+          "emitted_rays": 11520,
+          "valid_returns": 5532,
+          "valid_return_fraction": 0.48020833333333335,
+          "visible_ray_fraction": 0.48723958333333334,
+          "range_error_m": {
+            "count": 5532,
+            "rmse": 0.0041534529667675854,
+            "mean": 0.00011350884452179704,
+            "std": 0.004151901647361818,
+            "mae": 0.003313231085390589
+          },
+          "translation_error_m": 0.01061585384642665,
+          "rotation_error_rad": 0.003740039281259216,
+          "actual_outlier_returns": 0
+        }
+      },
+      "thermal": {
+        "S0-thermal-01-t_60": {
+          "total_pixels": 12288,
+          "valid_pixels": 7213,
+          "valid_fraction": 0.5869954427083334,
+          "apparent_model_error_c": {
+            "count": 7213,
+            "rmse": 0.3007812866021759,
+            "mean": -0.0023608293344504483,
+            "std": 0.30077202139646214,
+            "mae": 0.24012583080932473
+          },
+          "surface_temperature_difference_c": {
+            "count": 7213,
+            "rmse": 4.3712107008754275,
+            "mean": -4.0678590798224645,
+            "std": 1.6000017181721322,
+            "mae": 4.097676141257932
+          }
+        }
+      },
+      "iot": {
+        "drum-thermometer": {
+          "expected": 13,
+          "received_messages": 13,
+          "unique_observations": 13,
+          "completeness": 1.0,
+          "measurement_error": {
+            "count": 13,
+            "rmse": 0.32364397995684036,
+            "mean": -0.01230435471189559,
+            "std": 0.323410000799956,
+            "mae": 0.24333544849075067
+          },
+          "delayed_messages": 11,
+          "duplicates": 0,
+          "out_of_order": 0
+        },
+        "load-01": {
+          "expected": 61,
+          "received_messages": 61,
+          "unique_observations": 60,
+          "completeness": 0.9836065573770492,
+          "measurement_error": {
+            "count": 60,
+            "rmse": 0.0017056750959413864,
+            "mean": 0.00038052647585305467,
+            "std": 0.0016626867215712984,
+            "mae": 0.0013772311130614483
+          },
+          "delayed_messages": 47,
+          "duplicates": 1,
+          "out_of_order": 0
+        },
+        "pipe-temperature": {
+          "expected": 25,
+          "received_messages": 25,
+          "unique_observations": 25,
+          "completeness": 1.0,
+          "measurement_error": {
+            "count": 25,
+            "rmse": 0.23864228046839567,
+            "mean": 0.0029811831322751913,
+            "std": 0.23862365887373418,
+            "mae": 0.17313176470358144
+          },
+          "delayed_messages": 17,
+          "duplicates": 0,
+          "out_of_order": 0
+        },
+        "pressure-01": {
+          "expected": 121,
+          "received_messages": 122,
+          "unique_observations": 120,
+          "completeness": 0.9917355371900827,
+          "measurement_error": {
+            "count": 120,
+            "rmse": 153.4511712505954,
+            "mean": -1.7264619498164393,
+            "std": 153.4414588281648,
+            "mae": 125.84549536016614
+          },
+          "delayed_messages": 97,
+          "duplicates": 2,
+          "out_of_order": 0
+        },
+        "pressure-02": {
+          "expected": 41,
+          "received_messages": 41,
+          "unique_observations": 41,
+          "completeness": 1.0,
+          "measurement_error": {
+            "count": 41,
+            "rmse": 150.0845750637166,
+            "mean": -14.386585287156333,
+            "std": 149.39345981612368,
+            "mae": 121.52915808769431
+          },
+          "delayed_messages": 35,
+          "duplicates": 0,
+          "out_of_order": 0
+        },
+        "temperature-01": {
+          "expected": 61,
+          "received_messages": 59,
+          "unique_observations": 59,
+          "completeness": 0.9672131147540983,
+          "measurement_error": {
+            "count": 59,
+            "rmse": 0.1921466348550299,
+            "mean": -0.004878857236955185,
+            "std": 0.1920846845487,
+            "mae": 0.15313370642930052
+          },
+          "delayed_messages": 47,
+          "duplicates": 0,
+          "out_of_order": 0
+        },
+        "vibration-01": {
+          "expected": 61,
+          "received_messages": 60,
+          "unique_observations": 60,
+          "completeness": 0.9836065573770492,
+          "measurement_error": {
+            "count": 60,
+            "rmse": 0.0052339066087649854,
+            "mean": 0.00015562746692626093,
+            "std": 0.005231592346581671,
+            "mae": 0.00414898363859632
+          },
+          "delayed_messages": 49,
+          "duplicates": 0,
+          "out_of_order": 0
+        },
+        "vibration-02": {
+          "expected": 25,
+          "received_messages": 25,
+          "unique_observations": 25,
+          "completeness": 1.0,
+          "measurement_error": {
+            "count": 25,
+            "rmse": 0.004335419265718403,
+            "mean": -0.00046441750687919336,
+            "std": 0.004310472896199026,
+            "mae": 0.00376986785781803
+          },
+          "delayed_messages": 21,
+          "duplicates": 0,
+          "out_of_order": 0
+        },
+        "wall-thermometer": {
+          "expected": 25,
+          "received_messages": 24,
+          "unique_observations": 24,
+          "completeness": 0.96,
+          "measurement_error": {
+            "count": 24,
+            "rmse": 0.23939665969843413,
+            "mean": 0.05120929385453129,
+            "std": 0.23385544444739392,
+            "mae": 0.20313795474680774
+          },
+          "delayed_messages": 17,
+          "duplicates": 0,
+          "out_of_order": 0
+        }
+      },
+      "acquisition_runtime_s": {
+        "S0-lidar-01-t_0": 1.0425835649948567,
+        "S0-thermal-01-t_60": 0.01956663597957231,
+        "iot": 1.0092349229962565
+      },
+      "resource_measurement": {
+        "process_peak_rss_mib": 685.80078125,
+        "scope": "Linux process peak RSS including interpreter/backend/plant/acquisition"
+      }
+    },
+    "S1-L1": {
+      "validation_kind": "restricted virtual sensor model verification; no physical calibration or anomaly detection",
+      "scenario_id": "S1",
+      "fidelity": "L1",
+      "lidar": {
+        "S1-lidar-01-t_0": {
+          "emitted_rays": 11520,
+          "valid_returns": 5541,
+          "valid_return_fraction": 0.48098958333333336,
+          "visible_ray_fraction": 0.48663194444444446,
+          "range_error_m": {
+            "count": 5541,
+            "rmse": 0.00409720984185472,
+            "mean": -0.00011758814113688752,
+            "std": 0.004095522129992115,
+            "mae": 0.0032780520494797394
+          },
+          "translation_error_m": 0.013972121166359862,
+          "rotation_error_rad": 0.0018334661473370757,
+          "actual_outlier_returns": 0
+        }
+      },
+      "thermal": {
+        "S1-thermal-01-t_60": {
+          "total_pixels": 12288,
+          "valid_pixels": 7185,
+          "valid_fraction": 0.584716796875,
+          "apparent_model_error_c": {
+            "count": 7185,
+            "rmse": 0.3028559137387629,
+            "mean": -0.0014177720570654286,
+            "std": 0.3028525951827641,
+            "mae": 0.24126795313212487
+          },
+          "surface_temperature_difference_c": {
+            "count": 7185,
+            "rmse": 4.707706041787256,
+            "mean": -4.380624412968954,
+            "std": 1.7241304847315466,
+            "mae": 4.413674172583697
+          }
+        }
+      },
+      "iot": {
+        "drum-thermometer": {
+          "expected": 13,
+          "received_messages": 13,
+          "unique_observations": 13,
+          "completeness": 1.0,
+          "measurement_error": {
+            "count": 13,
+            "rmse": 0.2948041511217504,
+            "mean": -0.04801812557352692,
+            "std": 0.29086723283144295,
+            "mae": 0.2421701545677199
+          },
+          "delayed_messages": 10,
+          "duplicates": 0,
+          "out_of_order": 0
+        },
+        "load-01": {
+          "expected": 61,
+          "received_messages": 61,
+          "unique_observations": 61,
+          "completeness": 1.0,
+          "measurement_error": {
+            "count": 61,
+            "rmse": 0.002045807710648932,
+            "mean": -0.00026139257628660914,
+            "std": 0.002029039947860286,
+            "mae": 0.001726907752463976
+          },
+          "delayed_messages": 53,
+          "duplicates": 0,
+          "out_of_order": 0
+        },
+        "pipe-temperature": {
+          "expected": 25,
+          "received_messages": 24,
+          "unique_observations": 24,
+          "completeness": 0.96,
+          "measurement_error": {
+            "count": 24,
+            "rmse": 0.19069756372822463,
+            "mean": -0.0595917788689159,
+            "std": 0.18114740048678182,
+            "mae": 0.14253516489224438
+          },
+          "delayed_messages": 21,
+          "duplicates": 0,
+          "out_of_order": 0
+        },
+        "pressure-01": {
+          "expected": 121,
+          "received_messages": 122,
+          "unique_observations": 121,
+          "completeness": 1.0,
+          "measurement_error": {
+            "count": 121,
+            "rmse": 140.07661219841177,
+            "mean": -3.145277312348697,
+            "std": 140.0412957509772,
+            "mae": 110.3944085628133
+          },
+          "delayed_messages": 98,
+          "duplicates": 1,
+          "out_of_order": 0
+        },
+        "pressure-02": {
+          "expected": 41,
+          "received_messages": 40,
+          "unique_observations": 40,
+          "completeness": 0.975609756097561,
+          "measurement_error": {
+            "count": 40,
+            "rmse": 156.65353165236655,
+            "mean": -19.532608369077206,
+            "std": 155.4310335469055,
+            "mae": 132.9934350468946
+          },
+          "delayed_messages": 28,
+          "duplicates": 0,
+          "out_of_order": 0
+        },
+        "temperature-01": {
+          "expected": 61,
+          "received_messages": 60,
+          "unique_observations": 59,
+          "completeness": 0.9672131147540983,
+          "measurement_error": {
+            "count": 59,
+            "rmse": 0.1821908990963582,
+            "mean": 0.02324216305264821,
+            "std": 0.1807023120222137,
+            "mae": 0.14978800207386128
+          },
+          "delayed_messages": 43,
+          "duplicates": 1,
+          "out_of_order": 0
+        },
+        "vibration-01": {
+          "expected": 61,
+          "received_messages": 61,
+          "unique_observations": 61,
+          "completeness": 1.0,
+          "measurement_error": {
+            "count": 61,
+            "rmse": 0.004823552244990775,
+            "mean": 4.934084439820636e-05,
+            "std": 0.004823299880914478,
+            "mae": 0.00405021041243071
+          },
+          "delayed_messages": 50,
+          "duplicates": 0,
+          "out_of_order": 0
+        },
+        "vibration-02": {
+          "expected": 25,
+          "received_messages": 25,
+          "unique_observations": 25,
+          "completeness": 1.0,
+          "measurement_error": {
+            "count": 25,
+            "rmse": 0.0039246774678455615,
+            "mean": 0.0019044606684345733,
+            "std": 0.003431635585111039,
+            "mae": 0.003335202444796479
+          },
+          "delayed_messages": 21,
+          "duplicates": 0,
+          "out_of_order": 0
+        },
+        "wall-thermometer": {
+          "expected": 25,
+          "received_messages": 25,
+          "unique_observations": 25,
+          "completeness": 1.0,
+          "measurement_error": {
+            "count": 25,
+            "rmse": 0.21846277801243597,
+            "mean": -0.035842650898784995,
+            "std": 0.21550241240751505,
+            "mae": 0.15827579481953763
+          },
+          "delayed_messages": 18,
+          "duplicates": 0,
+          "out_of_order": 0
+        }
+      },
+      "acquisition_runtime_s": {
+        "S1-lidar-01-t_0": 0.02285011700587347,
+        "S1-thermal-01-t_60": 0.01941398301278241,
+        "iot": 1.0833667519909795
+      },
+      "resource_measurement": {
+        "process_peak_rss_mib": 691.359375,
+        "scope": "Linux process peak RSS including interpreter/backend/plant/acquisition"
+      }
+    },
+    "S2-L1": {
+      "validation_kind": "restricted virtual sensor model verification; no physical calibration or anomaly detection",
+      "scenario_id": "S2",
+      "fidelity": "L1",
+      "lidar": {
+        "S2-lidar-01-t_0": {
+          "emitted_rays": 11520,
+          "valid_returns": 5511,
+          "valid_return_fraction": 0.4783854166666667,
+          "visible_ray_fraction": 0.4875,
+          "range_error_m": {
+            "count": 5511,
+            "rmse": 0.004132724178461234,
+            "mean": 3.2844227232072954e-05,
+            "std": 0.00413259366402936,
+            "mae": 0.003281356805498063
+          },
+          "translation_error_m": 0.019555897421150582,
+          "rotation_error_rad": 0.0034437473992140082,
+          "actual_outlier_returns": 0
+        },
+        "S2-lidar-01-t_60": {
+          "emitted_rays": 11520,
+          "valid_returns": 5214,
+          "valid_return_fraction": 0.45260416666666664,
+          "visible_ray_fraction": 0.4597222222222222,
+          "range_error_m": {
+            "count": 5214,
+            "rmse": 0.0041061585874830045,
+            "mean": -4.487371354605255e-05,
+            "std": 0.004105913381379715,
+            "mae": 0.0032749376170571713
+          },
+          "translation_error_m": 0.024454501409569642,
+          "rotation_error_rad": 0.0032646244028314447,
+          "actual_outlier_returns": 0
+        }
+      },
+      "thermal": {
+        "S2-thermal-01-t_60": {
+          "total_pixels": 12288,
+          "valid_pixels": 7191,
+          "valid_fraction": 0.585205078125,
+          "apparent_model_error_c": {
+            "count": 7191,
+            "rmse": 0.2992858637552489,
+            "mean": -0.0005932125485741562,
+            "std": 0.2992852758533196,
+            "mae": 0.2382341463233648
+          },
+          "surface_temperature_difference_c": {
+            "count": 7191,
+            "rmse": 4.366853907519071,
+            "mean": -4.0642276611944625,
+            "std": 1.5973310763884743,
+            "mae": 4.09460041172235
+          }
+        }
+      },
+      "iot": {
+        "drum-thermometer": {
+          "expected": 13,
+          "received_messages": 13,
+          "unique_observations": 13,
+          "completeness": 1.0,
+          "measurement_error": {
+            "count": 13,
+            "rmse": 0.23276976257233797,
+            "mean": -0.09577437786435675,
+            "std": 0.21215331935342893,
+            "mae": 0.1753806697229637
+          },
+          "delayed_messages": 10,
+          "duplicates": 0,
+          "out_of_order": 0
+        },
+        "load-01": {
+          "expected": 61,
+          "received_messages": 59,
+          "unique_observations": 59,
+          "completeness": 0.9672131147540983,
+          "measurement_error": {
+            "count": 59,
+            "rmse": 0.0017969288418245917,
+            "mean": -6.134790555593129e-05,
+            "std": 0.0017958813148604696,
+            "mae": 0.0014177880509568892
+          },
+          "delayed_messages": 47,
+          "duplicates": 0,
+          "out_of_order": 0
+        },
+        "pipe-temperature": {
+          "expected": 25,
+          "received_messages": 25,
+          "unique_observations": 25,
+          "completeness": 1.0,
+          "measurement_error": {
+            "count": 25,
+            "rmse": 0.21276701399233466,
+            "mean": -0.014000716833481874,
+            "std": 0.21230586937567927,
+            "mae": 0.16428158460290207
+          },
+          "delayed_messages": 18,
+          "duplicates": 0,
+          "out_of_order": 0
+        },
+        "pressure-01": {
+          "expected": 121,
+          "received_messages": 119,
+          "unique_observations": 119,
+          "completeness": 0.9834710743801653,
+          "measurement_error": {
+            "count": 119,
+            "rmse": 145.3154455527692,
+            "mean": -16.091813820830993,
+            "std": 144.42171666392676,
+            "mae": 113.08905860295073
+          },
+          "delayed_messages": 104,
+          "duplicates": 0,
+          "out_of_order": 0
+        },
+        "pressure-02": {
+          "expected": 41,
+          "received_messages": 41,
+          "unique_observations": 41,
+          "completeness": 1.0,
+          "measurement_error": {
+            "count": 41,
+            "rmse": 154.5488400681877,
+            "mean": 26.45887111346862,
+            "std": 152.2671077607476,
+            "mae": 134.87045402932492
+          },
+          "delayed_messages": 33,
+          "duplicates": 0,
+          "out_of_order": 0
+        },
+        "temperature-01": {
+          "expected": 61,
+          "received_messages": 62,
+          "unique_observations": 61,
+          "completeness": 1.0,
+          "measurement_error": {
+            "count": 61,
+            "rmse": 0.2098784680228014,
+            "mean": 0.02667147992260149,
+            "std": 0.20817685629852406,
+            "mae": 0.1681028090558383
+          },
+          "delayed_messages": 48,
+          "duplicates": 1,
+          "out_of_order": 0
+        },
+        "vibration-01": {
+          "expected": 61,
+          "received_messages": 62,
+          "unique_observations": 60,
+          "completeness": 0.9836065573770492,
+          "measurement_error": {
+            "count": 60,
+            "rmse": 0.004687831745423268,
+            "mean": -0.0008101189454969246,
+            "std": 0.004617301567749839,
+            "mae": 0.0036394989442073257
+          },
+          "delayed_messages": 51,
+          "duplicates": 2,
+          "out_of_order": 0
+        },
+        "vibration-02": {
+          "expected": 25,
+          "received_messages": 26,
+          "unique_observations": 25,
+          "completeness": 1.0,
+          "measurement_error": {
+            "count": 25,
+            "rmse": 0.0045932933668574125,
+            "mean": 0.002307379231709452,
+            "std": 0.0039716929683816455,
+            "mae": 0.003859852437014097
+          },
+          "delayed_messages": 17,
+          "duplicates": 1,
+          "out_of_order": 0
+        },
+        "wall-thermometer": {
+          "expected": 25,
+          "received_messages": 26,
+          "unique_observations": 25,
+          "completeness": 1.0,
+          "measurement_error": {
+            "count": 25,
+            "rmse": 0.23475618727723613,
+            "mean": -0.0013205577342171183,
+            "std": 0.23475247302683602,
+            "mae": 0.1830715220312902
+          },
+          "delayed_messages": 21,
+          "duplicates": 1,
+          "out_of_order": 0
+        }
+      },
+      "acquisition_runtime_s": {
+        "S2-lidar-01-t_0": 0.022398658999009058,
+        "S2-lidar-01-t_60": 0.02135771099710837,
+        "S2-thermal-01-t_60": 0.023381808976409957,
+        "iot": 1.2000205460062716
+      },
+      "resource_measurement": {
+        "process_peak_rss_mib": 703.20703125,
+        "scope": "Linux process peak RSS including interpreter/backend/plant/acquisition"
+      }
+    },
+    "S3-L1": {
+      "validation_kind": "restricted virtual sensor model verification; no physical calibration or anomaly detection",
+      "scenario_id": "S3",
+      "fidelity": "L1",
+      "lidar": {
+        "S3-lidar-01-t_0": {
+          "emitted_rays": 11520,
+          "valid_returns": 5517,
+          "valid_return_fraction": 0.47890625,
+          "visible_ray_fraction": 0.48715277777777777,
+          "range_error_m": {
+            "count": 5517,
+            "rmse": 0.0040518041414153065,
+            "mean": -2.2769520048214803e-05,
+            "std": 0.004051740163108563,
+            "mae": 0.0032237728279535267
+          },
+          "translation_error_m": 0.020253309210560892,
+          "rotation_error_rad": 0.0047233315482446536,
+          "actual_outlier_returns": 0
+        }
+      },
+      "thermal": {
+        "S3-thermal-01-t_60": {
+          "total_pixels": 12288,
+          "valid_pixels": 7195,
+          "valid_fraction": 0.5855305989583334,
+          "apparent_model_error_c": {
+            "count": 7195,
+            "rmse": 0.30182155726790905,
+            "mean": 0.0010227904016626354,
+            "std": 0.30181982428498627,
+            "mae": 0.24126435331540427
+          },
+          "surface_temperature_difference_c": {
+            "count": 7195,
+            "rmse": 4.373958890191491,
+            "mean": -4.067865224798433,
+            "std": 1.6074790468185818,
+            "mae": 4.099753001809717
+          }
+        }
+      },
+      "iot": {
+        "drum-thermometer": {
+          "expected": 13,
+          "received_messages": 14,
+          "unique_observations": 13,
+          "completeness": 1.0,
+          "measurement_error": {
+            "count": 13,
+            "rmse": 0.30364160679776964,
+            "mean": 0.0012192300965479647,
+            "std": 0.30363915896455623,
+            "mae": 0.2344979505934733
+          },
+          "delayed_messages": 12,
+          "duplicates": 1,
+          "out_of_order": 0
+        },
+        "load-01": {
+          "expected": 61,
+          "received_messages": 62,
+          "unique_observations": 61,
+          "completeness": 1.0,
+          "measurement_error": {
+            "count": 61,
+            "rmse": 0.0017512737760598093,
+            "mean": -4.7255221397477e-05,
+            "std": 0.0017506361080377208,
+            "mae": 0.0014131464207692327
+          },
+          "delayed_messages": 45,
+          "duplicates": 1,
+          "out_of_order": 0
+        },
+        "pipe-temperature": {
+          "expected": 25,
+          "received_messages": 24,
+          "unique_observations": 24,
+          "completeness": 0.96,
+          "measurement_error": {
+            "count": 24,
+            "rmse": 0.19361782537798378,
+            "mean": -0.02393413150070482,
+            "std": 0.1921328177418069,
+            "mae": 0.15573195634944645
+          },
+          "delayed_messages": 20,
+          "duplicates": 0,
+          "out_of_order": 0
+        },
+        "pressure-01": {
+          "expected": 121,
+          "received_messages": 125,
+          "unique_observations": 121,
+          "completeness": 1.0,
+          "measurement_error": {
+            "count": 121,
+            "rmse": 154.1519895162407,
+            "mean": 8.59992742994396,
+            "std": 153.91191350904214,
+            "mae": 125.99389891938618
+          },
+          "delayed_messages": 99,
+          "duplicates": 4,
+          "out_of_order": 0
+        },
+        "pressure-02": {
+          "expected": 41,
+          "received_messages": 42,
+          "unique_observations": 41,
+          "completeness": 1.0,
+          "measurement_error": {
+            "count": 41,
+            "rmse": 150.5698566393454,
+            "mean": -14.502024929076093,
+            "std": 149.86985354416507,
+            "mae": 123.1050904914538
+          },
+          "delayed_messages": 30,
+          "duplicates": 1,
+          "out_of_order": 0
+        },
+        "temperature-01": {
+          "expected": 61,
+          "received_messages": 61,
+          "unique_observations": 61,
+          "completeness": 1.0,
+          "measurement_error": {
+            "count": 61,
+            "rmse": 0.21891929644630498,
+            "mean": -0.03394591320172458,
+            "std": 0.2162714343907816,
+            "mae": 0.16596774323267913
+          },
+          "delayed_messages": 50,
+          "duplicates": 0,
+          "out_of_order": 0
+        },
+        "vibration-01": {
+          "expected": 61,
+          "received_messages": 61,
+          "unique_observations": 61,
+          "completeness": 1.0,
+          "measurement_error": {
+            "count": 61,
+            "rmse": 0.0049870001441881945,
+            "mean": 0.0002693041905004704,
+            "std": 0.004979723455284637,
+            "mae": 0.00409552767132853
+          },
+          "delayed_messages": 48,
+          "duplicates": 0,
+          "out_of_order": 0
+        },
+        "vibration-02": {
+          "expected": 25,
+          "received_messages": 25,
+          "unique_observations": 25,
+          "completeness": 1.0,
+          "measurement_error": {
+            "count": 25,
+            "rmse": 0.005725965871965325,
+            "mean": 0.00023347820389827412,
+            "std": 0.005721203815213723,
+            "mae": 0.004354157650494783
+          },
+          "delayed_messages": 20,
+          "duplicates": 0,
+          "out_of_order": 0
+        },
+        "wall-thermometer": {
+          "expected": 25,
+          "received_messages": 25,
+          "unique_observations": 25,
+          "completeness": 1.0,
+          "measurement_error": {
+            "count": 25,
+            "rmse": 0.20960330453226178,
+            "mean": -0.019515123430925315,
+            "std": 0.20869284901098029,
+            "mae": 0.18046185602557102
+          },
+          "delayed_messages": 23,
+          "duplicates": 0,
+          "out_of_order": 0
+        }
+      },
+      "acquisition_runtime_s": {
+        "S3-lidar-01-t_0": 0.021159013995202258,
+        "S3-thermal-01-t_60": 0.020349868020275608,
+        "iot": 1.1340070280130021
+      },
+      "resource_measurement": {
+        "process_peak_rss_mib": 707.4375,
+        "scope": "Linux process peak RSS including interpreter/backend/plant/acquisition"
+      }
+    },
+    "S4-L1": {
+      "validation_kind": "restricted virtual sensor model verification; no physical calibration or anomaly detection",
+      "scenario_id": "S4",
+      "fidelity": "L1",
+      "lidar": {
+        "S4-lidar-01-t_0": {
+          "emitted_rays": 11520,
+          "valid_returns": 5534,
+          "valid_return_fraction": 0.48038194444444443,
+          "visible_ray_fraction": 0.4874131944444444,
+          "range_error_m": {
+            "count": 5534,
+            "rmse": 0.004050649234663689,
+            "mean": -1.651728711957908e-05,
+            "std": 0.004050615558345143,
+            "mae": 0.0032157797805967615
+          },
+          "translation_error_m": 0.011408472135293784,
+          "rotation_error_rad": 0.002696725785525172,
+          "actual_outlier_returns": 0
+        }
+      },
+      "thermal": {
+        "S4-thermal-01-t_60": {
+          "total_pixels": 12288,
+          "valid_pixels": 7201,
+          "valid_fraction": 0.5860188802083334,
+          "apparent_model_error_c": {
+            "count": 7201,
+            "rmse": 0.301991119920205,
+            "mean": 0.00019770598623699163,
+            "std": 0.3019910552036312,
+            "mae": 0.23947304945738362
+          },
+          "surface_temperature_difference_c": {
+            "count": 7201,
+            "rmse": 4.371506611662278,
+            "mean": -4.071426259223037,
+            "std": 1.5917155121177036,
+            "mae": 4.099562745558573
+          }
+        }
+      },
+      "iot": {
+        "drum-thermometer": {
+          "expected": 13,
+          "received_messages": 13,
+          "unique_observations": 13,
+          "completeness": 1.0,
+          "measurement_error": {
+            "count": 13,
+            "rmse": 0.1993151395526464,
+            "mean": -0.006671375196280958,
+            "std": 0.1992034578210964,
+            "mae": 0.12768879661309887
+          },
+          "delayed_messages": 9,
+          "duplicates": 0,
+          "out_of_order": 0
+        },
+        "load-01": {
+          "expected": 61,
+          "received_messages": 62,
+          "unique_observations": 61,
+          "completeness": 1.0,
+          "measurement_error": {
+            "count": 61,
+            "rmse": 0.0018624963471739495,
+            "mean": -4.103564795981223e-05,
+            "std": 0.001862044231169825,
+            "mae": 0.0014886380606808868
+          },
+          "delayed_messages": 54,
+          "duplicates": 1,
+          "out_of_order": 0
+        },
+        "pipe-temperature": {
+          "expected": 25,
+          "received_messages": 23,
+          "unique_observations": 23,
+          "completeness": 0.92,
+          "measurement_error": {
+            "count": 23,
+            "rmse": 0.16299534905092197,
+            "mean": -0.006250525204816016,
+            "std": 0.16287545777954351,
+            "mae": 0.143008053829303
+          },
+          "delayed_messages": 19,
+          "duplicates": 0,
+          "out_of_order": 0
+        },
+        "pressure-01": {
+          "expected": 121,
+          "received_messages": 120,
+          "unique_observations": 120,
+          "completeness": 0.9917355371900827,
+          "measurement_error": {
+            "count": 120,
+            "rmse": 152.0693741052497,
+            "mean": 1.980289478371075,
+            "std": 152.0564796197263,
+            "mae": 124.11286227246164
+          },
+          "delayed_messages": 90,
+          "duplicates": 0,
+          "out_of_order": 0
+        },
+        "pressure-02": {
+          "expected": 41,
+          "received_messages": 42,
+          "unique_observations": 41,
+          "completeness": 1.0,
+          "measurement_error": {
+            "count": 41,
+            "rmse": 163.3152840254743,
+            "mean": -27.73478265785578,
+            "std": 160.9430452900741,
+            "mae": 135.90271863069034
+          },
+          "delayed_messages": 33,
+          "duplicates": 1,
+          "out_of_order": 0
+        },
+        "temperature-01": {
+          "expected": 61,
+          "received_messages": 60,
+          "unique_observations": 60,
+          "completeness": 0.9836065573770492,
+          "measurement_error": {
+            "count": 60,
+            "rmse": 0.22569446324509032,
+            "mean": -0.021617635565290054,
+            "std": 0.22465677949275364,
+            "mae": 0.17624630346275866
+          },
+          "delayed_messages": 48,
+          "duplicates": 0,
+          "out_of_order": 0
+        },
+        "vibration-01": {
+          "expected": 61,
+          "received_messages": 60,
+          "unique_observations": 60,
+          "completeness": 0.9836065573770492,
+          "measurement_error": {
+            "count": 60,
+            "rmse": 0.0053872098259688745,
+            "mean": -0.0008274863848314597,
+            "std": 0.005323278688170867,
+            "mae": 0.004290021613245627
+          },
+          "delayed_messages": 48,
+          "duplicates": 0,
+          "out_of_order": 0
+        },
+        "vibration-02": {
+          "expected": 25,
+          "received_messages": 25,
+          "unique_observations": 25,
+          "completeness": 1.0,
+          "measurement_error": {
+            "count": 25,
+            "rmse": 0.0049956187018558845,
+            "mean": 0.00035050889655858895,
+            "std": 0.004983307107510589,
+            "mae": 0.004176244606694651
+          },
+          "delayed_messages": 18,
+          "duplicates": 0,
+          "out_of_order": 0
+        },
+        "wall-thermometer": {
+          "expected": 25,
+          "received_messages": 24,
+          "unique_observations": 24,
+          "completeness": 0.96,
+          "measurement_error": {
+            "count": 24,
+            "rmse": 0.28766702066133726,
+            "mean": -0.005601735882798664,
+            "std": 0.28761247422750913,
+            "mae": 0.2364018561636788
+          },
+          "delayed_messages": 19,
+          "duplicates": 0,
+          "out_of_order": 0
+        }
+      },
+      "acquisition_runtime_s": {
+        "S4-lidar-01-t_0": 0.01888813599362038,
+        "S4-thermal-01-t_60": 0.01818660501157865,
+        "iot": 1.0930712249828503
+      },
+      "resource_measurement": {
+        "process_peak_rss_mib": 718.46875,
+        "scope": "Linux process peak RSS including interpreter/backend/plant/acquisition"
+      }
+    },
+    "S5-L1": {
+      "validation_kind": "restricted virtual sensor model verification; no physical calibration or anomaly detection",
+      "scenario_id": "S5",
+      "fidelity": "L1",
+      "lidar": {
+        "S5-lidar-01-t_minus_3600": {
+          "emitted_rays": 11520,
+          "valid_returns": 5526,
+          "valid_return_fraction": 0.4796875,
+          "visible_ray_fraction": 0.48680555555555555,
+          "range_error_m": {
+            "count": 5526,
+            "rmse": 0.004084621639936961,
+            "mean": -3.774926846122098e-05,
+            "std": 0.004084447200561166,
+            "mae": 0.0032530366045505623
+          },
+          "translation_error_m": 0.007144908174063214,
+          "rotation_error_rad": 0.0050177953868133255,
+          "actual_outlier_returns": 0
+        }
+      },
+      "thermal": {
+        "S5-thermal-01-t_60": {
+          "total_pixels": 12288,
+          "valid_pixels": 7203,
+          "valid_fraction": 0.586181640625,
+          "apparent_model_error_c": {
+            "count": 7203,
+            "rmse": 0.29653803073405904,
+            "mean": 0.0024069270487342377,
+            "std": 0.2965282623525384,
+            "mae": 0.23759521361409244
+          },
+          "surface_temperature_difference_c": {
+            "count": 7203,
+            "rmse": 4.36602700601009,
+            "mean": -4.062245552166785,
+            "std": 1.6001102746719094,
+            "mae": 4.093214091576387
+          }
+        }
+      },
+      "iot": {
+        "drum-thermometer": {
+          "expected": 13,
+          "received_messages": 14,
+          "unique_observations": 13,
+          "completeness": 1.0,
+          "measurement_error": {
+            "count": 13,
+            "rmse": 0.19501677417797783,
+            "mean": 0.003926095504788498,
+            "std": 0.1949772499161676,
+            "mae": 0.1606852883241721
+          },
+          "delayed_messages": 12,
+          "duplicates": 1,
+          "out_of_order": 0
+        },
+        "load-01": {
+          "expected": 61,
+          "received_messages": 61,
+          "unique_observations": 61,
+          "completeness": 1.0,
+          "measurement_error": {
+            "count": 61,
+            "rmse": 0.0016344953519499084,
+            "mean": 9.080215868780063e-05,
+            "std": 0.0016319712079333661,
+            "mae": 0.0012706178224174223
+          },
+          "delayed_messages": 50,
+          "duplicates": 0,
+          "out_of_order": 0
+        },
+        "pipe-temperature": {
+          "expected": 25,
+          "received_messages": 25,
+          "unique_observations": 25,
+          "completeness": 1.0,
+          "measurement_error": {
+            "count": 25,
+            "rmse": 0.1840218430081585,
+            "mean": 0.011881100191295672,
+            "std": 0.18363789958057058,
+            "mae": 0.15063372546657433
+          },
+          "delayed_messages": 24,
+          "duplicates": 0,
+          "out_of_order": 0
+        },
+        "pressure-01": {
+          "expected": 121,
+          "received_messages": 122,
+          "unique_observations": 121,
+          "completeness": 1.0,
+          "measurement_error": {
+            "count": 121,
+            "rmse": 139.58604385889677,
+            "mean": 17.289530590588367,
+            "std": 138.51113952363173,
+            "mae": 112.85931094616944
+          },
+          "delayed_messages": 103,
+          "duplicates": 1,
+          "out_of_order": 0
+        },
+        "pressure-02": {
+          "expected": 41,
+          "received_messages": 42,
+          "unique_observations": 41,
+          "completeness": 1.0,
+          "measurement_error": {
+            "count": 41,
+            "rmse": 158.2096296034912,
+            "mean": 25.646609789569773,
+            "std": 156.11706602923152,
+            "mae": 126.37895514996916
+          },
+          "delayed_messages": 35,
+          "duplicates": 1,
+          "out_of_order": 0
+        },
+        "temperature-01": {
+          "expected": 61,
+          "received_messages": 61,
+          "unique_observations": 60,
+          "completeness": 0.9836065573770492,
+          "measurement_error": {
+            "count": 60,
+            "rmse": 0.23189426992653864,
+            "mean": 0.013188603486024419,
+            "std": 0.23151892614395653,
+            "mae": 0.1944955335722677
+          },
+          "delayed_messages": 53,
+          "duplicates": 1,
+          "out_of_order": 0
+        },
+        "vibration-01": {
+          "expected": 61,
+          "received_messages": 62,
+          "unique_observations": 61,
+          "completeness": 1.0,
+          "measurement_error": {
+            "count": 61,
+            "rmse": 0.004821701745850143,
+            "mean": -0.0006658337048942058,
+            "std": 0.004775507638289481,
+            "mae": 0.00380870398934302
+          },
+          "delayed_messages": 54,
+          "duplicates": 1,
+          "out_of_order": 0
+        },
+        "vibration-02": {
+          "expected": 25,
+          "received_messages": 25,
+          "unique_observations": 25,
+          "completeness": 1.0,
+          "measurement_error": {
+            "count": 25,
+            "rmse": 0.005942772058772572,
+            "mean": 0.00044852434794780295,
+            "std": 0.00592582193892341,
+            "mae": 0.004952553192548821
+          },
+          "delayed_messages": 21,
+          "duplicates": 0,
+          "out_of_order": 0
+        },
+        "wall-thermometer": {
+          "expected": 25,
+          "received_messages": 26,
+          "unique_observations": 25,
+          "completeness": 1.0,
+          "measurement_error": {
+            "count": 25,
+            "rmse": 0.2466560017514607,
+            "mean": 0.039238081685265346,
+            "std": 0.2435150018903908,
+            "mae": 0.19918661990957048
+          },
+          "delayed_messages": 19,
+          "duplicates": 1,
+          "out_of_order": 0
+        }
+      },
+      "acquisition_runtime_s": {
+        "S5-lidar-01-t_minus_3600": 0.018720327992923558,
+        "S5-thermal-01-t_60": 0.01775294801336713,
+        "iot": 1.019636751996586
+      },
+      "resource_measurement": {
+        "process_peak_rss_mib": 726.44140625,
+        "scope": "Linux process peak RSS including interpreter/backend/plant/acquisition"
+      }
+    },
+    "S2-L0": {
+      "validation_kind": "restricted virtual sensor model verification; no physical calibration or anomaly detection",
+      "scenario_id": "S2",
+      "fidelity": "L0",
+      "lidar": {
+        "S2-lidar-01-t_0": {
+          "emitted_rays": 11520,
+          "valid_returns": 5617,
+          "valid_return_fraction": 0.48758680555555556,
+          "visible_ray_fraction": 0.48758680555555556,
+          "range_error_m": {
+            "count": 5617,
+            "rmse": 0.0,
+            "mean": 0.0,
+            "std": 0.0,
+            "mae": 0.0
+          },
+          "translation_error_m": 0.0,
+          "rotation_error_rad": 0.0,
+          "actual_outlier_returns": 0
+        },
+        "S2-lidar-01-t_60": {
+          "emitted_rays": 11520,
+          "valid_returns": 5295,
+          "valid_return_fraction": 0.4596354166666667,
+          "visible_ray_fraction": 0.4596354166666667,
+          "range_error_m": {
+            "count": 5295,
+            "rmse": 0.0,
+            "mean": 0.0,
+            "std": 0.0,
+            "mae": 0.0
+          },
+          "translation_error_m": 0.0,
+          "rotation_error_rad": 0.0,
+          "actual_outlier_returns": 0
+        }
+      },
+      "thermal": {
+        "S2-thermal-01-t_60": {
+          "total_pixels": 12288,
+          "valid_pixels": 7270,
+          "valid_fraction": 0.5916341145833334,
+          "apparent_model_error_c": {
+            "count": 7270,
+            "rmse": 0.0,
+            "mean": 0.0,
+            "std": 0.0,
+            "mae": 0.0
+          },
+          "surface_temperature_difference_c": {
+            "count": 7270,
+            "rmse": 0.0,
+            "mean": 0.0,
+            "std": 0.0,
+            "mae": 0.0
+          }
+        }
+      },
+      "iot": {
+        "drum-thermometer": {
+          "expected": 13,
+          "received_messages": 13,
+          "unique_observations": 13,
+          "completeness": 1.0,
+          "measurement_error": {
+            "count": 13,
+            "rmse": 0.0,
+            "mean": 0.0,
+            "std": 0.0,
+            "mae": 0.0
+          },
+          "delayed_messages": 13,
+          "duplicates": 0,
+          "out_of_order": 0
+        },
+        "load-01": {
+          "expected": 61,
+          "received_messages": 61,
+          "unique_observations": 61,
+          "completeness": 1.0,
+          "measurement_error": {
+            "count": 61,
+            "rmse": 0.0,
+            "mean": 0.0,
+            "std": 0.0,
+            "mae": 0.0
+          },
+          "delayed_messages": 61,
+          "duplicates": 0,
+          "out_of_order": 0
+        },
+        "pipe-temperature": {
+          "expected": 25,
+          "received_messages": 25,
+          "unique_observations": 25,
+          "completeness": 1.0,
+          "measurement_error": {
+            "count": 25,
+            "rmse": 0.0,
+            "mean": 0.0,
+            "std": 0.0,
+            "mae": 0.0
+          },
+          "delayed_messages": 25,
+          "duplicates": 0,
+          "out_of_order": 0
+        },
+        "pressure-01": {
+          "expected": 121,
+          "received_messages": 121,
+          "unique_observations": 121,
+          "completeness": 1.0,
+          "measurement_error": {
+            "count": 121,
+            "rmse": 0.0,
+            "mean": 0.0,
+            "std": 0.0,
+            "mae": 0.0
+          },
+          "delayed_messages": 121,
+          "duplicates": 0,
+          "out_of_order": 0
+        },
+        "pressure-02": {
+          "expected": 41,
+          "received_messages": 41,
+          "unique_observations": 41,
+          "completeness": 1.0,
+          "measurement_error": {
+            "count": 41,
+            "rmse": 0.0,
+            "mean": 0.0,
+            "std": 0.0,
+            "mae": 0.0
+          },
+          "delayed_messages": 41,
+          "duplicates": 0,
+          "out_of_order": 0
+        },
+        "temperature-01": {
+          "expected": 61,
+          "received_messages": 61,
+          "unique_observations": 61,
+          "completeness": 1.0,
+          "measurement_error": {
+            "count": 61,
+            "rmse": 0.0,
+            "mean": 0.0,
+            "std": 0.0,
+            "mae": 0.0
+          },
+          "delayed_messages": 61,
+          "duplicates": 0,
+          "out_of_order": 0
+        },
+        "vibration-01": {
+          "expected": 61,
+          "received_messages": 61,
+          "unique_observations": 61,
+          "completeness": 1.0,
+          "measurement_error": {
+            "count": 61,
+            "rmse": 0.0,
+            "mean": 0.0,
+            "std": 0.0,
+            "mae": 0.0
+          },
+          "delayed_messages": 61,
+          "duplicates": 0,
+          "out_of_order": 0
+        },
+        "vibration-02": {
+          "expected": 25,
+          "received_messages": 25,
+          "unique_observations": 25,
+          "completeness": 1.0,
+          "measurement_error": {
+            "count": 25,
+            "rmse": 0.0,
+            "mean": 0.0,
+            "std": 0.0,
+            "mae": 0.0
+          },
+          "delayed_messages": 25,
+          "duplicates": 0,
+          "out_of_order": 0
+        },
+        "wall-thermometer": {
+          "expected": 25,
+          "received_messages": 25,
+          "unique_observations": 25,
+          "completeness": 1.0,
+          "measurement_error": {
+            "count": 25,
+            "rmse": 0.0,
+            "mean": 0.0,
+            "std": 0.0,
+            "mae": 0.0
+          },
+          "delayed_messages": 25,
+          "duplicates": 0,
+          "out_of_order": 0
+        }
+      },
+      "acquisition_runtime_s": {
+        "S2-lidar-01-t_0": 0.020171534997643903,
+        "S2-lidar-01-t_60": 0.021983771992381662,
+        "S2-thermal-01-t_60": 0.020054966007592157,
+        "iot": 1.2107827329891734
+      },
+      "resource_measurement": {
+        "process_peak_rss_mib": 735.296875,
+        "scope": "Linux process peak RSS including interpreter/backend/plant/acquisition"
+      }
+    },
+    "S2-moderate": {
+      "validation_kind": "restricted virtual sensor model verification; no physical calibration or anomaly detection",
+      "scenario_id": "S2",
+      "fidelity": "L1",
+      "lidar": {
+        "S2-lidar-01-t_0": {
+          "emitted_rays": 11520,
+          "valid_returns": 5247,
+          "valid_return_fraction": 0.45546875,
+          "visible_ray_fraction": 0.4855902777777778,
+          "range_error_m": {
+            "count": 5247,
+            "rmse": 0.011900159274543715,
+            "mean": 0.00012245067467360276,
+            "std": 0.011899529259251425,
+            "mae": 0.009421053038358185
+          },
+          "translation_error_m": 0.07822358968460202,
+          "rotation_error_rad": 0.017218370849921474,
+          "actual_outlier_returns": 12
+        },
+        "S2-lidar-01-t_60": {
+          "emitted_rays": 11520,
+          "valid_returns": 4990,
+          "valid_return_fraction": 0.4331597222222222,
+          "visible_ray_fraction": 0.4595486111111111,
+          "range_error_m": {
+            "count": 4990,
+            "rmse": 0.01176586549317844,
+            "mean": -0.00016673546681564186,
+            "std": 0.011764684019882255,
+            "mae": 0.009353184822052812
+          },
+          "translation_error_m": 0.09781800563827843,
+          "rotation_error_rad": 0.016325417349598435,
+          "actual_outlier_returns": 10
+        }
+      },
+      "thermal": {
+        "S2-thermal-01-t_60": {
+          "total_pixels": 12288,
+          "valid_pixels": 6953,
+          "valid_fraction": 0.5658365885416666,
+          "apparent_model_error_c": {
+            "count": 6953,
+            "rmse": 0.6988261636758522,
+            "mean": -0.000675504463754038,
+            "std": 0.6988258371952403,
+            "mae": 0.5560244075348515
+          },
+          "surface_temperature_difference_c": {
+            "count": 6953,
+            "rmse": 4.408871649304763,
+            "mean": -4.0628905907454635,
+            "std": 1.7120365847946366,
+            "mae": 4.134290830826223
+          }
+        }
+      },
+      "iot": {
+        "drum-thermometer": {
+          "expected": 13,
+          "received_messages": 13,
+          "unique_observations": 13,
+          "completeness": 1.0,
+          "measurement_error": {
+            "count": 13,
+            "rmse": 0.9310790502893556,
+            "mean": -0.3830975114574467,
+            "std": 0.848613277413711,
+            "mae": 0.701522678891857
+          },
+          "delayed_messages": 7,
+          "duplicates": 0,
+          "out_of_order": 0
+        },
+        "load-01": {
+          "expected": 61,
+          "received_messages": 53,
+          "unique_observations": 53,
+          "completeness": 0.8688524590163934,
+          "measurement_error": {
+            "count": 53,
+            "rmse": 0.006997139410920319,
+            "mean": -0.0002283501128330603,
+            "std": 0.0069934123403259645,
+            "mae": 0.005509486933712922
+          },
+          "delayed_messages": 25,
+          "duplicates": 0,
+          "out_of_order": 0
+        },
+        "pipe-temperature": {
+          "expected": 25,
+          "received_messages": 22,
+          "unique_observations": 22,
+          "completeness": 0.88,
+          "measurement_error": {
+            "count": 22,
+            "rmse": 0.8384456314662829,
+            "mean": 0.028495026050154335,
+            "std": 0.837961282169585,
+            "mae": 0.6407037647010273
+          },
+          "delayed_messages": 7,
+          "duplicates": 0,
+          "out_of_order": 0
+        },
+        "pressure-01": {
+          "expected": 121,
+          "received_messages": 110,
+          "unique_observations": 110,
+          "completeness": 0.9090909090909091,
+          "measurement_error": {
+            "count": 110,
+            "rmse": 577.036192160015,
+            "mean": -54.42436863917921,
+            "std": 574.4638849925698,
+            "mae": 450.894586280019
+          },
+          "delayed_messages": 60,
+          "duplicates": 0,
+          "out_of_order": 14
+        },
+        "pressure-02": {
+          "expected": 41,
+          "received_messages": 39,
+          "unique_observations": 39,
+          "completeness": 0.9512195121951219,
+          "measurement_error": {
+            "count": 39,
+            "rmse": 623.34542936501,
+            "mean": 94.82056761299594,
+            "std": 616.0913765569178,
+            "mae": 546.9785840443562
+          },
+          "delayed_messages": 23,
+          "duplicates": 0,
+          "out_of_order": 0
+        },
+        "temperature-01": {
+          "expected": 61,
+          "received_messages": 58,
+          "unique_observations": 57,
+          "completeness": 0.9344262295081968,
+          "measurement_error": {
+            "count": 57,
+            "rmse": 0.8588289681321368,
+            "mean": 0.10542728032149933,
+            "std": 0.8523334353801467,
+            "mae": 0.6909866411780724
+          },
+          "delayed_messages": 26,
+          "duplicates": 1,
+          "out_of_order": 0
+        },
+        "vibration-01": {
+          "expected": 61,
+          "received_messages": 57,
+          "unique_observations": 56,
+          "completeness": 0.9180327868852459,
+          "measurement_error": {
+            "count": 56,
+            "rmse": 0.019075503640629123,
+            "mean": -0.003721065774568593,
+            "std": 0.018709048843941513,
+            "mae": 0.01486493237606575
+          },
+          "delayed_messages": 25,
+          "duplicates": 1,
+          "out_of_order": 1
+        },
+        "vibration-02": {
+          "expected": 25,
+          "received_messages": 26,
+          "unique_observations": 25,
+          "completeness": 1.0,
+          "measurement_error": {
+            "count": 25,
+            "rmse": 0.01837317346742963,
+            "mean": 0.009229516926837798,
+            "std": 0.01588677187352656,
+            "mae": 0.015439409748056377
+          },
+          "delayed_messages": 13,
+          "duplicates": 1,
+          "out_of_order": 0
+        },
+        "wall-thermometer": {
+          "expected": 25,
+          "received_messages": 24,
+          "unique_observations": 23,
+          "completeness": 0.92,
+          "measurement_error": {
+            "count": 23,
+            "rmse": 0.9726346693374007,
+            "mean": -0.03531121458777381,
+            "std": 0.9719934763780111,
+            "mae": 0.766393480044889
+          },
+          "delayed_messages": 14,
+          "duplicates": 1,
+          "out_of_order": 0
+        }
+      },
+      "acquisition_runtime_s": {
+        "S2-lidar-01-t_0": 0.021511425991775468,
+        "S2-lidar-01-t_60": 0.02293562699924223,
+        "S2-thermal-01-t_60": 0.023444528982508928,
+        "iot": 1.188248788996134
+      },
+      "resource_measurement": {
+        "process_peak_rss_mib": 737.28125,
+        "scope": "Linux process peak RSS including interpreter/backend/plant/acquisition"
+      }
+    },
+    "S2-L2": {
+      "validation_kind": "restricted virtual sensor model verification; no physical calibration or anomaly detection",
+      "scenario_id": "S2",
+      "fidelity": "L2",
+      "lidar": {
+        "S2-lidar-01-t_0": {
+          "emitted_rays": 11520,
+          "valid_returns": 6012,
+          "valid_return_fraction": 0.521875,
+          "visible_ray_fraction": 0.6605034722222223,
+          "range_error_m": {
+            "count": 6012,
+            "rmse": 0.02909773127727563,
+            "mean": 0.00048634454437689636,
+            "std": 0.02909366656969691,
+            "mae": 0.022614588799251968
+          },
+          "translation_error_m": 0.07822358968460202,
+          "rotation_error_rad": 0.017218370849921474,
+          "actual_outlier_returns": 62
+        },
+        "S2-lidar-01-t_60": {
+          "emitted_rays": 11520,
+          "valid_returns": 5674,
+          "valid_return_fraction": 0.4925347222222222,
+          "visible_ray_fraction": 0.6267361111111112,
+          "range_error_m": {
+            "count": 5674,
+            "rmse": 0.028489301546205242,
+            "mean": -0.00048611364122066563,
+            "std": 0.028485153959886392,
+            "mae": 0.022153409444594083
+          },
+          "translation_error_m": 0.09781800563827843,
+          "rotation_error_rad": 0.016325417349598435,
+          "actual_outlier_returns": 61
+        }
+      },
+      "thermal": {
+        "S2-thermal-01-t_60": {
+          "total_pixels": 12288,
+          "valid_pixels": 6184,
+          "valid_fraction": 0.5032552083333334,
+          "apparent_model_error_c": {
+            "count": 6184,
+            "rmse": 1.4941916968840252,
+            "mean": 0.005689934049905177,
+            "std": 1.49418086311118,
+            "mae": 1.1898946379427817
+          },
+          "surface_temperature_difference_c": {
+            "count": 6184,
+            "rmse": 4.589344056056999,
+            "mean": -4.049905902645733,
+            "std": 2.158782305972736,
+            "mae": 4.205247790844583
+          }
+        }
+      },
+      "iot": {
+        "drum-thermometer": {
+          "expected": 13,
+          "received_messages": 13,
+          "unique_observations": 13,
+          "completeness": 1.0,
+          "measurement_error": {
+            "count": 13,
+            "rmse": 0.9310790502893556,
+            "mean": -0.3830975114574467,
+            "std": 0.848613277413711,
+            "mae": 0.701522678891857
+          },
+          "delayed_messages": 7,
+          "duplicates": 0,
+          "out_of_order": 0
+        },
+        "load-01": {
+          "expected": 61,
+          "received_messages": 52,
+          "unique_observations": 52,
+          "completeness": 0.8524590163934426,
+          "measurement_error": {
+            "count": 52,
+            "rmse": 0.006932939806302324,
+            "mean": -0.0004206368529370222,
+            "std": 0.006920167555468767,
+            "mae": 0.005427543213734844
+          },
+          "delayed_messages": 24,
+          "duplicates": 0,
+          "out_of_order": 0
+        },
+        "pipe-temperature": {
+          "expected": 25,
+          "received_messages": 22,
+          "unique_observations": 22,
+          "completeness": 0.88,
+          "measurement_error": {
+            "count": 22,
+            "rmse": 0.8384456314662829,
+            "mean": 0.028495026050154335,
+            "std": 0.837961282169585,
+            "mae": 0.6407037647010273
+          },
+          "delayed_messages": 7,
+          "duplicates": 0,
+          "out_of_order": 0
+        },
+        "pressure-01": {
+          "expected": 121,
+          "received_messages": 105,
+          "unique_observations": 105,
+          "completeness": 0.8677685950413223,
+          "measurement_error": {
+            "count": 105,
+            "rmse": 581.6682023993918,
+            "mean": -39.026660403238964,
+            "std": 580.3574910865802,
+            "mae": 454.37641221745207
+          },
+          "delayed_messages": 58,
+          "duplicates": 0,
+          "out_of_order": 14
+        },
+        "pressure-02": {
+          "expected": 41,
+          "received_messages": 38,
+          "unique_observations": 38,
+          "completeness": 0.926829268292683,
+          "measurement_error": {
+            "count": 38,
+            "rmse": 618.7125239006803,
+            "mean": 117.82231947307866,
+            "std": 607.3903919766377,
+            "mae": 540.8662835436775
+          },
+          "delayed_messages": 23,
+          "duplicates": 0,
+          "out_of_order": 0
+        },
+        "temperature-01": {
+          "expected": 61,
+          "received_messages": 56,
+          "unique_observations": 55,
+          "completeness": 0.9016393442622951,
+          "measurement_error": {
+            "count": 55,
+            "rmse": 0.8593259068267438,
+            "mean": 0.08190425136270288,
+            "std": 0.8554137640652744,
+            "mae": 0.6887566798867877
+          },
+          "delayed_messages": 26,
+          "duplicates": 1,
+          "out_of_order": 0
+        },
+        "vibration-01": {
+          "expected": 61,
+          "received_messages": 55,
+          "unique_observations": 54,
+          "completeness": 0.8852459016393442,
+          "measurement_error": {
+            "count": 54,
+            "rmse": 0.019372166220453343,
+            "mean": -0.003587299139238266,
+            "std": 0.01903712449290843,
+            "mae": 0.015143901540790879
+          },
+          "delayed_messages": 24,
+          "duplicates": 1,
+          "out_of_order": 1
+        },
+        "vibration-02": {
+          "expected": 25,
+          "received_messages": 24,
+          "unique_observations": 23,
+          "completeness": 0.92,
+          "measurement_error": {
+            "count": 23,
+            "rmse": 0.018446224144284196,
+            "mean": 0.008581673584333368,
+            "std": 0.01632844339406326,
+            "mae": 0.01533155708565791
+          },
+          "delayed_messages": 12,
+          "duplicates": 1,
+          "out_of_order": 0
+        },
+        "wall-thermometer": {
+          "expected": 25,
+          "received_messages": 22,
+          "unique_observations": 21,
+          "completeness": 0.84,
+          "measurement_error": {
+            "count": 21,
+            "rmse": 1.005660340376323,
+            "mean": -0.030215863758063018,
+            "std": 1.0052063080697295,
+            "mae": 0.7915629897359319
+          },
+          "delayed_messages": 12,
+          "duplicates": 1,
+          "out_of_order": 0
+        }
+      },
+      "acquisition_runtime_s": {
+        "S2-lidar-01-t_0": 0.020647025026846677,
+        "S2-lidar-01-t_60": 0.020933441002853215,
+        "S2-thermal-01-t_60": 0.01932515497901477,
+        "iot": 1.0176576419908088
+      },
+      "resource_measurement": {
+        "process_peak_rss_mib": 737.28125,
+        "scope": "Linux process peak RSS including interpreter/backend/plant/acquisition"
+      }
+    }
+  },
+  "reproducibility": {
+    "metadata_equal": true,
+    "numeric_arrays_equal": true,
+    "reverse_modality_order": true
+  },
+  "total_runtime_s": 19.680314088996965,
+  "process_peak_rss_mib": 783.77734375,
+  "resource_scope": "Linux process peak including Open3D import, physical plant, ten acquisitions and plotting"
+}

@@ -16,3 +16,8 @@ Every future evidence entry must link date, responsible owner, dataset/software/
 ## Phase 1 evidence
 
 Implemented seven-asset parametric geometry, load-driven operating states, axial expansion, actual mesh displacement/support translation/temperature-field/process faults, independent truth snapshots and replay artifacts. Numerical comparisons and resource measurements are recorded in PHASE1_VALIDATION.md and its referenced JSON. These validate the code under stated surrogate assumptions. They do not validate physical boiler dynamics, industrial sensing accuracy, defect classification or TRL 6. Previously demonstrated PI technology remains unverified; public-dataset, hardware and relevant-environment validation remain pending.
+
+
+## Phase 2 virtual-sensing evidence
+
+Implemented and tested Open3D CPU first-hit LiDAR/thermal visibility, radiometric vertex interpolation, configurable noise/pose uncertainty, nine-channel IoT sampling and replay transport effects. Numeric comparisons, actual measured plots and repeat-order evidence appear in PHASE2_VALIDATION.md and phase2_sensing_validation.json. Known-plane/occlusion checks establish numerical correctness under the model; comparisons to assumed noise/radiometric references establish synthetic consistency only. They do not establish physical sensor calibration, commercial instrument accuracy, industrial fault-detection reliability or TRL 6. Independent public-data and physical/relevant-environment validation remain pending. E1–E4 remain not_implemented.

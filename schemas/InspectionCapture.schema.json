@@ -253,6 +253,82 @@
       "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
       "title": "Provenance Id",
       "type": "string"
+    },
+    "artifact_coordinate_frame": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/Frame"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "configuration_version": {
+      "anyOf": [
+        {
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Configuration Version"
+    },
+    "source_type": {
+      "anyOf": [
+        {
+          "enum": [
+            "synthetic",
+            "public_real_world",
+            "hybrid",
+            "physical_experimental"
+          ],
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Source Type"
+    },
+    "acquisition_parameters": {
+      "additionalProperties": {
+        "type": "number"
+      },
+      "title": "Acquisition Parameters",
+      "type": "object"
+    },
+    "reported_translation_std_m": {
+      "anyOf": [
+        {
+          "minimum": 0,
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Reported Translation Std M"
+    },
+    "reported_rotation_std_rad": {
+      "anyOf": [
+        {
+          "minimum": 0,
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Reported Rotation Std Rad"
     }
   },
   "required": [

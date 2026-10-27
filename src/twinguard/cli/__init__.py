@@ -40,9 +40,16 @@ def main(argv=None):
     from twinguard.plant.cli import add_commands
 
     add_commands(sub)
+    from twinguard.sensing.cli import add_commands as add_sensing_commands
+
+    add_sensing_commands(sub)
     args = parser.parse_args(argv)
     try:
-        if args.command == "plant":
+        if args.command == "sensing":
+            from twinguard.sensing.cli import execute
+
+            execute(args)
+        elif args.command == "plant":
             from twinguard.plant.cli import execute
 
             execute(args)

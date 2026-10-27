@@ -10,7 +10,7 @@ import numpy as np
 from twinguard.core.contracts import PlantState, ScenarioDefinition
 from twinguard.core.spatial import Transform, Frame
 from twinguard.evaluation.contracts import FaultInjection, GroundTruthSnapshot, FaultState
-from twinguard.sensing.read import PhysicalReadView, Surface
+from twinguard.sensing.read import PhysicalReadView, Surface, ProcessReadView
 from .model import PlantModel
 from .dynamics import operating_reference
 from .faults import factor_at, spatial_weights, amplitude, displacement_vector
@@ -284,6 +284,16 @@ class PlantSimulator:
         simulator = self
 
         class Reader:
+            def read_process_at(self, time_s: float) -> ProcessReadView:
+                state = simulator.operating_at(time_s)
+                return ProcessReadView(
+                    state.timestamp,
+                    state.process_pressure_pa,
+                    state.process_temperature_c,
+                    state.normalized_load,
+                    state.ambient_temperature_c,
+                )
+
             def read_at(self, time_s: float) -> PhysicalReadView:
                 state = simulator.state_at(time_s)
                 surfaces = tuple(
@@ -292,6 +302,7 @@ class PlantSimulator:
                         readonly(a.vertices_world_m),
                         readonly(a.faces),
                         readonly(a.surface_temperature_c),
+                        a.world_pose.model_copy(deep=True),
                     )
                     for a in state.assets.values()
                 )

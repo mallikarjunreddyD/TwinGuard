@@ -10,6 +10,9 @@ from twinguard.evaluation.contracts import (
 from twinguard.plant.config import PlantConfig
 from twinguard.plant.contracts import SimulationManifest
 
+from twinguard.core.observations import ObservationManifest
+from twinguard.sensing.config import AcquisitionConfig
+
 PUBLIC_MODELS = {
     name: getattr(contracts, name)
     for name in (
@@ -25,7 +28,9 @@ PUBLIC_MODELS = {
         "DatasetProvenance",
     )
 }
+PUBLIC_MODELS["ObservationManifest"] = ObservationManifest
 CONFIG_MODELS = {
+    "AcquisitionConfig": AcquisitionConfig,
     "PlantConfig": PlantConfig,
     "SimulationManifest": SimulationManifest,
     "ScenarioDefinition": contracts.ScenarioDefinition,

@@ -153,6 +153,56 @@
       "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
       "title": "Location Reference",
       "type": "string"
+    },
+    "measurement_source": {
+      "anyOf": [
+        {
+          "enum": [
+            "process",
+            "surface",
+            "phenomenological",
+            "operating_state"
+          ],
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Measurement Source"
+    },
+    "configuration_version": {
+      "anyOf": [
+        {
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Configuration Version"
+    },
+    "source_type": {
+      "anyOf": [
+        {
+          "enum": [
+            "synthetic",
+            "public_real_world",
+            "hybrid",
+            "physical_experimental"
+          ],
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Source Type"
     }
   },
   "required": [

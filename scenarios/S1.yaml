@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "scenario_id": "S1",
-  "version": "v2",
+  "version": "v3",
   "description": "Normal load transition \u2014 synthetic test configuration, not calibrated safety limits",
   "plant_model_reference": "plant-01",
   "asset_ids": [
@@ -33,7 +33,14 @@
     "temperature-01",
     "pressure-01",
     "lidar-01",
-    "thermal-01"
+    "thermal-01",
+    "load-01",
+    "vibration-01",
+    "wall-thermometer",
+    "drum-thermometer",
+    "pipe-temperature",
+    "pressure-02",
+    "vibration-02"
   ],
   "inspections": [
     {

@@ -4,7 +4,7 @@ from dataclasses import dataclass
 from datetime import datetime
 from typing import Protocol
 import numpy as np
-from twinguard.core.spatial import Frame
+from twinguard.core.spatial import Frame, Transform
 
 
 @dataclass(frozen=True)
@@ -13,6 +13,7 @@ class Surface:
     vertices_world_m: np.ndarray
     faces: np.ndarray
     temperature_c: np.ndarray
+    world_pose: Transform | None = None
 
 
 @dataclass(frozen=True)
@@ -30,3 +31,12 @@ class PhysicalReadView:
 
 class PhysicalStateReader(Protocol):
     def read_at(self, time_s: float) -> PhysicalReadView: ...
+
+
+@dataclass(frozen=True)
+class ProcessReadView:
+    timestamp: datetime
+    pressure_pa: float
+    temperature_c: float
+    normalized_load: float
+    ambient_temperature_c: float

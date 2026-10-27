@@ -9,7 +9,7 @@ RESTRICTED = (
     "twinguard.plant",
     "twinguard.core.config",
     "twinguard.core.registry",
-    "twinguard.sensing.read",
+    "twinguard.sensing",
 )
 
 

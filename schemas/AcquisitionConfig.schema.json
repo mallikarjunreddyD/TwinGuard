@@ -1,0 +1,962 @@
+{
+  "$defs": {
+    "Delivery": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0.0",
+          "default": "1.0.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "dropout": {
+          "default": 0,
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Dropout",
+          "type": "number"
+        },
+        "duplicate_probability": {
+          "default": 0,
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Duplicate Probability",
+          "type": "number"
+        },
+        "delay_s": {
+          "default": 0.05,
+          "minimum": 0,
+          "title": "Delay S",
+          "type": "number"
+        },
+        "delay_jitter_s": {
+          "default": 0,
+          "minimum": 0,
+          "title": "Delay Jitter S",
+          "type": "number"
+        },
+        "timestamp_jitter_s": {
+          "default": 0,
+          "minimum": 0,
+          "title": "Timestamp Jitter S",
+          "type": "number"
+        },
+        "interruption_windows_s": {
+          "items": {
+            "maxItems": 2,
+            "minItems": 2,
+            "prefixItems": [
+              {
+                "minimum": 0,
+                "type": "number"
+              },
+              {
+                "minimum": 0,
+                "type": "number"
+              }
+            ],
+            "type": "array"
+          },
+          "title": "Interruption Windows S",
+          "type": "array"
+        }
+      },
+      "title": "Delivery",
+      "type": "object"
+    },
+    "Frame": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "enum": [
+            "world",
+            "asset_local",
+            "sensor_local",
+            "registered_world"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "reference_id": {
+          "title": "Reference Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "kind",
+        "reference_id"
+      ],
+      "title": "Frame",
+      "type": "object"
+    },
+    "IoTConfig": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0.0",
+          "default": "1.0.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "sensor_id": {
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+          "title": "Sensor Id",
+          "type": "string"
+        },
+        "asset_id": {
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+          "title": "Asset Id",
+          "type": "string"
+        },
+        "source_type": {
+          "enum": [
+            "synthetic",
+            "public_real_world",
+            "hybrid",
+            "physical_experimental"
+          ],
+          "title": "Source Type",
+          "type": "string"
+        },
+        "configuration_version": {
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+          "title": "Configuration Version",
+          "type": "string"
+        },
+        "description": {
+          "title": "Description",
+          "type": "string"
+        },
+        "modality": {
+          "const": "iot",
+          "default": "iot",
+          "title": "Modality",
+          "type": "string"
+        },
+        "coordinate_frame": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Frame"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "pose": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Transform"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "acquisition_parameters": {
+          "additionalProperties": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "string"
+              },
+              {
+                "type": "boolean"
+              }
+            ]
+          },
+          "title": "Acquisition Parameters",
+          "type": "object"
+        },
+        "calibration_reference": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Calibration Reference"
+        },
+        "noise_model_reference": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Noise Model Reference"
+        },
+        "measurement_configuration": {
+          "additionalProperties": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "string"
+              },
+              {
+                "type": "boolean"
+              }
+            ]
+          },
+          "title": "Measurement Configuration",
+          "type": "object"
+        },
+        "source": {
+          "enum": [
+            "process_temperature",
+            "surface_temperature",
+            "pressure",
+            "load",
+            "vibration"
+          ],
+          "title": "Source",
+          "type": "string"
+        },
+        "location_world_m": {
+          "anyOf": [
+            {
+              "maxItems": 3,
+              "minItems": 3,
+              "prefixItems": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                }
+              ],
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Location World M"
+        },
+        "sampling_interval_s": {
+          "default": 1,
+          "exclusiveMinimum": 0,
+          "title": "Sampling Interval S",
+          "type": "number"
+        },
+        "noise": {
+          "$ref": "#/$defs/MeasurementNoise"
+        },
+        "delivery": {
+          "$ref": "#/$defs/Delivery"
+        },
+        "measurement_min": {
+          "default": 0,
+          "title": "Measurement Min",
+          "type": "number"
+        },
+        "measurement_max": {
+          "default": 1000000000.0,
+          "title": "Measurement Max",
+          "type": "number"
+        },
+        "vibration_base_rms_m_s2": {
+          "default": 0.15,
+          "minimum": 0,
+          "title": "Vibration Base Rms M S2",
+          "type": "number"
+        },
+        "vibration_load_gain_m_s2": {
+          "default": 0.2,
+          "minimum": 0,
+          "title": "Vibration Load Gain M S2",
+          "type": "number"
+        },
+        "vibration_variation_sigma_m_s2": {
+          "default": 0.01,
+          "minimum": 0,
+          "title": "Vibration Variation Sigma M S2",
+          "type": "number"
+        }
+      },
+      "required": [
+        "sensor_id",
+        "asset_id",
+        "source_type",
+        "configuration_version",
+        "description",
+        "source"
+      ],
+      "title": "IoTConfig",
+      "type": "object"
+    },
+    "LidarConfig": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0.0",
+          "default": "1.0.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "sensor_id": {
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+          "title": "Sensor Id",
+          "type": "string"
+        },
+        "asset_id": {
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+          "title": "Asset Id",
+          "type": "string"
+        },
+        "source_type": {
+          "enum": [
+            "synthetic",
+            "public_real_world",
+            "hybrid",
+            "physical_experimental"
+          ],
+          "title": "Source Type",
+          "type": "string"
+        },
+        "configuration_version": {
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+          "title": "Configuration Version",
+          "type": "string"
+        },
+        "description": {
+          "title": "Description",
+          "type": "string"
+        },
+        "modality": {
+          "const": "lidar",
+          "default": "lidar",
+          "title": "Modality",
+          "type": "string"
+        },
+        "coordinate_frame": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Frame"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "pose": {
+          "$ref": "#/$defs/Transform"
+        },
+        "acquisition_parameters": {
+          "additionalProperties": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "string"
+              },
+              {
+                "type": "boolean"
+              }
+            ]
+          },
+          "title": "Acquisition Parameters",
+          "type": "object"
+        },
+        "calibration_reference": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Calibration Reference"
+        },
+        "noise_model_reference": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Noise Model Reference"
+        },
+        "measurement_configuration": {
+          "additionalProperties": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "string"
+              },
+              {
+                "type": "boolean"
+              }
+            ]
+          },
+          "title": "Measurement Configuration",
+          "type": "object"
+        },
+        "backend": {
+          "default": "open3d",
+          "enum": [
+            "open3d",
+            "numpy_bvh"
+          ],
+          "title": "Backend",
+          "type": "string"
+        },
+        "min_range_m": {
+          "default": 0.1,
+          "minimum": 0,
+          "title": "Min Range M",
+          "type": "number"
+        },
+        "max_range_m": {
+          "default": 20,
+          "exclusiveMinimum": 0,
+          "title": "Max Range M",
+          "type": "number"
+        },
+        "noise": {
+          "$ref": "#/$defs/MeasurementNoise"
+        },
+        "pose_error": {
+          "$ref": "#/$defs/PoseError"
+        },
+        "reception_delay_s": {
+          "default": 0.1,
+          "minimum": 0,
+          "title": "Reception Delay S",
+          "type": "number"
+        },
+        "channels": {
+          "default": 16,
+          "maximum": 128,
+          "minimum": 1,
+          "title": "Channels",
+          "type": "integer"
+        },
+        "horizontal_samples": {
+          "default": 720,
+          "maximum": 8192,
+          "minimum": 1,
+          "title": "Horizontal Samples",
+          "type": "integer"
+        },
+        "vertical_min_rad": {
+          "default": -0.4,
+          "title": "Vertical Min Rad",
+          "type": "number"
+        },
+        "vertical_max_rad": {
+          "default": 0.4,
+          "title": "Vertical Max Rad",
+          "type": "number"
+        },
+        "horizontal_fov_rad": {
+          "default": 1.4,
+          "exclusiveMinimum": 0,
+          "title": "Horizontal Fov Rad",
+          "type": "number"
+        },
+        "sweep_center_rad": {
+          "default": 0,
+          "title": "Sweep Center Rad",
+          "type": "number"
+        }
+      },
+      "required": [
+        "sensor_id",
+        "asset_id",
+        "source_type",
+        "configuration_version",
+        "description",
+        "pose"
+      ],
+      "title": "LidarConfig",
+      "type": "object"
+    },
+    "MeasurementNoise": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0.0",
+          "default": "1.0.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "sigma": {
+          "default": 0,
+          "minimum": 0,
+          "title": "Sigma",
+          "type": "number"
+        },
+        "range_slope": {
+          "default": 0,
+          "minimum": 0,
+          "title": "Range Slope",
+          "type": "number"
+        },
+        "bias": {
+          "default": 0,
+          "title": "Bias",
+          "type": "number"
+        },
+        "angular_sigma_rad": {
+          "default": 0,
+          "minimum": 0,
+          "title": "Angular Sigma Rad",
+          "type": "number"
+        },
+        "quantum": {
+          "default": 0,
+          "minimum": 0,
+          "title": "Quantum",
+          "type": "number"
+        },
+        "dropout": {
+          "default": 0,
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Dropout",
+          "type": "number"
+        },
+        "incidence_dropout": {
+          "default": 0,
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Incidence Dropout",
+          "type": "number"
+        },
+        "outlier_probability": {
+          "default": 0,
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Outlier Probability",
+          "type": "number"
+        },
+        "outlier_scale": {
+          "default": 0,
+          "minimum": 0,
+          "title": "Outlier Scale",
+          "type": "number"
+        }
+      },
+      "title": "MeasurementNoise",
+      "type": "object"
+    },
+    "PoseError": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0.0",
+          "default": "1.0.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "translation_sigma_m": {
+          "default": 0,
+          "minimum": 0,
+          "title": "Translation Sigma M",
+          "type": "number"
+        },
+        "rotation_sigma_rad": {
+          "default": 0,
+          "minimum": 0,
+          "title": "Rotation Sigma Rad",
+          "type": "number"
+        },
+        "translation_bias_m": {
+          "default": [
+            0,
+            0,
+            0
+          ],
+          "maxItems": 3,
+          "minItems": 3,
+          "prefixItems": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "title": "Translation Bias M",
+          "type": "array"
+        },
+        "rotation_bias_rad": {
+          "default": [
+            0,
+            0,
+            0
+          ],
+          "maxItems": 3,
+          "minItems": 3,
+          "prefixItems": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "title": "Rotation Bias Rad",
+          "type": "array"
+        }
+      },
+      "title": "PoseError",
+      "type": "object"
+    },
+    "ThermalConfig": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0.0",
+          "default": "1.0.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "sensor_id": {
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+          "title": "Sensor Id",
+          "type": "string"
+        },
+        "asset_id": {
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+          "title": "Asset Id",
+          "type": "string"
+        },
+        "source_type": {
+          "enum": [
+            "synthetic",
+            "public_real_world",
+            "hybrid",
+            "physical_experimental"
+          ],
+          "title": "Source Type",
+          "type": "string"
+        },
+        "configuration_version": {
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+          "title": "Configuration Version",
+          "type": "string"
+        },
+        "description": {
+          "title": "Description",
+          "type": "string"
+        },
+        "modality": {
+          "const": "thermal",
+          "default": "thermal",
+          "title": "Modality",
+          "type": "string"
+        },
+        "coordinate_frame": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Frame"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "pose": {
+          "$ref": "#/$defs/Transform"
+        },
+        "acquisition_parameters": {
+          "additionalProperties": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "string"
+              },
+              {
+                "type": "boolean"
+              }
+            ]
+          },
+          "title": "Acquisition Parameters",
+          "type": "object"
+        },
+        "calibration_reference": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Calibration Reference"
+        },
+        "noise_model_reference": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Noise Model Reference"
+        },
+        "measurement_configuration": {
+          "additionalProperties": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "string"
+              },
+              {
+                "type": "boolean"
+              }
+            ]
+          },
+          "title": "Measurement Configuration",
+          "type": "object"
+        },
+        "backend": {
+          "default": "open3d",
+          "enum": [
+            "open3d",
+            "numpy_bvh"
+          ],
+          "title": "Backend",
+          "type": "string"
+        },
+        "min_range_m": {
+          "default": 0.1,
+          "minimum": 0,
+          "title": "Min Range M",
+          "type": "number"
+        },
+        "max_range_m": {
+          "default": 20,
+          "exclusiveMinimum": 0,
+          "title": "Max Range M",
+          "type": "number"
+        },
+        "noise": {
+          "$ref": "#/$defs/MeasurementNoise"
+        },
+        "pose_error": {
+          "$ref": "#/$defs/PoseError"
+        },
+        "reception_delay_s": {
+          "default": 0.1,
+          "minimum": 0,
+          "title": "Reception Delay S",
+          "type": "number"
+        },
+        "width": {
+          "default": 128,
+          "maximum": 1024,
+          "minimum": 1,
+          "title": "Width",
+          "type": "integer"
+        },
+        "height": {
+          "default": 96,
+          "maximum": 768,
+          "minimum": 1,
+          "title": "Height",
+          "type": "integer"
+        },
+        "horizontal_fov_rad": {
+          "default": 1.1,
+          "exclusiveMaximum": 3.14,
+          "exclusiveMinimum": 0,
+          "title": "Horizontal Fov Rad",
+          "type": "number"
+        },
+        "vertical_fov_rad": {
+          "default": 0.85,
+          "exclusiveMaximum": 3.14,
+          "exclusiveMinimum": 0,
+          "title": "Vertical Fov Rad",
+          "type": "number"
+        },
+        "emissivity": {
+          "default": 0.95,
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Emissivity",
+          "type": "number"
+        },
+        "reflected_temperature_c": {
+          "default": 25,
+          "minimum": -273.15,
+          "title": "Reflected Temperature C",
+          "type": "number"
+        },
+        "measurement_min_c": {
+          "default": -40,
+          "minimum": -273.15,
+          "title": "Measurement Min C",
+          "type": "number"
+        },
+        "measurement_max_c": {
+          "default": 500,
+          "title": "Measurement Max C",
+          "type": "number"
+        }
+      },
+      "required": [
+        "sensor_id",
+        "asset_id",
+        "source_type",
+        "configuration_version",
+        "description",
+        "pose"
+      ],
+      "title": "ThermalConfig",
+      "type": "object"
+    },
+    "Transform": {
+      "additionalProperties": false,
+      "properties": {
+        "source": {
+          "$ref": "#/$defs/Frame"
+        },
+        "target": {
+          "$ref": "#/$defs/Frame"
+        },
+        "matrix": {
+          "items": {
+            "items": {
+              "type": "number"
+            },
+            "type": "array"
+          },
+          "title": "Matrix",
+          "type": "array"
+        }
+      },
+      "required": [
+        "source",
+        "target",
+        "matrix"
+      ],
+      "title": "Transform",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0",
+      "default": "1.0.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "installation_id": {
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Installation Id",
+      "type": "string"
+    },
+    "configuration_version": {
+      "default": "v1",
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Configuration Version",
+      "type": "string"
+    },
+    "fidelity": {
+      "default": "L1",
+      "enum": [
+        "L0",
+        "L1",
+        "L2"
+      ],
+      "title": "Fidelity",
+      "type": "string"
+    },
+    "lidar": {
+      "$ref": "#/$defs/LidarConfig"
+    },
+    "thermal": {
+      "$ref": "#/$defs/ThermalConfig"
+    },
+    "iot": {
+      "items": {
+        "$ref": "#/$defs/IoTConfig"
+      },
+      "minItems": 1,
+      "title": "Iot",
+      "type": "array"
+    },
+    "event_poses": {
+      "additionalProperties": {
+        "$ref": "#/$defs/Transform"
+      },
+      "title": "Event Poses",
+      "type": "object"
+    }
+  },
+  "required": [
+    "installation_id",
+    "lidar",
+    "thermal",
+    "iot"
+  ],
+  "title": "AcquisitionConfig",
+  "type": "object"
+}

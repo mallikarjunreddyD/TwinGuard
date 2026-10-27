@@ -1,7 +1,7 @@
 """Public persisted contracts. No fault or ground-truth imports are permitted here."""
 
 from typing import Annotated, Literal
-from pydantic import BaseModel, ConfigDict, Field, model_validator
+from pydantic import BaseModel, ConfigDict, Field, model_validator, field_validator
 from .spatial import Frame, Transform
 from .time import UTC
 
@@ -108,6 +108,14 @@ class SensorObservation(Timing):
     provenance_id: ID
     location_reference: ID
 
+    measurement_source: (
+        Literal["process", "surface", "phenomenological", "operating_state"] | None
+    ) = None
+    configuration_version: ID | None = None
+    source_type: (
+        Literal["synthetic", "public_real_world", "hybrid", "physical_experimental"] | None
+    ) = None
+
     @model_validator(mode="after")
     def units(self):
         units = {
@@ -147,6 +155,36 @@ class InspectionCapture(Timing):
     coverage_fraction: Probability | None = None
     quality_indicators: dict[str, Number] = Field(default_factory=dict)
     provenance_id: ID
+
+    artifact_coordinate_frame: Frame | None = None
+    configuration_version: ID | None = None
+    source_type: (
+        Literal["synthetic", "public_real_world", "hybrid", "physical_experimental"] | None
+    ) = None
+    acquisition_parameters: dict[str, Number] = Field(default_factory=dict)
+    reported_translation_std_m: Nonnegative | None = None
+    reported_rotation_std_rad: Nonnegative | None = None
+
+    @field_validator("acquisition_parameters", "quality_indicators")
+    @classmethod
+    def no_private_metadata(cls, values):
+        reserved = {
+            "triangle_ids",
+            "triangle_id",
+            "asset_labels",
+            "correspondences",
+            "surface_mesh",
+            "diagnostic_flags",
+            "reference_temperature_c",
+            "reference_pressure_pa",
+        }
+        if any(
+            key in reserved
+            or key.startswith(("true_", "fault_", "ground_truth", "expected_", "noiseless_"))
+            for key in values
+        ):
+            raise ValueError("Privileged simulator metadata cannot be observation metadata")
+        return values
 
     @model_validator(mode="after")
     def pose_frame(self):

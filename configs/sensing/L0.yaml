@@ -1,0 +1,632 @@
+{
+  "schema_version": "1.0.0",
+  "installation_id": "virtual-boiler-L0",
+  "configuration_version": "v1",
+  "fidelity": "L0",
+  "lidar": {
+    "schema_version": "1.0.0",
+    "sensor_id": "lidar-01",
+    "asset_id": "BW-01",
+    "source_type": "synthetic",
+    "configuration_version": "v1",
+    "description": "Assumed virtual instrument; not commercial hardware calibration",
+    "modality": "lidar",
+    "coordinate_frame": {
+      "kind": "sensor_local",
+      "reference_id": "lidar-01"
+    },
+    "pose": {
+      "source": {
+        "kind": "sensor_local",
+        "reference_id": "lidar-01"
+      },
+      "target": {
+        "kind": "world",
+        "reference_id": "plant-01"
+      },
+      "matrix": [
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          -1.0,
+          0.0,
+          0.0,
+          3.4
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          1.65
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "acquisition_parameters": {},
+    "calibration_reference": "assumed-v1",
+    "noise_model_reference": null,
+    "measurement_configuration": {},
+    "backend": "open3d",
+    "min_range_m": 0.1,
+    "max_range_m": 20.0,
+    "noise": {
+      "schema_version": "1.0.0",
+      "sigma": 0.0,
+      "range_slope": 0.0,
+      "bias": 0.0,
+      "angular_sigma_rad": 0.0,
+      "quantum": 0.0,
+      "dropout": 0.0,
+      "incidence_dropout": 0.0,
+      "outlier_probability": 0.0,
+      "outlier_scale": 0.0
+    },
+    "pose_error": {
+      "schema_version": "1.0.0",
+      "translation_sigma_m": 0.0,
+      "rotation_sigma_rad": 0.0,
+      "translation_bias_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation_bias_rad": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "reception_delay_s": 0.1,
+    "channels": 16,
+    "horizontal_samples": 720,
+    "vertical_min_rad": -0.4,
+    "vertical_max_rad": 0.4,
+    "horizontal_fov_rad": 1.4,
+    "sweep_center_rad": 0.0
+  },
+  "thermal": {
+    "schema_version": "1.0.0",
+    "sensor_id": "thermal-01",
+    "asset_id": "BW-01",
+    "source_type": "synthetic",
+    "configuration_version": "v1",
+    "description": "Assumed virtual instrument; not commercial hardware calibration",
+    "modality": "thermal",
+    "coordinate_frame": {
+      "kind": "sensor_local",
+      "reference_id": "thermal-01"
+    },
+    "pose": {
+      "source": {
+        "kind": "sensor_local",
+        "reference_id": "thermal-01"
+      },
+      "target": {
+        "kind": "world",
+        "reference_id": "plant-01"
+      },
+      "matrix": [
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          -1.0,
+          0.0,
+          0.0,
+          3.4
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          1.65
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "acquisition_parameters": {},
+    "calibration_reference": "assumed-v1",
+    "noise_model_reference": null,
+    "measurement_configuration": {},
+    "backend": "open3d",
+    "min_range_m": 0.1,
+    "max_range_m": 20.0,
+    "noise": {
+      "schema_version": "1.0.0",
+      "sigma": 0.0,
+      "range_slope": 0.0,
+      "bias": 0.0,
+      "angular_sigma_rad": 0.0,
+      "quantum": 0.0,
+      "dropout": 0.0,
+      "incidence_dropout": 0.0,
+      "outlier_probability": 0.0,
+      "outlier_scale": 0.0
+    },
+    "pose_error": {
+      "schema_version": "1.0.0",
+      "translation_sigma_m": 0.0,
+      "rotation_sigma_rad": 0.0,
+      "translation_bias_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation_bias_rad": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "reception_delay_s": 0.1,
+    "width": 128,
+    "height": 96,
+    "horizontal_fov_rad": 1.1,
+    "vertical_fov_rad": 0.85,
+    "emissivity": 1.0,
+    "reflected_temperature_c": 25.0,
+    "measurement_min_c": -40.0,
+    "measurement_max_c": 500.0
+  },
+  "iot": [
+    {
+      "schema_version": "1.0.0",
+      "sensor_id": "temperature-01",
+      "asset_id": "BW-01",
+      "source_type": "synthetic",
+      "configuration_version": "v1",
+      "description": "Fixed measurement channel; uninstrumented regions remain",
+      "modality": "iot",
+      "coordinate_frame": null,
+      "pose": null,
+      "acquisition_parameters": {},
+      "calibration_reference": "assumed-v1",
+      "noise_model_reference": null,
+      "measurement_configuration": {},
+      "source": "process_temperature",
+      "location_world_m": null,
+      "sampling_interval_s": 2.0,
+      "noise": {
+        "schema_version": "1.0.0",
+        "sigma": 0.0,
+        "range_slope": 0.0,
+        "bias": 0.0,
+        "angular_sigma_rad": 0.0,
+        "quantum": 0.0,
+        "dropout": 0.0,
+        "incidence_dropout": 0.0,
+        "outlier_probability": 0.0,
+        "outlier_scale": 0.0
+      },
+      "delivery": {
+        "schema_version": "1.0.0",
+        "dropout": 0.0,
+        "duplicate_probability": 0.0,
+        "delay_s": 0.05,
+        "delay_jitter_s": 0.0,
+        "timestamp_jitter_s": 0.0,
+        "interruption_windows_s": []
+      },
+      "measurement_min": -40.0,
+      "measurement_max": 500.0,
+      "vibration_base_rms_m_s2": 0.15,
+      "vibration_load_gain_m_s2": 0.2,
+      "vibration_variation_sigma_m_s2": 0.0
+    },
+    {
+      "schema_version": "1.0.0",
+      "sensor_id": "pressure-01",
+      "asset_id": "BW-01",
+      "source_type": "synthetic",
+      "configuration_version": "v1",
+      "description": "Fixed measurement channel; uninstrumented regions remain",
+      "modality": "iot",
+      "coordinate_frame": null,
+      "pose": null,
+      "acquisition_parameters": {},
+      "calibration_reference": "assumed-v1",
+      "noise_model_reference": null,
+      "measurement_configuration": {},
+      "source": "pressure",
+      "location_world_m": null,
+      "sampling_interval_s": 1.0,
+      "noise": {
+        "schema_version": "1.0.0",
+        "sigma": 0.0,
+        "range_slope": 0.0,
+        "bias": 0.0,
+        "angular_sigma_rad": 0.0,
+        "quantum": 0.0,
+        "dropout": 0.0,
+        "incidence_dropout": 0.0,
+        "outlier_probability": 0.0,
+        "outlier_scale": 0.0
+      },
+      "delivery": {
+        "schema_version": "1.0.0",
+        "dropout": 0.0,
+        "duplicate_probability": 0.0,
+        "delay_s": 0.05,
+        "delay_jitter_s": 0.0,
+        "timestamp_jitter_s": 0.0,
+        "interruption_windows_s": []
+      },
+      "measurement_min": 0.0,
+      "measurement_max": 2000000.0,
+      "vibration_base_rms_m_s2": 0.15,
+      "vibration_load_gain_m_s2": 0.2,
+      "vibration_variation_sigma_m_s2": 0.0
+    },
+    {
+      "schema_version": "1.0.0",
+      "sensor_id": "load-01",
+      "asset_id": "DR-01",
+      "source_type": "synthetic",
+      "configuration_version": "v1",
+      "description": "Fixed measurement channel; uninstrumented regions remain",
+      "modality": "iot",
+      "coordinate_frame": null,
+      "pose": null,
+      "acquisition_parameters": {},
+      "calibration_reference": "assumed-v1",
+      "noise_model_reference": null,
+      "measurement_configuration": {},
+      "source": "load",
+      "location_world_m": null,
+      "sampling_interval_s": 2.0,
+      "noise": {
+        "schema_version": "1.0.0",
+        "sigma": 0.0,
+        "range_slope": 0.0,
+        "bias": 0.0,
+        "angular_sigma_rad": 0.0,
+        "quantum": 0.0,
+        "dropout": 0.0,
+        "incidence_dropout": 0.0,
+        "outlier_probability": 0.0,
+        "outlier_scale": 0.0
+      },
+      "delivery": {
+        "schema_version": "1.0.0",
+        "dropout": 0.0,
+        "duplicate_probability": 0.0,
+        "delay_s": 0.05,
+        "delay_jitter_s": 0.0,
+        "timestamp_jitter_s": 0.0,
+        "interruption_windows_s": []
+      },
+      "measurement_min": 0.0,
+      "measurement_max": 1.0,
+      "vibration_base_rms_m_s2": 0.15,
+      "vibration_load_gain_m_s2": 0.2,
+      "vibration_variation_sigma_m_s2": 0.0
+    },
+    {
+      "schema_version": "1.0.0",
+      "sensor_id": "vibration-01",
+      "asset_id": "SUP-01",
+      "source_type": "synthetic",
+      "configuration_version": "v1",
+      "description": "Fixed measurement channel; uninstrumented regions remain",
+      "modality": "iot",
+      "coordinate_frame": null,
+      "pose": null,
+      "acquisition_parameters": {},
+      "calibration_reference": "assumed-v1",
+      "noise_model_reference": null,
+      "measurement_configuration": {},
+      "source": "vibration",
+      "location_world_m": null,
+      "sampling_interval_s": 2.0,
+      "noise": {
+        "schema_version": "1.0.0",
+        "sigma": 0.0,
+        "range_slope": 0.0,
+        "bias": 0.0,
+        "angular_sigma_rad": 0.0,
+        "quantum": 0.0,
+        "dropout": 0.0,
+        "incidence_dropout": 0.0,
+        "outlier_probability": 0.0,
+        "outlier_scale": 0.0
+      },
+      "delivery": {
+        "schema_version": "1.0.0",
+        "dropout": 0.0,
+        "duplicate_probability": 0.0,
+        "delay_s": 0.05,
+        "delay_jitter_s": 0.0,
+        "timestamp_jitter_s": 0.0,
+        "interruption_windows_s": []
+      },
+      "measurement_min": 0.0,
+      "measurement_max": 10.0,
+      "vibration_base_rms_m_s2": 0.15,
+      "vibration_load_gain_m_s2": 0.2,
+      "vibration_variation_sigma_m_s2": 0.0
+    },
+    {
+      "schema_version": "1.0.0",
+      "sensor_id": "wall-thermometer",
+      "asset_id": "BW-01",
+      "source_type": "synthetic",
+      "configuration_version": "v1",
+      "description": "Fixed measurement channel; uninstrumented regions remain",
+      "modality": "iot",
+      "coordinate_frame": null,
+      "pose": null,
+      "acquisition_parameters": {},
+      "calibration_reference": "assumed-v1",
+      "noise_model_reference": null,
+      "measurement_configuration": {},
+      "source": "surface_temperature",
+      "location_world_m": [
+        0.0,
+        0.0,
+        1.55
+      ],
+      "sampling_interval_s": 5.0,
+      "noise": {
+        "schema_version": "1.0.0",
+        "sigma": 0.0,
+        "range_slope": 0.0,
+        "bias": 0.0,
+        "angular_sigma_rad": 0.0,
+        "quantum": 0.0,
+        "dropout": 0.0,
+        "incidence_dropout": 0.0,
+        "outlier_probability": 0.0,
+        "outlier_scale": 0.0
+      },
+      "delivery": {
+        "schema_version": "1.0.0",
+        "dropout": 0.0,
+        "duplicate_probability": 0.0,
+        "delay_s": 0.05,
+        "delay_jitter_s": 0.0,
+        "timestamp_jitter_s": 0.0,
+        "interruption_windows_s": []
+      },
+      "measurement_min": -40.0,
+      "measurement_max": 500.0,
+      "vibration_base_rms_m_s2": 0.15,
+      "vibration_load_gain_m_s2": 0.2,
+      "vibration_variation_sigma_m_s2": 0.0
+    },
+    {
+      "schema_version": "1.0.0",
+      "sensor_id": "drum-thermometer",
+      "asset_id": "DR-01",
+      "source_type": "synthetic",
+      "configuration_version": "v1",
+      "description": "Fixed measurement channel; uninstrumented regions remain",
+      "modality": "iot",
+      "coordinate_frame": null,
+      "pose": null,
+      "acquisition_parameters": {},
+      "calibration_reference": "assumed-v1",
+      "noise_model_reference": null,
+      "measurement_configuration": {},
+      "source": "surface_temperature",
+      "location_world_m": [
+        0.0,
+        0.32,
+        3.05
+      ],
+      "sampling_interval_s": 10.0,
+      "noise": {
+        "schema_version": "1.0.0",
+        "sigma": 0.0,
+        "range_slope": 0.0,
+        "bias": 0.0,
+        "angular_sigma_rad": 0.0,
+        "quantum": 0.0,
+        "dropout": 0.0,
+        "incidence_dropout": 0.0,
+        "outlier_probability": 0.0,
+        "outlier_scale": 0.0
+      },
+      "delivery": {
+        "schema_version": "1.0.0",
+        "dropout": 0.0,
+        "duplicate_probability": 0.0,
+        "delay_s": 0.05,
+        "delay_jitter_s": 0.0,
+        "timestamp_jitter_s": 0.0,
+        "interruption_windows_s": []
+      },
+      "measurement_min": -40.0,
+      "measurement_max": 500.0,
+      "vibration_base_rms_m_s2": 0.15,
+      "vibration_load_gain_m_s2": 0.2,
+      "vibration_variation_sigma_m_s2": 0.0
+    },
+    {
+      "schema_version": "1.0.0",
+      "sensor_id": "pipe-temperature",
+      "asset_id": "SP-01",
+      "source_type": "synthetic",
+      "configuration_version": "v1",
+      "description": "Fixed measurement channel; uninstrumented regions remain",
+      "modality": "iot",
+      "coordinate_frame": null,
+      "pose": null,
+      "acquisition_parameters": {},
+      "calibration_reference": "assumed-v1",
+      "noise_model_reference": null,
+      "measurement_configuration": {},
+      "source": "process_temperature",
+      "location_world_m": null,
+      "sampling_interval_s": 5.0,
+      "noise": {
+        "schema_version": "1.0.0",
+        "sigma": 0.0,
+        "range_slope": 0.0,
+        "bias": 0.0,
+        "angular_sigma_rad": 0.0,
+        "quantum": 0.0,
+        "dropout": 0.0,
+        "incidence_dropout": 0.0,
+        "outlier_probability": 0.0,
+        "outlier_scale": 0.0
+      },
+      "delivery": {
+        "schema_version": "1.0.0",
+        "dropout": 0.0,
+        "duplicate_probability": 0.0,
+        "delay_s": 0.05,
+        "delay_jitter_s": 0.0,
+        "timestamp_jitter_s": 0.0,
+        "interruption_windows_s": []
+      },
+      "measurement_min": -40.0,
+      "measurement_max": 500.0,
+      "vibration_base_rms_m_s2": 0.15,
+      "vibration_load_gain_m_s2": 0.2,
+      "vibration_variation_sigma_m_s2": 0.0
+    },
+    {
+      "schema_version": "1.0.0",
+      "sensor_id": "pressure-02",
+      "asset_id": "SP-02",
+      "source_type": "synthetic",
+      "configuration_version": "v1",
+      "description": "Fixed measurement channel; uninstrumented regions remain",
+      "modality": "iot",
+      "coordinate_frame": null,
+      "pose": null,
+      "acquisition_parameters": {},
+      "calibration_reference": "assumed-v1",
+      "noise_model_reference": null,
+      "measurement_configuration": {},
+      "source": "pressure",
+      "location_world_m": null,
+      "sampling_interval_s": 3.0,
+      "noise": {
+        "schema_version": "1.0.0",
+        "sigma": 0.0,
+        "range_slope": 0.0,
+        "bias": 0.0,
+        "angular_sigma_rad": 0.0,
+        "quantum": 0.0,
+        "dropout": 0.0,
+        "incidence_dropout": 0.0,
+        "outlier_probability": 0.0,
+        "outlier_scale": 0.0
+      },
+      "delivery": {
+        "schema_version": "1.0.0",
+        "dropout": 0.0,
+        "duplicate_probability": 0.0,
+        "delay_s": 0.05,
+        "delay_jitter_s": 0.0,
+        "timestamp_jitter_s": 0.0,
+        "interruption_windows_s": []
+      },
+      "measurement_min": 0.0,
+      "measurement_max": 2000000.0,
+      "vibration_base_rms_m_s2": 0.15,
+      "vibration_load_gain_m_s2": 0.2,
+      "vibration_variation_sigma_m_s2": 0.0
+    },
+    {
+      "schema_version": "1.0.0",
+      "sensor_id": "vibration-02",
+      "asset_id": "DR-01",
+      "source_type": "synthetic",
+      "configuration_version": "v1",
+      "description": "Fixed measurement channel; uninstrumented regions remain",
+      "modality": "iot",
+      "coordinate_frame": null,
+      "pose": null,
+      "acquisition_parameters": {},
+      "calibration_reference": "assumed-v1",
+      "noise_model_reference": null,
+      "measurement_configuration": {},
+      "source": "vibration",
+      "location_world_m": null,
+      "sampling_interval_s": 5.0,
+      "noise": {
+        "schema_version": "1.0.0",
+        "sigma": 0.0,
+        "range_slope": 0.0,
+        "bias": 0.0,
+        "angular_sigma_rad": 0.0,
+        "quantum": 0.0,
+        "dropout": 0.0,
+        "incidence_dropout": 0.0,
+        "outlier_probability": 0.0,
+        "outlier_scale": 0.0
+      },
+      "delivery": {
+        "schema_version": "1.0.0",
+        "dropout": 0.0,
+        "duplicate_probability": 0.0,
+        "delay_s": 0.05,
+        "delay_jitter_s": 0.0,
+        "timestamp_jitter_s": 0.0,
+        "interruption_windows_s": []
+      },
+      "measurement_min": 0.0,
+      "measurement_max": 10.0,
+      "vibration_base_rms_m_s2": 0.15,
+      "vibration_load_gain_m_s2": 0.2,
+      "vibration_variation_sigma_m_s2": 0.0
+    }
+  ],
+  "event_poses": {
+    "lidar-01-t_60": {
+      "source": {
+        "kind": "sensor_local",
+        "reference_id": "lidar-01"
+      },
+      "target": {
+        "kind": "world",
+        "reference_id": "plant-01"
+      },
+      "matrix": [
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.15
+        ],
+        [
+          -1.0,
+          0.0,
+          0.0,
+          3.55
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          1.65
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    }
+  }
+}
