@@ -11,3 +11,8 @@ Stable reference selection uses only the fixed accepted as-built reference JSON.
 Two local starts quantify repeatability; selection uses observed fitness/RMSE only. Quality gates include correspondence count, overlap, normal-information conditioning, residual RMSE, local-start disagreement and correction versus reported pose budget. These are engineering screens. Open3D termination alone is insufficient and `converged` is qualified by these checks. A valid screen does not prove a globally correct transform: repetitive geometry and small local minima remain failure modes.
 
 All tunables are typed in analytics/config.py and overridable in configs/analytics/default.yaml. Typical defaults: 10 mm voxel, 260 mm correspondence radius, scales 150/80/40 mm, 35 iterations/scale, 25 mm Tukey scale, 40 correspondences minimum. See PHASE3_VALIDATION.md for actual errors and failures; robust registration did not uniformly beat conventional ICP. Results include quality flags, runtime, uncertainty score, NPZ artifact/hash/frame and PLY export when nonempty. The benchmark's finalized export metadata references its existing PLYs; original sealed predictions are retained.
+
+
+## Phase 3.1 update
+
+B3.1 (algorithm v3.1) uses the same conventional point-to-point ICP transform as B2; two methods share that immutable computation in a combined invocation. D6 justified this scoped choice on diagnostic geometry, while strict REF-01-only conditioning failed all 40 trials. B3.1 retains registration gates. Its subsequent robust wall-normal offset/tilt removal is a relative measurement basis and does not improve or replace the saved six-DOF transform. Original robust registration remains selectable as B3. See PHASE3_1_ROOT_CAUSE.md and PHASE3_1_IMPROVEMENTS.md.

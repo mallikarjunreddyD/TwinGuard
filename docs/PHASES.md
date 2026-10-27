@@ -22,3 +22,8 @@ Phase 2 evidence is recorded in PHASE2_VALIDATION.md. Phase 3 receives Inspectio
 ## Phase 3 update
 
 Phase 3 is now implemented and validated in PHASE3_VALIDATION.md; earlier statements above about pending analytics are historical handoff context. Public observations now support ICP, geometric regions and operating/thermal residuals without simulator truth. E1/E2 run; E3/E4 remain pending. Phase 4 must preserve missing/invalid/OOR qualifications and cannot equate no detection with healthy equipment.
+
+
+## Phase 3.1 update
+
+Phase 3.1 is a corrective research/validation increment within canonical Phase 3. It preserves original B3 and adds a calibrated wall-relative B3.1; it does not renumber phases or begin Phase 4. Fusion must distinguish relative localized measurements, original absolute comparisons and unavailable/insufficient evidence. See PHASE3_1_ROOT_CAUSE.md, PHASE3_1_IMPROVEMENTS.md and PHASE3_1_VALIDATION.md.

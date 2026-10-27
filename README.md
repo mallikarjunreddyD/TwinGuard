@@ -106,3 +106,7 @@ twinguard experiment report --run-dir experiments/outputs/my-E2
 ```
 
 Add --smoke for a small independent matrix. Use new/empty output directories. Full configurations and results are described in [experiments](docs/EXPERIMENTS.md), [registration](docs/REGISTRATION.md), [geometry](docs/GEOMETRIC_CHANGE_DETECTION.md), [operating analytics](docs/OPERATING_ANALYTICS.md) and [validation](docs/PHASE3_VALIDATION.md). Empty regions or out-of-range/coverage abstentions do not establish healthy equipment.
+
+## Phase 3.1 geometric investigation
+
+Original B3 remains selectable. The corrected B3.1 produces calibrated localized wall-relative evidence, with explicit unavailable coverage/calibration states. See [root causes](docs/PHASE3_1_ROOT_CAUSE.md), [corrections](docs/PHASE3_1_IMPROVEMENTS.md), and [independent validation](docs/PHASE3_1_VALIDATION.md). Reproduce stages with `python scripts/phase31.py --help`. This increment does not implement fusion or physical 10 mm metrology.

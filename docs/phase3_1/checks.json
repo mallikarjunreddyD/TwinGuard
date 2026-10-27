@@ -1,0 +1,31 @@
+{
+  "checked_at": "2026-10-27T16:17:05.624848+00:00",
+  "software_version": "0.4.1",
+  "pytest": {
+    "passed": 170,
+    "failed": 0,
+    "runtime_s": 34.59,
+    "warnings": 1,
+    "warning": "Existing Starlette/httpx deprecation"
+  },
+  "ruff_lint": "passed src tests scripts",
+  "ruff_format": "passed 87 files",
+  "mypy": "passed 67 source files",
+  "pip_check": "passed",
+  "doctor": "passed",
+  "schema_export": "passed",
+  "git_diff_check": "passed",
+  "E2_smoke_sequences": 6,
+  "four_method_cli": "passed and seal verified",
+  "docker_image": "twinguard-phase31-api",
+  "docker_build": "passed",
+  "compose_health": "healthy",
+  "api_endpoints": "health/version/capabilities HTTP 200; version 0.4.1",
+  "cleanup": "temporary stack/server stopped; ports closed",
+  "baseline_regression_before_changes": "160 tests passed",
+  "heldout_cases": 930,
+  "paired_method_records": 3720,
+  "prediction_seals_verified": 930,
+  "frozen_algorithm_hashes_match": true,
+  "figures_reviewed": 8
+}

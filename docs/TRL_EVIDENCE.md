@@ -26,3 +26,8 @@ Implemented and tested Open3D CPU first-hit LiDAR/thermal visibility, radiometri
 ## Phase 3 update
 
 Phase 3 software evidence: actual CPU Open3D registration, patch geometric screening, numeric thermal residual regions, healthy-only dynamic operating fits, truth-isolated inference and full synthetic E1/E2 comparisons are implemented. See PHASE3_VALIDATION.md and its 154-pair/30-sequence records. This demonstrates controlled software functions, with limited small-change sensitivity and qualified missing/OOR handling. It is not independent physical accuracy or a new TRL assignment. E3 fusion and E4 integration are still pending.
+
+
+## Phase 3.1 update
+
+Phase 3.1 adds frozen baseline reproduction, 140 restricted diagnostic acquisitions (D1–D6), separate healthy/development calibration, and independent paired revalidation of B1/B2/B3/B3.1. The root-cause checkpoint and candidate freeze are versioned in Git. Better synthetic localized sensitivity, if demonstrated, is not physical 10 mm LiDAR capability, absolute full-wall displacement detection, or a higher TRL. L2/support limitations and qualification remain explicit.

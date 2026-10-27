@@ -159,8 +159,8 @@ def figures(root, heldout=False):
     if not heldout:
         return output
     report = json.loads((run / "heldout-v1/report.json").read_text())
-    fig, axes = plt.subplots(1, 3, figsize=(14, 4.5))
-    for ax, level in zip(axes, ["L0", "L1", "L2"]):
+    fig, axes = plt.subplots(2, 3, figsize=(14, 8))
+    for ax, level in zip(axes[0], ["L0", "L1", "L2"]):
         for method in ["B3", "B3.1"]:
             d = report["metrics"][method]["fidelity_amplitude"][level]
             ax.plot(
@@ -175,6 +175,28 @@ def figures(root, heldout=False):
             ylabel="Overall localized recall",
             ylim=(-0.03, 1.03),
         )
+        ax.legend()
+    for ax, level in zip(axes[1], ["L0", "L1", "L2"]):
+        for offset, method in [(-0.18, "B3"), (0.18, "B3.1")]:
+            selected = [
+                r
+                for r in report["rows"]
+                if r["method"] == method
+                and r["fidelity"] == level
+                and r["viewpoint"] in ["same", "changed"]
+            ]
+            healthy = [r for r in selected if not r["positive"]]
+            qualified = [r for r in healthy if r["status"] == "valid"]
+            values = [
+                sum(r["detected"] for r in healthy) / len(healthy),
+                sum(r["status"] != "valid" for r in selected) / len(selected),
+                sum(r["detected"] for r in qualified) / len(qualified) if qualified else 0,
+            ]
+            ax.bar(np.arange(3) + offset, values, 0.36, label=method)
+            if not qualified:
+                ax.text(2 + offset, 0.03, "n/a", ha="center", fontsize=8, rotation=90)
+        ax.set_xticks(np.arange(3), ["all healthy FPR", "abstention", "qualified FPR"], rotation=12)
+        ax.set(title=level + " qualification trade-off", ylim=(0, 1.05), ylabel="Fraction")
         ax.legend()
     fig.suptitle(
         "Figure 7: independent same-observation comparison; abstentions retained as misses"
@@ -219,7 +241,15 @@ def figures(root, heldout=False):
         )
         ax.legend(fontsize=7)
         ax = fig.add_subplot(2, 2, column + 3)
-        patches = [p for p in geometry["patches"] if p["displacement_m"] is not None]
+        patches = [
+            p
+            for p in geometry["patches"]
+            if p["status"] == "valid" and p["displacement_m"] is not None
+        ]
+        if not patches:
+            ax.text(
+                0.05, 0.95, "No qualified relative displacement", transform=ax.transAxes, va="top"
+            )
         centers = np.array([p["center_world_m"] for p in patches])
         if patches:
             scatter = ax.scatter(

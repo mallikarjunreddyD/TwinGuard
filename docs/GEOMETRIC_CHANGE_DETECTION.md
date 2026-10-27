@@ -11,3 +11,8 @@ Significant adjacent patches form connected regions with world bounds, represent
 Absent returns, unstable registration, sparse common coverage and unseen assets produce insufficient_coverage/inconclusive outputs with null estimates. GeometryResult.asset_statuses prevents an observed wall from implying an unseen support is healthy. Empty regions mean no qualified detected change; they do not establish plant health. Registered clouds are artifacts for review even when their registration is qualified as inconclusive.
 
 Observed limits: B3 detected none of the 10/20 mm held-out cases, about one third of 30 mm cases and two thirds of 50 mm cases. Registration bias, partial coverage and smoothing of compact deformations limit sensitivity. Estimates are normal displacement, not full deformation vectors or a physical metrology claim. Read PHASE3_VALIDATION.md before using these outputs.
+
+
+## Phase 3.1 update
+
+The original B3 implementation remains unchanged. Explicit --methods B1 B2 B3 B3.1 selects comparisons; B3.1 requires --improved-calibration. Its 80/120 mm supported patches use robust wall-relative residual correction, per-location healthy bias/envelopes and a calibrated neighboring-pair screen. All B3.1 estimates carry measurement_basis=localized_relative; broad/uniform wall motion can be removed and is outside this method’s capability. Raw estimates, removed common-mode component, scale, calibration support, margin, coverage and reinspection_candidate are explicit. Sparse/uncalibrated evidence remains inconclusive. See PHASE3_1_IMPROVEMENTS.md for the mathematics and PHASE3_1_VALIDATION.md for independent results.
