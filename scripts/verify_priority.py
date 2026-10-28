@@ -71,6 +71,19 @@ def main(out):
         speed=80,
         inspections=False,
     )
+    manifest = json.loads((out / "ordinary-backlog/publisher.json").read_text())
+    ids = {m["observation_id"] for m in manifest["messages"] if m.get("observation_id")}
+    for _ in range(600):
+        with db.connect() as c:
+            persisted = c.execute(
+                select(func.count()).select_from(observations).where(observations.c.id.in_(ids))
+            ).scalar_one()
+        if persisted == len(ids):
+            break
+        time.sleep(0.1)
+    if persisted != len(ids):
+        raise RuntimeError("Ordinary input did not reach durable storage")
+    result["ordinary_ingestion_confirmed_at"] = now().isoformat()
     with db.connect() as c:
         result["ordinary_backlog_before_critical"] = c.execute(
             select(func.count()).select_from(jobs).where(jobs.c.status == "pending")
