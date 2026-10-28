@@ -1,0 +1,124 @@
+[
+  {
+    "source_id": "demo-iot",
+    "transport_identity": "demo-iot",
+    "sensors": {
+      "temperature-01": {
+        "asset_id": "BW-01",
+        "measurement_type": "temperature",
+        "unit": "degC"
+      },
+      "pressure-01": {
+        "asset_id": "BW-01",
+        "measurement_type": "pressure",
+        "unit": "Pa"
+      },
+      "load-01": {
+        "asset_id": "DR-01",
+        "measurement_type": "operating_load",
+        "unit": "1"
+      },
+      "vibration-01": {
+        "asset_id": "SUP-01",
+        "measurement_type": "vibration_rms",
+        "unit": "m/s2"
+      },
+      "wall-thermometer": {
+        "asset_id": "BW-01",
+        "measurement_type": "temperature",
+        "unit": "degC"
+      },
+      "drum-thermometer": {
+        "asset_id": "DR-01",
+        "measurement_type": "temperature",
+        "unit": "degC"
+      },
+      "pipe-temperature": {
+        "asset_id": "SP-01",
+        "measurement_type": "temperature",
+        "unit": "degC"
+      },
+      "pressure-02": {
+        "asset_id": "SP-02",
+        "measurement_type": "pressure",
+        "unit": "Pa"
+      },
+      "vibration-02": {
+        "asset_id": "DR-01",
+        "measurement_type": "vibration_rms",
+        "unit": "m/s2"
+      }
+    },
+    "clock_quality": "synchronized",
+    "clock_basis": "controlled_simulation_replay",
+    "calibration_status": "assumed_simulation",
+    "calibration_reference": "assumed-v1",
+    "allow_inspections": false
+  },
+  {
+    "source_id": "demo-uav",
+    "transport_identity": "demo-uav",
+    "sensors": {},
+    "clock_quality": "synchronized",
+    "clock_basis": "controlled_simulation_replay",
+    "calibration_status": "assumed_simulation",
+    "calibration_reference": "assumed-v1",
+    "allow_inspections": true
+  },
+  {
+    "source_id": "opcua-demo",
+    "transport_identity": "opcua-adapter",
+    "sensors": {
+      "temperature-01": {
+        "asset_id": "BW-01",
+        "measurement_type": "temperature",
+        "unit": "degC"
+      },
+      "pressure-01": {
+        "asset_id": "BW-01",
+        "measurement_type": "pressure",
+        "unit": "Pa"
+      },
+      "load-01": {
+        "asset_id": "DR-01",
+        "measurement_type": "operating_load",
+        "unit": "1"
+      },
+      "vibration-01": {
+        "asset_id": "SUP-01",
+        "measurement_type": "vibration_rms",
+        "unit": "m/s2"
+      },
+      "wall-thermometer": {
+        "asset_id": "BW-01",
+        "measurement_type": "temperature",
+        "unit": "degC"
+      },
+      "drum-thermometer": {
+        "asset_id": "DR-01",
+        "measurement_type": "temperature",
+        "unit": "degC"
+      },
+      "pipe-temperature": {
+        "asset_id": "SP-01",
+        "measurement_type": "temperature",
+        "unit": "degC"
+      },
+      "pressure-02": {
+        "asset_id": "SP-02",
+        "measurement_type": "pressure",
+        "unit": "Pa"
+      },
+      "vibration-02": {
+        "asset_id": "DR-01",
+        "measurement_type": "vibration_rms",
+        "unit": "m/s2"
+      }
+    },
+    "clock_quality": "synchronized",
+    "clock_basis": "controlled_simulation_replay",
+    "calibration_status": "assumed_simulation",
+    "calibration_reference": "assumed-v1",
+    "allow_inspections": false
+  }
+]

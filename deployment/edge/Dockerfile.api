@@ -1,0 +1,22 @@
+FROM python:3.12-slim
+WORKDIR /app
+COPY requirements-edge.lock ./
+ARG PIP_FIND_LINKS
+ARG PIP_NO_INDEX
+RUN pip install --no-cache-dir -r requirements-edge.lock
+COPY src/twinguard/__init__.py src/twinguard/__init__.py
+COPY src/twinguard/core src/twinguard/core
+RUN rm -f src/twinguard/core/config.py src/twinguard/core/registry.py
+COPY src/twinguard/analytics src/twinguard/analytics
+COPY src/twinguard/fusion src/twinguard/fusion
+COPY src/twinguard/api src/twinguard/api
+COPY src/twinguard/edge src/twinguard/edge
+COPY configs/fusion configs/fusion
+COPY configs/analytics configs/analytics
+COPY configs/edge configs/edge
+COPY alembic.ini ./
+COPY migrations migrations
+ENV PYTHONPATH=/app/src TWINGUARD_ROOT=/app
+RUN useradd -m -u 10001 twinguard
+USER twinguard
+CMD ["uvicorn","twinguard.api.app:app","--host","0.0.0.0","--port","8000"]

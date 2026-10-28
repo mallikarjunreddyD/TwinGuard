@@ -1,8 +1,107 @@
+name: twinguard
+x-platform: &platform
+  image: twinguard-edge-api:local
+  env_file: ../.edge/runtime.env
+  environment:
+    TWINGUARD_USERS: /run/secrets/users.json
+  volumes:
+    - ../.edge/users.json:/run/secrets/users.json:ro
+    - edge-data:/data
+  restart: unless-stopped
+  networks: [edge]
+  mem_limit: 1g
 services:
-  api:
-    build:
-      context: ..
-      dockerfile: deployment/Dockerfile
-    ports:
-      - "127.0.0.1:${TWINGUARD_PORT:-8000}:8000"
+  database:
+    image: postgres:17-alpine
+    env_file: ../.edge/runtime.env
+    environment:
+      POSTGRES_USER: twinguard
+      POSTGRES_DB: twinguard
+    volumes: [database:/var/lib/postgresql/data]
+    healthcheck:
+      test: [CMD-SHELL, pg_isready -U twinguard -d twinguard]
+      interval: 2s
+      retries: 30
+    networks: [edge]
     restart: unless-stopped
+    mem_limit: 512m
+  broker:
+    image: eclipse-mosquitto:2
+    volumes:
+      - ../.edge/mosquitto.conf:/mosquitto/config/mosquitto.conf:ro
+      - ../.edge/passwords:/mosquitto/config/passwords:ro
+      - ../.edge/acl:/mosquitto/config/acl:ro
+      - broker:/mosquitto/data
+    networks: [edge]
+    restart: unless-stopped
+    mem_limit: 128m
+  migrate:
+    <<: *platform
+    restart: 'no'
+    user: '0:0'
+    command: [sh, -c, 'mkdir -p /data/artifacts && chown -R 10001:10001 /data && alembic upgrade head && python -m twinguard.edge.bootstrap']
+    depends_on:
+      database: {condition: service_healthy}
+  api:
+    <<: *platform
+    build: {context: .., dockerfile: deployment/edge/Dockerfile.api}
+    depends_on:
+      migrate: {condition: service_completed_successfully}
+    healthcheck:
+      test: [CMD, python, -c, 'import urllib.request; urllib.request.urlopen("http://localhost:8000/health")']
+      interval: 5s
+      retries: 20
+  ingestion:
+    <<: *platform
+    command: [python, -c, 'from twinguard.edge.protocols import subscribe; subscribe()']
+    depends_on:
+      migrate: {condition: service_completed_successfully}
+      broker: {condition: service_started}
+  fast-worker:
+    <<: *platform
+    command: [python, -m, twinguard.edge.worker, iot]
+    depends_on:
+      migrate: {condition: service_completed_successfully}
+  inspection-worker:
+    <<: *platform
+    image: twinguard-edge-worker:local
+    build: {context: .., dockerfile: deployment/edge/Dockerfile.worker}
+    mem_limit: 3g
+    environment:
+      OMP_NUM_THREADS: '1'
+      OPENBLAS_NUM_THREADS: '1'
+    depends_on:
+      migrate: {condition: service_completed_successfully}
+  frontend:
+    image: twinguard-edge-frontend:local
+    build: {context: .., dockerfile: deployment/edge/Dockerfile.frontend}
+    ports: ['127.0.0.1:${TWINGUARD_PORT:-18780}:8080']
+    networks: [edge, access]
+    restart: unless-stopped
+    mem_limit: 256m
+    depends_on:
+      api: {condition: service_healthy}
+  opcua-simulator:
+    <<: *platform
+    profiles: [demo-opcua]
+    command: [python, -m, twinguard.edge.protocols, opcua-server, --bundle, /measurements, --endpoint, 'opc.tcp://0.0.0.0:4840/twinguard/']
+    volumes:
+      - ../.edge/opcua-public:/measurements:ro
+    depends_on:
+      migrate: {condition: service_completed_successfully}
+  opcua-adapter:
+    <<: *platform
+    profiles: [demo-opcua]
+    command: [python, -m, twinguard.edge.protocols, opcua-client, --endpoint, 'opc.tcp://opcua-simulator:4840/twinguard/']
+    environment:
+      TWINGUARD_OPCUA_LAB: '1'
+    depends_on:
+      opcua-simulator: {condition: service_started}
+
+networks:
+  edge: {internal: true}
+  access: {}
+volumes:
+  database:
+  broker:
+  edge-data:

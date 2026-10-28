@@ -24,3 +24,7 @@ datasets/**/*.ply
 datasets/**/*.bag
 datasets/**/*.zip
 
+.edge/
+frontend/node_modules/
+frontend/dist/
+output/phase5*/

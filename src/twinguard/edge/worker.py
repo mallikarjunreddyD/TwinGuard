@@ -1,0 +1,321 @@
+"""Restart-safe jobs invoking unchanged public analytics and Phase 4 F1."""
+
+import json
+import os
+import time
+import uuid
+import tempfile
+from pathlib import Path
+from datetime import datetime
+from sqlalchemy import select
+from twinguard.core.contracts import SensorObservation, InspectionCapture
+from twinguard.core.observations import load_capture_arrays
+from twinguard.analytics.config import AnalyticsConfig
+from twinguard.analytics.reference import load_reference
+from twinguard.analytics.operating import infer_operating
+from twinguard.fusion import adapters
+from twinguard.fusion.engine import assess
+from twinguard.fusion.models import FusionState, ProcessingRecord
+from twinguard.fusion.policies import load_policy, policy_hash
+from .contracts import now
+from .storage import engine, get, put, emit, audit, observations, jobs, claim
+from .artifacts import ArtifactStore
+
+ROOT = Path(os.environ.get("TWINGUARD_ROOT", ".")).resolve()
+
+
+def policy():
+    profile = os.environ.get("TWINGUARD_PROFILE", "simulation")
+    if profile not in ["simulation", "site-review"]:
+        raise ValueError("Unknown deployment profile")
+    return load_policy(
+        ROOT
+        / (
+            "configs/fusion/hazards.yaml"
+            if profile == "simulation"
+            else "configs/fusion/site-template.yaml"
+        )
+    )
+
+
+def processing(source, received, clock):
+    done = now()
+    return ProcessingRecord(
+        source_id=source,
+        received_at=received,
+        processed_at=done,
+        available_at=done,
+        basis="recorded",
+        clock_quality=clock,
+        rationale="Actual edge worker wall-clock completion; original acquisition retained in durable observation. Explicit controlled replay acquisition mapping where configured.",
+    )
+
+
+def checkpoint(c, evidence, actions=()):
+    p = policy()
+    # All fusion transitions serialize on one locked state row, in the commit transaction.
+    raw = get(c, "checkpoint", "F1", lock=True)
+    if raw is None:
+        raise RuntimeError("Initialize durable checkpoint before workers start")
+    state = FusionState.model_validate(raw)
+    began = now()
+    state, history = assess(state, evidence, p, began, actions=actions)
+    put(c, "checkpoint", "F1", state.model_dump(mode="json"))
+    for e in evidence:
+        put(c, "evidence", e.evidence_id, e.model_dump(mode="json"), e.asset_id)
+    for trace in history:
+        data = trace.model_dump(mode="json")
+        data["deployment_profile"] = os.environ.get("TWINGUARD_PROFILE", "simulation")
+        put(c, "trace", trace.assessment.assessment_id, data, trace.assessment.asset_id)
+        put(c, "condition", trace.assessment.asset_id, data, trace.assessment.asset_id)
+    for event in state.events.values():
+        put(c, "event", event.event_id, event.model_dump(mode="json"), event.asset_id)
+    for notice in state.notices:
+        put(c, "notice", notice.notice_id, notice.model_dump(mode="json"))
+    emit(
+        c,
+        "assessment",
+        {
+            "assets": [h.assessment.asset_id for h in history],
+            "fusion_started_at": began.isoformat(),
+            "available_at": now().isoformat(),
+            "policy_hash": policy_hash(p),
+            "profile": os.environ.get("TWINGUARD_PROFILE", "simulation"),
+        },
+    )
+    return history
+
+
+def iot(db, job):
+    with db.connect() as c:
+        row = dict(
+            c.execute(
+                select(observations).where(observations.c.id == job["body"]["observation_id"])
+            )
+            .mappings()
+            .one()
+        )
+        context = list(
+            c.execute(
+                select(observations.c.body)
+                .where(observations.c.acquired <= row["acquired"])
+                .order_by(observations.c.acquired.desc())
+                .limit(500)
+            ).scalars()
+        )
+    original = SensorObservation.model_validate(row["body"])
+    meta = row["metadata"]
+    effective = original.model_copy(
+        update={
+            "acquired_at": datetime.fromisoformat(meta["effective_acquired_at"]),
+            "received_at": datetime.fromisoformat(row["received"]),
+            "clock_quality": meta["trusted_clock_quality"],
+        }
+    )
+    # Trust comes from registry; unknown calibration cannot use synthetic authority assumptions.
+    if meta["calibration_status"] not in (
+        ["assumed_simulation", "verified"]
+        if os.environ.get("TWINGUARD_PROFILE", "simulation") == "simulation"
+        else ["verified"]
+    ):
+        effective = effective.model_copy(update={"quality": "unknown"})
+    evidence = []
+    raw = adapters.engineering_limit(
+        effective,
+        processing(original.observation_id, effective.received_at, effective.clock_quality),
+        policy(),
+    )
+    if raw:
+        evidence.append(raw)
+    model = json.loads((ROOT / "configs/fusion/calibration/operating_model.json").read_text())
+    predictions = infer_operating(
+        [SensorObservation.model_validate(r) for r in context], model, AnalyticsConfig()
+    )
+    prediction = next((p for p in predictions if p.observation_id == original.observation_id), None)
+    if prediction:
+        # Scientific inference retains original times/context; only delivery availability and declared replay clock map to edge time.
+        evidence.append(
+            adapters.operating(
+                prediction,
+                original.model_copy(update={"quality": effective.quality}),
+                processing(
+                    prediction.prediction_id, effective.received_at, effective.clock_quality
+                ),
+            ).model_copy(update={"acquired_at": effective.acquired_at})
+        )
+    return evidence, {
+        "operating": prediction.model_dump(mode="json") if prediction else None,
+        "original_acquired_at": original.acquired_at.isoformat(),
+        "asset_id": original.asset_id,
+    }
+
+
+def inspection(db, job):
+    from twinguard.analytics.pipeline import analyze_geometry
+    from twinguard.analytics.thermal import infer_thermal
+
+    data = job["body"]
+    received = datetime.fromisoformat(data["received"])
+    store = ArtifactStore(os.environ.get("TWINGUARD_ARTIFACTS", "/tmp/twinguard-artifacts"))
+    evidence = []
+    output = {"geometric": [], "thermal": [], "thermal_images": [], "asset_id": "BW-01"}
+    with tempfile.TemporaryDirectory() as temp:
+        root = Path(temp)
+        records = store.extract(data["sha256"], root)
+        captures = [r for r in records if isinstance(r, InspectionCapture)]
+        config = AnalyticsConfig()
+        ref = load_reference(ROOT / "configs/analytics/accepted_reference.json")
+        lidar = sorted([r for r in captures if r.modality == "lidar"], key=lambda r: r.acquired_at)
+        if len(lidar) >= 2:
+            calibration = json.loads(
+                (ROOT / "configs/fusion/calibration/geometry_b31.json").read_text()
+            )
+            r, g = analyze_geometry(
+                root / lidar[0].artifact.uri,
+                root / lidar[-1].artifact.uri,
+                config,
+                ref,
+                root / "derived",
+                methods=["B3.1"],
+                improved_calibration=calibration,
+            )["B3.1"]
+            evidence.extend(
+                adapters.geometry(
+                    g,
+                    r,
+                    processing(g.analysis_id, received, data["clock_quality"]),
+                    lidar[-1].provenance_id,
+                )
+            )
+            output["geometric"] = [g.model_dump(mode="json")]
+            output["registration"] = r.model_dump(mode="json")
+        for capture in [r for r in captures if r.modality == "thermal"]:
+            result, thermal_arrays = infer_thermal(
+                root, capture, ROOT / "configs/fusion/calibration", config, ref
+            )
+            evidence.extend(
+                adapters.thermal(
+                    result,
+                    processing(result.analysis_id, received, data["clock_quality"]),
+                    capture.provenance_id,
+                )
+            )
+            output["thermal"].append(result.model_dump(mode="json"))
+            residual = thermal_arrays["residual_c"]
+            arrays = load_capture_arrays(root, capture)
+            import numpy as np
+
+            t = arrays["temperature_c"]
+            output["thermal_images"].append(
+                {
+                    "capture_id": capture.capture_id,
+                    "acquired_at": capture.acquired_at.isoformat(),
+                    "temperature_c": np.where(np.isfinite(t), t, 0).tolist(),
+                    "valid_mask": arrays["valid_mask"].tolist(),
+                    "saturation_mask": arrays.get(
+                        "saturation_mask", np.zeros(t.shape, bool)
+                    ).tolist(),
+                    "residual": np.where(np.isfinite(residual), residual, 0).tolist(),
+                }
+            )
+    if data["mode"] == "simulation_replay":
+        mapped = datetime.fromisoformat(data["effective_acquired_at"])
+        evidence = [e.model_copy(update={"acquired_at": mapped}) for e in evidence]
+    return evidence, output
+
+
+def run_one(db, kind, owner):
+    job = claim(
+        db,
+        kind,
+        owner,
+        lease_s=int(os.environ.get("TWINGUARD_JOB_LEASE_S", "15" if kind == "iot" else "120")),
+    )
+    if job is None:
+        return False
+    started = now()
+    try:
+        evidence, result = iot(db, job) if kind == "iot" else inspection(db, job)
+        analytics_done = now()
+        with db.begin() as c:
+            locked = (
+                c.execute(select(jobs).where(jobs.c.id == job["id"]).with_for_update())
+                .mappings()
+                .one()
+            )
+            if locked["owner"] != owner or locked["status"] != "processing":
+                return True
+            history = checkpoint(c, evidence)
+            finished = now()
+            result.update(
+                job_id=job["id"],
+                kind=kind,
+                started_at=started.isoformat(),
+                analytics_completed_at=finished.isoformat(),
+                policy_hash=policy_hash(policy()),
+            )
+            put(c, "analysis", job["id"], result, result.get("asset_id"))
+            if kind == "inspection":
+                put(c, "inspection", job["id"], {**result, **job["body"]}, "BW-01")
+            c.execute(
+                jobs.update()
+                .where(jobs.c.id == job["id"])
+                .values(
+                    status="completed", duration_s=(finished - started).total_seconds(), error=None
+                )
+            )
+            put(
+                c,
+                "timing",
+                job["id"],
+                {
+                    "job_id": job["id"],
+                    "kind": kind,
+                    "job_start": started.isoformat(),
+                    "analytics_complete": analytics_done.isoformat(),
+                    "advisory_available": now().isoformat(),
+                    "assessments": [h.assessment.assessment_id for h in history],
+                },
+            )
+        committed = now()
+        with db.begin() as c:
+            timing = get(c, "timing", job["id"])
+            timing["advisory_commit_confirmed_at"] = committed.isoformat()
+            put(c, "timing", job["id"], timing)
+        return True
+    except Exception as exc:
+        with db.begin() as c:
+            row = c.execute(select(jobs.c.attempts).where(jobs.c.id == job["id"])).scalar_one()
+            c.execute(
+                jobs.update()
+                .where(jobs.c.id == job["id"])
+                .values(status="pending" if row < 3 else "failed", error=str(exc)[:2000])
+            )
+            audit(
+                c,
+                "job_retry" if row < 3 else "job_quarantined",
+                job_id=job["id"],
+                error=str(exc)[:2000],
+            )
+        return True
+
+
+def serve(kind):
+    db = engine()
+    owner = str(uuid.uuid4())
+    tick = 0.0
+    while True:
+        busy = run_one(db, kind, owner)
+        if kind == "iot" and time.monotonic() - tick > 2:
+            with db.begin() as c:
+                checkpoint(c, [])
+                put(c, "service", "fast-worker", {"heartbeat": now().isoformat()})
+            tick = time.monotonic()
+        if not busy:
+            time.sleep(0.1)
+
+
+if __name__ == "__main__":
+    import sys
+
+    serve(sys.argv[1] if len(sys.argv) > 1 else "iot")
