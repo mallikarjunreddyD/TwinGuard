@@ -561,3 +561,48 @@ def test_recovery_wait_and_unconfigured_scope_have_correct_explanations(policy):
     context = [d for d in history if d.assessment.asset_id == "DR-01"][-1]
     assert context.assessment.severity == "unknown"
     assert any("No normal-coverage requirements" in text for text in context.rationale)
+
+
+@pytest.mark.parametrize("value,expected", [(200, "negative"), (250, "positive")])
+def test_configured_temperature_limit_path(policy, value, expected):
+    source = SensorObservation.model_validate(
+        {
+            **observation().model_dump(),
+            "sensor_id": "temperature-01",
+            "measurement_type": "temperature",
+            "unit": "degC",
+            "value": value,
+        }
+    )
+    normalized = adapters.engineering_limit(source, processing("o1"), policy)
+    assert normalized.finding == expected
+    state, decisions = assess(FusionState(), [normalized], policy, START + timedelta(seconds=1))
+    wall = next(d for d in decisions if d.assessment.asset_id == "BW-01")
+    assert (wall.assessment.severity == "red") == (expected == "positive")
+
+
+def test_consecutive_activation_is_broken_by_qualified_normal(policy):
+    records, actions, p, _, _ = controlled(4, 4, policy)
+    rule = next(r for r in p.rules if r.hazard_id == "residual-pressure")
+    rule.min_positive_count = 2
+    rule.min_duration_s = 2
+    records += [
+        evidence("normal-break", "residual", "negative", 2, value=0),
+        evidence("positive-after-break", "residual", "positive", 4),
+    ]
+    state, history = replay(records, p, START + timedelta(seconds=5), actions)
+    event = next(e for e in state.events.values() if e.hazard_id == "residual-pressure")
+    assert event.lifecycle == "candidate" and len(event.positive_times) == 1
+    assert [d for d in history if d.assessment.asset_id == "BW-01"][
+        -1
+    ].assessment.severity == "unknown"
+    state, history = replay(
+        [evidence("next-consecutive", "residual", "positive", 7)],
+        p,
+        START + timedelta(seconds=8),
+        state=state,
+    )
+    assert (
+        next(e for e in state.events.values() if e.hazard_id == "residual-pressure").lifecycle
+        == "active"
+    )

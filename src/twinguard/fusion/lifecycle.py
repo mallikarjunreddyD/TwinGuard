@@ -125,6 +125,12 @@ def update(state, asset, rule, positive, negative, at, actions):
             ],
             key=lambda e: e.acquired_at,
         )
+        if event.lifecycle == "candidate" and normals:
+            event.lifecycle = "resolved"
+            event.updated_at = at
+            event.last_observation_at = normals[-1].acquired_at
+            notice(state, event, at, "candidate_discarded_by_normal")
+            return event
         for e in normals:
             if e.origin_identity in event.recovery_ids:
                 continue

@@ -69,7 +69,7 @@ def worker(arg):
         evidence,
         {
             "source_manifest": str(old / "inputs/manifest.json"),
-            "validation_revision": "representation-v2",
+            "validation_revision": "representation-v3-persistence",
         },
     )
     policy = FusionPolicy.model_validate_json((old / "F1/policy.json").read_text())
@@ -109,7 +109,7 @@ def worker(arg):
             policy,
             {
                 "source_prediction_run": str(old / method),
-                "validation_revision": "representation-v2",
+                "validation_revision": "representation-v3-persistence",
                 "processing_runtime_s": duration,
                 "mode": "online",
             },
@@ -173,8 +173,8 @@ def main():
         "runtime_s": original["runtime_s"] + time.perf_counter() - start,
         "assessments_semantically_identical": total,
         "max_replay_worker_rss_mib": peak,
-        "validation_revision": "representation-v2",
-        "corrections": "Canonical semantic policy hashing; explicit active-recovery/unknown-scope rationale; standalone prepare-format compatibility; audit counts distinguish current triggered-rule eligibility from historical support. Policy thresholds, eligibility decisions, severities, events, actions, evidence selections and timings unchanged.",
+        "validation_revision": "representation-v3-persistence",
+        "corrections": "Canonical semantic policy hashing; explicit active-recovery/unknown-scope rationale; standalone prepare-format compatibility; audit counts distinguish current triggered-rule eligibility from historical support. Consecutive activation candidates are now reset by an intervening qualified normal. Shipped rule parameters, eligibility decisions, severities, events, actions, evidence selections and timings unchanged on the complete E3 corpus.",
         "validated_source_sha256": {
             str(p.relative_to(ROOT)): hashlib.sha256(p.read_bytes()).hexdigest()
             for p in sorted((ROOT / "src/twinguard/fusion").glob("*.py"))

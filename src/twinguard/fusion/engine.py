@@ -249,7 +249,9 @@ def assess(
                     accepted.extend(e for e in subset if e not in accepted)
             if rule.min_independent > 1 and normal:
                 # A single normal cannot disprove a multimodal hazard; no automatic clearing.
-                normal = []
+                pending = state.events.get(asset + "|" + rule.hazard_id)
+                if pending is None or pending.lifecycle != "candidate":
+                    normal = []
             if accepted:
                 triggered.append(rule.hazard_id)
                 support.extend(e.evidence_id for e in accepted)
