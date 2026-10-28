@@ -1,0 +1,73 @@
+{
+  "schema_version": "1.0.0",
+  "manifest_id": "manifest-phase2-cli-iot",
+  "run_id": "phase2-cli-iot",
+  "dataset": {
+    "schema_version": "1.0.0",
+    "dataset_id": "observations-S1-713e0e637dd519f4",
+    "source_type": "synthetic",
+    "description": "Virtual sensor measurements from a common simulated physical plant; no physical sensor calibration or fault-detection claims",
+    "license": null,
+    "source_uri": null,
+    "real_source_ids": [],
+    "synthetic_transformations": [],
+    "artifacts": [
+      {
+        "schema_version": "1.0.0",
+        "artifact_id": "artifact-e56e11dcbe05cf12a78baf19",
+        "uri": "observations/iot/observations.csv",
+        "media_type": "application/octet-stream",
+        "sha256": "4d59804f14e546a19f3c8c885f47c8d7c4f59114e21529b2e67eefd75e4a7c07"
+      },
+      {
+        "schema_version": "1.0.0",
+        "artifact_id": "artifact-630f9e9da812c28953816eda",
+        "uri": "observations/iot/observations.jsonl",
+        "media_type": "application/octet-stream",
+        "sha256": "30ddf75f23007b4c602496b2601a4e4d0481f4970e9ab6c650932f9bb982afe4"
+      },
+      {
+        "schema_version": "1.0.0",
+        "artifact_id": "artifact-9efa6a17a97ed8495ef873eb",
+        "uri": "observations/sensor_installation.json",
+        "media_type": "application/octet-stream",
+        "sha256": "491a8310e7092a9af176f5b7d374ad6eef07c9161183dfeceb9decd987cf08b4"
+      }
+    ]
+  },
+  "software_version": "0.3.0",
+  "configuration_version": "v1",
+  "master_seed": 43,
+  "acquisition_namespace": "S1",
+  "observations": [
+    {
+      "schema_version": "1.0.0",
+      "observation_id": "iot-stream",
+      "record_uri": "observations/iot/observations.jsonl",
+      "kind": "SensorObservation"
+    }
+  ],
+  "artifacts": [
+    {
+      "schema_version": "1.0.0",
+      "artifact_id": "artifact-e56e11dcbe05cf12a78baf19",
+      "uri": "observations/iot/observations.csv",
+      "media_type": "application/octet-stream",
+      "sha256": "4d59804f14e546a19f3c8c885f47c8d7c4f59114e21529b2e67eefd75e4a7c07"
+    },
+    {
+      "schema_version": "1.0.0",
+      "artifact_id": "artifact-630f9e9da812c28953816eda",
+      "uri": "observations/iot/observations.jsonl",
+      "media_type": "application/octet-stream",
+      "sha256": "30ddf75f23007b4c602496b2601a4e4d0481f4970e9ab6c650932f9bb982afe4"
+    },
+    {
+      "schema_version": "1.0.0",
+      "artifact_id": "artifact-9efa6a17a97ed8495ef873eb",
+      "uri": "observations/sensor_installation.json",
+      "media_type": "application/octet-stream",
+      "sha256": "491a8310e7092a9af176f5b7d374ad6eef07c9161183dfeceb9decd987cf08b4"
+    }
+  ]
+}

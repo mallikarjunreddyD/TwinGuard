@@ -1,0 +1,457 @@
+[
+  {
+    "schema_version": "1.0.0",
+    "asset_id": "BW-01",
+    "name": "BW-01",
+    "asset_type": "boiler_water_wall_panel",
+    "parent_asset_id": null,
+    "geometry": {
+      "schema_version": "1.0.0",
+      "artifact_id": "baseline-BW-01",
+      "uri": "baseline/BW-01.ply",
+      "media_type": "application/ply",
+      "sha256": null
+    },
+    "coordinate_frame": {
+      "kind": "asset_local",
+      "reference_id": "BW-01"
+    },
+    "pose": {
+      "source": {
+        "kind": "asset_local",
+        "reference_id": "BW-01"
+      },
+      "target": {
+        "kind": "world",
+        "reference_id": "plant-01"
+      },
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.35
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "material": {
+      "name": "illustrative steel",
+      "alpha_per_k": "1.2e-05"
+    },
+    "sensor_ids": [],
+    "operating_reference_id": "plant-reference",
+    "baseline_geometry_version": "v1",
+    "inspection_region_ids": [
+      "surface"
+    ],
+    "criticality": null
+  },
+  {
+    "schema_version": "1.0.0",
+    "asset_id": "DR-01",
+    "name": "DR-01",
+    "asset_type": "steam_drum",
+    "parent_asset_id": null,
+    "geometry": {
+      "schema_version": "1.0.0",
+      "artifact_id": "baseline-DR-01",
+      "uri": "baseline/DR-01.ply",
+      "media_type": "application/ply",
+      "sha256": null
+    },
+    "coordinate_frame": {
+      "kind": "asset_local",
+      "reference_id": "DR-01"
+    },
+    "pose": {
+      "source": {
+        "kind": "asset_local",
+        "reference_id": "DR-01"
+      },
+      "target": {
+        "kind": "world",
+        "reference_id": "plant-01"
+      },
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          3.05
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "material": {
+      "name": "illustrative steel",
+      "alpha_per_k": "1.2e-05"
+    },
+    "sensor_ids": [],
+    "operating_reference_id": "plant-reference",
+    "baseline_geometry_version": "v1",
+    "inspection_region_ids": [
+      "surface"
+    ],
+    "criticality": null
+  },
+  {
+    "schema_version": "1.0.0",
+    "asset_id": "SP-01",
+    "name": "SP-01",
+    "asset_type": "steam_pipeline",
+    "parent_asset_id": null,
+    "geometry": {
+      "schema_version": "1.0.0",
+      "artifact_id": "baseline-SP-01",
+      "uri": "baseline/SP-01.ply",
+      "media_type": "application/ply",
+      "sha256": null
+    },
+    "coordinate_frame": {
+      "kind": "asset_local",
+      "reference_id": "SP-01"
+    },
+    "pose": {
+      "source": {
+        "kind": "asset_local",
+        "reference_id": "SP-01"
+      },
+      "target": {
+        "kind": "world",
+        "reference_id": "plant-01"
+      },
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          1.05
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          3.05
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "material": {
+      "name": "illustrative steel",
+      "alpha_per_k": "1.2e-05"
+    },
+    "sensor_ids": [],
+    "operating_reference_id": "plant-reference",
+    "baseline_geometry_version": "v1",
+    "inspection_region_ids": [
+      "surface"
+    ],
+    "criticality": null
+  },
+  {
+    "schema_version": "1.0.0",
+    "asset_id": "SP-02",
+    "name": "SP-02",
+    "asset_type": "steam_pipeline",
+    "parent_asset_id": null,
+    "geometry": {
+      "schema_version": "1.0.0",
+      "artifact_id": "baseline-SP-02",
+      "uri": "baseline/SP-02.ply",
+      "media_type": "application/ply",
+      "sha256": null
+    },
+    "coordinate_frame": {
+      "kind": "asset_local",
+      "reference_id": "SP-02"
+    },
+    "pose": {
+      "source": {
+        "kind": "asset_local",
+        "reference_id": "SP-02"
+      },
+      "target": {
+        "kind": "world",
+        "reference_id": "plant-01"
+      },
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -1.05
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.35
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "material": {
+      "name": "illustrative steel",
+      "alpha_per_k": "1.2e-05"
+    },
+    "sensor_ids": [],
+    "operating_reference_id": "plant-reference",
+    "baseline_geometry_version": "v1",
+    "inspection_region_ids": [
+      "surface"
+    ],
+    "criticality": null
+  },
+  {
+    "schema_version": "1.0.0",
+    "asset_id": "SUP-01",
+    "name": "SUP-01",
+    "asset_type": "structural_support",
+    "parent_asset_id": null,
+    "geometry": {
+      "schema_version": "1.0.0",
+      "artifact_id": "baseline-SUP-01",
+      "uri": "baseline/SUP-01.ply",
+      "media_type": "application/ply",
+      "sha256": null
+    },
+    "coordinate_frame": {
+      "kind": "asset_local",
+      "reference_id": "SUP-01"
+    },
+    "pose": {
+      "source": {
+        "kind": "asset_local",
+        "reference_id": "SUP-01"
+      },
+      "target": {
+        "kind": "world",
+        "reference_id": "plant-01"
+      },
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.4
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "material": {
+      "name": "illustrative steel",
+      "alpha_per_k": "0.0"
+    },
+    "sensor_ids": [],
+    "operating_reference_id": "plant-reference",
+    "baseline_geometry_version": "v1",
+    "inspection_region_ids": [
+      "surface"
+    ],
+    "criticality": null
+  },
+  {
+    "schema_version": "1.0.0",
+    "asset_id": "VL-01",
+    "name": "VL-01",
+    "asset_type": "valve",
+    "parent_asset_id": "SP-01",
+    "geometry": {
+      "schema_version": "1.0.0",
+      "artifact_id": "baseline-VL-01",
+      "uri": "baseline/VL-01.ply",
+      "media_type": "application/ply",
+      "sha256": null
+    },
+    "coordinate_frame": {
+      "kind": "asset_local",
+      "reference_id": "VL-01"
+    },
+    "pose": {
+      "source": {
+        "kind": "asset_local",
+        "reference_id": "VL-01"
+      },
+      "target": {
+        "kind": "asset_local",
+        "reference_id": "SP-01"
+      },
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.6
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -0.9
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "material": {
+      "name": "illustrative steel",
+      "alpha_per_k": "1.2e-05"
+    },
+    "sensor_ids": [],
+    "operating_reference_id": "plant-reference",
+    "baseline_geometry_version": "v1",
+    "inspection_region_ids": [
+      "surface"
+    ],
+    "criticality": null
+  },
+  {
+    "schema_version": "1.0.0",
+    "asset_id": "REF-01",
+    "name": "REF-01",
+    "asset_type": "fixed_reference_structure",
+    "parent_asset_id": null,
+    "geometry": {
+      "schema_version": "1.0.0",
+      "artifact_id": "baseline-REF-01",
+      "uri": "baseline/REF-01.ply",
+      "media_type": "application/ply",
+      "sha256": null
+    },
+    "coordinate_frame": {
+      "kind": "asset_local",
+      "reference_id": "REF-01"
+    },
+    "pose": {
+      "source": {
+        "kind": "asset_local",
+        "reference_id": "REF-01"
+      },
+      "target": {
+        "kind": "world",
+        "reference_id": "plant-01"
+      },
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          2.6
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -1.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "material": {
+      "name": "illustrative steel",
+      "alpha_per_k": "0.0"
+    },
+    "sensor_ids": [],
+    "operating_reference_id": "plant-reference",
+    "baseline_geometry_version": "v1",
+    "inspection_region_ids": [
+      "surface"
+    ],
+    "criticality": null
+  }
+]

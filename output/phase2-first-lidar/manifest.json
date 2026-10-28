@@ -1,0 +1,73 @@
+{
+  "schema_version": "1.0.0",
+  "manifest_id": "manifest-phase2-first-lidar",
+  "run_id": "phase2-first-lidar",
+  "dataset": {
+    "schema_version": "1.0.0",
+    "dataset_id": "observations-S2",
+    "source_type": "synthetic",
+    "description": "Virtual sensor measurements from a common simulated physical plant; no physical sensor calibration or fault-detection claims",
+    "license": null,
+    "source_uri": null,
+    "real_source_ids": [],
+    "synthetic_transformations": [],
+    "artifacts": [
+      {
+        "schema_version": "1.0.0",
+        "artifact_id": "artifact-e068cea2dcf018f2d3b24c20",
+        "uri": "observations/lidar/S2-lidar-01-t_60.json",
+        "media_type": "application/octet-stream",
+        "sha256": "094ac60ec5f714975cd64ff84cd379aa585fd8b65a7845c41b926b4331e1b4a5"
+      },
+      {
+        "schema_version": "1.0.0",
+        "artifact_id": "artifact-5e4dbfe92b38c832318e0ecd",
+        "uri": "observations/lidar/S2-lidar-01-t_60.npz",
+        "media_type": "application/octet-stream",
+        "sha256": "bf2e7921f45b25a31ec646a1c0f9c770cd2d0d3b6e5f784730f80fcb729a0e79"
+      },
+      {
+        "schema_version": "1.0.0",
+        "artifact_id": "artifact-3e91030ecaad3216774541d1",
+        "uri": "observations/lidar/S2-lidar-01-t_60.ply",
+        "media_type": "application/octet-stream",
+        "sha256": "1c7c69a3aefa0712bed590cbf3275b1d66d5fcc9a05a0d08442246f130658178"
+      }
+    ]
+  },
+  "software_version": "0.2.0",
+  "configuration_version": "v1",
+  "master_seed": 44,
+  "acquisition_namespace": "S2",
+  "observations": [
+    {
+      "schema_version": "1.0.0",
+      "observation_id": "S2-lidar-01-t_60",
+      "record_uri": "observations/lidar/S2-lidar-01-t_60.json",
+      "kind": "InspectionCapture"
+    }
+  ],
+  "artifacts": [
+    {
+      "schema_version": "1.0.0",
+      "artifact_id": "artifact-e068cea2dcf018f2d3b24c20",
+      "uri": "observations/lidar/S2-lidar-01-t_60.json",
+      "media_type": "application/octet-stream",
+      "sha256": "094ac60ec5f714975cd64ff84cd379aa585fd8b65a7845c41b926b4331e1b4a5"
+    },
+    {
+      "schema_version": "1.0.0",
+      "artifact_id": "artifact-5e4dbfe92b38c832318e0ecd",
+      "uri": "observations/lidar/S2-lidar-01-t_60.npz",
+      "media_type": "application/octet-stream",
+      "sha256": "bf2e7921f45b25a31ec646a1c0f9c770cd2d0d3b6e5f784730f80fcb729a0e79"
+    },
+    {
+      "schema_version": "1.0.0",
+      "artifact_id": "artifact-3e91030ecaad3216774541d1",
+      "uri": "observations/lidar/S2-lidar-01-t_60.ply",
+      "media_type": "application/octet-stream",
+      "sha256": "1c7c69a3aefa0712bed590cbf3275b1d66d5fcc9a05a0d08442246f130658178"
+    }
+  ]
+}

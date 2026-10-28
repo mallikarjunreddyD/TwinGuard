@@ -1,0 +1,5 @@
+{
+  "calibration_id": "uncalibrated-prior",
+  "uncertainty_floor_m": 0.004,
+  "threshold_m": 0.005
+}

@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0.0",
+  "prediction_id": "geometry",
+  "finished_at": "2026-10-27T14:51:34.878612+00:00",
+  "configuration_sha256": "3a4511119d6bd28a95a1da41c97df25d65e392ee64073c6cb5ce5cf05d271e8e",
+  "public_inputs": {
+    "baseline": "experiments/outputs/phase3-full/E1/datasets/e1-trial-0001/observations/lidar/e1-trial-0001-lidar-01-t_0.npz",
+    "current": "experiments/outputs/phase3-full/E1/datasets/e1-trial-0001/observations/lidar/e1-trial-0001-lidar-01-t_60.npz",
+    "baseline_payload_sha256": "e58f577dca458b75c9af8b456c4d9377be341110675ca37da62e6051c43758a8",
+    "current_payload_sha256": "31bbebe9ce5f31903ac2067732b3b90b3d3cf98d9a767088fbd634fc8e0e333e"
+  },
+  "artifacts": {
+    "B1/geometry.json": "9cab755aec1074587f2e46d38a760d042042c46117e83724c627d2b107278d79",
+    "B1/patches.npz": "a82f214f7bbb42a86b695153f64ea3b7ed546cc9271e3d061c7638f051d7bc3b",
+    "B1/registered_current.npz": "56ad2ea6ae5279c80863a24122116ee9084ee3d5833f2c63faed1d95e87c598a",
+    "B1/registered_current.ply": "78a6327fa21b3bed61c266e2dcb9ea9b8f9d0111f22040b10c6f3c5341bdfb3a",
+    "B1/registration.json": "a3ca1dfbf17246342a68428ad5e70d1e1ac3645d8415633c0eadd266b733799b",
+    "B2/geometry.json": "2ca7843eed0c8aecf8f95ea7afd16da4d7325a4114e86c28fb1c68e4866dcfdf",
+    "B2/patches.npz": "2cf3957e9aa13f616210c10bc1a2d1630228fb11520a7d437821922d61e45cc1",
+    "B2/registered_current.npz": "980d38deb655c5de0887eb16a31023b1c425c9235e9e510a91c9bd797aa80f0d",
+    "B2/registered_current.ply": "2b1ad9bd50d6756ee9864d38534ebd016edede890bc355f626364faf4a27bbca",
+    "B2/registration.json": "81a8f1d13dcbaa492b914d45a06f0e50c221fffa6e13ebb1df650af504a71a86",
+    "B3/geometry.json": "a2e95cc1e2aa8c3a276dcf293df963e510d1b04363e16a00ea1ac42614235c0b",
+    "B3/patches.npz": "76e2c7916179353e65461f1d451431381ee2dd9b8f3d07e0effaa91fbda5858c",
+    "B3/registered_current.npz": "1cf6aa1ca0f8590242b7490562c1a57a74f593583a15ac90944cb1030ab6b9b6",
+    "B3/registered_current.ply": "cf2adb8de6d3aaa2c42d6db422ad8104763e0155a658fdf21470e4bb0777b4f2",
+    "B3/registration.json": "d4834c8555cecc8424b18689c54c058859c027dfe85535e4c5b6e5ca60248505",
+    "accepted_reference.json": "495bf6db2325141e3e0b69230de4f46d712b2b0afe806a4374ca66dea5e2b397",
+    "calibration.json": "e7e4faf80690a9a67ad724969f92a202e8359ce87f4cb0b872ecb01093489cf1",
+    "configuration.json": "c00bd991dfde5e9f581463a23ad487111a9876890d343a0b5112cbffb7f0636f",
+    "runtime.json": "0b2b0ddde1ef71d1e7c8724ed07632c8c197cb3e5e7f7e3160bfde6a592394c7"
+  }
+}

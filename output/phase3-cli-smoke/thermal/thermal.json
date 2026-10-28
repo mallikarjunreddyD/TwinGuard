@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0.0",
+  "analysis_id": "thermal-conditioned-e2-trial-0001-thermal-01-t_120",
+  "capture_id": "e2-trial-0001-thermal-01-t_120",
+  "acquired_at": "2026-01-01T00:02:00Z",
+  "model_id": "thermal-b86fb022e42569cb",
+  "method": "conditioned",
+  "status": "valid",
+  "valid_pixels": 7172,
+  "saturated_pixels": 0,
+  "total_pixels": 12288,
+  "saturation_known": true,
+  "regions": [],
+  "significant": false,
+  "quality_flags": []
+}

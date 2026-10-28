@@ -1,0 +1,246 @@
+[
+  {
+    "schema_version": "1.0.0",
+    "truth_id": "phase1-S2-0",
+    "run_id": "phase1-S2",
+    "scenario_id": "S2",
+    "timestamp": "2026-01-01T00:00:00Z",
+    "time_s": 0.0,
+    "fault_states": [
+      {
+        "schema_version": "1.0.0",
+        "fault_id": "fault-S2",
+        "asset_id": "BW-01",
+        "category": "localized_geometric_deformation",
+        "factor": 0.0,
+        "present": false,
+        "configuration": {
+          "schema_version": "1.0.0",
+          "fault_id": "fault-S2",
+          "asset_id": "BW-01",
+          "category": "localized_geometric_deformation",
+          "start_at": "2026-01-01T00:00:30Z",
+          "end_at": "2026-01-01T00:01:30Z",
+          "severity_parameters": {
+            "amplitude_m": 0.03
+          },
+          "affected_region_id": "surface",
+          "true_displacement_m": 0.03,
+          "true_process_deviation": null,
+          "deviation_unit": null,
+          "ground_truth_artifacts": [],
+          "center_local_m": [
+            0.0,
+            0.0,
+            1.2
+          ],
+          "extent_m": [
+            0.4,
+            0.1,
+            0.5
+          ],
+          "direction": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "displacement_vector_m": null,
+          "evolution": "linear",
+          "growth_duration_s": 30.0,
+          "persistence": "persistent",
+          "recovery_duration_s": 0.0,
+          "repair_at": null,
+          "process_variable": "pressure_pa",
+          "target_value": null
+        },
+        "applied_peak_displacement_m": 0.0,
+        "applied_translation_m": null,
+        "applied_peak_temperature_delta_c": null,
+        "actual_process_value": null
+      }
+    ]
+  },
+  {
+    "schema_version": "1.0.0",
+    "truth_id": "phase1-S2-45.5",
+    "run_id": "phase1-S2",
+    "scenario_id": "S2",
+    "timestamp": "2026-01-01T00:00:45.500000Z",
+    "time_s": 45.5,
+    "fault_states": [
+      {
+        "schema_version": "1.0.0",
+        "fault_id": "fault-S2",
+        "asset_id": "BW-01",
+        "category": "localized_geometric_deformation",
+        "factor": 0.5166666666666667,
+        "present": true,
+        "configuration": {
+          "schema_version": "1.0.0",
+          "fault_id": "fault-S2",
+          "asset_id": "BW-01",
+          "category": "localized_geometric_deformation",
+          "start_at": "2026-01-01T00:00:30Z",
+          "end_at": "2026-01-01T00:01:30Z",
+          "severity_parameters": {
+            "amplitude_m": 0.03
+          },
+          "affected_region_id": "surface",
+          "true_displacement_m": 0.03,
+          "true_process_deviation": null,
+          "deviation_unit": null,
+          "ground_truth_artifacts": [],
+          "center_local_m": [
+            0.0,
+            0.0,
+            1.2
+          ],
+          "extent_m": [
+            0.4,
+            0.1,
+            0.5
+          ],
+          "direction": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "displacement_vector_m": null,
+          "evolution": "linear",
+          "growth_duration_s": 30.0,
+          "persistence": "persistent",
+          "recovery_duration_s": 0.0,
+          "repair_at": null,
+          "process_variable": "pressure_pa",
+          "target_value": null
+        },
+        "applied_peak_displacement_m": 0.015500000000000002,
+        "applied_translation_m": null,
+        "applied_peak_temperature_delta_c": null,
+        "actual_process_value": null
+      }
+    ]
+  },
+  {
+    "schema_version": "1.0.0",
+    "truth_id": "phase1-S2-60",
+    "run_id": "phase1-S2",
+    "scenario_id": "S2",
+    "timestamp": "2026-01-01T00:01:00Z",
+    "time_s": 60.0,
+    "fault_states": [
+      {
+        "schema_version": "1.0.0",
+        "fault_id": "fault-S2",
+        "asset_id": "BW-01",
+        "category": "localized_geometric_deformation",
+        "factor": 1.0,
+        "present": true,
+        "configuration": {
+          "schema_version": "1.0.0",
+          "fault_id": "fault-S2",
+          "asset_id": "BW-01",
+          "category": "localized_geometric_deformation",
+          "start_at": "2026-01-01T00:00:30Z",
+          "end_at": "2026-01-01T00:01:30Z",
+          "severity_parameters": {
+            "amplitude_m": 0.03
+          },
+          "affected_region_id": "surface",
+          "true_displacement_m": 0.03,
+          "true_process_deviation": null,
+          "deviation_unit": null,
+          "ground_truth_artifacts": [],
+          "center_local_m": [
+            0.0,
+            0.0,
+            1.2
+          ],
+          "extent_m": [
+            0.4,
+            0.1,
+            0.5
+          ],
+          "direction": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "displacement_vector_m": null,
+          "evolution": "linear",
+          "growth_duration_s": 30.0,
+          "persistence": "persistent",
+          "recovery_duration_s": 0.0,
+          "repair_at": null,
+          "process_variable": "pressure_pa",
+          "target_value": null
+        },
+        "applied_peak_displacement_m": 0.03,
+        "applied_translation_m": null,
+        "applied_peak_temperature_delta_c": null,
+        "actual_process_value": null
+      }
+    ]
+  },
+  {
+    "schema_version": "1.0.0",
+    "truth_id": "phase1-S2-120",
+    "run_id": "phase1-S2",
+    "scenario_id": "S2",
+    "timestamp": "2026-01-01T00:02:00Z",
+    "time_s": 120.0,
+    "fault_states": [
+      {
+        "schema_version": "1.0.0",
+        "fault_id": "fault-S2",
+        "asset_id": "BW-01",
+        "category": "localized_geometric_deformation",
+        "factor": 1.0,
+        "present": true,
+        "configuration": {
+          "schema_version": "1.0.0",
+          "fault_id": "fault-S2",
+          "asset_id": "BW-01",
+          "category": "localized_geometric_deformation",
+          "start_at": "2026-01-01T00:00:30Z",
+          "end_at": "2026-01-01T00:01:30Z",
+          "severity_parameters": {
+            "amplitude_m": 0.03
+          },
+          "affected_region_id": "surface",
+          "true_displacement_m": 0.03,
+          "true_process_deviation": null,
+          "deviation_unit": null,
+          "ground_truth_artifacts": [],
+          "center_local_m": [
+            0.0,
+            0.0,
+            1.2
+          ],
+          "extent_m": [
+            0.4,
+            0.1,
+            0.5
+          ],
+          "direction": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "displacement_vector_m": null,
+          "evolution": "linear",
+          "growth_duration_s": 30.0,
+          "persistence": "persistent",
+          "recovery_duration_s": 0.0,
+          "repair_at": null,
+          "process_variable": "pressure_pa",
+          "target_value": null
+        },
+        "applied_peak_displacement_m": 0.03,
+        "applied_translation_m": null,
+        "applied_peak_temperature_delta_c": null,
+        "actual_process_value": null
+      }
+    ]
+  }
+]

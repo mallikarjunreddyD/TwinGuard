@@ -1,0 +1,4324 @@
+[
+  {
+    "event_id": "S1-drum-thermometer-seq-0",
+    "sensor_id": "drum-thermometer",
+    "sequence_number": 0,
+    "time_s": 0.0,
+    "noiseless_reference": 180.0,
+    "dropped": false,
+    "measured_value": 179.57049365017957,
+    "measurement_error": -0.42950634982042857
+  },
+  {
+    "event_id": "S1-drum-thermometer-seq-1",
+    "sensor_id": "drum-thermometer",
+    "sequence_number": 1,
+    "time_s": 10.00084628424795,
+    "noiseless_reference": 180.8791400817222,
+    "dropped": false,
+    "measured_value": 180.6456723556462,
+    "measurement_error": -0.2334677260759861
+  },
+  {
+    "event_id": "S1-drum-thermometer-seq-2",
+    "sensor_id": "drum-thermometer",
+    "sequence_number": 2,
+    "time_s": 20.004425554711162,
+    "noiseless_reference": 183.1178306518621,
+    "dropped": false,
+    "measured_value": 183.11956935036727,
+    "measurement_error": 0.0017386985051643933
+  },
+  {
+    "event_id": "S1-drum-thermometer-seq-3",
+    "sensor_id": "drum-thermometer",
+    "sequence_number": 3,
+    "time_s": 30.001873826180546,
+    "noiseless_reference": 186.2655823797683,
+    "dropped": false,
+    "measured_value": 186.4266552333992,
+    "measurement_error": 0.1610728536309125
+  },
+  {
+    "event_id": "S1-drum-thermometer-seq-4",
+    "sensor_id": "drum-thermometer",
+    "sequence_number": 4,
+    "time_s": 40.006862824679345,
+    "noiseless_reference": 190.02644519215093,
+    "dropped": false,
+    "measured_value": 189.42570811292458,
+    "measurement_error": -0.6007370792263487
+  },
+  {
+    "event_id": "S1-drum-thermometer-seq-5",
+    "sensor_id": "drum-thermometer",
+    "sequence_number": 5,
+    "time_s": 49.99920346165862,
+    "noiseless_reference": 194.19134667201666,
+    "dropped": false,
+    "measured_value": 194.01154306934114,
+    "measurement_error": -0.17980360267551987
+  },
+  {
+    "event_id": "S1-drum-thermometer-seq-6",
+    "sensor_id": "drum-thermometer",
+    "sequence_number": 6,
+    "time_s": 60.0057703101008,
+    "noiseless_reference": 198.63659753307135,
+    "dropped": false,
+    "measured_value": 199.13689677867447,
+    "measurement_error": 0.5002992456031166
+  },
+  {
+    "event_id": "S1-drum-thermometer-seq-7",
+    "sensor_id": "drum-thermometer",
+    "sequence_number": 7,
+    "time_s": 70.0006463270325,
+    "noiseless_reference": 202.38132217621302,
+    "dropped": false,
+    "measured_value": 202.1849023396858,
+    "measurement_error": -0.1964198365272125
+  },
+  {
+    "event_id": "S1-drum-thermometer-seq-8",
+    "sensor_id": "drum-thermometer",
+    "sequence_number": 8,
+    "time_s": 80.0018047292595,
+    "noiseless_reference": 204.89328416115066,
+    "dropped": false,
+    "measured_value": 204.9618377500293,
+    "measurement_error": 0.06855358887864327
+  },
+  {
+    "event_id": "S1-drum-thermometer-seq-9",
+    "sensor_id": "drum-thermometer",
+    "sequence_number": 9,
+    "time_s": 89.99077906887132,
+    "noiseless_reference": 206.57535597833927,
+    "dropped": false,
+    "measured_value": 206.81369266839377,
+    "measurement_error": 0.23833669005449565
+  },
+  {
+    "event_id": "S1-drum-thermometer-seq-10",
+    "sensor_id": "drum-thermometer",
+    "sequence_number": 10,
+    "time_s": 100.0033214212064,
+    "noiseless_reference": 207.70554386563703,
+    "dropped": false,
+    "measured_value": 207.99753097742695,
+    "measurement_error": 0.291987111789922
+  },
+  {
+    "event_id": "S1-drum-thermometer-seq-11",
+    "sensor_id": "drum-thermometer",
+    "sequence_number": 11,
+    "time_s": 110.00548202506751,
+    "noiseless_reference": 208.46211297471635,
+    "dropped": false,
+    "measured_value": 208.39239526578075,
+    "measurement_error": -0.06971770893559892
+  },
+  {
+    "event_id": "S1-drum-thermometer-seq-12",
+    "sensor_id": "drum-thermometer",
+    "sequence_number": 12,
+    "time_s": 120.0,
+    "noiseless_reference": 208.9688974219951,
+    "dropped": false,
+    "measured_value": 208.7923259043381,
+    "measurement_error": -0.17657151765700974
+  },
+  {
+    "event_id": "S1-load-01-seq-0",
+    "sensor_id": "load-01",
+    "sequence_number": 0,
+    "time_s": 0.007924965699250887,
+    "noiseless_reference": 0.5000396248284963,
+    "dropped": false,
+    "measured_value": 0.5016834606794719,
+    "measurement_error": 0.0016438358509756057
+  },
+  {
+    "event_id": "S1-load-01-seq-1",
+    "sensor_id": "load-01",
+    "sequence_number": 1,
+    "time_s": 1.9989497678415902,
+    "noiseless_reference": 0.5099947488392079,
+    "dropped": false,
+    "measured_value": 0.5095761078946168,
+    "measurement_error": -0.0004186409445910977
+  },
+  {
+    "event_id": "S1-load-01-seq-2",
+    "sensor_id": "load-01",
+    "sequence_number": 2,
+    "time_s": 3.9994542010511527,
+    "noiseless_reference": 0.5199972710052557,
+    "dropped": false,
+    "measured_value": 0.5174335855189556,
+    "measurement_error": -0.002563685486300149
+  },
+  {
+    "event_id": "S1-load-01-seq-3",
+    "sensor_id": "load-01",
+    "sequence_number": 3,
+    "time_s": 5.998092664648863,
+    "noiseless_reference": 0.5299904633232443,
+    "dropped": false,
+    "measured_value": 0.5286706660175194,
+    "measurement_error": -0.0013197973057248458
+  },
+  {
+    "event_id": "S1-load-01-seq-4",
+    "sensor_id": "load-01",
+    "sequence_number": 4,
+    "time_s": 7.990590958239913,
+    "noiseless_reference": 0.5399529547911995,
+    "dropped": false,
+    "measured_value": 0.53932391310593,
+    "measurement_error": -0.0006290416852695602
+  },
+  {
+    "event_id": "S1-load-01-seq-5",
+    "sensor_id": "load-01",
+    "sequence_number": 5,
+    "time_s": 9.992625657478493,
+    "noiseless_reference": 0.5499631282873925,
+    "dropped": false,
+    "measured_value": 0.5507857830062051,
+    "measurement_error": 0.0008226547188125988
+  },
+  {
+    "event_id": "S1-load-01-seq-6",
+    "sensor_id": "load-01",
+    "sequence_number": 6,
+    "time_s": 11.990069327678212,
+    "noiseless_reference": 0.559950346638391,
+    "dropped": false,
+    "measured_value": 0.5587775890952432,
+    "measurement_error": -0.0011727575431478288
+  },
+  {
+    "event_id": "S1-load-01-seq-7",
+    "sensor_id": "load-01",
+    "sequence_number": 7,
+    "time_s": 13.992774306367956,
+    "noiseless_reference": 0.5699638715318398,
+    "dropped": false,
+    "measured_value": 0.5696492181989208,
+    "measurement_error": -0.00031465333291902375
+  },
+  {
+    "event_id": "S1-load-01-seq-8",
+    "sensor_id": "load-01",
+    "sequence_number": 8,
+    "time_s": 15.990235541904076,
+    "noiseless_reference": 0.5799511777095204,
+    "dropped": false,
+    "measured_value": 0.57817013708609,
+    "measurement_error": -0.00178104062343043
+  },
+  {
+    "event_id": "S1-load-01-seq-9",
+    "sensor_id": "load-01",
+    "sequence_number": 9,
+    "time_s": 18.007227864221676,
+    "noiseless_reference": 0.5900361393211084,
+    "dropped": false,
+    "measured_value": 0.5869040306523555,
+    "measurement_error": -0.0031321086687529087
+  },
+  {
+    "event_id": "S1-load-01-seq-10",
+    "sensor_id": "load-01",
+    "sequence_number": 10,
+    "time_s": 19.993606790448887,
+    "noiseless_reference": 0.5999680339522444,
+    "dropped": false,
+    "measured_value": 0.5980908143775555,
+    "measurement_error": -0.0018772195746888931
+  },
+  {
+    "event_id": "S1-load-01-seq-11",
+    "sensor_id": "load-01",
+    "sequence_number": 11,
+    "time_s": 21.991131748620756,
+    "noiseless_reference": 0.6099556587431038,
+    "dropped": false,
+    "measured_value": 0.6091647505190279,
+    "measurement_error": -0.0007909082240759036
+  },
+  {
+    "event_id": "S1-load-01-seq-12",
+    "sensor_id": "load-01",
+    "sequence_number": 12,
+    "time_s": 23.992210964899062,
+    "noiseless_reference": 0.6199610548244954,
+    "dropped": false,
+    "measured_value": 0.6189729010784085,
+    "measurement_error": -0.0009881537460868506
+  },
+  {
+    "event_id": "S1-load-01-seq-13",
+    "sensor_id": "load-01",
+    "sequence_number": 13,
+    "time_s": 26.00247244566236,
+    "noiseless_reference": 0.6300123622283118,
+    "dropped": false,
+    "measured_value": 0.6283704572953358,
+    "measurement_error": -0.0016419049329760016
+  },
+  {
+    "event_id": "S1-load-01-seq-14",
+    "sensor_id": "load-01",
+    "sequence_number": 14,
+    "time_s": 27.998059012756734,
+    "noiseless_reference": 0.6399902950637837,
+    "dropped": false,
+    "measured_value": 0.6416644812854168,
+    "measurement_error": 0.0016741862216330672
+  },
+  {
+    "event_id": "S1-load-01-seq-15",
+    "sensor_id": "load-01",
+    "sequence_number": 15,
+    "time_s": 30.009686046831817,
+    "noiseless_reference": 0.6500484302341591,
+    "dropped": false,
+    "measured_value": 0.6493365028725937,
+    "measurement_error": -0.0007119273615654453
+  },
+  {
+    "event_id": "S1-load-01-seq-16",
+    "sensor_id": "load-01",
+    "sequence_number": 16,
+    "time_s": 31.998300367243015,
+    "noiseless_reference": 0.6599915018362151,
+    "dropped": false,
+    "measured_value": 0.6576654585473628,
+    "measurement_error": -0.002326043288852331
+  },
+  {
+    "event_id": "S1-load-01-seq-17",
+    "sensor_id": "load-01",
+    "sequence_number": 17,
+    "time_s": 33.999330112357555,
+    "noiseless_reference": 0.6699966505617878,
+    "dropped": false,
+    "measured_value": 0.6732160946385259,
+    "measurement_error": 0.0032194440767381316
+  },
+  {
+    "event_id": "S1-load-01-seq-18",
+    "sensor_id": "load-01",
+    "sequence_number": 18,
+    "time_s": 36.003528015560576,
+    "noiseless_reference": 0.6800176400778029,
+    "dropped": false,
+    "measured_value": 0.6790236070278087,
+    "measurement_error": -0.0009940330499941252
+  },
+  {
+    "event_id": "S1-load-01-seq-19",
+    "sensor_id": "load-01",
+    "sequence_number": 19,
+    "time_s": 38.00697054125533,
+    "noiseless_reference": 0.6900348527062767,
+    "dropped": false,
+    "measured_value": 0.6904797439150938,
+    "measurement_error": 0.00044489120881707755
+  },
+  {
+    "event_id": "S1-load-01-seq-20",
+    "sensor_id": "load-01",
+    "sequence_number": 20,
+    "time_s": 39.9985486841689,
+    "noiseless_reference": 0.6999927434208446,
+    "dropped": false,
+    "measured_value": 0.7010074669746247,
+    "measurement_error": 0.0010147235537800725
+  },
+  {
+    "event_id": "S1-load-01-seq-21",
+    "sensor_id": "load-01",
+    "sequence_number": 21,
+    "time_s": 41.99459484640254,
+    "noiseless_reference": 0.7099729742320128,
+    "dropped": false,
+    "measured_value": 0.7081246171690927,
+    "measurement_error": -0.0018483570629200807
+  },
+  {
+    "event_id": "S1-load-01-seq-22",
+    "sensor_id": "load-01",
+    "sequence_number": 22,
+    "time_s": 44.00331470475253,
+    "noiseless_reference": 0.7200165735237627,
+    "dropped": false,
+    "measured_value": 0.7203008138507688,
+    "measurement_error": 0.00028424032700613555
+  },
+  {
+    "event_id": "S1-load-01-seq-23",
+    "sensor_id": "load-01",
+    "sequence_number": 23,
+    "time_s": 45.99160805527138,
+    "noiseless_reference": 0.7299580402763569,
+    "dropped": false,
+    "measured_value": 0.7265019540764108,
+    "measurement_error": -0.0034560861999460846
+  },
+  {
+    "event_id": "S1-load-01-seq-24",
+    "sensor_id": "load-01",
+    "sequence_number": 24,
+    "time_s": 48.00336557128691,
+    "noiseless_reference": 0.7400168278564346,
+    "dropped": false,
+    "measured_value": 0.7389298732968653,
+    "measurement_error": -0.0010869545595693086
+  },
+  {
+    "event_id": "S1-load-01-seq-25",
+    "sensor_id": "load-01",
+    "sequence_number": 25,
+    "time_s": 50.00632041558071,
+    "noiseless_reference": 0.7500316020779036,
+    "dropped": false,
+    "measured_value": 0.7519194229182363,
+    "measurement_error": 0.0018878208403326768
+  },
+  {
+    "event_id": "S1-load-01-seq-26",
+    "sensor_id": "load-01",
+    "sequence_number": 26,
+    "time_s": 51.998934423393166,
+    "noiseless_reference": 0.7599946721169659,
+    "dropped": false,
+    "measured_value": 0.7611295919123383,
+    "measurement_error": 0.001134919795372391
+  },
+  {
+    "event_id": "S1-load-01-seq-27",
+    "sensor_id": "load-01",
+    "sequence_number": 27,
+    "time_s": 53.9915543144384,
+    "noiseless_reference": 0.7699577715721921,
+    "dropped": false,
+    "measured_value": 0.7694332279785151,
+    "measurement_error": -0.0005245435936770404
+  },
+  {
+    "event_id": "S1-load-01-seq-28",
+    "sensor_id": "load-01",
+    "sequence_number": 28,
+    "time_s": 55.99859638638126,
+    "noiseless_reference": 0.7799929819319064,
+    "dropped": false,
+    "measured_value": 0.7778971599938149,
+    "measurement_error": -0.0020958219380914356
+  },
+  {
+    "event_id": "S1-load-01-seq-29",
+    "sensor_id": "load-01",
+    "sequence_number": 29,
+    "time_s": 58.00890392487724,
+    "noiseless_reference": 0.7900445196243863,
+    "dropped": false,
+    "measured_value": 0.7918202774300701,
+    "measurement_error": 0.001775757805683842
+  },
+  {
+    "event_id": "S1-load-01-seq-30",
+    "sensor_id": "load-01",
+    "sequence_number": 30,
+    "time_s": 60.00428935960793,
+    "noiseless_reference": 0.8,
+    "dropped": false,
+    "measured_value": 0.8005376149339438,
+    "measurement_error": 0.0005376149339437752
+  },
+  {
+    "event_id": "S1-load-01-seq-31",
+    "sensor_id": "load-01",
+    "sequence_number": 31,
+    "time_s": 61.99122838587406,
+    "noiseless_reference": 0.8,
+    "dropped": false,
+    "measured_value": 0.7948759130177598,
+    "measurement_error": -0.005124086982240206
+  },
+  {
+    "event_id": "S1-load-01-seq-32",
+    "sensor_id": "load-01",
+    "sequence_number": 32,
+    "time_s": 64.00976722481616,
+    "noiseless_reference": 0.8,
+    "dropped": false,
+    "measured_value": 0.7967980371797795,
+    "measurement_error": -0.0032019628202205608
+  },
+  {
+    "event_id": "S1-load-01-seq-33",
+    "sensor_id": "load-01",
+    "sequence_number": 33,
+    "time_s": 65.99505053585938,
+    "noiseless_reference": 0.8,
+    "dropped": false,
+    "measured_value": 0.7971049752678069,
+    "measurement_error": -0.0028950247321931633
+  },
+  {
+    "event_id": "S1-load-01-seq-34",
+    "sensor_id": "load-01",
+    "sequence_number": 34,
+    "time_s": 68.00134655874525,
+    "noiseless_reference": 0.8,
+    "dropped": false,
+    "measured_value": 0.7976086189328638,
+    "measurement_error": -0.0023913810671362112
+  },
+  {
+    "event_id": "S1-load-01-seq-35",
+    "sensor_id": "load-01",
+    "sequence_number": 35,
+    "time_s": 70.00873698631978,
+    "noiseless_reference": 0.8,
+    "dropped": false,
+    "measured_value": 0.8033554121468639,
+    "measurement_error": 0.0033554121468638565
+  },
+  {
+    "event_id": "S1-load-01-seq-36",
+    "sensor_id": "load-01",
+    "sequence_number": 36,
+    "time_s": 71.99791855876475,
+    "noiseless_reference": 0.8,
+    "dropped": false,
+    "measured_value": 0.8035390854384885,
+    "measurement_error": 0.003539085438488465
+  },
+  {
+    "event_id": "S1-load-01-seq-37",
+    "sensor_id": "load-01",
+    "sequence_number": 37,
+    "time_s": 74.00424338934862,
+    "noiseless_reference": 0.8,
+    "dropped": false,
+    "measured_value": 0.8013687901462624,
+    "measurement_error": 0.0013687901462623442
+  },
+  {
+    "event_id": "S1-load-01-seq-38",
+    "sensor_id": "load-01",
+    "sequence_number": 38,
+    "time_s": 75.99126691142624,
+    "noiseless_reference": 0.8,
+    "dropped": false,
+    "measured_value": 0.8023525387345682,
+    "measurement_error": 0.002352538734568199
+  },
+  {
+    "event_id": "S1-load-01-seq-39",
+    "sensor_id": "load-01",
+    "sequence_number": 39,
+    "time_s": 78.00128376040462,
+    "noiseless_reference": 0.8,
+    "dropped": false,
+    "measured_value": 0.8025880278263197,
+    "measurement_error": 0.0025880278263196166
+  },
+  {
+    "event_id": "S1-load-01-seq-40",
+    "sensor_id": "load-01",
+    "sequence_number": 40,
+    "time_s": 79.99257099630749,
+    "noiseless_reference": 0.8,
+    "dropped": false,
+    "measured_value": 0.8047352536719904,
+    "measurement_error": 0.004735253671990347
+  },
+  {
+    "event_id": "S1-load-01-seq-41",
+    "sensor_id": "load-01",
+    "sequence_number": 41,
+    "time_s": 81.99022634170169,
+    "noiseless_reference": 0.8,
+    "dropped": false,
+    "measured_value": 0.7984522103323956,
+    "measurement_error": -0.0015477896676044933
+  },
+  {
+    "event_id": "S1-load-01-seq-42",
+    "sensor_id": "load-01",
+    "sequence_number": 42,
+    "time_s": 84.00038716219565,
+    "noiseless_reference": 0.8,
+    "dropped": false,
+    "measured_value": 0.7990777680143256,
+    "measurement_error": -0.0009222319856744265
+  },
+  {
+    "event_id": "S1-load-01-seq-43",
+    "sensor_id": "load-01",
+    "sequence_number": 43,
+    "time_s": 85.99663289858935,
+    "noiseless_reference": 0.8,
+    "dropped": false,
+    "measured_value": 0.7970040238310615,
+    "measurement_error": -0.002995976168938541
+  },
+  {
+    "event_id": "S1-load-01-seq-44",
+    "sensor_id": "load-01",
+    "sequence_number": 44,
+    "time_s": 87.99349212807009,
+    "noiseless_reference": 0.8,
+    "dropped": false,
+    "measured_value": 0.8005579543229846,
+    "measurement_error": 0.0005579543229845552
+  },
+  {
+    "event_id": "S1-load-01-seq-45",
+    "sensor_id": "load-01",
+    "sequence_number": 45,
+    "time_s": 90.00279690843387,
+    "noiseless_reference": 0.8,
+    "dropped": false,
+    "measured_value": 0.8018114574695044,
+    "measurement_error": 0.0018114574695043961
+  },
+  {
+    "event_id": "S1-load-01-seq-46",
+    "sensor_id": "load-01",
+    "sequence_number": 46,
+    "time_s": 91.99962769818244,
+    "noiseless_reference": 0.8,
+    "dropped": false,
+    "measured_value": 0.7986763769125026,
+    "measurement_error": -0.0013236230874974497
+  },
+  {
+    "event_id": "S1-load-01-seq-47",
+    "sensor_id": "load-01",
+    "sequence_number": 47,
+    "time_s": 94.00581763383053,
+    "noiseless_reference": 0.8,
+    "dropped": false,
+    "measured_value": 0.7991222213162763,
+    "measurement_error": -0.00087777868372374
+  },
+  {
+    "event_id": "S1-load-01-seq-48",
+    "sensor_id": "load-01",
+    "sequence_number": 48,
+    "time_s": 95.99680141138373,
+    "noiseless_reference": 0.8,
+    "dropped": false,
+    "measured_value": 0.8013557120227621,
+    "measurement_error": 0.001355712022762079
+  },
+  {
+    "event_id": "S1-load-01-seq-49",
+    "sensor_id": "load-01",
+    "sequence_number": 49,
+    "time_s": 98.00976416178497,
+    "noiseless_reference": 0.8,
+    "dropped": false,
+    "measured_value": 0.7976768484319195,
+    "measurement_error": -0.002323151568080495
+  },
+  {
+    "event_id": "S1-load-01-seq-50",
+    "sensor_id": "load-01",
+    "sequence_number": 50,
+    "time_s": 99.99209924184682,
+    "noiseless_reference": 0.8,
+    "dropped": false,
+    "measured_value": 0.8011645476568755,
+    "measurement_error": 0.0011645476568754587
+  },
+  {
+    "event_id": "S1-load-01-seq-51",
+    "sensor_id": "load-01",
+    "sequence_number": 51,
+    "time_s": 102.00381253177406,
+    "noiseless_reference": 0.8,
+    "dropped": false,
+    "measured_value": 0.7969404309496186,
+    "measurement_error": -0.0030595690503814055
+  },
+  {
+    "event_id": "S1-load-01-seq-52",
+    "sensor_id": "load-01",
+    "sequence_number": 52,
+    "time_s": 103.99680658198605,
+    "noiseless_reference": 0.8,
+    "dropped": false,
+    "measured_value": 0.802626717955438,
+    "measurement_error": 0.002626717955438007
+  },
+  {
+    "event_id": "S1-load-01-seq-53",
+    "sensor_id": "load-01",
+    "sequence_number": 53,
+    "time_s": 105.99243741769816,
+    "noiseless_reference": 0.8,
+    "dropped": false,
+    "measured_value": 0.7996780476851142,
+    "measurement_error": -0.00032195231488585385
+  },
+  {
+    "event_id": "S1-load-01-seq-54",
+    "sensor_id": "load-01",
+    "sequence_number": 54,
+    "time_s": 107.99843368841913,
+    "noiseless_reference": 0.8,
+    "dropped": false,
+    "measured_value": 0.799947401093377,
+    "measurement_error": -5.25989066230137e-05
+  },
+  {
+    "event_id": "S1-load-01-seq-55",
+    "sensor_id": "load-01",
+    "sequence_number": 55,
+    "time_s": 109.99096329061291,
+    "noiseless_reference": 0.8,
+    "dropped": false,
+    "measured_value": 0.7978786593239481,
+    "measurement_error": -0.0021213406760519637
+  },
+  {
+    "event_id": "S1-load-01-seq-56",
+    "sensor_id": "load-01",
+    "sequence_number": 56,
+    "time_s": 112.00336151533094,
+    "noiseless_reference": 0.8,
+    "dropped": false,
+    "measured_value": 0.8001669733494057,
+    "measurement_error": 0.00016697334940563024
+  },
+  {
+    "event_id": "S1-load-01-seq-57",
+    "sensor_id": "load-01",
+    "sequence_number": 57,
+    "time_s": 114.00505025622273,
+    "noiseless_reference": 0.8,
+    "dropped": false,
+    "measured_value": 0.8009759268458116,
+    "measurement_error": 0.0009759268458116033
+  },
+  {
+    "event_id": "S1-load-01-seq-58",
+    "sensor_id": "load-01",
+    "sequence_number": 58,
+    "time_s": 115.99991135841996,
+    "noiseless_reference": 0.8,
+    "dropped": false,
+    "measured_value": 0.8021485436973858,
+    "measurement_error": 0.0021485436973857075
+  },
+  {
+    "event_id": "S1-load-01-seq-59",
+    "sensor_id": "load-01",
+    "sequence_number": 59,
+    "time_s": 118.00032791313753,
+    "noiseless_reference": 0.8,
+    "dropped": false,
+    "measured_value": 0.7981889868069381,
+    "measurement_error": -0.0018110131930619833
+  },
+  {
+    "event_id": "S1-load-01-seq-60",
+    "sensor_id": "load-01",
+    "sequence_number": 60,
+    "time_s": 119.99580872587693,
+    "noiseless_reference": 0.8,
+    "dropped": false,
+    "measured_value": 0.8015111822556541,
+    "measurement_error": 0.0015111822556540533
+  },
+  {
+    "event_id": "S1-pipe-temperature-seq-0",
+    "sensor_id": "pipe-temperature",
+    "sequence_number": 0,
+    "time_s": 0.0,
+    "noiseless_reference": 180.0,
+    "dropped": false,
+    "measured_value": 179.47579523620948,
+    "measurement_error": -0.5242047637905216
+  },
+  {
+    "event_id": "S1-pipe-temperature-seq-1",
+    "sensor_id": "pipe-temperature",
+    "sequence_number": 1,
+    "time_s": 5.007545202091952,
+    "noiseless_reference": 180.23481873608245,
+    "dropped": false,
+    "measured_value": 180.16903144213717,
+    "measurement_error": -0.06578729394527727
+  },
+  {
+    "event_id": "S1-pipe-temperature-seq-2",
+    "sensor_id": "pipe-temperature",
+    "sequence_number": 2,
+    "time_s": 10.0035352180517,
+    "noiseless_reference": 180.87958340447884,
+    "dropped": false,
+    "measured_value": 180.82085375550568,
+    "measurement_error": -0.05872964897315569
+  },
+  {
+    "event_id": "S1-pipe-temperature-seq-3",
+    "sensor_id": "pipe-temperature",
+    "sequence_number": 3,
+    "time_s": 15.004194373172236,
+    "noiseless_reference": 181.86109177390568,
+    "dropped": false,
+    "measured_value": 181.7226923978468,
+    "measurement_error": -0.13839937605888508
+  },
+  {
+    "event_id": "S1-pipe-temperature-seq-4",
+    "sensor_id": "pipe-temperature",
+    "sequence_number": 4,
+    "time_s": 19.994633355198804,
+    "noiseless_reference": 183.11513455295926,
+    "dropped": false,
+    "measured_value": 183.1029004527311,
+    "measurement_error": -0.012234100228170064
+  },
+  {
+    "event_id": "S1-pipe-temperature-seq-5",
+    "sensor_id": "pipe-temperature",
+    "sequence_number": 5,
+    "time_s": 25.003502743996258,
+    "noiseless_reference": 184.59960013802302,
+    "dropped": false,
+    "measured_value": 184.52963329355885,
+    "measurement_error": -0.06996684446417589
+  },
+  {
+    "event_id": "S1-pipe-temperature-seq-6",
+    "sensor_id": "pipe-temperature",
+    "sequence_number": 6,
+    "time_s": 29.997569550140597,
+    "noiseless_reference": 186.26407846048022,
+    "dropped": false,
+    "measured_value": 186.24387465501172,
+    "measurement_error": -0.02020380546849765
+  },
+  {
+    "event_id": "S1-pipe-temperature-seq-7",
+    "sensor_id": "pipe-temperature",
+    "sequence_number": 7,
+    "time_s": 35.00057527959403,
+    "noiseless_reference": 188.08267875878255,
+    "dropped": false,
+    "measured_value": 187.86441713247658,
+    "measurement_error": -0.21826162630597423
+  },
+  {
+    "event_id": "S1-pipe-temperature-seq-8",
+    "sensor_id": "pipe-temperature",
+    "sequence_number": 8,
+    "time_s": 40.00547928858811,
+    "noiseless_reference": 190.0258930551939,
+    "dropped": false,
+    "measured_value": 190.07733409634383,
+    "measurement_error": 0.051441041149928424
+  },
+  {
+    "event_id": "S1-pipe-temperature-seq-9",
+    "sensor_id": "pipe-temperature",
+    "sequence_number": 9,
+    "time_s": 45.00452628892935,
+    "noiseless_reference": 192.06812518583385,
+    "dropped": false,
+    "measured_value": 192.08021846797695,
+    "measurement_error": 0.01209328214309835
+  },
+  {
+    "event_id": "S1-pipe-temperature-seq-10",
+    "sensor_id": "pipe-temperature",
+    "sequence_number": 10,
+    "time_s": 50.000931066908834,
+    "noiseless_reference": 194.19209357198335,
+    "dropped": false,
+    "measured_value": 194.22661819281188,
+    "measurement_error": 0.03452462082853458
+  },
+  {
+    "event_id": "S1-pipe-temperature-seq-11",
+    "sensor_id": "pipe-temperature",
+    "sequence_number": 11,
+    "time_s": 55.00794838582937,
+    "noiseless_reference": 196.3885733893115,
+    "dropped": false,
+    "measured_value": 195.93642021955694,
+    "measurement_error": -0.45215316975455266
+  },
+  {
+    "event_id": "S1-pipe-temperature-seq-12",
+    "sensor_id": "pipe-temperature",
+    "sequence_number": 12,
+    "time_s": 59.99776131738788,
+    "noiseless_reference": 198.63295662371056,
+    "dropped": false,
+    "measured_value": 198.8610834407571,
+    "measurement_error": 0.22812681704655802
+  },
+  {
+    "event_id": "S1-pipe-temperature-seq-13",
+    "sensor_id": "pipe-temperature",
+    "sequence_number": 13,
+    "time_s": 64.99989090091236,
+    "noiseless_reference": 200.69424470431653,
+    "dropped": false,
+    "measured_value": 200.5015207621833,
+    "measurement_error": -0.1927239421332274
+  },
+  {
+    "event_id": "S1-pipe-temperature-seq-14",
+    "sensor_id": "pipe-temperature",
+    "sequence_number": 14,
+    "time_s": 70.00256450245527,
+    "noiseless_reference": 202.3819067122101,
+    "dropped": false,
+    "measured_value": 202.26745912712082,
+    "measurement_error": -0.11444758508929453
+  },
+  {
+    "event_id": "S1-pipe-temperature-seq-15",
+    "sensor_id": "pipe-temperature",
+    "sequence_number": 15,
+    "time_s": 74.9948672569475,
+    "noiseless_reference": 203.7609120895042,
+    "dropped": false,
+    "measured_value": 203.65568641031084,
+    "measurement_error": -0.10522567919335302
+  },
+  {
+    "event_id": "S1-pipe-temperature-seq-16",
+    "sensor_id": "pipe-temperature",
+    "sequence_number": 16,
+    "time_s": 79.99976345594314,
+    "noiseless_reference": 204.89286717601624,
+    "dropped": false,
+    "measured_value": 205.00747228148805,
+    "measurement_error": 0.11460510547181002
+  },
+  {
+    "event_id": "S1-pipe-temperature-seq-17",
+    "sensor_id": "pipe-temperature",
+    "sequence_number": 17,
+    "time_s": 84.99678611675371,
+    "noiseless_reference": 205.81813529341855,
+    "dropped": false,
+    "measured_value": 206.00825575209666,
+    "measurement_error": 0.19012045867810912
+  },
+  {
+    "event_id": "S1-pipe-temperature-seq-18",
+    "sensor_id": "pipe-temperature",
+    "sequence_number": 18,
+    "time_s": 90.00669842905229,
+    "noiseless_reference": 206.57753600983838,
+    "dropped": false,
+    "measured_value": 206.6972897599996,
+    "measurement_error": 0.11975375016120893
+  },
+  {
+    "event_id": "S1-pipe-temperature-seq-19",
+    "sensor_id": "pipe-temperature",
+    "sequence_number": 19,
+    "time_s": 94.99094943299487,
+    "noiseless_reference": 207.19615772815206,
+    "dropped": false,
+    "measured_value": 207.31981361734051,
+    "measurement_error": 0.1236558891884556
+  },
+  {
+    "event_id": "S1-pipe-temperature-seq-20",
+    "sensor_id": "pipe-temperature",
+    "sequence_number": 20,
+    "time_s": 100.00676206937148,
+    "noiseless_reference": 207.70585962056003,
+    "dropped": false,
+    "measured_value": 207.71885504399512,
+    "measurement_error": 0.012995423435086195
+  },
+  {
+    "event_id": "S1-pipe-temperature-seq-21",
+    "sensor_id": "pipe-temperature",
+    "sequence_number": 21,
+    "time_s": 105.00815636737323,
+    "noiseless_reference": 208.12182147201835,
+    "dropped": true
+  },
+  {
+    "event_id": "S1-pipe-temperature-seq-22",
+    "sensor_id": "pipe-temperature",
+    "sequence_number": 22,
+    "time_s": 109.99132873551956,
+    "noiseless_reference": 208.46124208180518,
+    "dropped": false,
+    "measured_value": 208.19761009111568,
+    "measurement_error": -0.26363199068950394
+  },
+  {
+    "event_id": "S1-pipe-temperature-seq-23",
+    "sensor_id": "pipe-temperature",
+    "sequence_number": 23,
+    "time_s": 114.9933017436911,
+    "noiseless_reference": 208.74027099297982,
+    "dropped": false,
+    "measured_value": 208.55071749394048,
+    "measurement_error": -0.18955349903933438
+  },
+  {
+    "event_id": "S1-pipe-temperature-seq-24",
+    "sensor_id": "pipe-temperature",
+    "sequence_number": 24,
+    "time_s": 120.0,
+    "noiseless_reference": 208.9688974219951,
+    "dropped": false,
+    "measured_value": 209.07690166617226,
+    "measurement_error": 0.10800424417715249
+  },
+  {
+    "event_id": "S1-pressure-01-seq-0",
+    "sensor_id": "pressure-01",
+    "sequence_number": 0,
+    "time_s": 0.0,
+    "noiseless_reference": 800000.0,
+    "dropped": false,
+    "measured_value": 799869.5501601915,
+    "measurement_error": -130.44983980851248
+  },
+  {
+    "event_id": "S1-pressure-01-seq-1",
+    "sensor_id": "pressure-01",
+    "sequence_number": 1,
+    "time_s": 1.000103156690282,
+    "noiseless_reference": 800097.8342860762,
+    "dropped": false,
+    "measured_value": 799983.8415172637,
+    "measurement_error": -113.99276881257538
+  },
+  {
+    "event_id": "S1-pressure-01-seq-2",
+    "sensor_id": "pressure-01",
+    "sequence_number": 2,
+    "time_s": 2.0020132352884468,
+    "noiseless_reference": 800383.5536280718,
+    "dropped": false,
+    "measured_value": 800551.2879529322,
+    "measurement_error": 167.73432486038655
+  },
+  {
+    "event_id": "S1-pressure-01-seq-3",
+    "sensor_id": "pressure-01",
+    "sequence_number": 3,
+    "time_s": 3.0096373888224828,
+    "noiseless_reference": 800848.1323778342,
+    "dropped": false,
+    "measured_value": 800530.3973347271,
+    "measurement_error": -317.7350431070663
+  },
+  {
+    "event_id": "S1-pressure-01-seq-4",
+    "sensor_id": "pressure-01",
+    "sequence_number": 4,
+    "time_s": 3.9998349573696235,
+    "noiseless_reference": 801466.6593330873,
+    "dropped": false,
+    "measured_value": 801443.538079464,
+    "measurement_error": -23.12125362327788
+  },
+  {
+    "event_id": "S1-pressure-01-seq-5",
+    "sensor_id": "pressure-01",
+    "sequence_number": 5,
+    "time_s": 4.995926560667967,
+    "noiseless_reference": 802240.4460873352,
+    "dropped": false,
+    "measured_value": 802296.8662254474,
+    "measurement_error": 56.42013811215293
+  },
+  {
+    "event_id": "S1-pressure-01-seq-6",
+    "sensor_id": "pressure-01",
+    "sequence_number": 6,
+    "time_s": 6.0082931190525555,
+    "noiseless_reference": 803172.6089062579,
+    "dropped": false,
+    "measured_value": 803336.6315733172,
+    "measurement_error": 164.0226670593256
+  },
+  {
+    "event_id": "S1-pressure-01-seq-7",
+    "sensor_id": "pressure-01",
+    "sequence_number": 7,
+    "time_s": 7.007812119118305,
+    "noiseless_reference": 804227.7523371571,
+    "dropped": false,
+    "measured_value": 804462.2569238396,
+    "measurement_error": 234.5045866824221
+  },
+  {
+    "event_id": "S1-pressure-01-seq-8",
+    "sensor_id": "pressure-01",
+    "sequence_number": 8,
+    "time_s": 8.004221448440322,
+    "noiseless_reference": 805404.3157783096,
+    "dropped": false,
+    "measured_value": 805441.83683807,
+    "measurement_error": 37.521059760358185
+  },
+  {
+    "event_id": "S1-pressure-01-seq-9",
+    "sensor_id": "pressure-01",
+    "sequence_number": 9,
+    "time_s": 9.001821808552862,
+    "noiseless_reference": 806698.9897428346,
+    "dropped": false,
+    "measured_value": 806531.8413645212,
+    "measurement_error": -167.14837831340265
+  },
+  {
+    "event_id": "S1-pressure-01-seq-10",
+    "sensor_id": "pressure-01",
+    "sequence_number": 10,
+    "time_s": 10.002382914496469,
+    "noiseless_reference": 808107.2491041863,
+    "dropped": false,
+    "measured_value": 808123.997011969,
+    "measurement_error": 16.747907782671973
+  },
+  {
+    "event_id": "S1-pressure-01-seq-11",
+    "sensor_id": "pressure-01",
+    "sequence_number": 11,
+    "time_s": 10.997468034665296,
+    "noiseless_reference": 809609.7913100879,
+    "dropped": false,
+    "measured_value": 809753.3098856143,
+    "measurement_error": 143.51857552642468
+  },
+  {
+    "event_id": "S1-pressure-01-seq-12",
+    "sensor_id": "pressure-01",
+    "sequence_number": 12,
+    "time_s": 11.99078969010854,
+    "noiseless_reference": 811204.591645038,
+    "dropped": false,
+    "measured_value": 811258.8825548165,
+    "measurement_error": 54.29090977855958
+  },
+  {
+    "event_id": "S1-pressure-01-seq-13",
+    "sensor_id": "pressure-01",
+    "sequence_number": 13,
+    "time_s": 13.003391748244011,
+    "noiseless_reference": 812921.66586312,
+    "dropped": false,
+    "measured_value": 813059.6184017468,
+    "measurement_error": 137.95253862685058
+  },
+  {
+    "event_id": "S1-pressure-01-seq-14",
+    "sensor_id": "pressure-01",
+    "sequence_number": 14,
+    "time_s": 14.007713790817865,
+    "noiseless_reference": 814709.8760210372,
+    "dropped": false,
+    "measured_value": 814348.6528187805,
+    "measurement_error": -361.22320225671865
+  },
+  {
+    "event_id": "S1-pressure-01-seq-15",
+    "sensor_id": "pressure-01",
+    "sequence_number": 15,
+    "time_s": 14.999649507888817,
+    "noiseless_reference": 816553.9101974266,
+    "dropped": false,
+    "measured_value": 816546.4758998309,
+    "measurement_error": -7.434297595638782
+  },
+  {
+    "event_id": "S1-pressure-01-seq-16",
+    "sensor_id": "pressure-01",
+    "sequence_number": 16,
+    "time_s": 16.002889248931844,
+    "noiseless_reference": 818492.6054051287,
+    "dropped": false,
+    "measured_value": 818273.4950207568,
+    "measurement_error": -219.11038437183015
+  },
+  {
+    "event_id": "S1-pressure-01-seq-17",
+    "sensor_id": "pressure-01",
+    "sequence_number": 17,
+    "time_s": 16.996759396329644,
+    "noiseless_reference": 820481.5307637829,
+    "dropped": false,
+    "measured_value": 820806.4611295967,
+    "measurement_error": 324.93036581377964
+  },
+  {
+    "event_id": "S1-pressure-01-seq-18",
+    "sensor_id": "pressure-01",
+    "sequence_number": 18,
+    "time_s": 18.005325765218142,
+    "noiseless_reference": 822564.9054169299,
+    "dropped": false,
+    "measured_value": 822693.5311239412,
+    "measurement_error": 128.62570701132063
+  },
+  {
+    "event_id": "S1-pressure-01-seq-19",
+    "sensor_id": "pressure-01",
+    "sequence_number": 19,
+    "time_s": 19.00631378976246,
+    "noiseless_reference": 824693.2234054877,
+    "dropped": false,
+    "measured_value": 824789.3657006504,
+    "measurement_error": 96.14229516265914
+  },
+  {
+    "event_id": "S1-pressure-01-seq-20",
+    "sensor_id": "pressure-01",
+    "sequence_number": 20,
+    "time_s": 20.004433132207527,
+    "noiseless_reference": 826871.6654469294,
+    "dropped": false,
+    "measured_value": 826912.9165077351,
+    "measurement_error": 41.25106080574915
+  },
+  {
+    "event_id": "S1-pressure-01-seq-21",
+    "sensor_id": "pressure-01",
+    "sequence_number": 21,
+    "time_s": 21.00219074382919,
+    "noiseless_reference": 829101.8150348737,
+    "dropped": false,
+    "measured_value": 829029.1854241905,
+    "measurement_error": -72.62961068318691
+  },
+  {
+    "event_id": "S1-pressure-01-seq-22",
+    "sensor_id": "pressure-01",
+    "sequence_number": 22,
+    "time_s": 21.99865212226261,
+    "noiseless_reference": 831378.0824487878,
+    "dropped": false,
+    "measured_value": 831330.7768708958,
+    "measurement_error": -47.3055778919952
+  },
+  {
+    "event_id": "S1-pressure-01-seq-23",
+    "sensor_id": "pressure-01",
+    "sequence_number": 23,
+    "time_s": 23.008744705568674,
+    "noiseless_reference": 833732.2528015769,
+    "dropped": false,
+    "measured_value": 833590.6506697852,
+    "measurement_error": -141.60213179164566
+  },
+  {
+    "event_id": "S1-pressure-01-seq-24",
+    "sensor_id": "pressure-01",
+    "sequence_number": 24,
+    "time_s": 24.004599256010827,
+    "noiseless_reference": 836096.3557835014,
+    "dropped": false,
+    "measured_value": 836280.5044845929,
+    "measurement_error": 184.1487010915298
+  },
+  {
+    "event_id": "S1-pressure-01-seq-25",
+    "sensor_id": "pressure-01",
+    "sequence_number": 25,
+    "time_s": 25.00011412909929,
+    "noiseless_reference": 838499.6798466269,
+    "dropped": false,
+    "measured_value": 838470.8733025712,
+    "measurement_error": -28.806544055696577
+  },
+  {
+    "event_id": "S1-pressure-01-seq-26",
+    "sensor_id": "pressure-01",
+    "sequence_number": 26,
+    "time_s": 25.994302250096077,
+    "noiseless_reference": 840937.1776653188,
+    "dropped": false,
+    "measured_value": 841030.9460848876,
+    "measurement_error": 93.76841956877615
+  },
+  {
+    "event_id": "S1-pressure-01-seq-27",
+    "sensor_id": "pressure-01",
+    "sequence_number": 27,
+    "time_s": 27.008929532753022,
+    "noiseless_reference": 843460.8117604961,
+    "dropped": false,
+    "measured_value": 843668.6868443609,
+    "measurement_error": 207.87508386478294
+  },
+  {
+    "event_id": "S1-pressure-01-seq-28",
+    "sensor_id": "pressure-01",
+    "sequence_number": 28,
+    "time_s": 27.99455766516503,
+    "noiseless_reference": 845944.9201379322,
+    "dropped": false,
+    "measured_value": 846047.2445489978,
+    "measurement_error": 102.32441106566694
+  },
+  {
+    "event_id": "S1-pressure-01-seq-29",
+    "sensor_id": "pressure-01",
+    "sequence_number": 29,
+    "time_s": 29.000885976049542,
+    "noiseless_reference": 848512.2063786136,
+    "dropped": false,
+    "measured_value": 848597.2686653783,
+    "measurement_error": 85.06228676473256
+  },
+  {
+    "event_id": "S1-pressure-01-seq-30",
+    "sensor_id": "pressure-01",
+    "sequence_number": 30,
+    "time_s": 29.996985184895895,
+    "noiseless_reference": 851082.2674559193,
+    "dropped": false,
+    "measured_value": 850956.5465651876,
+    "measurement_error": -125.72089073166717
+  },
+  {
+    "event_id": "S1-pressure-01-seq-31",
+    "sensor_id": "pressure-01",
+    "sequence_number": 31,
+    "time_s": 30.998888279426062,
+    "noiseless_reference": 853694.406734598,
+    "dropped": false,
+    "measured_value": 853778.2601865478,
+    "measurement_error": 83.85345194977708
+  },
+  {
+    "event_id": "S1-pressure-01-seq-32",
+    "sensor_id": "pressure-01",
+    "sequence_number": 32,
+    "time_s": 32.00950974062341,
+    "noiseless_reference": 856355.0335451771,
+    "dropped": false,
+    "measured_value": 856539.9414894133,
+    "measurement_error": 184.90794423618354
+  },
+  {
+    "event_id": "S1-pressure-01-seq-33",
+    "sensor_id": "pressure-01",
+    "sequence_number": 33,
+    "time_s": 32.99523622897438,
+    "noiseless_reference": 858973.4345873322,
+    "dropped": false,
+    "measured_value": 858702.277718944,
+    "measurement_error": -271.1568683881778
+  },
+  {
+    "event_id": "S1-pressure-01-seq-34",
+    "sensor_id": "pressure-01",
+    "sequence_number": 34,
+    "time_s": 34.00694709379043,
+    "noiseless_reference": 861683.2522217005,
+    "dropped": false,
+    "measured_value": 861592.0771452778,
+    "measurement_error": -91.17507642274722
+  },
+  {
+    "event_id": "S1-pressure-01-seq-35",
+    "sensor_id": "pressure-01",
+    "sequence_number": 35,
+    "time_s": 35.00144651090655,
+    "noiseless_reference": 864367.6572938802,
+    "dropped": false,
+    "measured_value": 864375.9154684558,
+    "measurement_error": 8.258174575516023
+  },
+  {
+    "event_id": "S1-pressure-01-seq-36",
+    "sensor_id": "pressure-01",
+    "sequence_number": 36,
+    "time_s": 36.000374358681825,
+    "noiseless_reference": 867083.3290921802,
+    "dropped": false,
+    "measured_value": 867329.0798810833,
+    "measurement_error": 245.7507889030967
+  },
+  {
+    "event_id": "S1-pressure-01-seq-37",
+    "sensor_id": "pressure-01",
+    "sequence_number": 37,
+    "time_s": 36.997330497732044,
+    "noiseless_reference": 869811.69876751,
+    "dropped": false,
+    "measured_value": 869724.13147031,
+    "measurement_error": -87.56729719997384
+  },
+  {
+    "event_id": "S1-pressure-01-seq-38",
+    "sensor_id": "pressure-01",
+    "sequence_number": 38,
+    "time_s": 37.99109335435272,
+    "noiseless_reference": 872548.1290463342,
+    "dropped": false,
+    "measured_value": 872574.0188341155,
+    "measurement_error": 25.889787781285122
+  },
+  {
+    "event_id": "S1-pressure-01-seq-39",
+    "sensor_id": "pressure-01",
+    "sequence_number": 39,
+    "time_s": 38.990645927702566,
+    "noiseless_reference": 875316.333734033,
+    "dropped": false,
+    "measured_value": 875378.5575370315,
+    "measurement_error": 62.223802998429164
+  },
+  {
+    "event_id": "S1-pressure-01-seq-40",
+    "sensor_id": "pressure-01",
+    "sequence_number": 40,
+    "time_s": 39.999893516692545,
+    "noiseless_reference": 878126.4580516657,
+    "dropped": false,
+    "measured_value": 878218.2882891007,
+    "measurement_error": 91.83023743506055
+  },
+  {
+    "event_id": "S1-pressure-01-seq-41",
+    "sensor_id": "pressure-01",
+    "sequence_number": 41,
+    "time_s": 41.00172366979525,
+    "noiseless_reference": 880929.9363297686,
+    "dropped": false,
+    "measured_value": 880835.4610117602,
+    "measurement_error": -94.47531800845172
+  },
+  {
+    "event_id": "S1-pressure-01-seq-42",
+    "sensor_id": "pressure-01",
+    "sequence_number": 42,
+    "time_s": 41.99576501158833,
+    "noiseless_reference": 883724.5205517053,
+    "dropped": false,
+    "measured_value": 883649.4177609078,
+    "measurement_error": -75.10279079747852
+  },
+  {
+    "event_id": "S1-pressure-01-seq-43",
+    "sensor_id": "pressure-01",
+    "sequence_number": 43,
+    "time_s": 42.997894364463995,
+    "noiseless_reference": 886554.0132018791,
+    "dropped": false,
+    "measured_value": 886676.2851892592,
+    "measurement_error": 122.27198738011066
+  },
+  {
+    "event_id": "S1-pressure-01-seq-44",
+    "sensor_id": "pressure-01",
+    "sequence_number": 44,
+    "time_s": 43.99441586667755,
+    "noiseless_reference": 889379.0098129986,
+    "dropped": false,
+    "measured_value": 889362.4983568762,
+    "measurement_error": -16.511456122389063
+  },
+  {
+    "event_id": "S1-pressure-01-seq-45",
+    "sensor_id": "pressure-01",
+    "sequence_number": 45,
+    "time_s": 45.007559729498304,
+    "noiseless_reference": 892261.9684192236,
+    "dropped": false,
+    "measured_value": 892520.6839923505,
+    "measurement_error": 258.71557312691584
+  },
+  {
+    "event_id": "S1-pressure-01-seq-46",
+    "sensor_id": "pressure-01",
+    "sequence_number": 46,
+    "time_s": 46.00462901066924,
+    "noiseless_reference": 895109.167087318,
+    "dropped": false,
+    "measured_value": 895094.4589666966,
+    "measurement_error": -14.708120621391572
+  },
+  {
+    "event_id": "S1-pressure-01-seq-47",
+    "sensor_id": "pressure-01",
+    "sequence_number": 47,
+    "time_s": 46.99905708121518,
+    "noiseless_reference": 897958.0486270807,
+    "dropped": false,
+    "measured_value": 897708.6727208364,
+    "measurement_error": -249.375906244386
+  },
+  {
+    "event_id": "S1-pressure-01-seq-48",
+    "sensor_id": "pressure-01",
+    "sequence_number": 48,
+    "time_s": 48.00383347300591,
+    "noiseless_reference": 900845.3308755155,
+    "dropped": false,
+    "measured_value": 901156.0350558951,
+    "measurement_error": 310.704180379631
+  },
+  {
+    "event_id": "S1-pressure-01-seq-49",
+    "sensor_id": "pressure-01",
+    "sequence_number": 49,
+    "time_s": 48.99881193826738,
+    "noiseless_reference": 903712.5714290398,
+    "dropped": false,
+    "measured_value": 903664.4376686667,
+    "measurement_error": -48.13376037310809
+  },
+  {
+    "event_id": "S1-pressure-01-seq-50",
+    "sensor_id": "pressure-01",
+    "sequence_number": 50,
+    "time_s": 50.00024349227089,
+    "noiseless_reference": 906606.0341186256,
+    "dropped": false,
+    "measured_value": 906483.5748937585,
+    "measurement_error": -122.4592248670524
+  },
+  {
+    "event_id": "S1-pressure-01-seq-51",
+    "sensor_id": "pressure-01",
+    "sequence_number": 51,
+    "time_s": 50.99091939416031,
+    "noiseless_reference": 909475.4647544688,
+    "dropped": false,
+    "measured_value": 909248.9640277815,
+    "measurement_error": -226.50072668725625
+  },
+  {
+    "event_id": "S1-pressure-01-seq-52",
+    "sensor_id": "pressure-01",
+    "sequence_number": 52,
+    "time_s": 52.00477883767285,
+    "noiseless_reference": 912418.8307073378,
+    "dropped": false,
+    "measured_value": 912496.3386920227,
+    "measurement_error": 77.50798468489666
+  },
+  {
+    "event_id": "S1-pressure-01-seq-53",
+    "sensor_id": "pressure-01",
+    "sequence_number": 53,
+    "time_s": 53.009694494591216,
+    "noiseless_reference": 915342.567100136,
+    "dropped": false,
+    "measured_value": 915212.0496887035,
+    "measurement_error": -130.5174114324618
+  },
+  {
+    "event_id": "S1-pressure-01-seq-54",
+    "sensor_id": "pressure-01",
+    "sequence_number": 54,
+    "time_s": 54.00347885568065,
+    "noiseless_reference": 918239.7189443748,
+    "dropped": false,
+    "measured_value": 918169.1460093792,
+    "measurement_error": -70.5729349956382
+  },
+  {
+    "event_id": "S1-pressure-01-seq-55",
+    "sensor_id": "pressure-01",
+    "sequence_number": 55,
+    "time_s": 55.00732140494057,
+    "noiseless_reference": 921171.6719071032,
+    "dropped": false,
+    "measured_value": 921201.9957193077,
+    "measurement_error": 30.32381220452953
+  },
+  {
+    "event_id": "S1-pressure-01-seq-56",
+    "sensor_id": "pressure-01",
+    "sequence_number": 56,
+    "time_s": 55.99740891378335,
+    "noiseless_reference": 924068.4973181103,
+    "dropped": false,
+    "measured_value": 924168.8242270338,
+    "measurement_error": 100.32690892345272
+  },
+  {
+    "event_id": "S1-pressure-01-seq-57",
+    "sensor_id": "pressure-01",
+    "sequence_number": 57,
+    "time_s": 56.99146435831886,
+    "noiseless_reference": 926981.6508181802,
+    "dropped": false,
+    "measured_value": 926821.2104711969,
+    "measurement_error": -160.4403469832614
+  },
+  {
+    "event_id": "S1-pressure-01-seq-58",
+    "sensor_id": "pressure-01",
+    "sequence_number": 58,
+    "time_s": 57.99500980408268,
+    "noiseless_reference": 929927.1033689686,
+    "dropped": false,
+    "measured_value": 930003.0303854721,
+    "measurement_error": 75.92701650352683
+  },
+  {
+    "event_id": "S1-pressure-01-seq-59",
+    "sensor_id": "pressure-01",
+    "sequence_number": 59,
+    "time_s": 58.994164519901865,
+    "noiseless_reference": 932863.8599922415,
+    "dropped": false,
+    "measured_value": 932736.6550962533,
+    "measurement_error": -127.20489598822314
+  },
+  {
+    "event_id": "S1-pressure-01-seq-60",
+    "sensor_id": "pressure-01",
+    "sequence_number": 60,
+    "time_s": 60.003709423734,
+    "noiseless_reference": 935835.1268491291,
+    "dropped": false,
+    "measured_value": 935925.6402576161,
+    "measurement_error": 90.51340848696418
+  },
+  {
+    "event_id": "S1-pressure-01-seq-61",
+    "sensor_id": "pressure-01",
+    "sequence_number": 61,
+    "time_s": 61.00020227762681,
+    "noiseless_reference": 938673.7913337034,
+    "dropped": false,
+    "measured_value": 938807.2444702068,
+    "measurement_error": 133.4531365033472
+  },
+  {
+    "event_id": "S1-pressure-01-seq-62",
+    "sensor_id": "pressure-01",
+    "sequence_number": 62,
+    "time_s": 61.994013175489755,
+    "noiseless_reference": 941323.0880623942,
+    "dropped": false,
+    "measured_value": 941300.567758577,
+    "measurement_error": -22.52030381723307
+  },
+  {
+    "event_id": "S1-pressure-01-seq-63",
+    "sensor_id": "pressure-01",
+    "sequence_number": 63,
+    "time_s": 63.000523648318136,
+    "noiseless_reference": 943833.1796700933,
+    "dropped": false,
+    "measured_value": 943685.8922032287,
+    "measurement_error": -147.28746686468367
+  },
+  {
+    "event_id": "S1-pressure-01-seq-64",
+    "sensor_id": "pressure-01",
+    "sequence_number": 64,
+    "time_s": 64.0040947482297,
+    "noiseless_reference": 946173.7410437071,
+    "dropped": false,
+    "measured_value": 946146.326020512,
+    "measurement_error": -27.415023195091635
+  },
+  {
+    "event_id": "S1-pressure-01-seq-65",
+    "sensor_id": "pressure-01",
+    "sequence_number": 65,
+    "time_s": 65.0010738617328,
+    "noiseless_reference": 948348.9248236823,
+    "dropped": false,
+    "measured_value": 948481.1829936657,
+    "measurement_error": 132.25816998339724
+  },
+  {
+    "event_id": "S1-pressure-01-seq-66",
+    "sensor_id": "pressure-01",
+    "sequence_number": 66,
+    "time_s": 66.00577832049504,
+    "noiseless_reference": 950399.4831721447,
+    "dropped": false,
+    "measured_value": 950426.0722349886,
+    "measurement_error": 26.58906284382101
+  },
+  {
+    "event_id": "S1-pressure-01-seq-67",
+    "sensor_id": "pressure-01",
+    "sequence_number": 67,
+    "time_s": 67.0095405278351,
+    "noiseless_reference": 952315.4542845918,
+    "dropped": false,
+    "measured_value": 952307.216579961,
+    "measurement_error": -8.237704630824737
+  },
+  {
+    "event_id": "S1-pressure-01-seq-68",
+    "sensor_id": "pressure-01",
+    "sequence_number": 68,
+    "time_s": 67.99206965421335,
+    "noiseless_reference": 954070.7312214037,
+    "dropped": false,
+    "measured_value": 954108.5843990289,
+    "measurement_error": 37.85317762522027
+  },
+  {
+    "event_id": "S1-pressure-01-seq-69",
+    "sensor_id": "pressure-01",
+    "sequence_number": 69,
+    "time_s": 69.00311534072713,
+    "noiseless_reference": 955760.8437224729,
+    "dropped": false,
+    "measured_value": 955748.3952593264,
+    "measurement_error": -12.44846314645838
+  },
+  {
+    "event_id": "S1-pressure-01-seq-70",
+    "sensor_id": "pressure-01",
+    "sequence_number": 70,
+    "time_s": 70.00075101074488,
+    "noiseless_reference": 957320.5254887133,
+    "dropped": false,
+    "measured_value": 957296.0600258883,
+    "measurement_error": -24.465462825028226
+  },
+  {
+    "event_id": "S1-pressure-01-seq-71",
+    "sensor_id": "pressure-01",
+    "sequence_number": 71,
+    "time_s": 70.99220220722589,
+    "noiseless_reference": 958771.0978439628,
+    "dropped": false,
+    "measured_value": 958577.5526288017,
+    "measurement_error": -193.54521516116802
+  },
+  {
+    "event_id": "S1-pressure-01-seq-72",
+    "sensor_id": "pressure-01",
+    "sequence_number": 72,
+    "time_s": 72.00361247361543,
+    "noiseless_reference": 960155.3150341945,
+    "dropped": false,
+    "measured_value": 960185.0685482565,
+    "measurement_error": 29.753514062031172
+  },
+  {
+    "event_id": "S1-pressure-01-seq-73",
+    "sensor_id": "pressure-01",
+    "sequence_number": 73,
+    "time_s": 73.00644906958829,
+    "noiseless_reference": 961438.6689970975,
+    "dropped": false,
+    "measured_value": 961373.8397524242,
+    "measurement_error": -64.82924467336852
+  },
+  {
+    "event_id": "S1-pressure-01-seq-74",
+    "sensor_id": "pressure-01",
+    "sequence_number": 74,
+    "time_s": 74.0044413168724,
+    "noiseless_reference": 962633.4208310965,
+    "dropped": false,
+    "measured_value": 962780.2261145826,
+    "measurement_error": 146.80528348614462
+  },
+  {
+    "event_id": "S1-pressure-01-seq-75",
+    "sensor_id": "pressure-01",
+    "sequence_number": 75,
+    "time_s": 75.00536479139228,
+    "noiseless_reference": 963754.444069305,
+    "dropped": false,
+    "measured_value": 963702.0984835492,
+    "measurement_error": -52.345585755771026
+  },
+  {
+    "event_id": "S1-pressure-01-seq-76",
+    "sensor_id": "pressure-01",
+    "sequence_number": 76,
+    "time_s": 76.0005402085844,
+    "noiseless_reference": 964797.2799519494,
+    "dropped": false,
+    "measured_value": 964861.6108029668,
+    "measurement_error": 64.33085101738106
+  },
+  {
+    "event_id": "S1-pressure-01-seq-77",
+    "sensor_id": "pressure-01",
+    "sequence_number": 77,
+    "time_s": 77.0068222586796,
+    "noiseless_reference": 965783.7042826092,
+    "dropped": false,
+    "measured_value": 965811.4389632047,
+    "measurement_error": 27.7346805955749
+  },
+  {
+    "event_id": "S1-pressure-01-seq-78",
+    "sensor_id": "pressure-01",
+    "sequence_number": 78,
+    "time_s": 78.00334217877378,
+    "noiseless_reference": 966697.470155305,
+    "dropped": false,
+    "measured_value": 966672.1178746833,
+    "measurement_error": -25.352280621649697
+  },
+  {
+    "event_id": "S1-pressure-01-seq-79",
+    "sensor_id": "pressure-01",
+    "sequence_number": 79,
+    "time_s": 79.00470046247219,
+    "noiseless_reference": 967556.5172480325,
+    "dropped": false,
+    "measured_value": 967540.5555186757,
+    "measurement_error": -15.961729356786236
+  },
+  {
+    "event_id": "S1-pressure-01-seq-80",
+    "sensor_id": "pressure-01",
+    "sequence_number": 80,
+    "time_s": 79.99082886969033,
+    "noiseless_reference": 968348.2647397398,
+    "dropped": false,
+    "measured_value": 968345.8012322017,
+    "measurement_error": -2.463507538079284
+  },
+  {
+    "event_id": "S1-pressure-01-seq-81",
+    "sensor_id": "pressure-01",
+    "sequence_number": 81,
+    "time_s": 81.00085397927114,
+    "noiseless_reference": 969107.0029422783,
+    "dropped": false,
+    "measured_value": 969268.1538517287,
+    "measurement_error": 161.15090945037082
+  },
+  {
+    "event_id": "S1-pressure-01-seq-82",
+    "sensor_id": "pressure-01",
+    "sequence_number": 82,
+    "time_s": 82.00791154106115,
+    "noiseless_reference": 969814.3186971836,
+    "dropped": false,
+    "measured_value": 969684.9725238367,
+    "measurement_error": -129.34617334697396
+  },
+  {
+    "event_id": "S1-pressure-01-seq-83",
+    "sensor_id": "pressure-01",
+    "sequence_number": 83,
+    "time_s": 82.99314758478145,
+    "noiseless_reference": 970461.8405479505,
+    "dropped": false,
+    "measured_value": 970371.1471223807,
+    "measurement_error": -90.69342556979973
+  },
+  {
+    "event_id": "S1-pressure-01-seq-84",
+    "sensor_id": "pressure-01",
+    "sequence_number": 84,
+    "time_s": 83.9983812463339,
+    "noiseless_reference": 971080.0980011504,
+    "dropped": false,
+    "measured_value": 971278.0464543123,
+    "measurement_error": 197.94845316186547
+  },
+  {
+    "event_id": "S1-pressure-01-seq-85",
+    "sensor_id": "pressure-01",
+    "sequence_number": 85,
+    "time_s": 85.00598738355413,
+    "noiseless_reference": 971659.5996620225,
+    "dropped": false,
+    "measured_value": 971639.5199841028,
+    "measurement_error": -20.07967791974079
+  },
+  {
+    "event_id": "S1-pressure-01-seq-86",
+    "sensor_id": "pressure-01",
+    "sequence_number": 86,
+    "time_s": 85.99125842680715,
+    "noiseless_reference": 972189.8319480345,
+    "dropped": false,
+    "measured_value": 972171.4401290521,
+    "measurement_error": -18.39181898231618
+  },
+  {
+    "event_id": "S1-pressure-01-seq-87",
+    "sensor_id": "pressure-01",
+    "sequence_number": 87,
+    "time_s": 86.9994826970525,
+    "noiseless_reference": 972697.5381589107,
+    "dropped": false,
+    "measured_value": 972501.5904042611,
+    "measurement_error": -195.94775464956183
+  },
+  {
+    "event_id": "S1-pressure-01-seq-88",
+    "sensor_id": "pressure-01",
+    "sequence_number": 88,
+    "time_s": 87.9983149638316,
+    "noiseless_reference": 973167.9640940833,
+    "dropped": false,
+    "measured_value": 973037.9048572149,
+    "measurement_error": -130.05923686840106
+  },
+  {
+    "event_id": "S1-pressure-01-seq-89",
+    "sensor_id": "pressure-01",
+    "sequence_number": 89,
+    "time_s": 88.99127282015887,
+    "noiseless_reference": 973605.5813649594,
+    "dropped": false,
+    "measured_value": 973511.7135533083,
+    "measurement_error": -93.8678116510855
+  },
+  {
+    "event_id": "S1-pressure-01-seq-90",
+    "sensor_id": "pressure-01",
+    "sequence_number": 90,
+    "time_s": 90.00645596071055,
+    "noiseless_reference": 974024.0286982774,
+    "dropped": false,
+    "measured_value": 974198.6909271813,
+    "measurement_error": 174.6622289038496
+  },
+  {
+    "event_id": "S1-pressure-01-seq-91",
+    "sensor_id": "pressure-01",
+    "sequence_number": 91,
+    "time_s": 91.00699207973763,
+    "noiseless_reference": 974409.6369151286,
+    "dropped": false,
+    "measured_value": 974217.2734203943,
+    "measurement_error": -192.3634947342798
+  },
+  {
+    "event_id": "S1-pressure-01-seq-92",
+    "sensor_id": "pressure-01",
+    "sequence_number": 92,
+    "time_s": 92.00546018581265,
+    "noiseless_reference": 974769.6421556209,
+    "dropped": false,
+    "measured_value": 975040.4067924928,
+    "measurement_error": 270.764636871987
+  },
+  {
+    "event_id": "S1-pressure-01-seq-93",
+    "sensor_id": "pressure-01",
+    "sequence_number": 93,
+    "time_s": 92.99841545410057,
+    "noiseless_reference": 975104.6651541239,
+    "dropped": false,
+    "measured_value": 974973.1895448053,
+    "measurement_error": -131.47560931858607
+  },
+  {
+    "event_id": "S1-pressure-01-seq-94",
+    "sensor_id": "pressure-01",
+    "sequence_number": 94,
+    "time_s": 93.99679679905373,
+    "noiseless_reference": 975419.8858426204,
+    "dropped": false,
+    "measured_value": 975415.3340509471,
+    "measurement_error": -4.551791673293337
+  },
+  {
+    "event_id": "S1-pressure-01-seq-95",
+    "sensor_id": "pressure-01",
+    "sequence_number": 95,
+    "time_s": 94.99482088655644,
+    "noiseless_reference": 975714.7067597425,
+    "dropped": false,
+    "measured_value": 975986.1488805059,
+    "measurement_error": 271.4421207634732
+  },
+  {
+    "event_id": "S1-pressure-01-seq-96",
+    "sensor_id": "pressure-01",
+    "sequence_number": 96,
+    "time_s": 95.99074207719543,
+    "noiseless_reference": 975989.9879840988,
+    "dropped": false,
+    "measured_value": 975876.8677710817,
+    "measurement_error": -113.12021301710047
+  },
+  {
+    "event_id": "S1-pressure-01-seq-97",
+    "sensor_id": "pressure-01",
+    "sequence_number": 97,
+    "time_s": 96.99941804678883,
+    "noiseless_reference": 976250.7749205113,
+    "dropped": false,
+    "measured_value": 976019.7536448933,
+    "measurement_error": -231.02127561799716
+  },
+  {
+    "event_id": "S1-pressure-01-seq-98",
+    "sensor_id": "pressure-01",
+    "sequence_number": 98,
+    "time_s": 98.0010427556555,
+    "noiseless_reference": 976492.9536322108,
+    "dropped": false,
+    "measured_value": 976411.4173091686,
+    "measurement_error": -81.5363230422372
+  },
+  {
+    "event_id": "S1-pressure-01-seq-99",
+    "sensor_id": "pressure-01",
+    "sequence_number": 99,
+    "time_s": 98.99184831860732,
+    "noiseless_reference": 976717.1219616731,
+    "dropped": false,
+    "measured_value": 976775.9812538133,
+    "measurement_error": 58.85929214011412
+  },
+  {
+    "event_id": "S1-pressure-01-seq-100",
+    "sensor_id": "pressure-01",
+    "sequence_number": 100,
+    "time_s": 99.99118952131741,
+    "noiseless_reference": 976928.7097765888,
+    "dropped": false,
+    "measured_value": 976843.966513513,
+    "measurement_error": -84.74326307582669
+  },
+  {
+    "event_id": "S1-pressure-01-seq-101",
+    "sensor_id": "pressure-01",
+    "sequence_number": 101,
+    "time_s": 101.00705108306677,
+    "noiseless_reference": 977129.8231806406,
+    "dropped": false,
+    "measured_value": 976865.7033043943,
+    "measurement_error": -264.1198762463173
+  },
+  {
+    "event_id": "S1-pressure-01-seq-102",
+    "sensor_id": "pressure-01",
+    "sequence_number": 102,
+    "time_s": 102.00014835141937,
+    "noiseless_reference": 977313.6936314738,
+    "dropped": false,
+    "measured_value": 977663.8135140439,
+    "measurement_error": 350.119882570114
+  },
+  {
+    "event_id": "S1-pressure-01-seq-103",
+    "sensor_id": "pressure-01",
+    "sequence_number": 103,
+    "time_s": 103.00390916592863,
+    "noiseless_reference": 977487.5716257545,
+    "dropped": false,
+    "measured_value": 977385.1688528929,
+    "measurement_error": -102.40277286153287
+  },
+  {
+    "event_id": "S1-pressure-01-seq-104",
+    "sensor_id": "pressure-01",
+    "sequence_number": 104,
+    "time_s": 103.9922894019653,
+    "noiseless_reference": 977647.7842659751,
+    "dropped": false,
+    "measured_value": 977730.3383954202,
+    "measurement_error": 82.55412944511045
+  },
+  {
+    "event_id": "S1-pressure-01-seq-105",
+    "sensor_id": "pressure-01",
+    "sequence_number": 105,
+    "time_s": 104.99185720521773,
+    "noiseless_reference": 977799.4223459315,
+    "dropped": false,
+    "measured_value": 977703.9928066204,
+    "measurement_error": -95.42953931109514
+  },
+  {
+    "event_id": "S1-pressure-01-seq-106",
+    "sensor_id": "pressure-01",
+    "sequence_number": 106,
+    "time_s": 105.99301931869766,
+    "noiseless_reference": 977941.5037201107,
+    "dropped": false,
+    "measured_value": 977687.9560466856,
+    "measurement_error": -253.54767342517152
+  },
+  {
+    "event_id": "S1-pressure-01-seq-107",
+    "sensor_id": "pressure-01",
+    "sequence_number": 107,
+    "time_s": 106.99992778105624,
+    "noiseless_reference": 978075.1490730274,
+    "dropped": false,
+    "measured_value": 978130.2760124673,
+    "measurement_error": 55.12693943991326
+  },
+  {
+    "event_id": "S1-pressure-01-seq-108",
+    "sensor_id": "pressure-01",
+    "sequence_number": 108,
+    "time_s": 107.99886341956474,
+    "noiseless_reference": 978199.1607342749,
+    "dropped": false,
+    "measured_value": 978230.5344976332,
+    "measurement_error": 31.373763358336873
+  },
+  {
+    "event_id": "S1-pressure-01-seq-109",
+    "sensor_id": "pressure-01",
+    "sequence_number": 109,
+    "time_s": 109.00594977499726,
+    "noiseless_reference": 978316.0979911445,
+    "dropped": false,
+    "measured_value": 978335.2515029364,
+    "measurement_error": 19.153511791839264
+  },
+  {
+    "event_id": "S1-pressure-01-seq-110",
+    "sensor_id": "pressure-01",
+    "sequence_number": 110,
+    "time_s": 109.99462122627227,
+    "noiseless_reference": 978423.507733465,
+    "dropped": false,
+    "measured_value": 978510.341584125,
+    "measurement_error": 86.83385065989569
+  },
+  {
+    "event_id": "S1-pressure-01-seq-111",
+    "sensor_id": "pressure-01",
+    "sequence_number": 111,
+    "time_s": 111.00991870386193,
+    "noiseless_reference": 978526.6837740318,
+    "dropped": false,
+    "measured_value": 978484.8936341596,
+    "measurement_error": -41.79013987223152
+  },
+  {
+    "event_id": "S1-pressure-01-seq-112",
+    "sensor_id": "pressure-01",
+    "sequence_number": 112,
+    "time_s": 111.99265117342517,
+    "noiseless_reference": 978620.1148127689,
+    "dropped": false,
+    "measured_value": 978578.8537722568,
+    "measurement_error": -41.261040512123145
+  },
+  {
+    "event_id": "S1-pressure-01-seq-113",
+    "sensor_id": "pressure-01",
+    "sequence_number": 113,
+    "time_s": 113.00406294997005,
+    "noiseless_reference": 978710.089486897,
+    "dropped": false,
+    "measured_value": 978530.9008377658,
+    "measurement_error": -179.18864913121797
+  },
+  {
+    "event_id": "S1-pressure-01-seq-114",
+    "sensor_id": "pressure-01",
+    "sequence_number": 114,
+    "time_s": 113.99067498202282,
+    "noiseless_reference": 978792.2021886307,
+    "dropped": false,
+    "measured_value": 978790.7739386999,
+    "measurement_error": -1.4282499308465049
+  },
+  {
+    "event_id": "S1-pressure-01-seq-115",
+    "sensor_id": "pressure-01",
+    "sequence_number": 115,
+    "time_s": 115.00812365097217,
+    "noiseless_reference": 978871.4103006927,
+    "dropped": false,
+    "measured_value": 978918.4630617505,
+    "measurement_error": 47.052761057857424
+  },
+  {
+    "event_id": "S1-pressure-01-seq-116",
+    "sensor_id": "pressure-01",
+    "sequence_number": 116,
+    "time_s": 116.00347568179237,
+    "noiseless_reference": 978943.8692462145,
+    "dropped": false,
+    "measured_value": 978977.8494925025,
+    "measurement_error": 33.9802462880034
+  },
+  {
+    "event_id": "S1-pressure-01-seq-117",
+    "sensor_id": "pressure-01",
+    "sequence_number": 117,
+    "time_s": 117.00544722618694,
+    "noiseless_reference": 979012.1121555767,
+    "dropped": false,
+    "measured_value": 979008.2350380531,
+    "measurement_error": -3.8771175235742703
+  },
+  {
+    "event_id": "S1-pressure-01-seq-118",
+    "sensor_id": "pressure-01",
+    "sequence_number": 118,
+    "time_s": 117.9974152523538,
+    "noiseless_reference": 979075.3290247808,
+    "dropped": false,
+    "measured_value": 979031.3222596281,
+    "measurement_error": -44.00676515267696
+  },
+  {
+    "event_id": "S1-pressure-01-seq-119",
+    "sensor_id": "pressure-01",
+    "sequence_number": 119,
+    "time_s": 119.0072756779949,
+    "noiseless_reference": 979135.5322986121,
+    "dropped": false,
+    "measured_value": 979138.458038338,
+    "measurement_error": 2.925739725935273
+  },
+  {
+    "event_id": "S1-pressure-01-seq-120",
+    "sensor_id": "pressure-01",
+    "sequence_number": 120,
+    "time_s": 120.0,
+    "noiseless_reference": 979190.8920682626,
+    "dropped": false,
+    "measured_value": 979005.0448120106,
+    "measurement_error": -185.84725625196006
+  },
+  {
+    "event_id": "S1-pressure-02-seq-0",
+    "sensor_id": "pressure-02",
+    "sequence_number": 0,
+    "time_s": 0.0010854519254463006,
+    "noiseless_reference": 800000.0001178178,
+    "dropped": false,
+    "measured_value": 799801.3113819605,
+    "measurement_error": -198.6887358572567
+  },
+  {
+    "event_id": "S1-pressure-02-seq-1",
+    "sensor_id": "pressure-02",
+    "sequence_number": 1,
+    "time_s": 3.005755225249661,
+    "noiseless_reference": 800846.0163360535,
+    "dropped": false,
+    "measured_value": 800978.4109905338,
+    "measurement_error": 132.39465448027477
+  },
+  {
+    "event_id": "S1-pressure-02-seq-2",
+    "sensor_id": "pressure-02",
+    "sequence_number": 2,
+    "time_s": 5.990265995415294,
+    "noiseless_reference": 803154.7811057668,
+    "dropped": false,
+    "measured_value": 803166.7101146978,
+    "measurement_error": 11.92900893103797
+  },
+  {
+    "event_id": "S1-pressure-02-seq-3",
+    "sensor_id": "pressure-02",
+    "sequence_number": 3,
+    "time_s": 8.997538504700323,
+    "noiseless_reference": 806693.1921626611,
+    "dropped": false,
+    "measured_value": 806893.3992462963,
+    "measurement_error": 200.2070836351486
+  },
+  {
+    "event_id": "S1-pressure-02-seq-4",
+    "sensor_id": "pressure-02",
+    "sequence_number": 4,
+    "time_s": 11.993654605000417,
+    "noiseless_reference": 811209.3225189975,
+    "dropped": false,
+    "measured_value": 811082.885575952,
+    "measurement_error": -126.43694304546807
+  },
+  {
+    "event_id": "S1-pressure-02-seq-5",
+    "sensor_id": "pressure-02",
+    "sequence_number": 5,
+    "time_s": 15.0018402808658,
+    "noiseless_reference": 816558.0648154049,
+    "dropped": false,
+    "measured_value": 816323.6051289355,
+    "measurement_error": -234.4596864694031
+  },
+  {
+    "event_id": "S1-pressure-02-seq-6",
+    "sensor_id": "pressure-02",
+    "sequence_number": 6,
+    "time_s": 17.995600598162355,
+    "noiseless_reference": 822544.5171366547,
+    "dropped": false,
+    "measured_value": 822540.1271934148,
+    "measurement_error": -4.389943239861168
+  },
+  {
+    "event_id": "S1-pressure-02-seq-7",
+    "sensor_id": "pressure-02",
+    "sequence_number": 7,
+    "time_s": 21.004471733066758,
+    "noiseless_reference": 829106.9709222352,
+    "dropped": false,
+    "measured_value": 829007.9285156758,
+    "measurement_error": -99.04240655933972
+  },
+  {
+    "event_id": "S1-pressure-02-seq-8",
+    "sensor_id": "pressure-02",
+    "sequence_number": 8,
+    "time_s": 24.008475195829167,
+    "noiseless_reference": 836105.6370095937,
+    "dropped": false,
+    "measured_value": 835850.3284368555,
+    "measurement_error": -255.30857273819856
+  },
+  {
+    "event_id": "S1-pressure-02-seq-9",
+    "sensor_id": "pressure-02",
+    "sequence_number": 9,
+    "time_s": 26.99308874052396,
+    "noiseless_reference": 843421.1442517458,
+    "dropped": false,
+    "measured_value": 843500.3752485887,
+    "measurement_error": 79.23099684296176
+  },
+  {
+    "event_id": "S1-pressure-02-seq-10",
+    "sensor_id": "pressure-02",
+    "sequence_number": 10,
+    "time_s": 29.999302255018318,
+    "noiseless_reference": 851088.2778058355,
+    "dropped": false,
+    "measured_value": 851186.1086785961,
+    "measurement_error": 97.83087276061997
+  },
+  {
+    "event_id": "S1-pressure-02-seq-11",
+    "sensor_id": "pressure-02",
+    "sequence_number": 11,
+    "time_s": 32.99268103087614,
+    "noiseless_reference": 858966.6187072574,
+    "dropped": false,
+    "measured_value": 858854.7553465936,
+    "measurement_error": -111.86336066387594
+  },
+  {
+    "event_id": "S1-pressure-02-seq-12",
+    "sensor_id": "pressure-02",
+    "sequence_number": 12,
+    "time_s": 36.00868998664034,
+    "noiseless_reference": 867106.0135294704,
+    "dropped": false,
+    "measured_value": 867090.9090316324,
+    "measurement_error": -15.10449783806689
+  },
+  {
+    "event_id": "S1-pressure-02-seq-13",
+    "sensor_id": "pressure-02",
+    "sequence_number": 13,
+    "time_s": 38.99786950126224,
+    "noiseless_reference": 875336.3942764403,
+    "dropped": false,
+    "measured_value": 875324.644864945,
+    "measurement_error": -11.74941149528604
+  },
+  {
+    "event_id": "S1-pressure-02-seq-14",
+    "sensor_id": "pressure-02",
+    "sequence_number": 14,
+    "time_s": 41.9986329076734,
+    "noiseless_reference": 883732.6009514304,
+    "dropped": false,
+    "measured_value": 883950.1803388678,
+    "measurement_error": 217.5793874374358
+  },
+  {
+    "event_id": "S1-pressure-02-seq-15",
+    "sensor_id": "pressure-02",
+    "sequence_number": 15,
+    "time_s": 45.00876565550665,
+    "noiseless_reference": 892265.4061766767,
+    "dropped": false,
+    "measured_value": 892473.0595410272,
+    "measurement_error": 207.6533643504372
+  },
+  {
+    "event_id": "S1-pressure-02-seq-16",
+    "sensor_id": "pressure-02",
+    "sequence_number": 16,
+    "time_s": 48.006855200575146,
+    "noiseless_reference": 900854.0266730273,
+    "dropped": false,
+    "measured_value": 900696.3287321182,
+    "measurement_error": -157.6979409090709
+  },
+  {
+    "event_id": "S1-pressure-02-seq-17",
+    "sensor_id": "pressure-02",
+    "sequence_number": 17,
+    "time_s": 51.00639545683395,
+    "noiseless_reference": 909520.3433432777,
+    "dropped": false,
+    "measured_value": 909354.5757451372,
+    "measurement_error": -165.7675981405191
+  },
+  {
+    "event_id": "S1-pressure-02-seq-18",
+    "sensor_id": "pressure-02",
+    "sequence_number": 18,
+    "time_s": 54.0008986143893,
+    "noiseless_reference": 918232.189695032,
+    "dropped": false,
+    "measured_value": 918131.2260751727,
+    "measurement_error": -100.96361985930707
+  },
+  {
+    "event_id": "S1-pressure-02-seq-19",
+    "sensor_id": "pressure-02",
+    "sequence_number": 19,
+    "time_s": 57.003888255473036,
+    "noiseless_reference": 927018.0885839367,
+    "dropped": false,
+    "measured_value": 927112.7481582846,
+    "measurement_error": 94.65957434789743
+  },
+  {
+    "event_id": "S1-pressure-02-seq-20",
+    "sensor_id": "pressure-02",
+    "sequence_number": 20,
+    "time_s": 59.99106030211595,
+    "noiseless_reference": 935797.87601158,
+    "dropped": false,
+    "measured_value": 935882.5883408538,
+    "measurement_error": 84.71232927381061
+  },
+  {
+    "event_id": "S1-pressure-02-seq-21",
+    "sensor_id": "pressure-02",
+    "sequence_number": 21,
+    "time_s": 62.99962465286726,
+    "noiseless_reference": 943831.0120180071,
+    "dropped": false,
+    "measured_value": 944147.1943276679,
+    "measurement_error": 316.18230966082774
+  },
+  {
+    "event_id": "S1-pressure-02-seq-22",
+    "sensor_id": "pressure-02",
+    "sequence_number": 22,
+    "time_s": 65.99313001487275,
+    "noiseless_reference": 950374.5128870032,
+    "dropped": false,
+    "measured_value": 950568.0815895816,
+    "measurement_error": 193.5687025783118
+  },
+  {
+    "event_id": "S1-pressure-02-seq-23",
+    "sensor_id": "pressure-02",
+    "sequence_number": 23,
+    "time_s": 69.0052451099251,
+    "noiseless_reference": 955764.2850653866,
+    "dropped": false,
+    "measured_value": 955683.7486294365,
+    "measurement_error": -80.5364359500818
+  },
+  {
+    "event_id": "S1-pressure-02-seq-24",
+    "sensor_id": "pressure-02",
+    "sequence_number": 24,
+    "time_s": 72.00002076777717,
+    "noiseless_reference": 960150.5627138626,
+    "dropped": false,
+    "measured_value": 960210.6015221115,
+    "measurement_error": 60.038808248820715
+  },
+  {
+    "event_id": "S1-pressure-02-seq-25",
+    "sensor_id": "pressure-02",
+    "sequence_number": 25,
+    "time_s": 74.99941745081804,
+    "noiseless_reference": 963748.0016019419,
+    "dropped": false,
+    "measured_value": 963728.3886559912,
+    "measurement_error": -19.61294595070649
+  },
+  {
+    "event_id": "S1-pressure-02-seq-26",
+    "sensor_id": "pressure-02",
+    "sequence_number": 26,
+    "time_s": 77.99915367473625,
+    "noiseless_reference": 966693.7551233174,
+    "dropped": false,
+    "measured_value": 966420.7292982731,
+    "measurement_error": -273.02582504425664
+  },
+  {
+    "event_id": "S1-pressure-02-seq-27",
+    "sensor_id": "pressure-02",
+    "sequence_number": 27,
+    "time_s": 81.00122596645812,
+    "noiseless_reference": 969107.2730759509,
+    "dropped": false,
+    "measured_value": 969068.1635603284,
+    "measurement_error": -39.10951562249102
+  },
+  {
+    "event_id": "S1-pressure-02-seq-28",
+    "sensor_id": "pressure-02",
+    "sequence_number": 28,
+    "time_s": 83.99392217762895,
+    "noiseless_reference": 971077.4459765943,
+    "dropped": false,
+    "measured_value": 971181.8150665619,
+    "measurement_error": 104.3690899675712
+  },
+  {
+    "event_id": "S1-pressure-02-seq-29",
+    "sensor_id": "pressure-02",
+    "sequence_number": 29,
+    "time_s": 86.99570934454916,
+    "noiseless_reference": 972695.7009436605,
+    "dropped": true
+  },
+  {
+    "event_id": "S1-pressure-02-seq-30",
+    "sensor_id": "pressure-02",
+    "sequence_number": 30,
+    "time_s": 89.99362070356372,
+    "noiseless_reference": 974018.9129679751,
+    "dropped": false,
+    "measured_value": 974126.0891682216,
+    "measurement_error": 107.17620024643838
+  },
+  {
+    "event_id": "S1-pressure-02-seq-31",
+    "sensor_id": "pressure-02",
+    "sequence_number": 31,
+    "time_s": 92.9986480550507,
+    "noiseless_reference": 975104.7410641711,
+    "dropped": false,
+    "measured_value": 974963.9046350704,
+    "measurement_error": -140.8364291007165
+  },
+  {
+    "event_id": "S1-pressure-02-seq-32",
+    "sensor_id": "pressure-02",
+    "sequence_number": 32,
+    "time_s": 95.99159212713582,
+    "noiseless_reference": 975990.2152250248,
+    "dropped": false,
+    "measured_value": 975905.2516471327,
+    "measurement_error": -84.96357789216563
+  },
+  {
+    "event_id": "S1-pressure-02-seq-33",
+    "sensor_id": "pressure-02",
+    "sequence_number": 33,
+    "time_s": 98.99504605915621,
+    "noiseless_reference": 976717.8217398949,
+    "dropped": false,
+    "measured_value": 976514.999467742,
+    "measurement_error": -202.82227215287276
+  },
+  {
+    "event_id": "S1-pressure-02-seq-34",
+    "sensor_id": "pressure-02",
+    "sequence_number": 34,
+    "time_s": 101.99306426599055,
+    "noiseless_reference": 977312.4246635946,
+    "dropped": false,
+    "measured_value": 977444.3610313167,
+    "measurement_error": 131.93636772211175
+  },
+  {
+    "event_id": "S1-pressure-02-seq-35",
+    "sensor_id": "pressure-02",
+    "sequence_number": 35,
+    "time_s": 104.99938179804056,
+    "noiseless_reference": 977800.5259658202,
+    "dropped": false,
+    "measured_value": 977849.1940597872,
+    "measurement_error": 48.66809396701865
+  },
+  {
+    "event_id": "S1-pressure-02-seq-36",
+    "sensor_id": "pressure-02",
+    "sequence_number": 36,
+    "time_s": 108.00252814346773,
+    "noiseless_reference": 978199.600652447,
+    "dropped": false,
+    "measured_value": 977923.6480398789,
+    "measurement_error": -275.95261256804224
+  },
+  {
+    "event_id": "S1-pressure-02-seq-37",
+    "sensor_id": "pressure-02",
+    "sequence_number": 37,
+    "time_s": 110.99381988426833,
+    "noiseless_reference": 978525.1016817146,
+    "dropped": false,
+    "measured_value": 978309.4714905807,
+    "measurement_error": -215.63019113393966
+  },
+  {
+    "event_id": "S1-pressure-02-seq-38",
+    "sensor_id": "pressure-02",
+    "sequence_number": 38,
+    "time_s": 113.99852962068135,
+    "noiseless_reference": 978792.8344774283,
+    "dropped": false,
+    "measured_value": 978808.5015019248,
+    "measurement_error": 15.667024496477097
+  },
+  {
+    "event_id": "S1-pressure-02-seq-39",
+    "sensor_id": "pressure-02",
+    "sequence_number": 39,
+    "time_s": 117.00722909906689,
+    "noiseless_reference": 979012.2295013106,
+    "dropped": false,
+    "measured_value": 979177.6421659198,
+    "measurement_error": 165.4126646091463
+  },
+  {
+    "event_id": "S1-pressure-02-seq-40",
+    "sensor_id": "pressure-02",
+    "sequence_number": 40,
+    "time_s": 119.99303614646352,
+    "noiseless_reference": 979190.5163471117,
+    "dropped": false,
+    "measured_value": 978953.9580010232,
+    "measurement_error": -236.55834608851
+  },
+  {
+    "event_id": "S1-temperature-01-seq-0",
+    "sensor_id": "temperature-01",
+    "sequence_number": 0,
+    "time_s": 0.0,
+    "noiseless_reference": 180.0,
+    "dropped": false,
+    "measured_value": 180.25196020797318,
+    "measurement_error": 0.25196020797318397
+  },
+  {
+    "event_id": "S1-temperature-01-seq-1",
+    "sensor_id": "temperature-01",
+    "sequence_number": 1,
+    "time_s": 2.0020050229925137,
+    "noiseless_reference": 180.03903144368894,
+    "dropped": false,
+    "measured_value": 179.79079769532783,
+    "measurement_error": -0.2482337483611161
+  },
+  {
+    "event_id": "S1-temperature-01-seq-2",
+    "sensor_id": "temperature-01",
+    "sequence_number": 2,
+    "time_s": 4.0047862510285865,
+    "noiseless_reference": 180.15215139574704,
+    "dropped": false,
+    "measured_value": 179.91022065006658,
+    "measurement_error": -0.24193074568046313
+  },
+  {
+    "event_id": "S1-temperature-01-seq-3",
+    "sensor_id": "temperature-01",
+    "sequence_number": 3,
+    "time_s": 6.000381368687189,
+    "noiseless_reference": 180.33288895120225,
+    "dropped": false,
+    "measured_value": 180.1592636924226,
+    "measurement_error": -0.1736252587796514
+  },
+  {
+    "event_id": "S1-temperature-01-seq-4",
+    "sensor_id": "temperature-01",
+    "sequence_number": 4,
+    "time_s": 7.9968384743873395,
+    "noiseless_reference": 180.5764301425879,
+    "dropped": false,
+    "measured_value": 180.8259611787775,
+    "measurement_error": 0.2495310361896088
+  },
+  {
+    "event_id": "S1-temperature-01-seq-5",
+    "sensor_id": "temperature-01",
+    "sequence_number": 5,
+    "time_s": 9.996533860544847,
+    "noiseless_reference": 180.87842929763428,
+    "dropped": false,
+    "measured_value": 180.51457034689437,
+    "measurement_error": -0.36385895073991037
+  },
+  {
+    "event_id": "S1-temperature-01-seq-6",
+    "sensor_id": "temperature-01",
+    "sequence_number": 6,
+    "time_s": 11.99909284947417,
+    "noiseless_reference": 181.23461949224563,
+    "dropped": false,
+    "measured_value": 181.3705372620979,
+    "measurement_error": 0.1359177698522842
+  },
+  {
+    "event_id": "S1-temperature-01-seq-7",
+    "sensor_id": "temperature-01",
+    "sequence_number": 7,
+    "time_s": 14.00956894481301,
+    "noiseless_reference": 181.64216535947153,
+    "dropped": false,
+    "measured_value": 182.06235453526318,
+    "measurement_error": 0.4201891757916485
+  },
+  {
+    "event_id": "S1-temperature-01-seq-8",
+    "sensor_id": "temperature-01",
+    "sequence_number": 8,
+    "time_s": 16.00370919658025,
+    "noiseless_reference": 182.09203205574224,
+    "dropped": false,
+    "measured_value": 182.13811857637057,
+    "measurement_error": 0.04608652062833585
+  },
+  {
+    "event_id": "S1-temperature-01-seq-9",
+    "sensor_id": "temperature-01",
+    "sequence_number": 9,
+    "time_s": 17.99316867116823,
+    "noiseless_reference": 182.58265034461743,
+    "dropped": false,
+    "measured_value": 182.8287463275906,
+    "measurement_error": 0.24609598297317348
+  },
+  {
+    "event_id": "S1-temperature-01-seq-10",
+    "sensor_id": "temperature-01",
+    "sequence_number": 10,
+    "time_s": 19.99399811053793,
+    "noiseless_reference": 183.11495967999488,
+    "dropped": false,
+    "measured_value": 183.2739979083847,
+    "measurement_error": 0.15903822838981796
+  },
+  {
+    "event_id": "S1-temperature-01-seq-11",
+    "sensor_id": "temperature-01",
+    "sequence_number": 11,
+    "time_s": 21.996672043902446,
+    "noiseless_reference": 183.6838126535715,
+    "dropped": false,
+    "measured_value": 183.68352452101155,
+    "measurement_error": -0.0002881325599446427
+  },
+  {
+    "event_id": "S1-temperature-01-seq-12",
+    "sensor_id": "temperature-01",
+    "sequence_number": 12,
+    "time_s": 24.004775827960962,
+    "noiseless_reference": 184.2876347607206,
+    "dropped": false,
+    "measured_value": 184.24112056069526,
+    "measurement_error": -0.046514200025342234
+  },
+  {
+    "event_id": "S1-temperature-01-seq-13",
+    "sensor_id": "temperature-01",
+    "sequence_number": 13,
+    "time_s": 26.00533480099313,
+    "noiseless_reference": 184.91990822037354,
+    "dropped": false,
+    "measured_value": 185.281763639966,
+    "measurement_error": 0.3618554195924446
+  },
+  {
+    "event_id": "S1-temperature-01-seq-14",
+    "sensor_id": "temperature-01",
+    "sequence_number": 14,
+    "time_s": 27.99675512698459,
+    "noiseless_reference": 185.57740439888696,
+    "dropped": false,
+    "measured_value": 185.82916751733669,
+    "measurement_error": 0.2517631184497304
+  },
+  {
+    "event_id": "S1-temperature-01-seq-15",
+    "sensor_id": "temperature-01",
+    "sequence_number": 15,
+    "time_s": 30.00313218560961,
+    "noiseless_reference": 186.2660220731669,
+    "dropped": false,
+    "measured_value": 186.37696788167463,
+    "measurement_error": 0.11094580850772218
+  },
+  {
+    "event_id": "S1-temperature-01-seq-16",
+    "sensor_id": "temperature-01",
+    "sequence_number": 16,
+    "time_s": 32.00102472488584,
+    "noiseless_reference": 186.9758361651569,
+    "dropped": false,
+    "measured_value": 186.8437555557968,
+    "measurement_error": -0.13208060936008792
+  },
+  {
+    "event_id": "S1-temperature-01-seq-17",
+    "sensor_id": "temperature-01",
+    "sequence_number": 17,
+    "time_s": 34.00621993305279,
+    "noiseless_reference": 187.71057157130846,
+    "dropped": false,
+    "measured_value": 187.7581646461997,
+    "measurement_error": 0.047593074891238984
+  },
+  {
+    "event_id": "S1-temperature-01-seq-18",
+    "sensor_id": "temperature-01",
+    "sequence_number": 18,
+    "time_s": 35.99249113757449,
+    "noiseless_reference": 188.45873221488654,
+    "dropped": false,
+    "measured_value": 188.6442902468613,
+    "measurement_error": 0.1855580319747503
+  },
+  {
+    "event_id": "S1-temperature-01-seq-19",
+    "sensor_id": "temperature-01",
+    "sequence_number": 19,
+    "time_s": 38.00305420696394,
+    "noiseless_reference": 189.23509171510156,
+    "dropped": false,
+    "measured_value": 189.2859780674508,
+    "measurement_error": 0.050886352349237995
+  },
+  {
+    "event_id": "S1-temperature-01-seq-20",
+    "sensor_id": "temperature-01",
+    "sequence_number": 20,
+    "time_s": 39.99425835464594,
+    "noiseless_reference": 190.02141532792172,
+    "dropped": false,
+    "measured_value": 190.1966220003344,
+    "measurement_error": 0.17520667241268484
+  },
+  {
+    "event_id": "S1-temperature-01-seq-21",
+    "sensor_id": "temperature-01",
+    "sequence_number": 21,
+    "time_s": 42.00084347399001,
+    "noiseless_reference": 190.83001783801296,
+    "dropped": false,
+    "measured_value": 191.13012436409238,
+    "measurement_error": 0.3001065260794178
+  },
+  {
+    "event_id": "S1-temperature-01-seq-22",
+    "sensor_id": "temperature-01",
+    "sequence_number": 22,
+    "time_s": 43.991813926789,
+    "noiseless_reference": 191.647172062411,
+    "dropped": true
+  },
+  {
+    "event_id": "S1-temperature-01-seq-23",
+    "sensor_id": "temperature-01",
+    "sequence_number": 23,
+    "time_s": 45.993782053360135,
+    "noiseless_reference": 192.48260267356554,
+    "dropped": false,
+    "measured_value": 192.55406315788778,
+    "measurement_error": 0.07146048432224461
+  },
+  {
+    "event_id": "S1-temperature-01-seq-24",
+    "sensor_id": "temperature-01",
+    "sequence_number": 24,
+    "time_s": 47.99080290495946,
+    "noiseless_reference": 193.32866278221627,
+    "dropped": false,
+    "measured_value": 193.41340573120928,
+    "measurement_error": 0.08474294899301071
+  },
+  {
+    "event_id": "S1-temperature-01-seq-25",
+    "sensor_id": "temperature-01",
+    "sequence_number": 25,
+    "time_s": 49.99973318058912,
+    "noiseless_reference": 194.19157568588886,
+    "dropped": false,
+    "measured_value": 194.33181082307078,
+    "measurement_error": 0.14023513718191793
+  },
+  {
+    "event_id": "S1-temperature-01-seq-26",
+    "sensor_id": "temperature-01",
+    "sequence_number": 26,
+    "time_s": 51.997148597768835,
+    "noiseless_reference": 195.06038007466742,
+    "dropped": false,
+    "measured_value": 194.86599312147644,
+    "measurement_error": -0.19438695319098542
+  },
+  {
+    "event_id": "S1-temperature-01-seq-27",
+    "sensor_id": "temperature-01",
+    "sequence_number": 27,
+    "time_s": 54.000408843652245,
+    "noiseless_reference": 195.94174486002285,
+    "dropped": false,
+    "measured_value": 195.81651081038825,
+    "measurement_error": -0.1252340496345994
+  },
+  {
+    "event_id": "S1-temperature-01-seq-28",
+    "sensor_id": "temperature-01",
+    "sequence_number": 28,
+    "time_s": 55.99462756964945,
+    "noiseless_reference": 196.82833109074474,
+    "dropped": false,
+    "measured_value": 196.89642831288427,
+    "measurement_error": 0.06809722213952796
+  },
+  {
+    "event_id": "S1-temperature-01-seq-29",
+    "sensor_id": "temperature-01",
+    "sequence_number": 29,
+    "time_s": 58.0012800882799,
+    "noiseless_reference": 197.7289969663722,
+    "dropped": false,
+    "measured_value": 197.51134998891874,
+    "measurement_error": -0.2176469774534553
+  },
+  {
+    "event_id": "S1-temperature-01-seq-30",
+    "sensor_id": "temperature-01",
+    "sequence_number": 30,
+    "time_s": 60.00941104228944,
+    "noiseless_reference": 198.63825225678568,
+    "dropped": false,
+    "measured_value": 198.8009400465394,
+    "measurement_error": 0.16268778975373266
+  },
+  {
+    "event_id": "S1-temperature-01-seq-31",
+    "sensor_id": "temperature-01",
+    "sequence_number": 31,
+    "time_s": 62.001640904223834,
+    "noiseless_reference": 199.50852463291898,
+    "dropped": false,
+    "measured_value": 199.50231751433486,
+    "measurement_error": -0.0062071185841148235
+  },
+  {
+    "event_id": "S1-temperature-01-seq-32",
+    "sensor_id": "temperature-01",
+    "sequence_number": 32,
+    "time_s": 64.00074407266473,
+    "noiseless_reference": 200.3148001574516,
+    "dropped": false,
+    "measured_value": 200.66268557181218,
+    "measurement_error": 0.34788541436057585
+  },
+  {
+    "event_id": "S1-temperature-01-seq-33",
+    "sensor_id": "temperature-01",
+    "sequence_number": 33,
+    "time_s": 66.00883563803326,
+    "noiseless_reference": 201.06232696614074,
+    "dropped": false,
+    "measured_value": 200.99642189372562,
+    "measurement_error": -0.06590507241512
+  },
+  {
+    "event_id": "S1-temperature-01-seq-34",
+    "sensor_id": "temperature-01",
+    "sequence_number": 34,
+    "time_s": 68.00888771152654,
+    "noiseless_reference": 201.74950510908698,
+    "dropped": false,
+    "measured_value": 201.82683765115408,
+    "measurement_error": 0.07733254206709717
+  },
+  {
+    "event_id": "S1-temperature-01-seq-35",
+    "sensor_id": "temperature-01",
+    "sequence_number": 35,
+    "time_s": 70.00183455744113,
+    "noiseless_reference": 202.38168427739433,
+    "dropped": false,
+    "measured_value": 202.41069344401612,
+    "measurement_error": 0.029009166621790428
+  },
+  {
+    "event_id": "S1-temperature-01-seq-36",
+    "sensor_id": "temperature-01",
+    "sequence_number": 36,
+    "time_s": 71.99583713536414,
+    "noiseless_reference": 202.96572092530064,
+    "dropped": false,
+    "measured_value": 203.21130996993043,
+    "measurement_error": 0.24558904462978148
+  },
+  {
+    "event_id": "S1-temperature-01-seq-37",
+    "sensor_id": "temperature-01",
+    "sequence_number": 37,
+    "time_s": 74.00582989420305,
+    "noiseless_reference": 203.50913698483663,
+    "dropped": false,
+    "measured_value": 203.49508792849574,
+    "measurement_error": -0.014049056340894595
+  },
+  {
+    "event_id": "S1-temperature-01-seq-38",
+    "sensor_id": "temperature-01",
+    "sequence_number": 38,
+    "time_s": 76.008242718062,
+    "noiseless_reference": 204.00875650906022,
+    "dropped": false,
+    "measured_value": 204.06855950650768,
+    "measurement_error": 0.05980299744746276
+  },
+  {
+    "event_id": "S1-temperature-01-seq-39",
+    "sensor_id": "temperature-01",
+    "sequence_number": 39,
+    "time_s": 77.99245546769538,
+    "noiseless_reference": 204.4658915673283,
+    "dropped": false,
+    "measured_value": 204.66440155703629,
+    "measurement_error": 0.19850998970798628
+  },
+  {
+    "event_id": "S1-temperature-01-seq-40",
+    "sensor_id": "temperature-01",
+    "sequence_number": 40,
+    "time_s": 80.00817325472707,
+    "noiseless_reference": 204.89458488546472,
+    "dropped": false,
+    "measured_value": 204.6941230234988,
+    "measurement_error": -0.20046186196591975
+  },
+  {
+    "event_id": "S1-temperature-01-seq-41",
+    "sensor_id": "temperature-01",
+    "sequence_number": 41,
+    "time_s": 82.0045657745823,
+    "noiseless_reference": 205.28642773702035,
+    "dropped": false,
+    "measured_value": 205.15413917297266,
+    "measurement_error": -0.13228856404768408
+  },
+  {
+    "event_id": "S1-temperature-01-seq-42",
+    "sensor_id": "temperature-01",
+    "sequence_number": 42,
+    "time_s": 84.00913183336978,
+    "noiseless_reference": 205.64961903054393,
+    "dropped": true
+  },
+  {
+    "event_id": "S1-temperature-01-seq-43",
+    "sensor_id": "temperature-01",
+    "sequence_number": 43,
+    "time_s": 85.9914206664016,
+    "noiseless_reference": 205.9812461495293,
+    "dropped": false,
+    "measured_value": 205.99266012945986,
+    "measurement_error": 0.011413979930551932
+  },
+  {
+    "event_id": "S1-temperature-01-seq-44",
+    "sensor_id": "temperature-01",
+    "sequence_number": 44,
+    "time_s": 88.00395060690086,
+    "noiseless_reference": 206.29208149424701,
+    "dropped": false,
+    "measured_value": 206.32470369391223,
+    "measurement_error": 0.03262219966521229
+  },
+  {
+    "event_id": "S1-temperature-01-seq-45",
+    "sensor_id": "temperature-01",
+    "sequence_number": 45,
+    "time_s": 89.99921064910879,
+    "noiseless_reference": 206.57651079002474,
+    "dropped": false,
+    "measured_value": 206.4114560572016,
+    "measurement_error": -0.16505473282313687
+  },
+  {
+    "event_id": "S1-temperature-01-seq-46",
+    "sensor_id": "temperature-01",
+    "sequence_number": 46,
+    "time_s": 91.99195163758642,
+    "noiseless_reference": 206.83880339533653,
+    "dropped": false,
+    "measured_value": 206.84007875555574,
+    "measurement_error": 0.0012753602192105973
+  },
+  {
+    "event_id": "S1-temperature-01-seq-47",
+    "sensor_id": "temperature-01",
+    "sequence_number": 47,
+    "time_s": 94.0058051167723,
+    "noiseless_reference": 207.0834643546009,
+    "dropped": false,
+    "measured_value": 207.065146237663,
+    "measurement_error": -0.018318116937905415
+  },
+  {
+    "event_id": "S1-temperature-01-seq-48",
+    "sensor_id": "temperature-01",
+    "sequence_number": 48,
+    "time_s": 96.00373482700657,
+    "noiseless_reference": 207.3074753078923,
+    "dropped": false,
+    "measured_value": 207.3243270539899,
+    "measurement_error": 0.01685174609758633
+  },
+  {
+    "event_id": "S1-temperature-01-seq-49",
+    "sensor_id": "temperature-01",
+    "sequence_number": 49,
+    "time_s": 98.00888393333095,
+    "noiseless_reference": 207.51499831789295,
+    "dropped": false,
+    "measured_value": 207.22809298936735,
+    "measurement_error": -0.2869053285255916
+  },
+  {
+    "event_id": "S1-temperature-01-seq-50",
+    "sensor_id": "temperature-01",
+    "sequence_number": 50,
+    "time_s": 100.00733983361224,
+    "noiseless_reference": 207.70591263883836,
+    "dropped": false,
+    "measured_value": 207.7103203312388,
+    "measurement_error": 0.004407692400434371
+  },
+  {
+    "event_id": "S1-temperature-01-seq-51",
+    "sensor_id": "temperature-01",
+    "sequence_number": 51,
+    "time_s": 102.00946950635134,
+    "noiseless_reference": 207.88247085032035,
+    "dropped": false,
+    "measured_value": 207.62494855181407,
+    "measurement_error": -0.25752229850627373
+  },
+  {
+    "event_id": "S1-temperature-01-seq-52",
+    "sensor_id": "temperature-01",
+    "sequence_number": 52,
+    "time_s": 103.99880928443307,
+    "noiseless_reference": 208.04444053782595,
+    "dropped": false,
+    "measured_value": 207.79534793088564,
+    "measurement_error": -0.24909260694030877
+  },
+  {
+    "event_id": "S1-temperature-01-seq-53",
+    "sensor_id": "temperature-01",
+    "sequence_number": 53,
+    "time_s": 106.00613148657271,
+    "noiseless_reference": 208.19531974089566,
+    "dropped": false,
+    "measured_value": 208.35623897873256,
+    "measurement_error": 0.16091923783690731
+  },
+  {
+    "event_id": "S1-temperature-01-seq-54",
+    "sensor_id": "temperature-01",
+    "sequence_number": 54,
+    "time_s": 107.9922053521805,
+    "noiseless_reference": 208.33314189578527,
+    "dropped": false,
+    "measured_value": 208.43574446708448,
+    "measurement_error": 0.10260257129920092
+  },
+  {
+    "event_id": "S1-temperature-01-seq-55",
+    "sensor_id": "temperature-01",
+    "sequence_number": 55,
+    "time_s": 109.99259396956154,
+    "noiseless_reference": 208.46131995539062,
+    "dropped": false,
+    "measured_value": 208.26684934453144,
+    "measurement_error": -0.1944706108591845
+  },
+  {
+    "event_id": "S1-temperature-01-seq-56",
+    "sensor_id": "temperature-01",
+    "sequence_number": 56,
+    "time_s": 112.0097795617012,
+    "noiseless_reference": 208.5805953667741,
+    "dropped": false,
+    "measured_value": 208.69635890562884,
+    "measurement_error": 0.11576353885473623
+  },
+  {
+    "event_id": "S1-temperature-01-seq-57",
+    "sensor_id": "temperature-01",
+    "sequence_number": 57,
+    "time_s": 114.00387098769669,
+    "noiseless_reference": 208.6894146699162,
+    "dropped": false,
+    "measured_value": 208.58907506984954,
+    "measurement_error": -0.1003396000666612
+  },
+  {
+    "event_id": "S1-temperature-01-seq-58",
+    "sensor_id": "temperature-01",
+    "sequence_number": 58,
+    "time_s": 115.99259005968909,
+    "noiseless_reference": 208.78963121834764,
+    "dropped": false,
+    "measured_value": 208.7063712776561,
+    "measurement_error": -0.08325994069153353
+  },
+  {
+    "event_id": "S1-temperature-01-seq-59",
+    "sensor_id": "temperature-01",
+    "sequence_number": 59,
+    "time_s": 117.99210374281829,
+    "noiseless_reference": 208.88266705759762,
+    "dropped": false,
+    "measured_value": 209.0631139392454,
+    "measurement_error": 0.18044688164778222
+  },
+  {
+    "event_id": "S1-temperature-01-seq-60",
+    "sensor_id": "temperature-01",
+    "sequence_number": 60,
+    "time_s": 120.0,
+    "noiseless_reference": 208.9688974219951,
+    "dropped": false,
+    "measured_value": 208.7534697053592,
+    "measurement_error": -0.21542771663590088
+  },
+  {
+    "event_id": "S1-vibration-01-seq-0",
+    "sensor_id": "vibration-01",
+    "sequence_number": 0,
+    "time_s": 0.004247556928552974,
+    "noiseless_reference": 0.24846042313286376,
+    "dropped": false,
+    "measured_value": 0.24802815624900587,
+    "measurement_error": -0.00043226688385789025
+  },
+  {
+    "event_id": "S1-vibration-01-seq-1",
+    "sensor_id": "vibration-01",
+    "sequence_number": 1,
+    "time_s": 1.991509319350979,
+    "noiseless_reference": 0.25685353212318873,
+    "dropped": false,
+    "measured_value": 0.25454818658382034,
+    "measurement_error": -0.0023053455393683975
+  },
+  {
+    "event_id": "S1-vibration-01-seq-2",
+    "sensor_id": "vibration-01",
+    "sequence_number": 2,
+    "time_s": 3.9948847404163237,
+    "noiseless_reference": 0.22536166580680925,
+    "dropped": false,
+    "measured_value": 0.22931146036774502,
+    "measurement_error": 0.0039497945609357765
+  },
+  {
+    "event_id": "S1-vibration-01-seq-3",
+    "sensor_id": "vibration-01",
+    "sequence_number": 3,
+    "time_s": 6.002577801584954,
+    "noiseless_reference": 0.24675939423579743,
+    "dropped": false,
+    "measured_value": 0.246254211085817,
+    "measurement_error": -0.0005051831499804371
+  },
+  {
+    "event_id": "S1-vibration-01-seq-4",
+    "sensor_id": "vibration-01",
+    "sequence_number": 4,
+    "time_s": 7.991316801466433,
+    "noiseless_reference": 0.2676539496584966,
+    "dropped": false,
+    "measured_value": 0.2709998723403743,
+    "measurement_error": 0.003345922681877722
+  },
+  {
+    "event_id": "S1-vibration-01-seq-5",
+    "sensor_id": "vibration-01",
+    "sequence_number": 5,
+    "time_s": 10.00509487959549,
+    "noiseless_reference": 0.2662734106645567,
+    "dropped": false,
+    "measured_value": 0.2630604997189468,
+    "measurement_error": -0.0032129109456098814
+  },
+  {
+    "event_id": "S1-vibration-01-seq-6",
+    "sensor_id": "vibration-01",
+    "sequence_number": 6,
+    "time_s": 12.002063145785664,
+    "noiseless_reference": 0.2686959383684193,
+    "dropped": false,
+    "measured_value": 0.27464264765480273,
+    "measurement_error": 0.0059467092863834115
+  },
+  {
+    "event_id": "S1-vibration-01-seq-7",
+    "sensor_id": "vibration-01",
+    "sequence_number": 7,
+    "time_s": 14.009121745544137,
+    "noiseless_reference": 0.2613772277405448,
+    "dropped": false,
+    "measured_value": 0.2594706707867919,
+    "measurement_error": -0.0019065569537528582
+  },
+  {
+    "event_id": "S1-vibration-01-seq-8",
+    "sensor_id": "vibration-01",
+    "sequence_number": 8,
+    "time_s": 15.992854851765797,
+    "noiseless_reference": 0.2713680236481787,
+    "dropped": false,
+    "measured_value": 0.2792538923867722,
+    "measurement_error": 0.007885868738593482
+  },
+  {
+    "event_id": "S1-vibration-01-seq-9",
+    "sensor_id": "vibration-01",
+    "sequence_number": 9,
+    "time_s": 17.994958871417793,
+    "noiseless_reference": 0.2910137330091833,
+    "dropped": false,
+    "measured_value": 0.2950500641982186,
+    "measurement_error": 0.0040363311890352915
+  },
+  {
+    "event_id": "S1-vibration-01-seq-10",
+    "sensor_id": "vibration-01",
+    "sequence_number": 10,
+    "time_s": 19.995023856857344,
+    "noiseless_reference": 0.2856528288466514,
+    "dropped": false,
+    "measured_value": 0.28652252210703977,
+    "measurement_error": 0.0008696932603883822
+  },
+  {
+    "event_id": "S1-vibration-01-seq-11",
+    "sensor_id": "vibration-01",
+    "sequence_number": 11,
+    "time_s": 21.992722691009938,
+    "noiseless_reference": 0.2720778981879943,
+    "dropped": false,
+    "measured_value": 0.2618797902692103,
+    "measurement_error": -0.010198107918784005
+  },
+  {
+    "event_id": "S1-vibration-01-seq-12",
+    "sensor_id": "vibration-01",
+    "sequence_number": 12,
+    "time_s": 24.001391372053707,
+    "noiseless_reference": 0.27048269624796506,
+    "dropped": false,
+    "measured_value": 0.2745331166700807,
+    "measurement_error": 0.004050420422115619
+  },
+  {
+    "event_id": "S1-vibration-01-seq-13",
+    "sensor_id": "vibration-01",
+    "sequence_number": 13,
+    "time_s": 26.00698887533814,
+    "noiseless_reference": 0.25757147844833506,
+    "dropped": false,
+    "measured_value": 0.25829854414484066,
+    "measurement_error": 0.0007270656965056022
+  },
+  {
+    "event_id": "S1-vibration-01-seq-14",
+    "sensor_id": "vibration-01",
+    "sequence_number": 14,
+    "time_s": 27.991025964526205,
+    "noiseless_reference": 0.2815999384512368,
+    "dropped": false,
+    "measured_value": 0.27373555047946224,
+    "measurement_error": -0.007864387971774578
+  },
+  {
+    "event_id": "S1-vibration-01-seq-15",
+    "sensor_id": "vibration-01",
+    "sequence_number": 15,
+    "time_s": 30.00192200844141,
+    "noiseless_reference": 0.299420165750765,
+    "dropped": false,
+    "measured_value": 0.29104552353141716,
+    "measurement_error": -0.008374642219347861
+  },
+  {
+    "event_id": "S1-vibration-01-seq-16",
+    "sensor_id": "vibration-01",
+    "sequence_number": 16,
+    "time_s": 32.00743204683458,
+    "noiseless_reference": 0.282677778627674,
+    "dropped": false,
+    "measured_value": 0.28474657714283563,
+    "measurement_error": 0.0020687985151616184
+  },
+  {
+    "event_id": "S1-vibration-01-seq-17",
+    "sensor_id": "vibration-01",
+    "sequence_number": 17,
+    "time_s": 33.99167464799084,
+    "noiseless_reference": 0.31146414625919355,
+    "dropped": false,
+    "measured_value": 0.31507603890199104,
+    "measurement_error": 0.0036118926427974873
+  },
+  {
+    "event_id": "S1-vibration-01-seq-18",
+    "sensor_id": "vibration-01",
+    "sequence_number": 18,
+    "time_s": 35.99251266453505,
+    "noiseless_reference": 0.286645615814924,
+    "dropped": false,
+    "measured_value": 0.2806188716234144,
+    "measurement_error": -0.006026744191509559
+  },
+  {
+    "event_id": "S1-vibration-01-seq-19",
+    "sensor_id": "vibration-01",
+    "sequence_number": 19,
+    "time_s": 38.00022403439499,
+    "noiseless_reference": 0.31104305109781366,
+    "dropped": false,
+    "measured_value": 0.30678346183246824,
+    "measurement_error": -0.00425958926534542
+  },
+  {
+    "event_id": "S1-vibration-01-seq-20",
+    "sensor_id": "vibration-01",
+    "sequence_number": 20,
+    "time_s": 40.0041365496902,
+    "noiseless_reference": 0.30600399773152165,
+    "dropped": false,
+    "measured_value": 0.3082469706691037,
+    "measurement_error": 0.0022429729375820773
+  },
+  {
+    "event_id": "S1-vibration-01-seq-21",
+    "sensor_id": "vibration-01",
+    "sequence_number": 21,
+    "time_s": 41.99314085107003,
+    "noiseless_reference": 0.3011665970928122,
+    "dropped": false,
+    "measured_value": 0.2972557545219541,
+    "measurement_error": -0.0039108425708581085
+  },
+  {
+    "event_id": "S1-vibration-01-seq-22",
+    "sensor_id": "vibration-01",
+    "sequence_number": 22,
+    "time_s": 44.00363007406734,
+    "noiseless_reference": 0.2950939487056677,
+    "dropped": false,
+    "measured_value": 0.29493302913540126,
+    "measurement_error": -0.00016091957026642678
+  },
+  {
+    "event_id": "S1-vibration-01-seq-23",
+    "sensor_id": "vibration-01",
+    "sequence_number": 23,
+    "time_s": 45.99032439204569,
+    "noiseless_reference": 0.296158773598223,
+    "dropped": false,
+    "measured_value": 0.30485874480109837,
+    "measurement_error": 0.008699971202875356
+  },
+  {
+    "event_id": "S1-vibration-01-seq-24",
+    "sensor_id": "vibration-01",
+    "sequence_number": 24,
+    "time_s": 47.99072687524292,
+    "noiseless_reference": 0.30874698646019444,
+    "dropped": false,
+    "measured_value": 0.3150540511839901,
+    "measurement_error": 0.006307064723795663
+  },
+  {
+    "event_id": "S1-vibration-01-seq-25",
+    "sensor_id": "vibration-01",
+    "sequence_number": 25,
+    "time_s": 49.997413022598515,
+    "noiseless_reference": 0.29627013656912377,
+    "dropped": false,
+    "measured_value": 0.29229568021469504,
+    "measurement_error": -0.003974456354428724
+  },
+  {
+    "event_id": "S1-vibration-01-seq-26",
+    "sensor_id": "vibration-01",
+    "sequence_number": 26,
+    "time_s": 51.992823181098856,
+    "noiseless_reference": 0.3101810090640603,
+    "dropped": false,
+    "measured_value": 0.31601062173651384,
+    "measurement_error": 0.005829612672453521
+  },
+  {
+    "event_id": "S1-vibration-01-seq-27",
+    "sensor_id": "vibration-01",
+    "sequence_number": 27,
+    "time_s": 54.00744208065221,
+    "noiseless_reference": 0.31036374416914614,
+    "dropped": false,
+    "measured_value": 0.3140194510121382,
+    "measurement_error": 0.003655706842992046
+  },
+  {
+    "event_id": "S1-vibration-01-seq-28",
+    "sensor_id": "vibration-01",
+    "sequence_number": 28,
+    "time_s": 55.99178303745129,
+    "noiseless_reference": 0.305155081458316,
+    "dropped": false,
+    "measured_value": 0.30891726022367255,
+    "measurement_error": 0.003762178765356561
+  },
+  {
+    "event_id": "S1-vibration-01-seq-29",
+    "sensor_id": "vibration-01",
+    "sequence_number": 29,
+    "time_s": 58.00414724491986,
+    "noiseless_reference": 0.3085224371456667,
+    "dropped": false,
+    "measured_value": 0.3077102889271207,
+    "measurement_error": -0.0008121482185459716
+  },
+  {
+    "event_id": "S1-vibration-01-seq-30",
+    "sensor_id": "vibration-01",
+    "sequence_number": 30,
+    "time_s": 60.00209484132564,
+    "noiseless_reference": 0.3134233126082487,
+    "dropped": false,
+    "measured_value": 0.30672142246545847,
+    "measurement_error": -0.006701890142790212
+  },
+  {
+    "event_id": "S1-vibration-01-seq-31",
+    "sensor_id": "vibration-01",
+    "sequence_number": 31,
+    "time_s": 62.0079789461479,
+    "noiseless_reference": 0.29395559077181327,
+    "dropped": false,
+    "measured_value": 0.29929261827423603,
+    "measurement_error": 0.005337027502422764
+  },
+  {
+    "event_id": "S1-vibration-01-seq-32",
+    "sensor_id": "vibration-01",
+    "sequence_number": 32,
+    "time_s": 63.991538098606235,
+    "noiseless_reference": 0.31603197154606727,
+    "dropped": false,
+    "measured_value": 0.3107428903193014,
+    "measurement_error": -0.005289081226765857
+  },
+  {
+    "event_id": "S1-vibration-01-seq-33",
+    "sensor_id": "vibration-01",
+    "sequence_number": 33,
+    "time_s": 66.00496581901388,
+    "noiseless_reference": 0.3041225230246533,
+    "dropped": false,
+    "measured_value": 0.312566177017514,
+    "measurement_error": 0.008443653992860678
+  },
+  {
+    "event_id": "S1-vibration-01-seq-34",
+    "sensor_id": "vibration-01",
+    "sequence_number": 34,
+    "time_s": 67.99869512650035,
+    "noiseless_reference": 0.2930439382891781,
+    "dropped": false,
+    "measured_value": 0.2935968540940252,
+    "measurement_error": 0.0005529158048471206
+  },
+  {
+    "event_id": "S1-vibration-01-seq-35",
+    "sensor_id": "vibration-01",
+    "sequence_number": 35,
+    "time_s": 69.99344049745817,
+    "noiseless_reference": 0.3255445782788148,
+    "dropped": false,
+    "measured_value": 0.32379939540183683,
+    "measurement_error": -0.0017451828769779465
+  },
+  {
+    "event_id": "S1-vibration-01-seq-36",
+    "sensor_id": "vibration-01",
+    "sequence_number": 36,
+    "time_s": 72.00368067897364,
+    "noiseless_reference": 0.3018474935694602,
+    "dropped": false,
+    "measured_value": 0.29525305643700406,
+    "measurement_error": -0.006594437132456166
+  },
+  {
+    "event_id": "S1-vibration-01-seq-37",
+    "sensor_id": "vibration-01",
+    "sequence_number": 37,
+    "time_s": 73.99451495170868,
+    "noiseless_reference": 0.29721596489097923,
+    "dropped": false,
+    "measured_value": 0.2983718008049039,
+    "measurement_error": 0.0011558359139246521
+  },
+  {
+    "event_id": "S1-vibration-01-seq-38",
+    "sensor_id": "vibration-01",
+    "sequence_number": 38,
+    "time_s": 76.00326697928827,
+    "noiseless_reference": 0.3122587241647796,
+    "dropped": false,
+    "measured_value": 0.31148098212572345,
+    "measurement_error": -0.0007777420390561729
+  },
+  {
+    "event_id": "S1-vibration-01-seq-39",
+    "sensor_id": "vibration-01",
+    "sequence_number": 39,
+    "time_s": 78.0089088107708,
+    "noiseless_reference": 0.30755364511485733,
+    "dropped": false,
+    "measured_value": 0.3174293247134559,
+    "measurement_error": 0.009875679598598586
+  },
+  {
+    "event_id": "S1-vibration-01-seq-40",
+    "sensor_id": "vibration-01",
+    "sequence_number": 40,
+    "time_s": 79.99891717358608,
+    "noiseless_reference": 0.30505855876631016,
+    "dropped": false,
+    "measured_value": 0.3067376364075461,
+    "measurement_error": 0.0016790776412359265
+  },
+  {
+    "event_id": "S1-vibration-01-seq-41",
+    "sensor_id": "vibration-01",
+    "sequence_number": 41,
+    "time_s": 81.99935463954873,
+    "noiseless_reference": 0.29777511880732715,
+    "dropped": false,
+    "measured_value": 0.29253822681961805,
+    "measurement_error": -0.0052368919877091025
+  },
+  {
+    "event_id": "S1-vibration-01-seq-42",
+    "sensor_id": "vibration-01",
+    "sequence_number": 42,
+    "time_s": 83.99746827199633,
+    "noiseless_reference": 0.3204970287034512,
+    "dropped": false,
+    "measured_value": 0.3154436192353716,
+    "measurement_error": -0.005053409468079584
+  },
+  {
+    "event_id": "S1-vibration-01-seq-43",
+    "sensor_id": "vibration-01",
+    "sequence_number": 43,
+    "time_s": 86.00945693856549,
+    "noiseless_reference": 0.29898018533453674,
+    "dropped": false,
+    "measured_value": 0.29682535300399976,
+    "measurement_error": -0.002154832330536982
+  },
+  {
+    "event_id": "S1-vibration-01-seq-44",
+    "sensor_id": "vibration-01",
+    "sequence_number": 44,
+    "time_s": 88.00401261154816,
+    "noiseless_reference": 0.29538463848175583,
+    "dropped": false,
+    "measured_value": 0.2952887052280832,
+    "measurement_error": -9.593325367263095e-05
+  },
+  {
+    "event_id": "S1-vibration-01-seq-45",
+    "sensor_id": "vibration-01",
+    "sequence_number": 45,
+    "time_s": 89.99587433439002,
+    "noiseless_reference": 0.30137270693629914,
+    "dropped": false,
+    "measured_value": 0.2976667517721523,
+    "measurement_error": -0.0037059551641468458
+  },
+  {
+    "event_id": "S1-vibration-01-seq-46",
+    "sensor_id": "vibration-01",
+    "sequence_number": 46,
+    "time_s": 91.9943482404385,
+    "noiseless_reference": 0.2919512624744168,
+    "dropped": false,
+    "measured_value": 0.29983991796013454,
+    "measurement_error": 0.007888655485717766
+  },
+  {
+    "event_id": "S1-vibration-01-seq-47",
+    "sensor_id": "vibration-01",
+    "sequence_number": 47,
+    "time_s": 93.99613442061269,
+    "noiseless_reference": 0.30688696790239806,
+    "dropped": false,
+    "measured_value": 0.3087657281149027,
+    "measurement_error": 0.0018787602125046599
+  },
+  {
+    "event_id": "S1-vibration-01-seq-48",
+    "sensor_id": "vibration-01",
+    "sequence_number": 48,
+    "time_s": 96.00794711029602,
+    "noiseless_reference": 0.29306575639861887,
+    "dropped": false,
+    "measured_value": 0.2977757110338025,
+    "measurement_error": 0.004709954635183644
+  },
+  {
+    "event_id": "S1-vibration-01-seq-49",
+    "sensor_id": "vibration-01",
+    "sequence_number": 49,
+    "time_s": 98.00392053168196,
+    "noiseless_reference": 0.2981354101603977,
+    "dropped": false,
+    "measured_value": 0.29575292265322445,
+    "measurement_error": -0.0023824875071732365
+  },
+  {
+    "event_id": "S1-vibration-01-seq-50",
+    "sensor_id": "vibration-01",
+    "sequence_number": 50,
+    "time_s": 100.0036342541448,
+    "noiseless_reference": 0.28636317419992297,
+    "dropped": false,
+    "measured_value": 0.288833087425025,
+    "measurement_error": 0.0024699132251020384
+  },
+  {
+    "event_id": "S1-vibration-01-seq-51",
+    "sensor_id": "vibration-01",
+    "sequence_number": 51,
+    "time_s": 101.99525083134229,
+    "noiseless_reference": 0.3035072131107236,
+    "dropped": false,
+    "measured_value": 0.3006292762177353,
+    "measurement_error": -0.00287793689298832
+  },
+  {
+    "event_id": "S1-vibration-01-seq-52",
+    "sensor_id": "vibration-01",
+    "sequence_number": 52,
+    "time_s": 103.99469465905946,
+    "noiseless_reference": 0.30733468084169513,
+    "dropped": false,
+    "measured_value": 0.30013541651078396,
+    "measurement_error": -0.00719926433091117
+  },
+  {
+    "event_id": "S1-vibration-01-seq-53",
+    "sensor_id": "vibration-01",
+    "sequence_number": 53,
+    "time_s": 106.00558656652986,
+    "noiseless_reference": 0.31201126518796285,
+    "dropped": false,
+    "measured_value": 0.3125951706107523,
+    "measurement_error": 0.0005839054227894658
+  },
+  {
+    "event_id": "S1-vibration-01-seq-54",
+    "sensor_id": "vibration-01",
+    "sequence_number": 54,
+    "time_s": 107.99339564386047,
+    "noiseless_reference": 0.3040485646512396,
+    "dropped": false,
+    "measured_value": 0.2989134044959433,
+    "measurement_error": -0.005135160155296303
+  },
+  {
+    "event_id": "S1-vibration-01-seq-55",
+    "sensor_id": "vibration-01",
+    "sequence_number": 55,
+    "time_s": 109.99785606960569,
+    "noiseless_reference": 0.3230043875691615,
+    "dropped": false,
+    "measured_value": 0.32794645740431383,
+    "measurement_error": 0.0049420698351523296
+  },
+  {
+    "event_id": "S1-vibration-01-seq-56",
+    "sensor_id": "vibration-01",
+    "sequence_number": 56,
+    "time_s": 112.00407377822434,
+    "noiseless_reference": 0.3073843804760717,
+    "dropped": false,
+    "measured_value": 0.3087201903686376,
+    "measurement_error": 0.0013358098925659312
+  },
+  {
+    "event_id": "S1-vibration-01-seq-57",
+    "sensor_id": "vibration-01",
+    "sequence_number": 57,
+    "time_s": 114.00793241220099,
+    "noiseless_reference": 0.3015740673413987,
+    "dropped": false,
+    "measured_value": 0.30588921392502405,
+    "measurement_error": 0.004315146583625362
+  },
+  {
+    "event_id": "S1-vibration-01-seq-58",
+    "sensor_id": "vibration-01",
+    "sequence_number": 58,
+    "time_s": 115.99729179716292,
+    "noiseless_reference": 0.323044992294862,
+    "dropped": false,
+    "measured_value": 0.31704482350330704,
+    "measurement_error": -0.006000168791554961
+  },
+  {
+    "event_id": "S1-vibration-01-seq-59",
+    "sensor_id": "vibration-01",
+    "sequence_number": 59,
+    "time_s": 118.00402118387176,
+    "noiseless_reference": 0.3304250217768239,
+    "dropped": false,
+    "measured_value": 0.3232929750053782,
+    "measurement_error": -0.007132046771445744
+  },
+  {
+    "event_id": "S1-vibration-01-seq-60",
+    "sensor_id": "vibration-01",
+    "sequence_number": 60,
+    "time_s": 120.0,
+    "noiseless_reference": 0.3158749322645331,
+    "dropped": false,
+    "measured_value": 0.3187528357124345,
+    "measurement_error": 0.0028779034479013976
+  },
+  {
+    "event_id": "S1-vibration-02-seq-0",
+    "sensor_id": "vibration-02",
+    "sequence_number": 0,
+    "time_s": 0.0,
+    "noiseless_reference": 0.23706580859406043,
+    "dropped": false,
+    "measured_value": 0.2344455089799696,
+    "measurement_error": -0.0026202996140908263
+  },
+  {
+    "event_id": "S1-vibration-02-seq-1",
+    "sensor_id": "vibration-02",
+    "sequence_number": 1,
+    "time_s": 5.000398028940514,
+    "noiseless_reference": 0.2609847873664405,
+    "dropped": false,
+    "measured_value": 0.2635814032036327,
+    "measurement_error": 0.0025966158371922288
+  },
+  {
+    "event_id": "S1-vibration-02-seq-2",
+    "sensor_id": "vibration-02",
+    "sequence_number": 2,
+    "time_s": 10.003138137727005,
+    "noiseless_reference": 0.24232146011652786,
+    "dropped": false,
+    "measured_value": 0.23955984520952325,
+    "measurement_error": -0.002761614907004606
+  },
+  {
+    "event_id": "S1-vibration-02-seq-3",
+    "sensor_id": "vibration-02",
+    "sequence_number": 3,
+    "time_s": 14.990420024494137,
+    "noiseless_reference": 0.2532359013246646,
+    "dropped": false,
+    "measured_value": 0.2580108076490665,
+    "measurement_error": 0.004774906324401862
+  },
+  {
+    "event_id": "S1-vibration-02-seq-4",
+    "sensor_id": "vibration-02",
+    "sequence_number": 4,
+    "time_s": 20.0024015417277,
+    "noiseless_reference": 0.2787882184234595,
+    "dropped": false,
+    "measured_value": 0.28055654414778886,
+    "measurement_error": 0.0017683257243293338
+  },
+  {
+    "event_id": "S1-vibration-02-seq-5",
+    "sensor_id": "vibration-02",
+    "sequence_number": 5,
+    "time_s": 24.99681386525351,
+    "noiseless_reference": 0.27452369727743964,
+    "dropped": false,
+    "measured_value": 0.2838419698598611,
+    "measurement_error": 0.00931827258242146
+  },
+  {
+    "event_id": "S1-vibration-02-seq-6",
+    "sensor_id": "vibration-02",
+    "sequence_number": 6,
+    "time_s": 30.00853566953416,
+    "noiseless_reference": 0.27382334087666593,
+    "dropped": false,
+    "measured_value": 0.2665521321335138,
+    "measurement_error": -0.007271208743152124
+  },
+  {
+    "event_id": "S1-vibration-02-seq-7",
+    "sensor_id": "vibration-02",
+    "sequence_number": 7,
+    "time_s": 35.008978579687025,
+    "noiseless_reference": 0.2690835756891986,
+    "dropped": false,
+    "measured_value": 0.26971238693965965,
+    "measurement_error": 0.0006288112504610477
+  },
+  {
+    "event_id": "S1-vibration-02-seq-8",
+    "sensor_id": "vibration-02",
+    "sequence_number": 8,
+    "time_s": 40.00712593469436,
+    "noiseless_reference": 0.278109962827989,
+    "dropped": false,
+    "measured_value": 0.2814863774831153,
+    "measurement_error": 0.003376414655126281
+  },
+  {
+    "event_id": "S1-vibration-02-seq-9",
+    "sensor_id": "vibration-02",
+    "sequence_number": 9,
+    "time_s": 45.006376068303624,
+    "noiseless_reference": 0.2802689609881105,
+    "dropped": false,
+    "measured_value": 0.2797676458607766,
+    "measurement_error": -0.0005013151273338678
+  },
+  {
+    "event_id": "S1-vibration-02-seq-10",
+    "sensor_id": "vibration-02",
+    "sequence_number": 10,
+    "time_s": 49.997076844754936,
+    "noiseless_reference": 0.3007440628260556,
+    "dropped": false,
+    "measured_value": 0.3034615067203688,
+    "measurement_error": 0.0027174438943132206
+  },
+  {
+    "event_id": "S1-vibration-02-seq-11",
+    "sensor_id": "vibration-02",
+    "sequence_number": 11,
+    "time_s": 55.00617336741013,
+    "noiseless_reference": 0.3146472390083274,
+    "dropped": false,
+    "measured_value": 0.3177379117382012,
+    "measurement_error": 0.003090672729873789
+  },
+  {
+    "event_id": "S1-vibration-02-seq-12",
+    "sensor_id": "vibration-02",
+    "sequence_number": 12,
+    "time_s": 59.998889388300974,
+    "noiseless_reference": 0.30053018114252955,
+    "dropped": false,
+    "measured_value": 0.3026731375681861,
+    "measurement_error": 0.002142956425656539
+  },
+  {
+    "event_id": "S1-vibration-02-seq-13",
+    "sensor_id": "vibration-02",
+    "sequence_number": 13,
+    "time_s": 64.99863901456737,
+    "noiseless_reference": 0.302145367023668,
+    "dropped": false,
+    "measured_value": 0.3081041786869888,
+    "measurement_error": 0.0059588116633207955
+  },
+  {
+    "event_id": "S1-vibration-02-seq-14",
+    "sensor_id": "vibration-02",
+    "sequence_number": 14,
+    "time_s": 70.00720861792583,
+    "noiseless_reference": 0.30253807687618145,
+    "dropped": false,
+    "measured_value": 0.306630717617098,
+    "measurement_error": 0.004092640740916531
+  },
+  {
+    "event_id": "S1-vibration-02-seq-15",
+    "sensor_id": "vibration-02",
+    "sequence_number": 15,
+    "time_s": 74.99810745755248,
+    "noiseless_reference": 0.31798763295367666,
+    "dropped": false,
+    "measured_value": 0.317446802208238,
+    "measurement_error": -0.0005408307454386474
+  },
+  {
+    "event_id": "S1-vibration-02-seq-16",
+    "sensor_id": "vibration-02",
+    "sequence_number": 16,
+    "time_s": 80.00033568977003,
+    "noiseless_reference": 0.31800834296838404,
+    "dropped": false,
+    "measured_value": 0.32244694602747576,
+    "measurement_error": 0.004438603059091717
+  },
+  {
+    "event_id": "S1-vibration-02-seq-17",
+    "sensor_id": "vibration-02",
+    "sequence_number": 17,
+    "time_s": 85.00737672390406,
+    "noiseless_reference": 0.32601001868617585,
+    "dropped": false,
+    "measured_value": 0.3310429486835067,
+    "measurement_error": 0.005032929997330848
+  },
+  {
+    "event_id": "S1-vibration-02-seq-18",
+    "sensor_id": "vibration-02",
+    "sequence_number": 18,
+    "time_s": 89.99609351110593,
+    "noiseless_reference": 0.3128127280576842,
+    "dropped": false,
+    "measured_value": 0.31628450413122033,
+    "measurement_error": 0.003471776073536159
+  },
+  {
+    "event_id": "S1-vibration-02-seq-19",
+    "sensor_id": "vibration-02",
+    "sequence_number": 19,
+    "time_s": 95.00880439371136,
+    "noiseless_reference": 0.31085951492466574,
+    "dropped": false,
+    "measured_value": 0.313893651301074,
+    "measurement_error": 0.0030341363764082585
+  },
+  {
+    "event_id": "S1-vibration-02-seq-20",
+    "sensor_id": "vibration-02",
+    "sequence_number": 20,
+    "time_s": 100.00217768752705,
+    "noiseless_reference": 0.31302145559868494,
+    "dropped": false,
+    "measured_value": 0.31380386704625446,
+    "measurement_error": 0.0007824114475695199
+  },
+  {
+    "event_id": "S1-vibration-02-seq-21",
+    "sensor_id": "vibration-02",
+    "sequence_number": 21,
+    "time_s": 105.0081539257946,
+    "noiseless_reference": 0.3158130713842323,
+    "dropped": false,
+    "measured_value": 0.3167822531725518,
+    "measurement_error": 0.0009691817883195064
+  },
+  {
+    "event_id": "S1-vibration-02-seq-22",
+    "sensor_id": "vibration-02",
+    "sequence_number": 22,
+    "time_s": 109.99478463651853,
+    "noiseless_reference": 0.32469790538329724,
+    "dropped": false,
+    "measured_value": 0.3281933468971869,
+    "measurement_error": 0.003495441513889641
+  },
+  {
+    "event_id": "S1-vibration-02-seq-23",
+    "sensor_id": "vibration-02",
+    "sequence_number": 23,
+    "time_s": 115.00964298726359,
+    "noiseless_reference": 0.2942576527081061,
+    "dropped": false,
+    "measured_value": 0.29006864964060236,
+    "measurement_error": -0.004189003067503749
+  },
+  {
+    "event_id": "S1-vibration-02-seq-24",
+    "sensor_id": "vibration-02",
+    "sequence_number": 24,
+    "time_s": 120.0,
+    "noiseless_reference": 0.30311664626655044,
+    "dropped": false,
+    "measured_value": 0.30692208309777985,
+    "measurement_error": 0.003805436831229414
+  },
+  {
+    "event_id": "S1-wall-thermometer-seq-0",
+    "sensor_id": "wall-thermometer",
+    "sequence_number": 0,
+    "time_s": 0.0,
+    "noiseless_reference": 180.0,
+    "dropped": false,
+    "measured_value": 180.05715944192025,
+    "measurement_error": 0.057159441920248355
+  },
+  {
+    "event_id": "S1-wall-thermometer-seq-1",
+    "sensor_id": "wall-thermometer",
+    "sequence_number": 1,
+    "time_s": 4.993677714324613,
+    "noiseless_reference": 180.2335617227781,
+    "dropped": false,
+    "measured_value": 180.33881879182258,
+    "measurement_error": 0.10525706904448384
+  },
+  {
+    "event_id": "S1-wall-thermometer-seq-2",
+    "sensor_id": "wall-thermometer",
+    "sequence_number": 2,
+    "time_s": 9.99906362889878,
+    "noiseless_reference": 180.87884622993212,
+    "dropped": false,
+    "measured_value": 180.88403242917747,
+    "measurement_error": 0.005186199245343914
+  },
+  {
+    "event_id": "S1-wall-thermometer-seq-3",
+    "sensor_id": "wall-thermometer",
+    "sequence_number": 3,
+    "time_s": 15.006081926488935,
+    "noiseless_reference": 181.86151770139432,
+    "dropped": false,
+    "measured_value": 181.81844716321893,
+    "measurement_error": -0.04307053817538531
+  },
+  {
+    "event_id": "S1-wall-thermometer-seq-4",
+    "sensor_id": "wall-thermometer",
+    "sequence_number": 4,
+    "time_s": 19.994129648874328,
+    "noiseless_reference": 183.11499589015307,
+    "dropped": false,
+    "measured_value": 183.04321309897847,
+    "measurement_error": -0.07178279117459851
+  },
+  {
+    "event_id": "S1-wall-thermometer-seq-5",
+    "sensor_id": "wall-thermometer",
+    "sequence_number": 5,
+    "time_s": 24.998141346875226,
+    "noiseless_reference": 184.59790558092612,
+    "dropped": false,
+    "measured_value": 184.44887398950377,
+    "measurement_error": -0.14903159142235722
+  },
+  {
+    "event_id": "S1-wall-thermometer-seq-6",
+    "sensor_id": "wall-thermometer",
+    "sequence_number": 6,
+    "time_s": 30.00267770479154,
+    "noiseless_reference": 186.26586326830125,
+    "dropped": false,
+    "measured_value": 186.40363033121162,
+    "measurement_error": 0.13776706291037044
+  },
+  {
+    "event_id": "S1-wall-thermometer-seq-7",
+    "sensor_id": "wall-thermometer",
+    "sequence_number": 7,
+    "time_s": 34.99694663398856,
+    "noiseless_reference": 188.0813118646498,
+    "dropped": false,
+    "measured_value": 188.0719944786971,
+    "measurement_error": -0.009317385952698487
+  },
+  {
+    "event_id": "S1-wall-thermometer-seq-8",
+    "sensor_id": "wall-thermometer",
+    "sequence_number": 8,
+    "time_s": 40.00817581702292,
+    "noiseless_reference": 190.02696918389125,
+    "dropped": false,
+    "measured_value": 190.31935532663732,
+    "measurement_error": 0.2923861427460679
+  },
+  {
+    "event_id": "S1-wall-thermometer-seq-9",
+    "sensor_id": "wall-thermometer",
+    "sequence_number": 9,
+    "time_s": 45.00200904547427,
+    "noiseless_reference": 192.06707458568704,
+    "dropped": false,
+    "measured_value": 191.38864966015436,
+    "measurement_error": -0.6784249255326813
+  },
+  {
+    "event_id": "S1-wall-thermometer-seq-10",
+    "sensor_id": "wall-thermometer",
+    "sequence_number": 10,
+    "time_s": 49.9978977322274,
+    "noiseless_reference": 194.19078216805494,
+    "dropped": false,
+    "measured_value": 194.04974783757345,
+    "measurement_error": -0.14103433048148872
+  },
+  {
+    "event_id": "S1-wall-thermometer-seq-11",
+    "sensor_id": "wall-thermometer",
+    "sequence_number": 11,
+    "time_s": 55.00319602143802,
+    "noiseless_reference": 196.38646043693103,
+    "dropped": false,
+    "measured_value": 196.26805261178723,
+    "measurement_error": -0.11840782514380521
+  },
+  {
+    "event_id": "S1-wall-thermometer-seq-12",
+    "sensor_id": "wall-thermometer",
+    "sequence_number": 12,
+    "time_s": 60.00871907207792,
+    "noiseless_reference": 198.63793777279386,
+    "dropped": false,
+    "measured_value": 198.62829656751123,
+    "measurement_error": -0.009641205282633791
+  },
+  {
+    "event_id": "S1-wall-thermometer-seq-13",
+    "sensor_id": "wall-thermometer",
+    "sequence_number": 13,
+    "time_s": 65.00016836880839,
+    "noiseless_reference": 200.69434798567707,
+    "dropped": false,
+    "measured_value": 200.86750417800218,
+    "measurement_error": 0.17315619232510926
+  },
+  {
+    "event_id": "S1-wall-thermometer-seq-14",
+    "sensor_id": "wall-thermometer",
+    "sequence_number": 14,
+    "time_s": 69.99818986988025,
+    "noiseless_reference": 202.3805735412086,
+    "dropped": false,
+    "measured_value": 202.14588739189452,
+    "measurement_error": -0.23468614931408638
+  },
+  {
+    "event_id": "S1-wall-thermometer-seq-15",
+    "sensor_id": "wall-thermometer",
+    "sequence_number": 15,
+    "time_s": 75.00215731254491,
+    "noiseless_reference": 203.76273115617914,
+    "dropped": false,
+    "measured_value": 203.47812694156704,
+    "measurement_error": -0.28460421461210217
+  },
+  {
+    "event_id": "S1-wall-thermometer-seq-16",
+    "sensor_id": "wall-thermometer",
+    "sequence_number": 16,
+    "time_s": 80.00677458215739,
+    "noiseless_reference": 204.89429924531134,
+    "dropped": false,
+    "measured_value": 204.48485612052312,
+    "measurement_error": -0.40944312478822553
+  },
+  {
+    "event_id": "S1-wall-thermometer-seq-17",
+    "sensor_id": "wall-thermometer",
+    "sequence_number": 17,
+    "time_s": 84.99368463907678,
+    "noiseless_reference": 205.81761646283496,
+    "dropped": false,
+    "measured_value": 205.64439019241846,
+    "measurement_error": -0.17322627041650662
+  },
+  {
+    "event_id": "S1-wall-thermometer-seq-18",
+    "sensor_id": "wall-thermometer",
+    "sequence_number": 18,
+    "time_s": 89.99795909558404,
+    "noiseless_reference": 206.57633939853517,
+    "dropped": false,
+    "measured_value": 206.83166699512742,
+    "measurement_error": 0.25532759659225235
+  },
+  {
+    "event_id": "S1-wall-thermometer-seq-19",
+    "sensor_id": "wall-thermometer",
+    "sequence_number": 19,
+    "time_s": 95.00575244454616,
+    "noiseless_reference": 207.1978174491077,
+    "dropped": false,
+    "measured_value": 207.19999115980966,
+    "measurement_error": 0.0021737107019532687
+  },
+  {
+    "event_id": "S1-wall-thermometer-seq-20",
+    "sensor_id": "wall-thermometer",
+    "sequence_number": 20,
+    "time_s": 100.00131838302907,
+    "noiseless_reference": 207.70536002294293,
+    "dropped": false,
+    "measured_value": 207.79360101289527,
+    "measurement_error": 0.08824098995233953
+  },
+  {
+    "event_id": "S1-wall-thermometer-seq-21",
+    "sensor_id": "wall-thermometer",
+    "sequence_number": 21,
+    "time_s": 105.00185149755957,
+    "noiseless_reference": 208.12134774544094,
+    "dropped": false,
+    "measured_value": 208.22449104919374,
+    "measurement_error": 0.10314330375280178
+  },
+  {
+    "event_id": "S1-wall-thermometer-seq-22",
+    "sensor_id": "wall-thermometer",
+    "sequence_number": 22,
+    "time_s": 110.0064937513025,
+    "noiseless_reference": 208.46217521028302,
+    "dropped": false,
+    "measured_value": 208.35836499110056,
+    "measurement_error": -0.10381021918246347
+  },
+  {
+    "event_id": "S1-wall-thermometer-seq-23",
+    "sensor_id": "wall-thermometer",
+    "sequence_number": 23,
+    "time_s": 115.00893640085744,
+    "noiseless_reference": 208.74105856393203,
+    "dropped": false,
+    "measured_value": 209.04534089313375,
+    "measurement_error": 0.30428232920172604
+  },
+  {
+    "event_id": "S1-wall-thermometer-seq-24",
+    "sensor_id": "wall-thermometer",
+    "sequence_number": 24,
+    "time_s": 119.99641773826691,
+    "noiseless_reference": 208.96874966423687,
+    "dropped": false,
+    "measured_value": 208.97508392485358,
+    "measurement_error": 0.006334260616711163
+  }
+]

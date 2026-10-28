@@ -1,0 +1,68 @@
+{
+  "schema_version": "1.0.0",
+  "registration_id": "reg-robust_point_to_plane-S2-lidar-01-t_60",
+  "baseline_capture_id": "S2-lidar-01-t_0",
+  "current_capture_id": "S2-lidar-01-t_60",
+  "transform_convention": "T_baseline_current",
+  "transform": {
+    "source": {
+      "kind": "sensor_local",
+      "reference_id": "lidar-01"
+    },
+    "target": {
+      "kind": "sensor_local",
+      "reference_id": "lidar-01"
+    },
+    "matrix": [
+      [
+        0.9999923649923336,
+        -0.0020005816098730817,
+        -0.0033567291016813,
+        -0.14402855918900714
+      ],
+      [
+        0.0020143990648073865,
+        0.9999894919746272,
+        0.004118025829786009,
+        0.15838901398981833
+      ],
+      [
+        0.003348455382342675,
+        -0.004124756180590467,
+        0.9999858870169134,
+        -0.0010604691121953724
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ]
+  },
+  "method": "robust_point_to_plane",
+  "algorithm_version": "v1",
+  "status": "valid",
+  "converged": true,
+  "fitness": 0.45614035087719296,
+  "inlier_rmse_m": 0.01899226641636401,
+  "correspondence_count": 598,
+  "conditioning_ratio": 0.004344292361774518,
+  "uncertainty_score_m": 0.007271891441808795,
+  "repeatability_m": 0.0010203309038697656,
+  "quality_flags": [
+    "stable_reference_fallback"
+  ],
+  "runtime_s": 0.03896599597646855,
+  "registered_artifact": {
+    "schema_version": "1.0.0",
+    "artifact_id": "registered-B3-S2-lidar-01-t_60",
+    "uri": "B3/registered_current.npz",
+    "media_type": "application/x-npz",
+    "sha256": "bb216394b831f3d5e71d57807ac01e20cbe7b4dc2767eaf83773101ca98b20c9"
+  },
+  "registered_coordinate_frame": {
+    "kind": "registered_world",
+    "reference_id": "plant-01"
+  }
+}

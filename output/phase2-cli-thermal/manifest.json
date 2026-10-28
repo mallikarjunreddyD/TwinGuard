@@ -1,0 +1,87 @@
+{
+  "schema_version": "1.0.0",
+  "manifest_id": "manifest-phase2-cli-thermal",
+  "run_id": "phase2-cli-thermal",
+  "dataset": {
+    "schema_version": "1.0.0",
+    "dataset_id": "observations-S3-d336ebedfc5a9f06",
+    "source_type": "synthetic",
+    "description": "Virtual sensor measurements from a common simulated physical plant; no physical sensor calibration or fault-detection claims",
+    "license": null,
+    "source_uri": null,
+    "real_source_ids": [],
+    "synthetic_transformations": [],
+    "artifacts": [
+      {
+        "schema_version": "1.0.0",
+        "artifact_id": "artifact-9efa6a17a97ed8495ef873eb",
+        "uri": "observations/sensor_installation.json",
+        "media_type": "application/octet-stream",
+        "sha256": "491a8310e7092a9af176f5b7d374ad6eef07c9161183dfeceb9decd987cf08b4"
+      },
+      {
+        "schema_version": "1.0.0",
+        "artifact_id": "artifact-72e4a5e01c4ed3743f5d8f7c",
+        "uri": "observations/thermal/S3-thermal-01-t_60.json",
+        "media_type": "application/octet-stream",
+        "sha256": "249e556d72ab77dd0cff5b354271b97eea06fec3d1508b38981d6eb5c6fd7fa2"
+      },
+      {
+        "schema_version": "1.0.0",
+        "artifact_id": "artifact-db519bd0a4e105fddd9a282e",
+        "uri": "observations/thermal/S3-thermal-01-t_60.npy",
+        "media_type": "application/octet-stream",
+        "sha256": "7a64ccd9bfbc0f369677784a4e247fa9e04700bdbc218f40570969fa05330be2"
+      },
+      {
+        "schema_version": "1.0.0",
+        "artifact_id": "artifact-997eb772f3611f62096a648b",
+        "uri": "observations/thermal/S3-thermal-01-t_60.npz",
+        "media_type": "application/octet-stream",
+        "sha256": "73ad84bb037f3f01b13e2f83220db8423b67a174fe30a26c90e86af539264c23"
+      }
+    ]
+  },
+  "software_version": "0.3.0",
+  "configuration_version": "v1",
+  "master_seed": 45,
+  "acquisition_namespace": "S3",
+  "observations": [
+    {
+      "schema_version": "1.0.0",
+      "observation_id": "S3-thermal-01-t_60",
+      "record_uri": "observations/thermal/S3-thermal-01-t_60.json",
+      "kind": "InspectionCapture"
+    }
+  ],
+  "artifacts": [
+    {
+      "schema_version": "1.0.0",
+      "artifact_id": "artifact-9efa6a17a97ed8495ef873eb",
+      "uri": "observations/sensor_installation.json",
+      "media_type": "application/octet-stream",
+      "sha256": "491a8310e7092a9af176f5b7d374ad6eef07c9161183dfeceb9decd987cf08b4"
+    },
+    {
+      "schema_version": "1.0.0",
+      "artifact_id": "artifact-72e4a5e01c4ed3743f5d8f7c",
+      "uri": "observations/thermal/S3-thermal-01-t_60.json",
+      "media_type": "application/octet-stream",
+      "sha256": "249e556d72ab77dd0cff5b354271b97eea06fec3d1508b38981d6eb5c6fd7fa2"
+    },
+    {
+      "schema_version": "1.0.0",
+      "artifact_id": "artifact-db519bd0a4e105fddd9a282e",
+      "uri": "observations/thermal/S3-thermal-01-t_60.npy",
+      "media_type": "application/octet-stream",
+      "sha256": "7a64ccd9bfbc0f369677784a4e247fa9e04700bdbc218f40570969fa05330be2"
+    },
+    {
+      "schema_version": "1.0.0",
+      "artifact_id": "artifact-997eb772f3611f62096a648b",
+      "uri": "observations/thermal/S3-thermal-01-t_60.npz",
+      "media_type": "application/octet-stream",
+      "sha256": "73ad84bb037f3f01b13e2f83220db8423b67a174fe30a26c90e86af539264c23"
+    }
+  ]
+}

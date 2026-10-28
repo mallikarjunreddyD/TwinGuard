@@ -1,0 +1,14 @@
+{
+  "schema_version": "1.0.0",
+  "prediction_id": "thermal",
+  "finished_at": "2026-10-27T14:51:39.720325+00:00",
+  "configuration_sha256": "3a4511119d6bd28a95a1da41c97df25d65e392ee64073c6cb5ce5cf05d271e8e",
+  "public_inputs": {
+    "capture": "e2-trial-0001-thermal-01-t_120",
+    "model": "output/phase3-cli-smoke/thermal-model"
+  },
+  "artifacts": {
+    "thermal.json": "df6a24dbba4fdae8346a8a8624dcc1198789c9477b6979449e4d3a05258e5bd7",
+    "thermal_residuals.npz": "6a63a469930af6bf4369ef0a115ec53cfde85940c1a8a0d5cba4f499a88dd70c"
+  }
+}

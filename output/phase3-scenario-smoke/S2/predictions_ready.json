@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0.0",
+  "prediction_id": "S2",
+  "finished_at": "2026-10-27T14:47:49.038199+00:00",
+  "configuration_sha256": "3a4511119d6bd28a95a1da41c97df25d65e392ee64073c6cb5ce5cf05d271e8e",
+  "public_inputs": {
+    "baseline": "datasets/synthetic/generated/phase2-final/S2/observations/lidar/S2-lidar-01-t_0.npz",
+    "current": "datasets/synthetic/generated/phase2-final/S2/observations/lidar/S2-lidar-01-t_60.npz",
+    "baseline_payload_sha256": "b2837e2610983b54536ba9ac45e5111b538cef6c44bcd24acbfb8680b3246573",
+    "current_payload_sha256": "bf2e7921f45b25a31ec646a1c0f9c770cd2d0d3b6e5f784730f80fcb729a0e79"
+  },
+  "artifacts": {
+    "B1/geometry.json": "538f4891ae0d1760db24696c8b883c627ac97a75a6b2571e75346f25998337d7",
+    "B1/patches.npz": "3abc1e19c815bba981dfa1acdf634e900ad7ad2cb24198b4c6c665f6a1447de3",
+    "B1/registered_current.npz": "7b821820e15c2ee11d8e9786e9a879071a4b60a0497aa5628e2f72f3751aa906",
+    "B1/registered_current.ply": "c6a384b72455e37f635d77edd2fcecd9c6a0bbf046a7630448825f6d55df4ce9",
+    "B1/registration.json": "63d0114f52c2d281071f084070639d308f713990d524810223dddd457fe165b8",
+    "B2/geometry.json": "db1b92434f318a2662819e662e1159eaffe28771d797007fb26f664f0a94539a",
+    "B2/patches.npz": "43efce241f4e3194be9d446860c7c608557a695444d70497c2624c268bbb5142",
+    "B2/registered_current.npz": "1c76296f2f6a9a48e4832adf3a0179166c4940070e7f0f615593ffaf50661a68",
+    "B2/registered_current.ply": "f9286475bbb4a538d1df61d3ee4c74828cf3d3fe4018ed4fde1dcbd26172b787",
+    "B2/registration.json": "57f7562e1260cb4d5ff0f867f70e4c45a06bca31cc6e0bf85b4f6c4ddade4a36",
+    "B3/geometry.json": "9281a223c1728a4f46dc1c897fd3ee6e04e30263ac1110d1941ecf44d47084e1",
+    "B3/patches.npz": "9b33e0641337e77239dfa2f9779471c7e27b096f456fcc03ad43d74a46ae9d95",
+    "B3/registered_current.npz": "bb216394b831f3d5e71d57807ac01e20cbe7b4dc2767eaf83773101ca98b20c9",
+    "B3/registered_current.ply": "ca273902f62b09f1d0489bf2fdc3a83febcb3074c5750e2ee9fbae5e13e4bde4",
+    "B3/registration.json": "9ca54c8869e89fadfc866beb91b519d94f0654cc6eb1e36c99c9751d15db9e47",
+    "accepted_reference.json": "495bf6db2325141e3e0b69230de4f46d712b2b0afe806a4374ca66dea5e2b397",
+    "calibration.json": "e7e4faf80690a9a67ad724969f92a202e8359ce87f4cb0b872ecb01093489cf1",
+    "configuration.json": "c00bd991dfde5e9f581463a23ad487111a9876890d343a0b5112cbffb7f0636f",
+    "runtime.json": "bd60f87027faf0d5548803c14fef55b76a61792dec2cdcf3d47898b17eaf8c98"
+  }
+}

@@ -1,0 +1,25 @@
+[
+  {
+    "type": "inspection_schedule",
+    "time_s": 0.0,
+    "modality": "lidar",
+    "sensor_id": "lidar-01"
+  },
+  {
+    "type": "inspection_schedule",
+    "time_s": 60.0,
+    "modality": "lidar",
+    "sensor_id": "lidar-01"
+  },
+  {
+    "type": "inspection_schedule",
+    "time_s": 60.0,
+    "modality": "thermal",
+    "sensor_id": "thermal-01"
+  },
+  {
+    "type": "fault_initiation",
+    "fault_id": "fault-S2",
+    "time_s": 30.0
+  }
+]

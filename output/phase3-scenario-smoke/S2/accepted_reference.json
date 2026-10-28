@@ -1,0 +1,148 @@
+{
+  "schema_version": "1.0.0",
+  "reference_id": "synthetic-as-built-v1",
+  "provenance": "Synthetic as-built reference generated from accepted fault-free Phase 1 baseline; fixed independently of held-out cases",
+  "assets": [
+    {
+      "schema_version": "1.0.0",
+      "asset_id": "BW-01",
+      "bounds_world_m": [
+        [
+          -0.9450000000000001,
+          -0.13,
+          0.35
+        ],
+        [
+          0.9450000000000001,
+          0.0,
+          2.75
+        ]
+      ],
+      "stable": false,
+      "plane_point_world_m": [
+        0.0,
+        0.0,
+        0.35
+      ],
+      "normal_world": [
+        0.0,
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "schema_version": "1.0.0",
+      "asset_id": "DR-01",
+      "bounds_world_m": [
+        [
+          -1.05,
+          -0.32,
+          2.73
+        ],
+        [
+          1.05,
+          0.32,
+          3.3699999999999997
+        ]
+      ],
+      "stable": false,
+      "plane_point_world_m": null,
+      "normal_world": null
+    },
+    {
+      "schema_version": "1.0.0",
+      "asset_id": "SP-01",
+      "bounds_world_m": [
+        [
+          0.9,
+          -0.065,
+          1.285
+        ],
+        [
+          1.715,
+          0.065,
+          3.1149999999999998
+        ]
+      ],
+      "stable": false,
+      "plane_point_world_m": null,
+      "normal_world": null
+    },
+    {
+      "schema_version": "1.0.0",
+      "asset_id": "SP-02",
+      "bounds_world_m": [
+        [
+          -1.715,
+          -0.065,
+          0.285
+        ],
+        [
+          -0.9,
+          0.065,
+          3.115
+        ]
+      ],
+      "stable": false,
+      "plane_point_world_m": null,
+      "normal_world": null
+    },
+    {
+      "schema_version": "1.0.0",
+      "asset_id": "SUP-01",
+      "bounds_world_m": [
+        [
+          -1.21,
+          -0.46,
+          0.0
+        ],
+        [
+          1.21,
+          -0.34,
+          3.15
+        ]
+      ],
+      "stable": false,
+      "plane_point_world_m": null,
+      "normal_world": null
+    },
+    {
+      "schema_version": "1.0.0",
+      "asset_id": "VL-01",
+      "bounds_world_m": [
+        [
+          1.4549999999999998,
+          -0.13,
+          1.9549999999999998
+        ],
+        [
+          1.845,
+          0.28,
+          2.3449999999999998
+        ]
+      ],
+      "stable": false,
+      "plane_point_world_m": null,
+      "normal_world": null
+    },
+    {
+      "schema_version": "1.0.0",
+      "asset_id": "REF-01",
+      "bounds_world_m": [
+        [
+          2.25,
+          -1.05,
+          0.0
+        ],
+        [
+          2.95,
+          -0.95,
+          2.8
+        ]
+      ],
+      "stable": true,
+      "plane_point_world_m": null,
+      "normal_world": null
+    }
+  ]
+}

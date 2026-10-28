@@ -1,0 +1,41 @@
+[
+  {
+    "schema_version": "1.0.0",
+    "fault_id": "fault-S2",
+    "asset_id": "BW-01",
+    "category": "localized_geometric_deformation",
+    "start_at": "2026-01-01T00:00:30Z",
+    "end_at": "2026-01-01T00:01:30Z",
+    "severity_parameters": {
+      "amplitude_m": 0.03
+    },
+    "affected_region_id": "surface",
+    "true_displacement_m": 0.03,
+    "true_process_deviation": null,
+    "deviation_unit": null,
+    "ground_truth_artifacts": [],
+    "center_local_m": [
+      0.0,
+      0.0,
+      1.2
+    ],
+    "extent_m": [
+      0.4,
+      0.1,
+      0.5
+    ],
+    "direction": [
+      0.0,
+      1.0,
+      0.0
+    ],
+    "displacement_vector_m": null,
+    "evolution": "linear",
+    "growth_duration_s": 30.0,
+    "persistence": "persistent",
+    "recovery_duration_s": 0.0,
+    "repair_at": null,
+    "process_variable": "pressure_pa",
+    "target_value": null
+  }
+]

@@ -1,0 +1,63 @@
+{
+  "schema_version": "1.0.0",
+  "scenario_id": "S0",
+  "version": "v2",
+  "description": "Healthy steady operation \u2014 synthetic test configuration, not calibrated safety limits",
+  "plant_model_reference": "plant-01",
+  "asset_ids": [
+    "BW-01",
+    "DR-01",
+    "SP-01",
+    "SP-02",
+    "SUP-01",
+    "VL-01",
+    "REF-01"
+  ],
+  "simulation_start": "2026-01-01T00:00:00Z",
+  "duration_s": 120.0,
+  "time_step_s": 1.0,
+  "random_seed": 42,
+  "operating_profile": [
+    {
+      "schema_version": "1.0.0",
+      "operating_mode": "steady_operation",
+      "offset_s": 0.0,
+      "normalized_load": 0.5,
+      "temperature_reference_delta_c": 0.0,
+      "displacement_reference_delta_m": 0.0
+    }
+  ],
+  "sensor_config_ids": [
+    "temperature-01",
+    "pressure-01",
+    "lidar-01",
+    "thermal-01"
+  ],
+  "inspections": [
+    {
+      "schema_version": "1.0.0",
+      "sensor_id": "lidar-01",
+      "offset_s": 0.0,
+      "modality": "lidar"
+    },
+    {
+      "schema_version": "1.0.0",
+      "sensor_id": "thermal-01",
+      "offset_s": 60.0,
+      "modality": "thermal"
+    }
+  ],
+  "fault_config_references": [],
+  "dataset": {
+    "schema_version": "1.0.0",
+    "dataset_id": "synthetic-S0",
+    "source_type": "synthetic",
+    "description": "Synthetic physical-plant simulation configuration; generated states are not sensor observations",
+    "license": null,
+    "source_uri": null,
+    "real_source_ids": [],
+    "synthetic_transformations": [],
+    "artifacts": []
+  },
+  "output_directory": "experiments/outputs/S0"
+}

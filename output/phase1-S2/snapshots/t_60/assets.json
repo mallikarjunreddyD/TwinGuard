@@ -1,0 +1,296 @@
+{
+  "schema_version": "1.0.0",
+  "snapshot_id": "t_60",
+  "timestamp": "2026-01-01T00:01:00+00:00",
+  "model_version": "v1",
+  "configuration_version": "v1",
+  "assets": [
+    {
+      "asset_id": "BW-01",
+      "coordinate_frame": {
+        "kind": "world",
+        "reference_id": "plant-01"
+      },
+      "T_world_asset": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.35
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "normal_expansion_m": 0.0,
+      "structural_translation_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "surface_temperature_min_c": 180.0,
+      "surface_temperature_max_c": 180.0
+    },
+    {
+      "asset_id": "DR-01",
+      "coordinate_frame": {
+        "kind": "world",
+        "reference_id": "plant-01"
+      },
+      "T_world_asset": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          3.05
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "normal_expansion_m": 0.0,
+      "structural_translation_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "surface_temperature_min_c": 180.0,
+      "surface_temperature_max_c": 180.0
+    },
+    {
+      "asset_id": "SP-01",
+      "coordinate_frame": {
+        "kind": "world",
+        "reference_id": "plant-01"
+      },
+      "T_world_asset": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          1.05
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          3.05
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "normal_expansion_m": 0.0,
+      "structural_translation_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "surface_temperature_min_c": 180.0,
+      "surface_temperature_max_c": 180.0
+    },
+    {
+      "asset_id": "SP-02",
+      "coordinate_frame": {
+        "kind": "world",
+        "reference_id": "plant-01"
+      },
+      "T_world_asset": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -1.05
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.35
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "normal_expansion_m": 0.0,
+      "structural_translation_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "surface_temperature_min_c": 180.0,
+      "surface_temperature_max_c": 180.0
+    },
+    {
+      "asset_id": "SUP-01",
+      "coordinate_frame": {
+        "kind": "world",
+        "reference_id": "plant-01"
+      },
+      "T_world_asset": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -0.4
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "normal_expansion_m": 0.0,
+      "structural_translation_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "surface_temperature_min_c": 25.0,
+      "surface_temperature_max_c": 25.0
+    },
+    {
+      "asset_id": "VL-01",
+      "coordinate_frame": {
+        "kind": "world",
+        "reference_id": "plant-01"
+      },
+      "T_world_asset": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          1.65
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          2.15
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "normal_expansion_m": 0.0,
+      "structural_translation_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "surface_temperature_min_c": 180.0,
+      "surface_temperature_max_c": 180.0
+    },
+    {
+      "asset_id": "REF-01",
+      "coordinate_frame": {
+        "kind": "world",
+        "reference_id": "plant-01"
+      },
+      "T_world_asset": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          2.6
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          -1.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "normal_expansion_m": 0.0,
+      "structural_translation_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "surface_temperature_min_c": 25.0,
+      "surface_temperature_max_c": 25.0
+    }
+  ]
+}

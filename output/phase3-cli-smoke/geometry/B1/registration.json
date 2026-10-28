@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.0.0",
+  "registration_id": "reg-pose_only-e1-trial-0001-lidar-01-t_60",
+  "baseline_capture_id": "e1-trial-0001-lidar-01-t_0",
+  "current_capture_id": "e1-trial-0001-lidar-01-t_60",
+  "transform_convention": "T_baseline_current",
+  "transform": {
+    "source": {
+      "kind": "sensor_local",
+      "reference_id": "lidar-01"
+    },
+    "target": {
+      "kind": "sensor_local",
+      "reference_id": "lidar-01"
+    },
+    "matrix": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        -0.1499999999999999
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.15
+      ],
+      [
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ]
+  },
+  "method": "pose_only",
+  "algorithm_version": "v1",
+  "status": "valid",
+  "converged": true,
+  "fitness": 0.6955104088286933,
+  "inlier_rmse_m": 0.021449572714359124,
+  "correspondence_count": 2773,
+  "conditioning_ratio": 0.006499433658892739,
+  "uncertainty_score_m": 0.004,
+  "repeatability_m": 0.0,
+  "quality_flags": [],
+  "runtime_s": 0.013448921003146097,
+  "registered_artifact": {
+    "schema_version": "1.0.0",
+    "artifact_id": "registered-B1-e1-trial-0001-lidar-01-t_60",
+    "uri": "B1/registered_current.npz",
+    "media_type": "application/x-npz",
+    "sha256": "56ad2ea6ae5279c80863a24122116ee9084ee3d5833f2c63faed1d95e87c598a"
+  },
+  "registered_coordinate_frame": {
+    "kind": "registered_world",
+    "reference_id": "plant-01"
+  }
+}
