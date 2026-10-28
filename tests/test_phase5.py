@@ -372,3 +372,105 @@ def test_operating_context_never_crosses_dataset_provenance(db, monkeypatch):
         assert c.execute(
             select(observations.c.metadata).where(observations.c.id == target.observation_id)
         ).scalar_one()["ingest_commit_confirmed_at"]
+
+
+def test_capture_replay_clock_preserves_relative_acquisitions():
+    from twinguard.edge.worker import mapped_capture_time
+
+    source = now() - timedelta(days=1)
+    wall = now()
+    meta = {
+        "mode": "simulation_replay",
+        "replay_rate": 5,
+        "effective_acquired_at": wall.isoformat(),
+        "replay_source_anchor_at": source.isoformat(),
+    }
+    assert mapped_capture_time(source, meta) == wall
+    assert mapped_capture_time(source - timedelta(seconds=60), meta) == wall - timedelta(seconds=12)
+    assert mapped_capture_time(source, {"mode": "live"}) == source
+
+
+def test_duplicate_representation_changes_transport_not_measurement(db):
+    observation = sample()
+    first = env(observation)
+    assert send(db, first)["status"] == "accepted"
+    duplicate = observation.model_copy(
+        update={
+            "received_at": observation.received_at + timedelta(seconds=0.01),
+            "delivery_status": "duplicate",
+        }
+    )
+    second = first.model_copy(
+        update={"message_id": "other-transport-delivery", "observation": duplicate, "sequence": 2}
+    )
+    assert send(db, second)["status"] == "duplicate"
+    with db.connect() as c:
+        assert c.execute(select(func.count()).select_from(observations)).scalar_one() == 1
+        assert c.execute(select(func.count()).select_from(jobs)).scalar_one() == 1
+
+
+def test_source_epoch_reset_and_actual_out_of_order_acquisition(db):
+    first = env().model_copy(update={"sequence": 50, "sequence_epoch": "replay-one"})
+    assert send(db, first)["status"] == "accepted"
+    second = env(sample("next-dataset")).model_copy(
+        update={"message_id": "next-epoch", "sequence": 0, "sequence_epoch": "replay-two"}
+    )
+    assert send(db, second)["status"] == "accepted"
+    from twinguard.edge.storage import list_records
+
+    with db.connect() as c:
+        audits = list_records(c, "audit")
+        assert not any(a["reason"] == "out_of_order" for a in audits)
+        assert get(c, "source_health", "test-source")["last_sequence"] == 0
+
+
+def test_explicit_failed_job_retry_is_audited_and_preserves_input(db):
+    from twinguard.edge.admin import retry_failed
+
+    send(db, env())
+    with pytest.raises(ValueError):
+        retry_failed(db, "sample-1", "cannot retry pending work")
+    with db.begin() as c:
+        original = c.execute(select(jobs.c.body)).scalar_one()
+        c.execute(
+            jobs.update().values(status="failed", attempts=3, error="missing runtime dependency")
+        )
+    retry_failed(db, "sample-1", "runtime dependency corrected")
+    assert run_one(db, "iot", "recovered")
+    with db.connect() as c:
+        assert c.execute(select(jobs.c.body)).scalar_one() == original
+        assert c.execute(select(jobs.c.status)).scalar_one() == "completed"
+
+
+def test_qualified_critical_reading_preempts_ordinary_backlog(db):
+    regular = env(sample("ordinary", 900000.0)).model_copy(
+        update={"message_id": "ordinary-message"}
+    )
+    critical = env(sample("urgent", 1300000.0)).model_copy(
+        update={"message_id": "urgent-message", "sequence": 2}
+    )
+    assert send(db, regular)["status"] == "accepted"
+    assert send(db, critical)["status"] == "accepted"
+    assert claim(db, "iot", "prioritized")["id"] == "urgent"
+    assert claim(db, "iot", "ordinary")["id"] == "ordinary"
+
+
+@pytest.mark.parametrize("trust", ["unknown-clock", "unknown-calibration"])
+def test_unqualified_reading_cannot_gain_critical_priority(db, trust):
+    with db.begin() as c:
+        source = get(c, "source", "test-source")
+        source["clock_quality" if trust == "unknown-clock" else "calibration_status"] = "unknown"
+        put(c, "source", "test-source", source)
+    assert send(db, env())["status"] == "accepted"
+    with db.connect() as c:
+        assert c.execute(select(jobs.c.body)).scalar_one()["priority"] == 10
+
+
+def test_exhausted_crash_lease_is_quarantined(db):
+    send(db, env())
+    claim(db, "iot", "crashed", lease_s=-1)
+    with db.begin() as c:
+        c.execute(jobs.update().values(attempts=3))
+    assert claim(db, "iot", "retry") is None
+    with db.connect() as c:
+        assert c.execute(select(jobs.c.status)).scalar_one() == "failed"

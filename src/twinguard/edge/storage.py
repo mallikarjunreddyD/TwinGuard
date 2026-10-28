@@ -13,6 +13,7 @@ from sqlalchemy import (
     Text,
     Integer,
     JSON,
+    func,
     Float,
     select,
     and_,
@@ -141,6 +142,18 @@ def enqueue(c, ident, kind, body):
 
 def claim(db, kind, owner, lease_s=120, retry_limit=3):
     with db.begin() as c:
+        exhausted = c.execute(
+            jobs.update()
+            .where(
+                jobs.c.kind == kind,
+                jobs.c.status == "processing",
+                jobs.c.attempts >= retry_limit,
+                jobs.c.lease_until < now().isoformat(),
+            )
+            .values(status="failed", error="Lease expired after retry limit")
+        )
+        if exhausted.rowcount:
+            audit(c, "job_lease_exhausted", kind=kind, count=exhausted.rowcount)
         q = (
             select(jobs)
             .where(
@@ -151,7 +164,7 @@ def claim(db, kind, owner, lease_s=120, retry_limit=3):
                     | ((jobs.c.status == "processing") & (jobs.c.lease_until < now().isoformat()))
                 ),
             )
-            .order_by(jobs.c.created)
+            .order_by(func.coalesce(jobs.c.body["priority"].as_integer(), 10), jobs.c.created)
             .limit(1)
         )
         if c.dialect.name == "postgresql":

@@ -15,6 +15,41 @@ def topic(source, site="plant-01", kind="observation"):
     return f"twinguard/v1/{site}/{channel}/{source}/{suffix}"
 
 
+def scheduling_priority(observation, registration, effective, received):
+    if (
+        observation.measurement_type not in ["pressure", "temperature"]
+        or registration.clock_quality != "synchronized"
+    ):
+        return 10
+    from .worker import policy
+    from twinguard.fusion.adapters import engineering_limit
+    from twinguard.fusion.models import ProcessingRecord
+
+    p = policy()
+    accepted = (
+        ["verified", "assumed_simulation"]
+        if p.deployment_mode == "illustrative_simulation"
+        else ["verified"]
+    )
+    if registration.calibration_status not in accepted:
+        return 10
+    effective_observation = observation.model_copy(
+        update={"acquired_at": effective, "received_at": received, "processed_at": None}
+    )
+    done = now()
+    record = ProcessingRecord(
+        source_id=observation.observation_id,
+        received_at=received,
+        processed_at=done,
+        available_at=done,
+        basis="recorded",
+        clock_quality=registration.clock_quality,
+        rationale="Scheduling hint only, evaluated by the existing engineering-limit adapter. Worker/F1 independently requalify the observation.",
+    )
+    evidence = engineering_limit(effective_observation, record, p)
+    return 0 if evidence and evidence.authoritative_limit and evidence.finding == "positive" else 10
+
+
 def ingest(db, raw, authenticated_identity, received_topic, artifact_store=None):
     received = now()
     digest = hashlib.sha256(raw).hexdigest()
@@ -135,6 +170,7 @@ def ingest(db, raw, authenticated_identity, received_topic, artifact_store=None)
                 health["last_acquired_by_sensor"][obs.sensor_id] = max(
                     effective.isoformat(), prior_acquired or effective.isoformat()
                 )
+                priority = scheduling_priority(obs, reg, effective, received)
                 meta = {
                     "authenticated_identity": authenticated_identity,
                     "claimed_source": env.source_id,
@@ -146,6 +182,7 @@ def ingest(db, raw, authenticated_identity, received_topic, artifact_store=None)
                     "mode": env.mode,
                     "replay_rate": env.replay_rate,
                     "message_id": env.message_id,
+                    "scheduling_priority": priority,
                     "calibration_status": reg.calibration_status,
                     "calibration_reference": reg.calibration_reference,
                     "publisher_emitted_at": env.emitted_at.isoformat(),
@@ -162,7 +199,12 @@ def ingest(db, raw, authenticated_identity, received_topic, artifact_store=None)
                         metadata=meta,
                     )
                 )
-                enqueue(c, obs.observation_id, "iot", {"observation_id": obs.observation_id})
+                enqueue(
+                    c,
+                    obs.observation_id,
+                    "iot",
+                    {"observation_id": obs.observation_id, "priority": priority},
+                )
                 health.update(
                     last_received=received.isoformat(),
                     last_valid=received.isoformat()
