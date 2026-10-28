@@ -117,8 +117,10 @@ async def opc_server(bundle, endpoint):
     async with server:
         while True:
             for record in samples:
-                value = ua.DataValue(ua.Variant(float(record.value), ua.VariantType.Double))
-                value.SourceTimestamp = record.acquired_at
+                value = ua.DataValue(
+                    ua.Variant(float(record.value), ua.VariantType.Double),
+                    SourceTimestamp=record.acquired_at,
+                )
                 await nodes[record.sensor_id].write_value(value)
                 await record_nodes[record.sensor_id].write_value(record.model_dump_json())
                 await asyncio.sleep(0.03)

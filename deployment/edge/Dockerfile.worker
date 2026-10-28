@@ -3,6 +3,7 @@ FROM python:3.12-slim
 WORKDIR /app
 COPY requirements-edge.lock requirements-analytics.lock ./
 RUN pip install --no-cache-dir -r requirements-edge.lock -r requirements-analytics.lock
+RUN apt-get update && apt-get install -y --no-install-recommends libx11-6 libgl1 libglib2.0-0 libgomp1 libxext6 libxrender1 libsm6 && rm -rf /var/lib/apt/lists/*
 COPY src/twinguard/__init__.py src/twinguard/__init__.py
 COPY src/twinguard/core src/twinguard/core
 RUN rm -f src/twinguard/core/config.py src/twinguard/core/registry.py

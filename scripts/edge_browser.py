@@ -46,6 +46,25 @@ def run(output, url="http://localhost:18780"):
         page.screenshot(path=str(output / "E4_measurements.png"), full_page=True)
         page.get_by_role("button", name="Inspections", exact=True).click()
         page.wait_for_timeout(500)
+        select = page.get_by_label("Inspection", exact=True)
+        if select.count():
+            choices = select.locator("option").evaluate_all("(options)=>options.map(o=>o.value)")
+            geometry = next((v for v in choices if "8240" in v), "")
+            if geometry:
+                select.select_option(geometry)
+                page.wait_for_timeout(200)
+                page.screenshot(path=str(output / "E4_lidar_measurements.png"), full_page=True)
+                page.get_by_role("button", name="Overview", exact=True).click()
+                page.wait_for_selector('[data-model-loaded="true"]', timeout=30000)
+                page.wait_for_timeout(500)
+                page.screenshot(path=str(output / "E4_lidar_overlay.png"), full_page=True)
+                result["checks"]["inspection_selection"] = True
+                page.get_by_role("button", name="Inspections", exact=True).click()
+                select = page.get_by_label("Inspection", exact=True)
+            thermal = next((v for v in choices if "8241" in v), "")
+            if thermal:
+                select.select_option(thermal)
+                page.wait_for_timeout(300)
         result["checks"]["thermal_image"] = (
             page.locator('[data-testid="thermal-image"]').count() > 0
         )
