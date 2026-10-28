@@ -3,7 +3,7 @@ requires = ["setuptools>=68"]
 build-backend = "setuptools.build_meta"
 [project]
 name = "twinguard"
-version = "0.4.1"
+version = "0.5.0"
 requires-python = ">=3.11"
 dependencies = ["pydantic>=2.7,<3", "numpy>=1.26,<3", "PyYAML>=6,<7", "fastapi>=0.115,<1", "uvicorn>=0.30,<1", "trimesh>=4.5,<5"]
 [project.optional-dependencies]

@@ -1,0 +1,90 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0",
+      "default": "1.0.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "sensor_id": {
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Sensor Id",
+      "type": "string"
+    },
+    "asset_id": {
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Asset Id",
+      "type": "string"
+    },
+    "measurement_type": {
+      "title": "Measurement Type",
+      "type": "string"
+    },
+    "unit": {
+      "title": "Unit",
+      "type": "string"
+    },
+    "calibration_status": {
+      "enum": [
+        "verified",
+        "assumed_simulation",
+        "unknown",
+        "expired"
+      ],
+      "title": "Calibration Status",
+      "type": "string"
+    },
+    "measurement_min": {
+      "title": "Measurement Min",
+      "type": "number"
+    },
+    "measurement_max": {
+      "title": "Measurement Max",
+      "type": "number"
+    },
+    "critical_limit": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Critical Limit"
+    },
+    "hysteresis": {
+      "default": 0,
+      "minimum": 0,
+      "title": "Hysteresis",
+      "type": "number"
+    },
+    "engineering_basis": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Engineering Basis"
+    }
+  },
+  "required": [
+    "sensor_id",
+    "asset_id",
+    "measurement_type",
+    "unit",
+    "calibration_status",
+    "measurement_min",
+    "measurement_max"
+  ],
+  "title": "SensorAuthority",
+  "type": "object"
+}

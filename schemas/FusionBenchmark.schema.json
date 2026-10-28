@@ -1,0 +1,122 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0",
+      "default": "1.0.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "experiment_id": {
+      "const": "E3",
+      "title": "Experiment Id",
+      "type": "string"
+    },
+    "version": {
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Version",
+      "type": "string"
+    },
+    "policy": {
+      "title": "Policy",
+      "type": "string"
+    },
+    "controlled_seeds": {
+      "items": {
+        "minimum": 0,
+        "type": "integer"
+      },
+      "minItems": 1,
+      "title": "Controlled Seeds",
+      "type": "array"
+    },
+    "end_to_end_seeds": {
+      "items": {
+        "minimum": 0,
+        "type": "integer"
+      },
+      "minItems": 1,
+      "title": "End To End Seeds",
+      "type": "array"
+    },
+    "development_controlled_seeds": {
+      "items": {
+        "minimum": 0,
+        "type": "integer"
+      },
+      "minItems": 1,
+      "title": "Development Controlled Seeds",
+      "type": "array"
+    },
+    "development_end_to_end_seeds": {
+      "items": {
+        "minimum": 0,
+        "type": "integer"
+      },
+      "minItems": 1,
+      "title": "Development End To End Seeds",
+      "type": "array"
+    },
+    "operating_model": {
+      "title": "Operating Model",
+      "type": "string"
+    },
+    "thermal_model_directory": {
+      "title": "Thermal Model Directory",
+      "type": "string"
+    },
+    "geometric_calibration": {
+      "title": "Geometric Calibration",
+      "type": "string"
+    },
+    "original_geometry_calibration": {
+      "title": "Original Geometry Calibration",
+      "type": "string"
+    },
+    "historical_geometry": {
+      "title": "Historical Geometry",
+      "type": "string"
+    },
+    "assessment_step_s": {
+      "default": 5,
+      "maximum": 125,
+      "minimum": 1,
+      "title": "Assessment Step S",
+      "type": "integer"
+    },
+    "workers": {
+      "default": 3,
+      "maximum": 4,
+      "minimum": 1,
+      "title": "Workers",
+      "type": "integer"
+    },
+    "event_matching": {
+      "title": "Event Matching",
+      "type": "string"
+    },
+    "availability_assumptions": {
+      "title": "Availability Assumptions",
+      "type": "string"
+    }
+  },
+  "required": [
+    "experiment_id",
+    "version",
+    "policy",
+    "controlled_seeds",
+    "end_to_end_seeds",
+    "development_controlled_seeds",
+    "development_end_to_end_seeds",
+    "operating_model",
+    "thermal_model_directory",
+    "geometric_calibration",
+    "original_geometry_calibration",
+    "historical_geometry",
+    "event_matching",
+    "availability_assumptions"
+  ],
+  "title": "FusionBenchmark",
+  "type": "object"
+}

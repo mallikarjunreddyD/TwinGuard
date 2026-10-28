@@ -161,3 +161,36 @@ class ExperimentBenchmark(Contract):
         if set(self.calibration_seeds) & set(self.evaluation_seeds):
             raise ValueError("Calibration/evaluation seeds must be disjoint")
         return self
+
+
+class FusionBenchmark(Contract):
+    experiment_id: Literal["E3"]
+    version: ID
+    policy: str
+    controlled_seeds: list[Annotated[int, Field(ge=0)]] = Field(min_length=1)
+    end_to_end_seeds: list[Annotated[int, Field(ge=0)]] = Field(min_length=1)
+    development_controlled_seeds: list[Annotated[int, Field(ge=0)]] = Field(min_length=1)
+    development_end_to_end_seeds: list[Annotated[int, Field(ge=0)]] = Field(min_length=1)
+    operating_model: str
+    thermal_model_directory: str
+    geometric_calibration: str
+    original_geometry_calibration: str
+    historical_geometry: str
+    assessment_step_s: int = Field(default=5, ge=1, le=125)
+    workers: int = Field(default=3, ge=1, le=4)
+    event_matching: str
+    availability_assumptions: str
+
+    @model_validator(mode="after")
+    def disjoint(self):
+        partitions = [
+            self.controlled_seeds,
+            self.end_to_end_seeds,
+            self.development_controlled_seeds,
+            self.development_end_to_end_seeds,
+        ]
+        if any(len(v) != len(set(v)) for v in partitions) or any(
+            set(a) & set(b) for i, a in enumerate(partitions) for b in partitions[i + 1 :]
+        ):
+            raise ValueError("Fusion development/evaluation seeds must be unique and disjoint")
+        return self

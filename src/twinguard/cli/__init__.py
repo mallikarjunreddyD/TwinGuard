@@ -46,11 +46,18 @@ def main(argv=None):
     from twinguard.analytics.cli import add_commands as add_analytics
     from twinguard.evaluation.cli import add_commands as add_experiments
 
+    from twinguard.fusion.cli import add_commands as add_fusion
+
+    add_fusion(sub)
     add_analytics(sub)
     add_experiments(sub)
     args = parser.parse_args(argv)
     try:
-        if args.command == "analytics":
+        if args.command == "fusion":
+            from twinguard.fusion.cli import execute
+
+            execute(args)
+        elif args.command == "analytics":
             from twinguard.analytics.cli import execute
 
             execute(args)

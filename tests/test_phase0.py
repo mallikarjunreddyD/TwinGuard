@@ -274,7 +274,7 @@ def test_experiments():
         assert ExperimentDefinition.model_validate(
             yaml.safe_load(path.read_text())
         ).implementation_status == (
-            "implemented" if path.stem in ("E1", "E2") else "not_implemented"
+            "implemented" if path.stem in ("E1", "E2", "E3") else "not_implemented"
         )
     assert artifact_path("E1", "run-01", "cloud") == "experiments/outputs/E1/run-01/cloud"
     with pytest.raises(ValidationError):
@@ -287,8 +287,8 @@ def test_api():
     assert client.get("/version").json()["schema_version"] == SCHEMA_VERSION
     capability = client.get("/capabilities").json()
     assert "registration" in capability["implemented"]
-    assert "evidence_fusion" in capability["pending"]
-    assert "evidence_fusion" not in capability["implemented"]
+    assert "inspection_planning" in capability["pending"]
+    assert "evidence_fusion" in capability["implemented"]
     assert client.post("/analyze").status_code == 404
 
 

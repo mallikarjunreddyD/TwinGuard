@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0.0",
+  "calibration_id": "geometry-1f03fe08354c14a2",
+  "training_datasets": [
+    "observations-calibration-50-18726f2f386307b3",
+    "observations-calibration-51-b0826201f6e90c1a",
+    "observations-calibration-52-084a76dae2163032",
+    "observations-calibration-53-510f3427b23a719e",
+    "observations-calibration-54-aaea9f711fdf483c"
+  ],
+  "valid_patch_samples": 1136,
+  "uncertainty_floor_m": 0.009324846118599413,
+  "threshold_m": 0.005,
+  "status": "empirical_healthy_controls",
+  "interpretation": "estimated variability score; correlated patches are not independent trials; no 95 percent interval claim"
+}

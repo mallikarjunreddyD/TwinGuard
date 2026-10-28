@@ -1,0 +1,499 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0",
+      "default": "1.0.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "evidence_id": {
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Evidence Id",
+      "type": "string"
+    },
+    "source_id": {
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Source Id",
+      "type": "string"
+    },
+    "modality": {
+      "enum": [
+        "fixed_sensor",
+        "geometric",
+        "thermal"
+      ],
+      "title": "Modality",
+      "type": "string"
+    },
+    "algorithm": {
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Algorithm",
+      "type": "string"
+    },
+    "algorithm_version": {
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Algorithm Version",
+      "type": "string"
+    },
+    "provenance_id": {
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Provenance Id",
+      "type": "string"
+    },
+    "asset_id": {
+      "anyOf": [
+        {
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Asset Id"
+    },
+    "sensor_id": {
+      "anyOf": [
+        {
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Sensor Id"
+    },
+    "capture_ids": {
+      "items": {
+        "minLength": 1,
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+        "type": "string"
+      },
+      "title": "Capture Ids",
+      "type": "array"
+    },
+    "model_id": {
+      "anyOf": [
+        {
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Model Id"
+    },
+    "acquired_at": {
+      "format": "date-time",
+      "title": "Acquired At",
+      "type": "string"
+    },
+    "received_at": {
+      "format": "date-time",
+      "title": "Received At",
+      "type": "string"
+    },
+    "available_at": {
+      "format": "date-time",
+      "title": "Available At",
+      "type": "string"
+    },
+    "processed_at": {
+      "format": "date-time",
+      "title": "Processed At",
+      "type": "string"
+    },
+    "availability_basis": {
+      "enum": [
+        "recorded",
+        "simulated_replay"
+      ],
+      "title": "Availability Basis",
+      "type": "string"
+    },
+    "clock_quality": {
+      "enum": [
+        "synchronized",
+        "uncertain",
+        "unknown"
+      ],
+      "title": "Clock Quality",
+      "type": "string"
+    },
+    "clock_uncertainty_s": {
+      "default": 0,
+      "minimum": 0,
+      "title": "Clock Uncertainty S",
+      "type": "number"
+    },
+    "hypothesis": {
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Hypothesis",
+      "type": "string"
+    },
+    "finding": {
+      "enum": [
+        "positive",
+        "negative",
+        "inconclusive",
+        "invalid",
+        "unavailable"
+      ],
+      "title": "Finding",
+      "type": "string"
+    },
+    "value": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Value"
+    },
+    "observed_value": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Observed Value"
+    },
+    "estimated_reference": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Estimated Reference"
+    },
+    "residual": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Residual"
+    },
+    "unit": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Unit"
+    },
+    "uncertainty_score": {
+      "anyOf": [
+        {
+          "minimum": 0,
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Uncertainty Score"
+    },
+    "scope": {
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Scope",
+      "type": "string"
+    },
+    "measurement_basis": {
+      "title": "Measurement Basis",
+      "type": "string"
+    },
+    "qualification_status": {
+      "title": "Qualification Status",
+      "type": "string"
+    },
+    "association": {
+      "enum": [
+        "associated",
+        "image_only",
+        "ambiguous",
+        "unknown"
+      ],
+      "title": "Association",
+      "type": "string"
+    },
+    "region_id": {
+      "anyOf": [
+        {
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Region Id"
+    },
+    "bounds_world_m": {
+      "anyOf": [
+        {
+          "maxItems": 2,
+          "minItems": 2,
+          "prefixItems": [
+            {
+              "maxItems": 3,
+              "minItems": 3,
+              "prefixItems": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                }
+              ],
+              "type": "array"
+            },
+            {
+              "maxItems": 3,
+              "minItems": 3,
+              "prefixItems": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                }
+              ],
+              "type": "array"
+            }
+          ],
+          "type": "array"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Bounds World M"
+    },
+    "image_bounds": {
+      "anyOf": [
+        {
+          "maxItems": 4,
+          "minItems": 4,
+          "prefixItems": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "integer"
+            },
+            {
+              "type": "integer"
+            },
+            {
+              "type": "integer"
+            }
+          ],
+          "type": "array"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Image Bounds"
+    },
+    "spatial_reference": {
+      "anyOf": [
+        {
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Spatial Reference"
+    },
+    "region_comparison_possible": {
+      "default": false,
+      "title": "Region Comparison Possible",
+      "type": "boolean"
+    },
+    "spatial_uncertainty_m": {
+      "default": 0,
+      "minimum": 0,
+      "title": "Spatial Uncertainty M",
+      "type": "number"
+    },
+    "origin_identity": {
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Origin Identity",
+      "type": "string"
+    },
+    "dependence_group": {
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Dependence Group",
+      "type": "string"
+    },
+    "derived_from": {
+      "items": {
+        "minLength": 1,
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+        "type": "string"
+      },
+      "title": "Derived From",
+      "type": "array"
+    },
+    "shared_references": {
+      "items": {
+        "minLength": 1,
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+        "type": "string"
+      },
+      "title": "Shared References",
+      "type": "array"
+    },
+    "quality": {
+      "enum": [
+        "good",
+        "degraded",
+        "unknown",
+        "invalid"
+      ],
+      "title": "Quality",
+      "type": "string"
+    },
+    "calibration_valid": {
+      "default": false,
+      "title": "Calibration Valid",
+      "type": "boolean"
+    },
+    "registration_valid": {
+      "anyOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Registration Valid"
+    },
+    "coverage_status": {
+      "title": "Coverage Status",
+      "type": "string"
+    },
+    "quality_indicators": {
+      "additionalProperties": {
+        "anyOf": [
+          {
+            "type": "number"
+          },
+          {
+            "type": "string"
+          },
+          {
+            "type": "boolean"
+          }
+        ]
+      },
+      "title": "Quality Indicators",
+      "type": "object"
+    },
+    "reasons": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Reasons",
+      "type": "array"
+    },
+    "reinspection_candidate": {
+      "default": false,
+      "title": "Reinspection Candidate",
+      "type": "boolean"
+    },
+    "authoritative_limit": {
+      "default": false,
+      "title": "Authoritative Limit",
+      "type": "boolean"
+    },
+    "recovery_eligible": {
+      "default": true,
+      "title": "Recovery Eligible",
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "evidence_id",
+    "source_id",
+    "modality",
+    "algorithm",
+    "algorithm_version",
+    "provenance_id",
+    "asset_id",
+    "acquired_at",
+    "received_at",
+    "available_at",
+    "processed_at",
+    "availability_basis",
+    "clock_quality",
+    "hypothesis",
+    "finding",
+    "scope",
+    "measurement_basis",
+    "qualification_status",
+    "association",
+    "origin_identity",
+    "dependence_group",
+    "quality",
+    "coverage_status"
+  ],
+  "title": "FusionEvidence",
+  "type": "object"
+}

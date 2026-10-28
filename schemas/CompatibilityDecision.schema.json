@@ -1,0 +1,55 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0",
+      "default": "1.0.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "evidence_ids": {
+      "items": {
+        "minLength": 1,
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+        "type": "string"
+      },
+      "title": "Evidence Ids",
+      "type": "array"
+    },
+    "dimension": {
+      "enum": [
+        "spatial",
+        "temporal",
+        "dependence"
+      ],
+      "title": "Dimension",
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "compatible",
+        "partially_compatible",
+        "incompatible",
+        "unknown",
+        "dependent",
+        "independent",
+        "duplicate",
+        "superseded"
+      ],
+      "title": "Status",
+      "type": "string"
+    },
+    "reason": {
+      "title": "Reason",
+      "type": "string"
+    }
+  },
+  "required": [
+    "evidence_ids",
+    "dimension",
+    "status",
+    "reason"
+  ],
+  "title": "CompatibilityDecision",
+  "type": "object"
+}

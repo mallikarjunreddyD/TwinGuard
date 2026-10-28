@@ -1,0 +1,188 @@
+[
+  {
+    "schema_version": "1.0.0",
+    "sensor_id": "temperature-01",
+    "asset_id": "BW-01",
+    "source_type": "synthetic",
+    "configuration_version": "v1",
+    "description": "Known fixed installation metadata; no noiseless measurements",
+    "modality": "iot",
+    "coordinate_frame": null,
+    "pose": null,
+    "acquisition_parameters": {},
+    "calibration_reference": "assumed-v1",
+    "noise_model_reference": null,
+    "measurement_configuration": {
+      "measurement_source": "process_temperature",
+      "sampling_interval_s": 2.0,
+      "unit": "degC",
+      "measurement_std": 0.0
+    }
+  },
+  {
+    "schema_version": "1.0.0",
+    "sensor_id": "pressure-01",
+    "asset_id": "BW-01",
+    "source_type": "synthetic",
+    "configuration_version": "v1",
+    "description": "Known fixed installation metadata; no noiseless measurements",
+    "modality": "iot",
+    "coordinate_frame": null,
+    "pose": null,
+    "acquisition_parameters": {},
+    "calibration_reference": "assumed-v1",
+    "noise_model_reference": null,
+    "measurement_configuration": {
+      "measurement_source": "pressure",
+      "sampling_interval_s": 1.0,
+      "unit": "Pa",
+      "measurement_std": 0.0
+    }
+  },
+  {
+    "schema_version": "1.0.0",
+    "sensor_id": "load-01",
+    "asset_id": "DR-01",
+    "source_type": "synthetic",
+    "configuration_version": "v1",
+    "description": "Known fixed installation metadata; no noiseless measurements",
+    "modality": "iot",
+    "coordinate_frame": null,
+    "pose": null,
+    "acquisition_parameters": {},
+    "calibration_reference": "assumed-v1",
+    "noise_model_reference": null,
+    "measurement_configuration": {
+      "measurement_source": "load",
+      "sampling_interval_s": 2.0,
+      "unit": "1",
+      "measurement_std": 0.0
+    }
+  },
+  {
+    "schema_version": "1.0.0",
+    "sensor_id": "vibration-01",
+    "asset_id": "SUP-01",
+    "source_type": "synthetic",
+    "configuration_version": "v1",
+    "description": "Known fixed installation metadata; no noiseless measurements",
+    "modality": "iot",
+    "coordinate_frame": null,
+    "pose": null,
+    "acquisition_parameters": {},
+    "calibration_reference": "assumed-v1",
+    "noise_model_reference": null,
+    "measurement_configuration": {
+      "measurement_source": "vibration",
+      "sampling_interval_s": 2.0,
+      "unit": "m/s2",
+      "measurement_std": 0.0
+    }
+  },
+  {
+    "schema_version": "1.0.0",
+    "sensor_id": "wall-thermometer",
+    "asset_id": "BW-01",
+    "source_type": "synthetic",
+    "configuration_version": "v1",
+    "description": "Known fixed installation metadata; no noiseless measurements",
+    "modality": "iot",
+    "coordinate_frame": null,
+    "pose": null,
+    "acquisition_parameters": {},
+    "calibration_reference": "assumed-v1",
+    "noise_model_reference": null,
+    "measurement_configuration": {
+      "measurement_source": "surface_temperature",
+      "sampling_interval_s": 5.0,
+      "unit": "degC",
+      "measurement_std": 0.0,
+      "location_x_m": 0.0,
+      "location_y_m": 0.0,
+      "location_z_m": 1.55
+    }
+  },
+  {
+    "schema_version": "1.0.0",
+    "sensor_id": "drum-thermometer",
+    "asset_id": "DR-01",
+    "source_type": "synthetic",
+    "configuration_version": "v1",
+    "description": "Known fixed installation metadata; no noiseless measurements",
+    "modality": "iot",
+    "coordinate_frame": null,
+    "pose": null,
+    "acquisition_parameters": {},
+    "calibration_reference": "assumed-v1",
+    "noise_model_reference": null,
+    "measurement_configuration": {
+      "measurement_source": "surface_temperature",
+      "sampling_interval_s": 10.0,
+      "unit": "degC",
+      "measurement_std": 0.0,
+      "location_x_m": 0.0,
+      "location_y_m": 0.32,
+      "location_z_m": 3.05
+    }
+  },
+  {
+    "schema_version": "1.0.0",
+    "sensor_id": "pipe-temperature",
+    "asset_id": "SP-01",
+    "source_type": "synthetic",
+    "configuration_version": "v1",
+    "description": "Known fixed installation metadata; no noiseless measurements",
+    "modality": "iot",
+    "coordinate_frame": null,
+    "pose": null,
+    "acquisition_parameters": {},
+    "calibration_reference": "assumed-v1",
+    "noise_model_reference": null,
+    "measurement_configuration": {
+      "measurement_source": "process_temperature",
+      "sampling_interval_s": 5.0,
+      "unit": "degC",
+      "measurement_std": 0.0
+    }
+  },
+  {
+    "schema_version": "1.0.0",
+    "sensor_id": "pressure-02",
+    "asset_id": "SP-02",
+    "source_type": "synthetic",
+    "configuration_version": "v1",
+    "description": "Known fixed installation metadata; no noiseless measurements",
+    "modality": "iot",
+    "coordinate_frame": null,
+    "pose": null,
+    "acquisition_parameters": {},
+    "calibration_reference": "assumed-v1",
+    "noise_model_reference": null,
+    "measurement_configuration": {
+      "measurement_source": "pressure",
+      "sampling_interval_s": 3.0,
+      "unit": "Pa",
+      "measurement_std": 0.0
+    }
+  },
+  {
+    "schema_version": "1.0.0",
+    "sensor_id": "vibration-02",
+    "asset_id": "DR-01",
+    "source_type": "synthetic",
+    "configuration_version": "v1",
+    "description": "Known fixed installation metadata; no noiseless measurements",
+    "modality": "iot",
+    "coordinate_frame": null,
+    "pose": null,
+    "acquisition_parameters": {},
+    "calibration_reference": "assumed-v1",
+    "noise_model_reference": null,
+    "measurement_configuration": {
+      "measurement_source": "vibration",
+      "sampling_interval_s": 5.0,
+      "unit": "m/s2",
+      "measurement_std": 0.0
+    }
+  }
+]

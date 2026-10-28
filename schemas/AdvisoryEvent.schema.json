@@ -1,0 +1,160 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0",
+      "default": "1.0.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "event_id": {
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Event Id",
+      "type": "string"
+    },
+    "asset_id": {
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Asset Id",
+      "type": "string"
+    },
+    "hazard_id": {
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Hazard Id",
+      "type": "string"
+    },
+    "severity": {
+      "enum": [
+        "amber",
+        "red"
+      ],
+      "title": "Severity",
+      "type": "string"
+    },
+    "lifecycle": {
+      "enum": [
+        "candidate",
+        "active",
+        "escalated",
+        "acknowledged",
+        "resolved"
+      ],
+      "title": "Lifecycle",
+      "type": "string"
+    },
+    "opened_at": {
+      "format": "date-time",
+      "title": "Opened At",
+      "type": "string"
+    },
+    "updated_at": {
+      "format": "date-time",
+      "title": "Updated At",
+      "type": "string"
+    },
+    "positive_ids": {
+      "items": {
+        "minLength": 1,
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+        "type": "string"
+      },
+      "title": "Positive Ids",
+      "type": "array"
+    },
+    "positive_origins": {
+      "items": {
+        "minLength": 1,
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+        "type": "string"
+      },
+      "title": "Positive Origins",
+      "type": "array"
+    },
+    "positive_times": {
+      "items": {
+        "format": "date-time",
+        "type": "string"
+      },
+      "title": "Positive Times",
+      "type": "array"
+    },
+    "first_positive_at": {
+      "format": "date-time",
+      "title": "First Positive At",
+      "type": "string"
+    },
+    "last_observation_at": {
+      "format": "date-time",
+      "title": "Last Observation At",
+      "type": "string"
+    },
+    "recovery_ids": {
+      "items": {
+        "minLength": 1,
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+        "type": "string"
+      },
+      "title": "Recovery Ids",
+      "type": "array"
+    },
+    "recovery_times": {
+      "items": {
+        "format": "date-time",
+        "type": "string"
+      },
+      "title": "Recovery Times",
+      "type": "array"
+    },
+    "recovery_started_at": {
+      "anyOf": [
+        {
+          "format": "date-time",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Recovery Started At"
+    },
+    "recovery_last_at": {
+      "anyOf": [
+        {
+          "format": "date-time",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Recovery Last At"
+    },
+    "action": {
+      "title": "Action",
+      "type": "string"
+    },
+    "monitoring_unavailable": {
+      "default": false,
+      "title": "Monitoring Unavailable",
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "event_id",
+    "asset_id",
+    "hazard_id",
+    "severity",
+    "lifecycle",
+    "opened_at",
+    "updated_at",
+    "first_positive_at",
+    "last_observation_at",
+    "action"
+  ],
+  "title": "AdvisoryEvent",
+  "type": "object"
+}

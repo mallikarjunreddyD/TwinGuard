@@ -1,1 +1,1 @@
-"""TwinGuard fusion boundary; algorithms beyond Phase 0 remain pending."""
+"""Deterministic advisory evidence fusion; no plant control or notification transport."""

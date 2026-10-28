@@ -1,0 +1,65 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0",
+      "default": "1.0.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "evidence_id": {
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Evidence Id",
+      "type": "string"
+    },
+    "hazard_id": {
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Hazard Id",
+      "type": "string"
+    },
+    "age_s": {
+      "title": "Age S",
+      "type": "number"
+    },
+    "status": {
+      "enum": [
+        "current",
+        "stale",
+        "not_available",
+        "future",
+        "clock_unknown",
+        "invalid",
+        "inconclusive",
+        "historical_repaired",
+        "superseded"
+      ],
+      "title": "Status",
+      "type": "string"
+    },
+    "applicable": {
+      "title": "Applicable",
+      "type": "boolean"
+    },
+    "historical_context": {
+      "title": "Historical Context",
+      "type": "boolean"
+    },
+    "reason": {
+      "title": "Reason",
+      "type": "string"
+    }
+  },
+  "required": [
+    "evidence_id",
+    "hazard_id",
+    "age_s",
+    "status",
+    "applicable",
+    "historical_context",
+    "reason"
+  ],
+  "title": "TemporalDecision",
+  "type": "object"
+}

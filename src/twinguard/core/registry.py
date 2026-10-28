@@ -1,5 +1,6 @@
 from pathlib import Path
 import json
+from twinguard.fusion import models as fusion_models
 from twinguard.core import contracts
 from twinguard.evaluation.contracts import (
     FaultInjection,
@@ -7,6 +8,7 @@ from twinguard.evaluation.contracts import (
     ExperimentRun,
     GroundTruthSnapshot,
     ExperimentBenchmark,
+    FusionBenchmark,
 )
 from twinguard.plant.config import PlantConfig
 from twinguard.plant.contracts import SimulationManifest
@@ -47,7 +49,31 @@ PUBLIC_MODELS.update(
         )
     }
 )
+
+PUBLIC_MODELS.update(
+    {
+        name: getattr(fusion_models, name)
+        for name in (
+            "ProcessingRecord",
+            "FusionEvidenceManifest",
+            "FusionEvidence",
+            "TemporalDecision",
+            "CompatibilityDecision",
+            "AdvisoryEvent",
+            "AdvisoryNotice",
+            "DecisionTrace",
+            "FusionState",
+            "OperatorAction",
+        )
+    }
+)
+
 CONFIG_MODELS = {
+    "FusionPolicy": fusion_models.FusionPolicy,
+    "HazardRule": fusion_models.HazardRule,
+    "SensorAuthority": fusion_models.SensorAuthority,
+    "MonitoringRequirement": fusion_models.MonitoringRequirement,
+    "FusionBenchmark": FusionBenchmark,
     "AnalyticsConfig": AnalyticsConfig,
     "ExperimentBenchmark": ExperimentBenchmark,
     "AcquisitionConfig": AcquisitionConfig,

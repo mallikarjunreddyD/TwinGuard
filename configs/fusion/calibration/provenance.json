@@ -1,0 +1,54 @@
+{
+  "purpose": "Frozen Phase 3 healthy-only models reused without refitting or tuning for E3",
+  "E2_healthy_seeds": [
+    60,
+    61,
+    62
+  ],
+  "geometry_healthy_seeds": [
+    2200,
+    2201,
+    2202,
+    2203,
+    2204,
+    2205,
+    2206,
+    2207,
+    2208,
+    2209,
+    2210,
+    2211,
+    2212,
+    2213,
+    2214,
+    2215,
+    2216,
+    2217,
+    2218,
+    2219,
+    2220,
+    2221,
+    2222,
+    2223,
+    2224,
+    2225,
+    2226,
+    2227,
+    2228,
+    2229
+  ],
+  "artifacts": {
+    "operating_model.json": {
+      "source": "experiments/outputs/phase3-full/E2/models/operating_model.json",
+      "sha256": "fafa60d866ee9f51677d0ecc305728293ad6faccc7880e1c83777868de83aeeb"
+    },
+    "thermal_model.json": {
+      "source": "experiments/outputs/phase3-full/E2/models/thermal_model.json",
+      "sha256": "f215b995a1422a395685a752952a2e861cb0dbba525924592ff91d06edb2b8e0"
+    },
+    "thermal_model.npz": {
+      "source": "experiments/outputs/phase3-full/E2/models/thermal_model.npz",
+      "sha256": "ad2d14c4b08a046d7ed134ab8e6eaf2ff0be12557d5711c9505fa12f66945044"
+    }
+  }
+}

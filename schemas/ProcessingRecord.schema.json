@@ -1,0 +1,71 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0",
+      "default": "1.0.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "source_id": {
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Source Id",
+      "type": "string"
+    },
+    "received_at": {
+      "format": "date-time",
+      "title": "Received At",
+      "type": "string"
+    },
+    "available_at": {
+      "format": "date-time",
+      "title": "Available At",
+      "type": "string"
+    },
+    "processed_at": {
+      "format": "date-time",
+      "title": "Processed At",
+      "type": "string"
+    },
+    "basis": {
+      "enum": [
+        "recorded",
+        "simulated_replay"
+      ],
+      "title": "Basis",
+      "type": "string"
+    },
+    "rationale": {
+      "minLength": 1,
+      "title": "Rationale",
+      "type": "string"
+    },
+    "clock_quality": {
+      "default": "unknown",
+      "enum": [
+        "synchronized",
+        "uncertain",
+        "unknown"
+      ],
+      "title": "Clock Quality",
+      "type": "string"
+    },
+    "clock_uncertainty_s": {
+      "default": 0,
+      "minimum": 0,
+      "title": "Clock Uncertainty S",
+      "type": "number"
+    }
+  },
+  "required": [
+    "source_id",
+    "received_at",
+    "available_at",
+    "processed_at",
+    "basis",
+    "rationale"
+  ],
+  "title": "ProcessingRecord",
+  "type": "object"
+}

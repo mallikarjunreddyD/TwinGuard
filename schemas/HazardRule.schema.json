@@ -1,0 +1,181 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0",
+      "default": "1.0.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "hazard_id": {
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Hazard Id",
+      "type": "string"
+    },
+    "hypotheses": {
+      "items": {
+        "minLength": 1,
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+        "type": "string"
+      },
+      "minItems": 1,
+      "title": "Hypotheses",
+      "type": "array"
+    },
+    "asset_types": {
+      "items": {
+        "minLength": 1,
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+        "type": "string"
+      },
+      "minItems": 1,
+      "title": "Asset Types",
+      "type": "array"
+    },
+    "modalities": {
+      "items": {
+        "enum": [
+          "fixed_sensor",
+          "geometric",
+          "thermal"
+        ],
+        "type": "string"
+      },
+      "minItems": 1,
+      "title": "Modalities",
+      "type": "array"
+    },
+    "max_age_s": {
+      "minimum": 0,
+      "title": "Max Age S",
+      "type": "number"
+    },
+    "coincidence_s": {
+      "default": 30,
+      "minimum": 0,
+      "title": "Coincidence S",
+      "type": "number"
+    },
+    "spatial_requirement": {
+      "default": "asset",
+      "enum": [
+        "none",
+        "asset",
+        "region"
+      ],
+      "title": "Spatial Requirement",
+      "type": "string"
+    },
+    "min_independent": {
+      "default": 1,
+      "minimum": 1,
+      "title": "Min Independent",
+      "type": "integer"
+    },
+    "required_scope": {
+      "anyOf": [
+        {
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Required Scope"
+    },
+    "severity": {
+      "default": "amber",
+      "enum": [
+        "amber",
+        "red"
+      ],
+      "title": "Severity",
+      "type": "string"
+    },
+    "action": {
+      "minLength": 1,
+      "title": "Action",
+      "type": "string"
+    },
+    "rationale": {
+      "minLength": 1,
+      "title": "Rationale",
+      "type": "string"
+    },
+    "critical_limit_only": {
+      "default": false,
+      "title": "Critical Limit Only",
+      "type": "boolean"
+    },
+    "immediate": {
+      "default": false,
+      "title": "Immediate",
+      "type": "boolean"
+    },
+    "min_positive_count": {
+      "default": 1,
+      "minimum": 1,
+      "title": "Min Positive Count",
+      "type": "integer"
+    },
+    "min_duration_s": {
+      "default": 0,
+      "minimum": 0,
+      "title": "Min Duration S",
+      "type": "number"
+    },
+    "automatic_recovery": {
+      "default": true,
+      "title": "Automatic Recovery",
+      "type": "boolean"
+    },
+    "recovery_count": {
+      "default": 2,
+      "minimum": 1,
+      "title": "Recovery Count",
+      "type": "integer"
+    },
+    "recovery_duration_s": {
+      "default": 5,
+      "minimum": 0,
+      "title": "Recovery Duration S",
+      "type": "number"
+    },
+    "clear_on_repair": {
+      "default": false,
+      "title": "Clear On Repair",
+      "type": "boolean"
+    },
+    "manual_resolution": {
+      "default": true,
+      "title": "Manual Resolution",
+      "type": "boolean"
+    },
+    "aggregation_window_s": {
+      "default": 300,
+      "minimum": 0,
+      "title": "Aggregation Window S",
+      "type": "number"
+    },
+    "require_distinct_modalities": {
+      "default": false,
+      "title": "Require Distinct Modalities",
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "hazard_id",
+    "hypotheses",
+    "asset_types",
+    "modalities",
+    "max_age_s",
+    "action",
+    "rationale"
+  ],
+  "title": "HazardRule",
+  "type": "object"
+}

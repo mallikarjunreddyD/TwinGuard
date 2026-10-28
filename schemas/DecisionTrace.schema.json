@@ -1,0 +1,376 @@
+{
+  "$defs": {
+    "CompatibilityDecision": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0.0",
+          "default": "1.0.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "evidence_ids": {
+          "items": {
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+            "type": "string"
+          },
+          "title": "Evidence Ids",
+          "type": "array"
+        },
+        "dimension": {
+          "enum": [
+            "spatial",
+            "temporal",
+            "dependence"
+          ],
+          "title": "Dimension",
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "compatible",
+            "partially_compatible",
+            "incompatible",
+            "unknown",
+            "dependent",
+            "independent",
+            "duplicate",
+            "superseded"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "reason": {
+          "title": "Reason",
+          "type": "string"
+        }
+      },
+      "required": [
+        "evidence_ids",
+        "dimension",
+        "status",
+        "reason"
+      ],
+      "title": "CompatibilityDecision",
+      "type": "object"
+    },
+    "ConditionAssessment": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0.0",
+          "default": "1.0.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "assessment_id": {
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+          "title": "Assessment Id",
+          "type": "string"
+        },
+        "asset_id": {
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+          "title": "Asset Id",
+          "type": "string"
+        },
+        "assessed_at": {
+          "format": "date-time",
+          "title": "Assessed At",
+          "type": "string"
+        },
+        "severity": {
+          "enum": [
+            "green",
+            "amber",
+            "red",
+            "unknown"
+          ],
+          "title": "Severity",
+          "type": "string"
+        },
+        "confidence_status": {
+          "enum": [
+            "supported",
+            "limited",
+            "insufficient",
+            "unknown"
+          ],
+          "title": "Confidence Status",
+          "type": "string"
+        },
+        "supporting_evidence_ids": {
+          "items": {
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+            "type": "string"
+          },
+          "title": "Supporting Evidence Ids",
+          "type": "array"
+        },
+        "missing_or_invalid_evidence_ids": {
+          "items": {
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+            "type": "string"
+          },
+          "title": "Missing Or Invalid Evidence Ids",
+          "type": "array"
+        },
+        "recommended_action": {
+          "title": "Recommended Action",
+          "type": "string"
+        },
+        "policy_id": {
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+          "title": "Policy Id",
+          "type": "string"
+        },
+        "policy_version": {
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+          "title": "Policy Version",
+          "type": "string"
+        },
+        "human_review": {
+          "enum": [
+            "pending",
+            "reviewed",
+            "not_required"
+          ],
+          "title": "Human Review",
+          "type": "string"
+        }
+      },
+      "required": [
+        "assessment_id",
+        "asset_id",
+        "assessed_at",
+        "severity",
+        "confidence_status",
+        "supporting_evidence_ids",
+        "missing_or_invalid_evidence_ids",
+        "recommended_action",
+        "policy_id",
+        "policy_version",
+        "human_review"
+      ],
+      "title": "ConditionAssessment",
+      "type": "object"
+    },
+    "TemporalDecision": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0.0",
+          "default": "1.0.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "evidence_id": {
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+          "title": "Evidence Id",
+          "type": "string"
+        },
+        "hazard_id": {
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+          "title": "Hazard Id",
+          "type": "string"
+        },
+        "age_s": {
+          "title": "Age S",
+          "type": "number"
+        },
+        "status": {
+          "enum": [
+            "current",
+            "stale",
+            "not_available",
+            "future",
+            "clock_unknown",
+            "invalid",
+            "inconclusive",
+            "historical_repaired",
+            "superseded"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "applicable": {
+          "title": "Applicable",
+          "type": "boolean"
+        },
+        "historical_context": {
+          "title": "Historical Context",
+          "type": "boolean"
+        },
+        "reason": {
+          "title": "Reason",
+          "type": "string"
+        }
+      },
+      "required": [
+        "evidence_id",
+        "hazard_id",
+        "age_s",
+        "status",
+        "applicable",
+        "historical_context",
+        "reason"
+      ],
+      "title": "TemporalDecision",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0",
+      "default": "1.0.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "assessment": {
+      "$ref": "#/$defs/ConditionAssessment"
+    },
+    "method": {
+      "enum": [
+        "F0",
+        "F1"
+      ],
+      "title": "Method",
+      "type": "string"
+    },
+    "policy_sha256": {
+      "title": "Policy Sha256",
+      "type": "string"
+    },
+    "triggered_hazards": {
+      "items": {
+        "minLength": 1,
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+        "type": "string"
+      },
+      "title": "Triggered Hazards",
+      "type": "array"
+    },
+    "positive_ids": {
+      "items": {
+        "minLength": 1,
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+        "type": "string"
+      },
+      "title": "Positive Ids",
+      "type": "array"
+    },
+    "historical_positive_ids": {
+      "items": {
+        "minLength": 1,
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+        "type": "string"
+      },
+      "title": "Historical Positive Ids",
+      "type": "array"
+    },
+    "negative_ids": {
+      "items": {
+        "minLength": 1,
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+        "type": "string"
+      },
+      "title": "Negative Ids",
+      "type": "array"
+    },
+    "missing_requirements": {
+      "items": {
+        "minLength": 1,
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+        "type": "string"
+      },
+      "title": "Missing Requirements",
+      "type": "array"
+    },
+    "rejected_ids": {
+      "items": {
+        "minLength": 1,
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+        "type": "string"
+      },
+      "title": "Rejected Ids",
+      "type": "array"
+    },
+    "temporal": {
+      "items": {
+        "$ref": "#/$defs/TemporalDecision"
+      },
+      "title": "Temporal",
+      "type": "array"
+    },
+    "compatibility": {
+      "items": {
+        "$ref": "#/$defs/CompatibilityDecision"
+      },
+      "title": "Compatibility",
+      "type": "array"
+    },
+    "rationale": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Rationale",
+      "type": "array"
+    },
+    "conflicts": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Conflicts",
+      "type": "array"
+    },
+    "event_ids": {
+      "items": {
+        "minLength": 1,
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+        "type": "string"
+      },
+      "title": "Event Ids",
+      "type": "array"
+    },
+    "replay_mode": {
+      "enum": [
+        "online",
+        "retrospective"
+      ],
+      "title": "Replay Mode",
+      "type": "string"
+    },
+    "software_version": {
+      "title": "Software Version",
+      "type": "string"
+    }
+  },
+  "required": [
+    "assessment",
+    "method",
+    "policy_sha256",
+    "triggered_hazards",
+    "positive_ids",
+    "negative_ids",
+    "missing_requirements",
+    "rejected_ids",
+    "temporal",
+    "compatibility",
+    "rationale",
+    "conflicts",
+    "event_ids",
+    "replay_mode",
+    "software_version"
+  ],
+  "title": "DecisionTrace",
+  "type": "object"
+}

@@ -1,0 +1,458 @@
+{
+  "$defs": {
+    "HazardRule": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0.0",
+          "default": "1.0.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "hazard_id": {
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+          "title": "Hazard Id",
+          "type": "string"
+        },
+        "hypotheses": {
+          "items": {
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Hypotheses",
+          "type": "array"
+        },
+        "asset_types": {
+          "items": {
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Asset Types",
+          "type": "array"
+        },
+        "modalities": {
+          "items": {
+            "enum": [
+              "fixed_sensor",
+              "geometric",
+              "thermal"
+            ],
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Modalities",
+          "type": "array"
+        },
+        "max_age_s": {
+          "minimum": 0,
+          "title": "Max Age S",
+          "type": "number"
+        },
+        "coincidence_s": {
+          "default": 30,
+          "minimum": 0,
+          "title": "Coincidence S",
+          "type": "number"
+        },
+        "spatial_requirement": {
+          "default": "asset",
+          "enum": [
+            "none",
+            "asset",
+            "region"
+          ],
+          "title": "Spatial Requirement",
+          "type": "string"
+        },
+        "min_independent": {
+          "default": 1,
+          "minimum": 1,
+          "title": "Min Independent",
+          "type": "integer"
+        },
+        "required_scope": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Required Scope"
+        },
+        "severity": {
+          "default": "amber",
+          "enum": [
+            "amber",
+            "red"
+          ],
+          "title": "Severity",
+          "type": "string"
+        },
+        "action": {
+          "minLength": 1,
+          "title": "Action",
+          "type": "string"
+        },
+        "rationale": {
+          "minLength": 1,
+          "title": "Rationale",
+          "type": "string"
+        },
+        "critical_limit_only": {
+          "default": false,
+          "title": "Critical Limit Only",
+          "type": "boolean"
+        },
+        "immediate": {
+          "default": false,
+          "title": "Immediate",
+          "type": "boolean"
+        },
+        "min_positive_count": {
+          "default": 1,
+          "minimum": 1,
+          "title": "Min Positive Count",
+          "type": "integer"
+        },
+        "min_duration_s": {
+          "default": 0,
+          "minimum": 0,
+          "title": "Min Duration S",
+          "type": "number"
+        },
+        "automatic_recovery": {
+          "default": true,
+          "title": "Automatic Recovery",
+          "type": "boolean"
+        },
+        "recovery_count": {
+          "default": 2,
+          "minimum": 1,
+          "title": "Recovery Count",
+          "type": "integer"
+        },
+        "recovery_duration_s": {
+          "default": 5,
+          "minimum": 0,
+          "title": "Recovery Duration S",
+          "type": "number"
+        },
+        "clear_on_repair": {
+          "default": false,
+          "title": "Clear On Repair",
+          "type": "boolean"
+        },
+        "manual_resolution": {
+          "default": true,
+          "title": "Manual Resolution",
+          "type": "boolean"
+        },
+        "aggregation_window_s": {
+          "default": 300,
+          "minimum": 0,
+          "title": "Aggregation Window S",
+          "type": "number"
+        },
+        "require_distinct_modalities": {
+          "default": false,
+          "title": "Require Distinct Modalities",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "hazard_id",
+        "hypotheses",
+        "asset_types",
+        "modalities",
+        "max_age_s",
+        "action",
+        "rationale"
+      ],
+      "title": "HazardRule",
+      "type": "object"
+    },
+    "MonitoringRequirement": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0.0",
+          "default": "1.0.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "requirement_id": {
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+          "title": "Requirement Id",
+          "type": "string"
+        },
+        "asset_id": {
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+          "title": "Asset Id",
+          "type": "string"
+        },
+        "hypothesis": {
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+          "title": "Hypothesis",
+          "type": "string"
+        },
+        "scope": {
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+          "title": "Scope",
+          "type": "string"
+        },
+        "max_age_s": {
+          "minimum": 0,
+          "title": "Max Age S",
+          "type": "number"
+        },
+        "sensor_id": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Sensor Id"
+        }
+      },
+      "required": [
+        "requirement_id",
+        "asset_id",
+        "hypothesis",
+        "scope",
+        "max_age_s"
+      ],
+      "title": "MonitoringRequirement",
+      "type": "object"
+    },
+    "SensorAuthority": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0.0",
+          "default": "1.0.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "sensor_id": {
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+          "title": "Sensor Id",
+          "type": "string"
+        },
+        "asset_id": {
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+          "title": "Asset Id",
+          "type": "string"
+        },
+        "measurement_type": {
+          "title": "Measurement Type",
+          "type": "string"
+        },
+        "unit": {
+          "title": "Unit",
+          "type": "string"
+        },
+        "calibration_status": {
+          "enum": [
+            "verified",
+            "assumed_simulation",
+            "unknown",
+            "expired"
+          ],
+          "title": "Calibration Status",
+          "type": "string"
+        },
+        "measurement_min": {
+          "title": "Measurement Min",
+          "type": "number"
+        },
+        "measurement_max": {
+          "title": "Measurement Max",
+          "type": "number"
+        },
+        "critical_limit": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Critical Limit"
+        },
+        "hysteresis": {
+          "default": 0,
+          "minimum": 0,
+          "title": "Hysteresis",
+          "type": "number"
+        },
+        "engineering_basis": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Engineering Basis"
+        }
+      },
+      "required": [
+        "sensor_id",
+        "asset_id",
+        "measurement_type",
+        "unit",
+        "calibration_status",
+        "measurement_min",
+        "measurement_max"
+      ],
+      "title": "SensorAuthority",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0",
+      "default": "1.0.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "policy_id": {
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Policy Id",
+      "type": "string"
+    },
+    "version": {
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Version",
+      "type": "string"
+    },
+    "deployment_mode": {
+      "enum": [
+        "illustrative_simulation",
+        "site_review_required"
+      ],
+      "title": "Deployment Mode",
+      "type": "string"
+    },
+    "rationale": {
+      "title": "Rationale",
+      "type": "string"
+    },
+    "assets": {
+      "patternProperties": {
+        "^[A-Za-z0-9][A-Za-z0-9_.:-]*$": {
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+          "type": "string"
+        }
+      },
+      "propertyNames": {
+        "minLength": 1
+      },
+      "title": "Assets",
+      "type": "object"
+    },
+    "authorities": {
+      "items": {
+        "$ref": "#/$defs/SensorAuthority"
+      },
+      "title": "Authorities",
+      "type": "array"
+    },
+    "requirements": {
+      "items": {
+        "$ref": "#/$defs/MonitoringRequirement"
+      },
+      "title": "Requirements",
+      "type": "array"
+    },
+    "rules": {
+      "items": {
+        "$ref": "#/$defs/HazardRule"
+      },
+      "title": "Rules",
+      "type": "array"
+    },
+    "algorithm_preference": {
+      "items": {
+        "minLength": 1,
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+        "type": "string"
+      },
+      "title": "Algorithm Preference",
+      "type": "array"
+    },
+    "dependence_groups": {
+      "additionalProperties": {
+        "minLength": 1,
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+        "type": "string"
+      },
+      "title": "Dependence Groups",
+      "type": "object"
+    },
+    "shared_reference_dependence": {
+      "default": true,
+      "title": "Shared Reference Dependence",
+      "type": "boolean"
+    },
+    "missing_monitoring_advisory": {
+      "default": true,
+      "title": "Missing Monitoring Advisory",
+      "type": "boolean"
+    },
+    "max_clock_uncertainty_s": {
+      "default": 1,
+      "minimum": 0,
+      "title": "Max Clock Uncertainty S",
+      "type": "number"
+    },
+    "spatial_tolerance_m": {
+      "default": 0.05,
+      "minimum": 0,
+      "title": "Spatial Tolerance M",
+      "type": "number"
+    }
+  },
+  "required": [
+    "policy_id",
+    "version",
+    "deployment_mode",
+    "rationale",
+    "assets",
+    "authorities",
+    "requirements",
+    "rules"
+  ],
+  "title": "FusionPolicy",
+  "type": "object"
+}

@@ -1,0 +1,58 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0",
+      "default": "1.0.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "kind": {
+      "const": "FusionEvidenceManifest",
+      "default": "FusionEvidenceManifest",
+      "title": "Kind",
+      "type": "string"
+    },
+    "evidence_uri": {
+      "title": "Evidence Uri",
+      "type": "string"
+    },
+    "sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Sha256",
+      "type": "string"
+    },
+    "count": {
+      "minimum": 0,
+      "title": "Count",
+      "type": "integer"
+    },
+    "provenance": {
+      "additionalProperties": {
+        "anyOf": [
+          {
+            "type": "number"
+          },
+          {
+            "type": "string"
+          },
+          {
+            "type": "boolean"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "title": "Provenance",
+      "type": "object"
+    }
+  },
+  "required": [
+    "evidence_uri",
+    "sha256",
+    "count"
+  ],
+  "title": "FusionEvidenceManifest",
+  "type": "object"
+}

@@ -1,0 +1,282 @@
+{
+  "schema_version": "1.0.0",
+  "model_id": "thermal-9f40986917241d75",
+  "training_datasets": [
+    "observations-healthy-60-decrease-9efccf1f35cc3fb0",
+    "observations-healthy-60-increase-cc8ce557c17aa18d",
+    "observations-healthy-60-steady-fd5a1b34831ff089",
+    "observations-healthy-61-decrease-480170e8050ff6b7",
+    "observations-healthy-61-increase-c05609d5f2891802",
+    "observations-healthy-61-steady-964bee24a2f75fd0",
+    "observations-healthy-62-decrease-534ae92bb81d38ac",
+    "observations-healthy-62-increase-0d129bc4afe538d1",
+    "observations-healthy-62-steady-af8131841c7a3340"
+  ],
+  "training_frames": 39,
+  "load_range": [
+    0.30752020602350016,
+    0.8094323503422993
+  ],
+  "reported_reference_pose": [
+    [
+      0.0007426660279704993,
+      0.9999973041848231,
+      0.0022000159674799105,
+      0.010690753550551229
+    ],
+    [
+      -0.9999982764707267,
+      0.0007389195673518536,
+      0.0017032479118243055,
+      3.4015451521094655
+    ],
+    [
+      0.0017016176853358773,
+      -0.0022012771200493123,
+      0.9999961294306562,
+      1.6552955521935637
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "shape": [
+    96,
+    128
+  ],
+  "array_uri": "thermal_model.npz",
+  "operating_model": {
+    "schema_version": "1.0.0",
+    "model_id": "operating-c2a792395ef12e42",
+    "version": "v1",
+    "training_datasets": [
+      "observations-healthy-60-steady-fd5a1b34831ff089",
+      "observations-healthy-60-increase-cc8ce557c17aa18d",
+      "observations-healthy-60-decrease-9efccf1f35cc3fb0",
+      "observations-healthy-61-steady-964bee24a2f75fd0",
+      "observations-healthy-61-increase-c05609d5f2891802",
+      "observations-healthy-61-decrease-480170e8050ff6b7",
+      "observations-healthy-62-steady-af8131841c7a3340",
+      "observations-healthy-62-increase-0d129bc4afe538d1",
+      "observations-healthy-62-decrease-534ae92bb81d38ac"
+    ],
+    "feature_definition": "causal zero-order-hold exponential filter of received measured load; intercept plus filtered load",
+    "validation_selection": "healthy dataset groups modulo 3 held out for lag selection, then robust refit; no evaluation faults",
+    "configuration": {
+      "schema_version": "1.0.0",
+      "configuration_id": "analytics-v1",
+      "voxel_m": 0.01,
+      "min_range_m": 0.1,
+      "max_range_m": 20.0,
+      "statistical_outliers": false,
+      "outlier_neighbors": 20,
+      "outlier_std_ratio": 3.0,
+      "normal_radius_m": 0.26,
+      "min_correspondences": 40,
+      "stable_min_points": 60,
+      "min_fitness": 0.25,
+      "max_inlier_rmse_m": 0.08,
+      "min_conditioning": 1e-05,
+      "max_translation_correction_m": 0.5,
+      "max_rotation_correction_rad": 0.2,
+      "max_repeatability_m": 0.04,
+      "registration_scales_m": [
+        0.15,
+        0.08,
+        0.04
+      ],
+      "registration_iterations": 35,
+      "robust_scale_m": 0.025,
+      "roi_margin_m": 0.18,
+      "patch_radius_m": 0.18,
+      "patch_spacing_m": 0.12,
+      "min_patch_points": 8,
+      "min_common_coverage": 0.25,
+      "min_common_cells": 3,
+      "max_roughness_m": 0.015,
+      "max_projection_m": 0.08,
+      "change_threshold_m": 0.005,
+      "nearest_threshold_m": 0.025,
+      "uncertainty_floor_m": 0.004,
+      "uncertainty_multiplier": 1.5,
+      "min_region_patches": 2,
+      "min_valid_patch_fraction": 0.1,
+      "monitored_assets": [
+        "BW-01",
+        "SUP-01"
+      ],
+      "operating_k": 5.0,
+      "load_age_limit_s": 6.0,
+      "max_delay_s": 5.0,
+      "operating_min_scale_temperature": 0.4,
+      "operating_min_scale_pressure": 500.0,
+      "lag_candidates_s": [
+        0.0,
+        5.0,
+        10.0,
+        15.0,
+        20.0,
+        25.0,
+        30.0,
+        45.0,
+        60.0
+      ],
+      "thermal_threshold_c": 4.0,
+      "thermal_min_pixels": 4,
+      "thermal_min_training_frames": 4,
+      "thermal_max_pose_delta_m": 0.15,
+      "thermal_max_rotation_delta_rad": 0.08,
+      "thermal_min_valid_fraction": 0.15
+    },
+    "sensors": {
+      "drum-thermometer": {
+        "coefficients": [
+          129.65387558910928,
+          100.501204822243
+        ],
+        "tau_s": 25.0,
+        "residual_scale": 0.4,
+        "static_reference": 179.95392595474982,
+        "static_scale": 0.4,
+        "load_range": [
+          0.30752020602350016,
+          0.799950225600007
+        ],
+        "training_samples": 108,
+        "unit": "degC",
+        "asset_id": "DR-01",
+        "measurement_type": "temperature"
+      },
+      "pipe-temperature": {
+        "coefficients": [
+          129.67903319892818,
+          100.50338068842635
+        ],
+        "tau_s": 25.0,
+        "residual_scale": 0.4,
+        "static_reference": 180.00166447777406,
+        "static_scale": 0.4,
+        "load_range": [
+          0.3078533552383156,
+          0.8105304425066895
+        ],
+        "training_samples": 216,
+        "unit": "degC",
+        "asset_id": "SP-01",
+        "measurement_type": "temperature"
+      },
+      "pressure-01": {
+        "coefficients": [
+          498474.4131134863,
+          602531.0632706293
+        ],
+        "tau_s": 15.0,
+        "residual_scale": 1113.7154255316145,
+        "static_reference": 799999.2604678066,
+        "static_scale": 500.0,
+        "load_range": [
+          0.29187202720956823,
+          0.8105304425066895
+        ],
+        "training_samples": 1066,
+        "unit": "Pa",
+        "asset_id": "BW-01",
+        "measurement_type": "pressure"
+      },
+      "pressure-02": {
+        "coefficients": [
+          498525.0640685143,
+          602446.5301918557
+        ],
+        "tau_s": 15.0,
+        "residual_scale": 1025.3213533817207,
+        "static_reference": 800007.3545780377,
+        "static_scale": 500.0,
+        "load_range": [
+          0.2918724137559805,
+          0.8094881066590959
+        ],
+        "training_samples": 360,
+        "unit": "Pa",
+        "asset_id": "SP-02",
+        "measurement_type": "pressure"
+      },
+      "temperature-01": {
+        "coefficients": [
+          129.65779169310744,
+          100.52005961148647
+        ],
+        "tau_s": 25.0,
+        "residual_scale": 0.4,
+        "static_reference": 179.98868045186754,
+        "static_scale": 0.4,
+        "load_range": [
+          0.30752347276147973,
+          0.8105304425066895
+        ],
+        "training_samples": 531,
+        "unit": "degC",
+        "asset_id": "BW-01",
+        "measurement_type": "temperature"
+      },
+      "vibration-01": {
+        "coefficients": [
+          0.1492894811975393,
+          0.20095396575087385
+        ],
+        "tau_s": 0.0,
+        "residual_scale": 0.010704430603061189,
+        "static_reference": 0.24992394863677178,
+        "static_scale": 0.01,
+        "load_range": [
+          0.2862164546156297,
+          0.813680400900559
+        ],
+        "training_samples": 538,
+        "unit": "m/s2",
+        "asset_id": "SUP-01",
+        "measurement_type": "vibration_rms"
+      },
+      "vibration-02": {
+        "coefficients": [
+          0.14555833174299748,
+          0.2055592362608614
+        ],
+        "tau_s": 5.0,
+        "residual_scale": 0.011406154493335837,
+        "static_reference": 0.25028569879871004,
+        "static_scale": 0.01007124065762813,
+        "load_range": [
+          0.2888168503735057,
+          0.81165076264216
+        ],
+        "training_samples": 215,
+        "unit": "m/s2",
+        "asset_id": "DR-01",
+        "measurement_type": "vibration_rms"
+      },
+      "wall-thermometer": {
+        "coefficients": [
+          129.67446382726249,
+          100.51585042610081
+        ],
+        "tau_s": 25.0,
+        "residual_scale": 0.4,
+        "static_reference": 179.98806248808145,
+        "static_scale": 0.4,
+        "load_range": [
+          0.30752020602350016,
+          0.8080545645272916
+        ],
+        "training_samples": 214,
+        "unit": "degC",
+        "asset_id": "BW-01",
+        "measurement_type": "temperature"
+      }
+    }
+  },
+  "domain": "apparent radiometric temperature, not hidden physical temperature"
+}
