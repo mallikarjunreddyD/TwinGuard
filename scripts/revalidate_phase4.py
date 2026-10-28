@@ -17,6 +17,7 @@ import shutil
 import subprocess
 import hashlib
 from twinguard.fusion.models import FusionPolicy
+from twinguard.fusion.policies import load_policy, policy_hash
 from twinguard.fusion.engine import replay
 from twinguard.fusion.io import read_evidence, save_evidence, write_run, save
 from twinguard.evaluation.fusion_scenarios import controlled
@@ -167,6 +168,9 @@ def main():
         "source_commit": subprocess.check_output(
             ["git", "rev-parse", "HEAD"], cwd=ROOT, text=True
         ).strip(),
+        "initial_source_commit": original["source_commit"],
+        "initial_policy_sha256": original["policy_sha256"],
+        "policy_sha256": policy_hash(load_policy(ROOT / "configs/fusion/hazards.yaml")),
         "source_observation_run": str(SOURCE),
         "initial_sensor_analytics_runtime_s": original["runtime_s"],
         "validation_replay_runtime_s": time.perf_counter() - start,
