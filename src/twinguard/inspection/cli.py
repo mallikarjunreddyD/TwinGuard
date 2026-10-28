@@ -16,7 +16,7 @@ def add_commands(sub):
             p.add_argument("--snapshot", type=Path, required=True)
             p.add_argument("--output-dir", type=Path, required=True)
         if name in ("plan", "replan"):
-            p.add_argument("--method", choices=["P0", "P1", "P2", "P3"], default="P3")
+            p.add_argument("--method", choices=["P0", "P1", "P2", "P3", "P3v2"], default="P3")
             p.add_argument("--budget-views", type=int, default=4)
             p.add_argument("--budget-s", type=float, default=120)
         if name == "replan":
@@ -61,6 +61,18 @@ def execute(args):
                 budget_views=args.budget_views,
                 budget_s=args.budget_s,
             )
-            result = plan(surface, snapshot, config, request, candidates).model_dump(mode="json")
+            if request.method == "P3v2":
+                from .qualified_optimizer import select_plan
+
+                model = json.loads(
+                    (args.root / "configs/validation/view_calibration.json").read_text()
+                )
+                result = select_plan(
+                    surface, snapshot, config, request, candidates, model, args.root
+                ).model_dump(mode="json")
+            else:
+                result = plan(surface, snapshot, config, request, candidates).model_dump(
+                    mode="json"
+                )
     (output / (args.inspection_command + ".json")).write_text(json.dumps(result, indent=2) + "\n")
     print(output)

@@ -19,7 +19,7 @@ def version():
 @app.get("/capabilities")
 def capabilities():
     return {
-        "phase": 6,
+        "phase": 7,
         "implemented": [
             "contracts",
             "configuration_validation",
@@ -44,6 +44,8 @@ def capabilities():
             "durable_processing",
             "dashboard",
             "inspection_planning",
+            "view_qualified_geometry",
+            "measurement_qualified_inspection",
         ],
         "pending": [
             "physical_validation",

@@ -77,6 +77,14 @@ class Campaign:
                 "completed": {},
                 "preflight": self.preflight,
             }
+        if resume:
+            self.state.setdefault("resume_history", []).append(
+                {
+                    "prior_status": self.state["status"],
+                    "prior_error": self.state.pop("error", None),
+                    "resumed_at_utc": datetime.now(timezone.utc).isoformat(),
+                }
+            )
         self.state["status"] = "running"
         self.flush()
 
@@ -85,6 +93,13 @@ class Campaign:
 
     def commit(self, ident, value):
         resource_preflight()
+        if len(self.state["completed"]) % 10 == 0:
+            used = sum(p.stat().st_size for p in self.path.rglob("*") if p.is_file())
+            self.state["observed_campaign_bytes"] = used
+            if used > self.configuration.get("maximum_new_campaign_bytes", 6 * 1024**3):
+                raise RuntimeError(
+                    "Campaign artifact budget exceeded; outputs preserved as incomplete"
+                )
         path = self.path / "cases" / f"{ident}.json"
         if ident in self.state["completed"]:
             raise ValueError("Completed case immutable")

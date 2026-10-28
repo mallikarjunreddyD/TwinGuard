@@ -160,6 +160,16 @@ class AssetPlanningState(Contract):
     thermal_image_only: bool = False
 
 
+class BaselineInspectionSupport(Contract):
+    capture_id: ID
+    reference_hash: str
+    reported_pose: Transform
+    acquired_at: UTC
+    available_at: UTC
+    acquisition_parameters: dict[str, float | int]
+    observed_cells: list[int] = Field(default_factory=list, max_length=200000)
+
+
 class PlanningSnapshot(Contract):
     snapshot_id: ID
     at: UTC
@@ -169,6 +179,8 @@ class PlanningSnapshot(Contract):
     attempted_viewpoints: list[str] = Field(default_factory=list)
     input_refs: list[str] = Field(default_factory=list)
     previous_plan_id: str | None = None
+    baseline_support: BaselineInspectionSupport | None = None
+    required_region_cells: dict[str, list[int]] = Field(default_factory=dict)
 
     @model_validator(mode="after")
     def causal(self):
@@ -180,6 +192,12 @@ class PlanningSnapshot(Contract):
             for c in self.coverage
         ):
             raise ValueError("Snapshot rejects future or naive observations")
+        if self.baseline_support is not None and (
+            self.baseline_support.acquired_at > self.at
+            or self.baseline_support.available_at > self.at
+            or self.baseline_support.reference_hash != self.reference_hash
+        ):
+            raise ValueError("Baseline support must be causal and reference-bound")
         if len({a.asset_id for a in self.assets}) != len(self.assets):
             raise ValueError("Duplicate assets")
         return self
@@ -187,7 +205,7 @@ class PlanningSnapshot(Contract):
 
 class InspectionPlanningRequest(Contract):
     request_id: ID
-    method: Literal["P0", "P1", "P2", "P3"] = "P3"
+    method: Literal["P0", "P1", "P2", "P3", "P3v2"] = "P3"
     budget_views: int = Field(default=4, ge=1, le=12)
     budget_s: Positive = 120
     maximum_travel_m: Positive = 50
@@ -290,7 +308,7 @@ class ReinspectionRecommendation(Contract):
 
 class PlanningEvaluationRecord(Contract):
     trial_id: ID
-    method: Literal["P0", "P1", "P2", "P3"]
+    method: Literal["P0", "P1", "P2", "P3", "P3v2"]
     partition: Literal["development", "heldout"]
     plan_hash: str
     metrics: dict[str, float | int | None]

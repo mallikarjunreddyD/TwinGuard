@@ -17,6 +17,7 @@ COPY configs/analytics configs/analytics
 COPY configs/edge configs/edge
 COPY configs/inspection configs/inspection
 COPY configs/sensing configs/sensing
+COPY configs/validation/view_calibration.json configs/validation/view_calibration.json
 COPY alembic.ini ./
 COPY migrations migrations
 ENV PYTHONPATH=/app/src TWINGUARD_ROOT=/app

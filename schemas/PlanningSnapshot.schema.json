@@ -75,6 +75,97 @@
       "title": "AssetPlanningState",
       "type": "object"
     },
+    "BaselineInspectionSupport": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0.0",
+          "default": "1.0.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "capture_id": {
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+          "title": "Capture Id",
+          "type": "string"
+        },
+        "reference_hash": {
+          "title": "Reference Hash",
+          "type": "string"
+        },
+        "reported_pose": {
+          "$ref": "#/$defs/Transform"
+        },
+        "acquired_at": {
+          "format": "date-time",
+          "title": "Acquired At",
+          "type": "string"
+        },
+        "available_at": {
+          "format": "date-time",
+          "title": "Available At",
+          "type": "string"
+        },
+        "acquisition_parameters": {
+          "additionalProperties": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "integer"
+              }
+            ]
+          },
+          "title": "Acquisition Parameters",
+          "type": "object"
+        },
+        "observed_cells": {
+          "items": {
+            "type": "integer"
+          },
+          "maxItems": 200000,
+          "title": "Observed Cells",
+          "type": "array"
+        }
+      },
+      "required": [
+        "capture_id",
+        "reference_hash",
+        "reported_pose",
+        "acquired_at",
+        "available_at",
+        "acquisition_parameters"
+      ],
+      "title": "BaselineInspectionSupport",
+      "type": "object"
+    },
+    "Frame": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "enum": [
+            "world",
+            "asset_local",
+            "sensor_local",
+            "registered_world"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "reference_id": {
+          "title": "Reference Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "kind",
+        "reference_id"
+      ],
+      "title": "Frame",
+      "type": "object"
+    },
     "SurfaceCoverageEstimate": {
       "additionalProperties": false,
       "properties": {
@@ -200,6 +291,34 @@
       ],
       "title": "SurfaceCoverageEstimate",
       "type": "object"
+    },
+    "Transform": {
+      "additionalProperties": false,
+      "properties": {
+        "source": {
+          "$ref": "#/$defs/Frame"
+        },
+        "target": {
+          "$ref": "#/$defs/Frame"
+        },
+        "matrix": {
+          "items": {
+            "items": {
+              "type": "number"
+            },
+            "type": "array"
+          },
+          "title": "Matrix",
+          "type": "array"
+        }
+      },
+      "required": [
+        "source",
+        "target",
+        "matrix"
+      ],
+      "title": "Transform",
+      "type": "object"
     }
   },
   "additionalProperties": false,
@@ -267,6 +386,27 @@
       ],
       "default": null,
       "title": "Previous Plan Id"
+    },
+    "baseline_support": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/BaselineInspectionSupport"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "required_region_cells": {
+      "additionalProperties": {
+        "items": {
+          "type": "integer"
+        },
+        "type": "array"
+      },
+      "title": "Required Region Cells",
+      "type": "object"
     }
   },
   "required": [

@@ -224,15 +224,24 @@ def inspection(db, job):
             calibration = json.loads(
                 (ROOT / "configs/fusion/calibration/geometry_b31.json").read_text()
             )
+            geometry_method = os.environ.get("TWINGUARD_GEOMETRY_METHOD", "B3.1")
+            if geometry_method not in ("B3.1", "B3.2"):
+                raise ValueError("Unsupported geometry method")
+            view_model = (
+                json.loads((ROOT / "configs/validation/view_calibration.json").read_text())
+                if geometry_method == "B3.2"
+                else None
+            )
             r, g = analyze_geometry(
                 root / lidar[0].artifact.uri,
                 root / lidar[-1].artifact.uri,
                 config,
                 ref,
                 root / "derived",
-                methods=["B3.1"],
+                methods=[geometry_method],
                 improved_calibration=calibration,
-            )["B3.1"]
+                view_calibration=view_model,
+            )[geometry_method]
             evidence.extend(
                 adapters.geometry(
                     g,
@@ -279,6 +288,24 @@ def inspection(db, job):
                     mapped_capture_time(lidar[-1].acquired_at, data),
                 )
             output["surface_coverage"] = [coverage_record.model_dump(mode="json")]
+            from twinguard.inspection.contracts import BaselineInspectionSupport
+
+            baseline_points = load_capture_arrays(root, lidar[0])["points_m"]
+            baseline_pose = np.asarray(lidar[0].sensor_pose.matrix)
+            baseline_world = baseline_points @ baseline_pose[:3, :3].T + baseline_pose[:3, 3]
+            output["baseline_support"] = BaselineInspectionSupport(
+                capture_id=lidar[0].capture_id,
+                reference_hash=reference_surface.hash,
+                reported_pose=lidar[0].sensor_pose,
+                acquired_at=mapped_capture_time(lidar[0].acquired_at, data),
+                available_at=now(),
+                acquisition_parameters={
+                    k: v
+                    for k, v in lidar[0].acquisition_parameters.items()
+                    if isinstance(v, (float, int)) and not isinstance(v, bool)
+                },
+                observed_cells=reference_surface.associate(baseline_world, pc.association_m),
+            ).model_dump(mode="json")
 
         for capture in [r for r in captures if r.modality == "thermal"]:
             result, thermal_arrays = infer_thermal(

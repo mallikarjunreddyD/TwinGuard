@@ -121,6 +121,13 @@ def submit(db, request, actor):
                 )
                 for link in completed
             )
+        support_row = c.execute(
+            select(records.c.body)
+            .where(records.c.kind == "inspection")
+            .order_by(records.c.at.desc())
+            .limit(1)
+        ).scalar_one_or_none()
+        baseline_support = (support_row or {}).get("baseline_support")
         snap = PlanningSnapshot(
             snapshot_id="snapshot-" + request.request_id,
             at=at,
@@ -134,6 +141,13 @@ def submit(db, request, actor):
             ],
             previous_plan_id=request.previous_plan_id,
             attempted_viewpoints=attempted,
+            baseline_support=baseline_support,
+        )
+        view_model_path = ROOT / "configs/validation/view_calibration.json"
+        model_sha256 = (
+            __import__("hashlib").sha256(view_model_path.read_bytes()).hexdigest()
+            if request.method == "P3v2" and view_model_path.exists()
+            else None
         )
         body = {
             "request": request.model_dump(mode="json"),
@@ -143,6 +157,7 @@ def submit(db, request, actor):
             "actor": actor,
             "submitted_at": at.isoformat(),
             "status": "pending",
+            "view_calibration_sha256": model_sha256,
         }
         put(c, "planning_request", request.request_id, body)
         enqueue(
@@ -175,7 +190,23 @@ def run_one(db, owner):
         surface = ReferenceSurface(
             ROOT / config.reference_path, config.reference_sha256, config.cell_m
         )
-        result = plan(surface, snap, config, request, generate(surface, snap, config, ROOT))
+        candidates = generate(surface, snap, config, ROOT)
+        if request.method == "P3v2":
+            from twinguard.inspection.qualified_optimizer import select_plan
+
+            model_path = ROOT / "configs/validation/view_calibration.json"
+            if not model_path.exists():
+                raise ValueError("Frozen P3v2 view calibration is unavailable")
+            if (
+                __import__("hashlib").sha256(model_path.read_bytes()).hexdigest()
+                != body["view_calibration_sha256"]
+            ):
+                raise ValueError("Planning calibration revision changed after request freezing")
+            result = select_plan(
+                surface, snap, config, request, candidates, json.loads(model_path.read_text()), ROOT
+            )
+        else:
+            result = plan(surface, snap, config, request, candidates)
         data = result.model_dump(mode="json")
         digest = store().persist(json.dumps(data, sort_keys=True, allow_nan=False).encode())
         # Large cell geometry stays in immutable artifact storage, not SQL.

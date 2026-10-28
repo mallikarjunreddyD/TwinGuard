@@ -57,6 +57,7 @@ def analyze_geometry(
     calibration=None,
     methods=None,
     improved_calibration=None,
+    view_calibration=None,
 ):
     import open3d as o3d
 
@@ -75,6 +76,7 @@ def analyze_geometry(
             "B2": "point_to_point",
             "B3": "robust_point_to_plane",
             "B3.1": "point_to_point",
+            "B3.2": "point_to_point",
         }[label]
         if method in registration_cache:
             cached, registered = registration_cache[method]
@@ -82,7 +84,21 @@ def analyze_geometry(
         else:
             registration, registered = register(baseline, current, configuration, reference, method)
             registration_cache[method] = (registration.model_copy(deep=True), registered)
-        if label == "B3.1":
+        if label == "B3.2":
+            from .view_calibration import detect_view_qualified
+
+            if view_calibration is None:
+                raise ValueError("B3.2 requires a frozen view-domain healthy calibration")
+            geometry = detect_view_qualified(
+                baseline,
+                current,
+                registered,
+                registration,
+                reference,
+                configuration,
+                view_calibration,
+            )
+        elif label == "B3.1":
             from .geometric_improved import detect_improved
 
             if improved_calibration is None:
@@ -160,6 +176,14 @@ def analyze_geometry(
     )
     if improved_calibration is not None:
         save_json(output / "improved_calibration.json", improved_calibration)
+    if view_calibration is not None:
+        save_json(
+            output / "view_calibration_reference.json",
+            {
+                "calibration_id": view_calibration["calibration_id"],
+                "sha256": fingerprint(view_calibration),
+            },
+        )
     save_json(output / "runtime.json", {"runtime_s": time.perf_counter() - start})
     seal_predictions(
         output,

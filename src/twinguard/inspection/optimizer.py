@@ -11,8 +11,9 @@ from .utility import utility
 from .feasibility import route
 
 
-def plan(surface, snapshot, config, request, candidates):
+def plan(surface, snapshot, config, request, candidates, scorer=None):
     started = time.perf_counter()
+    score_utility = scorer or utility
     if snapshot.reference_hash != surface.hash or config.reference_sha256 != surface.hash:
         raise ValueError("Reference mismatch")
     ranks = priorities(surface, snapshot, config)
@@ -52,7 +53,7 @@ def plan(surface, snapshot, config, request, candidates):
                 config.return_to_start and not route(surface, target, config.start_world_m, config)
             ):
                 continue
-            u = utility(
+            u = score_utility(
                 v,
                 covered,
                 surface,
@@ -63,13 +64,13 @@ def plan(surface, snapshot, config, request, candidates):
             )
             if not u.new_cells:
                 continue
-            if request.method == "P3" and (
+            if request.method in ("P3", "P3v2") and (
                 u.score <= 0 or rank[v.asset_id].terms["deficiency"] <= 1e-8
             ):
                 continue
             score = (
                 u.score
-                if request.method == "P3"
+                if request.method in ("P3", "P3v2")
                 else surface.area_of(u.new_cells)
                 if request.method == "P1"
                 else rank[v.asset_id].terms["severity"] + rank[v.asset_id].terms["criticality"]

@@ -78,6 +78,7 @@ PUBLIC_MODELS.update(
     {
         name: getattr(planning_contracts, name)
         for name in (
+            "BaselineInspectionSupport",
             "InspectionPlanningRequest",
             "PlanningSnapshot",
             "AssetInspectionPriority",

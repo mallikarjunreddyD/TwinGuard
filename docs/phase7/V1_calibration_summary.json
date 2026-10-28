@@ -1,0 +1,161 @@
+{
+  "actual_healthy_pairs": 600,
+  "declared_domains": 20,
+  "supported_domains": 12,
+  "unsupported_domains": [
+    "domain-00",
+    "domain-04",
+    "domain-06",
+    "domain-10",
+    "domain-11",
+    "domain-13",
+    "domain-15",
+    "domain-17"
+  ],
+  "profiles": [
+    {
+      "domain_id": "domain-00",
+      "fit": 11,
+      "screen": 5,
+      "healthy_cluster_multiplier": {}
+    },
+    {
+      "domain_id": "domain-01",
+      "fit": 15,
+      "screen": 15,
+      "healthy_cluster_multiplier": {
+        "0.003": 1.6743537320910462
+      }
+    },
+    {
+      "domain_id": "domain-02",
+      "fit": 15,
+      "screen": 15,
+      "healthy_cluster_multiplier": {
+        "0.003": 20.08858935800472
+      }
+    },
+    {
+      "domain_id": "domain-03",
+      "fit": 14,
+      "screen": 14,
+      "healthy_cluster_multiplier": {
+        "0.003": 1.5
+      }
+    },
+    {
+      "domain_id": "domain-04",
+      "fit": 6,
+      "screen": 8,
+      "healthy_cluster_multiplier": {}
+    },
+    {
+      "domain_id": "domain-05",
+      "fit": 15,
+      "screen": 15,
+      "healthy_cluster_multiplier": {
+        "0.003": 1.5
+      }
+    },
+    {
+      "domain_id": "domain-06",
+      "fit": 15,
+      "screen": 14,
+      "healthy_cluster_multiplier": {}
+    },
+    {
+      "domain_id": "domain-07",
+      "fit": 15,
+      "screen": 15,
+      "healthy_cluster_multiplier": {
+        "0.003": 1.5
+      }
+    },
+    {
+      "domain_id": "domain-08",
+      "fit": 15,
+      "screen": 15,
+      "healthy_cluster_multiplier": {
+        "0.003": 1.5
+      }
+    },
+    {
+      "domain_id": "domain-09",
+      "fit": 15,
+      "screen": 15,
+      "healthy_cluster_multiplier": {
+        "0.003": 3.697374891437598
+      }
+    },
+    {
+      "domain_id": "domain-10",
+      "fit": 5,
+      "screen": 9,
+      "healthy_cluster_multiplier": {}
+    },
+    {
+      "domain_id": "domain-11",
+      "fit": 13,
+      "screen": 14,
+      "healthy_cluster_multiplier": {}
+    },
+    {
+      "domain_id": "domain-12",
+      "fit": 15,
+      "screen": 15,
+      "healthy_cluster_multiplier": {
+        "0.003": 1.5
+      }
+    },
+    {
+      "domain_id": "domain-13",
+      "fit": 15,
+      "screen": 15,
+      "healthy_cluster_multiplier": {}
+    },
+    {
+      "domain_id": "domain-14",
+      "fit": 15,
+      "screen": 14,
+      "healthy_cluster_multiplier": {
+        "0.003": 1.5
+      }
+    },
+    {
+      "domain_id": "domain-15",
+      "fit": 2,
+      "screen": 1,
+      "healthy_cluster_multiplier": {}
+    },
+    {
+      "domain_id": "domain-16",
+      "fit": 15,
+      "screen": 14,
+      "healthy_cluster_multiplier": {
+        "0.003": 1.5
+      }
+    },
+    {
+      "domain_id": "domain-17",
+      "fit": 4,
+      "screen": 5,
+      "healthy_cluster_multiplier": {}
+    },
+    {
+      "domain_id": "reference",
+      "fit": 15,
+      "screen": 15,
+      "healthy_cluster_multiplier": {
+        "0.003": 1.5926440902608043
+      }
+    },
+    {
+      "domain_id": "original_changed",
+      "fit": 15,
+      "screen": 15,
+      "healthy_cluster_multiplier": {
+        "0.003": 1.5
+      }
+    }
+  ]
+}
