@@ -1,0 +1,45 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0",
+      "default": "1.0.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "previous_plan_id": {
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Previous Plan Id",
+      "type": "string"
+    },
+    "snapshot_hash": {
+      "title": "Snapshot Hash",
+      "type": "string"
+    },
+    "outcome": {
+      "enum": [
+        "replan",
+        "manual_review_required",
+        "continue_monitoring"
+      ],
+      "title": "Outcome",
+      "type": "string"
+    },
+    "reasons": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Reasons",
+      "type": "array"
+    }
+  },
+  "required": [
+    "previous_plan_id",
+    "snapshot_hash",
+    "outcome",
+    "reasons"
+  ],
+  "title": "ReinspectionRecommendation",
+  "type": "object"
+}

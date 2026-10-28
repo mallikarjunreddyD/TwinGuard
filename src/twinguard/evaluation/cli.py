@@ -9,7 +9,7 @@ def add_commands(sub):
     root = sub.add_parser("experiment")
     commands = root.add_subparsers(dest="experiment_command", required=True)
     run = commands.add_parser("run")
-    run.add_argument("experiment_id", choices=["E1", "E2", "E3", "E4"])
+    run.add_argument("experiment_id", choices=["E1", "E2", "E3", "E4", "E5"])
     run.add_argument("--config", type=Path, required=True)
     run.add_argument("--output-dir", type=Path)
     run.add_argument("--smoke", action="store_true")
@@ -21,6 +21,11 @@ def add_commands(sub):
 def execute(args):
     if args.experiment_command == "report":
         report = json.loads((args.run_dir / "report.json").read_text())
+        if report.get("experiment_id") == "E5":
+            from .inspection_experiments import report_figures
+
+            print(report_figures(args.run_dir))
+            return
         if report.get("experiment") == "E4":
             subprocess.run(
                 [
@@ -41,6 +46,23 @@ def execute(args):
         from .visualize import experiment_figures
 
         print(experiment_figures(args.run_dir))
+        return
+    if args.experiment_id == "E5":
+        from .inspection_experiments import run_e5
+
+        settings = yaml.safe_load(args.config.read_text())
+        if "benchmark_reference" in settings:
+            settings = yaml.safe_load((args.root / settings["benchmark_reference"]).read_text())
+        if settings.get("experiment_id") != "E5":
+            raise ValueError("Experiment/configuration mismatch")
+        print(
+            run_e5(
+                args.root,
+                args.output_dir or args.root / "experiments/outputs/E5",
+                settings,
+                args.smoke,
+            )
+        )
         return
     if args.experiment_id == "E4":
         config = yaml.safe_load(args.config.read_text())

@@ -1,0 +1,280 @@
+{
+  "$defs": {
+    "AssetPlanningState": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0.0",
+          "default": "1.0.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "asset_id": {
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+          "title": "Asset Id",
+          "type": "string"
+        },
+        "severity": {
+          "default": "unknown",
+          "enum": [
+            "green",
+            "amber",
+            "red",
+            "unknown"
+          ],
+          "title": "Severity",
+          "type": "string"
+        },
+        "confidence": {
+          "default": 0,
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Confidence",
+          "type": "number"
+        },
+        "missing": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Missing",
+          "type": "array"
+        },
+        "advisory_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Advisory Ids",
+          "type": "array"
+        },
+        "critical_process": {
+          "default": false,
+          "title": "Critical Process",
+          "type": "boolean"
+        },
+        "reinspection": {
+          "default": false,
+          "title": "Reinspection",
+          "type": "boolean"
+        },
+        "unsuccessful_attempts": {
+          "default": 0,
+          "minimum": 0,
+          "title": "Unsuccessful Attempts",
+          "type": "integer"
+        },
+        "thermal_image_only": {
+          "default": false,
+          "title": "Thermal Image Only",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "asset_id"
+      ],
+      "title": "AssetPlanningState",
+      "type": "object"
+    },
+    "SurfaceCoverageEstimate": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0.0",
+          "default": "1.0.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "asset_id": {
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+          "title": "Asset Id",
+          "type": "string"
+        },
+        "reference_hash": {
+          "title": "Reference Hash",
+          "type": "string"
+        },
+        "modeled_area_m2": {
+          "minimum": 0,
+          "title": "Modeled Area M2",
+          "type": "number"
+        },
+        "observed_cells": {
+          "items": {
+            "type": "integer"
+          },
+          "title": "Observed Cells",
+          "type": "array"
+        },
+        "qualified_cells": {
+          "items": {
+            "type": "integer"
+          },
+          "title": "Qualified Cells",
+          "type": "array"
+        },
+        "weak_cells": {
+          "items": {
+            "type": "integer"
+          },
+          "title": "Weak Cells",
+          "type": "array"
+        },
+        "finding_cells": {
+          "items": {
+            "type": "integer"
+          },
+          "title": "Finding Cells",
+          "type": "array"
+        },
+        "observed_area_m2": {
+          "default": 0,
+          "minimum": 0,
+          "title": "Observed Area M2",
+          "type": "number"
+        },
+        "qualified_area_m2": {
+          "default": 0,
+          "minimum": 0,
+          "title": "Qualified Area M2",
+          "type": "number"
+        },
+        "acquired_at": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Acquired At"
+        },
+        "available_at": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Available At"
+        },
+        "source_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Source Ids",
+          "type": "array"
+        },
+        "registration_uncertainty_m": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Registration Uncertainty M"
+        },
+        "assumptions": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Assumptions",
+          "type": "array"
+        }
+      },
+      "required": [
+        "asset_id",
+        "reference_hash",
+        "modeled_area_m2"
+      ],
+      "title": "SurfaceCoverageEstimate",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0",
+      "default": "1.0.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "snapshot_id": {
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Snapshot Id",
+      "type": "string"
+    },
+    "at": {
+      "format": "date-time",
+      "title": "At",
+      "type": "string"
+    },
+    "reference_hash": {
+      "title": "Reference Hash",
+      "type": "string"
+    },
+    "assets": {
+      "items": {
+        "$ref": "#/$defs/AssetPlanningState"
+      },
+      "maxItems": 100,
+      "minItems": 1,
+      "title": "Assets",
+      "type": "array"
+    },
+    "coverage": {
+      "items": {
+        "$ref": "#/$defs/SurfaceCoverageEstimate"
+      },
+      "maxItems": 100,
+      "title": "Coverage",
+      "type": "array"
+    },
+    "attempted_viewpoints": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Attempted Viewpoints",
+      "type": "array"
+    },
+    "input_refs": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Input Refs",
+      "type": "array"
+    },
+    "previous_plan_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Previous Plan Id"
+    }
+  },
+  "required": [
+    "snapshot_id",
+    "at",
+    "reference_hash",
+    "assets"
+  ],
+  "title": "PlanningSnapshot",
+  "type": "object"
+}

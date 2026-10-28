@@ -1,0 +1,55 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0",
+      "default": "1.0.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "asset_id": {
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Asset Id",
+      "type": "string"
+    },
+    "score": {
+      "maximum": 1,
+      "minimum": 0,
+      "title": "Score",
+      "type": "number"
+    },
+    "terms": {
+      "additionalProperties": {
+        "type": "number"
+      },
+      "title": "Terms",
+      "type": "object"
+    },
+    "reasons": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Reasons",
+      "type": "array"
+    },
+    "access": {
+      "enum": [
+        "review_required",
+        "restricted",
+        "recommended"
+      ],
+      "title": "Access",
+      "type": "string"
+    }
+  },
+  "required": [
+    "asset_id",
+    "score",
+    "terms",
+    "reasons",
+    "access"
+  ],
+  "title": "AssetInspectionPriority",
+  "type": "object"
+}

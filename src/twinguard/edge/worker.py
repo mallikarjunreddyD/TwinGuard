@@ -257,6 +257,29 @@ def inspection(db, job):
                 }
             ]
             output["registration"] = r.model_dump(mode="json")
+            # Planning coverage is a downstream public-data product; it cannot alter F1 evidence.
+            from twinguard.inspection.coverage import ReferenceSurface
+            from twinguard.inspection.qualification import from_analytics
+            from twinguard.inspection.observations import load_config as planner_config
+            import io
+            import numpy as np
+
+            pc = planner_config(ROOT / "configs/inspection/planner.yaml")
+            reference_surface = ReferenceSurface(
+                ROOT / pc.reference_path, pc.reference_sha256, pc.cell_m
+            )
+            with np.load(io.BytesIO(registered), allow_pickle=False) as cloud:
+                coverage_record = from_analytics(
+                    reference_surface,
+                    cloud["points_m"],
+                    lidar[-1],
+                    r,
+                    g,
+                    now(),
+                    mapped_capture_time(lidar[-1].acquired_at, data),
+                )
+            output["surface_coverage"] = [coverage_record.model_dump(mode="json")]
+
         for capture in [r for r in captures if r.modality == "thermal"]:
             result, thermal_arrays = infer_thermal(
                 root, capture, ROOT / "configs/fusion/calibration", config, ref
@@ -336,6 +359,14 @@ def run_one(db, kind, owner):
             put(c, "analysis", job["id"], result, result.get("asset_id"))
             for artifact in result.get("derived_artifacts", []):
                 put(c, "artifact", artifact["sha256"], artifact)
+            for coverage_record in result.get("surface_coverage", []):
+                put(
+                    c,
+                    "surface_coverage",
+                    coverage_record["source_ids"][0],
+                    coverage_record,
+                    coverage_record["asset_id"],
+                )
             if kind == "inspection":
                 put(c, "inspection", job["id"], {**result, **job["body"]}, "BW-01")
             c.execute(

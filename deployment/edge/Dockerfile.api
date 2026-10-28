@@ -11,9 +11,12 @@ COPY src/twinguard/analytics src/twinguard/analytics
 COPY src/twinguard/fusion src/twinguard/fusion
 COPY src/twinguard/api src/twinguard/api
 COPY src/twinguard/edge src/twinguard/edge
+COPY src/twinguard/inspection src/twinguard/inspection
 COPY configs/fusion configs/fusion
 COPY configs/analytics configs/analytics
 COPY configs/edge configs/edge
+COPY configs/inspection configs/inspection
+COPY configs/sensing configs/sensing
 COPY alembic.ini ./
 COPY migrations migrations
 ENV PYTHONPATH=/app/src TWINGUARD_ROOT=/app

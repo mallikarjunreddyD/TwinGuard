@@ -1,0 +1,99 @@
+{
+  "$defs": {
+    "ViewpointUtility": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0.0",
+          "default": "1.0.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "score": {
+          "default": 0,
+          "maximum": 1,
+          "minimum": -1,
+          "title": "Score",
+          "type": "number"
+        },
+        "terms": {
+          "additionalProperties": {
+            "type": "number"
+          },
+          "title": "Terms",
+          "type": "object"
+        },
+        "new_cells": {
+          "items": {
+            "type": "integer"
+          },
+          "title": "New Cells",
+          "type": "array"
+        }
+      },
+      "title": "ViewpointUtility",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0",
+      "default": "1.0.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "order": {
+      "minimum": 1,
+      "title": "Order",
+      "type": "integer"
+    },
+    "viewpoint_id": {
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Viewpoint Id",
+      "type": "string"
+    },
+    "asset_id": {
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Asset Id",
+      "type": "string"
+    },
+    "travel_m": {
+      "minimum": 0,
+      "title": "Travel M",
+      "type": "number"
+    },
+    "travel_s": {
+      "minimum": 0,
+      "title": "Travel S",
+      "type": "number"
+    },
+    "acquisition_s": {
+      "exclusiveMinimum": 0,
+      "title": "Acquisition S",
+      "type": "number"
+    },
+    "marginal_area_m2": {
+      "minimum": 0,
+      "title": "Marginal Area M2",
+      "type": "number"
+    },
+    "utility": {
+      "$ref": "#/$defs/ViewpointUtility"
+    }
+  },
+  "required": [
+    "order",
+    "viewpoint_id",
+    "asset_id",
+    "travel_m",
+    "travel_s",
+    "acquisition_s",
+    "marginal_area_m2",
+    "utility"
+  ],
+  "title": "InspectionPlanStep",
+  "type": "object"
+}

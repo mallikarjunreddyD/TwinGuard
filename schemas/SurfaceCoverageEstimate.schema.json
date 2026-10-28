@@ -1,0 +1,126 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0",
+      "default": "1.0.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "asset_id": {
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Asset Id",
+      "type": "string"
+    },
+    "reference_hash": {
+      "title": "Reference Hash",
+      "type": "string"
+    },
+    "modeled_area_m2": {
+      "minimum": 0,
+      "title": "Modeled Area M2",
+      "type": "number"
+    },
+    "observed_cells": {
+      "items": {
+        "type": "integer"
+      },
+      "title": "Observed Cells",
+      "type": "array"
+    },
+    "qualified_cells": {
+      "items": {
+        "type": "integer"
+      },
+      "title": "Qualified Cells",
+      "type": "array"
+    },
+    "weak_cells": {
+      "items": {
+        "type": "integer"
+      },
+      "title": "Weak Cells",
+      "type": "array"
+    },
+    "finding_cells": {
+      "items": {
+        "type": "integer"
+      },
+      "title": "Finding Cells",
+      "type": "array"
+    },
+    "observed_area_m2": {
+      "default": 0,
+      "minimum": 0,
+      "title": "Observed Area M2",
+      "type": "number"
+    },
+    "qualified_area_m2": {
+      "default": 0,
+      "minimum": 0,
+      "title": "Qualified Area M2",
+      "type": "number"
+    },
+    "acquired_at": {
+      "anyOf": [
+        {
+          "format": "date-time",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Acquired At"
+    },
+    "available_at": {
+      "anyOf": [
+        {
+          "format": "date-time",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Available At"
+    },
+    "source_ids": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Source Ids",
+      "type": "array"
+    },
+    "registration_uncertainty_m": {
+      "anyOf": [
+        {
+          "minimum": 0,
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Registration Uncertainty M"
+    },
+    "assumptions": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Assumptions",
+      "type": "array"
+    }
+  },
+  "required": [
+    "asset_id",
+    "reference_hash",
+    "modeled_area_m2"
+  ],
+  "title": "SurfaceCoverageEstimate",
+  "type": "object"
+}

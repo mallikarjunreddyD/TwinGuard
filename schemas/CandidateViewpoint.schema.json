@@ -1,0 +1,270 @@
+{
+  "$defs": {
+    "Frame": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "enum": [
+            "world",
+            "asset_local",
+            "sensor_local",
+            "registered_world"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "reference_id": {
+          "title": "Reference Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "kind",
+        "reference_id"
+      ],
+      "title": "Frame",
+      "type": "object"
+    },
+    "Transform": {
+      "additionalProperties": false,
+      "properties": {
+        "source": {
+          "$ref": "#/$defs/Frame"
+        },
+        "target": {
+          "$ref": "#/$defs/Frame"
+        },
+        "matrix": {
+          "items": {
+            "items": {
+              "type": "number"
+            },
+            "type": "array"
+          },
+          "title": "Matrix",
+          "type": "array"
+        }
+      },
+      "required": [
+        "source",
+        "target",
+        "matrix"
+      ],
+      "title": "Transform",
+      "type": "object"
+    },
+    "ViewpointFeasibility": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0.0",
+          "default": "1.0.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "feasible",
+            "infeasible",
+            "requires_route_review"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "reasons": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Reasons",
+          "type": "array"
+        },
+        "operator_review_required": {
+          "default": true,
+          "title": "Operator Review Required",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "status"
+      ],
+      "title": "ViewpointFeasibility",
+      "type": "object"
+    },
+    "ViewpointUtility": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0.0",
+          "default": "1.0.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "score": {
+          "default": 0,
+          "maximum": 1,
+          "minimum": -1,
+          "title": "Score",
+          "type": "number"
+        },
+        "terms": {
+          "additionalProperties": {
+            "type": "number"
+          },
+          "title": "Terms",
+          "type": "object"
+        },
+        "new_cells": {
+          "items": {
+            "type": "integer"
+          },
+          "title": "New Cells",
+          "type": "array"
+        }
+      },
+      "title": "ViewpointUtility",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0",
+      "default": "1.0.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "viewpoint_id": {
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Viewpoint Id",
+      "type": "string"
+    },
+    "asset_id": {
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Asset Id",
+      "type": "string"
+    },
+    "intended_region": {
+      "title": "Intended Region",
+      "type": "string"
+    },
+    "modality": {
+      "enum": [
+        "lidar",
+        "thermal"
+      ],
+      "title": "Modality",
+      "type": "string"
+    },
+    "planned_pose": {
+      "$ref": "#/$defs/Transform"
+    },
+    "coordinate_frame": {
+      "default": "plant-01",
+      "title": "Coordinate Frame",
+      "type": "string"
+    },
+    "sensor_reference": {
+      "title": "Sensor Reference",
+      "type": "string"
+    },
+    "calibration_reference": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Calibration Reference"
+    },
+    "expected_range_m": {
+      "minimum": 0,
+      "title": "Expected Range M",
+      "type": "number"
+    },
+    "incidence_cosine_mean": {
+      "maximum": 1,
+      "minimum": 0,
+      "title": "Incidence Cosine Mean",
+      "type": "number"
+    },
+    "predicted_visible_cells": {
+      "items": {
+        "type": "integer"
+      },
+      "title": "Predicted Visible Cells",
+      "type": "array"
+    },
+    "predicted_usable_cells": {
+      "items": {
+        "type": "integer"
+      },
+      "title": "Predicted Usable Cells",
+      "type": "array"
+    },
+    "expected_usable_area_m2": {
+      "minimum": 0,
+      "title": "Expected Usable Area M2",
+      "type": "number"
+    },
+    "predicted_spacing_m": {
+      "minimum": 0,
+      "title": "Predicted Spacing M",
+      "type": "number"
+    },
+    "expected_quality": {
+      "maximum": 1,
+      "minimum": 0,
+      "title": "Expected Quality",
+      "type": "number"
+    },
+    "registration_support_returns": {
+      "minimum": 0,
+      "title": "Registration Support Returns",
+      "type": "integer"
+    },
+    "acquisition_s": {
+      "exclusiveMinimum": 0,
+      "title": "Acquisition S",
+      "type": "number"
+    },
+    "feasibility": {
+      "$ref": "#/$defs/ViewpointFeasibility"
+    },
+    "utility": {
+      "$ref": "#/$defs/ViewpointUtility"
+    },
+    "assumptions": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Assumptions",
+      "type": "array"
+    }
+  },
+  "required": [
+    "viewpoint_id",
+    "asset_id",
+    "intended_region",
+    "modality",
+    "planned_pose",
+    "sensor_reference",
+    "calibration_reference",
+    "expected_range_m",
+    "incidence_cosine_mean",
+    "predicted_visible_cells",
+    "predicted_usable_cells",
+    "expected_usable_area_m2",
+    "predicted_spacing_m",
+    "expected_quality",
+    "registration_support_returns",
+    "acquisition_s",
+    "feasibility",
+    "assumptions"
+  ],
+  "title": "CandidateViewpoint",
+  "type": "object"
+}

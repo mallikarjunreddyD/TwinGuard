@@ -1,0 +1,50 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0",
+      "default": "1.0.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "selected": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Selected",
+      "type": "array"
+    },
+    "rejected": {
+      "additionalProperties": {
+        "items": {
+          "type": "string"
+        },
+        "type": "array"
+      },
+      "title": "Rejected",
+      "type": "object"
+    },
+    "limitations": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Limitations",
+      "type": "array"
+    },
+    "recommended_actions": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Recommended Actions",
+      "type": "array"
+    }
+  },
+  "required": [
+    "selected",
+    "rejected",
+    "limitations",
+    "recommended_actions"
+  ],
+  "title": "PlanningExplanation",
+  "type": "object"
+}

@@ -1,3 +1,4 @@
+from twinguard.edge.planning_api import router as planning_router
 from twinguard.edge.api import router
 from fastapi import FastAPI
 from twinguard import __version__, SCHEMA_VERSION
@@ -18,7 +19,7 @@ def version():
 @app.get("/capabilities")
 def capabilities():
     return {
-        "phase": 5,
+        "phase": 6,
         "implemented": [
             "contracts",
             "configuration_validation",
@@ -42,12 +43,15 @@ def capabilities():
             "edge_ingestion",
             "durable_processing",
             "dashboard",
+            "inspection_planning",
         ],
         "pending": [
-            "inspection_planning",
             "physical_validation",
         ],
     }
 
 
 app.include_router(router)
+
+
+app.include_router(planning_router)

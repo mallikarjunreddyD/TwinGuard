@@ -1,3 +1,4 @@
+from twinguard.inspection import contracts as planning_contracts
 from twinguard.edge.contracts import Envelope, SourceRegistration
 from pathlib import Path
 import json
@@ -72,7 +73,29 @@ PUBLIC_MODELS.update(
 
 PUBLIC_MODELS.update({"EdgeEnvelope": Envelope, "SourceRegistration": SourceRegistration})
 
+
+PUBLIC_MODELS.update(
+    {
+        name: getattr(planning_contracts, name)
+        for name in (
+            "InspectionPlanningRequest",
+            "PlanningSnapshot",
+            "AssetInspectionPriority",
+            "SurfaceCoverageEstimate",
+            "CandidateViewpoint",
+            "ViewpointFeasibility",
+            "ViewpointUtility",
+            "InspectionPlan",
+            "InspectionPlanStep",
+            "PlanningExplanation",
+            "ReinspectionRecommendation",
+            "PlanningEvaluationRecord",
+        )
+    }
+)
+
 CONFIG_MODELS = {
+    "PlanningConfig": planning_contracts.PlanningConfig,
     "FusionPolicy": fusion_models.FusionPolicy,
     "HazardRule": fusion_models.HazardRule,
     "SensorAuthority": fusion_models.SensorAuthority,

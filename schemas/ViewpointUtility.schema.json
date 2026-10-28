@@ -1,0 +1,34 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0",
+      "default": "1.0.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "score": {
+      "default": 0,
+      "maximum": 1,
+      "minimum": -1,
+      "title": "Score",
+      "type": "number"
+    },
+    "terms": {
+      "additionalProperties": {
+        "type": "number"
+      },
+      "title": "Terms",
+      "type": "object"
+    },
+    "new_cells": {
+      "items": {
+        "type": "integer"
+      },
+      "title": "New Cells",
+      "type": "array"
+    }
+  },
+  "title": "ViewpointUtility",
+  "type": "object"
+}

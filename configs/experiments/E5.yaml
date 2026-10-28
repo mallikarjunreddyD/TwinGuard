@@ -1,0 +1,6 @@
+experiment_id: E5
+status: implemented
+name: Risk-Adaptive Viewpoint Planning and Evidence-Quality Improvement
+development_seeds: [9100, 9101, 9102, 10100]
+heldout_seeds: [11100, 11101, 11102, 11103, 11104, 11105, 11106, 11107, 11108, 11109, 11110, 11111, 11112, 11113, 11114, 11115, 11116, 11117, 11118, 11119, 11120, 11121, 11122, 11123, 11124, 11125, 11126, 11127, 11128, 11129]
+methods: [P0, P1, P2, P3]

@@ -1,0 +1,71 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0",
+      "default": "1.0.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "request_id": {
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Request Id",
+      "type": "string"
+    },
+    "method": {
+      "default": "P3",
+      "enum": [
+        "P0",
+        "P1",
+        "P2",
+        "P3"
+      ],
+      "title": "Method",
+      "type": "string"
+    },
+    "budget_views": {
+      "default": 4,
+      "maximum": 12,
+      "minimum": 1,
+      "title": "Budget Views",
+      "type": "integer"
+    },
+    "budget_s": {
+      "default": 120,
+      "exclusiveMinimum": 0,
+      "title": "Budget S",
+      "type": "number"
+    },
+    "maximum_travel_m": {
+      "default": 50,
+      "exclusiveMinimum": 0,
+      "title": "Maximum Travel M",
+      "type": "number"
+    },
+    "per_asset_limit": {
+      "default": 4,
+      "maximum": 12,
+      "minimum": 1,
+      "title": "Per Asset Limit",
+      "type": "integer"
+    },
+    "previous_plan_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Previous Plan Id"
+    }
+  },
+  "required": [
+    "request_id"
+  ],
+  "title": "InspectionPlanningRequest",
+  "type": "object"
+}

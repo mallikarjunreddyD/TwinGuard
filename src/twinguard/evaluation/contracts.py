@@ -56,7 +56,7 @@ class FaultInjection(Contract):
 
 
 class ExperimentDefinition(Contract):
-    experiment_id: Literal["E1", "E2", "E3", "E4"]
+    experiment_id: Literal["E1", "E2", "E3", "E4", "E5"]
     version: ID
     inputs: list[str]
     outputs: list[str]

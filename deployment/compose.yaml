@@ -74,6 +74,17 @@ services:
       OPENBLAS_NUM_THREADS: '1'
     depends_on:
       migrate: {condition: service_completed_successfully}
+  planning-worker:
+    <<: *platform
+    image: twinguard-edge-worker:local
+    command: [python, -m, twinguard.edge.planning]
+    cpus: 1.0
+    mem_limit: 2g
+    environment:
+      OMP_NUM_THREADS: '1'
+      OPENBLAS_NUM_THREADS: '1'
+    depends_on:
+      migrate: {condition: service_completed_successfully}
   frontend:
     image: twinguard-edge-frontend:local
     build: {context: .., dockerfile: deployment/edge/Dockerfile.frontend}

@@ -1,0 +1,324 @@
+{
+  "$defs": {
+    "Box": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0.0",
+          "default": "1.0.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "lower": {
+          "maxItems": 3,
+          "minItems": 3,
+          "prefixItems": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "title": "Lower",
+          "type": "array"
+        },
+        "upper": {
+          "maxItems": 3,
+          "minItems": 3,
+          "prefixItems": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "title": "Upper",
+          "type": "array"
+        }
+      },
+      "required": [
+        "lower",
+        "upper"
+      ],
+      "title": "Box",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0",
+      "default": "1.0.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "configuration_id": {
+      "default": "inspection-v1",
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Configuration Id",
+      "type": "string"
+    },
+    "reference_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Reference Sha256",
+      "type": "string"
+    },
+    "reference_path": {
+      "default": "configs/edge/plant.glb",
+      "title": "Reference Path",
+      "type": "string"
+    },
+    "sensor_path": {
+      "default": "configs/sensing/L1.yaml",
+      "title": "Sensor Path",
+      "type": "string"
+    },
+    "criticality": {
+      "additionalProperties": {
+        "maximum": 1,
+        "minimum": 0,
+        "type": "number"
+      },
+      "title": "Criticality",
+      "type": "object"
+    },
+    "allowed_volume": {
+      "$ref": "#/$defs/Box"
+    },
+    "no_go": {
+      "items": {
+        "$ref": "#/$defs/Box"
+      },
+      "title": "No Go",
+      "type": "array"
+    },
+    "map_complete": {
+      "default": false,
+      "title": "Map Complete",
+      "type": "boolean"
+    },
+    "minimum_standoff_m": {
+      "default": 0.5,
+      "exclusiveMinimum": 0,
+      "title": "Minimum Standoff M",
+      "type": "number"
+    },
+    "maximum_range_m": {
+      "default": 8,
+      "exclusiveMinimum": 0,
+      "title": "Maximum Range M",
+      "type": "number"
+    },
+    "safety_margin_m": {
+      "default": 0.2,
+      "minimum": 0,
+      "title": "Safety Margin M",
+      "type": "number"
+    },
+    "altitude_m": {
+      "default": [
+        0.5,
+        6
+      ],
+      "maxItems": 2,
+      "minItems": 2,
+      "prefixItems": [
+        {
+          "minimum": 0,
+          "type": "number"
+        },
+        {
+          "exclusiveMinimum": 0,
+          "type": "number"
+        }
+      ],
+      "title": "Altitude M",
+      "type": "array"
+    },
+    "start_world_m": {
+      "default": [
+        0,
+        3.4,
+        1.65
+      ],
+      "maxItems": 3,
+      "minItems": 3,
+      "prefixItems": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "number"
+        },
+        {
+          "type": "number"
+        }
+      ],
+      "title": "Start World M",
+      "type": "array"
+    },
+    "speed_m_s": {
+      "default": 0.5,
+      "exclusiveMinimum": 0,
+      "title": "Speed M S",
+      "type": "number"
+    },
+    "acquisition_s": {
+      "default": 8,
+      "exclusiveMinimum": 0,
+      "title": "Acquisition S",
+      "type": "number"
+    },
+    "return_to_start": {
+      "default": true,
+      "title": "Return To Start",
+      "type": "boolean"
+    },
+    "cell_m": {
+      "default": 0.08,
+      "exclusiveMinimum": 0,
+      "title": "Cell M",
+      "type": "number"
+    },
+    "association_m": {
+      "default": 0.06,
+      "exclusiveMinimum": 0,
+      "title": "Association M",
+      "type": "number"
+    },
+    "freshness_s": {
+      "default": 3600,
+      "exclusiveMinimum": 0,
+      "title": "Freshness S",
+      "type": "number"
+    },
+    "stand_off_shells_m": {
+      "items": {
+        "exclusiveMinimum": 0,
+        "type": "number"
+      },
+      "title": "Stand Off Shells M",
+      "type": "array"
+    },
+    "azimuths_rad": {
+      "items": {
+        "type": "number"
+      },
+      "title": "Azimuths Rad",
+      "type": "array"
+    },
+    "elevation_offsets_m": {
+      "items": {
+        "type": "number"
+      },
+      "title": "Elevation Offsets M",
+      "type": "array"
+    },
+    "available_modalities": {
+      "default": [
+        "lidar",
+        "thermal"
+      ],
+      "items": {
+        "enum": [
+          "lidar",
+          "thermal"
+        ],
+        "type": "string"
+      },
+      "title": "Available Modalities",
+      "type": "array"
+    },
+    "calibrated_fidelities": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Calibrated Fidelities",
+      "type": "array"
+    },
+    "calibrated_assets": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Calibrated Assets",
+      "type": "array"
+    },
+    "calibrated_range_m": {
+      "default": [
+        2,
+        4.5
+      ],
+      "maxItems": 2,
+      "minItems": 2,
+      "prefixItems": [
+        {
+          "minimum": 0,
+          "type": "number"
+        },
+        {
+          "exclusiveMinimum": 0,
+          "type": "number"
+        }
+      ],
+      "title": "Calibrated Range M",
+      "type": "array"
+    },
+    "minimum_registration_returns": {
+      "default": 100,
+      "minimum": 6,
+      "title": "Minimum Registration Returns",
+      "type": "integer"
+    },
+    "minimum_incidence_cosine": {
+      "default": 0.3,
+      "maximum": 1,
+      "minimum": 0,
+      "title": "Minimum Incidence Cosine",
+      "type": "number"
+    },
+    "maximum_vertical_spacing_m": {
+      "default": 0.24,
+      "exclusiveMinimum": 0,
+      "title": "Maximum Vertical Spacing M",
+      "type": "number"
+    },
+    "restricted_assets": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Restricted Assets",
+      "type": "array"
+    },
+    "priority_weights": {
+      "additionalProperties": {
+        "minimum": 0,
+        "type": "number"
+      },
+      "title": "Priority Weights",
+      "type": "object"
+    },
+    "utility_weights": {
+      "additionalProperties": {
+        "minimum": 0,
+        "type": "number"
+      },
+      "title": "Utility Weights",
+      "type": "object"
+    }
+  },
+  "required": [
+    "reference_sha256",
+    "allowed_volume"
+  ],
+  "title": "PlanningConfig",
+  "type": "object"
+}
