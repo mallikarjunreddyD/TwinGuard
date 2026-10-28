@@ -94,7 +94,19 @@ def checkpoint(c, evidence, actions=()):
         put(c, "trace", trace.assessment.assessment_id, data, trace.assessment.asset_id)
         put(c, "condition", trace.assessment.asset_id, data, trace.assessment.asset_id)
     for event in state.events.values():
-        put(c, "event", event.event_id, event.model_dump(mode="json"), event.asset_id)
+        put(
+            c,
+            "event",
+            event.event_id,
+            {
+                **event.model_dump(mode="json"),
+                "policy_id": p.policy_id,
+                "policy_version": p.version,
+                "policy_sha256": policy_hash(p),
+                "deployment_profile": os.environ.get("TWINGUARD_PROFILE", "simulation"),
+            },
+            event.asset_id,
+        )
     for notice in state.notices:
         put(c, "notice", notice.notice_id, notice.model_dump(mode="json"))
     emit(

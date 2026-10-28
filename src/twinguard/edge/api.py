@@ -174,6 +174,18 @@ def event(event_id: str, actor=Depends(user)):
     return result
 
 
+@router.get("/events/{event_id}/history")
+def event_history(event_id: str, limit: int = Query(100, ge=1, le=1000), actor=Depends(user)):
+    with db().connect() as c:
+        q = (
+            select(records.c.body)
+            .where(records.c.kind == "notice", records.c.body["event_id"].as_string() == event_id)
+            .order_by(records.c.at)
+            .limit(limit)
+        )
+        return list(c.execute(q).scalars())
+
+
 class ActionBody(BaseModel):
     rationale: str = Field(min_length=3, max_length=1000)
 

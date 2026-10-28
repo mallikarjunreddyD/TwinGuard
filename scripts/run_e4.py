@@ -318,6 +318,42 @@ def main(output, smoke=False):
             )
             save(output / "progress.json", report)
             print("Recovery", service, "complete", flush=True)
+        # Optional real numeric OPC UA server + read-only adapter use original public sensing records.
+        command(
+            "--profile", "demo-opcua", "up", "-d", "--no-build", "opcua-simulator", "opcua-adapter"
+        )
+        time.sleep(8)
+        with db.connect() as c:
+            opc_status = list(
+                c.execute(select(records.c.body).where(records.c.kind == "opcua_status")).scalars()
+            )
+            opc_count = c.execute(
+                select(func.count())
+                .select_from(observations)
+                .where(observations.c.source == "opcua-demo")
+            ).scalar_one()
+        report["profiles"].append(
+            {
+                "profile": "B5-OPCUA",
+                "node_statuses": opc_status,
+                "distinct_observations": opc_count,
+                "read_mode": "numeric channels with engineering units and original public-record lineage; polled snapshots, not every source update",
+            }
+        )
+        command("stop", "-t", "1", "opcua-simulator")
+        time.sleep(3)
+        command("start", "opcua-simulator")
+        time.sleep(5)
+        with db.connect() as c:
+            refreshed = list(
+                c.execute(select(records.c.body).where(records.c.kind == "opcua_status")).scalars()
+            )
+        report["opcua_recovery"] = {
+            "statuses_before": len(opc_status),
+            "statuses_after": len(refreshed),
+            "latest_status_at": max([r["at"] for r in refreshed], default=None),
+        }
+        command("stop", "-t", "1", "opcua-adapter", "opcua-simulator")
         # Quiescent sources become explicitly unavailable; no alert-free inference of health.
         time.sleep(16)
         monitoring = httpx.get(URL + "/api/v1/monitoring/health", headers=headers).json()

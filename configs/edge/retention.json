@@ -1,0 +1,12 @@
+{
+  "nominal_operational_days": 90,
+  "raw_inbox_days": 90,
+  "cleanup_batch_size": 1000,
+  "observations": "retain scientific records and all decision references; archive before any external lifecycle deletion",
+  "aggregated_time_series": "derived on demand; no fabricated continuous samples",
+  "analytics": "preserve by immutable model/policy version",
+  "inspection_artifacts": "preserve referenced content-addressed objects",
+  "decision_history": "never delete unresolved event or evidence references",
+  "audit": "archive with record identity; preserve authorization and operator-action audit",
+  "capacity": "estimate from E4 measured row/artifact bytes and throughput, not a 90-day reliability claim"
+}

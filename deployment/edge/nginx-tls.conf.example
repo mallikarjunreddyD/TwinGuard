@@ -1,0 +1,11 @@
+# Replace loopback listener in a reviewed campus/LAN deployment; mount externally issued certificates.
+server {
+ listen 8443 ssl;
+ ssl_certificate /run/secrets/server.crt;
+ ssl_certificate_key /run/secrets/server.key;
+ ssl_protocols TLSv1.2 TLSv1.3;
+ root /usr/share/nginx/html;
+ client_max_body_size 64m;
+ location /api/ { proxy_pass http://api:8000; proxy_buffering off; proxy_read_timeout 3600; }
+ location / { try_files $uri $uri/ /index.html; }
+}
