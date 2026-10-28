@@ -474,3 +474,21 @@ def test_exhausted_crash_lease_is_quarantined(db):
     assert claim(db, "iot", "retry") is None
     with db.connect() as c:
         assert c.execute(select(jobs.c.status)).scalar_one() == "failed"
+
+
+def test_policy_cache_observes_configuration_revision(tmp_path, monkeypatch):
+    from twinguard.edge import worker
+    import shutil
+
+    root = tmp_path / "configs/fusion"
+    root.mkdir(parents=True)
+    p = root / "hazards.yaml"
+    shutil.copy2("configs/fusion/hazards.yaml", p)
+    monkeypatch.setattr(worker, "ROOT", tmp_path)
+    monkeypatch.setenv("TWINGUARD_PROFILE", "simulation")
+    first = worker.policy()
+    data = first.model_dump(mode="json")
+    data["version"] = "cache-revision-v2"
+    p.write_text(json.dumps(data))
+    assert worker.policy().version == "cache-revision-v2"
+    assert first.version != "cache-revision-v2"

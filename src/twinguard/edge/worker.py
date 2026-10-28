@@ -1,6 +1,7 @@
 """Restart-safe jobs invoking unchanged public analytics and Phase 4 F1."""
 
 import json
+from functools import lru_cache
 import os
 import time
 import uuid
@@ -24,18 +25,22 @@ from .artifacts import ArtifactStore
 ROOT = Path(os.environ.get("TWINGUARD_ROOT", ".")).resolve()
 
 
+@lru_cache(maxsize=8)
+def _validated_policy(path, mtime_ns, size):
+    return load_policy(Path(path))
+
+
 def policy():
     profile = os.environ.get("TWINGUARD_PROFILE", "simulation")
     if profile not in ["simulation", "site-review"]:
         raise ValueError("Unknown deployment profile")
-    return load_policy(
-        ROOT
-        / (
-            "configs/fusion/hazards.yaml"
-            if profile == "simulation"
-            else "configs/fusion/site-template.yaml"
-        )
+    path = ROOT / (
+        "configs/fusion/hazards.yaml"
+        if profile == "simulation"
+        else "configs/fusion/site-template.yaml"
     )
+    revision = path.stat()
+    return _validated_policy(str(path), revision.st_mtime_ns, revision.st_size)
 
 
 def processing(source, received, clock):
