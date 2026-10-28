@@ -337,3 +337,38 @@ def test_archived_message_still_rejects_conflicting_payload(db):
 def test_future_publisher_clock_rejected(db):
     e = env().model_copy(update={"emitted_at": now() + timedelta(seconds=30)})
     assert send(db, e)["status"] == "quarantined"
+
+
+def test_operating_context_never_crosses_dataset_provenance(db, monkeypatch):
+    # Separate replay datasets can share original simulation timestamps. They are not one measured load history.
+    from twinguard.edge import worker
+
+    target = sample()
+    foreign = sample("foreign-source").model_copy(update={"provenance_id": "another-dataset"})
+    with db.begin() as c:
+        c.execute(
+            observations.insert().values(
+                id=foreign.observation_id,
+                asset=foreign.asset_id,
+                sensor=foreign.sensor_id,
+                acquired=foreign.acquired_at.isoformat(),
+                received=foreign.received_at.isoformat(),
+                source="other",
+                body=foreign.model_dump(mode="json"),
+                metadata={},
+            )
+        )
+    original = worker.infer_operating
+
+    def checked(records, model, config):
+        assert all(r.provenance_id == target.provenance_id for r in records)
+        return original(records, model, config)
+
+    monkeypatch.setattr(worker, "infer_operating", checked)
+    assert send(db, env(target))["status"] == "accepted"
+    assert worker.run_one(db, "iot", "worker")
+    with db.connect() as c:
+        assert c.execute(select(jobs.c.status)).scalar_one() == "completed"
+        assert c.execute(
+            select(observations.c.metadata).where(observations.c.id == target.observation_id)
+        ).scalar_one()["ingest_commit_confirmed_at"]

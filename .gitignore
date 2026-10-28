@@ -28,3 +28,4 @@ datasets/**/*.zip
 frontend/node_modules/
 frontend/dist/
 output/phase5*/
+frontend/*.tsbuildinfo

@@ -197,6 +197,21 @@ def ingest(db, raw, authenticated_identity, received_topic, artifact_store=None)
                 received=received.isoformat(),
             )
             emit(c, "ingest", {"message_id": env.message_id, "source": env.source_id})
+        committed = now()
+        if env.kind == "observation":
+            # Supplemental timing, after the atomic inbox/observation/job commit. It is
+            # an observed upper bound, not a timestamp invented inside the transaction.
+            try:
+                with db.begin() as c:
+                    c.execute(
+                        observations.update()
+                        .where(observations.c.id == obs.observation_id)
+                        .values(
+                            metadata={**meta, "ingest_commit_confirmed_at": committed.isoformat()}
+                        )
+                    )
+            except Exception:
+                pass  # Committed scientific effects remain valid; absent metric is censored.
         return {"status": "accepted", "id": env.message_id}
     except Exception as exc:
         with db.begin() as c:

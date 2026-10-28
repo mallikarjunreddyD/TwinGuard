@@ -58,7 +58,8 @@ def percentiles(values):
     }
 
 
-def main(output, smoke=False):
+def main(output, smoke=False, project="twinguard-e4"):
+    COMPOSE[5] = project
     output.mkdir(parents=True, exist_ok=False)
     secrets = json.loads((ROOT / ".edge/secrets.json").read_text())
     headers = {"Authorization": "Bearer " + secrets["operator"]}
@@ -140,12 +141,17 @@ def main(output, smoke=False):
                 page.wait_for_selector('[data-model-loaded="true"]', timeout=60000)
                 page.wait_for_function(
                     "document.querySelector('[data-testid=asset-severity]')?.textContent==='RED'",
-                    timeout=300000,
+                    timeout=900000,
                 )
                 browser_results["first_red_visible_at"] = now().isoformat()
                 page.screenshot(path=str(output / "first_red_browser.png"), full_page=True)
+                browser_results["deliveries"] = []
+                last_seq = 0
                 while not stop.is_set():
                     page.wait_for_timeout(1000)
+                    new = page.evaluate("(window.__tgDeliveries || [])")
+                    browser_results["deliveries"].extend([r for r in new if r["seq"] > last_seq])
+                    last_seq = max([r["seq"] for r in new] + [last_seq])
                 browser_results["last_stream_id"] = page.evaluate("window.__tgLastStreamId")
                 browser.close()
         except Exception as exc:
@@ -448,5 +454,6 @@ if __name__ == "__main__":
     p = argparse.ArgumentParser()
     p.add_argument("--output", type=Path, required=True)
     p.add_argument("--smoke", action="store_true")
+    p.add_argument("--project", default="twinguard-e4")
     args = p.parse_args()
-    main(args.output, args.smoke)
+    main(args.output, args.smoke, args.project)

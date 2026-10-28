@@ -135,7 +135,11 @@ def iot(db, job):
         context = list(
             c.execute(
                 select(observations.c.body)
-                .where(observations.c.acquired <= row["acquired"])
+                .where(
+                    observations.c.acquired <= row["acquired"],
+                    observations.c.body["provenance_id"].as_string()
+                    == row["body"]["provenance_id"],
+                )
                 .order_by(observations.c.acquired.desc())
                 .limit(500)
             ).scalars()
@@ -312,6 +316,15 @@ def run_one(db, kind, owner):
                     "analytics_complete": analytics_done.isoformat(),
                     "advisory_available": now().isoformat(),
                     "assessments": [h.assessment.assessment_id for h in history],
+                },
+            )
+            emit(
+                c,
+                "job_completed",
+                {
+                    "job_id": job["id"],
+                    "kind": kind,
+                    "assets": [h.assessment.asset_id for h in history],
                 },
             )
         committed = now()
