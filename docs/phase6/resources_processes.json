@@ -1,0 +1,40 @@
+{
+  "scope": "Cumulative OS process CPU at last observed sample; monitoring started partway through E5, terminal sample may precede exit",
+  "processes": [
+    {
+      "pid": 5672,
+      "parent_pid": 5636,
+      "user_cpu_s": 0.43,
+      "system_cpu_s": 0.12,
+      "observed_peak_rss_kib": 102160
+    },
+    {
+      "pid": 5692,
+      "parent_pid": 5672,
+      "user_cpu_s": 740.21,
+      "system_cpu_s": 12.21,
+      "observed_peak_rss_kib": 712328
+    },
+    {
+      "pid": 5693,
+      "parent_pid": 5672,
+      "user_cpu_s": 748.46,
+      "system_cpu_s": 13.13,
+      "observed_peak_rss_kib": 712480
+    },
+    {
+      "pid": 5694,
+      "parent_pid": 5672,
+      "user_cpu_s": 776.23,
+      "system_cpu_s": 12.44,
+      "observed_peak_rss_kib": 711820
+    },
+    {
+      "pid": 5695,
+      "parent_pid": 5672,
+      "user_cpu_s": 696.0,
+      "system_cpu_s": 12.69,
+      "observed_peak_rss_kib": 712060
+    }
+  ]
+}

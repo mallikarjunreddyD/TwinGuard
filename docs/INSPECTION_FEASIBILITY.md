@@ -1,0 +1,7 @@
+# Inspection feasibility
+
+The configuration declares an allowed box, excluded boxes, altitude interval, 0.5 m minimum surface stand-off plus 0.2 m static margin, sensor maximum range, calibrated range, speed and acquisition duration. These are laboratory engineering assumptions, not commissioned safety limits.
+
+Candidate positions outside the allowed volume/altitude or inside expanded no-go volumes are rejected. Unsigned nominal-mesh distance enforces surface separation. Each selected segment must lie inside the convex allowed volume, avoid expanded no-go boxes and pass first-hit checks for the centerline plus six axis-offset segments. Return-to-start is checked and reserved before accepting each view. This sampled corridor is a simplified static route model, not swept-body/rotor collision certification. Unknown map completeness returns requires_route_review and yields no automatically executable sequence.
+
+Hard infeasibility is never traded for utility. Unsupported L2 fidelity, absent calibration, insufficient predicted registration returns, excessive angular sample spacing and thermal poses outside the existing residual model support are rejected. A red condition preserves explicit review requirements and can coexist with restricted access. A no_viable_viewpoint outcome recommends supported alternative sensing or authorized manual review. No route is a flight command or permission.

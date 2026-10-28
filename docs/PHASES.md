@@ -36,3 +36,7 @@ Phase 4 advisory fusion and E3 are implemented. The Phase 5 handoff is the deter
 ## Phase 5 update
 
 Phase 5 integrated local research demonstrator is implemented and executed: real authenticated protocols, durable processing/state, existing analytics/F1, versioned APIs, 3D dashboard and E4 evidence. See PHASE5_VALIDATION.md for every acceptance decision and actual shortcomings/corrections. Phase 6 handoff is CONDITIONAL GO for software research interfaces; physical/site deployment remains PARTIAL. No Phase 6 optimization, UAV control or plant actuation was implemented.
+
+## Phase 6 update
+
+Inspection planning software, public coverage/visibility, constrained P0–P3, leased worker/API/dashboard and actual closed-loop synthetic reinspection are implemented. E5 executed 540 paired trials / 2,160 method runs. Overall research validation is PARTIAL: coverage efficiency improves, targeted discovery superiority is unsupported, and calibration/scenario generalization remains limited. Read PHASE6_VALIDATION.md. Phase 7 is a conditional validation-research handoff only and has not begun; P5-01–P5-04 remain OPEN.

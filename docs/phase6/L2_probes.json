@@ -1,0 +1,305 @@
+{
+  "scope": "Thirty actual L2 scans from frozen rejected alternate poses; never presented as selected feasible inspections",
+  "rows": [
+    {
+      "seed": 11100,
+      "viewpoint_id": "view-b98cf2b771b7dec1439dc71b",
+      "planner_feasibility": "infeasible",
+      "geometry_status": "insufficient_coverage",
+      "registration_status": "valid",
+      "qualified_patches": 0,
+      "valid_returns": 5712.0,
+      "geometric_positive_evidence": 0
+    },
+    {
+      "seed": 11101,
+      "viewpoint_id": "view-b98cf2b771b7dec1439dc71b",
+      "planner_feasibility": "infeasible",
+      "geometry_status": "insufficient_coverage",
+      "registration_status": "valid",
+      "qualified_patches": 0,
+      "valid_returns": 5657.0,
+      "geometric_positive_evidence": 0
+    },
+    {
+      "seed": 11102,
+      "viewpoint_id": "view-b98cf2b771b7dec1439dc71b",
+      "planner_feasibility": "infeasible",
+      "geometry_status": "insufficient_coverage",
+      "registration_status": "valid",
+      "qualified_patches": 0,
+      "valid_returns": 5701.0,
+      "geometric_positive_evidence": 0
+    },
+    {
+      "seed": 11103,
+      "viewpoint_id": "view-b98cf2b771b7dec1439dc71b",
+      "planner_feasibility": "infeasible",
+      "geometry_status": "insufficient_coverage",
+      "registration_status": "valid",
+      "qualified_patches": 0,
+      "valid_returns": 5595.0,
+      "geometric_positive_evidence": 0
+    },
+    {
+      "seed": 11104,
+      "viewpoint_id": "view-b98cf2b771b7dec1439dc71b",
+      "planner_feasibility": "infeasible",
+      "geometry_status": "insufficient_coverage",
+      "registration_status": "valid",
+      "qualified_patches": 0,
+      "valid_returns": 5675.0,
+      "geometric_positive_evidence": 0
+    },
+    {
+      "seed": 11105,
+      "viewpoint_id": "view-b98cf2b771b7dec1439dc71b",
+      "planner_feasibility": "infeasible",
+      "geometry_status": "insufficient_coverage",
+      "registration_status": "valid",
+      "qualified_patches": 0,
+      "valid_returns": 5677.0,
+      "geometric_positive_evidence": 0
+    },
+    {
+      "seed": 11106,
+      "viewpoint_id": "view-b98cf2b771b7dec1439dc71b",
+      "planner_feasibility": "infeasible",
+      "geometry_status": "insufficient_coverage",
+      "registration_status": "valid",
+      "qualified_patches": 0,
+      "valid_returns": 5726.0,
+      "geometric_positive_evidence": 0
+    },
+    {
+      "seed": 11107,
+      "viewpoint_id": "view-b98cf2b771b7dec1439dc71b",
+      "planner_feasibility": "infeasible",
+      "geometry_status": "insufficient_coverage",
+      "registration_status": "valid",
+      "qualified_patches": 0,
+      "valid_returns": 5738.0,
+      "geometric_positive_evidence": 0
+    },
+    {
+      "seed": 11108,
+      "viewpoint_id": "view-b98cf2b771b7dec1439dc71b",
+      "planner_feasibility": "infeasible",
+      "geometry_status": "insufficient_coverage",
+      "registration_status": "valid",
+      "qualified_patches": 0,
+      "valid_returns": 5640.0,
+      "geometric_positive_evidence": 0
+    },
+    {
+      "seed": 11109,
+      "viewpoint_id": "view-b98cf2b771b7dec1439dc71b",
+      "planner_feasibility": "infeasible",
+      "geometry_status": "insufficient_coverage",
+      "registration_status": "valid",
+      "qualified_patches": 0,
+      "valid_returns": 5701.0,
+      "geometric_positive_evidence": 0
+    },
+    {
+      "seed": 11110,
+      "viewpoint_id": "view-b98cf2b771b7dec1439dc71b",
+      "planner_feasibility": "infeasible",
+      "geometry_status": "insufficient_coverage",
+      "registration_status": "valid",
+      "qualified_patches": 0,
+      "valid_returns": 5636.0,
+      "geometric_positive_evidence": 0
+    },
+    {
+      "seed": 11111,
+      "viewpoint_id": "view-b98cf2b771b7dec1439dc71b",
+      "planner_feasibility": "infeasible",
+      "geometry_status": "insufficient_coverage",
+      "registration_status": "valid",
+      "qualified_patches": 0,
+      "valid_returns": 5674.0,
+      "geometric_positive_evidence": 0
+    },
+    {
+      "seed": 11112,
+      "viewpoint_id": "view-b98cf2b771b7dec1439dc71b",
+      "planner_feasibility": "infeasible",
+      "geometry_status": "insufficient_coverage",
+      "registration_status": "valid",
+      "qualified_patches": 0,
+      "valid_returns": 5760.0,
+      "geometric_positive_evidence": 0
+    },
+    {
+      "seed": 11113,
+      "viewpoint_id": "view-b98cf2b771b7dec1439dc71b",
+      "planner_feasibility": "infeasible",
+      "geometry_status": "insufficient_coverage",
+      "registration_status": "valid",
+      "qualified_patches": 0,
+      "valid_returns": 5694.0,
+      "geometric_positive_evidence": 0
+    },
+    {
+      "seed": 11114,
+      "viewpoint_id": "view-b98cf2b771b7dec1439dc71b",
+      "planner_feasibility": "infeasible",
+      "geometry_status": "insufficient_coverage",
+      "registration_status": "valid",
+      "qualified_patches": 0,
+      "valid_returns": 5676.0,
+      "geometric_positive_evidence": 0
+    },
+    {
+      "seed": 11115,
+      "viewpoint_id": "view-b98cf2b771b7dec1439dc71b",
+      "planner_feasibility": "infeasible",
+      "geometry_status": "insufficient_coverage",
+      "registration_status": "valid",
+      "qualified_patches": 0,
+      "valid_returns": 5764.0,
+      "geometric_positive_evidence": 0
+    },
+    {
+      "seed": 11116,
+      "viewpoint_id": "view-b98cf2b771b7dec1439dc71b",
+      "planner_feasibility": "infeasible",
+      "geometry_status": "insufficient_coverage",
+      "registration_status": "valid",
+      "qualified_patches": 0,
+      "valid_returns": 5755.0,
+      "geometric_positive_evidence": 0
+    },
+    {
+      "seed": 11117,
+      "viewpoint_id": "view-b98cf2b771b7dec1439dc71b",
+      "planner_feasibility": "infeasible",
+      "geometry_status": "insufficient_coverage",
+      "registration_status": "valid",
+      "qualified_patches": 0,
+      "valid_returns": 5673.0,
+      "geometric_positive_evidence": 0
+    },
+    {
+      "seed": 11118,
+      "viewpoint_id": "view-b98cf2b771b7dec1439dc71b",
+      "planner_feasibility": "infeasible",
+      "geometry_status": "insufficient_coverage",
+      "registration_status": "valid",
+      "qualified_patches": 0,
+      "valid_returns": 5672.0,
+      "geometric_positive_evidence": 0
+    },
+    {
+      "seed": 11119,
+      "viewpoint_id": "view-b98cf2b771b7dec1439dc71b",
+      "planner_feasibility": "infeasible",
+      "geometry_status": "insufficient_coverage",
+      "registration_status": "valid",
+      "qualified_patches": 0,
+      "valid_returns": 5721.0,
+      "geometric_positive_evidence": 0
+    },
+    {
+      "seed": 11120,
+      "viewpoint_id": "view-b98cf2b771b7dec1439dc71b",
+      "planner_feasibility": "infeasible",
+      "geometry_status": "insufficient_coverage",
+      "registration_status": "valid",
+      "qualified_patches": 0,
+      "valid_returns": 5684.0,
+      "geometric_positive_evidence": 0
+    },
+    {
+      "seed": 11121,
+      "viewpoint_id": "view-b98cf2b771b7dec1439dc71b",
+      "planner_feasibility": "infeasible",
+      "geometry_status": "insufficient_coverage",
+      "registration_status": "valid",
+      "qualified_patches": 0,
+      "valid_returns": 5753.0,
+      "geometric_positive_evidence": 0
+    },
+    {
+      "seed": 11122,
+      "viewpoint_id": "view-b98cf2b771b7dec1439dc71b",
+      "planner_feasibility": "infeasible",
+      "geometry_status": "insufficient_coverage",
+      "registration_status": "valid",
+      "qualified_patches": 0,
+      "valid_returns": 5681.0,
+      "geometric_positive_evidence": 0
+    },
+    {
+      "seed": 11123,
+      "viewpoint_id": "view-b98cf2b771b7dec1439dc71b",
+      "planner_feasibility": "infeasible",
+      "geometry_status": "insufficient_coverage",
+      "registration_status": "valid",
+      "qualified_patches": 0,
+      "valid_returns": 5697.0,
+      "geometric_positive_evidence": 0
+    },
+    {
+      "seed": 11124,
+      "viewpoint_id": "view-b98cf2b771b7dec1439dc71b",
+      "planner_feasibility": "infeasible",
+      "geometry_status": "insufficient_coverage",
+      "registration_status": "valid",
+      "qualified_patches": 0,
+      "valid_returns": 5722.0,
+      "geometric_positive_evidence": 0
+    },
+    {
+      "seed": 11125,
+      "viewpoint_id": "view-b98cf2b771b7dec1439dc71b",
+      "planner_feasibility": "infeasible",
+      "geometry_status": "insufficient_coverage",
+      "registration_status": "valid",
+      "qualified_patches": 0,
+      "valid_returns": 5684.0,
+      "geometric_positive_evidence": 0
+    },
+    {
+      "seed": 11126,
+      "viewpoint_id": "view-b98cf2b771b7dec1439dc71b",
+      "planner_feasibility": "infeasible",
+      "geometry_status": "insufficient_coverage",
+      "registration_status": "valid",
+      "qualified_patches": 0,
+      "valid_returns": 5641.0,
+      "geometric_positive_evidence": 0
+    },
+    {
+      "seed": 11127,
+      "viewpoint_id": "view-b98cf2b771b7dec1439dc71b",
+      "planner_feasibility": "infeasible",
+      "geometry_status": "insufficient_coverage",
+      "registration_status": "valid",
+      "qualified_patches": 0,
+      "valid_returns": 5645.0,
+      "geometric_positive_evidence": 0
+    },
+    {
+      "seed": 11128,
+      "viewpoint_id": "view-b98cf2b771b7dec1439dc71b",
+      "planner_feasibility": "infeasible",
+      "geometry_status": "insufficient_coverage",
+      "registration_status": "valid",
+      "qualified_patches": 0,
+      "valid_returns": 5677.0,
+      "geometric_positive_evidence": 0
+    },
+    {
+      "seed": 11129,
+      "viewpoint_id": "view-b98cf2b771b7dec1439dc71b",
+      "planner_feasibility": "infeasible",
+      "geometry_status": "insufficient_coverage",
+      "registration_status": "valid",
+      "qualified_patches": 0,
+      "valid_returns": 5681.0,
+      "geometric_positive_evidence": 0
+    }
+  ]
+}

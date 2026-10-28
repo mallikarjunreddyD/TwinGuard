@@ -1,0 +1,821 @@
+{
+  "experiment_id": "E5",
+  "status": "executed",
+  "independent_heldout_seeds": 30,
+  "scenario_classes": 18,
+  "paired_trials": 540,
+  "method_runs": 2160,
+  "summary": {
+    "P0": {
+      "runs": 540,
+      "views": 690,
+      "geometric_positive_trials": 240,
+      "localized_new_scan_detections": 165,
+      "initial_detections": 180,
+      "additional_discoveries": 0,
+      "cumulative_detections": 180,
+      "new_positive_without_injected_geometric_fault": 86,
+      "healthy_control_positive_trials": 57,
+      "healthy_control_trials": 210,
+      "negative_trials": 300,
+      "actual_new_area_mean_m2": 1.615094065160007,
+      "qualified_new_area_mean_m2": 0.734404901088956,
+      "final_inconclusive_trials": 74,
+      "planning_mean_s": 0.04449713565370172,
+      "planning_p95_s": 0.09478836314998622,
+      "estimated_duration_mean_s": 14.18757844094839,
+      "inspection_data_total_bytes": 155264115,
+      "by_amplitude_mm": {
+        "10": {
+          "detected": 44,
+          "trials": 64
+        },
+        "20": {
+          "detected": 44,
+          "trials": 64
+        },
+        "30": {
+          "detected": 38,
+          "trials": 56
+        },
+        "50": {
+          "detected": 39,
+          "trials": 56
+        }
+      }
+    },
+    "P1": {
+      "runs": 540,
+      "views": 690,
+      "geometric_positive_trials": 240,
+      "localized_new_scan_detections": 115,
+      "initial_detections": 180,
+      "additional_discoveries": 0,
+      "cumulative_detections": 180,
+      "new_positive_without_injected_geometric_fault": 7,
+      "healthy_control_positive_trials": 7,
+      "healthy_control_trials": 210,
+      "negative_trials": 300,
+      "actual_new_area_mean_m2": 1.9175105155370231,
+      "qualified_new_area_mean_m2": 0.8164757349457384,
+      "final_inconclusive_trials": 131,
+      "planning_mean_s": 0.04090586275185283,
+      "planning_p95_s": 0.06752197045002503,
+      "estimated_duration_mean_s": 13.85146244668769,
+      "inspection_data_total_bytes": 181931442,
+      "by_amplitude_mm": {
+        "10": {
+          "detected": 28,
+          "trials": 64
+        },
+        "20": {
+          "detected": 32,
+          "trials": 64
+        },
+        "30": {
+          "detected": 27,
+          "trials": 56
+        },
+        "50": {
+          "detected": 28,
+          "trials": 56
+        }
+      }
+    },
+    "P2": {
+      "runs": 540,
+      "views": 690,
+      "geometric_positive_trials": 240,
+      "localized_new_scan_detections": 165,
+      "initial_detections": 180,
+      "additional_discoveries": 0,
+      "cumulative_detections": 180,
+      "new_positive_without_injected_geometric_fault": 86,
+      "healthy_control_positive_trials": 57,
+      "healthy_control_trials": 210,
+      "negative_trials": 300,
+      "actual_new_area_mean_m2": 1.615094065160007,
+      "qualified_new_area_mean_m2": 0.734404901088956,
+      "final_inconclusive_trials": 74,
+      "planning_mean_s": 0.04371350399259041,
+      "planning_p95_s": 0.1027454222500097,
+      "estimated_duration_mean_s": 14.18757844094839,
+      "inspection_data_total_bytes": 155264115,
+      "by_amplitude_mm": {
+        "10": {
+          "detected": 44,
+          "trials": 64
+        },
+        "20": {
+          "detected": 44,
+          "trials": 64
+        },
+        "30": {
+          "detected": 38,
+          "trials": 56
+        },
+        "50": {
+          "detected": 39,
+          "trials": 56
+        }
+      }
+    },
+    "P3": {
+      "runs": 540,
+      "views": 690,
+      "geometric_positive_trials": 240,
+      "localized_new_scan_detections": 117,
+      "initial_detections": 180,
+      "additional_discoveries": 0,
+      "cumulative_detections": 180,
+      "new_positive_without_injected_geometric_fault": 17,
+      "healthy_control_positive_trials": 17,
+      "healthy_control_trials": 210,
+      "negative_trials": 300,
+      "actual_new_area_mean_m2": 1.8632244951889803,
+      "qualified_new_area_mean_m2": 0.8208268921278069,
+      "final_inconclusive_trials": 125,
+      "planning_mean_s": 0.041890033175923866,
+      "planning_p95_s": 0.0771530856000111,
+      "estimated_duration_mean_s": 13.297431761437485,
+      "inspection_data_total_bytes": 182240113,
+      "by_amplitude_mm": {
+        "10": {
+          "detected": 30,
+          "trials": 64
+        },
+        "20": {
+          "detected": 32,
+          "trials": 64
+        },
+        "30": {
+          "detected": 27,
+          "trials": 56
+        },
+        "50": {
+          "detected": 28,
+          "trials": 56
+        }
+      }
+    }
+  },
+  "paired_seed_comparisons": {
+    "P0": {
+      "qualified_new_area_m2": {
+        "P3_minus_comparator_mean": 0.08642199103885105,
+        "seed_cluster_bootstrap_95": [
+          0.06694317780524961,
+          0.10701115628186095
+        ],
+        "independent_seeds": 30
+      },
+      "actual_new_area_m2": {
+        "P3_minus_comparator_mean": 0.24813043002897306,
+        "seed_cluster_bootstrap_95": [
+          0.22485239189843148,
+          0.2709043071421611
+        ],
+        "independent_seeds": 30
+      },
+      "localized_detected": {
+        "P3_minus_comparator_mean": -0.2,
+        "seed_cluster_bootstrap_95": [
+          -0.22916666666666666,
+          -0.17083333333333334
+        ],
+        "independent_seeds": 30
+      },
+      "final_geometry_inconclusive": {
+        "P3_minus_comparator_mean": 0.09444444444444443,
+        "seed_cluster_bootstrap_95": [
+          0.08148148148148146,
+          0.10745370370370347
+        ],
+        "independent_seeds": 30
+      }
+    },
+    "P1": {
+      "qualified_new_area_m2": {
+        "P3_minus_comparator_mean": 0.004351157182068544,
+        "seed_cluster_bootstrap_95": [
+          -0.007044039924721195,
+          0.016755284663297534
+        ],
+        "independent_seeds": 30
+      },
+      "actual_new_area_m2": {
+        "P3_minus_comparator_mean": -0.05428602034804282,
+        "seed_cluster_bootstrap_95": [
+          -0.06670737736080837,
+          -0.04264257525363237
+        ],
+        "independent_seeds": 30
+      },
+      "localized_detected": {
+        "P3_minus_comparator_mean": 0.008333333333333333,
+        "seed_cluster_bootstrap_95": [
+          -0.008333333333333333,
+          0.025
+        ],
+        "independent_seeds": 30
+      },
+      "final_geometry_inconclusive": {
+        "P3_minus_comparator_mean": -0.011111111111111117,
+        "seed_cluster_bootstrap_95": [
+          -0.024074074074074085,
+          0.0018518518518518526
+        ],
+        "independent_seeds": 30
+      }
+    },
+    "P2": {
+      "qualified_new_area_m2": {
+        "P3_minus_comparator_mean": 0.08642199103885105,
+        "seed_cluster_bootstrap_95": [
+          0.06631223868292502,
+          0.10618631721349119
+        ],
+        "independent_seeds": 30
+      },
+      "actual_new_area_m2": {
+        "P3_minus_comparator_mean": 0.24813043002897306,
+        "seed_cluster_bootstrap_95": [
+          0.2249661225551614,
+          0.27157975647485966
+        ],
+        "independent_seeds": 30
+      },
+      "localized_detected": {
+        "P3_minus_comparator_mean": -0.2,
+        "seed_cluster_bootstrap_95": [
+          -0.22916666666666666,
+          -0.17083333333333334
+        ],
+        "independent_seeds": 30
+      },
+      "final_geometry_inconclusive": {
+        "P3_minus_comparator_mean": 0.09444444444444443,
+        "seed_cluster_bootstrap_95": [
+          0.08148148148148146,
+          0.10925925925925924
+        ],
+        "independent_seeds": 30
+      }
+    }
+  },
+  "seal_checks_pass": true,
+  "platform": {
+    "scope": "Short local-loopback comparison; not the complete corrected E4 or hardware commissioning",
+    "started_at": "2026-10-28T12:40:22.374220+00:00",
+    "checks": {
+      "anonymous_rejected": true,
+      "viewer_creation_rejected": true,
+      "critical_context_preserved": true,
+      "critical_review_requires_ack": true,
+      "operator_simulation_review": true,
+      "duplicate_same_hash": true,
+      "conflicting_duplicate_rejected": true,
+      "browser_plan_rendered": true,
+      "browser_prediction_label": true
+    },
+    "database_bytes_before": 8607411,
+    "idle": {
+      "label": "No planning jobs",
+      "n": 30,
+      "current": 30,
+      "red": 30,
+      "p50_s": 0.08996498584747314,
+      "p95_s": 0.1487145781517029,
+      "max_s": 0.18977594375610352,
+      "records": [
+        {
+          "id": "p6-8db0da84658f478a909d5db86e325965-0",
+          "receipt_to_commit_s": 0.18977594375610352,
+          "temporal": [
+            "current"
+          ],
+          "severity": "red"
+        },
+        {
+          "id": "p6-8db0da84658f478a909d5db86e325965-1",
+          "receipt_to_commit_s": 0.08925604820251465,
+          "temporal": [
+            "current"
+          ],
+          "severity": "red"
+        },
+        {
+          "id": "p6-8db0da84658f478a909d5db86e325965-2",
+          "receipt_to_commit_s": 0.09067392349243164,
+          "temporal": [
+            "current"
+          ],
+          "severity": "red"
+        },
+        {
+          "id": "p6-8db0da84658f478a909d5db86e325965-3",
+          "receipt_to_commit_s": 0.08405017852783203,
+          "temporal": [
+            "current"
+          ],
+          "severity": "red"
+        },
+        {
+          "id": "p6-8db0da84658f478a909d5db86e325965-4",
+          "receipt_to_commit_s": 0.07722806930541992,
+          "temporal": [
+            "current"
+          ],
+          "severity": "red"
+        },
+        {
+          "id": "p6-8db0da84658f478a909d5db86e325965-5",
+          "receipt_to_commit_s": 0.07033896446228027,
+          "temporal": [
+            "current"
+          ],
+          "severity": "red"
+        },
+        {
+          "id": "p6-8db0da84658f478a909d5db86e325965-6",
+          "receipt_to_commit_s": 0.06046605110168457,
+          "temporal": [
+            "current"
+          ],
+          "severity": "red"
+        },
+        {
+          "id": "p6-8db0da84658f478a909d5db86e325965-7",
+          "receipt_to_commit_s": 0.058859825134277344,
+          "temporal": [
+            "current"
+          ],
+          "severity": "red"
+        },
+        {
+          "id": "p6-8db0da84658f478a909d5db86e325965-8",
+          "receipt_to_commit_s": 0.04930877685546875,
+          "temporal": [
+            "current"
+          ],
+          "severity": "red"
+        },
+        {
+          "id": "p6-8db0da84658f478a909d5db86e325965-9",
+          "receipt_to_commit_s": 0.14403986930847168,
+          "temporal": [
+            "current"
+          ],
+          "severity": "red"
+        },
+        {
+          "id": "p6-8db0da84658f478a909d5db86e325965-10",
+          "receipt_to_commit_s": 0.13604283332824707,
+          "temporal": [
+            "current"
+          ],
+          "severity": "red"
+        },
+        {
+          "id": "p6-8db0da84658f478a909d5db86e325965-11",
+          "receipt_to_commit_s": 0.14867615699768066,
+          "temporal": [
+            "current"
+          ],
+          "severity": "red"
+        },
+        {
+          "id": "p6-8db0da84658f478a909d5db86e325965-12",
+          "receipt_to_commit_s": 0.14451909065246582,
+          "temporal": [
+            "current"
+          ],
+          "severity": "red"
+        },
+        {
+          "id": "p6-8db0da84658f478a909d5db86e325965-13",
+          "receipt_to_commit_s": 0.1361379623413086,
+          "temporal": [
+            "current"
+          ],
+          "severity": "red"
+        },
+        {
+          "id": "p6-8db0da84658f478a909d5db86e325965-14",
+          "receipt_to_commit_s": 0.13299107551574707,
+          "temporal": [
+            "current"
+          ],
+          "severity": "red"
+        },
+        {
+          "id": "p6-8db0da84658f478a909d5db86e325965-15",
+          "receipt_to_commit_s": 0.12465596199035645,
+          "temporal": [
+            "current"
+          ],
+          "severity": "red"
+        },
+        {
+          "id": "p6-8db0da84658f478a909d5db86e325965-16",
+          "receipt_to_commit_s": 0.11935591697692871,
+          "temporal": [
+            "current"
+          ],
+          "severity": "red"
+        },
+        {
+          "id": "p6-8db0da84658f478a909d5db86e325965-17",
+          "receipt_to_commit_s": 0.11141300201416016,
+          "temporal": [
+            "current"
+          ],
+          "severity": "red"
+        },
+        {
+          "id": "p6-8db0da84658f478a909d5db86e325965-18",
+          "receipt_to_commit_s": 0.10250496864318848,
+          "temporal": [
+            "current"
+          ],
+          "severity": "red"
+        },
+        {
+          "id": "p6-8db0da84658f478a909d5db86e325965-19",
+          "receipt_to_commit_s": 0.0922849178314209,
+          "temporal": [
+            "current"
+          ],
+          "severity": "red"
+        },
+        {
+          "id": "p6-8db0da84658f478a909d5db86e325965-20",
+          "receipt_to_commit_s": 0.08466100692749023,
+          "temporal": [
+            "current"
+          ],
+          "severity": "red"
+        },
+        {
+          "id": "p6-8db0da84658f478a909d5db86e325965-21",
+          "receipt_to_commit_s": 0.07573986053466797,
+          "temporal": [
+            "current"
+          ],
+          "severity": "red"
+        },
+        {
+          "id": "p6-8db0da84658f478a909d5db86e325965-22",
+          "receipt_to_commit_s": 0.06689190864562988,
+          "temporal": [
+            "current"
+          ],
+          "severity": "red"
+        },
+        {
+          "id": "p6-8db0da84658f478a909d5db86e325965-23",
+          "receipt_to_commit_s": 0.05771803855895996,
+          "temporal": [
+            "current"
+          ],
+          "severity": "red"
+        },
+        {
+          "id": "p6-8db0da84658f478a909d5db86e325965-24",
+          "receipt_to_commit_s": 0.05172586441040039,
+          "temporal": [
+            "current"
+          ],
+          "severity": "red"
+        },
+        {
+          "id": "p6-8db0da84658f478a909d5db86e325965-25",
+          "receipt_to_commit_s": 0.06930685043334961,
+          "temporal": [
+            "current"
+          ],
+          "severity": "red"
+        },
+        {
+          "id": "p6-8db0da84658f478a909d5db86e325965-26",
+          "receipt_to_commit_s": 0.06107306480407715,
+          "temporal": [
+            "current"
+          ],
+          "severity": "red"
+        },
+        {
+          "id": "p6-8db0da84658f478a909d5db86e325965-27",
+          "receipt_to_commit_s": 0.052703857421875,
+          "temporal": [
+            "current"
+          ],
+          "severity": "red"
+        },
+        {
+          "id": "p6-8db0da84658f478a909d5db86e325965-28",
+          "receipt_to_commit_s": 0.14874601364135742,
+          "temporal": [
+            "current"
+          ],
+          "severity": "red"
+        },
+        {
+          "id": "p6-8db0da84658f478a909d5db86e325965-29",
+          "receipt_to_commit_s": 0.14482402801513672,
+          "temporal": [
+            "current"
+          ],
+          "severity": "red"
+        }
+      ]
+    },
+    "planning_loaded": {
+      "label": "Concurrent bounded planning workload",
+      "n": 30,
+      "current": 30,
+      "red": 30,
+      "p50_s": 0.15118098258972168,
+      "p95_s": 0.6177289485931379,
+      "max_s": 0.9952020645141602,
+      "records": [
+        {
+          "id": "p6-da0c18ea4a6b4cef8969564497eb52c3-0",
+          "receipt_to_commit_s": 0.13253307342529297,
+          "temporal": [
+            "current"
+          ],
+          "severity": "red"
+        },
+        {
+          "id": "p6-da0c18ea4a6b4cef8969564497eb52c3-1",
+          "receipt_to_commit_s": 0.1577739715576172,
+          "temporal": [
+            "current"
+          ],
+          "severity": "red"
+        },
+        {
+          "id": "p6-da0c18ea4a6b4cef8969564497eb52c3-2",
+          "receipt_to_commit_s": 0.0524289608001709,
+          "temporal": [
+            "current"
+          ],
+          "severity": "red"
+        },
+        {
+          "id": "p6-da0c18ea4a6b4cef8969564497eb52c3-3",
+          "receipt_to_commit_s": 0.15173602104187012,
+          "temporal": [
+            "current"
+          ],
+          "severity": "red"
+        },
+        {
+          "id": "p6-da0c18ea4a6b4cef8969564497eb52c3-4",
+          "receipt_to_commit_s": 0.15014386177062988,
+          "temporal": [
+            "current"
+          ],
+          "severity": "red"
+        },
+        {
+          "id": "p6-da0c18ea4a6b4cef8969564497eb52c3-5",
+          "receipt_to_commit_s": 0.1568300724029541,
+          "temporal": [
+            "current"
+          ],
+          "severity": "red"
+        },
+        {
+          "id": "p6-da0c18ea4a6b4cef8969564497eb52c3-6",
+          "receipt_to_commit_s": 0.1542820930480957,
+          "temporal": [
+            "current"
+          ],
+          "severity": "red"
+        },
+        {
+          "id": "p6-da0c18ea4a6b4cef8969564497eb52c3-7",
+          "receipt_to_commit_s": 0.15062594413757324,
+          "temporal": [
+            "current"
+          ],
+          "severity": "red"
+        },
+        {
+          "id": "p6-da0c18ea4a6b4cef8969564497eb52c3-8",
+          "receipt_to_commit_s": 0.15336203575134277,
+          "temporal": [
+            "current"
+          ],
+          "severity": "red"
+        },
+        {
+          "id": "p6-da0c18ea4a6b4cef8969564497eb52c3-9",
+          "receipt_to_commit_s": 0.15410709381103516,
+          "temporal": [
+            "current"
+          ],
+          "severity": "red"
+        },
+        {
+          "id": "p6-da0c18ea4a6b4cef8969564497eb52c3-10",
+          "receipt_to_commit_s": 0.14858722686767578,
+          "temporal": [
+            "current"
+          ],
+          "severity": "red"
+        },
+        {
+          "id": "p6-da0c18ea4a6b4cef8969564497eb52c3-11",
+          "receipt_to_commit_s": 0.14942121505737305,
+          "temporal": [
+            "current"
+          ],
+          "severity": "red"
+        },
+        {
+          "id": "p6-da0c18ea4a6b4cef8969564497eb52c3-12",
+          "receipt_to_commit_s": 0.1714458465576172,
+          "temporal": [
+            "current"
+          ],
+          "severity": "red"
+        },
+        {
+          "id": "p6-da0c18ea4a6b4cef8969564497eb52c3-13",
+          "receipt_to_commit_s": 0.06514596939086914,
+          "temporal": [
+            "current"
+          ],
+          "severity": "red"
+        },
+        {
+          "id": "p6-da0c18ea4a6b4cef8969564497eb52c3-14",
+          "receipt_to_commit_s": 0.062129974365234375,
+          "temporal": [
+            "current"
+          ],
+          "severity": "red"
+        },
+        {
+          "id": "p6-da0c18ea4a6b4cef8969564497eb52c3-15",
+          "receipt_to_commit_s": 0.08707904815673828,
+          "temporal": [
+            "current"
+          ],
+          "severity": "red"
+        },
+        {
+          "id": "p6-da0c18ea4a6b4cef8969564497eb52c3-16",
+          "receipt_to_commit_s": 0.08329010009765625,
+          "temporal": [
+            "current"
+          ],
+          "severity": "red"
+        },
+        {
+          "id": "p6-da0c18ea4a6b4cef8969564497eb52c3-17",
+          "receipt_to_commit_s": 0.16077494621276855,
+          "temporal": [
+            "current"
+          ],
+          "severity": "red"
+        },
+        {
+          "id": "p6-da0c18ea4a6b4cef8969564497eb52c3-18",
+          "receipt_to_commit_s": 0.9952020645141602,
+          "temporal": [
+            "current"
+          ],
+          "severity": "red"
+        },
+        {
+          "id": "p6-da0c18ea4a6b4cef8969564497eb52c3-19",
+          "receipt_to_commit_s": 0.8886771202087402,
+          "temporal": [
+            "current"
+          ],
+          "severity": "red"
+        },
+        {
+          "id": "p6-da0c18ea4a6b4cef8969564497eb52c3-20",
+          "receipt_to_commit_s": 0.10466599464416504,
+          "temporal": [
+            "current"
+          ],
+          "severity": "red"
+        },
+        {
+          "id": "p6-da0c18ea4a6b4cef8969564497eb52c3-21",
+          "receipt_to_commit_s": 0.13795208930969238,
+          "temporal": [
+            "current"
+          ],
+          "severity": "red"
+        },
+        {
+          "id": "p6-da0c18ea4a6b4cef8969564497eb52c3-22",
+          "receipt_to_commit_s": 0.1702251434326172,
+          "temporal": [
+            "current"
+          ],
+          "severity": "red"
+        },
+        {
+          "id": "p6-da0c18ea4a6b4cef8969564497eb52c3-23",
+          "receipt_to_commit_s": 0.20635104179382324,
+          "temporal": [
+            "current"
+          ],
+          "severity": "red"
+        },
+        {
+          "id": "p6-da0c18ea4a6b4cef8969564497eb52c3-24",
+          "receipt_to_commit_s": 0.24513792991638184,
+          "temporal": [
+            "current"
+          ],
+          "severity": "red"
+        },
+        {
+          "id": "p6-da0c18ea4a6b4cef8969564497eb52c3-25",
+          "receipt_to_commit_s": 0.28657007217407227,
+          "temporal": [
+            "current"
+          ],
+          "severity": "red"
+        },
+        {
+          "id": "p6-da0c18ea4a6b4cef8969564497eb52c3-26",
+          "receipt_to_commit_s": 0.22698116302490234,
+          "temporal": [
+            "current"
+          ],
+          "severity": "red"
+        },
+        {
+          "id": "p6-da0c18ea4a6b4cef8969564497eb52c3-27",
+          "receipt_to_commit_s": 0.1289680004119873,
+          "temporal": [
+            "current"
+          ],
+          "severity": "red"
+        },
+        {
+          "id": "p6-da0c18ea4a6b4cef8969564497eb52c3-28",
+          "receipt_to_commit_s": 0.06678414344787598,
+          "temporal": [
+            "current"
+          ],
+          "severity": "red"
+        },
+        {
+          "id": "p6-da0c18ea4a6b4cef8969564497eb52c3-29",
+          "receipt_to_commit_s": 0.07047390937805176,
+          "temporal": [
+            "current"
+          ],
+          "severity": "red"
+        }
+      ]
+    },
+    "planning_requests": 10,
+    "load_errors": [],
+    "planning_pending_at_end": 0,
+    "browser": {
+      "javascript_errors": [],
+      "external_requests": []
+    },
+    "database_bytes_after": 10925747,
+    "finished_at": "2026-10-28T12:40:44.729537+00:00",
+    "test_input_scope": "Two sets of 30 scheduled replay cases using one recorded synthetic pressure measurement and synthetic test IDs; not independent physical acquisitions"
+  },
+  "closed_loop_platform": {
+    "plan_id": "plan-130b292d08a7226aefe8d464",
+    "viewpoint_id": "view-c803377db5639455ec0c9bea",
+    "inspection_job_id": "simulation-de9bce747032417899494d3344e032b1",
+    "replan_id": "plan-aa205d00a834e7b9a928b109",
+    "status": "valid",
+    "regions": 1,
+    "coverage_records": 1,
+    "F1_severity": "red",
+    "operator_scope": "Local software-test principal only; no human/physical commissioning evidence"
+  },
+  "limitations": [
+    "Nominal healthy-recent inputs retain only actual partial qualified coverage; no entire-plant sufficient-coverage claim",
+    "The frozen B3.1 calibration supports BW-01, limiting meaningful multi-asset geometric competition",
+    "S06 uses partial FOV and existing self-occlusion, not a separately injected external occluder",
+    "S15 uses L2 abstention; it does not itself execute a viable new L2 view",
+    "Strict localized detection uses qualified significant patch centers inside the true ellipse only after result sealing; original raw bounding-box overlap metric retained separately",
+    "Mission durations are geometric simulation proxies; no physical calibration/flight claim",
+    "Full acquisition ablations are not executed; primary comparison remains frozen and paired"
+  ],
+  "created_at": "2026-10-28T12:58:50.916192+00:00",
+  "resource_observations": {
+    "cumulative_trial_worker_cpu_seconds_lower_bound": 3011.3700000000003,
+    "scope": "Cumulative OS process CPU at last observed sample; monitoring started partway through E5, terminal sample may precede exit",
+    "observed_trial_worker_peak_rss_mib": 695.78125
+  }
+}

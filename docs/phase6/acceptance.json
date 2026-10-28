@@ -1,0 +1,202 @@
+[
+  {
+    "criterion": 1,
+    "status": "PASS",
+    "evidence": "Executable planning package"
+  },
+  {
+    "criterion": 2,
+    "status": "PASS",
+    "evidence": "Phase 0\u20135 regressions preserved"
+  },
+  {
+    "criterion": 3,
+    "status": "PASS",
+    "evidence": "Public monitoring snapshot adapter"
+  },
+  {
+    "criterion": 4,
+    "status": "PASS",
+    "evidence": "Explainable asset priorities"
+  },
+  {
+    "criterion": 5,
+    "status": "PASS",
+    "evidence": "Accepted-geometry candidate generation"
+  },
+  {
+    "criterion": 6,
+    "status": "PASS",
+    "evidence": "First-hit visibility and occlusion"
+  },
+  {
+    "criterion": 7,
+    "status": "PASS",
+    "evidence": "Area-weighted public-data coverage"
+  },
+  {
+    "criterion": 8,
+    "status": "PASS",
+    "evidence": "Visibility and measurement-suitability gates are distinct; success prediction remains a proxy"
+  },
+  {
+    "criterion": 9,
+    "status": "PASS",
+    "evidence": "Unchanged B3.1 calibration/qualification and localized_relative scope; wider-view generalization not established"
+  },
+  {
+    "criterion": 10,
+    "status": "PASS",
+    "evidence": "L2 no-viable outcomes and 30 actual rejected-view diagnostic scans"
+  },
+  {
+    "criterion": 11,
+    "status": "PASS",
+    "evidence": "Declared static geometry/no-go constraints"
+  },
+  {
+    "criterion": 12,
+    "status": "PASS",
+    "evidence": "Recorded feasibility decisions"
+  },
+  {
+    "criterion": 13,
+    "status": "PASS",
+    "evidence": "Explicit view/time/travel costs"
+  },
+  {
+    "criterion": 14,
+    "status": "PASS",
+    "evidence": "Comparable P0/P1/P2/P3"
+  },
+  {
+    "criterion": 15,
+    "status": "PASS",
+    "evidence": "Coverage union and redundancy"
+  },
+  {
+    "criterion": 16,
+    "status": "PASS",
+    "evidence": "Constrained multi-view recommendations"
+  },
+  {
+    "criterion": 17,
+    "status": "PASS",
+    "evidence": "Persisted selection explanations"
+  },
+  {
+    "criterion": 18,
+    "status": "PASS",
+    "evidence": "Explicit unsupported/no-viable outcomes"
+  },
+  {
+    "criterion": 19,
+    "status": "PASS",
+    "evidence": "No physical mission authorization"
+  },
+  {
+    "criterion": 20,
+    "status": "PASS",
+    "evidence": "Critical F1 advisories preserved"
+  },
+  {
+    "criterion": 21,
+    "status": "PASS",
+    "evidence": "Actual closed-loop virtual inspection"
+  },
+  {
+    "criterion": 22,
+    "status": "PASS",
+    "evidence": "Original imperfect Phase 2 measurements"
+  },
+  {
+    "criterion": 23,
+    "status": "PASS",
+    "evidence": "Unchanged Phase 3/3.1 processing"
+  },
+  {
+    "criterion": 24,
+    "status": "PASS",
+    "evidence": "Original F1 processing"
+  },
+  {
+    "criterion": 25,
+    "status": "PASS",
+    "evidence": "Causal public-data replanning"
+  },
+  {
+    "criterion": 26,
+    "status": "PASS",
+    "evidence": "PostgreSQL request/plan/review/result persistence"
+  },
+  {
+    "criterion": 27,
+    "status": "PASS",
+    "evidence": "Authenticated backend API records"
+  },
+  {
+    "criterion": 28,
+    "status": "PASS",
+    "evidence": "Actual 3D browser plan, frustum and result display"
+  },
+  {
+    "criterion": 29,
+    "status": "PASS",
+    "evidence": "Predicted and qualified measured coverage have separate display conventions"
+  },
+  {
+    "criterion": 30,
+    "status": "PASS",
+    "evidence": "Executed E5-A numerical/optimization checks"
+  },
+  {
+    "criterion": 31,
+    "status": "PARTIAL",
+    "evidence": "E5-B executed all 2,160 comparisons; S01/S06/S07/S15 scenario fidelity is limited as documented"
+  },
+  {
+    "criterion": 32,
+    "status": "PASS",
+    "evidence": "Identical primary inputs, candidates and budgets verified"
+  },
+  {
+    "criterion": 33,
+    "status": "PASS",
+    "evidence": "Disjoint development and held-out seeds; no post-test weight tuning"
+  },
+  {
+    "criterion": 34,
+    "status": "PARTIAL",
+    "evidence": "Coverage/detection/resource metrics reported; actual flight time, full-run terminal CPU accounting and full acquisition ablations remain unavailable"
+  },
+  {
+    "criterion": 35,
+    "status": "PASS",
+    "evidence": "Ten actual numerical/geometric/browser figures"
+  },
+  {
+    "criterion": 36,
+    "status": "PASS",
+    "evidence": "Import isolation and post-seal truth evaluation"
+  },
+  {
+    "criterion": 37,
+    "status": "PASS",
+    "evidence": "Tested short planning load retained 30/30 current critical observations; full E4 remains open"
+  },
+  {
+    "criterion": 38,
+    "status": "PASS",
+    "evidence": "P5-01 through P5-04 remain OPEN"
+  },
+  {
+    "criterion": 39,
+    "status": "PASS",
+    "evidence": "307 pytest tests, typing/lint/format, frontend build/tests and live integration"
+  },
+  {
+    "criterion": 40,
+    "status": "PASS",
+    "evidence": "Reproducible validation report with explicit qualifications"
+  }
+]

@@ -4,7 +4,7 @@
 
 Phases 0–5 now provide a local software research demonstrator: original plant/sensing/analytics and F1 fusion, authenticated MQTT/read-only OPC UA, durable PostgreSQL jobs/checkpoints, and a real 3D browser dashboard. Full E4 processed 6,072 observations and 6,075 jobs. A focused scheduling correction retained current qualification for 186/186 critical readings under ordinary backlog (2.249 s p95 receipt-to-advisory; no UAV). These are software-loopback measurements, not industrial safety certification.
 
-Start with [Demo walkthrough](docs/DEMO_WALKTHROUGH.md), [Phase 5 validation and all 46 acceptance decisions](docs/PHASE5_VALIDATION.md), and [Dashboard guide](docs/DASHBOARD_GUIDE.md). Physical/site commissioning remains incomplete. Phase 6 is not implemented. Earlier phase-specific sections below retain their historical experimental context.
+Start with [Demo walkthrough](docs/DEMO_WALKTHROUGH.md), [Phase 5 validation and all 46 acceptance decisions](docs/PHASE5_VALIDATION.md), and [Dashboard guide](docs/DASHBOARD_GUIDE.md). Physical/site commissioning remains incomplete. Phase 6 planning is implemented with PARTIAL research validation; see the Phase 6 section below. Earlier phase-specific sections below retain their historical experimental context.
 
 ## Install and verify
 
@@ -113,4 +113,14 @@ Original B3 remains selectable. The corrected B3.1 produces calibrated localized
 
 ## Phase 4 advisory fusion
 
-Use `twinguard fusion --help` for policy validation, preparation, assessment and replay. `twinguard experiment run E3 --config experiments/E3.yaml --output-dir experiments/outputs/my-E3` executes both research tracks; add --smoke for separate development seeds. Read [fusion architecture](docs/FUSION_ARCHITECTURE.md), [evidence semantics](docs/EVIDENCE_SEMANTICS.md), [policies](docs/HAZARD_POLICIES.md), [lifecycle](docs/EVENT_LIFECYCLE.md), [E3 design](docs/EXPERIMENT_E3.md) and [validation](docs/PHASE4_VALIDATION.md). Advisory records do not operate equipment or send notifications. Phase 5 remains unimplemented.
+Use `twinguard fusion --help` for policy validation, preparation, assessment and replay. `twinguard experiment run E3 --config experiments/E3.yaml --output-dir experiments/outputs/my-E3` executes both research tracks; add --smoke for separate development seeds. Read [fusion architecture](docs/FUSION_ARCHITECTURE.md), [evidence semantics](docs/EVIDENCE_SEMANTICS.md), [policies](docs/HAZARD_POLICIES.md), [lifecycle](docs/EVENT_LIFECYCLE.md), [E3 design](docs/EXPERIMENT_E3.md) and [validation](docs/PHASE4_VALIDATION.md). Advisory records do not operate equipment or send notifications. That historical handoff preceded the implemented Phase 5 platform described above.
+
+## Phase 6 inspection research
+
+Version 0.7.0 adds constrained risk/evidence planning, a separate planning worker, authenticated review/result APIs and a real 3D planning dashboard. [Phase 6 validation](docs/PHASE6_VALIDATION.md) reports 540 paired held-out trials / 2,160 method runs and 307 passing tests. P3 improved qualified coverage versus fixed planning but did not improve localized discovery; overall research validation remains PARTIAL. [Phase 7 backlog](docs/PHASE7_VALIDATION_BACKLOG.md) preserves all four Phase 5 concerns OPEN. No physical UAV operation is authorized.
+
+```bash
+twinguard inspection validate-config --config configs/inspection/planner.yaml
+twinguard inspection plan --snapshot <public-snapshot.json> --method P3 --budget-views 2 --budget-s 70 --output-dir <new-directory>
+twinguard experiment run E5 --config experiments/E5.yaml --output-dir <new-E5-directory>
+```

@@ -1,0 +1,7 @@
+services:
+  database:
+    networks: [edge, access]
+    ports: ['127.0.0.1:18882:5432']
+  broker:
+    networks: [edge, access]
+    ports: ['127.0.0.1:18883:1883']

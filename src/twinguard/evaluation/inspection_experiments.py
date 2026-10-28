@@ -140,7 +140,11 @@ def run_e5(root, output, settings, smoke=False):
     save_json(output / "freeze.json", freeze)
     rows = []
     started = time.perf_counter()
-    cases = list(SCENARIOS) if not smoke else ["E5-S03", "E5-S05", "E5-S10"]
+    cases = (
+        settings.get("scenario_ids", list(SCENARIOS))
+        if not smoke
+        else ["E5-S03", "E5-S05", "E5-S10"]
+    )
     seeds = settings["development_seeds"][:1] if smoke else settings["heldout_seeds"]
     # E5-A uses same accepted map plus controlled policy constraints; small exact reference.
     base = PlanningSnapshot(
@@ -596,13 +600,15 @@ def run_e5(root, output, settings, smoke=False):
                     "planning_runtime_s": frozen.optimization_runtime_s,
                     "data_bytes": volume,
                     "unresolved_after_budget": len(qualified) == 0,
-                    "critical_review_omitted": False,
+                    "critical_review_omitted": any(a.critical_process for a in snap.assets)
+                    and frozen.approval_status != "pending_operator_review",
                     "limitations": [
                         "Mission time is static simulation proxy",
                         "Pressure scenarios use original imperfect virtual IoT observations and existing engineering-limit/F1 adapters",
                         "P3 executes frozen causal replans within remaining original budget; other methods execute frozen sequence",
                     ],
                 }
+                save_json(work / "evaluation.json", row)
                 rows.append(row)
             save_json(
                 output / "progress.json",

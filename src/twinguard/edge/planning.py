@@ -6,7 +6,7 @@ import os
 from pathlib import Path
 import time
 import uuid
-from sqlalchemy import select
+from sqlalchemy import select, text
 from twinguard.inspection.contracts import InspectionPlanningRequest, PlanningSnapshot
 from twinguard.inspection.observations import fingerprint, load_config, snapshot as public_states
 from .storage import records, jobs, get, put, claim, enqueue, emit, audit, engine
@@ -36,7 +36,10 @@ def submit(db, request, actor):
     config = load_config(ROOT / "configs/inspection/planner.yaml")
     digest = fingerprint(request)
     with db.begin() as c:
-        # A unique job insert serializes concurrent same-ID submissions; rollback on conflict.
+        # Serialize only planning submissions: protects same-ID immutability and queue bound.
+        # The fast IoT worker does not acquire this advisory lock.
+        if c.dialect.name == "postgresql":
+            c.execute(text("SELECT pg_advisory_xact_lock(7726001)"))
         existing = get(c, "planning_request", request.request_id, lock=True)
         if existing:
             if existing["request_hash"] != digest:
@@ -55,7 +58,11 @@ def submit(db, request, actor):
             raise ValueError("Planning queue capacity reached")
         rows = c.execute(
             select(records.c.kind, records.c.id, records.c.body).where(
-                records.c.kind.in_(["asset", "condition", "event", "surface_coverage"])
+                records.c.kind.in_(["asset", "condition"])
+                | (
+                    (records.c.kind == "event")
+                    & records.c.body["lifecycle"].as_string().not_in(["resolved", "candidate"])
+                )
             )
         ).all()
         assets = [r.id for r in rows if r.kind == "asset"]
@@ -66,18 +73,65 @@ def submit(db, request, actor):
             {r.id: r.body for r in rows if r.kind == "condition"},
             [r.body for r in rows if r.kind == "event"],
         )
-        coverage = [r.body for r in rows if r.kind == "surface_coverage"]
+        # Bound public history work; retain the full scientific archive outside this snapshot.
+        coverage = list(
+            c.execute(
+                select(records.c.body)
+                .where(records.c.kind == "surface_coverage")
+                .order_by(records.c.at.desc())
+                .limit(256)
+            ).scalars()
+        )
         previous = get_plan(c, request.previous_plan_id) if request.previous_plan_id else None
         if request.previous_plan_id and not previous:
             raise ValueError("Previous plan missing")
-        attempted = [s["viewpoint_id"] for s in previous["steps"]] if previous else []
+        lineage = set()
+        current = previous
+        for _ in range(12):
+            if not current or current["plan_id"] in lineage:
+                break
+            lineage.add(current["plan_id"])
+            current = (
+                get_plan(c, current["previous_plan_id"])
+                if current.get("previous_plan_id")
+                else None
+            )
+        links = list(
+            c.execute(
+                select(records.c.body)
+                .where(records.c.kind == "planning_simulation")
+                .order_by(records.c.at.desc())
+                .limit(256)
+            ).scalars()
+        )
+        completed = [v for v in links if v["binding"]["plan_id"] in lineage]
+        # A proposed view is never counted as an acquired view without a completed linked result.
+        attempted = sorted({v["binding"]["viewpoint_id"] for v in completed})
+        checkpoint = get(c, "checkpoint", "F1") or {}
+        evidence = list(checkpoint.get("evidence", {}).values())
+        for state in states:
+            state.reinspection = any(
+                v.get("asset_id") == state.asset_id and v.get("reinspection_candidate", False)
+                for v in evidence
+            )
+            state.unsuccessful_attempts = sum(
+                any(
+                    g.get("asset_statuses", {}).get(state.asset_id) not in (None, "valid")
+                    for g in link["inspection"].get("geometric", [])
+                )
+                for link in completed
+            )
         snap = PlanningSnapshot(
             snapshot_id="snapshot-" + request.request_id,
             at=at,
             reference_hash=config.reference_sha256,
             assets=states,
             coverage=coverage,
-            input_refs=["condition:" + r.id for r in rows if r.kind == "condition"],
+            input_refs=["condition:" + r.id for r in rows if r.kind == "condition"]
+            + sorted({source for item in coverage for source in item.get("source_ids", [])})
+            + ["evidence:" + v["evidence_id"] for v in evidence if v.get("reinspection_candidate")][
+                :1000
+            ],
             previous_plan_id=request.previous_plan_id,
             attempted_viewpoints=attempted,
         )
@@ -194,6 +248,10 @@ def run_one(db, owner):
                         status="pending" if row["attempts"] < 3 else "failed", error=str(exc)[:2000]
                     )
                 )
+                if row["attempts"] >= 3:
+                    failed = get(c, "planning_request", job["body"]["request_id"])
+                    failed.update(status="failed", error=str(exc)[:2000])
+                    put(c, "planning_request", job["body"]["request_id"], failed)
                 audit(c, "planning_failed", job_id=job["id"], error=str(exc)[:2000])
     return True
 

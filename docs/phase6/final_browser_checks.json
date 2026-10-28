@@ -1,0 +1,39 @@
+{
+  "concurrent_duplicate_requests": [
+    {
+      "status": 202,
+      "request_hash": "19f389473b14c19549f14ff6cbd6583f3262f7c8c6744cfbcb7b3a495685fe07",
+      "snapshot": "2026-10-28T13:05:54.807264Z"
+    },
+    {
+      "status": 202,
+      "request_hash": "19f389473b14c19549f14ff6cbd6583f3262f7c8c6744cfbcb7b3a495685fe07",
+      "snapshot": "2026-10-28T13:05:54.807264Z"
+    },
+    {
+      "status": 202,
+      "request_hash": "19f389473b14c19549f14ff6cbd6583f3262f7c8c6744cfbcb7b3a495685fe07",
+      "snapshot": "2026-10-28T13:05:54.807264Z"
+    },
+    {
+      "status": 202,
+      "request_hash": "19f389473b14c19549f14ff6cbd6583f3262f7c8c6744cfbcb7b3a495685fe07",
+      "snapshot": "2026-10-28T13:05:54.807264Z"
+    },
+    {
+      "status": 202,
+      "request_hash": "19f389473b14c19549f14ff6cbd6583f3262f7c8c6744cfbcb7b3a495685fe07",
+      "snapshot": "2026-10-28T13:05:54.807264Z"
+    },
+    {
+      "status": 202,
+      "request_hash": "19f389473b14c19549f14ff6cbd6583f3262f7c8c6744cfbcb7b3a495685fe07",
+      "snapshot": "2026-10-28T13:05:54.807264Z"
+    }
+  ],
+  "same_frozen_snapshot_for_all_duplicates": true,
+  "actual_model_rendered": true,
+  "linked_completed_inspection_visible": true,
+  "javascript_errors": [],
+  "displayed_plan_id": "plan-aa205d00a834e7b9a928b109"
+}

@@ -27,3 +27,11 @@ Availability shows recent receipt/validity, source clocks/basis, calibration, da
 See the actual Chromium screenshots and executed checks linked from PHASE5_VALIDATION.md. Headless screenshots use software WebGL on the tested workstation; they are not GPU/field performance claims.
 
 Select an inspection from stored history to inspect its current frame, actual geometric regions and measured thermal residual boxes. White thermal boxes are image coordinates only. Live invalidations coalesce to at most one refresh per second; overview conditions and active-event counts share a backend SQL snapshot. Historical event queries are bounded and separate from current overview updates.
+
+## Inspection Planning
+
+The Inspection Planning section loads backend priorities, recommendations and historical plans. Operators can set a view/time budget and request a plan; heavy computation runs in a separate bounded worker. Cyan markers/FOV glyphs indicate planned sensor positions/directions; red markers are rejected candidates; violet cells are predicted reference coverage; green cells are previously qualified measured coverage. These overlays are distinct from measured LiDAR/thermal observations.
+
+Review requires an operator/admin role. Critical process context requires explicit acknowledgment before software-simulation approval. No approval authorizes a physical UAV. Completed synthetic inspection links show actual B3.1/thermal results and the prior plan they informed. Only completed linked acquisitions count as attempted views. A no_viable_viewpoint or requires_route_review result is explicit, not successful sensing.
+
+The isolated Phase 6 validation stack uses http://localhost:18880 with deployment/edge/compose.phase6-validation.yaml; the earlier Phase 5 stack remains on 18780. Tokens remain local in .edge/secrets.json. See PHASE6_VALIDATION.md for actual screenshots and test scope.

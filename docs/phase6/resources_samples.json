@@ -1,0 +1,2331 @@
+[
+  {
+    "at": "2026-10-28T12:49:55.622491+00:00",
+    "containers": [
+      {
+        "BlockIO": "922kB / 12.3kB",
+        "CPUPerc": "0.00%",
+        "Container": "bbe3e582d9d05a88c939ddd614434c780e07a59ca7764899c5433d08e52931fd",
+        "ID": "bbe3e582d9d0",
+        "MemPerc": "6.31%",
+        "MemUsage": "16.15MiB / 256MiB",
+        "Name": "twinguard-phase6-frontend-1",
+        "NetIO": "2.23MB / 2.25MB",
+        "PIDs": "21"
+      },
+      {
+        "BlockIO": "36.7MB / 442kB",
+        "CPUPerc": "0.10%",
+        "Container": "2db9dc140418d328b2ffcfce22c43bd8da478e31d8d115a9ad6364929c6048f2",
+        "ID": "2db9dc140418",
+        "MemPerc": "8.59%",
+        "MemUsage": "88MiB / 1GiB",
+        "Name": "twinguard-phase6-api-1",
+        "NetIO": "1.18MB / 2.37MB",
+        "PIDs": "22"
+      },
+      {
+        "BlockIO": "75MB / 131kB",
+        "CPUPerc": "2.06%",
+        "Container": "6dfade2b30885e32b6eabc449d8bfbb90b11541c985fea48b9ded9ebe9b4c429",
+        "ID": "6dfade2b3088",
+        "MemPerc": "9.97%",
+        "MemUsage": "306.2MiB / 3GiB",
+        "Name": "twinguard-phase6-inspection-worker-1",
+        "NetIO": "1.47MB / 3.13MB",
+        "PIDs": "3"
+      },
+      {
+        "BlockIO": "14.2MB / 610kB",
+        "CPUPerc": "1.11%",
+        "Container": "f93bdb1543e7a1224cc64b399449d0949c5faa7d8ceac3fca790e75704a08534",
+        "ID": "f93bdb1543e7",
+        "MemPerc": "12.34%",
+        "MemUsage": "252.7MiB / 2GiB",
+        "Name": "twinguard-phase6-planning-worker-1",
+        "NetIO": "560kB / 684kB",
+        "PIDs": "3"
+      },
+      {
+        "BlockIO": "77.8kB / 0B",
+        "CPUPerc": "3.44%",
+        "Container": "c84992dcabbee9593d892cae16a5de4f1b56c28e91d2ca2dc99882bef08294db",
+        "ID": "c84992dcabbe",
+        "MemPerc": "5.33%",
+        "MemUsage": "54.54MiB / 1GiB",
+        "Name": "twinguard-phase6-fast-worker-1",
+        "NetIO": "47.7MB / 118MB",
+        "PIDs": "20"
+      },
+      {
+        "BlockIO": "565kB / 0B",
+        "CPUPerc": "0.00%",
+        "Container": "1b6cfd1a4d8f9195d6a886a56c0b7b2220b11ee330c54958ec6fdc0783db48bf",
+        "ID": "1b6cfd1a4d8f",
+        "MemPerc": "5.18%",
+        "MemUsage": "53.04MiB / 1GiB",
+        "Name": "twinguard-phase6-ingestion-1",
+        "NetIO": "426kB / 632kB",
+        "PIDs": "20"
+      },
+      {
+        "BlockIO": "29.7MB / 108MB",
+        "CPUPerc": "1.64%",
+        "Container": "9d032228c0d373201160b951f2d5967c477df9843dd1da218688bc6fc8d0dcf8",
+        "ID": "9d032228c0d3",
+        "MemPerc": "11.15%",
+        "MemUsage": "57.1MiB / 512MiB",
+        "Name": "twinguard-phase6-database-1",
+        "NetIO": "129MB / 57.1MB",
+        "PIDs": "11"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "0.02%",
+        "Container": "5cec41ec47f9e6c6d7dfdb498fa225fca88f69cca586c12245b0d36b50ff0c51",
+        "ID": "5cec41ec47f9",
+        "MemPerc": "2.01%",
+        "MemUsage": "2.57MiB / 128MiB",
+        "Name": "twinguard-phase6-broker-1",
+        "NetIO": "127kB / 107kB",
+        "PIDs": "1"
+      }
+    ],
+    "E5_processes": [
+      {
+        "pid": 5672,
+        "parent_pid": 5636,
+        "user_cpu_s": 0.43,
+        "system_cpu_s": 0.12,
+        "observed_peak_rss_kib": 102160
+      },
+      {
+        "pid": 5692,
+        "parent_pid": 5672,
+        "user_cpu_s": 657.28,
+        "system_cpu_s": 10.74,
+        "observed_peak_rss_kib": 712328
+      },
+      {
+        "pid": 5693,
+        "parent_pid": 5672,
+        "user_cpu_s": 656.36,
+        "system_cpu_s": 11.8,
+        "observed_peak_rss_kib": 712480
+      },
+      {
+        "pid": 5694,
+        "parent_pid": 5672,
+        "user_cpu_s": 656.09,
+        "system_cpu_s": 10.42,
+        "observed_peak_rss_kib": 711820
+      },
+      {
+        "pid": 5695,
+        "parent_pid": 5672,
+        "user_cpu_s": 656.38,
+        "system_cpu_s": 11.92,
+        "observed_peak_rss_kib": 712060
+      }
+    ]
+  },
+  {
+    "at": "2026-10-28T12:50:02.816666+00:00",
+    "containers": [
+      {
+        "BlockIO": "922kB / 12.3kB",
+        "CPUPerc": "0.00%",
+        "Container": "bbe3e582d9d05a88c939ddd614434c780e07a59ca7764899c5433d08e52931fd",
+        "ID": "bbe3e582d9d0",
+        "MemPerc": "6.31%",
+        "MemUsage": "16.15MiB / 256MiB",
+        "Name": "twinguard-phase6-frontend-1",
+        "NetIO": "2.23MB / 2.25MB",
+        "PIDs": "21"
+      },
+      {
+        "BlockIO": "37MB / 442kB",
+        "CPUPerc": "6.60%",
+        "Container": "2db9dc140418d328b2ffcfce22c43bd8da478e31d8d115a9ad6364929c6048f2",
+        "ID": "2db9dc140418",
+        "MemPerc": "8.72%",
+        "MemUsage": "89.31MiB / 1GiB",
+        "Name": "twinguard-phase6-api-1",
+        "NetIO": "1.18MB / 2.37MB",
+        "PIDs": "22"
+      },
+      {
+        "BlockIO": "75MB / 131kB",
+        "CPUPerc": "1.93%",
+        "Container": "6dfade2b30885e32b6eabc449d8bfbb90b11541c985fea48b9ded9ebe9b4c429",
+        "ID": "6dfade2b3088",
+        "MemPerc": "9.96%",
+        "MemUsage": "305.9MiB / 3GiB",
+        "Name": "twinguard-phase6-inspection-worker-1",
+        "NetIO": "1.51MB / 3.19MB",
+        "PIDs": "3"
+      },
+      {
+        "BlockIO": "14.2MB / 610kB",
+        "CPUPerc": "1.11%",
+        "Container": "f93bdb1543e7a1224cc64b399449d0949c5faa7d8ceac3fca790e75704a08534",
+        "ID": "f93bdb1543e7",
+        "MemPerc": "12.34%",
+        "MemUsage": "252.6MiB / 2GiB",
+        "Name": "twinguard-phase6-planning-worker-1",
+        "NetIO": "579kB / 707kB",
+        "PIDs": "3"
+      },
+      {
+        "BlockIO": "77.8kB / 0B",
+        "CPUPerc": "1.58%",
+        "Container": "c84992dcabbee9593d892cae16a5de4f1b56c28e91d2ca2dc99882bef08294db",
+        "ID": "c84992dcabbe",
+        "MemPerc": "5.37%",
+        "MemUsage": "54.95MiB / 1GiB",
+        "Name": "twinguard-phase6-fast-worker-1",
+        "NetIO": "48.1MB / 119MB",
+        "PIDs": "20"
+      },
+      {
+        "BlockIO": "565kB / 0B",
+        "CPUPerc": "0.01%",
+        "Container": "1b6cfd1a4d8f9195d6a886a56c0b7b2220b11ee330c54958ec6fdc0783db48bf",
+        "ID": "1b6cfd1a4d8f",
+        "MemPerc": "5.18%",
+        "MemUsage": "53.04MiB / 1GiB",
+        "Name": "twinguard-phase6-ingestion-1",
+        "NetIO": "426kB / 632kB",
+        "PIDs": "20"
+      },
+      {
+        "BlockIO": "29.8MB / 108MB",
+        "CPUPerc": "3.12%",
+        "Container": "9d032228c0d373201160b951f2d5967c477df9843dd1da218688bc6fc8d0dcf8",
+        "ID": "9d032228c0d3",
+        "MemPerc": "11.20%",
+        "MemUsage": "57.32MiB / 512MiB",
+        "Name": "twinguard-phase6-database-1",
+        "NetIO": "130MB / 57.6MB",
+        "PIDs": "11"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "0.02%",
+        "Container": "5cec41ec47f9e6c6d7dfdb498fa225fca88f69cca586c12245b0d36b50ff0c51",
+        "ID": "5cec41ec47f9",
+        "MemPerc": "2.01%",
+        "MemUsage": "2.57MiB / 128MiB",
+        "Name": "twinguard-phase6-broker-1",
+        "NetIO": "127kB / 107kB",
+        "PIDs": "1"
+      }
+    ],
+    "E5_processes": [
+      {
+        "pid": 5672,
+        "parent_pid": 5636,
+        "user_cpu_s": 0.43,
+        "system_cpu_s": 0.12,
+        "observed_peak_rss_kib": 102160
+      },
+      {
+        "pid": 5692,
+        "parent_pid": 5672,
+        "user_cpu_s": 664.48,
+        "system_cpu_s": 10.84,
+        "observed_peak_rss_kib": 712328
+      },
+      {
+        "pid": 5693,
+        "parent_pid": 5672,
+        "user_cpu_s": 663.57,
+        "system_cpu_s": 11.88,
+        "observed_peak_rss_kib": 712480
+      },
+      {
+        "pid": 5694,
+        "parent_pid": 5672,
+        "user_cpu_s": 663.2,
+        "system_cpu_s": 10.56,
+        "observed_peak_rss_kib": 711820
+      },
+      {
+        "pid": 5695,
+        "parent_pid": 5672,
+        "user_cpu_s": 663.53,
+        "system_cpu_s": 12.02,
+        "observed_peak_rss_kib": 712060
+      }
+    ]
+  },
+  {
+    "at": "2026-10-28T12:50:09.990692+00:00",
+    "containers": [
+      {
+        "BlockIO": "922kB / 12.3kB",
+        "CPUPerc": "0.00%",
+        "Container": "bbe3e582d9d05a88c939ddd614434c780e07a59ca7764899c5433d08e52931fd",
+        "ID": "bbe3e582d9d0",
+        "MemPerc": "6.31%",
+        "MemUsage": "16.15MiB / 256MiB",
+        "Name": "twinguard-phase6-frontend-1",
+        "NetIO": "2.23MB / 2.25MB",
+        "PIDs": "21"
+      },
+      {
+        "BlockIO": "37MB / 442kB",
+        "CPUPerc": "0.11%",
+        "Container": "2db9dc140418d328b2ffcfce22c43bd8da478e31d8d115a9ad6364929c6048f2",
+        "ID": "2db9dc140418",
+        "MemPerc": "8.69%",
+        "MemUsage": "88.99MiB / 1GiB",
+        "Name": "twinguard-phase6-api-1",
+        "NetIO": "1.18MB / 2.37MB",
+        "PIDs": "22"
+      },
+      {
+        "BlockIO": "75MB / 131kB",
+        "CPUPerc": "1.98%",
+        "Container": "6dfade2b30885e32b6eabc449d8bfbb90b11541c985fea48b9ded9ebe9b4c429",
+        "ID": "6dfade2b3088",
+        "MemPerc": "9.94%",
+        "MemUsage": "305.5MiB / 3GiB",
+        "Name": "twinguard-phase6-inspection-worker-1",
+        "NetIO": "1.56MB / 3.24MB",
+        "PIDs": "3"
+      },
+      {
+        "BlockIO": "14.2MB / 610kB",
+        "CPUPerc": "1.14%",
+        "Container": "f93bdb1543e7a1224cc64b399449d0949c5faa7d8ceac3fca790e75704a08534",
+        "ID": "f93bdb1543e7",
+        "MemPerc": "12.34%",
+        "MemUsage": "252.6MiB / 2GiB",
+        "Name": "twinguard-phase6-planning-worker-1",
+        "NetIO": "599kB / 731kB",
+        "PIDs": "3"
+      },
+      {
+        "BlockIO": "77.8kB / 0B",
+        "CPUPerc": "1.40%",
+        "Container": "c84992dcabbee9593d892cae16a5de4f1b56c28e91d2ca2dc99882bef08294db",
+        "ID": "c84992dcabbe",
+        "MemPerc": "5.37%",
+        "MemUsage": "54.98MiB / 1GiB",
+        "Name": "twinguard-phase6-fast-worker-1",
+        "NetIO": "48.6MB / 120MB",
+        "PIDs": "20"
+      },
+      {
+        "BlockIO": "565kB / 0B",
+        "CPUPerc": "0.01%",
+        "Container": "1b6cfd1a4d8f9195d6a886a56c0b7b2220b11ee330c54958ec6fdc0783db48bf",
+        "ID": "1b6cfd1a4d8f",
+        "MemPerc": "5.18%",
+        "MemUsage": "53.04MiB / 1GiB",
+        "Name": "twinguard-phase6-ingestion-1",
+        "NetIO": "426kB / 632kB",
+        "PIDs": "20"
+      },
+      {
+        "BlockIO": "29.8MB / 109MB",
+        "CPUPerc": "0.98%",
+        "Container": "9d032228c0d373201160b951f2d5967c477df9843dd1da218688bc6fc8d0dcf8",
+        "ID": "9d032228c0d3",
+        "MemPerc": "11.25%",
+        "MemUsage": "57.61MiB / 512MiB",
+        "Name": "twinguard-phase6-database-1",
+        "NetIO": "131MB / 58.1MB",
+        "PIDs": "11"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "0.02%",
+        "Container": "5cec41ec47f9e6c6d7dfdb498fa225fca88f69cca586c12245b0d36b50ff0c51",
+        "ID": "5cec41ec47f9",
+        "MemPerc": "2.01%",
+        "MemUsage": "2.57MiB / 128MiB",
+        "Name": "twinguard-phase6-broker-1",
+        "NetIO": "127kB / 107kB",
+        "PIDs": "1"
+      }
+    ],
+    "E5_processes": [
+      {
+        "pid": 5672,
+        "parent_pid": 5636,
+        "user_cpu_s": 0.43,
+        "system_cpu_s": 0.12,
+        "observed_peak_rss_kib": 102160
+      },
+      {
+        "pid": 5692,
+        "parent_pid": 5672,
+        "user_cpu_s": 671.2,
+        "system_cpu_s": 10.94,
+        "observed_peak_rss_kib": 712328
+      },
+      {
+        "pid": 5693,
+        "parent_pid": 5672,
+        "user_cpu_s": 670.39,
+        "system_cpu_s": 11.96,
+        "observed_peak_rss_kib": 712480
+      },
+      {
+        "pid": 5694,
+        "parent_pid": 5672,
+        "user_cpu_s": 669.86,
+        "system_cpu_s": 10.66,
+        "observed_peak_rss_kib": 711820
+      },
+      {
+        "pid": 5695,
+        "parent_pid": 5672,
+        "user_cpu_s": 670.21,
+        "system_cpu_s": 12.15,
+        "observed_peak_rss_kib": 712060
+      }
+    ]
+  },
+  {
+    "at": "2026-10-28T12:50:17.163034+00:00",
+    "containers": [
+      {
+        "BlockIO": "922kB / 12.3kB",
+        "CPUPerc": "0.00%",
+        "Container": "bbe3e582d9d05a88c939ddd614434c780e07a59ca7764899c5433d08e52931fd",
+        "ID": "bbe3e582d9d0",
+        "MemPerc": "6.31%",
+        "MemUsage": "16.15MiB / 256MiB",
+        "Name": "twinguard-phase6-frontend-1",
+        "NetIO": "2.23MB / 2.25MB",
+        "PIDs": "21"
+      },
+      {
+        "BlockIO": "37MB / 442kB",
+        "CPUPerc": "0.11%",
+        "Container": "2db9dc140418d328b2ffcfce22c43bd8da478e31d8d115a9ad6364929c6048f2",
+        "ID": "2db9dc140418",
+        "MemPerc": "8.65%",
+        "MemUsage": "88.58MiB / 1GiB",
+        "Name": "twinguard-phase6-api-1",
+        "NetIO": "1.18MB / 2.37MB",
+        "PIDs": "22"
+      },
+      {
+        "BlockIO": "75MB / 131kB",
+        "CPUPerc": "2.06%",
+        "Container": "6dfade2b30885e32b6eabc449d8bfbb90b11541c985fea48b9ded9ebe9b4c429",
+        "ID": "6dfade2b3088",
+        "MemPerc": "9.94%",
+        "MemUsage": "305.4MiB / 3GiB",
+        "Name": "twinguard-phase6-inspection-worker-1",
+        "NetIO": "1.61MB / 3.3MB",
+        "PIDs": "3"
+      },
+      {
+        "BlockIO": "14.2MB / 610kB",
+        "CPUPerc": "1.06%",
+        "Container": "f93bdb1543e7a1224cc64b399449d0949c5faa7d8ceac3fca790e75704a08534",
+        "ID": "f93bdb1543e7",
+        "MemPerc": "12.34%",
+        "MemUsage": "252.8MiB / 2GiB",
+        "Name": "twinguard-phase6-planning-worker-1",
+        "NetIO": "618kB / 754kB",
+        "PIDs": "3"
+      },
+      {
+        "BlockIO": "77.8kB / 0B",
+        "CPUPerc": "3.22%",
+        "Container": "c84992dcabbee9593d892cae16a5de4f1b56c28e91d2ca2dc99882bef08294db",
+        "ID": "c84992dcabbe",
+        "MemPerc": "5.39%",
+        "MemUsage": "55.22MiB / 1GiB",
+        "Name": "twinguard-phase6-fast-worker-1",
+        "NetIO": "49.1MB / 122MB",
+        "PIDs": "20"
+      },
+      {
+        "BlockIO": "565kB / 0B",
+        "CPUPerc": "0.01%",
+        "Container": "1b6cfd1a4d8f9195d6a886a56c0b7b2220b11ee330c54958ec6fdc0783db48bf",
+        "ID": "1b6cfd1a4d8f",
+        "MemPerc": "5.18%",
+        "MemUsage": "53.04MiB / 1GiB",
+        "Name": "twinguard-phase6-ingestion-1",
+        "NetIO": "426kB / 632kB",
+        "PIDs": "20"
+      },
+      {
+        "BlockIO": "29.8MB / 109MB",
+        "CPUPerc": "3.60%",
+        "Container": "9d032228c0d373201160b951f2d5967c477df9843dd1da218688bc6fc8d0dcf8",
+        "ID": "9d032228c0d3",
+        "MemPerc": "11.33%",
+        "MemUsage": "58.04MiB / 512MiB",
+        "Name": "twinguard-phase6-database-1",
+        "NetIO": "132MB / 58.7MB",
+        "PIDs": "11"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "0.02%",
+        "Container": "5cec41ec47f9e6c6d7dfdb498fa225fca88f69cca586c12245b0d36b50ff0c51",
+        "ID": "5cec41ec47f9",
+        "MemPerc": "2.01%",
+        "MemUsage": "2.57MiB / 128MiB",
+        "Name": "twinguard-phase6-broker-1",
+        "NetIO": "127kB / 107kB",
+        "PIDs": "1"
+      }
+    ],
+    "E5_processes": [
+      {
+        "pid": 5672,
+        "parent_pid": 5636,
+        "user_cpu_s": 0.43,
+        "system_cpu_s": 0.12,
+        "observed_peak_rss_kib": 102160
+      },
+      {
+        "pid": 5692,
+        "parent_pid": 5672,
+        "user_cpu_s": 678.37,
+        "system_cpu_s": 11.07,
+        "observed_peak_rss_kib": 712328
+      },
+      {
+        "pid": 5693,
+        "parent_pid": 5672,
+        "user_cpu_s": 677.57,
+        "system_cpu_s": 12.07,
+        "observed_peak_rss_kib": 712480
+      },
+      {
+        "pid": 5694,
+        "parent_pid": 5672,
+        "user_cpu_s": 677.09,
+        "system_cpu_s": 10.73,
+        "observed_peak_rss_kib": 711820
+      },
+      {
+        "pid": 5695,
+        "parent_pid": 5672,
+        "user_cpu_s": 677.4,
+        "system_cpu_s": 12.27,
+        "observed_peak_rss_kib": 712060
+      }
+    ]
+  },
+  {
+    "at": "2026-10-28T12:50:24.326815+00:00",
+    "containers": [
+      {
+        "BlockIO": "922kB / 12.3kB",
+        "CPUPerc": "0.00%",
+        "Container": "bbe3e582d9d05a88c939ddd614434c780e07a59ca7764899c5433d08e52931fd",
+        "ID": "bbe3e582d9d0",
+        "MemPerc": "6.31%",
+        "MemUsage": "16.15MiB / 256MiB",
+        "Name": "twinguard-phase6-frontend-1",
+        "NetIO": "2.23MB / 2.25MB",
+        "PIDs": "21"
+      },
+      {
+        "BlockIO": "37MB / 442kB",
+        "CPUPerc": "0.11%",
+        "Container": "2db9dc140418d328b2ffcfce22c43bd8da478e31d8d115a9ad6364929c6048f2",
+        "ID": "2db9dc140418",
+        "MemPerc": "8.67%",
+        "MemUsage": "88.76MiB / 1GiB",
+        "Name": "twinguard-phase6-api-1",
+        "NetIO": "1.18MB / 2.37MB",
+        "PIDs": "22"
+      },
+      {
+        "BlockIO": "75MB / 131kB",
+        "CPUPerc": "2.22%",
+        "Container": "6dfade2b30885e32b6eabc449d8bfbb90b11541c985fea48b9ded9ebe9b4c429",
+        "ID": "6dfade2b3088",
+        "MemPerc": "9.95%",
+        "MemUsage": "305.6MiB / 3GiB",
+        "Name": "twinguard-phase6-inspection-worker-1",
+        "NetIO": "1.66MB / 3.36MB",
+        "PIDs": "3"
+      },
+      {
+        "BlockIO": "14.2MB / 610kB",
+        "CPUPerc": "1.10%",
+        "Container": "f93bdb1543e7a1224cc64b399449d0949c5faa7d8ceac3fca790e75704a08534",
+        "ID": "f93bdb1543e7",
+        "MemPerc": "12.33%",
+        "MemUsage": "252.6MiB / 2GiB",
+        "Name": "twinguard-phase6-planning-worker-1",
+        "NetIO": "638kB / 778kB",
+        "PIDs": "3"
+      },
+      {
+        "BlockIO": "77.8kB / 0B",
+        "CPUPerc": "1.37%",
+        "Container": "c84992dcabbee9593d892cae16a5de4f1b56c28e91d2ca2dc99882bef08294db",
+        "ID": "c84992dcabbe",
+        "MemPerc": "5.39%",
+        "MemUsage": "55.14MiB / 1GiB",
+        "Name": "twinguard-phase6-fast-worker-1",
+        "NetIO": "49.5MB / 123MB",
+        "PIDs": "20"
+      },
+      {
+        "BlockIO": "565kB / 0B",
+        "CPUPerc": "0.01%",
+        "Container": "1b6cfd1a4d8f9195d6a886a56c0b7b2220b11ee330c54958ec6fdc0783db48bf",
+        "ID": "1b6cfd1a4d8f",
+        "MemPerc": "5.18%",
+        "MemUsage": "53.04MiB / 1GiB",
+        "Name": "twinguard-phase6-ingestion-1",
+        "NetIO": "426kB / 632kB",
+        "PIDs": "20"
+      },
+      {
+        "BlockIO": "29.8MB / 109MB",
+        "CPUPerc": "0.82%",
+        "Container": "9d032228c0d373201160b951f2d5967c477df9843dd1da218688bc6fc8d0dcf8",
+        "ID": "9d032228c0d3",
+        "MemPerc": "11.15%",
+        "MemUsage": "57.08MiB / 512MiB",
+        "Name": "twinguard-phase6-database-1",
+        "NetIO": "134MB / 59.2MB",
+        "PIDs": "11"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "0.02%",
+        "Container": "5cec41ec47f9e6c6d7dfdb498fa225fca88f69cca586c12245b0d36b50ff0c51",
+        "ID": "5cec41ec47f9",
+        "MemPerc": "2.01%",
+        "MemUsage": "2.57MiB / 128MiB",
+        "Name": "twinguard-phase6-broker-1",
+        "NetIO": "127kB / 107kB",
+        "PIDs": "1"
+      }
+    ],
+    "E5_processes": [
+      {
+        "pid": 5672,
+        "parent_pid": 5636,
+        "user_cpu_s": 0.43,
+        "system_cpu_s": 0.12,
+        "observed_peak_rss_kib": 102160
+      },
+      {
+        "pid": 5692,
+        "parent_pid": 5672,
+        "user_cpu_s": 685.39,
+        "system_cpu_s": 11.16,
+        "observed_peak_rss_kib": 712328
+      },
+      {
+        "pid": 5693,
+        "parent_pid": 5672,
+        "user_cpu_s": 684.58,
+        "system_cpu_s": 12.17,
+        "observed_peak_rss_kib": 712480
+      },
+      {
+        "pid": 5694,
+        "parent_pid": 5672,
+        "user_cpu_s": 684.09,
+        "system_cpu_s": 10.85,
+        "observed_peak_rss_kib": 711820
+      },
+      {
+        "pid": 5695,
+        "parent_pid": 5672,
+        "user_cpu_s": 684.39,
+        "system_cpu_s": 12.39,
+        "observed_peak_rss_kib": 712060
+      }
+    ]
+  },
+  {
+    "at": "2026-10-28T12:50:31.478059+00:00",
+    "containers": [
+      {
+        "BlockIO": "922kB / 12.3kB",
+        "CPUPerc": "0.00%",
+        "Container": "bbe3e582d9d05a88c939ddd614434c780e07a59ca7764899c5433d08e52931fd",
+        "ID": "bbe3e582d9d0",
+        "MemPerc": "6.31%",
+        "MemUsage": "16.15MiB / 256MiB",
+        "Name": "twinguard-phase6-frontend-1",
+        "NetIO": "2.23MB / 2.25MB",
+        "PIDs": "21"
+      },
+      {
+        "BlockIO": "37MB / 442kB",
+        "CPUPerc": "0.10%",
+        "Container": "2db9dc140418d328b2ffcfce22c43bd8da478e31d8d115a9ad6364929c6048f2",
+        "ID": "2db9dc140418",
+        "MemPerc": "8.62%",
+        "MemUsage": "88.3MiB / 1GiB",
+        "Name": "twinguard-phase6-api-1",
+        "NetIO": "1.18MB / 2.37MB",
+        "PIDs": "22"
+      },
+      {
+        "BlockIO": "75MB / 131kB",
+        "CPUPerc": "1.97%",
+        "Container": "6dfade2b30885e32b6eabc449d8bfbb90b11541c985fea48b9ded9ebe9b4c429",
+        "ID": "6dfade2b3088",
+        "MemPerc": "9.94%",
+        "MemUsage": "305.3MiB / 3GiB",
+        "Name": "twinguard-phase6-inspection-worker-1",
+        "NetIO": "1.71MB / 3.42MB",
+        "PIDs": "3"
+      },
+      {
+        "BlockIO": "14.2MB / 610kB",
+        "CPUPerc": "1.06%",
+        "Container": "f93bdb1543e7a1224cc64b399449d0949c5faa7d8ceac3fca790e75704a08534",
+        "ID": "f93bdb1543e7",
+        "MemPerc": "12.34%",
+        "MemUsage": "252.8MiB / 2GiB",
+        "Name": "twinguard-phase6-planning-worker-1",
+        "NetIO": "658kB / 801kB",
+        "PIDs": "3"
+      },
+      {
+        "BlockIO": "77.8kB / 0B",
+        "CPUPerc": "3.21%",
+        "Container": "c84992dcabbee9593d892cae16a5de4f1b56c28e91d2ca2dc99882bef08294db",
+        "ID": "c84992dcabbe",
+        "MemPerc": "5.36%",
+        "MemUsage": "54.88MiB / 1GiB",
+        "Name": "twinguard-phase6-fast-worker-1",
+        "NetIO": "50.1MB / 124MB",
+        "PIDs": "20"
+      },
+      {
+        "BlockIO": "565kB / 0B",
+        "CPUPerc": "0.01%",
+        "Container": "1b6cfd1a4d8f9195d6a886a56c0b7b2220b11ee330c54958ec6fdc0783db48bf",
+        "ID": "1b6cfd1a4d8f",
+        "MemPerc": "5.18%",
+        "MemUsage": "53.04MiB / 1GiB",
+        "Name": "twinguard-phase6-ingestion-1",
+        "NetIO": "426kB / 632kB",
+        "PIDs": "20"
+      },
+      {
+        "BlockIO": "29.8MB / 109MB",
+        "CPUPerc": "3.63%",
+        "Container": "9d032228c0d373201160b951f2d5967c477df9843dd1da218688bc6fc8d0dcf8",
+        "ID": "9d032228c0d3",
+        "MemPerc": "11.25%",
+        "MemUsage": "57.6MiB / 512MiB",
+        "Name": "twinguard-phase6-database-1",
+        "NetIO": "135MB / 59.8MB",
+        "PIDs": "11"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "0.02%",
+        "Container": "5cec41ec47f9e6c6d7dfdb498fa225fca88f69cca586c12245b0d36b50ff0c51",
+        "ID": "5cec41ec47f9",
+        "MemPerc": "2.01%",
+        "MemUsage": "2.57MiB / 128MiB",
+        "Name": "twinguard-phase6-broker-1",
+        "NetIO": "127kB / 107kB",
+        "PIDs": "1"
+      }
+    ],
+    "E5_processes": [
+      {
+        "pid": 5672,
+        "parent_pid": 5636,
+        "user_cpu_s": 0.43,
+        "system_cpu_s": 0.12,
+        "observed_peak_rss_kib": 102160
+      },
+      {
+        "pid": 5692,
+        "parent_pid": 5672,
+        "user_cpu_s": 692.43,
+        "system_cpu_s": 11.33,
+        "observed_peak_rss_kib": 712328
+      },
+      {
+        "pid": 5693,
+        "parent_pid": 5672,
+        "user_cpu_s": 691.67,
+        "system_cpu_s": 12.28,
+        "observed_peak_rss_kib": 712480
+      },
+      {
+        "pid": 5694,
+        "parent_pid": 5672,
+        "user_cpu_s": 691.15,
+        "system_cpu_s": 10.99,
+        "observed_peak_rss_kib": 711820
+      },
+      {
+        "pid": 5695,
+        "parent_pid": 5672,
+        "user_cpu_s": 691.58,
+        "system_cpu_s": 12.5,
+        "observed_peak_rss_kib": 712060
+      }
+    ]
+  },
+  {
+    "at": "2026-10-28T12:50:38.628699+00:00",
+    "containers": [
+      {
+        "BlockIO": "922kB / 12.3kB",
+        "CPUPerc": "0.00%",
+        "Container": "bbe3e582d9d05a88c939ddd614434c780e07a59ca7764899c5433d08e52931fd",
+        "ID": "bbe3e582d9d0",
+        "MemPerc": "6.31%",
+        "MemUsage": "16.15MiB / 256MiB",
+        "Name": "twinguard-phase6-frontend-1",
+        "NetIO": "2.23MB / 2.25MB",
+        "PIDs": "21"
+      },
+      {
+        "BlockIO": "37MB / 442kB",
+        "CPUPerc": "7.28%",
+        "Container": "2db9dc140418d328b2ffcfce22c43bd8da478e31d8d115a9ad6364929c6048f2",
+        "ID": "2db9dc140418",
+        "MemPerc": "8.70%",
+        "MemUsage": "89.04MiB / 1GiB",
+        "Name": "twinguard-phase6-api-1",
+        "NetIO": "1.18MB / 2.37MB",
+        "PIDs": "22"
+      },
+      {
+        "BlockIO": "75MB / 131kB",
+        "CPUPerc": "2.11%",
+        "Container": "6dfade2b30885e32b6eabc449d8bfbb90b11541c985fea48b9ded9ebe9b4c429",
+        "ID": "6dfade2b3088",
+        "MemPerc": "9.92%",
+        "MemUsage": "304.8MiB / 3GiB",
+        "Name": "twinguard-phase6-inspection-worker-1",
+        "NetIO": "1.76MB / 3.47MB",
+        "PIDs": "3"
+      },
+      {
+        "BlockIO": "14.2MB / 610kB",
+        "CPUPerc": "1.07%",
+        "Container": "f93bdb1543e7a1224cc64b399449d0949c5faa7d8ceac3fca790e75704a08534",
+        "ID": "f93bdb1543e7",
+        "MemPerc": "12.32%",
+        "MemUsage": "252.3MiB / 2GiB",
+        "Name": "twinguard-phase6-planning-worker-1",
+        "NetIO": "677kB / 824kB",
+        "PIDs": "3"
+      },
+      {
+        "BlockIO": "77.8kB / 0B",
+        "CPUPerc": "2.47%",
+        "Container": "c84992dcabbee9593d892cae16a5de4f1b56c28e91d2ca2dc99882bef08294db",
+        "ID": "c84992dcabbe",
+        "MemPerc": "5.36%",
+        "MemUsage": "54.92MiB / 1GiB",
+        "Name": "twinguard-phase6-fast-worker-1",
+        "NetIO": "50.5MB / 125MB",
+        "PIDs": "20"
+      },
+      {
+        "BlockIO": "565kB / 0B",
+        "CPUPerc": "0.00%",
+        "Container": "1b6cfd1a4d8f9195d6a886a56c0b7b2220b11ee330c54958ec6fdc0783db48bf",
+        "ID": "1b6cfd1a4d8f",
+        "MemPerc": "5.18%",
+        "MemUsage": "53.04MiB / 1GiB",
+        "Name": "twinguard-phase6-ingestion-1",
+        "NetIO": "426kB / 632kB",
+        "PIDs": "20"
+      },
+      {
+        "BlockIO": "29.8MB / 110MB",
+        "CPUPerc": "1.06%",
+        "Container": "9d032228c0d373201160b951f2d5967c477df9843dd1da218688bc6fc8d0dcf8",
+        "ID": "9d032228c0d3",
+        "MemPerc": "11.30%",
+        "MemUsage": "57.85MiB / 512MiB",
+        "Name": "twinguard-phase6-database-1",
+        "NetIO": "136MB / 60.3MB",
+        "PIDs": "11"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "0.02%",
+        "Container": "5cec41ec47f9e6c6d7dfdb498fa225fca88f69cca586c12245b0d36b50ff0c51",
+        "ID": "5cec41ec47f9",
+        "MemPerc": "2.01%",
+        "MemUsage": "2.57MiB / 128MiB",
+        "Name": "twinguard-phase6-broker-1",
+        "NetIO": "127kB / 107kB",
+        "PIDs": "1"
+      }
+    ],
+    "E5_processes": [
+      {
+        "pid": 5672,
+        "parent_pid": 5636,
+        "user_cpu_s": 0.43,
+        "system_cpu_s": 0.12,
+        "observed_peak_rss_kib": 102160
+      },
+      {
+        "pid": 5692,
+        "parent_pid": 5672,
+        "user_cpu_s": 699.55,
+        "system_cpu_s": 11.45,
+        "observed_peak_rss_kib": 712328
+      },
+      {
+        "pid": 5693,
+        "parent_pid": 5672,
+        "user_cpu_s": 698.83,
+        "system_cpu_s": 12.36,
+        "observed_peak_rss_kib": 712480
+      },
+      {
+        "pid": 5694,
+        "parent_pid": 5672,
+        "user_cpu_s": 698.12,
+        "system_cpu_s": 11.09,
+        "observed_peak_rss_kib": 711820
+      },
+      {
+        "pid": 5695,
+        "parent_pid": 5672,
+        "user_cpu_s": 695.77,
+        "system_cpu_s": 12.6,
+        "observed_peak_rss_kib": 712060
+      }
+    ]
+  },
+  {
+    "at": "2026-10-28T12:50:45.898704+00:00",
+    "containers": [
+      {
+        "BlockIO": "922kB / 12.3kB",
+        "CPUPerc": "0.00%",
+        "Container": "bbe3e582d9d05a88c939ddd614434c780e07a59ca7764899c5433d08e52931fd",
+        "ID": "bbe3e582d9d0",
+        "MemPerc": "6.31%",
+        "MemUsage": "16.15MiB / 256MiB",
+        "Name": "twinguard-phase6-frontend-1",
+        "NetIO": "2.23MB / 2.25MB",
+        "PIDs": "21"
+      },
+      {
+        "BlockIO": "37.1MB / 442kB",
+        "CPUPerc": "0.12%",
+        "Container": "2db9dc140418d328b2ffcfce22c43bd8da478e31d8d115a9ad6364929c6048f2",
+        "ID": "2db9dc140418",
+        "MemPerc": "8.56%",
+        "MemUsage": "87.62MiB / 1GiB",
+        "Name": "twinguard-phase6-api-1",
+        "NetIO": "1.18MB / 2.37MB",
+        "PIDs": "22"
+      },
+      {
+        "BlockIO": "75MB / 131kB",
+        "CPUPerc": "2.09%",
+        "Container": "6dfade2b30885e32b6eabc449d8bfbb90b11541c985fea48b9ded9ebe9b4c429",
+        "ID": "6dfade2b3088",
+        "MemPerc": "9.90%",
+        "MemUsage": "304.1MiB / 3GiB",
+        "Name": "twinguard-phase6-inspection-worker-1",
+        "NetIO": "1.81MB / 3.53MB",
+        "PIDs": "3"
+      },
+      {
+        "BlockIO": "14.2MB / 610kB",
+        "CPUPerc": "1.04%",
+        "Container": "f93bdb1543e7a1224cc64b399449d0949c5faa7d8ceac3fca790e75704a08534",
+        "ID": "f93bdb1543e7",
+        "MemPerc": "12.31%",
+        "MemUsage": "252.1MiB / 2GiB",
+        "Name": "twinguard-phase6-planning-worker-1",
+        "NetIO": "697kB / 848kB",
+        "PIDs": "3"
+      },
+      {
+        "BlockIO": "77.8kB / 0B",
+        "CPUPerc": "1.51%",
+        "Container": "c84992dcabbee9593d892cae16a5de4f1b56c28e91d2ca2dc99882bef08294db",
+        "ID": "c84992dcabbe",
+        "MemPerc": "5.31%",
+        "MemUsage": "54.34MiB / 1GiB",
+        "Name": "twinguard-phase6-fast-worker-1",
+        "NetIO": "51MB / 126MB",
+        "PIDs": "20"
+      },
+      {
+        "BlockIO": "565kB / 0B",
+        "CPUPerc": "0.00%",
+        "Container": "1b6cfd1a4d8f9195d6a886a56c0b7b2220b11ee330c54958ec6fdc0783db48bf",
+        "ID": "1b6cfd1a4d8f",
+        "MemPerc": "5.18%",
+        "MemUsage": "53.04MiB / 1GiB",
+        "Name": "twinguard-phase6-ingestion-1",
+        "NetIO": "426kB / 632kB",
+        "PIDs": "20"
+      },
+      {
+        "BlockIO": "29.8MB / 110MB",
+        "CPUPerc": "3.21%",
+        "Container": "9d032228c0d373201160b951f2d5967c477df9843dd1da218688bc6fc8d0dcf8",
+        "ID": "9d032228c0d3",
+        "MemPerc": "10.96%",
+        "MemUsage": "56.13MiB / 512MiB",
+        "Name": "twinguard-phase6-database-1",
+        "NetIO": "138MB / 60.8MB",
+        "PIDs": "11"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "0.02%",
+        "Container": "5cec41ec47f9e6c6d7dfdb498fa225fca88f69cca586c12245b0d36b50ff0c51",
+        "ID": "5cec41ec47f9",
+        "MemPerc": "2.01%",
+        "MemUsage": "2.57MiB / 128MiB",
+        "Name": "twinguard-phase6-broker-1",
+        "NetIO": "127kB / 107kB",
+        "PIDs": "1"
+      }
+    ],
+    "E5_processes": [
+      {
+        "pid": 5672,
+        "parent_pid": 5636,
+        "user_cpu_s": 0.43,
+        "system_cpu_s": 0.12,
+        "observed_peak_rss_kib": 102160
+      },
+      {
+        "pid": 5692,
+        "parent_pid": 5672,
+        "user_cpu_s": 706.69,
+        "system_cpu_s": 11.58,
+        "observed_peak_rss_kib": 712328
+      },
+      {
+        "pid": 5693,
+        "parent_pid": 5672,
+        "user_cpu_s": 704.08,
+        "system_cpu_s": 12.45,
+        "observed_peak_rss_kib": 712480
+      },
+      {
+        "pid": 5694,
+        "parent_pid": 5672,
+        "user_cpu_s": 705.34,
+        "system_cpu_s": 11.19,
+        "observed_peak_rss_kib": 711820
+      },
+      {
+        "pid": 5695,
+        "parent_pid": 5672,
+        "user_cpu_s": 695.79,
+        "system_cpu_s": 12.62,
+        "observed_peak_rss_kib": 712060
+      }
+    ]
+  },
+  {
+    "at": "2026-10-28T12:50:53.091630+00:00",
+    "containers": [
+      {
+        "BlockIO": "922kB / 12.3kB",
+        "CPUPerc": "0.00%",
+        "Container": "bbe3e582d9d05a88c939ddd614434c780e07a59ca7764899c5433d08e52931fd",
+        "ID": "bbe3e582d9d0",
+        "MemPerc": "6.31%",
+        "MemUsage": "16.15MiB / 256MiB",
+        "Name": "twinguard-phase6-frontend-1",
+        "NetIO": "2.23MB / 2.25MB",
+        "PIDs": "21"
+      },
+      {
+        "BlockIO": "37.1MB / 442kB",
+        "CPUPerc": "0.10%",
+        "Container": "2db9dc140418d328b2ffcfce22c43bd8da478e31d8d115a9ad6364929c6048f2",
+        "ID": "2db9dc140418",
+        "MemPerc": "8.58%",
+        "MemUsage": "87.81MiB / 1GiB",
+        "Name": "twinguard-phase6-api-1",
+        "NetIO": "1.18MB / 2.37MB",
+        "PIDs": "22"
+      },
+      {
+        "BlockIO": "75MB / 131kB",
+        "CPUPerc": "2.02%",
+        "Container": "6dfade2b30885e32b6eabc449d8bfbb90b11541c985fea48b9ded9ebe9b4c429",
+        "ID": "6dfade2b3088",
+        "MemPerc": "9.91%",
+        "MemUsage": "304.3MiB / 3GiB",
+        "Name": "twinguard-phase6-inspection-worker-1",
+        "NetIO": "1.85MB / 3.59MB",
+        "PIDs": "3"
+      },
+      {
+        "BlockIO": "14.2MB / 610kB",
+        "CPUPerc": "1.05%",
+        "Container": "f93bdb1543e7a1224cc64b399449d0949c5faa7d8ceac3fca790e75704a08534",
+        "ID": "f93bdb1543e7",
+        "MemPerc": "12.32%",
+        "MemUsage": "252.3MiB / 2GiB",
+        "Name": "twinguard-phase6-planning-worker-1",
+        "NetIO": "717kB / 872kB",
+        "PIDs": "3"
+      },
+      {
+        "BlockIO": "90.1kB / 0B",
+        "CPUPerc": "3.39%",
+        "Container": "c84992dcabbee9593d892cae16a5de4f1b56c28e91d2ca2dc99882bef08294db",
+        "ID": "c84992dcabbe",
+        "MemPerc": "5.32%",
+        "MemUsage": "54.52MiB / 1GiB",
+        "Name": "twinguard-phase6-fast-worker-1",
+        "NetIO": "51.5MB / 128MB",
+        "PIDs": "20"
+      },
+      {
+        "BlockIO": "565kB / 0B",
+        "CPUPerc": "0.00%",
+        "Container": "1b6cfd1a4d8f9195d6a886a56c0b7b2220b11ee330c54958ec6fdc0783db48bf",
+        "ID": "1b6cfd1a4d8f",
+        "MemPerc": "5.18%",
+        "MemUsage": "53.04MiB / 1GiB",
+        "Name": "twinguard-phase6-ingestion-1",
+        "NetIO": "426kB / 632kB",
+        "PIDs": "20"
+      },
+      {
+        "BlockIO": "29.8MB / 110MB",
+        "CPUPerc": "1.44%",
+        "Container": "9d032228c0d373201160b951f2d5967c477df9843dd1da218688bc6fc8d0dcf8",
+        "ID": "9d032228c0d3",
+        "MemPerc": "11.20%",
+        "MemUsage": "57.35MiB / 512MiB",
+        "Name": "twinguard-phase6-database-1",
+        "NetIO": "139MB / 61.4MB",
+        "PIDs": "11"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "0.02%",
+        "Container": "5cec41ec47f9e6c6d7dfdb498fa225fca88f69cca586c12245b0d36b50ff0c51",
+        "ID": "5cec41ec47f9",
+        "MemPerc": "2.01%",
+        "MemUsage": "2.57MiB / 128MiB",
+        "Name": "twinguard-phase6-broker-1",
+        "NetIO": "127kB / 107kB",
+        "PIDs": "1"
+      }
+    ],
+    "E5_processes": [
+      {
+        "pid": 5672,
+        "parent_pid": 5636,
+        "user_cpu_s": 0.43,
+        "system_cpu_s": 0.12,
+        "observed_peak_rss_kib": 102160
+      },
+      {
+        "pid": 5692,
+        "parent_pid": 5672,
+        "user_cpu_s": 713.79,
+        "system_cpu_s": 11.7,
+        "observed_peak_rss_kib": 712328
+      },
+      {
+        "pid": 5693,
+        "parent_pid": 5672,
+        "user_cpu_s": 711.25,
+        "system_cpu_s": 12.57,
+        "observed_peak_rss_kib": 712480
+      },
+      {
+        "pid": 5694,
+        "parent_pid": 5672,
+        "user_cpu_s": 712.5,
+        "system_cpu_s": 11.32,
+        "observed_peak_rss_kib": 711820
+      },
+      {
+        "pid": 5695,
+        "parent_pid": 5672,
+        "user_cpu_s": 695.81,
+        "system_cpu_s": 12.62,
+        "observed_peak_rss_kib": 712060
+      }
+    ]
+  },
+  {
+    "at": "2026-10-28T12:51:00.246307+00:00",
+    "containers": [
+      {
+        "BlockIO": "922kB / 12.3kB",
+        "CPUPerc": "0.00%",
+        "Container": "bbe3e582d9d05a88c939ddd614434c780e07a59ca7764899c5433d08e52931fd",
+        "ID": "bbe3e582d9d0",
+        "MemPerc": "6.31%",
+        "MemUsage": "16.15MiB / 256MiB",
+        "Name": "twinguard-phase6-frontend-1",
+        "NetIO": "2.23MB / 2.25MB",
+        "PIDs": "21"
+      },
+      {
+        "BlockIO": "37.1MB / 442kB",
+        "CPUPerc": "0.10%",
+        "Container": "2db9dc140418d328b2ffcfce22c43bd8da478e31d8d115a9ad6364929c6048f2",
+        "ID": "2db9dc140418",
+        "MemPerc": "8.68%",
+        "MemUsage": "88.86MiB / 1GiB",
+        "Name": "twinguard-phase6-api-1",
+        "NetIO": "1.18MB / 2.37MB",
+        "PIDs": "22"
+      },
+      {
+        "BlockIO": "75MB / 131kB",
+        "CPUPerc": "2.00%",
+        "Container": "6dfade2b30885e32b6eabc449d8bfbb90b11541c985fea48b9ded9ebe9b4c429",
+        "ID": "6dfade2b3088",
+        "MemPerc": "9.89%",
+        "MemUsage": "303.9MiB / 3GiB",
+        "Name": "twinguard-phase6-inspection-worker-1",
+        "NetIO": "1.9MB / 3.65MB",
+        "PIDs": "3"
+      },
+      {
+        "BlockIO": "14.2MB / 610kB",
+        "CPUPerc": "1.22%",
+        "Container": "f93bdb1543e7a1224cc64b399449d0949c5faa7d8ceac3fca790e75704a08534",
+        "ID": "f93bdb1543e7",
+        "MemPerc": "12.32%",
+        "MemUsage": "252.3MiB / 2GiB",
+        "Name": "twinguard-phase6-planning-worker-1",
+        "NetIO": "736kB / 895kB",
+        "PIDs": "3"
+      },
+      {
+        "BlockIO": "90.1kB / 0B",
+        "CPUPerc": "1.31%",
+        "Container": "c84992dcabbee9593d892cae16a5de4f1b56c28e91d2ca2dc99882bef08294db",
+        "ID": "c84992dcabbe",
+        "MemPerc": "5.31%",
+        "MemUsage": "54.38MiB / 1GiB",
+        "Name": "twinguard-phase6-fast-worker-1",
+        "NetIO": "51.9MB / 129MB",
+        "PIDs": "20"
+      },
+      {
+        "BlockIO": "565kB / 0B",
+        "CPUPerc": "0.00%",
+        "Container": "1b6cfd1a4d8f9195d6a886a56c0b7b2220b11ee330c54958ec6fdc0783db48bf",
+        "ID": "1b6cfd1a4d8f",
+        "MemPerc": "5.18%",
+        "MemUsage": "53.04MiB / 1GiB",
+        "Name": "twinguard-phase6-ingestion-1",
+        "NetIO": "426kB / 632kB",
+        "PIDs": "20"
+      },
+      {
+        "BlockIO": "29.8MB / 110MB",
+        "CPUPerc": "3.23%",
+        "Container": "9d032228c0d373201160b951f2d5967c477df9843dd1da218688bc6fc8d0dcf8",
+        "ID": "9d032228c0d3",
+        "MemPerc": "11.22%",
+        "MemUsage": "57.44MiB / 512MiB",
+        "Name": "twinguard-phase6-database-1",
+        "NetIO": "140MB / 61.9MB",
+        "PIDs": "11"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "0.02%",
+        "Container": "5cec41ec47f9e6c6d7dfdb498fa225fca88f69cca586c12245b0d36b50ff0c51",
+        "ID": "5cec41ec47f9",
+        "MemPerc": "2.01%",
+        "MemUsage": "2.57MiB / 128MiB",
+        "Name": "twinguard-phase6-broker-1",
+        "NetIO": "127kB / 107kB",
+        "PIDs": "1"
+      }
+    ],
+    "E5_processes": [
+      {
+        "pid": 5672,
+        "parent_pid": 5636,
+        "user_cpu_s": 0.43,
+        "system_cpu_s": 0.12,
+        "observed_peak_rss_kib": 102160
+      },
+      {
+        "pid": 5692,
+        "parent_pid": 5672,
+        "user_cpu_s": 720.79,
+        "system_cpu_s": 11.81,
+        "observed_peak_rss_kib": 712328
+      },
+      {
+        "pid": 5693,
+        "parent_pid": 5672,
+        "user_cpu_s": 718.28,
+        "system_cpu_s": 12.66,
+        "observed_peak_rss_kib": 712480
+      },
+      {
+        "pid": 5694,
+        "parent_pid": 5672,
+        "user_cpu_s": 719.48,
+        "system_cpu_s": 11.46,
+        "observed_peak_rss_kib": 711820
+      },
+      {
+        "pid": 5695,
+        "parent_pid": 5672,
+        "user_cpu_s": 695.83,
+        "system_cpu_s": 12.63,
+        "observed_peak_rss_kib": 712060
+      }
+    ]
+  },
+  {
+    "at": "2026-10-28T12:51:07.410826+00:00",
+    "containers": [
+      {
+        "BlockIO": "922kB / 12.3kB",
+        "CPUPerc": "0.00%",
+        "Container": "bbe3e582d9d05a88c939ddd614434c780e07a59ca7764899c5433d08e52931fd",
+        "ID": "bbe3e582d9d0",
+        "MemPerc": "6.31%",
+        "MemUsage": "16.15MiB / 256MiB",
+        "Name": "twinguard-phase6-frontend-1",
+        "NetIO": "2.23MB / 2.25MB",
+        "PIDs": "21"
+      },
+      {
+        "BlockIO": "37.1MB / 442kB",
+        "CPUPerc": "0.10%",
+        "Container": "2db9dc140418d328b2ffcfce22c43bd8da478e31d8d115a9ad6364929c6048f2",
+        "ID": "2db9dc140418",
+        "MemPerc": "8.59%",
+        "MemUsage": "87.95MiB / 1GiB",
+        "Name": "twinguard-phase6-api-1",
+        "NetIO": "1.18MB / 2.37MB",
+        "PIDs": "22"
+      },
+      {
+        "BlockIO": "75MB / 131kB",
+        "CPUPerc": "2.00%",
+        "Container": "6dfade2b30885e32b6eabc449d8bfbb90b11541c985fea48b9ded9ebe9b4c429",
+        "ID": "6dfade2b3088",
+        "MemPerc": "9.89%",
+        "MemUsage": "303.8MiB / 3GiB",
+        "Name": "twinguard-phase6-inspection-worker-1",
+        "NetIO": "1.95MB / 3.71MB",
+        "PIDs": "3"
+      },
+      {
+        "BlockIO": "14.2MB / 610kB",
+        "CPUPerc": "1.11%",
+        "Container": "f93bdb1543e7a1224cc64b399449d0949c5faa7d8ceac3fca790e75704a08534",
+        "ID": "f93bdb1543e7",
+        "MemPerc": "12.32%",
+        "MemUsage": "252.3MiB / 2GiB",
+        "Name": "twinguard-phase6-planning-worker-1",
+        "NetIO": "756kB / 918kB",
+        "PIDs": "3"
+      },
+      {
+        "BlockIO": "90.1kB / 0B",
+        "CPUPerc": "1.49%",
+        "Container": "c84992dcabbee9593d892cae16a5de4f1b56c28e91d2ca2dc99882bef08294db",
+        "ID": "c84992dcabbe",
+        "MemPerc": "5.31%",
+        "MemUsage": "54.34MiB / 1GiB",
+        "Name": "twinguard-phase6-fast-worker-1",
+        "NetIO": "52.4MB / 130MB",
+        "PIDs": "20"
+      },
+      {
+        "BlockIO": "565kB / 0B",
+        "CPUPerc": "0.00%",
+        "Container": "1b6cfd1a4d8f9195d6a886a56c0b7b2220b11ee330c54958ec6fdc0783db48bf",
+        "ID": "1b6cfd1a4d8f",
+        "MemPerc": "5.18%",
+        "MemUsage": "53.04MiB / 1GiB",
+        "Name": "twinguard-phase6-ingestion-1",
+        "NetIO": "426kB / 632kB",
+        "PIDs": "20"
+      },
+      {
+        "BlockIO": "29.8MB / 110MB",
+        "CPUPerc": "0.92%",
+        "Container": "9d032228c0d373201160b951f2d5967c477df9843dd1da218688bc6fc8d0dcf8",
+        "ID": "9d032228c0d3",
+        "MemPerc": "11.25%",
+        "MemUsage": "57.62MiB / 512MiB",
+        "Name": "twinguard-phase6-database-1",
+        "NetIO": "141MB / 62.4MB",
+        "PIDs": "11"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "0.02%",
+        "Container": "5cec41ec47f9e6c6d7dfdb498fa225fca88f69cca586c12245b0d36b50ff0c51",
+        "ID": "5cec41ec47f9",
+        "MemPerc": "2.01%",
+        "MemUsage": "2.57MiB / 128MiB",
+        "Name": "twinguard-phase6-broker-1",
+        "NetIO": "127kB / 107kB",
+        "PIDs": "1"
+      }
+    ],
+    "E5_processes": [
+      {
+        "pid": 5672,
+        "parent_pid": 5636,
+        "user_cpu_s": 0.43,
+        "system_cpu_s": 0.12,
+        "observed_peak_rss_kib": 102160
+      },
+      {
+        "pid": 5692,
+        "parent_pid": 5672,
+        "user_cpu_s": 727.89,
+        "system_cpu_s": 11.93,
+        "observed_peak_rss_kib": 712328
+      },
+      {
+        "pid": 5693,
+        "parent_pid": 5672,
+        "user_cpu_s": 725.35,
+        "system_cpu_s": 12.8,
+        "observed_peak_rss_kib": 712480
+      },
+      {
+        "pid": 5694,
+        "parent_pid": 5672,
+        "user_cpu_s": 726.6,
+        "system_cpu_s": 11.56,
+        "observed_peak_rss_kib": 711820
+      },
+      {
+        "pid": 5695,
+        "parent_pid": 5672,
+        "user_cpu_s": 695.85,
+        "system_cpu_s": 12.64,
+        "observed_peak_rss_kib": 712060
+      }
+    ]
+  },
+  {
+    "at": "2026-10-28T12:51:14.553330+00:00",
+    "containers": [
+      {
+        "BlockIO": "922kB / 12.3kB",
+        "CPUPerc": "0.00%",
+        "Container": "bbe3e582d9d05a88c939ddd614434c780e07a59ca7764899c5433d08e52931fd",
+        "ID": "bbe3e582d9d0",
+        "MemPerc": "6.31%",
+        "MemUsage": "16.15MiB / 256MiB",
+        "Name": "twinguard-phase6-frontend-1",
+        "NetIO": "2.23MB / 2.25MB",
+        "PIDs": "21"
+      },
+      {
+        "BlockIO": "37.1MB / 442kB",
+        "CPUPerc": "6.65%",
+        "Container": "2db9dc140418d328b2ffcfce22c43bd8da478e31d8d115a9ad6364929c6048f2",
+        "ID": "2db9dc140418",
+        "MemPerc": "8.68%",
+        "MemUsage": "88.9MiB / 1GiB",
+        "Name": "twinguard-phase6-api-1",
+        "NetIO": "1.18MB / 2.37MB",
+        "PIDs": "22"
+      },
+      {
+        "BlockIO": "75MB / 131kB",
+        "CPUPerc": "2.25%",
+        "Container": "6dfade2b30885e32b6eabc449d8bfbb90b11541c985fea48b9ded9ebe9b4c429",
+        "ID": "6dfade2b3088",
+        "MemPerc": "9.89%",
+        "MemUsage": "303.7MiB / 3GiB",
+        "Name": "twinguard-phase6-inspection-worker-1",
+        "NetIO": "2MB / 3.77MB",
+        "PIDs": "3"
+      },
+      {
+        "BlockIO": "14.2MB / 610kB",
+        "CPUPerc": "1.08%",
+        "Container": "f93bdb1543e7a1224cc64b399449d0949c5faa7d8ceac3fca790e75704a08534",
+        "ID": "f93bdb1543e7",
+        "MemPerc": "12.32%",
+        "MemUsage": "252.3MiB / 2GiB",
+        "Name": "twinguard-phase6-planning-worker-1",
+        "NetIO": "776kB / 941kB",
+        "PIDs": "3"
+      },
+      {
+        "BlockIO": "90.1kB / 0B",
+        "CPUPerc": "3.16%",
+        "Container": "c84992dcabbee9593d892cae16a5de4f1b56c28e91d2ca2dc99882bef08294db",
+        "ID": "c84992dcabbe",
+        "MemPerc": "5.28%",
+        "MemUsage": "54.11MiB / 1GiB",
+        "Name": "twinguard-phase6-fast-worker-1",
+        "NetIO": "52.9MB / 132MB",
+        "PIDs": "20"
+      },
+      {
+        "BlockIO": "565kB / 0B",
+        "CPUPerc": "0.01%",
+        "Container": "1b6cfd1a4d8f9195d6a886a56c0b7b2220b11ee330c54958ec6fdc0783db48bf",
+        "ID": "1b6cfd1a4d8f",
+        "MemPerc": "5.18%",
+        "MemUsage": "53.04MiB / 1GiB",
+        "Name": "twinguard-phase6-ingestion-1",
+        "NetIO": "426kB / 632kB",
+        "PIDs": "20"
+      },
+      {
+        "BlockIO": "29.8MB / 110MB",
+        "CPUPerc": "3.31%",
+        "Container": "9d032228c0d373201160b951f2d5967c477df9843dd1da218688bc6fc8d0dcf8",
+        "ID": "9d032228c0d3",
+        "MemPerc": "11.30%",
+        "MemUsage": "57.84MiB / 512MiB",
+        "Name": "twinguard-phase6-database-1",
+        "NetIO": "143MB / 63.1MB",
+        "PIDs": "11"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "0.02%",
+        "Container": "5cec41ec47f9e6c6d7dfdb498fa225fca88f69cca586c12245b0d36b50ff0c51",
+        "ID": "5cec41ec47f9",
+        "MemPerc": "2.01%",
+        "MemUsage": "2.57MiB / 128MiB",
+        "Name": "twinguard-phase6-broker-1",
+        "NetIO": "127kB / 107kB",
+        "PIDs": "1"
+      }
+    ],
+    "E5_processes": [
+      {
+        "pid": 5672,
+        "parent_pid": 5636,
+        "user_cpu_s": 0.43,
+        "system_cpu_s": 0.12,
+        "observed_peak_rss_kib": 102160
+      },
+      {
+        "pid": 5692,
+        "parent_pid": 5672,
+        "user_cpu_s": 734.59,
+        "system_cpu_s": 12.03,
+        "observed_peak_rss_kib": 712328
+      },
+      {
+        "pid": 5693,
+        "parent_pid": 5672,
+        "user_cpu_s": 732.46,
+        "system_cpu_s": 12.9,
+        "observed_peak_rss_kib": 712480
+      },
+      {
+        "pid": 5694,
+        "parent_pid": 5672,
+        "user_cpu_s": 733.76,
+        "system_cpu_s": 11.65,
+        "observed_peak_rss_kib": 711820
+      },
+      {
+        "pid": 5695,
+        "parent_pid": 5672,
+        "user_cpu_s": 695.86,
+        "system_cpu_s": 12.66,
+        "observed_peak_rss_kib": 712060
+      }
+    ]
+  },
+  {
+    "at": "2026-10-28T12:51:21.725262+00:00",
+    "containers": [
+      {
+        "BlockIO": "922kB / 12.3kB",
+        "CPUPerc": "0.00%",
+        "Container": "bbe3e582d9d05a88c939ddd614434c780e07a59ca7764899c5433d08e52931fd",
+        "ID": "bbe3e582d9d0",
+        "MemPerc": "6.31%",
+        "MemUsage": "16.15MiB / 256MiB",
+        "Name": "twinguard-phase6-frontend-1",
+        "NetIO": "2.23MB / 2.25MB",
+        "PIDs": "21"
+      },
+      {
+        "BlockIO": "37.1MB / 442kB",
+        "CPUPerc": "0.12%",
+        "Container": "2db9dc140418d328b2ffcfce22c43bd8da478e31d8d115a9ad6364929c6048f2",
+        "ID": "2db9dc140418",
+        "MemPerc": "8.64%",
+        "MemUsage": "88.44MiB / 1GiB",
+        "Name": "twinguard-phase6-api-1",
+        "NetIO": "1.18MB / 2.37MB",
+        "PIDs": "22"
+      },
+      {
+        "BlockIO": "75MB / 131kB",
+        "CPUPerc": "2.27%",
+        "Container": "6dfade2b30885e32b6eabc449d8bfbb90b11541c985fea48b9ded9ebe9b4c429",
+        "ID": "6dfade2b3088",
+        "MemPerc": "9.86%",
+        "MemUsage": "302.9MiB / 3GiB",
+        "Name": "twinguard-phase6-inspection-worker-1",
+        "NetIO": "2.05MB / 3.82MB",
+        "PIDs": "3"
+      },
+      {
+        "BlockIO": "14.2MB / 610kB",
+        "CPUPerc": "1.11%",
+        "Container": "f93bdb1543e7a1224cc64b399449d0949c5faa7d8ceac3fca790e75704a08534",
+        "ID": "f93bdb1543e7",
+        "MemPerc": "12.33%",
+        "MemUsage": "252.5MiB / 2GiB",
+        "Name": "twinguard-phase6-planning-worker-1",
+        "NetIO": "795kB / 964kB",
+        "PIDs": "3"
+      },
+      {
+        "BlockIO": "90.1kB / 0B",
+        "CPUPerc": "1.63%",
+        "Container": "c84992dcabbee9593d892cae16a5de4f1b56c28e91d2ca2dc99882bef08294db",
+        "ID": "c84992dcabbe",
+        "MemPerc": "5.30%",
+        "MemUsage": "54.23MiB / 1GiB",
+        "Name": "twinguard-phase6-fast-worker-1",
+        "NetIO": "53.4MB / 133MB",
+        "PIDs": "20"
+      },
+      {
+        "BlockIO": "565kB / 0B",
+        "CPUPerc": "0.01%",
+        "Container": "1b6cfd1a4d8f9195d6a886a56c0b7b2220b11ee330c54958ec6fdc0783db48bf",
+        "ID": "1b6cfd1a4d8f",
+        "MemPerc": "5.18%",
+        "MemUsage": "53.04MiB / 1GiB",
+        "Name": "twinguard-phase6-ingestion-1",
+        "NetIO": "426kB / 632kB",
+        "PIDs": "20"
+      },
+      {
+        "BlockIO": "29.8MB / 111MB",
+        "CPUPerc": "3.40%",
+        "Container": "9d032228c0d373201160b951f2d5967c477df9843dd1da218688bc6fc8d0dcf8",
+        "ID": "9d032228c0d3",
+        "MemPerc": "11.27%",
+        "MemUsage": "57.7MiB / 512MiB",
+        "Name": "twinguard-phase6-database-1",
+        "NetIO": "144MB / 63.5MB",
+        "PIDs": "11"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "0.02%",
+        "Container": "5cec41ec47f9e6c6d7dfdb498fa225fca88f69cca586c12245b0d36b50ff0c51",
+        "ID": "5cec41ec47f9",
+        "MemPerc": "2.01%",
+        "MemUsage": "2.57MiB / 128MiB",
+        "Name": "twinguard-phase6-broker-1",
+        "NetIO": "127kB / 107kB",
+        "PIDs": "1"
+      }
+    ],
+    "E5_processes": [
+      {
+        "pid": 5672,
+        "parent_pid": 5636,
+        "user_cpu_s": 0.43,
+        "system_cpu_s": 0.12,
+        "observed_peak_rss_kib": 102160
+      },
+      {
+        "pid": 5692,
+        "parent_pid": 5672,
+        "user_cpu_s": 740.12,
+        "system_cpu_s": 12.14,
+        "observed_peak_rss_kib": 712328
+      },
+      {
+        "pid": 5693,
+        "parent_pid": 5672,
+        "user_cpu_s": 738.97,
+        "system_cpu_s": 13.0,
+        "observed_peak_rss_kib": 712480
+      },
+      {
+        "pid": 5694,
+        "parent_pid": 5672,
+        "user_cpu_s": 740.86,
+        "system_cpu_s": 11.81,
+        "observed_peak_rss_kib": 711820
+      },
+      {
+        "pid": 5695,
+        "parent_pid": 5672,
+        "user_cpu_s": 695.88,
+        "system_cpu_s": 12.67,
+        "observed_peak_rss_kib": 712060
+      }
+    ]
+  },
+  {
+    "at": "2026-10-28T12:51:28.878150+00:00",
+    "containers": [
+      {
+        "BlockIO": "922kB / 12.3kB",
+        "CPUPerc": "0.00%",
+        "Container": "bbe3e582d9d05a88c939ddd614434c780e07a59ca7764899c5433d08e52931fd",
+        "ID": "bbe3e582d9d0",
+        "MemPerc": "6.31%",
+        "MemUsage": "16.15MiB / 256MiB",
+        "Name": "twinguard-phase6-frontend-1",
+        "NetIO": "2.23MB / 2.25MB",
+        "PIDs": "21"
+      },
+      {
+        "BlockIO": "37.1MB / 442kB",
+        "CPUPerc": "0.10%",
+        "Container": "2db9dc140418d328b2ffcfce22c43bd8da478e31d8d115a9ad6364929c6048f2",
+        "ID": "2db9dc140418",
+        "MemPerc": "8.56%",
+        "MemUsage": "87.64MiB / 1GiB",
+        "Name": "twinguard-phase6-api-1",
+        "NetIO": "1.18MB / 2.37MB",
+        "PIDs": "22"
+      },
+      {
+        "BlockIO": "75MB / 131kB",
+        "CPUPerc": "1.90%",
+        "Container": "6dfade2b30885e32b6eabc449d8bfbb90b11541c985fea48b9ded9ebe9b4c429",
+        "ID": "6dfade2b3088",
+        "MemPerc": "9.88%",
+        "MemUsage": "303.4MiB / 3GiB",
+        "Name": "twinguard-phase6-inspection-worker-1",
+        "NetIO": "2.1MB / 3.88MB",
+        "PIDs": "3"
+      },
+      {
+        "BlockIO": "14.2MB / 610kB",
+        "CPUPerc": "1.01%",
+        "Container": "f93bdb1543e7a1224cc64b399449d0949c5faa7d8ceac3fca790e75704a08534",
+        "ID": "f93bdb1543e7",
+        "MemPerc": "12.31%",
+        "MemUsage": "252.2MiB / 2GiB",
+        "Name": "twinguard-phase6-planning-worker-1",
+        "NetIO": "815kB / 988kB",
+        "PIDs": "3"
+      },
+      {
+        "BlockIO": "90.1kB / 0B",
+        "CPUPerc": "3.00%",
+        "Container": "c84992dcabbee9593d892cae16a5de4f1b56c28e91d2ca2dc99882bef08294db",
+        "ID": "c84992dcabbe",
+        "MemPerc": "5.37%",
+        "MemUsage": "54.95MiB / 1GiB",
+        "Name": "twinguard-phase6-fast-worker-1",
+        "NetIO": "53.9MB / 134MB",
+        "PIDs": "20"
+      },
+      {
+        "BlockIO": "565kB / 0B",
+        "CPUPerc": "0.01%",
+        "Container": "1b6cfd1a4d8f9195d6a886a56c0b7b2220b11ee330c54958ec6fdc0783db48bf",
+        "ID": "1b6cfd1a4d8f",
+        "MemPerc": "5.18%",
+        "MemUsage": "53.04MiB / 1GiB",
+        "Name": "twinguard-phase6-ingestion-1",
+        "NetIO": "426kB / 632kB",
+        "PIDs": "20"
+      },
+      {
+        "BlockIO": "29.8MB / 111MB",
+        "CPUPerc": "1.38%",
+        "Container": "9d032228c0d373201160b951f2d5967c477df9843dd1da218688bc6fc8d0dcf8",
+        "ID": "9d032228c0d3",
+        "MemPerc": "11.24%",
+        "MemUsage": "57.54MiB / 512MiB",
+        "Name": "twinguard-phase6-database-1",
+        "NetIO": "146MB / 64.2MB",
+        "PIDs": "11"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "0.02%",
+        "Container": "5cec41ec47f9e6c6d7dfdb498fa225fca88f69cca586c12245b0d36b50ff0c51",
+        "ID": "5cec41ec47f9",
+        "MemPerc": "2.01%",
+        "MemUsage": "2.57MiB / 128MiB",
+        "Name": "twinguard-phase6-broker-1",
+        "NetIO": "127kB / 107kB",
+        "PIDs": "1"
+      }
+    ],
+    "E5_processes": [
+      {
+        "pid": 5672,
+        "parent_pid": 5636,
+        "user_cpu_s": 0.43,
+        "system_cpu_s": 0.12,
+        "observed_peak_rss_kib": 102160
+      },
+      {
+        "pid": 5692,
+        "parent_pid": 5672,
+        "user_cpu_s": 740.14,
+        "system_cpu_s": 12.15,
+        "observed_peak_rss_kib": 712328
+      },
+      {
+        "pid": 5693,
+        "parent_pid": 5672,
+        "user_cpu_s": 746.04,
+        "system_cpu_s": 13.05,
+        "observed_peak_rss_kib": 712480
+      },
+      {
+        "pid": 5694,
+        "parent_pid": 5672,
+        "user_cpu_s": 747.87,
+        "system_cpu_s": 11.92,
+        "observed_peak_rss_kib": 711820
+      },
+      {
+        "pid": 5695,
+        "parent_pid": 5672,
+        "user_cpu_s": 695.91,
+        "system_cpu_s": 12.67,
+        "observed_peak_rss_kib": 712060
+      }
+    ]
+  },
+  {
+    "at": "2026-10-28T12:51:36.028401+00:00",
+    "containers": [
+      {
+        "BlockIO": "922kB / 12.3kB",
+        "CPUPerc": "0.00%",
+        "Container": "bbe3e582d9d05a88c939ddd614434c780e07a59ca7764899c5433d08e52931fd",
+        "ID": "bbe3e582d9d0",
+        "MemPerc": "6.31%",
+        "MemUsage": "16.15MiB / 256MiB",
+        "Name": "twinguard-phase6-frontend-1",
+        "NetIO": "2.23MB / 2.25MB",
+        "PIDs": "21"
+      },
+      {
+        "BlockIO": "37.1MB / 442kB",
+        "CPUPerc": "0.10%",
+        "Container": "2db9dc140418d328b2ffcfce22c43bd8da478e31d8d115a9ad6364929c6048f2",
+        "ID": "2db9dc140418",
+        "MemPerc": "8.56%",
+        "MemUsage": "87.62MiB / 1GiB",
+        "Name": "twinguard-phase6-api-1",
+        "NetIO": "1.18MB / 2.37MB",
+        "PIDs": "22"
+      },
+      {
+        "BlockIO": "75MB / 131kB",
+        "CPUPerc": "1.95%",
+        "Container": "6dfade2b30885e32b6eabc449d8bfbb90b11541c985fea48b9ded9ebe9b4c429",
+        "ID": "6dfade2b3088",
+        "MemPerc": "9.86%",
+        "MemUsage": "302.8MiB / 3GiB",
+        "Name": "twinguard-phase6-inspection-worker-1",
+        "NetIO": "2.14MB / 3.94MB",
+        "PIDs": "3"
+      },
+      {
+        "BlockIO": "14.2MB / 610kB",
+        "CPUPerc": "0.99%",
+        "Container": "f93bdb1543e7a1224cc64b399449d0949c5faa7d8ceac3fca790e75704a08534",
+        "ID": "f93bdb1543e7",
+        "MemPerc": "12.30%",
+        "MemUsage": "251.9MiB / 2GiB",
+        "Name": "twinguard-phase6-planning-worker-1",
+        "NetIO": "834kB / 1.01MB",
+        "PIDs": "3"
+      },
+      {
+        "BlockIO": "90.1kB / 0B",
+        "CPUPerc": "1.47%",
+        "Container": "c84992dcabbee9593d892cae16a5de4f1b56c28e91d2ca2dc99882bef08294db",
+        "ID": "c84992dcabbe",
+        "MemPerc": "5.31%",
+        "MemUsage": "54.35MiB / 1GiB",
+        "Name": "twinguard-phase6-fast-worker-1",
+        "NetIO": "54.3MB / 135MB",
+        "PIDs": "20"
+      },
+      {
+        "BlockIO": "565kB / 0B",
+        "CPUPerc": "0.01%",
+        "Container": "1b6cfd1a4d8f9195d6a886a56c0b7b2220b11ee330c54958ec6fdc0783db48bf",
+        "ID": "1b6cfd1a4d8f",
+        "MemPerc": "5.18%",
+        "MemUsage": "53.04MiB / 1GiB",
+        "Name": "twinguard-phase6-ingestion-1",
+        "NetIO": "426kB / 632kB",
+        "PIDs": "20"
+      },
+      {
+        "BlockIO": "29.8MB / 111MB",
+        "CPUPerc": "3.15%",
+        "Container": "9d032228c0d373201160b951f2d5967c477df9843dd1da218688bc6fc8d0dcf8",
+        "ID": "9d032228c0d3",
+        "MemPerc": "11.29%",
+        "MemUsage": "57.81MiB / 512MiB",
+        "Name": "twinguard-phase6-database-1",
+        "NetIO": "147MB / 64.7MB",
+        "PIDs": "11"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "0.02%",
+        "Container": "5cec41ec47f9e6c6d7dfdb498fa225fca88f69cca586c12245b0d36b50ff0c51",
+        "ID": "5cec41ec47f9",
+        "MemPerc": "2.01%",
+        "MemUsage": "2.57MiB / 128MiB",
+        "Name": "twinguard-phase6-broker-1",
+        "NetIO": "127kB / 107kB",
+        "PIDs": "1"
+      }
+    ],
+    "E5_processes": [
+      {
+        "pid": 5672,
+        "parent_pid": 5636,
+        "user_cpu_s": 0.43,
+        "system_cpu_s": 0.12,
+        "observed_peak_rss_kib": 102160
+      },
+      {
+        "pid": 5692,
+        "parent_pid": 5672,
+        "user_cpu_s": 740.16,
+        "system_cpu_s": 12.17,
+        "observed_peak_rss_kib": 712328
+      },
+      {
+        "pid": 5693,
+        "parent_pid": 5672,
+        "user_cpu_s": 748.41,
+        "system_cpu_s": 13.1,
+        "observed_peak_rss_kib": 712480
+      },
+      {
+        "pid": 5694,
+        "parent_pid": 5672,
+        "user_cpu_s": 754.88,
+        "system_cpu_s": 12.09,
+        "observed_peak_rss_kib": 711820
+      },
+      {
+        "pid": 5695,
+        "parent_pid": 5672,
+        "user_cpu_s": 695.92,
+        "system_cpu_s": 12.68,
+        "observed_peak_rss_kib": 712060
+      }
+    ]
+  },
+  {
+    "at": "2026-10-28T12:51:43.208031+00:00",
+    "containers": [
+      {
+        "BlockIO": "922kB / 12.3kB",
+        "CPUPerc": "0.00%",
+        "Container": "bbe3e582d9d05a88c939ddd614434c780e07a59ca7764899c5433d08e52931fd",
+        "ID": "bbe3e582d9d0",
+        "MemPerc": "6.31%",
+        "MemUsage": "16.15MiB / 256MiB",
+        "Name": "twinguard-phase6-frontend-1",
+        "NetIO": "2.23MB / 2.25MB",
+        "PIDs": "21"
+      },
+      {
+        "BlockIO": "37.1MB / 442kB",
+        "CPUPerc": "0.11%",
+        "Container": "2db9dc140418d328b2ffcfce22c43bd8da478e31d8d115a9ad6364929c6048f2",
+        "ID": "2db9dc140418",
+        "MemPerc": "8.55%",
+        "MemUsage": "87.6MiB / 1GiB",
+        "Name": "twinguard-phase6-api-1",
+        "NetIO": "1.18MB / 2.37MB",
+        "PIDs": "22"
+      },
+      {
+        "BlockIO": "75MB / 131kB",
+        "CPUPerc": "2.14%",
+        "Container": "6dfade2b30885e32b6eabc449d8bfbb90b11541c985fea48b9ded9ebe9b4c429",
+        "ID": "6dfade2b3088",
+        "MemPerc": "9.84%",
+        "MemUsage": "302.2MiB / 3GiB",
+        "Name": "twinguard-phase6-inspection-worker-1",
+        "NetIO": "2.19MB / 4MB",
+        "PIDs": "3"
+      },
+      {
+        "BlockIO": "14.2MB / 610kB",
+        "CPUPerc": "1.14%",
+        "Container": "f93bdb1543e7a1224cc64b399449d0949c5faa7d8ceac3fca790e75704a08534",
+        "ID": "f93bdb1543e7",
+        "MemPerc": "12.31%",
+        "MemUsage": "252.1MiB / 2GiB",
+        "Name": "twinguard-phase6-planning-worker-1",
+        "NetIO": "854kB / 1.03MB",
+        "PIDs": "3"
+      },
+      {
+        "BlockIO": "90.1kB / 0B",
+        "CPUPerc": "3.28%",
+        "Container": "c84992dcabbee9593d892cae16a5de4f1b56c28e91d2ca2dc99882bef08294db",
+        "ID": "c84992dcabbe",
+        "MemPerc": "5.31%",
+        "MemUsage": "54.34MiB / 1GiB",
+        "Name": "twinguard-phase6-fast-worker-1",
+        "NetIO": "54.9MB / 137MB",
+        "PIDs": "20"
+      },
+      {
+        "BlockIO": "565kB / 0B",
+        "CPUPerc": "0.00%",
+        "Container": "1b6cfd1a4d8f9195d6a886a56c0b7b2220b11ee330c54958ec6fdc0783db48bf",
+        "ID": "1b6cfd1a4d8f",
+        "MemPerc": "5.18%",
+        "MemUsage": "53.04MiB / 1GiB",
+        "Name": "twinguard-phase6-ingestion-1",
+        "NetIO": "426kB / 632kB",
+        "PIDs": "20"
+      },
+      {
+        "BlockIO": "29.8MB / 111MB",
+        "CPUPerc": "1.43%",
+        "Container": "9d032228c0d373201160b951f2d5967c477df9843dd1da218688bc6fc8d0dcf8",
+        "ID": "9d032228c0d3",
+        "MemPerc": "11.02%",
+        "MemUsage": "56.43MiB / 512MiB",
+        "Name": "twinguard-phase6-database-1",
+        "NetIO": "148MB / 65.3MB",
+        "PIDs": "11"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "0.02%",
+        "Container": "5cec41ec47f9e6c6d7dfdb498fa225fca88f69cca586c12245b0d36b50ff0c51",
+        "ID": "5cec41ec47f9",
+        "MemPerc": "2.01%",
+        "MemUsage": "2.57MiB / 128MiB",
+        "Name": "twinguard-phase6-broker-1",
+        "NetIO": "127kB / 107kB",
+        "PIDs": "1"
+      }
+    ],
+    "E5_processes": [
+      {
+        "pid": 5672,
+        "parent_pid": 5636,
+        "user_cpu_s": 0.43,
+        "system_cpu_s": 0.12,
+        "observed_peak_rss_kib": 102160
+      },
+      {
+        "pid": 5692,
+        "parent_pid": 5672,
+        "user_cpu_s": 740.18,
+        "system_cpu_s": 12.18,
+        "observed_peak_rss_kib": 712328
+      },
+      {
+        "pid": 5693,
+        "parent_pid": 5672,
+        "user_cpu_s": 748.43,
+        "system_cpu_s": 13.11,
+        "observed_peak_rss_kib": 712480
+      },
+      {
+        "pid": 5694,
+        "parent_pid": 5672,
+        "user_cpu_s": 762.02,
+        "system_cpu_s": 12.2,
+        "observed_peak_rss_kib": 711820
+      },
+      {
+        "pid": 5695,
+        "parent_pid": 5672,
+        "user_cpu_s": 695.95,
+        "system_cpu_s": 12.68,
+        "observed_peak_rss_kib": 712060
+      }
+    ]
+  },
+  {
+    "at": "2026-10-28T12:51:50.357390+00:00",
+    "containers": [
+      {
+        "BlockIO": "922kB / 12.3kB",
+        "CPUPerc": "0.00%",
+        "Container": "bbe3e582d9d05a88c939ddd614434c780e07a59ca7764899c5433d08e52931fd",
+        "ID": "bbe3e582d9d0",
+        "MemPerc": "6.31%",
+        "MemUsage": "16.15MiB / 256MiB",
+        "Name": "twinguard-phase6-frontend-1",
+        "NetIO": "2.23MB / 2.25MB",
+        "PIDs": "21"
+      },
+      {
+        "BlockIO": "75MB / 131kB",
+        "CPUPerc": "1.97%",
+        "Container": "6dfade2b30885e32b6eabc449d8bfbb90b11541c985fea48b9ded9ebe9b4c429",
+        "ID": "6dfade2b3088",
+        "MemPerc": "9.85%",
+        "MemUsage": "302.4MiB / 3GiB",
+        "Name": "twinguard-phase6-inspection-worker-1",
+        "NetIO": "2.24MB / 4.05MB",
+        "PIDs": "3"
+      },
+      {
+        "BlockIO": "14.2MB / 610kB",
+        "CPUPerc": "0.98%",
+        "Container": "f93bdb1543e7a1224cc64b399449d0949c5faa7d8ceac3fca790e75704a08534",
+        "ID": "f93bdb1543e7",
+        "MemPerc": "12.31%",
+        "MemUsage": "252MiB / 2GiB",
+        "Name": "twinguard-phase6-planning-worker-1",
+        "NetIO": "874kB / 1.06MB",
+        "PIDs": "3"
+      },
+      {
+        "BlockIO": "90.1kB / 0B",
+        "CPUPerc": "1.42%",
+        "Container": "c84992dcabbee9593d892cae16a5de4f1b56c28e91d2ca2dc99882bef08294db",
+        "ID": "c84992dcabbe",
+        "MemPerc": "5.34%",
+        "MemUsage": "54.7MiB / 1GiB",
+        "Name": "twinguard-phase6-fast-worker-1",
+        "NetIO": "55.3MB / 138MB",
+        "PIDs": "20"
+      },
+      {
+        "BlockIO": "565kB / 0B",
+        "CPUPerc": "0.01%",
+        "Container": "1b6cfd1a4d8f9195d6a886a56c0b7b2220b11ee330c54958ec6fdc0783db48bf",
+        "ID": "1b6cfd1a4d8f",
+        "MemPerc": "5.18%",
+        "MemUsage": "53.04MiB / 1GiB",
+        "Name": "twinguard-phase6-ingestion-1",
+        "NetIO": "426kB / 632kB",
+        "PIDs": "20"
+      },
+      {
+        "BlockIO": "29.8MB / 112MB",
+        "CPUPerc": "3.32%",
+        "Container": "9d032228c0d373201160b951f2d5967c477df9843dd1da218688bc6fc8d0dcf8",
+        "ID": "9d032228c0d3",
+        "MemPerc": "10.80%",
+        "MemUsage": "55.3MiB / 512MiB",
+        "Name": "twinguard-phase6-database-1",
+        "NetIO": "150MB / 65.8MB",
+        "PIDs": "10"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "0.02%",
+        "Container": "5cec41ec47f9e6c6d7dfdb498fa225fca88f69cca586c12245b0d36b50ff0c51",
+        "ID": "5cec41ec47f9",
+        "MemPerc": "2.01%",
+        "MemUsage": "2.57MiB / 128MiB",
+        "Name": "twinguard-phase6-broker-1",
+        "NetIO": "127kB / 107kB",
+        "PIDs": "1"
+      }
+    ],
+    "E5_processes": [
+      {
+        "pid": 5672,
+        "parent_pid": 5636,
+        "user_cpu_s": 0.43,
+        "system_cpu_s": 0.12,
+        "observed_peak_rss_kib": 102160
+      },
+      {
+        "pid": 5692,
+        "parent_pid": 5672,
+        "user_cpu_s": 740.2,
+        "system_cpu_s": 12.19,
+        "observed_peak_rss_kib": 712328
+      },
+      {
+        "pid": 5693,
+        "parent_pid": 5672,
+        "user_cpu_s": 748.46,
+        "system_cpu_s": 13.11,
+        "observed_peak_rss_kib": 712480
+      },
+      {
+        "pid": 5694,
+        "parent_pid": 5672,
+        "user_cpu_s": 769.17,
+        "system_cpu_s": 12.32,
+        "observed_peak_rss_kib": 711820
+      },
+      {
+        "pid": 5695,
+        "parent_pid": 5672,
+        "user_cpu_s": 695.98,
+        "system_cpu_s": 12.68,
+        "observed_peak_rss_kib": 712060
+      }
+    ]
+  },
+  {
+    "at": "2026-10-28T12:51:57.563702+00:00",
+    "containers": [
+      {
+        "BlockIO": "16.2MB / 0B",
+        "CPUPerc": "0.11%",
+        "Container": "64094438e27b69dd5a3b5eb4c68280c30e036718a0bf4ae617928cd72d927ff2",
+        "ID": "64094438e27b",
+        "MemPerc": "6.64%",
+        "MemUsage": "67.97MiB / 1GiB",
+        "Name": "twinguard-phase6-api-1",
+        "NetIO": "852B / 126B",
+        "PIDs": "20"
+      },
+      {
+        "BlockIO": "4.36MB / 0B",
+        "CPUPerc": "0.57%",
+        "Container": "ede95ddc447373d19929e0506bc9be32300a919eec99e0ab4cd5eb86087d6a38",
+        "ID": "ede95ddc4473",
+        "MemPerc": "2.61%",
+        "MemUsage": "53.46MiB / 2GiB",
+        "Name": "twinguard-phase6-planning-worker-1",
+        "NetIO": "7.95kB / 11.7kB",
+        "PIDs": "1"
+      },
+      {
+        "BlockIO": "23.4MB / 0B",
+        "CPUPerc": "1.55%",
+        "Container": "133272c8c35a8cb1dbe178a1f19b9a0d5cfc37cc395849d548b4dca1d29d2b08",
+        "ID": "133272c8c35a",
+        "MemPerc": "2.38%",
+        "MemUsage": "73.04MiB / 3GiB",
+        "Name": "twinguard-phase6-inspection-worker-1",
+        "NetIO": "14.9kB / 20kB",
+        "PIDs": "1"
+      },
+      {
+        "BlockIO": "922kB / 12.3kB",
+        "CPUPerc": "0.00%",
+        "Container": "bbe3e582d9d05a88c939ddd614434c780e07a59ca7764899c5433d08e52931fd",
+        "ID": "bbe3e582d9d0",
+        "MemPerc": "6.31%",
+        "MemUsage": "16.15MiB / 256MiB",
+        "Name": "twinguard-phase6-frontend-1",
+        "NetIO": "2.23MB / 2.25MB",
+        "PIDs": "21"
+      },
+      {
+        "BlockIO": "90.1kB / 0B",
+        "CPUPerc": "3.22%",
+        "Container": "c84992dcabbee9593d892cae16a5de4f1b56c28e91d2ca2dc99882bef08294db",
+        "ID": "c84992dcabbe",
+        "MemPerc": "5.33%",
+        "MemUsage": "54.54MiB / 1GiB",
+        "Name": "twinguard-phase6-fast-worker-1",
+        "NetIO": "55.9MB / 139MB",
+        "PIDs": "20"
+      },
+      {
+        "BlockIO": "565kB / 0B",
+        "CPUPerc": "0.01%",
+        "Container": "1b6cfd1a4d8f9195d6a886a56c0b7b2220b11ee330c54958ec6fdc0783db48bf",
+        "ID": "1b6cfd1a4d8f",
+        "MemPerc": "5.18%",
+        "MemUsage": "53.04MiB / 1GiB",
+        "Name": "twinguard-phase6-ingestion-1",
+        "NetIO": "427kB / 632kB",
+        "PIDs": "20"
+      },
+      {
+        "BlockIO": "29.8MB / 112MB",
+        "CPUPerc": "1.62%",
+        "Container": "9d032228c0d373201160b951f2d5967c477df9843dd1da218688bc6fc8d0dcf8",
+        "ID": "9d032228c0d3",
+        "MemPerc": "10.61%",
+        "MemUsage": "54.35MiB / 512MiB",
+        "Name": "twinguard-phase6-database-1",
+        "NetIO": "151MB / 66.4MB",
+        "PIDs": "10"
+      },
+      {
+        "BlockIO": "0B / 0B",
+        "CPUPerc": "0.02%",
+        "Container": "5cec41ec47f9e6c6d7dfdb498fa225fca88f69cca586c12245b0d36b50ff0c51",
+        "ID": "5cec41ec47f9",
+        "MemPerc": "2.01%",
+        "MemUsage": "2.57MiB / 128MiB",
+        "Name": "twinguard-phase6-broker-1",
+        "NetIO": "128kB / 107kB",
+        "PIDs": "1"
+      }
+    ],
+    "E5_processes": [
+      {
+        "pid": 5672,
+        "parent_pid": 5636,
+        "user_cpu_s": 0.43,
+        "system_cpu_s": 0.12,
+        "observed_peak_rss_kib": 102160
+      },
+      {
+        "pid": 5692,
+        "parent_pid": 5672,
+        "user_cpu_s": 740.21,
+        "system_cpu_s": 12.21,
+        "observed_peak_rss_kib": 712328
+      },
+      {
+        "pid": 5693,
+        "parent_pid": 5672,
+        "user_cpu_s": 748.46,
+        "system_cpu_s": 13.13,
+        "observed_peak_rss_kib": 712480
+      },
+      {
+        "pid": 5694,
+        "parent_pid": 5672,
+        "user_cpu_s": 776.23,
+        "system_cpu_s": 12.44,
+        "observed_peak_rss_kib": 711820
+      },
+      {
+        "pid": 5695,
+        "parent_pid": 5672,
+        "user_cpu_s": 696.0,
+        "system_cpu_s": 12.69,
+        "observed_peak_rss_kib": 712060
+      }
+    ]
+  }
+]

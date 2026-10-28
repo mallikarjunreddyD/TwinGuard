@@ -1,0 +1,1004 @@
+[
+  {
+    "configuration": {
+      "schema_version": "1.0.0",
+      "configuration_id": "inspection-v1",
+      "reference_sha256": "54d41aefbd5b5e287b1eb0f176b208e19ae16ecc79cbbeb086aa8a63171872f7",
+      "reference_path": "configs/edge/plant.glb",
+      "sensor_path": "configs/sensing/L1.yaml",
+      "criticality": {
+        "BW-01": 0.9,
+        "DR-01": 0.85,
+        "SP-01": 0.7,
+        "SP-02": 0.7,
+        "SUP-01": 0.6,
+        "VL-01": 0.65,
+        "REF-01": 0.3
+      },
+      "allowed_volume": {
+        "schema_version": "1.0.0",
+        "lower": [
+          -5.0,
+          -2.0,
+          0.3
+        ],
+        "upper": [
+          5.0,
+          7.0,
+          6.0
+        ]
+      },
+      "no_go": [],
+      "map_complete": true,
+      "minimum_standoff_m": 0.5,
+      "maximum_range_m": 8.0,
+      "safety_margin_m": 0.2,
+      "altitude_m": [
+        0.5,
+        6.0
+      ],
+      "start_world_m": [
+        0.0,
+        3.4,
+        1.65
+      ],
+      "speed_m_s": 0.5,
+      "acquisition_s": 8.0,
+      "return_to_start": true,
+      "cell_m": 0.08,
+      "association_m": 0.06,
+      "freshness_s": 3600.0,
+      "stand_off_shells_m": [
+        2.5,
+        3.4
+      ],
+      "azimuths_rad": [
+        -0.35,
+        0.0,
+        0.35
+      ],
+      "elevation_offsets_m": [
+        -0.3,
+        0.0,
+        0.3
+      ],
+      "available_modalities": [
+        "lidar",
+        "thermal"
+      ],
+      "calibrated_fidelities": [
+        "L0",
+        "L1"
+      ],
+      "calibrated_assets": [
+        "BW-01"
+      ],
+      "calibrated_range_m": [
+        2.0,
+        4.5
+      ],
+      "minimum_registration_returns": 100,
+      "minimum_incidence_cosine": 0.3,
+      "maximum_vertical_spacing_m": 0.24,
+      "restricted_assets": [],
+      "priority_weights": {
+        "criticality": 0.15,
+        "severity": 0.2,
+        "deficiency": 0.3,
+        "freshness": 0.15,
+        "reinspection": 0.1,
+        "failed_attempts": 0.1
+      },
+      "utility_weights": {
+        "coverage": 0.25,
+        "deficiency": 0.25,
+        "risk": 0.2,
+        "suitability": 0.15,
+        "cost": 0.1,
+        "redundancy": 0.05
+      }
+    },
+    "configuration_hash": "d11793aba230b6fb8766dece5c290d3c71442b660027e8b20c49638dbfea04f6",
+    "settings": {
+      "experiment_id": "E5",
+      "status": "implemented",
+      "name": "Risk-Adaptive Viewpoint Planning and Evidence-Quality Improvement",
+      "development_seeds": [
+        9100,
+        9101,
+        9102,
+        10100
+      ],
+      "heldout_seeds": [
+        11100,
+        11101,
+        11102,
+        11103,
+        11104,
+        11105,
+        11106,
+        11107,
+        11108,
+        11109,
+        11110,
+        11111,
+        11112,
+        11113,
+        11114,
+        11115,
+        11116,
+        11117,
+        11118,
+        11119,
+        11120,
+        11121,
+        11122,
+        11123,
+        11124,
+        11125,
+        11126,
+        11127,
+        11128,
+        11129
+      ],
+      "methods": [
+        "P0",
+        "P1",
+        "P2",
+        "P3"
+      ],
+      "scenario_ids": [
+        "E5-S01",
+        "E5-S05",
+        "E5-S09",
+        "E5-S13",
+        "E5-S17"
+      ]
+    },
+    "git": "1779975559fdf363d134570b83a32f197517a5b4",
+    "sources": {
+      "src/twinguard/inspection/__init__.py": "e008a3451e16e50adb711daccf508aa638ba19daf41c2b3d3e5d6967aa2838f2",
+      "src/twinguard/inspection/candidates.py": "55283091a08e539f055ab07675f4d732f821d158f1797e030047b9e23f9db724",
+      "src/twinguard/inspection/cli.py": "05d3d53f8f525081a885643ebd6f737a36a87363b8aae03832024091dfb07ea5",
+      "src/twinguard/inspection/contracts.py": "05cdc6c53fea3c381fae2e86f8078e6332a5dbc366a0ce59e728cbadcc63e0a7",
+      "src/twinguard/inspection/coverage.py": "fec954a16a40bf0bf8639541317d78570bcd1b46ca7d8d3261d14ccf326372e5",
+      "src/twinguard/inspection/explanation.py": "97f980d086b47e6bb72e85c713274591401bbac653ea2b0b6b43d3066a54cb96",
+      "src/twinguard/inspection/feasibility.py": "ca1aac1db4303c007a1fb8eaf2aac4fab47058c455b767c1ff6d38e6068c079d",
+      "src/twinguard/inspection/observations.py": "b75534eb343f970b9cfd16eab7bc2e2e92c26b86985253db604fb19a50da62a3",
+      "src/twinguard/inspection/optimizer.py": "cda98e3a23816c9e52f6e43b96d7e2a594242e95353487fe0cef1158888e8959",
+      "src/twinguard/inspection/priority.py": "5156b898fe8ca6dec5cb392ede25030ae6d4330a15427e0d95a0ab76e191757d",
+      "src/twinguard/inspection/qualification.py": "7f39edcac406ab178eeeb284d499f760e24529072efb95bc328d8b09509c26eb",
+      "src/twinguard/inspection/replanning.py": "e4ae2261d1b5be7abd3f003b663c11e57a3ee8712dd0ab14f1f4e182de8e337c",
+      "src/twinguard/inspection/utility.py": "292f8ae1272fe24f9f4ba07dda7fb15d445af26933892722125c7e7781e622f4",
+      "src/twinguard/inspection/visibility.py": "f61900f20e7a22997db4c009bf8a36f0bd186f8598a38a49487335e7f113f3cb",
+      "src/twinguard/analytics/__init__.py": "b7facbe5d90065eb2396f8ca02dacb9c56f5b29942146bd18170b9e6701c216e",
+      "src/twinguard/analytics/cli.py": "7b26bc28f4c957e67b4f440155076736e557e1c2db5460b6a71337029b04f2de",
+      "src/twinguard/analytics/clouds.py": "658d03ccdb6d0e8f31288a99e738b6ddf50cab01ccdf0bab4bd790f827e6d5c9",
+      "src/twinguard/analytics/config.py": "538c05f27d266854e23473ea7aa3ca63746673f91abbd8a5b5a1658fc8373937",
+      "src/twinguard/analytics/evidence.py": "7f4d8256e041ce1290ba9c2ef91ab1ea03b77317685719457d34d15eaf1ea25b",
+      "src/twinguard/analytics/geometric_improved.py": "d8304da81e096a9edd4e2413e6f6aa3009fc96780f0e3f9f99c302380d7502ca",
+      "src/twinguard/analytics/geometry.py": "796371c934517d1cc26df4373349ba76e96ec5d77057a956a4f0e7c61bde7e1d",
+      "src/twinguard/analytics/operating.py": "d11261fdb7bd20fd9ded34955d99ba9355e6f3c8872d14dad51a60e2e42cc5b4",
+      "src/twinguard/analytics/pipeline.py": "cfc8d5848c70c7b4d7190eac2ce651f25e5e8b63fd2244198e1a238bd6648cc8",
+      "src/twinguard/analytics/reference.py": "e90d1527ae8c8a1dbc022c1aa4b639945e25d471367685310e123c3d0ebad2d3",
+      "src/twinguard/analytics/registration.py": "0500d18f4e3bd1e8ce832617f4dfd37f95bc64df607636923c7d4472b79be79f",
+      "src/twinguard/analytics/thermal.py": "eff886566e4f92c8409173c63572e61ed6f74784303d51a39f5e5c07dd6edfe9",
+      "src/twinguard/fusion/__init__.py": "d31265a93d2f7f39b940d67cc9229188a212829e25ac1c59d000c0ad79ed9be9",
+      "src/twinguard/fusion/adapters.py": "0e7da319a5e1470be1ae8e2bd2c361f34091b25c25a71fc26d5f4c44ab3a9e50",
+      "src/twinguard/fusion/cli.py": "355bffb6b17973e7318dc86aec406e3482fd1a295e68b0a645d5c6bc6f518397",
+      "src/twinguard/fusion/dependence.py": "c1bb92b4587aa6b48a1b75138312bc782362259e54725ec05f640ff2564f5924",
+      "src/twinguard/fusion/engine.py": "e29a1b144d5707140807f06700dd6e0557484b317bc939b2db227c53df311bca",
+      "src/twinguard/fusion/io.py": "cfad70a589fb57fbb74e31eb0298104bcab726167475ae103228eadc6380b7e6",
+      "src/twinguard/fusion/lifecycle.py": "bee8360218698df95759e541c4151a843944eaba9227573f984491e9bdf02a69",
+      "src/twinguard/fusion/models.py": "a7fa0b63a237da6d8ed5708b44db6aa463b1824bedecf9c270584f73498da2f8",
+      "src/twinguard/fusion/policies.py": "cc1bcfbbe56de1213ae6fec283a997e75bb1654d877f3ff7fe9272b044ab0e16",
+      "src/twinguard/fusion/spatial.py": "dbd9cbe4c622ce076e5dd2bfac7c2b022fe3ef341c849b6daaf27c360c3c1b3a",
+      "src/twinguard/fusion/temporal.py": "05bfbee3425c00b868e982f18a9d3b7c332a8b3173353d2f9ac07b13d6ac199e",
+      "src/twinguard/sensing/__init__.py": "ade5149571e463a84aa2ce2fbf3ea9f21cc2f50a4e0f457bce9bde07fe8061fa",
+      "src/twinguard/sensing/acquisition.py": "41f344539168829a3de003d08286472081f569c1a18d08c96d4116b0719b186a",
+      "src/twinguard/sensing/cli.py": "03d6443e65ff860404774c86103dafc63962d88330a0f54270d9aaaf9c79b829",
+      "src/twinguard/sensing/config.py": "6d3c5bf2da80faba7f9b76c332d8c070f5f766e3618aed831545049795a76c12",
+      "src/twinguard/sensing/export.py": "ea708bde6008974f96f715ede8a0c45438aa7967afedc1022971c07d55b3249c",
+      "src/twinguard/sensing/iot.py": "6e5d1ecc9b93bc5f4de557e26495be47ab28d6ea4c40ab6511cb9d00795c9063",
+      "src/twinguard/sensing/lidar.py": "c02b2979a990174142c367454fdec658b825d011b94fc83a81dad3a0d92d89b0",
+      "src/twinguard/sensing/noise.py": "615d9715d9558171a5bd9ed461357c4626cc2df1a00095f9ec97cad05da6f174",
+      "src/twinguard/sensing/products.py": "f744e38e58db793167b8e73febbd60b85749f5757513e2977cf21b80f2b7313d",
+      "src/twinguard/sensing/raycast.py": "a5adf4d03d9294757166118821db59295a2746fd071903302ba76be9bb23e856",
+      "src/twinguard/sensing/read.py": "9cf482a7eb225c972ae093c75104e19666757690014b6a399209979640eb246e",
+      "src/twinguard/sensing/thermal.py": "7fe4554c39ce4e05e1e6bcfd9056f0beb79fd749a1095c509241a7b9fa2aef12",
+      "src/twinguard/sensing/visualize.py": "c0b121b03495f352b9c56d2f43357582cb5fb82fdbb79a44b499b18318096d39"
+    },
+    "partitions": {
+      "development": [
+        9100,
+        9101,
+        9102,
+        10100
+      ],
+      "heldout": [
+        11100,
+        11101,
+        11102,
+        11103,
+        11104,
+        11105,
+        11106,
+        11107,
+        11108,
+        11109,
+        11110,
+        11111,
+        11112,
+        11113,
+        11114,
+        11115,
+        11116,
+        11117,
+        11118,
+        11119,
+        11120,
+        11121,
+        11122,
+        11123,
+        11124,
+        11125,
+        11126,
+        11127,
+        11128,
+        11129
+      ]
+    },
+    "frozen_at_utc": "2026-10-28T12:38:37.374475+00:00"
+  },
+  {
+    "configuration": {
+      "schema_version": "1.0.0",
+      "configuration_id": "inspection-v1",
+      "reference_sha256": "54d41aefbd5b5e287b1eb0f176b208e19ae16ecc79cbbeb086aa8a63171872f7",
+      "reference_path": "configs/edge/plant.glb",
+      "sensor_path": "configs/sensing/L1.yaml",
+      "criticality": {
+        "BW-01": 0.9,
+        "DR-01": 0.85,
+        "SP-01": 0.7,
+        "SP-02": 0.7,
+        "SUP-01": 0.6,
+        "VL-01": 0.65,
+        "REF-01": 0.3
+      },
+      "allowed_volume": {
+        "schema_version": "1.0.0",
+        "lower": [
+          -5.0,
+          -2.0,
+          0.3
+        ],
+        "upper": [
+          5.0,
+          7.0,
+          6.0
+        ]
+      },
+      "no_go": [],
+      "map_complete": true,
+      "minimum_standoff_m": 0.5,
+      "maximum_range_m": 8.0,
+      "safety_margin_m": 0.2,
+      "altitude_m": [
+        0.5,
+        6.0
+      ],
+      "start_world_m": [
+        0.0,
+        3.4,
+        1.65
+      ],
+      "speed_m_s": 0.5,
+      "acquisition_s": 8.0,
+      "return_to_start": true,
+      "cell_m": 0.08,
+      "association_m": 0.06,
+      "freshness_s": 3600.0,
+      "stand_off_shells_m": [
+        2.5,
+        3.4
+      ],
+      "azimuths_rad": [
+        -0.35,
+        0.0,
+        0.35
+      ],
+      "elevation_offsets_m": [
+        -0.3,
+        0.0,
+        0.3
+      ],
+      "available_modalities": [
+        "lidar",
+        "thermal"
+      ],
+      "calibrated_fidelities": [
+        "L0",
+        "L1"
+      ],
+      "calibrated_assets": [
+        "BW-01"
+      ],
+      "calibrated_range_m": [
+        2.0,
+        4.5
+      ],
+      "minimum_registration_returns": 100,
+      "minimum_incidence_cosine": 0.3,
+      "maximum_vertical_spacing_m": 0.24,
+      "restricted_assets": [],
+      "priority_weights": {
+        "criticality": 0.15,
+        "severity": 0.2,
+        "deficiency": 0.3,
+        "freshness": 0.15,
+        "reinspection": 0.1,
+        "failed_attempts": 0.1
+      },
+      "utility_weights": {
+        "coverage": 0.25,
+        "deficiency": 0.25,
+        "risk": 0.2,
+        "suitability": 0.15,
+        "cost": 0.1,
+        "redundancy": 0.05
+      }
+    },
+    "configuration_hash": "d11793aba230b6fb8766dece5c290d3c71442b660027e8b20c49638dbfea04f6",
+    "settings": {
+      "experiment_id": "E5",
+      "status": "implemented",
+      "name": "Risk-Adaptive Viewpoint Planning and Evidence-Quality Improvement",
+      "development_seeds": [
+        9100,
+        9101,
+        9102,
+        10100
+      ],
+      "heldout_seeds": [
+        11100,
+        11101,
+        11102,
+        11103,
+        11104,
+        11105,
+        11106,
+        11107,
+        11108,
+        11109,
+        11110,
+        11111,
+        11112,
+        11113,
+        11114,
+        11115,
+        11116,
+        11117,
+        11118,
+        11119,
+        11120,
+        11121,
+        11122,
+        11123,
+        11124,
+        11125,
+        11126,
+        11127,
+        11128,
+        11129
+      ],
+      "methods": [
+        "P0",
+        "P1",
+        "P2",
+        "P3"
+      ],
+      "scenario_ids": [
+        "E5-S02",
+        "E5-S06",
+        "E5-S10",
+        "E5-S14",
+        "E5-S18"
+      ]
+    },
+    "git": "1779975559fdf363d134570b83a32f197517a5b4",
+    "sources": {
+      "src/twinguard/inspection/__init__.py": "e008a3451e16e50adb711daccf508aa638ba19daf41c2b3d3e5d6967aa2838f2",
+      "src/twinguard/inspection/candidates.py": "55283091a08e539f055ab07675f4d732f821d158f1797e030047b9e23f9db724",
+      "src/twinguard/inspection/cli.py": "05d3d53f8f525081a885643ebd6f737a36a87363b8aae03832024091dfb07ea5",
+      "src/twinguard/inspection/contracts.py": "05cdc6c53fea3c381fae2e86f8078e6332a5dbc366a0ce59e728cbadcc63e0a7",
+      "src/twinguard/inspection/coverage.py": "fec954a16a40bf0bf8639541317d78570bcd1b46ca7d8d3261d14ccf326372e5",
+      "src/twinguard/inspection/explanation.py": "97f980d086b47e6bb72e85c713274591401bbac653ea2b0b6b43d3066a54cb96",
+      "src/twinguard/inspection/feasibility.py": "ca1aac1db4303c007a1fb8eaf2aac4fab47058c455b767c1ff6d38e6068c079d",
+      "src/twinguard/inspection/observations.py": "b75534eb343f970b9cfd16eab7bc2e2e92c26b86985253db604fb19a50da62a3",
+      "src/twinguard/inspection/optimizer.py": "cda98e3a23816c9e52f6e43b96d7e2a594242e95353487fe0cef1158888e8959",
+      "src/twinguard/inspection/priority.py": "5156b898fe8ca6dec5cb392ede25030ae6d4330a15427e0d95a0ab76e191757d",
+      "src/twinguard/inspection/qualification.py": "7f39edcac406ab178eeeb284d499f760e24529072efb95bc328d8b09509c26eb",
+      "src/twinguard/inspection/replanning.py": "e4ae2261d1b5be7abd3f003b663c11e57a3ee8712dd0ab14f1f4e182de8e337c",
+      "src/twinguard/inspection/utility.py": "292f8ae1272fe24f9f4ba07dda7fb15d445af26933892722125c7e7781e622f4",
+      "src/twinguard/inspection/visibility.py": "f61900f20e7a22997db4c009bf8a36f0bd186f8598a38a49487335e7f113f3cb",
+      "src/twinguard/analytics/__init__.py": "b7facbe5d90065eb2396f8ca02dacb9c56f5b29942146bd18170b9e6701c216e",
+      "src/twinguard/analytics/cli.py": "7b26bc28f4c957e67b4f440155076736e557e1c2db5460b6a71337029b04f2de",
+      "src/twinguard/analytics/clouds.py": "658d03ccdb6d0e8f31288a99e738b6ddf50cab01ccdf0bab4bd790f827e6d5c9",
+      "src/twinguard/analytics/config.py": "538c05f27d266854e23473ea7aa3ca63746673f91abbd8a5b5a1658fc8373937",
+      "src/twinguard/analytics/evidence.py": "7f4d8256e041ce1290ba9c2ef91ab1ea03b77317685719457d34d15eaf1ea25b",
+      "src/twinguard/analytics/geometric_improved.py": "d8304da81e096a9edd4e2413e6f6aa3009fc96780f0e3f9f99c302380d7502ca",
+      "src/twinguard/analytics/geometry.py": "796371c934517d1cc26df4373349ba76e96ec5d77057a956a4f0e7c61bde7e1d",
+      "src/twinguard/analytics/operating.py": "d11261fdb7bd20fd9ded34955d99ba9355e6f3c8872d14dad51a60e2e42cc5b4",
+      "src/twinguard/analytics/pipeline.py": "cfc8d5848c70c7b4d7190eac2ce651f25e5e8b63fd2244198e1a238bd6648cc8",
+      "src/twinguard/analytics/reference.py": "e90d1527ae8c8a1dbc022c1aa4b639945e25d471367685310e123c3d0ebad2d3",
+      "src/twinguard/analytics/registration.py": "0500d18f4e3bd1e8ce832617f4dfd37f95bc64df607636923c7d4472b79be79f",
+      "src/twinguard/analytics/thermal.py": "eff886566e4f92c8409173c63572e61ed6f74784303d51a39f5e5c07dd6edfe9",
+      "src/twinguard/fusion/__init__.py": "d31265a93d2f7f39b940d67cc9229188a212829e25ac1c59d000c0ad79ed9be9",
+      "src/twinguard/fusion/adapters.py": "0e7da319a5e1470be1ae8e2bd2c361f34091b25c25a71fc26d5f4c44ab3a9e50",
+      "src/twinguard/fusion/cli.py": "355bffb6b17973e7318dc86aec406e3482fd1a295e68b0a645d5c6bc6f518397",
+      "src/twinguard/fusion/dependence.py": "c1bb92b4587aa6b48a1b75138312bc782362259e54725ec05f640ff2564f5924",
+      "src/twinguard/fusion/engine.py": "e29a1b144d5707140807f06700dd6e0557484b317bc939b2db227c53df311bca",
+      "src/twinguard/fusion/io.py": "cfad70a589fb57fbb74e31eb0298104bcab726167475ae103228eadc6380b7e6",
+      "src/twinguard/fusion/lifecycle.py": "bee8360218698df95759e541c4151a843944eaba9227573f984491e9bdf02a69",
+      "src/twinguard/fusion/models.py": "a7fa0b63a237da6d8ed5708b44db6aa463b1824bedecf9c270584f73498da2f8",
+      "src/twinguard/fusion/policies.py": "cc1bcfbbe56de1213ae6fec283a997e75bb1654d877f3ff7fe9272b044ab0e16",
+      "src/twinguard/fusion/spatial.py": "dbd9cbe4c622ce076e5dd2bfac7c2b022fe3ef341c849b6daaf27c360c3c1b3a",
+      "src/twinguard/fusion/temporal.py": "05bfbee3425c00b868e982f18a9d3b7c332a8b3173353d2f9ac07b13d6ac199e",
+      "src/twinguard/sensing/__init__.py": "ade5149571e463a84aa2ce2fbf3ea9f21cc2f50a4e0f457bce9bde07fe8061fa",
+      "src/twinguard/sensing/acquisition.py": "41f344539168829a3de003d08286472081f569c1a18d08c96d4116b0719b186a",
+      "src/twinguard/sensing/cli.py": "03d6443e65ff860404774c86103dafc63962d88330a0f54270d9aaaf9c79b829",
+      "src/twinguard/sensing/config.py": "6d3c5bf2da80faba7f9b76c332d8c070f5f766e3618aed831545049795a76c12",
+      "src/twinguard/sensing/export.py": "ea708bde6008974f96f715ede8a0c45438aa7967afedc1022971c07d55b3249c",
+      "src/twinguard/sensing/iot.py": "6e5d1ecc9b93bc5f4de557e26495be47ab28d6ea4c40ab6511cb9d00795c9063",
+      "src/twinguard/sensing/lidar.py": "c02b2979a990174142c367454fdec658b825d011b94fc83a81dad3a0d92d89b0",
+      "src/twinguard/sensing/noise.py": "615d9715d9558171a5bd9ed461357c4626cc2df1a00095f9ec97cad05da6f174",
+      "src/twinguard/sensing/products.py": "f744e38e58db793167b8e73febbd60b85749f5757513e2977cf21b80f2b7313d",
+      "src/twinguard/sensing/raycast.py": "a5adf4d03d9294757166118821db59295a2746fd071903302ba76be9bb23e856",
+      "src/twinguard/sensing/read.py": "9cf482a7eb225c972ae093c75104e19666757690014b6a399209979640eb246e",
+      "src/twinguard/sensing/thermal.py": "7fe4554c39ce4e05e1e6bcfd9056f0beb79fd749a1095c509241a7b9fa2aef12",
+      "src/twinguard/sensing/visualize.py": "c0b121b03495f352b9c56d2f43357582cb5fb82fdbb79a44b499b18318096d39"
+    },
+    "partitions": {
+      "development": [
+        9100,
+        9101,
+        9102,
+        10100
+      ],
+      "heldout": [
+        11100,
+        11101,
+        11102,
+        11103,
+        11104,
+        11105,
+        11106,
+        11107,
+        11108,
+        11109,
+        11110,
+        11111,
+        11112,
+        11113,
+        11114,
+        11115,
+        11116,
+        11117,
+        11118,
+        11119,
+        11120,
+        11121,
+        11122,
+        11123,
+        11124,
+        11125,
+        11126,
+        11127,
+        11128,
+        11129
+      ]
+    },
+    "frozen_at_utc": "2026-10-28T12:38:37.374539+00:00"
+  },
+  {
+    "configuration": {
+      "schema_version": "1.0.0",
+      "configuration_id": "inspection-v1",
+      "reference_sha256": "54d41aefbd5b5e287b1eb0f176b208e19ae16ecc79cbbeb086aa8a63171872f7",
+      "reference_path": "configs/edge/plant.glb",
+      "sensor_path": "configs/sensing/L1.yaml",
+      "criticality": {
+        "BW-01": 0.9,
+        "DR-01": 0.85,
+        "SP-01": 0.7,
+        "SP-02": 0.7,
+        "SUP-01": 0.6,
+        "VL-01": 0.65,
+        "REF-01": 0.3
+      },
+      "allowed_volume": {
+        "schema_version": "1.0.0",
+        "lower": [
+          -5.0,
+          -2.0,
+          0.3
+        ],
+        "upper": [
+          5.0,
+          7.0,
+          6.0
+        ]
+      },
+      "no_go": [],
+      "map_complete": true,
+      "minimum_standoff_m": 0.5,
+      "maximum_range_m": 8.0,
+      "safety_margin_m": 0.2,
+      "altitude_m": [
+        0.5,
+        6.0
+      ],
+      "start_world_m": [
+        0.0,
+        3.4,
+        1.65
+      ],
+      "speed_m_s": 0.5,
+      "acquisition_s": 8.0,
+      "return_to_start": true,
+      "cell_m": 0.08,
+      "association_m": 0.06,
+      "freshness_s": 3600.0,
+      "stand_off_shells_m": [
+        2.5,
+        3.4
+      ],
+      "azimuths_rad": [
+        -0.35,
+        0.0,
+        0.35
+      ],
+      "elevation_offsets_m": [
+        -0.3,
+        0.0,
+        0.3
+      ],
+      "available_modalities": [
+        "lidar",
+        "thermal"
+      ],
+      "calibrated_fidelities": [
+        "L0",
+        "L1"
+      ],
+      "calibrated_assets": [
+        "BW-01"
+      ],
+      "calibrated_range_m": [
+        2.0,
+        4.5
+      ],
+      "minimum_registration_returns": 100,
+      "minimum_incidence_cosine": 0.3,
+      "maximum_vertical_spacing_m": 0.24,
+      "restricted_assets": [],
+      "priority_weights": {
+        "criticality": 0.15,
+        "severity": 0.2,
+        "deficiency": 0.3,
+        "freshness": 0.15,
+        "reinspection": 0.1,
+        "failed_attempts": 0.1
+      },
+      "utility_weights": {
+        "coverage": 0.25,
+        "deficiency": 0.25,
+        "risk": 0.2,
+        "suitability": 0.15,
+        "cost": 0.1,
+        "redundancy": 0.05
+      }
+    },
+    "configuration_hash": "d11793aba230b6fb8766dece5c290d3c71442b660027e8b20c49638dbfea04f6",
+    "settings": {
+      "experiment_id": "E5",
+      "status": "implemented",
+      "name": "Risk-Adaptive Viewpoint Planning and Evidence-Quality Improvement",
+      "development_seeds": [
+        9100,
+        9101,
+        9102,
+        10100
+      ],
+      "heldout_seeds": [
+        11100,
+        11101,
+        11102,
+        11103,
+        11104,
+        11105,
+        11106,
+        11107,
+        11108,
+        11109,
+        11110,
+        11111,
+        11112,
+        11113,
+        11114,
+        11115,
+        11116,
+        11117,
+        11118,
+        11119,
+        11120,
+        11121,
+        11122,
+        11123,
+        11124,
+        11125,
+        11126,
+        11127,
+        11128,
+        11129
+      ],
+      "methods": [
+        "P0",
+        "P1",
+        "P2",
+        "P3"
+      ],
+      "scenario_ids": [
+        "E5-S03",
+        "E5-S07",
+        "E5-S11",
+        "E5-S15"
+      ]
+    },
+    "git": "1779975559fdf363d134570b83a32f197517a5b4",
+    "sources": {
+      "src/twinguard/inspection/__init__.py": "e008a3451e16e50adb711daccf508aa638ba19daf41c2b3d3e5d6967aa2838f2",
+      "src/twinguard/inspection/candidates.py": "55283091a08e539f055ab07675f4d732f821d158f1797e030047b9e23f9db724",
+      "src/twinguard/inspection/cli.py": "05d3d53f8f525081a885643ebd6f737a36a87363b8aae03832024091dfb07ea5",
+      "src/twinguard/inspection/contracts.py": "05cdc6c53fea3c381fae2e86f8078e6332a5dbc366a0ce59e728cbadcc63e0a7",
+      "src/twinguard/inspection/coverage.py": "fec954a16a40bf0bf8639541317d78570bcd1b46ca7d8d3261d14ccf326372e5",
+      "src/twinguard/inspection/explanation.py": "97f980d086b47e6bb72e85c713274591401bbac653ea2b0b6b43d3066a54cb96",
+      "src/twinguard/inspection/feasibility.py": "ca1aac1db4303c007a1fb8eaf2aac4fab47058c455b767c1ff6d38e6068c079d",
+      "src/twinguard/inspection/observations.py": "b75534eb343f970b9cfd16eab7bc2e2e92c26b86985253db604fb19a50da62a3",
+      "src/twinguard/inspection/optimizer.py": "cda98e3a23816c9e52f6e43b96d7e2a594242e95353487fe0cef1158888e8959",
+      "src/twinguard/inspection/priority.py": "5156b898fe8ca6dec5cb392ede25030ae6d4330a15427e0d95a0ab76e191757d",
+      "src/twinguard/inspection/qualification.py": "7f39edcac406ab178eeeb284d499f760e24529072efb95bc328d8b09509c26eb",
+      "src/twinguard/inspection/replanning.py": "e4ae2261d1b5be7abd3f003b663c11e57a3ee8712dd0ab14f1f4e182de8e337c",
+      "src/twinguard/inspection/utility.py": "292f8ae1272fe24f9f4ba07dda7fb15d445af26933892722125c7e7781e622f4",
+      "src/twinguard/inspection/visibility.py": "f61900f20e7a22997db4c009bf8a36f0bd186f8598a38a49487335e7f113f3cb",
+      "src/twinguard/analytics/__init__.py": "b7facbe5d90065eb2396f8ca02dacb9c56f5b29942146bd18170b9e6701c216e",
+      "src/twinguard/analytics/cli.py": "7b26bc28f4c957e67b4f440155076736e557e1c2db5460b6a71337029b04f2de",
+      "src/twinguard/analytics/clouds.py": "658d03ccdb6d0e8f31288a99e738b6ddf50cab01ccdf0bab4bd790f827e6d5c9",
+      "src/twinguard/analytics/config.py": "538c05f27d266854e23473ea7aa3ca63746673f91abbd8a5b5a1658fc8373937",
+      "src/twinguard/analytics/evidence.py": "7f4d8256e041ce1290ba9c2ef91ab1ea03b77317685719457d34d15eaf1ea25b",
+      "src/twinguard/analytics/geometric_improved.py": "d8304da81e096a9edd4e2413e6f6aa3009fc96780f0e3f9f99c302380d7502ca",
+      "src/twinguard/analytics/geometry.py": "796371c934517d1cc26df4373349ba76e96ec5d77057a956a4f0e7c61bde7e1d",
+      "src/twinguard/analytics/operating.py": "d11261fdb7bd20fd9ded34955d99ba9355e6f3c8872d14dad51a60e2e42cc5b4",
+      "src/twinguard/analytics/pipeline.py": "cfc8d5848c70c7b4d7190eac2ce651f25e5e8b63fd2244198e1a238bd6648cc8",
+      "src/twinguard/analytics/reference.py": "e90d1527ae8c8a1dbc022c1aa4b639945e25d471367685310e123c3d0ebad2d3",
+      "src/twinguard/analytics/registration.py": "0500d18f4e3bd1e8ce832617f4dfd37f95bc64df607636923c7d4472b79be79f",
+      "src/twinguard/analytics/thermal.py": "eff886566e4f92c8409173c63572e61ed6f74784303d51a39f5e5c07dd6edfe9",
+      "src/twinguard/fusion/__init__.py": "d31265a93d2f7f39b940d67cc9229188a212829e25ac1c59d000c0ad79ed9be9",
+      "src/twinguard/fusion/adapters.py": "0e7da319a5e1470be1ae8e2bd2c361f34091b25c25a71fc26d5f4c44ab3a9e50",
+      "src/twinguard/fusion/cli.py": "355bffb6b17973e7318dc86aec406e3482fd1a295e68b0a645d5c6bc6f518397",
+      "src/twinguard/fusion/dependence.py": "c1bb92b4587aa6b48a1b75138312bc782362259e54725ec05f640ff2564f5924",
+      "src/twinguard/fusion/engine.py": "e29a1b144d5707140807f06700dd6e0557484b317bc939b2db227c53df311bca",
+      "src/twinguard/fusion/io.py": "cfad70a589fb57fbb74e31eb0298104bcab726167475ae103228eadc6380b7e6",
+      "src/twinguard/fusion/lifecycle.py": "bee8360218698df95759e541c4151a843944eaba9227573f984491e9bdf02a69",
+      "src/twinguard/fusion/models.py": "a7fa0b63a237da6d8ed5708b44db6aa463b1824bedecf9c270584f73498da2f8",
+      "src/twinguard/fusion/policies.py": "cc1bcfbbe56de1213ae6fec283a997e75bb1654d877f3ff7fe9272b044ab0e16",
+      "src/twinguard/fusion/spatial.py": "dbd9cbe4c622ce076e5dd2bfac7c2b022fe3ef341c849b6daaf27c360c3c1b3a",
+      "src/twinguard/fusion/temporal.py": "05bfbee3425c00b868e982f18a9d3b7c332a8b3173353d2f9ac07b13d6ac199e",
+      "src/twinguard/sensing/__init__.py": "ade5149571e463a84aa2ce2fbf3ea9f21cc2f50a4e0f457bce9bde07fe8061fa",
+      "src/twinguard/sensing/acquisition.py": "41f344539168829a3de003d08286472081f569c1a18d08c96d4116b0719b186a",
+      "src/twinguard/sensing/cli.py": "03d6443e65ff860404774c86103dafc63962d88330a0f54270d9aaaf9c79b829",
+      "src/twinguard/sensing/config.py": "6d3c5bf2da80faba7f9b76c332d8c070f5f766e3618aed831545049795a76c12",
+      "src/twinguard/sensing/export.py": "ea708bde6008974f96f715ede8a0c45438aa7967afedc1022971c07d55b3249c",
+      "src/twinguard/sensing/iot.py": "6e5d1ecc9b93bc5f4de557e26495be47ab28d6ea4c40ab6511cb9d00795c9063",
+      "src/twinguard/sensing/lidar.py": "c02b2979a990174142c367454fdec658b825d011b94fc83a81dad3a0d92d89b0",
+      "src/twinguard/sensing/noise.py": "615d9715d9558171a5bd9ed461357c4626cc2df1a00095f9ec97cad05da6f174",
+      "src/twinguard/sensing/products.py": "f744e38e58db793167b8e73febbd60b85749f5757513e2977cf21b80f2b7313d",
+      "src/twinguard/sensing/raycast.py": "a5adf4d03d9294757166118821db59295a2746fd071903302ba76be9bb23e856",
+      "src/twinguard/sensing/read.py": "9cf482a7eb225c972ae093c75104e19666757690014b6a399209979640eb246e",
+      "src/twinguard/sensing/thermal.py": "7fe4554c39ce4e05e1e6bcfd9056f0beb79fd749a1095c509241a7b9fa2aef12",
+      "src/twinguard/sensing/visualize.py": "c0b121b03495f352b9c56d2f43357582cb5fb82fdbb79a44b499b18318096d39"
+    },
+    "partitions": {
+      "development": [
+        9100,
+        9101,
+        9102,
+        10100
+      ],
+      "heldout": [
+        11100,
+        11101,
+        11102,
+        11103,
+        11104,
+        11105,
+        11106,
+        11107,
+        11108,
+        11109,
+        11110,
+        11111,
+        11112,
+        11113,
+        11114,
+        11115,
+        11116,
+        11117,
+        11118,
+        11119,
+        11120,
+        11121,
+        11122,
+        11123,
+        11124,
+        11125,
+        11126,
+        11127,
+        11128,
+        11129
+      ]
+    },
+    "frozen_at_utc": "2026-10-28T12:38:37.374570+00:00"
+  },
+  {
+    "configuration": {
+      "schema_version": "1.0.0",
+      "configuration_id": "inspection-v1",
+      "reference_sha256": "54d41aefbd5b5e287b1eb0f176b208e19ae16ecc79cbbeb086aa8a63171872f7",
+      "reference_path": "configs/edge/plant.glb",
+      "sensor_path": "configs/sensing/L1.yaml",
+      "criticality": {
+        "BW-01": 0.9,
+        "DR-01": 0.85,
+        "SP-01": 0.7,
+        "SP-02": 0.7,
+        "SUP-01": 0.6,
+        "VL-01": 0.65,
+        "REF-01": 0.3
+      },
+      "allowed_volume": {
+        "schema_version": "1.0.0",
+        "lower": [
+          -5.0,
+          -2.0,
+          0.3
+        ],
+        "upper": [
+          5.0,
+          7.0,
+          6.0
+        ]
+      },
+      "no_go": [],
+      "map_complete": true,
+      "minimum_standoff_m": 0.5,
+      "maximum_range_m": 8.0,
+      "safety_margin_m": 0.2,
+      "altitude_m": [
+        0.5,
+        6.0
+      ],
+      "start_world_m": [
+        0.0,
+        3.4,
+        1.65
+      ],
+      "speed_m_s": 0.5,
+      "acquisition_s": 8.0,
+      "return_to_start": true,
+      "cell_m": 0.08,
+      "association_m": 0.06,
+      "freshness_s": 3600.0,
+      "stand_off_shells_m": [
+        2.5,
+        3.4
+      ],
+      "azimuths_rad": [
+        -0.35,
+        0.0,
+        0.35
+      ],
+      "elevation_offsets_m": [
+        -0.3,
+        0.0,
+        0.3
+      ],
+      "available_modalities": [
+        "lidar",
+        "thermal"
+      ],
+      "calibrated_fidelities": [
+        "L0",
+        "L1"
+      ],
+      "calibrated_assets": [
+        "BW-01"
+      ],
+      "calibrated_range_m": [
+        2.0,
+        4.5
+      ],
+      "minimum_registration_returns": 100,
+      "minimum_incidence_cosine": 0.3,
+      "maximum_vertical_spacing_m": 0.24,
+      "restricted_assets": [],
+      "priority_weights": {
+        "criticality": 0.15,
+        "severity": 0.2,
+        "deficiency": 0.3,
+        "freshness": 0.15,
+        "reinspection": 0.1,
+        "failed_attempts": 0.1
+      },
+      "utility_weights": {
+        "coverage": 0.25,
+        "deficiency": 0.25,
+        "risk": 0.2,
+        "suitability": 0.15,
+        "cost": 0.1,
+        "redundancy": 0.05
+      }
+    },
+    "configuration_hash": "d11793aba230b6fb8766dece5c290d3c71442b660027e8b20c49638dbfea04f6",
+    "settings": {
+      "experiment_id": "E5",
+      "status": "implemented",
+      "name": "Risk-Adaptive Viewpoint Planning and Evidence-Quality Improvement",
+      "development_seeds": [
+        9100,
+        9101,
+        9102,
+        10100
+      ],
+      "heldout_seeds": [
+        11100,
+        11101,
+        11102,
+        11103,
+        11104,
+        11105,
+        11106,
+        11107,
+        11108,
+        11109,
+        11110,
+        11111,
+        11112,
+        11113,
+        11114,
+        11115,
+        11116,
+        11117,
+        11118,
+        11119,
+        11120,
+        11121,
+        11122,
+        11123,
+        11124,
+        11125,
+        11126,
+        11127,
+        11128,
+        11129
+      ],
+      "methods": [
+        "P0",
+        "P1",
+        "P2",
+        "P3"
+      ],
+      "scenario_ids": [
+        "E5-S04",
+        "E5-S08",
+        "E5-S12",
+        "E5-S16"
+      ]
+    },
+    "git": "1779975559fdf363d134570b83a32f197517a5b4",
+    "sources": {
+      "src/twinguard/inspection/__init__.py": "e008a3451e16e50adb711daccf508aa638ba19daf41c2b3d3e5d6967aa2838f2",
+      "src/twinguard/inspection/candidates.py": "55283091a08e539f055ab07675f4d732f821d158f1797e030047b9e23f9db724",
+      "src/twinguard/inspection/cli.py": "05d3d53f8f525081a885643ebd6f737a36a87363b8aae03832024091dfb07ea5",
+      "src/twinguard/inspection/contracts.py": "05cdc6c53fea3c381fae2e86f8078e6332a5dbc366a0ce59e728cbadcc63e0a7",
+      "src/twinguard/inspection/coverage.py": "fec954a16a40bf0bf8639541317d78570bcd1b46ca7d8d3261d14ccf326372e5",
+      "src/twinguard/inspection/explanation.py": "97f980d086b47e6bb72e85c713274591401bbac653ea2b0b6b43d3066a54cb96",
+      "src/twinguard/inspection/feasibility.py": "ca1aac1db4303c007a1fb8eaf2aac4fab47058c455b767c1ff6d38e6068c079d",
+      "src/twinguard/inspection/observations.py": "b75534eb343f970b9cfd16eab7bc2e2e92c26b86985253db604fb19a50da62a3",
+      "src/twinguard/inspection/optimizer.py": "cda98e3a23816c9e52f6e43b96d7e2a594242e95353487fe0cef1158888e8959",
+      "src/twinguard/inspection/priority.py": "5156b898fe8ca6dec5cb392ede25030ae6d4330a15427e0d95a0ab76e191757d",
+      "src/twinguard/inspection/qualification.py": "7f39edcac406ab178eeeb284d499f760e24529072efb95bc328d8b09509c26eb",
+      "src/twinguard/inspection/replanning.py": "e4ae2261d1b5be7abd3f003b663c11e57a3ee8712dd0ab14f1f4e182de8e337c",
+      "src/twinguard/inspection/utility.py": "292f8ae1272fe24f9f4ba07dda7fb15d445af26933892722125c7e7781e622f4",
+      "src/twinguard/inspection/visibility.py": "f61900f20e7a22997db4c009bf8a36f0bd186f8598a38a49487335e7f113f3cb",
+      "src/twinguard/analytics/__init__.py": "b7facbe5d90065eb2396f8ca02dacb9c56f5b29942146bd18170b9e6701c216e",
+      "src/twinguard/analytics/cli.py": "7b26bc28f4c957e67b4f440155076736e557e1c2db5460b6a71337029b04f2de",
+      "src/twinguard/analytics/clouds.py": "658d03ccdb6d0e8f31288a99e738b6ddf50cab01ccdf0bab4bd790f827e6d5c9",
+      "src/twinguard/analytics/config.py": "538c05f27d266854e23473ea7aa3ca63746673f91abbd8a5b5a1658fc8373937",
+      "src/twinguard/analytics/evidence.py": "7f4d8256e041ce1290ba9c2ef91ab1ea03b77317685719457d34d15eaf1ea25b",
+      "src/twinguard/analytics/geometric_improved.py": "d8304da81e096a9edd4e2413e6f6aa3009fc96780f0e3f9f99c302380d7502ca",
+      "src/twinguard/analytics/geometry.py": "796371c934517d1cc26df4373349ba76e96ec5d77057a956a4f0e7c61bde7e1d",
+      "src/twinguard/analytics/operating.py": "d11261fdb7bd20fd9ded34955d99ba9355e6f3c8872d14dad51a60e2e42cc5b4",
+      "src/twinguard/analytics/pipeline.py": "cfc8d5848c70c7b4d7190eac2ce651f25e5e8b63fd2244198e1a238bd6648cc8",
+      "src/twinguard/analytics/reference.py": "e90d1527ae8c8a1dbc022c1aa4b639945e25d471367685310e123c3d0ebad2d3",
+      "src/twinguard/analytics/registration.py": "0500d18f4e3bd1e8ce832617f4dfd37f95bc64df607636923c7d4472b79be79f",
+      "src/twinguard/analytics/thermal.py": "eff886566e4f92c8409173c63572e61ed6f74784303d51a39f5e5c07dd6edfe9",
+      "src/twinguard/fusion/__init__.py": "d31265a93d2f7f39b940d67cc9229188a212829e25ac1c59d000c0ad79ed9be9",
+      "src/twinguard/fusion/adapters.py": "0e7da319a5e1470be1ae8e2bd2c361f34091b25c25a71fc26d5f4c44ab3a9e50",
+      "src/twinguard/fusion/cli.py": "355bffb6b17973e7318dc86aec406e3482fd1a295e68b0a645d5c6bc6f518397",
+      "src/twinguard/fusion/dependence.py": "c1bb92b4587aa6b48a1b75138312bc782362259e54725ec05f640ff2564f5924",
+      "src/twinguard/fusion/engine.py": "e29a1b144d5707140807f06700dd6e0557484b317bc939b2db227c53df311bca",
+      "src/twinguard/fusion/io.py": "cfad70a589fb57fbb74e31eb0298104bcab726167475ae103228eadc6380b7e6",
+      "src/twinguard/fusion/lifecycle.py": "bee8360218698df95759e541c4151a843944eaba9227573f984491e9bdf02a69",
+      "src/twinguard/fusion/models.py": "a7fa0b63a237da6d8ed5708b44db6aa463b1824bedecf9c270584f73498da2f8",
+      "src/twinguard/fusion/policies.py": "cc1bcfbbe56de1213ae6fec283a997e75bb1654d877f3ff7fe9272b044ab0e16",
+      "src/twinguard/fusion/spatial.py": "dbd9cbe4c622ce076e5dd2bfac7c2b022fe3ef341c849b6daaf27c360c3c1b3a",
+      "src/twinguard/fusion/temporal.py": "05bfbee3425c00b868e982f18a9d3b7c332a8b3173353d2f9ac07b13d6ac199e",
+      "src/twinguard/sensing/__init__.py": "ade5149571e463a84aa2ce2fbf3ea9f21cc2f50a4e0f457bce9bde07fe8061fa",
+      "src/twinguard/sensing/acquisition.py": "41f344539168829a3de003d08286472081f569c1a18d08c96d4116b0719b186a",
+      "src/twinguard/sensing/cli.py": "03d6443e65ff860404774c86103dafc63962d88330a0f54270d9aaaf9c79b829",
+      "src/twinguard/sensing/config.py": "6d3c5bf2da80faba7f9b76c332d8c070f5f766e3618aed831545049795a76c12",
+      "src/twinguard/sensing/export.py": "ea708bde6008974f96f715ede8a0c45438aa7967afedc1022971c07d55b3249c",
+      "src/twinguard/sensing/iot.py": "6e5d1ecc9b93bc5f4de557e26495be47ab28d6ea4c40ab6511cb9d00795c9063",
+      "src/twinguard/sensing/lidar.py": "c02b2979a990174142c367454fdec658b825d011b94fc83a81dad3a0d92d89b0",
+      "src/twinguard/sensing/noise.py": "615d9715d9558171a5bd9ed461357c4626cc2df1a00095f9ec97cad05da6f174",
+      "src/twinguard/sensing/products.py": "f744e38e58db793167b8e73febbd60b85749f5757513e2977cf21b80f2b7313d",
+      "src/twinguard/sensing/raycast.py": "a5adf4d03d9294757166118821db59295a2746fd071903302ba76be9bb23e856",
+      "src/twinguard/sensing/read.py": "9cf482a7eb225c972ae093c75104e19666757690014b6a399209979640eb246e",
+      "src/twinguard/sensing/thermal.py": "7fe4554c39ce4e05e1e6bcfd9056f0beb79fd749a1095c509241a7b9fa2aef12",
+      "src/twinguard/sensing/visualize.py": "c0b121b03495f352b9c56d2f43357582cb5fb82fdbb79a44b499b18318096d39"
+    },
+    "partitions": {
+      "development": [
+        9100,
+        9101,
+        9102,
+        10100
+      ],
+      "heldout": [
+        11100,
+        11101,
+        11102,
+        11103,
+        11104,
+        11105,
+        11106,
+        11107,
+        11108,
+        11109,
+        11110,
+        11111,
+        11112,
+        11113,
+        11114,
+        11115,
+        11116,
+        11117,
+        11118,
+        11119,
+        11120,
+        11121,
+        11122,
+        11123,
+        11124,
+        11125,
+        11126,
+        11127,
+        11128,
+        11129
+      ]
+    },
+    "frozen_at_utc": "2026-10-28T12:38:37.374760+00:00"
+  }
+]

@@ -63,3 +63,7 @@ Phase 4 adds FusionEvidence, ProcessingRecord, FusionEvidenceManifest, TemporalD
 ## Phase 5 operational contracts
 
 EdgeEnvelope and SourceRegistration are additive public schemas. Original SensorObservation, InspectionCapture, analytical outputs and ConditionAssessment remain unchanged. SQL metadata independently stores authenticated identity, original acquisition/receipt claims, actual edge receipt/processing/availability, clock basis, replay anchor/rate, source epoch and calibration reference. Per-capture replay mapping preserves relative acquisition times. Queue priority is server generated, not a publisher assertion or a hazard outcome. Original observations and computed registered arrays remain immutable/hash-addressed. See EDGE_INGESTION.md and PERSISTENCE_AND_RECOVERY.md.
+
+## Phase 6 additive contracts
+
+Schema 1.0.0 adds InspectionPlanningRequest, PlanningSnapshot, AssetInspectionPriority, SurfaceCoverageEstimate, CandidateViewpoint, ViewpointFeasibility, ViewpointUtility, InspectionPlan, InspectionPlanStep, PlanningExplanation, ReinspectionRecommendation and PlanningEvaluationRecord. PlanningConfig is versioned configuration. Schemas are exported under schemas/. Planned sensor poses reuse Transform; UTC/finite bounds are enforced. Predicted/observed/qualified cell sets are separate; qualified cells must be observed. Reference, snapshot and policy hashes bind decisions. Reviews are simulation-only and cannot change source trust or F1. ExperimentDefinition now admits E5 without renumbering E1–E4.

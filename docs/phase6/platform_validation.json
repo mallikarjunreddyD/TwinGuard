@@ -1,0 +1,694 @@
+{
+  "scope": "Short local-loopback comparison; not the complete corrected E4 or hardware commissioning",
+  "started_at": "2026-10-28T12:40:22.374220+00:00",
+  "checks": {
+    "anonymous_rejected": true,
+    "viewer_creation_rejected": true,
+    "critical_context_preserved": true,
+    "critical_review_requires_ack": true,
+    "operator_simulation_review": true,
+    "duplicate_same_hash": true,
+    "conflicting_duplicate_rejected": true,
+    "browser_plan_rendered": true,
+    "browser_prediction_label": true
+  },
+  "database_bytes_before": 8607411,
+  "idle": {
+    "label": "No planning jobs",
+    "n": 30,
+    "current": 30,
+    "red": 30,
+    "p50_s": 0.08996498584747314,
+    "p95_s": 0.1487145781517029,
+    "max_s": 0.18977594375610352,
+    "records": [
+      {
+        "id": "p6-8db0da84658f478a909d5db86e325965-0",
+        "receipt_to_commit_s": 0.18977594375610352,
+        "temporal": [
+          "current"
+        ],
+        "severity": "red"
+      },
+      {
+        "id": "p6-8db0da84658f478a909d5db86e325965-1",
+        "receipt_to_commit_s": 0.08925604820251465,
+        "temporal": [
+          "current"
+        ],
+        "severity": "red"
+      },
+      {
+        "id": "p6-8db0da84658f478a909d5db86e325965-2",
+        "receipt_to_commit_s": 0.09067392349243164,
+        "temporal": [
+          "current"
+        ],
+        "severity": "red"
+      },
+      {
+        "id": "p6-8db0da84658f478a909d5db86e325965-3",
+        "receipt_to_commit_s": 0.08405017852783203,
+        "temporal": [
+          "current"
+        ],
+        "severity": "red"
+      },
+      {
+        "id": "p6-8db0da84658f478a909d5db86e325965-4",
+        "receipt_to_commit_s": 0.07722806930541992,
+        "temporal": [
+          "current"
+        ],
+        "severity": "red"
+      },
+      {
+        "id": "p6-8db0da84658f478a909d5db86e325965-5",
+        "receipt_to_commit_s": 0.07033896446228027,
+        "temporal": [
+          "current"
+        ],
+        "severity": "red"
+      },
+      {
+        "id": "p6-8db0da84658f478a909d5db86e325965-6",
+        "receipt_to_commit_s": 0.06046605110168457,
+        "temporal": [
+          "current"
+        ],
+        "severity": "red"
+      },
+      {
+        "id": "p6-8db0da84658f478a909d5db86e325965-7",
+        "receipt_to_commit_s": 0.058859825134277344,
+        "temporal": [
+          "current"
+        ],
+        "severity": "red"
+      },
+      {
+        "id": "p6-8db0da84658f478a909d5db86e325965-8",
+        "receipt_to_commit_s": 0.04930877685546875,
+        "temporal": [
+          "current"
+        ],
+        "severity": "red"
+      },
+      {
+        "id": "p6-8db0da84658f478a909d5db86e325965-9",
+        "receipt_to_commit_s": 0.14403986930847168,
+        "temporal": [
+          "current"
+        ],
+        "severity": "red"
+      },
+      {
+        "id": "p6-8db0da84658f478a909d5db86e325965-10",
+        "receipt_to_commit_s": 0.13604283332824707,
+        "temporal": [
+          "current"
+        ],
+        "severity": "red"
+      },
+      {
+        "id": "p6-8db0da84658f478a909d5db86e325965-11",
+        "receipt_to_commit_s": 0.14867615699768066,
+        "temporal": [
+          "current"
+        ],
+        "severity": "red"
+      },
+      {
+        "id": "p6-8db0da84658f478a909d5db86e325965-12",
+        "receipt_to_commit_s": 0.14451909065246582,
+        "temporal": [
+          "current"
+        ],
+        "severity": "red"
+      },
+      {
+        "id": "p6-8db0da84658f478a909d5db86e325965-13",
+        "receipt_to_commit_s": 0.1361379623413086,
+        "temporal": [
+          "current"
+        ],
+        "severity": "red"
+      },
+      {
+        "id": "p6-8db0da84658f478a909d5db86e325965-14",
+        "receipt_to_commit_s": 0.13299107551574707,
+        "temporal": [
+          "current"
+        ],
+        "severity": "red"
+      },
+      {
+        "id": "p6-8db0da84658f478a909d5db86e325965-15",
+        "receipt_to_commit_s": 0.12465596199035645,
+        "temporal": [
+          "current"
+        ],
+        "severity": "red"
+      },
+      {
+        "id": "p6-8db0da84658f478a909d5db86e325965-16",
+        "receipt_to_commit_s": 0.11935591697692871,
+        "temporal": [
+          "current"
+        ],
+        "severity": "red"
+      },
+      {
+        "id": "p6-8db0da84658f478a909d5db86e325965-17",
+        "receipt_to_commit_s": 0.11141300201416016,
+        "temporal": [
+          "current"
+        ],
+        "severity": "red"
+      },
+      {
+        "id": "p6-8db0da84658f478a909d5db86e325965-18",
+        "receipt_to_commit_s": 0.10250496864318848,
+        "temporal": [
+          "current"
+        ],
+        "severity": "red"
+      },
+      {
+        "id": "p6-8db0da84658f478a909d5db86e325965-19",
+        "receipt_to_commit_s": 0.0922849178314209,
+        "temporal": [
+          "current"
+        ],
+        "severity": "red"
+      },
+      {
+        "id": "p6-8db0da84658f478a909d5db86e325965-20",
+        "receipt_to_commit_s": 0.08466100692749023,
+        "temporal": [
+          "current"
+        ],
+        "severity": "red"
+      },
+      {
+        "id": "p6-8db0da84658f478a909d5db86e325965-21",
+        "receipt_to_commit_s": 0.07573986053466797,
+        "temporal": [
+          "current"
+        ],
+        "severity": "red"
+      },
+      {
+        "id": "p6-8db0da84658f478a909d5db86e325965-22",
+        "receipt_to_commit_s": 0.06689190864562988,
+        "temporal": [
+          "current"
+        ],
+        "severity": "red"
+      },
+      {
+        "id": "p6-8db0da84658f478a909d5db86e325965-23",
+        "receipt_to_commit_s": 0.05771803855895996,
+        "temporal": [
+          "current"
+        ],
+        "severity": "red"
+      },
+      {
+        "id": "p6-8db0da84658f478a909d5db86e325965-24",
+        "receipt_to_commit_s": 0.05172586441040039,
+        "temporal": [
+          "current"
+        ],
+        "severity": "red"
+      },
+      {
+        "id": "p6-8db0da84658f478a909d5db86e325965-25",
+        "receipt_to_commit_s": 0.06930685043334961,
+        "temporal": [
+          "current"
+        ],
+        "severity": "red"
+      },
+      {
+        "id": "p6-8db0da84658f478a909d5db86e325965-26",
+        "receipt_to_commit_s": 0.06107306480407715,
+        "temporal": [
+          "current"
+        ],
+        "severity": "red"
+      },
+      {
+        "id": "p6-8db0da84658f478a909d5db86e325965-27",
+        "receipt_to_commit_s": 0.052703857421875,
+        "temporal": [
+          "current"
+        ],
+        "severity": "red"
+      },
+      {
+        "id": "p6-8db0da84658f478a909d5db86e325965-28",
+        "receipt_to_commit_s": 0.14874601364135742,
+        "temporal": [
+          "current"
+        ],
+        "severity": "red"
+      },
+      {
+        "id": "p6-8db0da84658f478a909d5db86e325965-29",
+        "receipt_to_commit_s": 0.14482402801513672,
+        "temporal": [
+          "current"
+        ],
+        "severity": "red"
+      }
+    ]
+  },
+  "planning_loaded": {
+    "label": "Concurrent bounded planning workload",
+    "n": 30,
+    "current": 30,
+    "red": 30,
+    "p50_s": 0.15118098258972168,
+    "p95_s": 0.6177289485931379,
+    "max_s": 0.9952020645141602,
+    "records": [
+      {
+        "id": "p6-da0c18ea4a6b4cef8969564497eb52c3-0",
+        "receipt_to_commit_s": 0.13253307342529297,
+        "temporal": [
+          "current"
+        ],
+        "severity": "red"
+      },
+      {
+        "id": "p6-da0c18ea4a6b4cef8969564497eb52c3-1",
+        "receipt_to_commit_s": 0.1577739715576172,
+        "temporal": [
+          "current"
+        ],
+        "severity": "red"
+      },
+      {
+        "id": "p6-da0c18ea4a6b4cef8969564497eb52c3-2",
+        "receipt_to_commit_s": 0.0524289608001709,
+        "temporal": [
+          "current"
+        ],
+        "severity": "red"
+      },
+      {
+        "id": "p6-da0c18ea4a6b4cef8969564497eb52c3-3",
+        "receipt_to_commit_s": 0.15173602104187012,
+        "temporal": [
+          "current"
+        ],
+        "severity": "red"
+      },
+      {
+        "id": "p6-da0c18ea4a6b4cef8969564497eb52c3-4",
+        "receipt_to_commit_s": 0.15014386177062988,
+        "temporal": [
+          "current"
+        ],
+        "severity": "red"
+      },
+      {
+        "id": "p6-da0c18ea4a6b4cef8969564497eb52c3-5",
+        "receipt_to_commit_s": 0.1568300724029541,
+        "temporal": [
+          "current"
+        ],
+        "severity": "red"
+      },
+      {
+        "id": "p6-da0c18ea4a6b4cef8969564497eb52c3-6",
+        "receipt_to_commit_s": 0.1542820930480957,
+        "temporal": [
+          "current"
+        ],
+        "severity": "red"
+      },
+      {
+        "id": "p6-da0c18ea4a6b4cef8969564497eb52c3-7",
+        "receipt_to_commit_s": 0.15062594413757324,
+        "temporal": [
+          "current"
+        ],
+        "severity": "red"
+      },
+      {
+        "id": "p6-da0c18ea4a6b4cef8969564497eb52c3-8",
+        "receipt_to_commit_s": 0.15336203575134277,
+        "temporal": [
+          "current"
+        ],
+        "severity": "red"
+      },
+      {
+        "id": "p6-da0c18ea4a6b4cef8969564497eb52c3-9",
+        "receipt_to_commit_s": 0.15410709381103516,
+        "temporal": [
+          "current"
+        ],
+        "severity": "red"
+      },
+      {
+        "id": "p6-da0c18ea4a6b4cef8969564497eb52c3-10",
+        "receipt_to_commit_s": 0.14858722686767578,
+        "temporal": [
+          "current"
+        ],
+        "severity": "red"
+      },
+      {
+        "id": "p6-da0c18ea4a6b4cef8969564497eb52c3-11",
+        "receipt_to_commit_s": 0.14942121505737305,
+        "temporal": [
+          "current"
+        ],
+        "severity": "red"
+      },
+      {
+        "id": "p6-da0c18ea4a6b4cef8969564497eb52c3-12",
+        "receipt_to_commit_s": 0.1714458465576172,
+        "temporal": [
+          "current"
+        ],
+        "severity": "red"
+      },
+      {
+        "id": "p6-da0c18ea4a6b4cef8969564497eb52c3-13",
+        "receipt_to_commit_s": 0.06514596939086914,
+        "temporal": [
+          "current"
+        ],
+        "severity": "red"
+      },
+      {
+        "id": "p6-da0c18ea4a6b4cef8969564497eb52c3-14",
+        "receipt_to_commit_s": 0.062129974365234375,
+        "temporal": [
+          "current"
+        ],
+        "severity": "red"
+      },
+      {
+        "id": "p6-da0c18ea4a6b4cef8969564497eb52c3-15",
+        "receipt_to_commit_s": 0.08707904815673828,
+        "temporal": [
+          "current"
+        ],
+        "severity": "red"
+      },
+      {
+        "id": "p6-da0c18ea4a6b4cef8969564497eb52c3-16",
+        "receipt_to_commit_s": 0.08329010009765625,
+        "temporal": [
+          "current"
+        ],
+        "severity": "red"
+      },
+      {
+        "id": "p6-da0c18ea4a6b4cef8969564497eb52c3-17",
+        "receipt_to_commit_s": 0.16077494621276855,
+        "temporal": [
+          "current"
+        ],
+        "severity": "red"
+      },
+      {
+        "id": "p6-da0c18ea4a6b4cef8969564497eb52c3-18",
+        "receipt_to_commit_s": 0.9952020645141602,
+        "temporal": [
+          "current"
+        ],
+        "severity": "red"
+      },
+      {
+        "id": "p6-da0c18ea4a6b4cef8969564497eb52c3-19",
+        "receipt_to_commit_s": 0.8886771202087402,
+        "temporal": [
+          "current"
+        ],
+        "severity": "red"
+      },
+      {
+        "id": "p6-da0c18ea4a6b4cef8969564497eb52c3-20",
+        "receipt_to_commit_s": 0.10466599464416504,
+        "temporal": [
+          "current"
+        ],
+        "severity": "red"
+      },
+      {
+        "id": "p6-da0c18ea4a6b4cef8969564497eb52c3-21",
+        "receipt_to_commit_s": 0.13795208930969238,
+        "temporal": [
+          "current"
+        ],
+        "severity": "red"
+      },
+      {
+        "id": "p6-da0c18ea4a6b4cef8969564497eb52c3-22",
+        "receipt_to_commit_s": 0.1702251434326172,
+        "temporal": [
+          "current"
+        ],
+        "severity": "red"
+      },
+      {
+        "id": "p6-da0c18ea4a6b4cef8969564497eb52c3-23",
+        "receipt_to_commit_s": 0.20635104179382324,
+        "temporal": [
+          "current"
+        ],
+        "severity": "red"
+      },
+      {
+        "id": "p6-da0c18ea4a6b4cef8969564497eb52c3-24",
+        "receipt_to_commit_s": 0.24513792991638184,
+        "temporal": [
+          "current"
+        ],
+        "severity": "red"
+      },
+      {
+        "id": "p6-da0c18ea4a6b4cef8969564497eb52c3-25",
+        "receipt_to_commit_s": 0.28657007217407227,
+        "temporal": [
+          "current"
+        ],
+        "severity": "red"
+      },
+      {
+        "id": "p6-da0c18ea4a6b4cef8969564497eb52c3-26",
+        "receipt_to_commit_s": 0.22698116302490234,
+        "temporal": [
+          "current"
+        ],
+        "severity": "red"
+      },
+      {
+        "id": "p6-da0c18ea4a6b4cef8969564497eb52c3-27",
+        "receipt_to_commit_s": 0.1289680004119873,
+        "temporal": [
+          "current"
+        ],
+        "severity": "red"
+      },
+      {
+        "id": "p6-da0c18ea4a6b4cef8969564497eb52c3-28",
+        "receipt_to_commit_s": 0.06678414344787598,
+        "temporal": [
+          "current"
+        ],
+        "severity": "red"
+      },
+      {
+        "id": "p6-da0c18ea4a6b4cef8969564497eb52c3-29",
+        "receipt_to_commit_s": 0.07047390937805176,
+        "temporal": [
+          "current"
+        ],
+        "severity": "red"
+      }
+    ]
+  },
+  "planning_requests": 10,
+  "load_errors": [],
+  "planning_pending_at_end": 0,
+  "browser": {
+    "javascript_errors": [],
+    "external_requests": []
+  },
+  "database_bytes_after": 10925747,
+  "planning_jobs": [
+    {
+      "id": "planning-load-e6743ad79c454ea7beffda7a7067b501",
+      "kind": "planning",
+      "status": "completed",
+      "attempts": 1,
+      "lease_until": "2026-10-28T12:45:29.708535+00:00",
+      "owner": "25a138f6-0865-4ce3-abb9-fd776cbe30b5",
+      "created": "2026-10-28T12:40:27.205431+00:00",
+      "body": {
+        "request_id": "load-e6743ad79c454ea7beffda7a7067b501",
+        "priority": 100
+      },
+      "error": null,
+      "duration_s": 2.0119634959999644
+    },
+    {
+      "id": "planning-load-4b88f34c461c4f15afbcd4b2529173a3",
+      "kind": "planning",
+      "status": "completed",
+      "attempts": 1,
+      "lease_until": "2026-10-28T12:45:32.831082+00:00",
+      "owner": "25a138f6-0865-4ce3-abb9-fd776cbe30b5",
+      "created": "2026-10-28T12:40:27.439954+00:00",
+      "body": {
+        "request_id": "load-4b88f34c461c4f15afbcd4b2529173a3",
+        "priority": 100
+      },
+      "error": null,
+      "duration_s": 1.0184529750000024
+    },
+    {
+      "id": "planning-load-a984470bb1734463921df6238201318a",
+      "kind": "planning",
+      "status": "completed",
+      "attempts": 1,
+      "lease_until": "2026-10-28T12:45:33.865296+00:00",
+      "owner": "25a138f6-0865-4ce3-abb9-fd776cbe30b5",
+      "created": "2026-10-28T12:40:27.555523+00:00",
+      "body": {
+        "request_id": "load-a984470bb1734463921df6238201318a",
+        "priority": 100
+      },
+      "error": null,
+      "duration_s": 0.9557730529999731
+    },
+    {
+      "id": "planning-load-9363c2726aba4c88a71e0bcc043c99d9",
+      "kind": "planning",
+      "status": "completed",
+      "attempts": 1,
+      "lease_until": "2026-10-28T12:45:34.832190+00:00",
+      "owner": "25a138f6-0865-4ce3-abb9-fd776cbe30b5",
+      "created": "2026-10-28T12:40:27.672860+00:00",
+      "body": {
+        "request_id": "load-9363c2726aba4c88a71e0bcc043c99d9",
+        "priority": 100
+      },
+      "error": null,
+      "duration_s": 1.9255590590000224
+    },
+    {
+      "id": "planning-load-16cd11580bff44daadc746b201b7489f",
+      "kind": "planning",
+      "status": "completed",
+      "attempts": 1,
+      "lease_until": "2026-10-28T12:45:37.756762+00:00",
+      "owner": "25a138f6-0865-4ce3-abb9-fd776cbe30b5",
+      "created": "2026-10-28T12:40:27.900876+00:00",
+      "body": {
+        "request_id": "load-16cd11580bff44daadc746b201b7489f",
+        "priority": 100
+      },
+      "error": null,
+      "duration_s": 1.0383205410000187
+    },
+    {
+      "id": "planning-load-68c4afd2b0c847739158f0e3352c19a5",
+      "kind": "planning",
+      "status": "completed",
+      "attempts": 1,
+      "lease_until": "2026-10-28T12:45:38.806806+00:00",
+      "owner": "25a138f6-0865-4ce3-abb9-fd776cbe30b5",
+      "created": "2026-10-28T12:40:29.748780+00:00",
+      "body": {
+        "request_id": "load-68c4afd2b0c847739158f0e3352c19a5",
+        "priority": 100
+      },
+      "error": null,
+      "duration_s": 1.0280647580000277
+    },
+    {
+      "id": "planning-load-ae5414a92d294ef4bed26d3ee8c9ec1a",
+      "kind": "planning",
+      "status": "completed",
+      "attempts": 1,
+      "lease_until": "2026-10-28T12:45:27.211582+00:00",
+      "owner": "25a138f6-0865-4ce3-abb9-fd776cbe30b5",
+      "created": "2026-10-28T12:40:27.089427+00:00",
+      "body": {
+        "request_id": "load-ae5414a92d294ef4bed26d3ee8c9ec1a",
+        "priority": 100
+      },
+      "error": null,
+      "duration_s": 2.4843279579999944
+    },
+    {
+      "id": "planning-load-e4947052661b4b61b0737033f05b3ffc",
+      "kind": "planning",
+      "status": "completed",
+      "attempts": 1,
+      "lease_until": "2026-10-28T12:45:31.734715+00:00",
+      "owner": "25a138f6-0865-4ce3-abb9-fd776cbe30b5",
+      "created": "2026-10-28T12:40:27.320664+00:00",
+      "body": {
+        "request_id": "load-e4947052661b4b61b0737033f05b3ffc",
+        "priority": 100
+      },
+      "error": null,
+      "duration_s": 1.0806988840000145
+    },
+    {
+      "id": "planning-load-073f5b0562044a2b9069cf641546ba65",
+      "kind": "planning",
+      "status": "completed",
+      "attempts": 1,
+      "lease_until": "2026-10-28T12:45:36.769439+00:00",
+      "owner": "25a138f6-0865-4ce3-abb9-fd776cbe30b5",
+      "created": "2026-10-28T12:40:27.786745+00:00",
+      "body": {
+        "request_id": "load-073f5b0562044a2b9069cf641546ba65",
+        "priority": 100
+      },
+      "error": null,
+      "duration_s": 0.9727945430000204
+    },
+    {
+      "id": "planning-load-f9f2320b515940b48b14ada995c7fbda",
+      "kind": "planning",
+      "status": "completed",
+      "attempts": 1,
+      "lease_until": "2026-10-28T12:45:39.848023+00:00",
+      "owner": "25a138f6-0865-4ce3-abb9-fd776cbe30b5",
+      "created": "2026-10-28T12:40:31.806760+00:00",
+      "body": {
+        "request_id": "load-f9f2320b515940b48b14ada995c7fbda",
+        "priority": 100
+      },
+      "error": null,
+      "duration_s": 0.9859094519999871
+    },
+    {
+      "id": "planning-duplicate-353da3aeedfc46049c6eb47a3dbcc3a0",
+      "kind": "planning",
+      "status": "completed",
+      "attempts": 1,
+      "lease_until": "2026-10-28T12:45:41.351936+00:00",
+      "owner": "25a138f6-0865-4ce3-abb9-fd776cbe30b5",
+      "created": "2026-10-28T12:40:41.298010+00:00",
+      "body": {
+        "request_id": "duplicate-353da3aeedfc46049c6eb47a3dbcc3a0",
+        "priority": 100
+      },
+      "error": null,
+      "duration_s": 1.084580520999964
+    }
+  ],
+  "finished_at": "2026-10-28T12:40:44.729537+00:00"
+}

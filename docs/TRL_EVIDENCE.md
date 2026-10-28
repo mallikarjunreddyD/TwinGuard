@@ -40,3 +40,7 @@ Phase 4 adds tested advisory decision semantics, critical single-source escalati
 ## Phase 5 evidence
 
 The executed local platform provides authenticated MQTT/read-only numeric OPC UA, durable PostgreSQL state/recovery, original analytics/F1 and an actual 3D browser demonstration. PHASE5_VALIDATION.md links the sealed full E4 run, focused critical-priority correction, real screenshots, security tests and numerical resource/latency/capacity data. These establish software integration under the tested CPU workstation workload. They do not establish physical sensor accuracy, approved engineering limits, industrial-edge hardware latency, 90-day endurance, site security commissioning or TRL 6 for the industrial product. Physical commissioning and independent relevant-environment validation remain pending.
+
+## Phase 6 evidence
+
+Actual accepted-map planning, imperfect subsequent acquisitions, unchanged B3.1/F1, durable reviewed plans and a running browser are demonstrated. The held-out E5 evidence includes mixed/negative outcomes, wider-view false positives and persistent L2 inconclusiveness. These are synthetic software/research results, not physical sensor accuracy, certified flight safety, independent relevant-environment evidence or an increased industrial-product TRL. See PHASE6_VALIDATION.md and PHASE7_VALIDATION_BACKLOG.md.

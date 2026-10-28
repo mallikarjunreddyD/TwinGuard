@@ -49,4 +49,8 @@ Phase 4 now implements public-output evidence adaptation, strict temporal/spatia
 
 ## Phase 5 operational integration
 
-The initial monolith description above is historical. Phase 5 now deploys real Mosquitto, PostgreSQL, ingestion, independent fast/Open3D workers, the existing FastAPI app and a React/Three.js frontend. Source/clock/calibration/policy trust are independent. Durable jobs and locked F1 checkpoints commit assessments/advisory/outbox atomically. Critical crossings receive server-derived scheduling priority without changing F1 eligibility. See PHASE5_ARCHITECTURE.md and PHASE5_VALIDATION.md for actual executed evidence. No Phase 6 planner or plant control exists.
+The initial monolith description above is historical. Phase 5 now deploys real Mosquitto, PostgreSQL, ingestion, independent fast/Open3D workers, the existing FastAPI app and a React/Three.js frontend. Source/clock/calibration/policy trust are independent. Durable jobs and locked F1 checkpoints commit assessments/advisory/outbox atomically. Critical crossings receive server-derived scheduling priority without changing F1 eligibility. See PHASE5_ARCHITECTURE.md and PHASE5_VALIDATION.md for actual executed evidence. Phase 6 now adds the planning layer described below; plant control remains absent.
+
+## Phase 6 planning integration
+
+Public conditions/evidence/coverage become frozen planning snapshots. The dedicated one-CPU planning worker raycasts only accepted geometry, checks suitability/static constraints and persists recommendations outside the F1 checkpoint lock. Content-addressed artifacts hold plan/cell geometry; PostgreSQL holds requests, lineage, reviews and result links. The separate synthetic controller acquires imperfect measurements only after plan freezing, then uses unchanged B3.1/F1 and public-data replanning. See PHASE6_ARCHITECTURE.md and PHASE6_VALIDATION.md. No physical command output exists.

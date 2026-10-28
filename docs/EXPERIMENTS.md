@@ -37,3 +37,7 @@ E3 is implemented with separate E3-A controlled-semantic and E3-B actual-analyti
 ## Executed Phase 5 E4
 
 E4 now runs actual local MQTT/OPC UA, PostgreSQL, original analytics/F1, API and real browser workflows. Full E4: 6,072 observations / 6,075 completed jobs, 16.86 minutes; three normal workloads retained all 1,286 distinct published readings. Initial FIFO timing exposed stale critical data; the final focused priority/revision-cache correction qualified all 186 critical readings with 302 older ordinary jobs pending. The failed/transport-overload runs remain preserved. Quantiles, recovery, resources, capacity projections and comparison limits are in PHASE5_VALIDATION.md. E1/E2/E3 results and numerical algorithms are unchanged. Source/API/browser times are actual software-loopback measurements, never field latency.
+
+## Executed Phase 6 E5
+
+E5 is Risk-Adaptive Viewpoint Planning and Evidence-Quality Improvement. The frozen P0/P1/P2/P3 comparison contains 540 paired trials, 30 independent held-out seeds and 2,160 method runs. Original sensing/B3.1/F1 are unchanged; result seals precede truth evaluation. Coverage efficiency improves over P0, while additional discoveries remain zero and P3 new-scan localized recall is lower than P0. See EXPERIMENT_E5.md and PHASE6_VALIDATION.md for exact denominators, paired-seed intervals, scenario limitations, actual L2 probes and planning-only ablations.

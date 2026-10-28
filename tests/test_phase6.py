@@ -401,3 +401,141 @@ def test_durable_plan_idempotent_retry_and_api(database, monkeypatch):
         )
     finally:
         app.dependency_overrides.clear()
+
+
+def test_healthy_complete_controlled_coverage_avoids_inspection(setup):
+    c, s, state, views = setup
+    ids = np.where(s.assets == "BW-01")[0].tolist()
+    area = s.area_of(ids)
+    coverage = SurfaceCoverageEstimate(
+        asset_id="BW-01",
+        reference_hash=s.hash,
+        modeled_area_m2=area,
+        observed_cells=ids,
+        qualified_cells=ids,
+        observed_area_m2=area,
+        qualified_area_m2=area,
+        acquired_at=NOW,
+        available_at=NOW,
+        source_ids=["controlled-E5-A"],
+    )
+    healthy = state.model_copy(
+        update={
+            "assets": [AssetPlanningState(asset_id="BW-01", severity="green", confidence=1)],
+            "coverage": [coverage],
+        }
+    )
+    outcome = plan(s, healthy, c, InspectionPlanningRequest(request_id="healthy"), views)
+    assert outcome.status == "continue_monitoring" and not outcome.steps
+
+
+def test_exhausted_planning_retries_visible(database, monkeypatch):
+    from twinguard.edge import planning
+    from twinguard.inspection import candidates
+
+    def broken(*args, **kwargs):
+        raise ValueError("Controlled invalid reference/support failure")
+
+    monkeypatch.setattr(candidates, "generate", broken)
+    planning.submit(database, InspectionPlanningRequest(request_id="failure"), "operator")
+    for _ in range(3):
+        assert planning.run_one(database, "worker")
+    with database.connect() as c:
+        request = get(c, "planning_request", "failure")
+        assert request["status"] == "failed" and "support failure" in request["error"]
+    assert not planning.run_one(database, "worker")
+
+
+def test_simulation_links_require_review_and_completed_inspection(database, monkeypatch):
+    from twinguard.edge import planning, api, planning_api
+    from twinguard.api.app import app
+
+    monkeypatch.setattr(planning_api, "db", lambda: database)
+    planning.submit(
+        database, InspectionPlanningRequest(request_id="simulation", budget_views=1), "operator"
+    )
+    assert planning.run_one(database, "worker")
+    with database.connect() as c:
+        result = planning.get_plan(c, get(c, "planning_request", "simulation")["plan_id"])
+    app.dependency_overrides[api.user] = lambda: {"actor": "operator", "role": "operator"}
+    try:
+        client = TestClient(app)
+        ident = result["plan_id"]
+        view = next(
+            v
+            for v in result["candidates"]
+            if v["viewpoint_id"] == result["steps"][0]["viewpoint_id"]
+        )
+        body = {
+            "result_id": "link",
+            "viewpoint_id": view["viewpoint_id"],
+            "inspection_job_id": "missing",
+            "requested_pose_sha256": fingerprint(view["planned_pose"]),
+        }
+        assert (
+            client.post(
+                "/api/v1/inspection-plans/" + ident + "/simulation-results", json=body
+            ).status_code
+            == 409
+        )
+        assert (
+            client.post(
+                "/api/v1/inspection-plans/" + ident + "/review",
+                json={"decision": "approved_for_simulation", "rationale": "software test"},
+            ).status_code
+            == 200
+        )
+        assert (
+            client.post(
+                "/api/v1/inspection-plans/" + ident + "/simulation-results", json=body
+            ).status_code
+            == 409
+        )
+        assert client.get("/api/v1/inspection-plans/" + ident + "/simulation-results").json() == []
+    finally:
+        app.dependency_overrides.clear()
+
+
+def test_replan_counts_completed_views_not_merely_proposed_views(database):
+    from twinguard.edge import planning
+
+    planning.submit(
+        database, InspectionPlanningRequest(request_id="proposed", budget_views=1), "operator"
+    )
+    assert planning.run_one(database, "worker")
+    with database.connect() as c:
+        previous = planning.get_plan(c, get(c, "planning_request", "proposed")["plan_id"])
+    request = InspectionPlanningRequest(
+        request_id="before-execution", previous_plan_id=previous["plan_id"]
+    )
+    pending = planning.submit(database, request, "operator")
+    assert pending["snapshot"]["attempted_viewpoints"] == []
+    with database.begin() as c:
+        put(
+            c,
+            "planning_simulation",
+            "completed",
+            {
+                "binding": {
+                    "plan_id": previous["plan_id"],
+                    "viewpoint_id": previous["steps"][0]["viewpoint_id"],
+                },
+                "inspection": {"geometric": [{"asset_statuses": {"BW-01": "inconclusive"}}]},
+            },
+        )
+        put(
+            c,
+            "checkpoint",
+            "F1",
+            {
+                "evidence": {
+                    "e1": {"evidence_id": "e1", "asset_id": "BW-01", "reinspection_candidate": True}
+                }
+            },
+        )
+    actual = planning.submit(
+        database, request.model_copy(update={"request_id": "after-execution"}), "operator"
+    )
+    assert actual["snapshot"]["attempted_viewpoints"] == [previous["steps"][0]["viewpoint_id"]]
+    state = actual["snapshot"]["assets"][0]
+    assert state["unsuccessful_attempts"] == 1 and state["reinspection"] is True

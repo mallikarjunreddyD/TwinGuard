@@ -1,0 +1,20 @@
+# Phase 7 validation backlog
+
+These four Phase 5 concerns remain OPEN. Phase 6 synthetic planning does not close them. Phase 7 has not been implemented.
+
+| ID | Current status and original evidence | Required test and acceptance criteria | Assigned phase / output artifact | External dependency / actual result |
+|---|---|---|---|---|
+| P5-01 | OPEN. Full FIFO E4 qualified 6/186 current critical readings; focused corrected scheduler qualified 186/186 with 302 older ordinary jobs. Complete corrected mixed workload was not rerun. | Reexecute sustained mixed streaming, transport overload, restarts/recovery. Report freshness, late/missed critical readings and alert latency against unchanged temporal rules; all declared acceptance targets must be met. | Phase 7 / corrected full E4 report, raw delivery and job timestamps. | Sufficient representative edge runtime/hardware. Focused result remains evidence only for its workload; Phase 6 planning-load measurements cannot close this. |
+| P5-02 | OPEN. Phase 5 extrapolated substantial full-database growth (768.90 GiB/90 days); this was not an endurance result. | Measure history growth, bounded archival, checkpoint compaction, unresolved evidence retention, indexing/query performance, backup/restore; recalculate storage from actual workloads. Require preserved lineage and unresolved advisories after restore. | Phase 7 / retention, growth, query and restore report. | Representative storage/workload and equivalent duration. No 90-day endurance result executed. |
+| P5-03 | OPEN. Authenticated local MQTT/API and read-only OPC UA demonstrated; industrial deployment trust uncommissioned. | Commission TLS/certificates, calibration evidence, synchronized clocks, approved engineering limits, source/operator identity governance, deployment network review, physical integration and site approvals. Each field prerequisite must have attributable evidence. | Phase 7 / commissioning checklist and signed site evidence. | Field-only requirements PENDING/BLOCKED until hardware, approved limits and site authorization are available. No commissioning evidence fabricated. |
+| P5-04 | OPEN. L2 geometric abstention, B3.1 localized_relative scope, unknown global/support displacement, thermal image-only association remain. | Test hardware measurement sensitivity, alternative viewpoints physically, thermal calibration/physical association and independent surveyed reference. Report detection/qualification with unknowns separate from negatives. | Phase 7 / physical sensing and independent metrology report. | Actual LiDAR/thermal hardware and site/metrology access. Phase 6 synthetic alternative-view evidence does not establish physical capability. |
+
+Actual Phase 6 results and limitations are recorded in PHASE6_VALIDATION.md when execution completes. None of the items above is silently removed or marked closed by a focused benchmark.
+
+## Additional Phase 6 research limitations
+
+- **P6-01 — OPEN:** Validate wider-view B3.1 calibration/registration suitability on a disjoint development partition. E5 healthy-control new-view positives were 57/210 for P0/P2, 7/210 for P1 and 17/210 for P3. Do not tune the reported held-out benchmark or weaken B3.1 gates. Output: independent view-domain calibration/generalization study.
+- **P6-02 — OPEN:** Build equivalent public measurement calibration for competing assets and richer independent occlusion/sufficient-coverage/reinspection scenarios. Current S01/S06/S07/S15 interpretations are limited; keep actual partial coverage distinct from complete inspection. Output: preregistered expanded E5 protocol and results.
+- **P6-03 — OPEN:** Execute complete acquisition-level component ablations and longer representative planning-load tests, with terminal CPU/resource accounting and retained critical freshness. Planning-only ablations and the 30+30 replay load check do not substitute for these studies. Output: paired ablation/resource report.
+
+These are future validation requirements only. Phase 7 has not been implemented.
