@@ -23,6 +23,7 @@ class SourceRegistration(Contract):
     expected_interval_s: float = Field(default=5, gt=0)
     configuration_reference: str = "v1"
     allow_inspections: bool = False
+    capture_sensors: dict[str, list[str]] = Field(default_factory=dict)
 
 
 class Envelope(Contract):

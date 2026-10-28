@@ -304,3 +304,36 @@ def test_edge_has_no_private_imports():
     root = Path("src/twinguard/edge")
     for p in root.glob("*.py"):
         assert forbidden_imports(p, "twinguard.edge." + p.stem) == []
+
+
+def test_compaction_preserves_historical_active_support(db):
+    send(db, env())
+    run_one(db, "iot", "worker")
+    with db.begin() as c:
+        before = get(c, "checkpoint", "F1")
+        protected = {k for event in before["events"].values() for k in event["positive_ids"]}
+        # Age the retained evidence (an explicit test clock), preserving original event references.
+        state = FusionState.model_validate(before)
+        for e in state.evidence.values():
+            e.acquired_at = e.acquired_at - timedelta(days=1)
+        put(c, "checkpoint", "F1", state.model_dump(mode="json"))
+        checkpoint(c, [])
+        after = get(c, "checkpoint", "F1")
+        assert protected <= set(after["evidence"])
+        assert get(c, "condition", "BW-01")["assessment"]["severity"] == "red"
+
+
+def test_archived_message_still_rejects_conflicting_payload(db):
+    first = env()
+    assert send(db, first)["status"] == "accepted"
+    with db.begin() as c:
+        c.execute(inbox.update().values(received=(now() - timedelta(days=91)).isoformat()))
+    retain(db)
+    assert send(db, first)["status"] == "duplicate"
+    other = first.model_copy(update={"observation": sample("different-physical-observation")})
+    assert send(db, other)["status"] == "quarantined"
+
+
+def test_future_publisher_clock_rejected(db):
+    e = env().model_copy(update={"emitted_at": now() + timedelta(seconds=30)})
+    assert send(db, e)["status"] == "quarantined"

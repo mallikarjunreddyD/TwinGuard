@@ -60,6 +60,31 @@ def checkpoint(c, evidence, actions=()):
     state = FusionState.model_validate(raw)
     began = now()
     state, history = assess(state, evidence, p, began, actions=actions)
+    # Durable evidence rows retain full history; the operational working set preserves
+    # every live horizon, latest stream sample and all unresolved-event support.
+    protected = {
+        key
+        for event in state.events.values()
+        if event.lifecycle != "resolved"
+        for key in event.positive_ids + event.recovery_ids
+    }
+    latest = {}
+    for e in state.evidence.values():
+        key = (e.sensor_id, e.hypothesis, e.asset_id, e.scope, e.algorithm)
+        if key not in latest or e.acquired_at > latest[key].acquired_at:
+            latest[key] = e
+    protected.update(e.evidence_id for e in latest.values())
+    horizons = {
+        m: max([r.max_age_s for r in p.rules if m in r.modalities] + [0])
+        for m in ["fixed_sensor", "geometric", "thermal"]
+    }
+    state.evidence = {
+        key: e
+        for key, e in state.evidence.items()
+        if key in protected
+        or (began - e.acquired_at).total_seconds()
+        <= horizons[e.modality] + p.max_clock_uncertainty_s
+    }
     put(c, "checkpoint", "F1", state.model_dump(mode="json"))
     for e in evidence:
         put(c, "evidence", e.evidence_id, e.model_dump(mode="json"), e.asset_id)

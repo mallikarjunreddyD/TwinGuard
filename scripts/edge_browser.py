@@ -61,10 +61,10 @@ def run(output, url="http://localhost:18780"):
             "Evidence & policy trace" in page.locator("main").inner_text()
         )
         result["checks"]["red_advisory"] = "RED" in page.locator("main").inner_text()
-        buttons = page.get_by_role("button", name="Acknowledge review", exact=True)
+        buttons = page.locator("button:not([disabled])").filter(has_text="Acknowledge review")
         if buttons.count():
             buttons.first.click()
-            page.wait_for_timeout(800)
+            page.wait_for_timeout(2500)
             result["checks"]["acknowledgment"] = "acknowledged" in page.locator("main").inner_text()
         page.screenshot(path=str(output / "E4-8_critical_trace.png"), full_page=True)
         # A real interrupted browser connection resumes the durable stream with its cursor.

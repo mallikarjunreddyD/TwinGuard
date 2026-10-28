@@ -53,7 +53,8 @@
     "clock_basis": "controlled_simulation_replay",
     "calibration_status": "assumed_simulation",
     "calibration_reference": "assumed-v1",
-    "allow_inspections": false
+    "allow_inspections": false,
+    "capture_sensors": {}
   },
   {
     "source_id": "demo-uav",
@@ -63,7 +64,15 @@
     "clock_basis": "controlled_simulation_replay",
     "calibration_status": "assumed_simulation",
     "calibration_reference": "assumed-v1",
-    "allow_inspections": true
+    "allow_inspections": true,
+    "capture_sensors": {
+      "lidar-01": [
+        "BW-01"
+      ],
+      "thermal-01": [
+        "BW-01"
+      ]
+    }
   },
   {
     "source_id": "opcua-demo",
@@ -119,6 +128,7 @@
     "clock_basis": "controlled_simulation_replay",
     "calibration_status": "assumed_simulation",
     "calibration_reference": "assumed-v1",
-    "allow_inspections": false
+    "allow_inspections": false,
+    "capture_sensors": {}
   }
 ]

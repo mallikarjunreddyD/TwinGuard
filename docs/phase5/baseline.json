@@ -1,0 +1,8 @@
+{
+  "starting_branch": "phase-4-evidence-fusion",
+  "starting_commit": "a00bce3001ce5dd6567151c0d9b4400a3dd4dd6c",
+  "baseline_tests": 227,
+  "baseline_seconds": 40.26,
+  "baseline_warnings": 1,
+  "branch": "phase-5-edge-platform"
+}

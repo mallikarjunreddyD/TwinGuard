@@ -3,6 +3,7 @@
 import asyncio
 import os
 import time
+import uuid
 from pathlib import Path
 import paho.mqtt.client as mqtt
 from .contracts import now, Envelope
@@ -101,18 +102,25 @@ async def opc_server(bundle, endpoint):
     idx = await server.register_namespace("urn:twinguard:measured")
     obj = await server.nodes.objects.add_object(idx, "MeasuredChannels")
     nodes = {}
+    record_nodes = {}
     samples = [
         r for r in load_public_observations(Path(bundle)) if isinstance(r, SensorObservation)
     ]
     for sensor in sorted({r.sensor_id for r in samples}):
-        # Read-only string preserves the full public original record and units/status lineage.
         record = next(r for r in samples if r.sensor_id == sensor)
-        node = await obj.add_variable(ua.NodeId(sensor, idx), sensor, record.model_dump_json())
+        node = await obj.add_variable(ua.NodeId(sensor, idx), sensor, float(record.value))
+        await node.add_property(ua.NodeId(sensor + ".Unit", idx), "EngineeringUnits", record.unit)
+        record_nodes[sensor] = await obj.add_variable(
+            ua.NodeId(sensor + ".Record", idx), sensor + "Record", record.model_dump_json()
+        )
         nodes[sensor] = node
     async with server:
         while True:
             for record in samples:
-                await nodes[record.sensor_id].write_value(record.model_dump_json())
+                value = ua.DataValue(ua.Variant(float(record.value), ua.VariantType.Double))
+                value.SourceTimestamp = record.acquired_at
+                await nodes[record.sensor_id].write_value(value)
+                await record_nodes[record.sensor_id].write_value(record.model_dump_json())
                 await asyncio.sleep(0.03)
             await asyncio.sleep(1)
 
@@ -145,9 +153,17 @@ async def opc_client(endpoint, once=False):
                         node = client.get_node(ua.NodeId(sensor, idx))
                         dv = await node.read_data_value()
                         raw = dv.Value.Value
-                        if not isinstance(raw, str):
+                        if not isinstance(raw, (float, int)):
                             raise ValueError("Unexpected OPC UA datatype")
-                        observation = SensorObservation.model_validate_json(raw)
+                        unit = await client.get_node(ua.NodeId(sensor + ".Unit", idx)).read_value()
+                        if unit != reg["sensors"][sensor]["unit"]:
+                            raise ValueError("OPC UA engineering unit mismatch")
+                        public_record = await client.get_node(
+                            ua.NodeId(sensor + ".Record", idx)
+                        ).read_value()
+                        observation = SensorObservation.model_validate_json(public_record)
+                        if observation.value != raw:
+                            continue  # Non-atomic companion update; retry on the next read, never combine mismatched records.
                         with db.begin() as c:
                             put(
                                 c,
@@ -164,7 +180,7 @@ async def opc_client(endpoint, once=False):
                         if not dv.StatusCode.is_good():
                             observation = observation.model_copy(update={"quality": "invalid"})
                         env = Envelope(
-                            message_id="opc-" + observation.observation_id,
+                            message_id="opc-" + str(uuid.uuid4()),
                             source_id="opcua-demo",
                             sequence=observation.sequence_number or 0,
                             emitted_at=now(),

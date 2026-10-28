@@ -88,7 +88,11 @@ def stream(
     duplicates=False,
     reverse=False,
     limit=None,
+    step=False,
+    control_file=None,
 ):
+    if speed <= 0:
+        raise ValueError("Playback speed must be positive")
     output.mkdir(parents=True, exist_ok=False)
     secrets = json.loads((ROOT / ".edge/secrets.json").read_text())
     samples = [r for r in load_public_observations(data) if isinstance(r, SensorObservation)]
@@ -110,6 +114,18 @@ def stream(
     client.loop_start()
     try:
         for seq, record in enumerate(samples):
+            if step:
+                input("Enter to publish next measured observation: ")
+            paused = time.monotonic()
+            while (
+                control_file
+                and control_file.exists()
+                and json.loads(control_file.read_text()).get("paused", False)
+            ):
+                time.sleep(0.1)
+            adjustment = time.monotonic() - paused
+            start += adjustment
+            wall_begin += timedelta(seconds=adjustment)
             offset = (record.acquired_at - source_begin).total_seconds() / speed
             if not reverse:
                 time.sleep(max(0, start + offset - time.monotonic()))
@@ -201,6 +217,8 @@ if __name__ == "__main__":
     p.add_argument("--duplicates", action="store_true")
     p.add_argument("--reverse", action="store_true")
     p.add_argument("--limit", type=int)
+    p.add_argument("--step", action="store_true")
+    p.add_argument("--control-file", type=Path)
     a = p.parse_args()
     data = a.dataset or generate(
         ROOT / "experiments/outputs" / ("phase5-data-" + str(a.seed)),
@@ -216,4 +234,6 @@ if __name__ == "__main__":
         duplicates=a.duplicates,
         reverse=a.reverse,
         limit=a.limit,
+        step=a.step,
+        control_file=a.control_file,
     )

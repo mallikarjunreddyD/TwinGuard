@@ -1,3 +1,4 @@
+from twinguard.edge.contracts import Envelope, SourceRegistration
 from pathlib import Path
 import json
 from twinguard.fusion import models as fusion_models
@@ -67,6 +68,9 @@ PUBLIC_MODELS.update(
         )
     }
 )
+
+
+PUBLIC_MODELS.update({"EdgeEnvelope": Envelope, "SourceRegistration": SourceRegistration})
 
 CONFIG_MODELS = {
     "FusionPolicy": fusion_models.FusionPolicy,

@@ -1,0 +1,340 @@
+{
+  "$defs": {
+    "SensorObservation": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0.0",
+          "default": "1.0.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "acquired_at": {
+          "format": "date-time",
+          "title": "Acquired At",
+          "type": "string"
+        },
+        "received_at": {
+          "format": "date-time",
+          "title": "Received At",
+          "type": "string"
+        },
+        "processed_at": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Processed At"
+        },
+        "sequence_number": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Sequence Number"
+        },
+        "clock_quality": {
+          "default": "unknown",
+          "enum": [
+            "synchronized",
+            "uncertain",
+            "unknown"
+          ],
+          "title": "Clock Quality",
+          "type": "string"
+        },
+        "delivery_status": {
+          "default": "normal",
+          "enum": [
+            "normal",
+            "late",
+            "missing",
+            "duplicate",
+            "out_of_order"
+          ],
+          "title": "Delivery Status",
+          "type": "string"
+        },
+        "observation_id": {
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+          "title": "Observation Id",
+          "type": "string"
+        },
+        "sensor_id": {
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+          "title": "Sensor Id",
+          "type": "string"
+        },
+        "asset_id": {
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+          "title": "Asset Id",
+          "type": "string"
+        },
+        "measurement_type": {
+          "enum": [
+            "temperature",
+            "pressure",
+            "vibration_rms",
+            "operating_load",
+            "vector"
+          ],
+          "title": "Measurement Type",
+          "type": "string"
+        },
+        "value": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "items": {
+                "type": "number"
+              },
+              "type": "array"
+            }
+          ],
+          "title": "Value"
+        },
+        "unit": {
+          "enum": [
+            "degC",
+            "Pa",
+            "m/s2",
+            "1",
+            "m"
+          ],
+          "title": "Unit",
+          "type": "string"
+        },
+        "uncertainty": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Uncertainty"
+        },
+        "quality": {
+          "enum": [
+            "good",
+            "degraded",
+            "invalid",
+            "unknown"
+          ],
+          "title": "Quality",
+          "type": "string"
+        },
+        "provenance_id": {
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+          "title": "Provenance Id",
+          "type": "string"
+        },
+        "location_reference": {
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+          "title": "Location Reference",
+          "type": "string"
+        },
+        "measurement_source": {
+          "anyOf": [
+            {
+              "enum": [
+                "process",
+                "surface",
+                "phenomenological",
+                "operating_state"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Measurement Source"
+        },
+        "configuration_version": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Configuration Version"
+        },
+        "source_type": {
+          "anyOf": [
+            {
+              "enum": [
+                "synthetic",
+                "public_real_world",
+                "hybrid",
+                "physical_experimental"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Source Type"
+        }
+      },
+      "required": [
+        "acquired_at",
+        "received_at",
+        "observation_id",
+        "sensor_id",
+        "asset_id",
+        "measurement_type",
+        "value",
+        "unit",
+        "quality",
+        "provenance_id",
+        "location_reference"
+      ],
+      "title": "SensorObservation",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0",
+      "default": "1.0.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "message_id": {
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Message Id",
+      "type": "string"
+    },
+    "source_id": {
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Source Id",
+      "type": "string"
+    },
+    "site_id": {
+      "default": "plant-01",
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Site Id",
+      "type": "string"
+    },
+    "kind": {
+      "default": "observation",
+      "enum": [
+        "observation",
+        "inspection"
+      ],
+      "title": "Kind",
+      "type": "string"
+    },
+    "sequence": {
+      "minimum": 0,
+      "title": "Sequence",
+      "type": "integer"
+    },
+    "emitted_at": {
+      "format": "date-time",
+      "title": "Emitted At",
+      "type": "string"
+    },
+    "configuration_reference": {
+      "default": "v1",
+      "title": "Configuration Reference",
+      "type": "string"
+    },
+    "provenance_id": {
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Provenance Id",
+      "type": "string"
+    },
+    "mode": {
+      "default": "live",
+      "enum": [
+        "live",
+        "simulation_replay"
+      ],
+      "title": "Mode",
+      "type": "string"
+    },
+    "replay_acquired_at": {
+      "anyOf": [
+        {
+          "format": "date-time",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Replay Acquired At"
+    },
+    "observation": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/SensorObservation"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "artifact_sha256": {
+      "anyOf": [
+        {
+          "pattern": "^[a-f0-9]{64}$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Artifact Sha256"
+    }
+  },
+  "required": [
+    "message_id",
+    "source_id",
+    "sequence",
+    "emitted_at",
+    "provenance_id"
+  ],
+  "title": "Envelope",
+  "type": "object"
+}

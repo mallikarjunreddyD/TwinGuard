@@ -1,11 +1,15 @@
 """Generate local secrets (never committed), broker ACLs and source registry."""
 
+import argparse
 import hashlib
 import json
 import secrets
 from pathlib import Path
 import subprocess
 
+parser = argparse.ArgumentParser()
+parser.add_argument("--profile", choices=["simulation", "site-review"], default="simulation")
+args = parser.parse_args()
 root = Path(__file__).resolve().parents[1]
 out = root / ".edge"
 out.mkdir(exist_ok=True, mode=0o700)
@@ -29,13 +33,21 @@ if not secrets_path.exists():
     )
     secrets_path.chmod(0o600)
 s = json.loads(secrets_path.read_text())
+if "database_admin" not in s:
+    s["database_admin"] = secrets.token_urlsafe(32)
+    secrets_path.write_text(json.dumps(s))
+(out / "database-init.sql").write_text(
+    "CREATE ROLE twinguard LOGIN NOSUPERUSER NOCREATEDB NOCREATEROLE PASSWORD '"
+    + s["database"]
+    + "';\nGRANT CONNECT ON DATABASE twinguard TO twinguard;\nGRANT USAGE, CREATE ON SCHEMA public TO twinguard;\n"
+)
 (out / "runtime.env").write_text(
     "\n".join(
         [
             "TWINGUARD_DB=postgresql+psycopg://twinguard:" + s["database"] + "@database/twinguard",
-            "POSTGRES_PASSWORD=" + s["database"],
+            "POSTGRES_PASSWORD=" + s["database_admin"],
             "TWINGUARD_INGEST_PASSWORD=" + s["ingestion"],
-            "TWINGUARD_PROFILE=simulation",
+            "TWINGUARD_PROFILE=" + args.profile,
             "TWINGUARD_MQTT_HOST=broker",
             "TWINGUARD_ARTIFACTS=/data/artifacts",
             "TWINGUARD_ROOT=/app",
@@ -115,6 +127,9 @@ registry = [
         "calibration_status": "assumed_simulation",
         "calibration_reference": "assumed-v1",
         "allow_inspections": name == "demo-uav",
+        "capture_sensors": {"lidar-01": ["BW-01"], "thermal-01": ["BW-01"]}
+        if name == "demo-uav"
+        else {},
     }
     for name, identity in [
         ("demo-iot", "demo-iot"),
@@ -123,6 +138,18 @@ registry = [
     ]
 ]
 (root / "configs/edge/simulation-sources.json").write_text(json.dumps(registry, indent=2) + "\n")
+site = [
+    {
+        **r,
+        "clock_quality": "unknown",
+        "clock_basis": "unverified",
+        "calibration_status": "unknown",
+        "calibration_reference": None,
+        "allow_inspections": False,
+    }
+    for r in registry
+]
+(root / "configs/edge/site-review-sources.json").write_text(json.dumps(site, indent=2) + "\n")
 print(
     "Local secrets generated under .edge (ignored). Tokens are in .edge/secrets.json; never commit them."
 )

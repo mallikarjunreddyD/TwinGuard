@@ -85,17 +85,17 @@ def observation_query(
     limit: int = Query(100, ge=1, le=1000),
     offset: int = Query(0, ge=0),
     sensor: str | None = None,
-    since: str | None = None,
-    until: str | None = None,
+    since: datetime | None = None,
+    until: datetime | None = None,
     actor=Depends(user),
 ):
     q = select(observations).where(observations.c.asset == asset_id)
     if sensor:
         q = q.where(observations.c.sensor == sensor)
     if since:
-        q = q.where(observations.c.acquired >= datetime.fromisoformat(since).isoformat())
+        q = q.where(observations.c.acquired >= since.isoformat())
     if until:
-        q = q.where(observations.c.acquired <= datetime.fromisoformat(until).isoformat())
+        q = q.where(observations.c.acquired <= until.isoformat())
     with db().connect() as c:
         return [
             dict(r)
@@ -274,10 +274,45 @@ def monitoring(actor=Depends(user)):
                 if health.get("last_received")
                 else None
             )
+            channels = []
+            for sensor, mapping in reg["sensors"].items():
+                sample = (
+                    c.execute(
+                        select(observations)
+                        .where(observations.c.sensor == sensor)
+                        .order_by(observations.c.received.desc())
+                        .limit(1)
+                    )
+                    .mappings()
+                    .first()
+                )
+                channel_age = (
+                    (now() - datetime.fromisoformat(sample["received"])).total_seconds()
+                    if sample
+                    else None
+                )
+                channels.append(
+                    {
+                        "sensor_id": sensor,
+                        **mapping,
+                        "last_received": sample["received"] if sample else None,
+                        "last_valid": sample["received"]
+                        if sample
+                        and sample["body"]["quality"] == "good"
+                        and reg["calibration_status"] != "unknown"
+                        else None,
+                        "quality": sample["body"]["quality"] if sample else "missing",
+                        "stale": channel_age is None
+                        or channel_age > reg["expected_interval_s"] * 3,
+                        "clock_quality": reg["clock_quality"],
+                        "calibration_status": reg["calibration_status"],
+                    }
+                )
             result.append(
                 {
                     **reg,
                     **health,
+                    "channels": channels,
                     "age_s": age,
                     "connection": "connected"
                     if age is not None and age < reg["expected_interval_s"] * 3

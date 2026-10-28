@@ -1,0 +1,115 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0",
+      "default": "1.0.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "source_id": {
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Source Id",
+      "type": "string"
+    },
+    "transport_identity": {
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Transport Identity",
+      "type": "string"
+    },
+    "site_id": {
+      "default": "plant-01",
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Site Id",
+      "type": "string"
+    },
+    "sensors": {
+      "additionalProperties": {
+        "additionalProperties": {
+          "type": "string"
+        },
+        "type": "object"
+      },
+      "title": "Sensors",
+      "type": "object"
+    },
+    "active": {
+      "default": true,
+      "title": "Active",
+      "type": "boolean"
+    },
+    "clock_quality": {
+      "default": "unknown",
+      "enum": [
+        "unknown",
+        "uncertain",
+        "synchronized"
+      ],
+      "title": "Clock Quality",
+      "type": "string"
+    },
+    "clock_basis": {
+      "default": "unverified",
+      "title": "Clock Basis",
+      "type": "string"
+    },
+    "calibration_status": {
+      "default": "unknown",
+      "enum": [
+        "unknown",
+        "assumed_simulation",
+        "verified"
+      ],
+      "title": "Calibration Status",
+      "type": "string"
+    },
+    "calibration_reference": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Calibration Reference"
+    },
+    "expected_interval_s": {
+      "default": 5,
+      "exclusiveMinimum": 0,
+      "title": "Expected Interval S",
+      "type": "number"
+    },
+    "configuration_reference": {
+      "default": "v1",
+      "title": "Configuration Reference",
+      "type": "string"
+    },
+    "allow_inspections": {
+      "default": false,
+      "title": "Allow Inspections",
+      "type": "boolean"
+    },
+    "capture_sensors": {
+      "additionalProperties": {
+        "items": {
+          "type": "string"
+        },
+        "type": "array"
+      },
+      "title": "Capture Sensors",
+      "type": "object"
+    }
+  },
+  "required": [
+    "source_id",
+    "transport_identity",
+    "sensors"
+  ],
+  "title": "SourceRegistration",
+  "type": "object"
+}

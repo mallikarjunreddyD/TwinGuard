@@ -1,6 +1,7 @@
 """Only authenticated service identity + independent source registry authorize data."""
 
 import hashlib
+from datetime import timedelta
 from sqlalchemy import select, func
 from .contracts import Envelope, SourceRegistration, now
 from .storage import inbox, observations, jobs, get, put, audit, enqueue, emit
@@ -35,6 +36,10 @@ def ingest(db, raw, authenticated_identity, received_topic, artifact_store=None)
                 raise ValueError("unauthorized_topic")
             if env.configuration_reference != reg.configuration_reference:
                 raise ValueError("unsupported_configuration")
+            if env.emitted_at.tzinfo is not None and env.emitted_at > received + timedelta(
+                seconds=2
+            ):
+                raise ValueError("future_publisher_timestamp")
             if (
                 env.emitted_at.tzinfo is None
                 or abs((received - env.emitted_at).total_seconds()) > 3600
@@ -105,6 +110,13 @@ def ingest(db, raw, authenticated_identity, received_topic, artifact_store=None)
                 if old is not None:
                     if old != obs.model_dump(mode="json"):
                         raise ValueError("conflicting_observation_identity")
+                    health.update(
+                        last_received=received.isoformat(),
+                        quality=obs.quality,
+                        clock_quality=reg.clock_quality,
+                        calibration_status=reg.calibration_status,
+                    )
+                    put(c, "source_health", env.source_id, health)
                     audit(c, "duplicate_observation", observation_id=obs.observation_id)
                     return {"status": "duplicate", "id": obs.observation_id}
                 meta = {
@@ -146,7 +158,21 @@ def ingest(db, raw, authenticated_identity, received_topic, artifact_store=None)
             else:
                 if not reg.allow_inspections or artifact_store is None:
                     raise ValueError("inspection_not_authorized")
-                artifact_store.verify_bundle(env.artifact_sha256)
+                captures = artifact_store.verify_bundle(env.artifact_sha256)
+                from twinguard.core.contracts import InspectionCapture
+
+                for capture in captures:
+                    if isinstance(capture, InspectionCapture):
+                        allowed = reg.capture_sensors.get(capture.sensor_id, [])
+                        if not set(capture.asset_ids) <= set(allowed):
+                            raise ValueError("unauthorized_inspection_sensor_asset")
+                if env.mode == "simulation_replay" and (
+                    reg.clock_basis != "controlled_simulation_replay"
+                    or env.replay_acquired_at is None
+                    or env.replay_acquired_at.tzinfo is None
+                    or env.replay_acquired_at > received
+                ):
+                    raise ValueError("untrusted_inspection_replay_clock")
                 enqueue(
                     c,
                     env.message_id,
