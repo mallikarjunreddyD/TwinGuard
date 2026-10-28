@@ -2,7 +2,6 @@
   "baseline_commit": "a00bce3001ce5dd6567151c0d9b4400a3dd4dd6c",
   "full_E4_commit": "32ac54d86216d0deef3d34676d4e018791fd7555",
   "priority_correction_commit": "c62a159b72d70cd147078fd4826f064eff702119",
-  "current_commit": "c62a159b72d70cd147078fd4826f064eff702119",
   "source_sha256": {
     "src/twinguard/edge/__init__.py": "65ad6b18a94bc41c9685feffd2170d942788730aad3fd6b4dfd06e567ed12dd5",
     "src/twinguard/edge/admin.py": "735f64209784f15e8cf7f56dd0e36f909de5f3add206b5278962d9eca1f29a78",
@@ -24,5 +23,7 @@
     "twinguard-edge-api:local": "sha256:0f12abf1dd779db2b45652db526075efc14d003f001ffb8967d726cc489efa29",
     "twinguard-edge-worker:local": "sha256:bfd31088bdd467557f908f0d6ba6f00072c76fd572169e7a123a81b3679c0519",
     "twinguard-edge-frontend:local": "sha256:78def33512d4d7b2edbad212205406fccc5a611da9a75f94463edc5fcf8e0dbd"
-  }
+  },
+  "source_revision_before_publication": "c62a159b72d70cd147078fd4826f064eff702119",
+  "publication_note": "Report/CLI/documentation publication commits may follow this source freeze; exact production module hashes below identify the validated code."
 }
