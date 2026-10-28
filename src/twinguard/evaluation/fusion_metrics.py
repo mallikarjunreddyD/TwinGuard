@@ -46,18 +46,21 @@ def evaluate_case(predictions, label):
         if positive and active
         else None
     )
-    used_stale = sum(
-        bool(
-            set(d["positive_ids"])
-            & {
-                t["evidence_id"]
+    used_stale = 0
+    for d in selected:
+        eligible_hazards = set(d["triggered_hazards"]) if d["method"] == "F1" else None
+        invalid_support = False
+        for identifier in d["positive_ids"]:
+            valid = [
+                t
                 for t in d["temporal"]
-                if t["status"]
-                in ["stale", "clock_unknown", "future", "not_available", "invalid", "inconclusive"]
-            }
-        )
-        for d in selected
-    )
+                if t["evidence_id"] == identifier
+                and t["applicable"]
+                and (eligible_hazards is None or t["hazard_id"] in eligible_hazards)
+            ]
+            if not valid:
+                invalid_support = True
+        used_stale += invalid_support
     notices = json.loads((predictions / "advisories.json").read_text())
     events = json.loads((predictions / "events.json").read_text())
     real_notices = [n for n in notices if n["transition"].startswith("opened")]
@@ -119,7 +122,11 @@ def evaluate_case(predictions, label):
         "policy_trace_complete": all(
             d["policy_sha256"]
             and d["rationale"]
-            and (d["positive_ids"] or d["assessment"]["severity"] not in ["amber", "red"])
+            and (
+                d["positive_ids"]
+                or d.get("historical_positive_ids")
+                or d["assessment"]["severity"] not in ["amber", "red"]
+            )
             for d in selected
         ),
         "explanation_missing_identified": all(

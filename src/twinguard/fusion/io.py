@@ -129,7 +129,7 @@ def write_run(output, state, history, policy, metadata):
     seal_public_predictions(output)
 
 
-def prepare(analysis_run, policy, clock_quality="unknown"):
+def prepare(analysis_run, policy, clock_quality="unknown", dataset_override=None):
     root = Path(analysis_run)
     seal_path = root / "predictions_ready.json"
     if not seal_path.is_file():
@@ -147,8 +147,12 @@ def prepare(analysis_run, policy, clock_quality="unknown"):
         dataset = next(
             (p for p in Path(public["current"]).parents if (p / "manifest.json").is_file()), None
         )
+    if dataset_override is not None:
+        dataset = Path(dataset_override)
     if dataset is None:
-        raise ValueError("Public observation manifest reference is required")
+        raise ValueError(
+            "Public observation manifest reference is required; pass --dataset for a standalone thermal CLI result"
+        )
     records = load_public_observations(Path(dataset))
     by_id = {getattr(r, "capture_id", getattr(r, "observation_id", "")): r for r in records}
     available = datetime.fromisoformat(seal["finished_at"])
@@ -171,7 +175,9 @@ def prepare(analysis_run, policy, clock_quality="unknown"):
                 rationale="Offline public prediction seal completion; acquisition clock separately declared",
             )
             result.extend(adapters.geometry(g, reg, processing, source.provenance_id))
-        elif path.suffix == ".json" and path.name.startswith("operating-"):
+        elif path.suffix == ".json" and (
+            path.name.startswith("operating-") or path.name == "operating.json"
+        ):
             for raw in json.loads(path.read_text()):
                 p = OperatingPrediction.model_validate(raw)
                 source = by_id[p.observation_id]
@@ -185,7 +191,9 @@ def prepare(analysis_run, policy, clock_quality="unknown"):
                     rationale="Offline seal completion",
                 )
                 result.append(adapters.operating(p, source, processing))
-        elif path.suffix == ".json" and path.parent.name in ["conditioned", "static"]:
+        elif path.suffix == ".json" and (
+            path.parent.name in ["conditioned", "static"] or path.name == "thermal.json"
+        ):
             raw = json.loads(path.read_text())
             if "saturation_known" not in raw:
                 continue
@@ -201,6 +209,8 @@ def prepare(analysis_run, policy, clock_quality="unknown"):
                 rationale="Offline seal completion",
             )
             result.extend(adapters.thermal(t, processing, source.provenance_id))
+    if not result:
+        raise ValueError("No supported analytical records in the sealed prediction directory")
     for source in records:
         if isinstance(source, InspectionCapture):
             continue

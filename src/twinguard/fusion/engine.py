@@ -266,6 +266,15 @@ def assess(
                 if event and event.lifecycle not in ["candidate", "resolved"]:
                     active.append(event)
                     support.extend(event.positive_ids)
+                    if not accepted:
+                        rationale.append(
+                            rule.hazard_id
+                            + ": active advisory retained pending qualified recovery ("
+                            + str(rule.recovery_count)
+                            + " new normal acquisitions spanning "
+                            + str(rule.recovery_duration_s)
+                            + " s), or authorized review; acknowledgment/expiry alone does not resolve it"
+                        )
                     if event.monitoring_unavailable:
                         rationale.append(
                             rule.hazard_id
@@ -377,6 +386,9 @@ def assess(
             )
             if not any(r.asset_id == asset for r in policy.requirements) and not active:
                 severity = "unknown"
+                rationale.append(
+                    "No normal-coverage requirements are configured for this asset scope; its condition remains unknown"
+                )
         unknown = [e.evidence_id for e in context if e.finding not in ["positive", "negative"]]
         stale = [t.evidence_id for t in temporal if not t.applicable]
         if any(

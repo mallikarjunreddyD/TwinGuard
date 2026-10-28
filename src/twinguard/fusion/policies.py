@@ -7,7 +7,11 @@ from .models import FusionPolicy
 
 def policy_hash(policy):
     return hashlib.sha256(
-        json.dumps(policy.model_dump(mode="json"), sort_keys=True, separators=(",", ":")).encode()
+        json.dumps(
+            FusionPolicy.model_validate(policy.model_dump(mode="json")).model_dump(mode="json"),
+            sort_keys=True,
+            separators=(",", ":"),
+        ).encode()
     ).hexdigest()
 
 

@@ -17,6 +17,11 @@ def add_commands(sub):
         if name == "prepare":
             p.add_argument("--analytics-run", type=Path, required=True)
             p.add_argument(
+                "--dataset",
+                type=Path,
+                help="Original public dataset for standalone thermal outputs with capture-only upstream linkage",
+            )
+            p.add_argument(
                 "--clock-quality",
                 choices=["unknown", "uncertain", "synchronized"],
                 default="unknown",
@@ -38,7 +43,7 @@ def execute(args):
         print("Valid policy", policy.policy_id, policy.version, policy_hash(policy))
         return
     if args.fusion_command == "prepare":
-        values = prepare(args.analytics_run, policy, args.clock_quality)
+        values = prepare(args.analytics_run, policy, args.clock_quality, args.dataset)
         save_evidence(
             args.output_dir,
             values,

@@ -461,3 +461,103 @@ def test_qualified_candidate_is_covered_but_not_green(policy):
     assert wall.assessment.severity == "unknown"
     assert "operating-pressure-coverage" not in wall.missing_requirements
     assert any("await applicable activation" in reason for reason in wall.rationale)
+
+
+@pytest.mark.parametrize("kind", ["operating", "thermal"])
+def test_prepare_standalone_cli_formats(policy, tmp_path, kind):
+    from twinguard.evaluation.experiments import generate_case
+    from twinguard.core.observations import load_public_observations
+    from twinguard.core.contracts import InspectionCapture
+    from twinguard.analytics.pipeline import save_json, seal_predictions
+    from twinguard.fusion.io import prepare
+
+    data = tmp_path / "data"
+    generate_case(ROOT, data, "standalone-prepare", 80801, e2=True)
+    records = load_public_observations(data)
+    output = tmp_path / "standalone"
+    output.mkdir()
+    if kind == "operating":
+        source = next(
+            r
+            for r in records
+            if isinstance(r, SensorObservation) and r.measurement_type == "pressure"
+        )
+        result = OperatingPrediction(
+            prediction_id="standalone-prediction",
+            observation_id=source.observation_id,
+            sensor_id=source.sensor_id,
+            asset_id=source.asset_id,
+            acquired_at=source.acquired_at,
+            available_at=source.received_at,
+            model_id="healthy-model",
+            method="conditioned_quality",
+            observed_value=source.value,
+            estimated_reference=source.value,
+            residual=0,
+            uncertainty_score=500,
+            threshold=2500,
+            unit="Pa",
+            significant=False,
+            status="valid",
+            quality_flags=[],
+        )
+        save_json(output / "operating.json", [result.model_dump(mode="json")])
+        inputs = {"dataset": str(data)}
+    else:
+        source = next(
+            r for r in records if isinstance(r, InspectionCapture) and r.modality == "thermal"
+        )
+        result = ThermalResult(
+            analysis_id="standalone-thermal",
+            capture_id=source.capture_id,
+            acquired_at=source.acquired_at,
+            model_id="healthy-template",
+            method="conditioned",
+            status="valid",
+            valid_pixels=100,
+            saturated_pixels=0,
+            total_pixels=100,
+            saturation_known=True,
+            regions=[],
+            significant=False,
+            quality_flags=[],
+        )
+        save_json(output / "thermal.json", result)
+        inputs = {"capture": source.capture_id}
+    seal_predictions(output, {}, inputs)
+    normalized = prepare(output, policy, dataset_override=data, clock_quality="synchronized")
+    assert any(
+        e.modality == ("thermal" if kind == "thermal" else "fixed_sensor")
+        and e.source_id == result.analysis_id
+        if kind == "thermal"
+        else e.source_id == result.prediction_id
+        for e in normalized
+    )
+
+
+def test_policy_hash_stable_across_resolved_json_roundtrip(policy):
+    restored = policy.model_validate_json(policy.model_dump_json())
+    assert policy_hash(restored) == policy_hash(policy)
+    records, actions, p, at, _ = controlled(5, 1, policy)
+    state, _ = replay(records, p, at, actions)
+    # A checkpoint must accept the same semantic policy loaded from its saved JSON.
+    loaded = p.model_validate_json(p.model_dump_json())
+    assess(
+        FusionState.model_validate_json(state.model_dump_json()),
+        [],
+        loaded,
+        at + timedelta(seconds=1),
+    )
+
+
+def test_recovery_wait_and_unconfigured_scope_have_correct_explanations(policy):
+    records, _, p, at, _ = controlled(5, 1, policy)
+    records.append(evidence("normal-after-event", "pressure", "negative", 4))
+    _, history = replay(records, p, at)
+    wall = [d for d in history if d.assessment.asset_id == "BW-01"][-1]
+    assert wall.assessment.severity == "red"
+    assert any("pending qualified recovery" in text for text in wall.rationale)
+    assert not any("No active abnormality" in text for text in wall.rationale)
+    context = [d for d in history if d.assessment.asset_id == "DR-01"][-1]
+    assert context.assessment.severity == "unknown"
+    assert any("No normal-coverage requirements" in text for text in context.rationale)
