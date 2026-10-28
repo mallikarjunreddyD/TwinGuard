@@ -1,0 +1,28 @@
+{
+  "baseline_commit": "a00bce3001ce5dd6567151c0d9b4400a3dd4dd6c",
+  "full_E4_commit": "32ac54d86216d0deef3d34676d4e018791fd7555",
+  "priority_correction_commit": "c62a159b72d70cd147078fd4826f064eff702119",
+  "current_commit": "c62a159b72d70cd147078fd4826f064eff702119",
+  "source_sha256": {
+    "src/twinguard/edge/__init__.py": "65ad6b18a94bc41c9685feffd2170d942788730aad3fd6b4dfd06e567ed12dd5",
+    "src/twinguard/edge/admin.py": "735f64209784f15e8cf7f56dd0e36f909de5f3add206b5278962d9eca1f29a78",
+    "src/twinguard/edge/api.py": "495b31c612627d9fec34065058dd27e8af0df6dedcfb957ebc970b09bd1dcaf9",
+    "src/twinguard/edge/artifacts.py": "a0359cd49aa7ee1b185ef194eedb5ad5889ca00f9ffa497ede68afb9ba6d99cc",
+    "src/twinguard/edge/bootstrap.py": "f2d1e682103967d9b1fe02d171ff4a8e1d95a79f4fccb4b5a9ef529d938203ab",
+    "src/twinguard/edge/contracts.py": "d54813e09a3cd707f568c1c245f13c9e6b70667aa1254f66e8f14a706809677f",
+    "src/twinguard/edge/ingestion.py": "b439eb7314581f75843035b43c4ff6470b68402a2140b67da8597e1a15683d89",
+    "src/twinguard/edge/protocols.py": "9d686c9c0e4e57e5bc26ef9f0598bf943207ffb89b3ff3f992ff2ce06b6384a7",
+    "src/twinguard/edge/storage.py": "094b18b42cc9b96adfef84fe5be9adefc7b5e49fe303aaddbfbe5721bbb69d38",
+    "src/twinguard/edge/worker.py": "54c444e8592be7d1671a52dc103f88f35efb3cd1044e7f9b8a5aaae30be6b6e2",
+    "frontend/src/Plant.tsx": "ca0b3c60cd4db05cfd763d778804b6a2851d6289cd550364e2202478ceceb619",
+    "frontend/src/main.tsx": "393b9bf1e1310d17370207cdcf536e0204cdc26c606577a64c76c7d4c623d3d3",
+    "frontend/src/semantics.test.ts": "a8c7ecaf3d47b617ffe16b8233dc3c89a158b058be6ffe457a7b2922c41e1908",
+    "frontend/src/semantics.ts": "553797921303497f458b43d7e2bfeb80f251c725542d3abde105869a3592d8d8",
+    "frontend/src/style.css": "136fefafb23e9215601e79115ef508c5c7cc903179cdb6e2620ea6a80de73394"
+  },
+  "images": {
+    "twinguard-edge-api:local": "sha256:0f12abf1dd779db2b45652db526075efc14d003f001ffb8967d726cc489efa29",
+    "twinguard-edge-worker:local": "sha256:bfd31088bdd467557f908f0d6ba6f00072c76fd572169e7a123a81b3679c0519",
+    "twinguard-edge-frontend:local": "sha256:78def33512d4d7b2edbad212205406fccc5a611da9a75f94463edc5fcf8e0dbd"
+  }
+}

@@ -1,12 +1,12 @@
-# For a reviewed LAN only: externally provision certificate CNs equal registered source identities.
+# Controlled LAN: authenticated source usernames over server-authenticated TLS.
 listener 8883
 allow_anonymous false
+password_file /mosquitto/config/passwords
+acl_file /mosquitto/config/acl
 cafile /run/secrets/ca.crt
 certfile /run/secrets/broker.crt
 keyfile /run/secrets/broker.key
-require_certificate true
-use_identity_as_username true
-acl_file /mosquitto/config/acl
+require_certificate false
 persistence true
 persistence_location /mosquitto/data/
 max_packet_size 131072

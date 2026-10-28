@@ -1,0 +1,6 @@
+{
+  "numeric_read": true,
+  "unit": "Pa",
+  "write_rejected": true,
+  "reason": "BadUserAccessDenied"
+}

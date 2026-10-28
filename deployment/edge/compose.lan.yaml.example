@@ -1,0 +1,23 @@
+# Review addresses/firewall and provision external certificates before use.
+# This is an uncommissioned configuration template, not measured LAN deployment evidence.
+services:
+  broker:
+    volumes:
+      - ../.edge/mosquitto-tls.conf:/mosquitto/config/mosquitto.conf:ro
+      - ../.edge/certs/ca.crt:/run/secrets/ca.crt:ro
+      - ../.edge/certs/broker.crt:/run/secrets/broker.crt:ro
+      - ../.edge/certs/broker.key:/run/secrets/broker.key:ro
+    ports: ['${TWINGUARD_LAN_IP:?Set reviewed LAN bind address}:8883:8883']
+    networks: [edge, access]
+  ingestion:
+    environment:
+      TWINGUARD_MQTT_PORT: '8883'
+      TWINGUARD_MQTT_CA: /run/secrets/ca.crt
+    volumes:
+      - ../.edge/certs/ca.crt:/run/secrets/ca.crt:ro
+  frontend:
+    volumes:
+      - ../.edge/nginx-tls.conf:/etc/nginx/conf.d/default.conf:ro
+      - ../.edge/certs/server.crt:/run/secrets/server.crt:ro
+      - ../.edge/certs/server.key:/run/secrets/server.key:ro
+    ports: ['${TWINGUARD_LAN_IP:?Set reviewed LAN bind address}:8443:8443']

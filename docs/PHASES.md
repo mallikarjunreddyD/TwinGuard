@@ -32,3 +32,7 @@ Phase 3.1 is a corrective research/validation increment within canonical Phase 3
 ## Phase 4 update
 
 Phase 4 advisory fusion and E3 are implemented. The Phase 5 handoff is the deterministic assess/replay interface, versioned public evidence/policy/assessment/event models and JSON checkpoints. MQTT/OPC UA, durable production storage, authenticated actions, notification transport and dashboards remain Phase 5 work and are not started here. Green is scoped policy coverage, not guaranteed safety.
+
+## Phase 5 update
+
+Phase 5 integrated local research demonstrator is implemented and executed: real authenticated protocols, durable processing/state, existing analytics/F1, versioned APIs, 3D dashboard and E4 evidence. See PHASE5_VALIDATION.md for every acceptance decision and actual shortcomings/corrections. Phase 6 handoff is CONDITIONAL GO for software research interfaces; physical/site deployment remains PARTIAL. No Phase 6 optimization, UAV control or plant actuation was implemented.

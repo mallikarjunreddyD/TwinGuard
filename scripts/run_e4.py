@@ -257,7 +257,7 @@ def main(output, smoke=False, project="twinguard-e4"):
             )
         # First red happens here, while a real browser and resource sampling run concurrently.
         for i in range(repeats):
-            trial("B7", 8210 + i, kind="critical", speed=10, limit=120 if smoke else None)
+            trial("B7", 8210 + i, kind="critical", speed=10, limit=None)
         trial("B2", 8220, speed=80)
         trial("B3", 8221, speed=30, duplicates=True, reverse=True)
         for name, service, seed in [

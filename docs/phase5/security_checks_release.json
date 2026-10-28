@@ -1,0 +1,44 @@
+{
+  "executed_at": "2026-10-28T08:13:32.511902+00:00",
+  "results": {
+    "invalid_schema": {
+      "quarantined": true
+    },
+    "wrong_asset": {
+      "quarantined": true
+    },
+    "wrong_unit": {
+      "quarantined": true
+    },
+    "unregistered_source": {
+      "quarantined": true
+    },
+    "future_timestamp": {
+      "quarantined": true
+    },
+    "nonfinite": {
+      "quarantined": true
+    },
+    "anonymous_api": {
+      "status": 401
+    },
+    "viewer_operator_action": {
+      "status": 403
+    },
+    "private_artifact": {
+      "status": 404
+    },
+    "path_traversal": {
+      "status": 422,
+      "detail": {
+        "detail": "unsafe_artifact_path"
+      }
+    },
+    "private_scope": {
+      "status": 422,
+      "detail": {
+        "detail": "non_public_artifact"
+      }
+    }
+  }
+}

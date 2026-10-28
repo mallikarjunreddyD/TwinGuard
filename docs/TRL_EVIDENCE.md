@@ -36,3 +36,7 @@ Phase 3.1 adds frozen baseline reproduction, 140 restricted diagnostic acquisiti
 ## Phase 4 update
 
 Phase 4 adds tested advisory decision semantics, critical single-source escalation, timestamp/coverage/dependence constraints, lifecycle and independently evaluated E3 tracks. Controlled evidence correctness is not upstream fault-detection accuracy; synthetic end-to-end results are not physical boiler validation, certification or a new TRL rating. See PHASE4_VALIDATION.md for actual measured performance and remaining limitations.
+
+## Phase 5 evidence
+
+The executed local platform provides authenticated MQTT/read-only numeric OPC UA, durable PostgreSQL state/recovery, original analytics/F1 and an actual 3D browser demonstration. PHASE5_VALIDATION.md links the sealed full E4 run, focused critical-priority correction, real screenshots, security tests and numerical resource/latency/capacity data. These establish software integration under the tested CPU workstation workload. They do not establish physical sensor accuracy, approved engineering limits, industrial-edge hardware latency, 90-day endurance, site security commissioning or TRL 6 for the industrial product. Physical commissioning and independent relevant-environment validation remain pending.

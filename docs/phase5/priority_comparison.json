@@ -1,0 +1,1887 @@
+{
+  "baseline_temporal": {
+    "stale": 180,
+    "current": 6
+  },
+  "corrected": {
+    "source_commit": "c62a159b72d70cd147078fd4826f064eff702119",
+    "run": "/home/mallikarjun/workspace/TwinGuard/experiments/outputs/phase5-E4-priority-verified",
+    "ordinary_pending_jobs_at_start": 302,
+    "critical_temporal_states": {
+      "current": 186
+    },
+    "receipt_to_committed_advisory_s": {
+      "n": 186,
+      "p50": 0.5911434888839722,
+      "p95": 2.249488651752472,
+      "p99": 4.5885762691497805,
+      "max": 4.652112007141113
+    },
+    "first_receipt_to_browser_red_s": 0.9745690822601318,
+    "dataset_count": 3,
+    "inputs": "Identical public pressure datasets 8210\u20138212; fresh database and confirmed ordinary job backlog; no artificial transport backlog.",
+    "comparison_limit": "Focused corrective run, not a repeated full outage/resource benchmark; workloads are related but not identical to the original full run."
+  },
+  "critical_readings": [
+    {
+      "observation_id": "e4-public-8210-pressure-01-seq-30",
+      "received": "2026-10-28T11:07:54.487722+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.15536904335021973,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8210-pressure-01-seq-31",
+      "received": "2026-10-28T11:07:54.503434+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.30768704414367676,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8210-pressure-01-seq-32",
+      "received": "2026-10-28T11:07:54.596793+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.30086207389831543,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8210-pressure-01-seq-33",
+      "received": "2026-10-28T11:07:54.661564+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.3240818977355957,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8210-pressure-01-seq-34",
+      "received": "2026-10-28T11:07:54.779683+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.3003978729248047,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8210-pressure-01-seq-35",
+      "received": "2026-10-28T11:07:54.878352+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.2944669723510742,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8210-pressure-01-seq-36",
+      "received": "2026-10-28T11:07:55.034680+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.2283492088317871,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8210-pressure-01-seq-37",
+      "received": "2026-10-28T11:07:55.052372+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.3081181049346924,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8210-pressure-01-seq-38",
+      "received": "2026-10-28T11:07:55.177221+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.2822730541229248,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8210-pressure-01-seq-39",
+      "received": "2026-10-28T11:07:55.261221+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.2907111644744873,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8210-pressure-01-seq-40",
+      "received": "2026-10-28T11:07:55.401878+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.24610590934753418,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8210-pressure-01-seq-41",
+      "received": "2026-10-28T11:07:55.491202+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.24718594551086426,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8210-pressure-01-seq-42",
+      "received": "2026-10-28T11:07:55.592673+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.23946499824523926,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8210-pressure-01-seq-43",
+      "received": "2026-10-28T11:07:55.645829+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.28094911575317383,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8210-pressure-01-seq-44",
+      "received": "2026-10-28T11:07:55.744664+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.30692100524902344,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8210-pressure-01-seq-45",
+      "received": "2026-10-28T11:07:55.844664+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.3094978332519531,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8210-pressure-01-seq-46",
+      "received": "2026-10-28T11:07:55.984012+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.2731020450592041,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8210-pressure-01-seq-47",
+      "received": "2026-10-28T11:07:56.047199+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 4.642858028411865,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8210-pressure-01-seq-48",
+      "received": "2026-10-28T11:07:56.219554+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 4.5789971351623535,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8210-pressure-01-seq-49",
+      "received": "2026-10-28T11:07:56.246675+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 4.652112007141113,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8210-pressure-01-seq-50",
+      "received": "2026-10-28T11:08:00.728903+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.2731289863586426,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8210-pressure-01-seq-51",
+      "received": "2026-10-28T11:08:00.833614+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.271669864654541,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8210-pressure-01-seq-52",
+      "received": "2026-10-28T11:08:00.893322+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.3829491138458252,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8210-pressure-01-seq-53",
+      "received": "2026-10-28T11:08:00.977709+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.393359899520874,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8210-pressure-01-seq-54",
+      "received": "2026-10-28T11:08:01.126390+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.3424251079559326,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8210-pressure-01-seq-55",
+      "received": "2026-10-28T11:08:01.210665+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.3624401092529297,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8210-pressure-01-seq-56",
+      "received": "2026-10-28T11:08:01.277031+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.4179980754852295,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8210-pressure-01-seq-57",
+      "received": "2026-10-28T11:08:01.393076+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.41195106506347656,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8210-pressure-01-seq-58",
+      "received": "2026-10-28T11:08:01.477542+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.42980408668518066,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8210-pressure-01-seq-59",
+      "received": "2026-10-28T11:08:01.578825+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.4296290874481201,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8210-pressure-01-seq-60",
+      "received": "2026-10-28T11:08:01.745496+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.381458044052124,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8210-pressure-01-seq-61",
+      "received": "2026-10-28T11:08:01.826584+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.40747594833374023,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8210-pressure-01-seq-62",
+      "received": "2026-10-28T11:08:01.911454+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.4274411201477051,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8210-pressure-01-seq-63",
+      "received": "2026-10-28T11:08:01.977266+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.47055888175964355,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8210-pressure-01-seq-64",
+      "received": "2026-10-28T11:08:02.131020+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.4323098659515381,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8210-pressure-01-seq-65",
+      "received": "2026-10-28T11:08:02.190964+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.48568201065063477,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8210-pressure-01-seq-66",
+      "received": "2026-10-28T11:08:02.291169+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.5080471038818359,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8210-pressure-01-seq-67",
+      "received": "2026-10-28T11:08:02.377541+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.5446088314056396,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8210-pressure-01-seq-68",
+      "received": "2026-10-28T11:08:02.528979+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.5224788188934326,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8210-pressure-01-seq-69",
+      "received": "2026-10-28T11:08:02.593031+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.5702731609344482,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8210-pressure-01-seq-70",
+      "received": "2026-10-28T11:08:02.739724+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.5374331474304199,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8210-pressure-01-seq-71",
+      "received": "2026-10-28T11:08:02.809333+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.6533730030059814,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8210-pressure-01-seq-72",
+      "received": "2026-10-28T11:08:02.894194+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.6892321109771729,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8210-pressure-01-seq-73",
+      "received": "2026-10-28T11:08:02.976801+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.7386841773986816,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8210-pressure-01-seq-74",
+      "received": "2026-10-28T11:08:03.077327+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.7647340297698975,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8210-pressure-01-seq-75",
+      "received": "2026-10-28T11:08:03.193373+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.7751801013946533,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8210-pressure-01-seq-76",
+      "received": "2026-10-28T11:08:03.291818+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.804948091506958,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8210-pressure-01-seq-77",
+      "received": "2026-10-28T11:08:03.376618+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.8454551696777344,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8210-pressure-01-seq-78",
+      "received": "2026-10-28T11:08:03.544601+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.8283059597015381,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8210-pressure-01-seq-79",
+      "received": "2026-10-28T11:08:03.577139+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.9271221160888672,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8210-pressure-01-seq-80",
+      "received": "2026-10-28T11:08:03.772324+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.85707688331604,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8210-pressure-01-seq-81",
+      "received": "2026-10-28T11:08:03.820977+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.9394149780273438,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8210-pressure-01-seq-82",
+      "received": "2026-10-28T11:08:03.912189+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.9777779579162598,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8210-pressure-01-seq-83",
+      "received": "2026-10-28T11:08:03.978100+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 1.0369508266448975,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8210-pressure-01-seq-84",
+      "received": "2026-10-28T11:08:04.138350+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 1.0030410289764404,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8210-pressure-01-seq-85",
+      "received": "2026-10-28T11:08:04.208677+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 1.061384916305542,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8210-pressure-01-seq-86",
+      "received": "2026-10-28T11:08:04.333643+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 1.0697300434112549,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8210-pressure-01-seq-88",
+      "received": "2026-10-28T11:08:04.525082+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 1.116553783416748,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8210-pressure-01-seq-89",
+      "received": "2026-10-28T11:08:04.576812+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 1.2111899852752686,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8210-pressure-01-seq-90",
+      "received": "2026-10-28T11:08:04.807498+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 1.1105210781097412,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8210-pressure-01-seq-91",
+      "received": "2026-10-28T11:08:04.822602+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 1.2247259616851807,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8210-pressure-01-seq-92",
+      "received": "2026-10-28T11:08:04.876787+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 1.301706075668335,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8211-pressure-01-seq-30",
+      "received": "2026-10-28T11:09:25.691371+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.14650201797485352,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8211-pressure-01-seq-31",
+      "received": "2026-10-28T11:09:25.725493+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.19600605964660645,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8211-pressure-01-seq-32",
+      "received": "2026-10-28T11:09:25.819352+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.1873610019683838,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8211-pressure-01-seq-33",
+      "received": "2026-10-28T11:09:25.886912+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.2106928825378418,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8211-pressure-01-seq-34",
+      "received": "2026-10-28T11:09:25.986753+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.19266009330749512,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8211-pressure-01-seq-35",
+      "received": "2026-10-28T11:09:26.126661+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.1349790096282959,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8211-pressure-01-seq-36",
+      "received": "2026-10-28T11:09:26.222626+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.12593913078308105,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8211-pressure-01-seq-37",
+      "received": "2026-10-28T11:09:26.270061+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.18403887748718262,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8211-pressure-01-seq-38",
+      "received": "2026-10-28T11:09:26.369944+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.16675400733947754,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8211-pressure-01-seq-39",
+      "received": "2026-10-28T11:09:26.470364+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.1522519588470459,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8211-pressure-01-seq-40",
+      "received": "2026-10-28T11:09:26.570010+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.13872003555297852,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8211-pressure-01-seq-41",
+      "received": "2026-10-28T11:09:26.702000+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.2029261589050293,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8211-pressure-01-seq-42",
+      "received": "2026-10-28T11:09:26.820411+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.18652892112731934,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8211-pressure-01-seq-43",
+      "received": "2026-10-28T11:09:26.889615+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.2153918743133545,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8211-pressure-01-seq-44",
+      "received": "2026-10-28T11:09:27.029551+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.17493391036987305,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8211-pressure-01-seq-45",
+      "received": "2026-10-28T11:09:27.148731+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.15786004066467285,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8211-pressure-01-seq-46",
+      "received": "2026-10-28T11:09:27.186568+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.23176097869873047,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8211-pressure-01-seq-47",
+      "received": "2026-10-28T11:09:27.270228+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.26575207710266113,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8211-pressure-01-seq-48",
+      "received": "2026-10-28T11:09:27.454945+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.18436694145202637,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8211-pressure-01-seq-49",
+      "received": "2026-10-28T11:09:27.475888+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.27220797538757324,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8211-pressure-01-seq-50",
+      "received": "2026-10-28T11:09:27.704917+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.21261811256408691,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8211-pressure-01-seq-51",
+      "received": "2026-10-28T11:09:27.725674+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.31673407554626465,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8211-pressure-01-seq-52",
+      "received": "2026-10-28T11:09:27.791701+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.36181092262268066,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8211-pressure-01-seq-53",
+      "received": "2026-10-28T11:09:27.872228+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.40314316749572754,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8211-pressure-01-seq-54",
+      "received": "2026-10-28T11:09:28.024697+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.3714439868927002,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8211-pressure-01-seq-55",
+      "received": "2026-10-28T11:09:28.086651+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.42317700386047363,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8211-pressure-01-seq-56",
+      "received": "2026-10-28T11:09:28.170393+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.4423179626464844,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8211-pressure-01-seq-57",
+      "received": "2026-10-28T11:09:28.270878+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.4613959789276123,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8211-pressure-01-seq-58",
+      "received": "2026-10-28T11:09:28.425048+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.4315669536590576,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8211-pressure-01-seq-59",
+      "received": "2026-10-28T11:09:28.472570+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.5043449401855469,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8211-pressure-01-seq-60",
+      "received": "2026-10-28T11:09:28.729400+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.38040804862976074,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8211-pressure-01-seq-61",
+      "received": "2026-10-28T11:09:28.751481+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.48290395736694336,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8211-pressure-01-seq-62",
+      "received": "2026-10-28T11:09:28.812795+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.5457000732421875,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8211-pressure-01-seq-63",
+      "received": "2026-10-28T11:09:28.871345+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.6101398468017578,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8211-pressure-01-seq-64",
+      "received": "2026-10-28T11:09:29.026584+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.5713691711425781,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8212-pressure-01-seq-31",
+      "received": "2026-10-28T11:10:25.299964+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.22217106819152832,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8211-pressure-01-seq-65",
+      "received": "2026-10-28T11:09:29.134610+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.604172945022583,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8212-pressure-01-seq-32",
+      "received": "2026-10-28T11:10:25.362391+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.26447606086730957,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8211-pressure-01-seq-66",
+      "received": "2026-10-28T11:09:29.229326+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.6292629241943359,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8211-pressure-01-seq-67",
+      "received": "2026-10-28T11:09:29.270977+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.7770888805389404,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8211-pressure-01-seq-68",
+      "received": "2026-10-28T11:09:29.412543+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.7593159675598145,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8211-pressure-01-seq-69",
+      "received": "2026-10-28T11:09:29.471524+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.8234119415283203,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8212-pressure-01-seq-33",
+      "received": "2026-10-28T11:10:25.461300+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.27415013313293457,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8211-pressure-01-seq-70",
+      "received": "2026-10-28T11:09:29.626144+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.7904829978942871,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8212-pressure-01-seq-34",
+      "received": "2026-10-28T11:10:25.582777+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.2550649642944336,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8211-pressure-01-seq-71",
+      "received": "2026-10-28T11:09:29.722986+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.8077020645141602,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8212-pressure-01-seq-35",
+      "received": "2026-10-28T11:10:25.679738+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.2568390369415283,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8211-pressure-01-seq-73",
+      "received": "2026-10-28T11:09:29.870898+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.7721240520477295,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8211-pressure-01-seq-74",
+      "received": "2026-10-28T11:09:29.970678+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.7846410274505615,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8212-pressure-01-seq-36",
+      "received": "2026-10-28T11:10:25.776796+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.27156496047973633,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8211-pressure-01-seq-75",
+      "received": "2026-10-28T11:09:30.108849+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.7625830173492432,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8211-pressure-01-seq-76",
+      "received": "2026-10-28T11:09:30.229984+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.7577528953552246,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8212-pressure-01-seq-37",
+      "received": "2026-10-28T11:10:25.845707+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.30794215202331543,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8211-pressure-01-seq-77",
+      "received": "2026-10-28T11:09:30.272043+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.8356630802154541,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8212-pressure-01-seq-38",
+      "received": "2026-10-28T11:10:25.946262+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.3142571449279785,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8211-pressure-01-seq-78",
+      "received": "2026-10-28T11:09:30.429859+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.8207850456237793,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8211-pressure-01-seq-79",
+      "received": "2026-10-28T11:09:30.471019+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.8978538513183594,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8211-pressure-01-seq-80",
+      "received": "2026-10-28T11:09:30.570277+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.9249670505523682,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8212-pressure-01-seq-39",
+      "received": "2026-10-28T11:10:26.046091+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.32187700271606445,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8212-pressure-01-seq-40",
+      "received": "2026-10-28T11:10:26.163346+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.3160228729248047,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8211-pressure-01-seq-81",
+      "received": "2026-10-28T11:09:30.708179+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.9023780822753906,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8211-pressure-01-seq-82",
+      "received": "2026-10-28T11:09:30.770005+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.9586730003356934,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8211-pressure-01-seq-83",
+      "received": "2026-10-28T11:09:30.871804+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.9757370948791504,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8211-pressure-01-seq-84",
+      "received": "2026-10-28T11:09:31.003045+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.9723029136657715,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8212-pressure-01-seq-41",
+      "received": "2026-10-28T11:10:26.256050+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.3299849033355713,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8211-pressure-01-seq-85",
+      "received": "2026-10-28T11:09:31.102358+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 1.0925278663635254,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8211-pressure-01-seq-86",
+      "received": "2026-10-28T11:09:31.221247+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 1.1143159866333008,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8212-pressure-01-seq-42",
+      "received": "2026-10-28T11:10:26.408590+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.2987368106842041,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8211-pressure-01-seq-88",
+      "received": "2026-10-28T11:09:31.422567+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 1.0561060905456543,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8212-pressure-01-seq-43",
+      "received": "2026-10-28T11:10:26.449686+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.3687260150909424,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8211-pressure-01-seq-89",
+      "received": "2026-10-28T11:09:31.470734+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 1.160884141921997,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8212-pressure-01-seq-44",
+      "received": "2026-10-28T11:10:26.559592+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.3850879669189453,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8211-pressure-01-seq-90",
+      "received": "2026-10-28T11:09:31.601751+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 1.1580548286437988,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8212-pressure-01-seq-45",
+      "received": "2026-10-28T11:10:26.661433+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.4017949104309082,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8211-pressure-01-seq-91",
+      "received": "2026-10-28T11:09:31.715613+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 1.1773631572723389,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8211-pressure-01-seq-92",
+      "received": "2026-10-28T11:09:31.788183+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 1.253607988357544,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8212-pressure-01-seq-46",
+      "received": "2026-10-28T11:10:26.766713+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.497791051864624,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8212-pressure-01-seq-47",
+      "received": "2026-10-28T11:10:26.845988+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.5376579761505127,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8212-pressure-01-seq-48",
+      "received": "2026-10-28T11:10:26.965470+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.5394270420074463,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8212-pressure-01-seq-49",
+      "received": "2026-10-28T11:10:27.044936+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.5781140327453613,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8212-pressure-01-seq-50",
+      "received": "2026-10-28T11:10:27.236186+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.5172340869903564,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8212-pressure-01-seq-51",
+      "received": "2026-10-28T11:10:27.309815+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.5659830570220947,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8212-pressure-01-seq-52",
+      "received": "2026-10-28T11:10:27.378591+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.6230859756469727,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8212-pressure-01-seq-53",
+      "received": "2026-10-28T11:10:27.445616+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.6829640865325928,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8212-pressure-01-seq-54",
+      "received": "2026-10-28T11:10:27.544993+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.7053320407867432,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8212-pressure-01-seq-55",
+      "received": "2026-10-28T11:10:27.644938+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.7418360710144043,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8212-pressure-01-seq-56",
+      "received": "2026-10-28T11:10:27.746725+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.759584903717041,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8212-pressure-01-seq-57",
+      "received": "2026-10-28T11:10:27.845889+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.7855489253997803,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8212-pressure-01-seq-58",
+      "received": "2026-10-28T11:10:28.000033+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.7668521404266357,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8212-pressure-01-seq-59",
+      "received": "2026-10-28T11:10:28.047160+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.8466579914093018,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8212-pressure-01-seq-60",
+      "received": "2026-10-28T11:10:28.189899+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.8289680480957031,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8212-pressure-01-seq-61",
+      "received": "2026-10-28T11:10:28.284264+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 0.8618488311767578,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8212-pressure-01-seq-62",
+      "received": "2026-10-28T11:10:28.378924+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 1.0149250030517578,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8212-pressure-01-seq-63",
+      "received": "2026-10-28T11:10:28.444897+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 1.0823650360107422,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8212-pressure-01-seq-64",
+      "received": "2026-10-28T11:10:28.576832+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 1.0830678939819336,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8212-pressure-01-seq-65",
+      "received": "2026-10-28T11:10:28.681143+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 1.1305339336395264,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8212-pressure-01-seq-66",
+      "received": "2026-10-28T11:10:28.793532+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 1.1473960876464844,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8212-pressure-01-seq-67",
+      "received": "2026-10-28T11:10:28.845589+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 1.227776050567627,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8212-pressure-01-seq-68",
+      "received": "2026-10-28T11:10:28.960430+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 1.249394178390503,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8212-pressure-01-seq-69",
+      "received": "2026-10-28T11:10:29.066175+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 1.278083086013794,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8212-pressure-01-seq-70",
+      "received": "2026-10-28T11:10:29.295147+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 1.185971975326538,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8212-pressure-01-seq-71",
+      "received": "2026-10-28T11:10:29.313644+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 1.3021490573883057,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8212-pressure-01-seq-72",
+      "received": "2026-10-28T11:10:29.363829+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 1.393456220626831,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8212-pressure-01-seq-73",
+      "received": "2026-10-28T11:10:29.446894+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 1.4472999572753906,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8212-pressure-01-seq-74",
+      "received": "2026-10-28T11:10:29.576248+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 1.4749929904937744,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8212-pressure-01-seq-75",
+      "received": "2026-10-28T11:10:29.711474+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 1.5157530307769775,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8212-pressure-01-seq-76",
+      "received": "2026-10-28T11:10:29.745118+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 1.6333951950073242,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8212-pressure-01-seq-77",
+      "received": "2026-10-28T11:10:29.845802+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 1.7607738971710205,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8212-pressure-01-seq-78",
+      "received": "2026-10-28T11:10:29.945790+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 1.8156418800354004,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8212-pressure-01-seq-79",
+      "received": "2026-10-28T11:10:30.044860+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 1.8713171482086182,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8212-pressure-01-seq-80",
+      "received": "2026-10-28T11:10:30.255323+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 1.806765079498291,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8212-pressure-01-seq-81",
+      "received": "2026-10-28T11:10:30.303640+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 1.9141302108764648,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8212-pressure-01-seq-82",
+      "received": "2026-10-28T11:10:30.378815+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 1.9838001728057861,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8212-pressure-01-seq-83",
+      "received": "2026-10-28T11:10:30.446406+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 2.056997060775757,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8212-pressure-01-seq-84",
+      "received": "2026-10-28T11:10:30.595514+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 2.0701730251312256,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8212-pressure-01-seq-85",
+      "received": "2026-10-28T11:10:30.644913+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 2.1679880619049072,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8212-pressure-01-seq-86",
+      "received": "2026-10-28T11:10:30.767109+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 2.1964111328125,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8212-pressure-01-seq-87",
+      "received": "2026-10-28T11:10:30.845609+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 2.267181158065796,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8212-pressure-01-seq-88",
+      "received": "2026-10-28T11:10:30.963084+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 2.313671112060547,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8212-pressure-01-seq-89",
+      "received": "2026-10-28T11:10:31.045952+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 2.3803718090057373,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8212-pressure-01-seq-90",
+      "received": "2026-10-28T11:10:31.200539+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 2.3842389583587646,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8212-pressure-01-seq-91",
+      "received": "2026-10-28T11:10:31.310676+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 2.522411823272705,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8212-pressure-01-seq-92",
+      "received": "2026-10-28T11:10:31.376644+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 2.630528211593628,
+      "assessment_severity": "red",
+      "priority": 0
+    },
+    {
+      "observation_id": "e4-public-8212-pressure-01-seq-93",
+      "received": "2026-10-28T11:10:31.463279+00:00",
+      "state": [
+        "current"
+      ],
+      "receipt_to_advisory_s": 2.6953868865966797,
+      "assessment_severity": "red",
+      "priority": 0
+    }
+  ]
+}

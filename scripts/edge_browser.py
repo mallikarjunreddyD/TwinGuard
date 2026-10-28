@@ -79,6 +79,7 @@ def run(output, url="http://localhost:18780"):
         result["checks"]["monitoring_view"] = "Clock / basis" in page.locator("main").inner_text()
         page.screenshot(path=str(output / "E4_monitoring.png"), full_page=True)
         page.get_by_role("button", name="Advisories", exact=True).click()
+        page.locator(".event").first.wait_for(state="visible", timeout=30000)
         result["checks"]["evidence_trace"] = (
             "Evidence & policy trace" in page.locator("main").inner_text()
         )

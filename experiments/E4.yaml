@@ -1,18 +1,19 @@
 {
   "schema_version": "1.0.0",
   "experiment_id": "E4",
-  "version": "v1",
+  "version": "v2",
   "inputs": [
-    "scenario configuration",
-    "sensor streams",
-    "inspection artifacts"
+    "public measured observations",
+    "accepted as-built references",
+    "frozen healthy calibration models",
+    "authenticated transport/source configuration"
   ],
   "outputs": [
-    "asset status",
-    "stored observations",
-    "events",
-    "inspection recommendations",
-    "logs"
+    "durable observations and processing jobs",
+    "F1 condition assessments and advisory history",
+    "monitoring availability",
+    "actual API/browser delivery evidence",
+    "latency/resource/recovery records"
   ],
   "planned_metrics": [
     "ingestion correctness",
@@ -21,6 +22,6 @@
     "offline behavior",
     "replay reproducibility"
   ],
-  "baseline": "Recorded input replay with artifact hashes; pending",
-  "implementation_status": "not_implemented"
+  "baseline": "B0 offline F1 computation versus actual local streaming B1-B9; software-loopback only",
+  "implementation_status": "implemented"
 }

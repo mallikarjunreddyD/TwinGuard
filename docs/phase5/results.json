@@ -1,0 +1,1197 @@
+{
+  "experiment": "E4",
+  "status": "executed",
+  "source_commit": "32ac54d86216d0deef3d34676d4e018791fd7555",
+  "started_at": "2026-10-28T07:52:53.530797+00:00",
+  "finished_at": "2026-10-28T08:09:45.145462+00:00",
+  "elapsed_s": 1011.614681,
+  "policy_sha256": "16750164a4ec10555f26c58dd130819910e433640bd739e4b0d0e08a88eabf91",
+  "database_schema": "0001_edge",
+  "application_role_superuser": false,
+  "profiles": [
+    {
+      "profile": "B0",
+      "runtime_s": 0.0010805060155689716,
+      "assessments": 8,
+      "basis": "Offline computation only; not transport delay"
+    },
+    {
+      "profile": "B1",
+      "seed": 8200,
+      "dataset": "/home/mallikarjun/workspace/TwinGuard/experiments/outputs/e4-public-8200",
+      "started": "2026-10-28T07:52:53.771360+00:00",
+      "finished": "2026-10-28T07:54:03.718906+00:00",
+      "published": 436,
+      "distinct_published": 429,
+      "persisted": 429,
+      "completeness": 1.0
+    },
+    {
+      "profile": "B1",
+      "seed": 8201,
+      "dataset": "/home/mallikarjun/workspace/TwinGuard/experiments/outputs/e4-public-8201",
+      "started": "2026-10-28T07:54:03.730253+00:00",
+      "finished": "2026-10-28T07:55:03.357501+00:00",
+      "published": 432,
+      "distinct_published": 426,
+      "persisted": 426,
+      "completeness": 1.0
+    },
+    {
+      "profile": "B1",
+      "seed": 8202,
+      "dataset": "/home/mallikarjun/workspace/TwinGuard/experiments/outputs/e4-public-8202",
+      "started": "2026-10-28T07:55:03.367477+00:00",
+      "finished": "2026-10-28T07:55:59.521968+00:00",
+      "published": 437,
+      "distinct_published": 431,
+      "persisted": 431,
+      "completeness": 1.0
+    },
+    {
+      "profile": "B7",
+      "seed": 8210,
+      "dataset": "/home/mallikarjun/workspace/TwinGuard/experiments/outputs/e4-public-8210",
+      "started": "2026-10-28T07:55:59.531426+00:00",
+      "finished": "2026-10-28T07:57:03.948446+00:00",
+      "published": 435,
+      "distinct_published": 430,
+      "persisted": 430,
+      "completeness": 1.0
+    },
+    {
+      "profile": "B7",
+      "seed": 8211,
+      "dataset": "/home/mallikarjun/workspace/TwinGuard/experiments/outputs/e4-public-8211",
+      "started": "2026-10-28T07:57:03.963499+00:00",
+      "finished": "2026-10-28T07:58:03.484476+00:00",
+      "published": 430,
+      "distinct_published": 428,
+      "persisted": 428,
+      "completeness": 1.0
+    },
+    {
+      "profile": "B7",
+      "seed": 8212,
+      "dataset": "/home/mallikarjun/workspace/TwinGuard/experiments/outputs/e4-public-8212",
+      "started": "2026-10-28T07:58:03.677241+00:00",
+      "finished": "2026-10-28T07:59:07.357463+00:00",
+      "published": 432,
+      "distinct_published": 429,
+      "persisted": 429,
+      "completeness": 1.0
+    },
+    {
+      "profile": "B2",
+      "seed": 8220,
+      "dataset": "/home/mallikarjun/workspace/TwinGuard/experiments/outputs/e4-public-8220",
+      "started": "2026-10-28T07:59:07.370807+00:00",
+      "finished": "2026-10-28T08:00:09.577926+00:00",
+      "published": 434,
+      "distinct_published": 430,
+      "persisted": 430,
+      "completeness": 1.0
+    },
+    {
+      "profile": "B3",
+      "seed": 8221,
+      "dataset": "/home/mallikarjun/workspace/TwinGuard/experiments/outputs/e4-public-8221",
+      "started": "2026-10-28T08:00:09.594774+00:00",
+      "finished": "2026-10-28T08:01:05.732971+00:00",
+      "published": 579,
+      "distinct_published": 431,
+      "persisted": 431,
+      "completeness": 1.0
+    },
+    {
+      "profile": "B4",
+      "service": "fast-worker",
+      "stop_requested": "2026-10-28T08:01:07.754212+00:00",
+      "ready_at": "2026-10-28T08:01:17.939977+00:00",
+      "recovery_s": 10.185765,
+      "committed_before": 3469,
+      "committed_after": 3861,
+      "events_preserved": true,
+      "publisher_errors": []
+    },
+    {
+      "profile": "B5",
+      "service": "broker",
+      "stop_requested": "2026-10-28T08:02:17.595798+00:00",
+      "ready_at": "2026-10-28T08:02:24.801690+00:00",
+      "recovery_s": 7.205892,
+      "committed_before": 3897,
+      "committed_after": 3906,
+      "events_preserved": true,
+      "publisher_errors": [
+        "Message publish failed: The client is not currently connected."
+      ]
+    },
+    {
+      "profile": "B4-api",
+      "service": "api",
+      "stop_requested": "2026-10-28T08:02:26.821248+00:00",
+      "ready_at": "2026-10-28T08:02:35.291074+00:00",
+      "recovery_s": 8.469826,
+      "committed_before": 3906,
+      "committed_after": 4336,
+      "events_preserved": true,
+      "publisher_errors": []
+    },
+    {
+      "profile": "B4-database",
+      "service": "database",
+      "stop_requested": "2026-10-28T08:03:36.540263+00:00",
+      "ready_at": "2026-10-28T08:03:44.864315+00:00",
+      "recovery_s": 8.324052,
+      "committed_before": 4371,
+      "committed_after": 4765,
+      "events_preserved": true,
+      "publisher_errors": []
+    },
+    {
+      "profile": "B5-OPCUA",
+      "node_statuses": [
+        {
+          "source_timestamp": "2026-01-01 00:00:50.000931+00:00",
+          "server_timestamp": "2026-10-28 08:04:56.575107+00:00",
+          "status": "StatusCode(value=0)",
+          "node_id": "ns=2;s=drum-thermometer",
+          "at": "2026-10-28T08:04:56.921091+00:00"
+        },
+        {
+          "source_timestamp": "2026-01-01 00:00:52.008637+00:00",
+          "server_timestamp": "2026-10-28 08:04:56.757678+00:00",
+          "status": "StatusCode(value=0)",
+          "node_id": "ns=2;s=load-01",
+          "at": "2026-10-28T08:04:56.861909+00:00"
+        },
+        {
+          "source_timestamp": "2026-01-01 00:00:50.005836+00:00",
+          "server_timestamp": "2026-10-28 08:04:56.514197+00:00",
+          "status": "StatusCode(value=0)",
+          "node_id": "ns=2;s=pipe-temperature",
+          "at": "2026-10-28T08:04:56.940176+00:00"
+        },
+        {
+          "source_timestamp": "2026-01-01 00:00:52.007355+00:00",
+          "server_timestamp": "2026-10-28 08:04:56.727280+00:00",
+          "status": "StatusCode(value=0)",
+          "node_id": "ns=2;s=pressure-01",
+          "at": "2026-10-28T08:04:56.842019+00:00"
+        },
+        {
+          "source_timestamp": "2026-01-01 00:00:53.994449+00:00",
+          "server_timestamp": "2026-10-28 08:04:56.911864+00:00",
+          "status": "StatusCode(value=0)",
+          "node_id": "ns=2;s=pressure-02",
+          "at": "2026-10-28T08:04:56.961939+00:00"
+        },
+        {
+          "source_timestamp": "2026-01-01 00:00:51.992980+00:00",
+          "server_timestamp": "2026-10-28 08:04:56.788080+00:00",
+          "status": "StatusCode(value=0)",
+          "node_id": "ns=2;s=temperature-01",
+          "at": "2026-10-28T08:04:56.823296+00:00"
+        },
+        {
+          "source_timestamp": "2026-01-01 00:00:52.000524+00:00",
+          "server_timestamp": "2026-10-28 08:04:56.818375+00:00",
+          "status": "StatusCode(value=0)",
+          "node_id": "ns=2;s=vibration-01",
+          "at": "2026-10-28T08:04:56.881137+00:00"
+        },
+        {
+          "source_timestamp": "2026-01-01 00:00:50.007395+00:00",
+          "server_timestamp": "2026-10-28 08:04:56.453534+00:00",
+          "status": "StatusCode(value=0)",
+          "node_id": "ns=2;s=vibration-02",
+          "at": "2026-10-28T08:04:56.981984+00:00"
+        },
+        {
+          "source_timestamp": "2026-01-01 00:00:50.006772+00:00",
+          "server_timestamp": "2026-10-28 08:04:56.544726+00:00",
+          "status": "StatusCode(value=0)",
+          "node_id": "ns=2;s=wall-thermometer",
+          "at": "2026-10-28T08:04:56.901716+00:00"
+        }
+      ],
+      "distinct_observations": 45,
+      "read_mode": "numeric channels with engineering units and original public-record lineage; polled snapshots, not every source update"
+    },
+    {
+      "profile": "B6",
+      "monitoring": [
+        {
+          "schema_version": "1.0.0",
+          "source_id": "opcua-demo",
+          "transport_identity": "opcua-adapter",
+          "site_id": "plant-01",
+          "sensors": {
+            "temperature-01": {
+              "asset_id": "BW-01",
+              "measurement_type": "temperature",
+              "unit": "degC"
+            },
+            "pressure-01": {
+              "asset_id": "BW-01",
+              "measurement_type": "pressure",
+              "unit": "Pa"
+            },
+            "load-01": {
+              "asset_id": "DR-01",
+              "measurement_type": "operating_load",
+              "unit": "1"
+            },
+            "vibration-01": {
+              "asset_id": "SUP-01",
+              "measurement_type": "vibration_rms",
+              "unit": "m/s2"
+            },
+            "wall-thermometer": {
+              "asset_id": "BW-01",
+              "measurement_type": "temperature",
+              "unit": "degC"
+            },
+            "drum-thermometer": {
+              "asset_id": "DR-01",
+              "measurement_type": "temperature",
+              "unit": "degC"
+            },
+            "pipe-temperature": {
+              "asset_id": "SP-01",
+              "measurement_type": "temperature",
+              "unit": "degC"
+            },
+            "pressure-02": {
+              "asset_id": "SP-02",
+              "measurement_type": "pressure",
+              "unit": "Pa"
+            },
+            "vibration-02": {
+              "asset_id": "DR-01",
+              "measurement_type": "vibration_rms",
+              "unit": "m/s2"
+            }
+          },
+          "active": true,
+          "clock_quality": "synchronized",
+          "clock_basis": "controlled_simulation_replay",
+          "calibration_status": "assumed_simulation",
+          "calibration_reference": "assumed-v1",
+          "expected_interval_s": 5.0,
+          "configuration_reference": "v1",
+          "allow_inspections": false,
+          "capture_sensors": {},
+          "last_acquired_by_sensor": {
+            "temperature-01": "2026-10-28T08:05:09.576846+00:00",
+            "pressure-01": "2026-10-28T08:05:07.253515+00:00",
+            "load-01": "2026-10-28T08:05:09.615193+00:00",
+            "vibration-01": "2026-10-28T08:05:08.465682+00:00",
+            "wall-thermometer": "2026-10-28T08:05:08.485629+00:00",
+            "drum-thermometer": "2026-10-28T08:05:07.335807+00:00",
+            "pipe-temperature": "2026-10-28T08:05:09.678049+00:00",
+            "pressure-02": "2026-10-28T08:05:09.702186+00:00",
+            "vibration-02": "2026-10-28T08:05:08.555439+00:00"
+          },
+          "sequence_epoch": "legacy",
+          "last_received": "2026-10-28T08:05:09.721519+00:00",
+          "last_valid": "2026-10-28T08:05:09.702254+00:00",
+          "quality": "good",
+          "last_sequence": 81,
+          "channels": [
+            {
+              "sensor_id": "temperature-01",
+              "asset_id": "BW-01",
+              "measurement_type": "temperature",
+              "unit": "degC",
+              "last_received": "2026-10-28T08:05:09.576926+00:00",
+              "last_valid": "2026-10-28T08:05:09.576926+00:00",
+              "quality": "good",
+              "stale": true,
+              "clock_quality": "synchronized",
+              "calibration_status": "assumed_simulation"
+            },
+            {
+              "sensor_id": "pressure-01",
+              "asset_id": "BW-01",
+              "measurement_type": "pressure",
+              "unit": "Pa",
+              "last_received": "2026-10-28T08:05:07.253615+00:00",
+              "last_valid": "2026-10-28T08:05:07.253615+00:00",
+              "quality": "good",
+              "stale": true,
+              "clock_quality": "synchronized",
+              "calibration_status": "assumed_simulation"
+            },
+            {
+              "sensor_id": "load-01",
+              "asset_id": "DR-01",
+              "measurement_type": "operating_load",
+              "unit": "1",
+              "last_received": "2026-10-28T08:05:09.615313+00:00",
+              "last_valid": "2026-10-28T08:05:09.615313+00:00",
+              "quality": "good",
+              "stale": true,
+              "clock_quality": "synchronized",
+              "calibration_status": "assumed_simulation"
+            },
+            {
+              "sensor_id": "vibration-01",
+              "asset_id": "SUP-01",
+              "measurement_type": "vibration_rms",
+              "unit": "m/s2",
+              "last_received": "2026-10-28T08:05:08.465776+00:00",
+              "last_valid": "2026-10-28T08:05:08.465776+00:00",
+              "quality": "good",
+              "stale": true,
+              "clock_quality": "synchronized",
+              "calibration_status": "assumed_simulation"
+            },
+            {
+              "sensor_id": "wall-thermometer",
+              "asset_id": "BW-01",
+              "measurement_type": "temperature",
+              "unit": "degC",
+              "last_received": "2026-10-28T08:05:08.485715+00:00",
+              "last_valid": "2026-10-28T08:05:08.485715+00:00",
+              "quality": "good",
+              "stale": true,
+              "clock_quality": "synchronized",
+              "calibration_status": "assumed_simulation"
+            },
+            {
+              "sensor_id": "drum-thermometer",
+              "asset_id": "DR-01",
+              "measurement_type": "temperature",
+              "unit": "degC",
+              "last_received": "2026-10-28T08:05:07.335887+00:00",
+              "last_valid": "2026-10-28T08:05:07.335887+00:00",
+              "quality": "good",
+              "stale": true,
+              "clock_quality": "synchronized",
+              "calibration_status": "assumed_simulation"
+            },
+            {
+              "sensor_id": "pipe-temperature",
+              "asset_id": "SP-01",
+              "measurement_type": "temperature",
+              "unit": "degC",
+              "last_received": "2026-10-28T08:05:09.678139+00:00",
+              "last_valid": "2026-10-28T08:05:09.678139+00:00",
+              "quality": "good",
+              "stale": true,
+              "clock_quality": "synchronized",
+              "calibration_status": "assumed_simulation"
+            },
+            {
+              "sensor_id": "pressure-02",
+              "asset_id": "SP-02",
+              "measurement_type": "pressure",
+              "unit": "Pa",
+              "last_received": "2026-10-28T08:05:09.702254+00:00",
+              "last_valid": "2026-10-28T08:05:09.702254+00:00",
+              "quality": "good",
+              "stale": true,
+              "clock_quality": "synchronized",
+              "calibration_status": "assumed_simulation"
+            },
+            {
+              "sensor_id": "vibration-02",
+              "asset_id": "DR-01",
+              "measurement_type": "vibration_rms",
+              "unit": "m/s2",
+              "last_received": "2026-10-28T08:05:08.555529+00:00",
+              "last_valid": "2026-10-28T08:05:08.555529+00:00",
+              "quality": "good",
+              "stale": true,
+              "clock_quality": "synchronized",
+              "calibration_status": "assumed_simulation"
+            }
+          ],
+          "age_s": 21.313616,
+          "connection": "no_recent_data",
+          "monitoring_status": "unknown_or_unavailable"
+        },
+        {
+          "schema_version": "1.0.0",
+          "source_id": "demo-uav",
+          "transport_identity": "demo-uav",
+          "site_id": "plant-01",
+          "sensors": {},
+          "active": true,
+          "clock_quality": "synchronized",
+          "clock_basis": "controlled_simulation_replay",
+          "calibration_status": "assumed_simulation",
+          "calibration_reference": "assumed-v1",
+          "expected_interval_s": 5.0,
+          "configuration_reference": "v1",
+          "allow_inspections": true,
+          "capture_sensors": {
+            "lidar-01": [
+              "BW-01"
+            ],
+            "thermal-01": [
+              "BW-01"
+            ]
+          },
+          "channels": [],
+          "age_s": null,
+          "connection": "no_recent_data",
+          "monitoring_status": "unknown_or_unavailable"
+        },
+        {
+          "schema_version": "1.0.0",
+          "source_id": "demo-iot",
+          "transport_identity": "demo-iot",
+          "site_id": "plant-01",
+          "sensors": {
+            "temperature-01": {
+              "asset_id": "BW-01",
+              "measurement_type": "temperature",
+              "unit": "degC"
+            },
+            "pressure-01": {
+              "asset_id": "BW-01",
+              "measurement_type": "pressure",
+              "unit": "Pa"
+            },
+            "load-01": {
+              "asset_id": "DR-01",
+              "measurement_type": "operating_load",
+              "unit": "1"
+            },
+            "vibration-01": {
+              "asset_id": "SUP-01",
+              "measurement_type": "vibration_rms",
+              "unit": "m/s2"
+            },
+            "wall-thermometer": {
+              "asset_id": "BW-01",
+              "measurement_type": "temperature",
+              "unit": "degC"
+            },
+            "drum-thermometer": {
+              "asset_id": "DR-01",
+              "measurement_type": "temperature",
+              "unit": "degC"
+            },
+            "pipe-temperature": {
+              "asset_id": "SP-01",
+              "measurement_type": "temperature",
+              "unit": "degC"
+            },
+            "pressure-02": {
+              "asset_id": "SP-02",
+              "measurement_type": "pressure",
+              "unit": "Pa"
+            },
+            "vibration-02": {
+              "asset_id": "DR-01",
+              "measurement_type": "vibration_rms",
+              "unit": "m/s2"
+            }
+          },
+          "active": true,
+          "clock_quality": "synchronized",
+          "clock_basis": "controlled_simulation_replay",
+          "calibration_status": "assumed_simulation",
+          "calibration_reference": "assumed-v1",
+          "expected_interval_s": 5.0,
+          "configuration_reference": "v1",
+          "allow_inspections": false,
+          "capture_sensors": {},
+          "last_acquired_by_sensor": {
+            "drum-thermometer": "2026-10-28T08:03:58.549048+00:00",
+            "load-01": "2026-10-28T08:03:58.551037+00:00",
+            "pipe-temperature": "2026-10-28T08:03:58.551037+00:00",
+            "temperature-01": "2026-10-28T08:03:58.551037+00:00",
+            "wall-thermometer": "2026-10-28T08:03:58.550775+00:00",
+            "vibration-01": "2026-10-28T08:03:58.551037+00:00",
+            "pressure-02": "2026-10-28T08:03:58.549551+00:00",
+            "pressure-01": "2026-10-28T08:03:58.549874+00:00",
+            "vibration-02": "2026-10-28T08:03:58.551037+00:00"
+          },
+          "sequence_epoch": "observations-e4-public-8233-cbce20badf99bede",
+          "last_received": "2026-10-28T08:03:58.695871+00:00",
+          "last_valid": "2026-10-28T08:03:58.695871+00:00",
+          "quality": "good",
+          "last_sequence": 431,
+          "channels": [
+            {
+              "sensor_id": "temperature-01",
+              "asset_id": "BW-01",
+              "measurement_type": "temperature",
+              "unit": "degC",
+              "last_received": "2026-10-28T08:05:09.576926+00:00",
+              "last_valid": "2026-10-28T08:05:09.576926+00:00",
+              "quality": "good",
+              "stale": true,
+              "clock_quality": "synchronized",
+              "calibration_status": "assumed_simulation"
+            },
+            {
+              "sensor_id": "pressure-01",
+              "asset_id": "BW-01",
+              "measurement_type": "pressure",
+              "unit": "Pa",
+              "last_received": "2026-10-28T08:05:07.253615+00:00",
+              "last_valid": "2026-10-28T08:05:07.253615+00:00",
+              "quality": "good",
+              "stale": true,
+              "clock_quality": "synchronized",
+              "calibration_status": "assumed_simulation"
+            },
+            {
+              "sensor_id": "load-01",
+              "asset_id": "DR-01",
+              "measurement_type": "operating_load",
+              "unit": "1",
+              "last_received": "2026-10-28T08:05:09.615313+00:00",
+              "last_valid": "2026-10-28T08:05:09.615313+00:00",
+              "quality": "good",
+              "stale": true,
+              "clock_quality": "synchronized",
+              "calibration_status": "assumed_simulation"
+            },
+            {
+              "sensor_id": "vibration-01",
+              "asset_id": "SUP-01",
+              "measurement_type": "vibration_rms",
+              "unit": "m/s2",
+              "last_received": "2026-10-28T08:05:08.465776+00:00",
+              "last_valid": "2026-10-28T08:05:08.465776+00:00",
+              "quality": "good",
+              "stale": true,
+              "clock_quality": "synchronized",
+              "calibration_status": "assumed_simulation"
+            },
+            {
+              "sensor_id": "wall-thermometer",
+              "asset_id": "BW-01",
+              "measurement_type": "temperature",
+              "unit": "degC",
+              "last_received": "2026-10-28T08:05:08.485715+00:00",
+              "last_valid": "2026-10-28T08:05:08.485715+00:00",
+              "quality": "good",
+              "stale": true,
+              "clock_quality": "synchronized",
+              "calibration_status": "assumed_simulation"
+            },
+            {
+              "sensor_id": "drum-thermometer",
+              "asset_id": "DR-01",
+              "measurement_type": "temperature",
+              "unit": "degC",
+              "last_received": "2026-10-28T08:05:07.335887+00:00",
+              "last_valid": "2026-10-28T08:05:07.335887+00:00",
+              "quality": "good",
+              "stale": true,
+              "clock_quality": "synchronized",
+              "calibration_status": "assumed_simulation"
+            },
+            {
+              "sensor_id": "pipe-temperature",
+              "asset_id": "SP-01",
+              "measurement_type": "temperature",
+              "unit": "degC",
+              "last_received": "2026-10-28T08:05:09.678139+00:00",
+              "last_valid": "2026-10-28T08:05:09.678139+00:00",
+              "quality": "good",
+              "stale": true,
+              "clock_quality": "synchronized",
+              "calibration_status": "assumed_simulation"
+            },
+            {
+              "sensor_id": "pressure-02",
+              "asset_id": "SP-02",
+              "measurement_type": "pressure",
+              "unit": "Pa",
+              "last_received": "2026-10-28T08:05:09.702254+00:00",
+              "last_valid": "2026-10-28T08:05:09.702254+00:00",
+              "quality": "good",
+              "stale": true,
+              "clock_quality": "synchronized",
+              "calibration_status": "assumed_simulation"
+            },
+            {
+              "sensor_id": "vibration-02",
+              "asset_id": "DR-01",
+              "measurement_type": "vibration_rms",
+              "unit": "m/s2",
+              "last_received": "2026-10-28T08:05:08.555529+00:00",
+              "last_valid": "2026-10-28T08:05:08.555529+00:00",
+              "quality": "good",
+              "stale": true,
+              "clock_quality": "synchronized",
+              "calibration_status": "assumed_simulation"
+            }
+          ],
+          "age_s": 92.352213,
+          "connection": "no_recent_data",
+          "monitoring_status": "unknown_or_unavailable"
+        }
+      ]
+    },
+    {
+      "profile": "B8-geometry",
+      "seed": 8240,
+      "dataset": "/home/mallikarjun/workspace/TwinGuard/experiments/outputs/e4-public-8240",
+      "started": "2026-10-28T08:05:31.071297+00:00",
+      "finished": "2026-10-28T08:06:36.373133+00:00",
+      "published": 428,
+      "distinct_published": 427,
+      "persisted": 427,
+      "completeness": 1.0
+    },
+    {
+      "profile": "B8-thermal",
+      "seed": 8241,
+      "dataset": "/home/mallikarjun/workspace/TwinGuard/experiments/outputs/e4-public-8241",
+      "started": "2026-10-28T08:06:36.397137+00:00",
+      "finished": "2026-10-28T08:07:43.834905+00:00",
+      "published": 433,
+      "distinct_published": 430,
+      "persisted": 430,
+      "completeness": 1.0
+    },
+    {
+      "profile": "B6-L2",
+      "seed": 8242,
+      "dataset": "/home/mallikarjun/workspace/TwinGuard/experiments/outputs/e4-public-8242",
+      "started": "2026-10-28T08:07:43.859260+00:00",
+      "finished": "2026-10-28T08:08:46.202502+00:00",
+      "published": 386,
+      "distinct_published": 382,
+      "persisted": 382,
+      "completeness": 1.0
+    },
+    {
+      "profile": "B9",
+      "checks": {
+        "model_loaded": true,
+        "actual_assets": true,
+        "asset_selection": true,
+        "stored_trend_chart": true,
+        "inspection_selection": true,
+        "thermal_image": true,
+        "geometric_measurement": true,
+        "monitoring_view": true,
+        "evidence_trace": true,
+        "red_advisory": true,
+        "stream_reconnect": true
+      }
+    }
+  ],
+  "publisher_completeness": [
+    {
+      "run": "B1-8200",
+      "published_messages": 436,
+      "distinct_observations": 429,
+      "persisted": 429,
+      "missing": 0,
+      "completeness": 1.0,
+      "elapsed_s": 65.91125202178955
+    },
+    {
+      "run": "B1-8201",
+      "published_messages": 432,
+      "distinct_observations": 426,
+      "persisted": 426,
+      "missing": 0,
+      "completeness": 1.0,
+      "elapsed_s": 12.00455617904663
+    },
+    {
+      "run": "B1-8202",
+      "published_messages": 437,
+      "distinct_observations": 431,
+      "persisted": 431,
+      "missing": 0,
+      "completeness": 1.0,
+      "elapsed_s": 12.006792068481445
+    },
+    {
+      "run": "B2-8220",
+      "published_messages": 434,
+      "distinct_observations": 430,
+      "persisted": 430,
+      "missing": 0,
+      "completeness": 1.0,
+      "elapsed_s": 1.9442827701568604
+    },
+    {
+      "run": "B3-8221",
+      "published_messages": 579,
+      "distinct_observations": 431,
+      "persisted": 431,
+      "missing": 0,
+      "completeness": 1.0,
+      "elapsed_s": 4.1495680809021
+    },
+    {
+      "run": "B4",
+      "published_messages": 432,
+      "distinct_observations": 427,
+      "persisted": 427,
+      "missing": 0,
+      "completeness": 1.0,
+      "elapsed_s": 26.958208084106445
+    },
+    {
+      "run": "B4-api",
+      "published_messages": 435,
+      "distinct_observations": 430,
+      "persisted": 430,
+      "missing": 0,
+      "completeness": 1.0,
+      "elapsed_s": 24.00438904762268
+    },
+    {
+      "run": "B4-database",
+      "published_messages": 432,
+      "distinct_observations": 429,
+      "persisted": 429,
+      "missing": 0,
+      "completeness": 1.0,
+      "elapsed_s": 24.006387948989868
+    },
+    {
+      "run": "B6-L2-8242",
+      "published_messages": 386,
+      "distinct_observations": 382,
+      "persisted": 382,
+      "missing": 0,
+      "completeness": 1.0,
+      "elapsed_s": 15.469100952148438
+    },
+    {
+      "run": "B7-8210",
+      "published_messages": 435,
+      "distinct_observations": 430,
+      "persisted": 430,
+      "missing": 0,
+      "completeness": 1.0,
+      "elapsed_s": 12.002022981643677
+    },
+    {
+      "run": "B7-8211",
+      "published_messages": 430,
+      "distinct_observations": 428,
+      "persisted": 428,
+      "missing": 0,
+      "completeness": 1.0,
+      "elapsed_s": 12.008350133895874
+    },
+    {
+      "run": "B7-8212",
+      "published_messages": 432,
+      "distinct_observations": 429,
+      "persisted": 429,
+      "missing": 0,
+      "completeness": 1.0,
+      "elapsed_s": 12.29589295387268
+    },
+    {
+      "run": "B8-geometry-8240",
+      "published_messages": 428,
+      "distinct_observations": 427,
+      "persisted": 427,
+      "missing": 0,
+      "completeness": 1.0,
+      "elapsed_s": 12.385087966918945
+    },
+    {
+      "run": "B8-thermal-8241",
+      "published_messages": 433,
+      "distinct_observations": 430,
+      "persisted": 430,
+      "missing": 0,
+      "completeness": 1.0,
+      "elapsed_s": 12.402708053588867
+    }
+  ],
+  "latency_s": {
+    "publisher_to_receipt": {
+      "n": 6072,
+      "p50": 0.04252302646636963,
+      "p95": 5.0513038396835315,
+      "p99": 7.558860836029052,
+      "max": 8.378343105316162
+    },
+    "receipt_to_ingest_commit_observed": {
+      "n": 6072,
+      "p50": 0.010596990585327148,
+      "p95": 0.013817071914672852,
+      "p99": 0.017079651355743408,
+      "max": 0.18926095962524414
+    },
+    "receipt_to_job_start": {
+      "n": 6072,
+      "p50": 21.41934907436371,
+      "p95": 46.27202773094177,
+      "p99": 51.59372740268707,
+      "max": 54.84113121032715
+    },
+    "iot_receipt_to_advisory_commit": {
+      "n": 6072,
+      "p50": 21.61557400226593,
+      "p95": 46.41859093904495,
+      "p99": 51.734688341617584,
+      "max": 55.00120306015015
+    },
+    "inspection_receipt_to_advisory_commit": {
+      "n": 3,
+      "p50": 1.2137839794158936,
+      "p95": 2.870221424102783,
+      "p99": 3.017460308074951,
+      "max": 3.054270029067993
+    },
+    "analytics_iot": {
+      "n": 6072,
+      "p50": 0.03721153736114502,
+      "p95": 0.07115794420242309,
+      "p99": 0.08005127429962158,
+      "max": 3.0371878147125244
+    },
+    "analytics_inspection": {
+      "n": 3,
+      "p50": 0.7752530574798584,
+      "p95": 2.4413906574249267,
+      "p99": 2.589491777420044,
+      "max": 2.6265170574188232
+    },
+    "fusion_and_commit_iot": {
+      "n": 6072,
+      "p50": 0.07509148120880127,
+      "p95": 0.11381243467330933,
+      "p99": 0.13178261041641234,
+      "max": 4.451383829116821
+    },
+    "fusion_and_commit_inspection": {
+      "n": 3,
+      "p50": 0.29365110397338867,
+      "p95": 0.3421563863754272,
+      "p99": 0.3464679670333862,
+      "max": 0.347545862197876
+    }
+  },
+  "database_query_s": {
+    "n": 282,
+    "p50": 0.001088571996660903,
+    "p95": 0.06539981783716937,
+    "p99": 0.2092582947720075,
+    "max": 0.24938335799379274
+  },
+  "api_response_s": {
+    "n": 282,
+    "p50": 0.044086153007810935,
+    "p95": 0.3219856300216633,
+    "p99": 0.5654629942512837,
+    "max": 2.087186285003554
+  },
+  "browser_commit_to_sse_receipt_s": {
+    "n": 6075,
+    "p50": 0.2686018943786621,
+    "p95": 0.504079532623291,
+    "p99": 3.5882502889633336,
+    "max": 8.57947587966919
+  },
+  "first_critical": {
+    "record": {
+      "observation_id": "e4-public-8210-pressure-01-seq-30",
+      "sensor": "pressure-01",
+      "receipt": "2026-10-28T07:56:02.668356+00:00",
+      "job_id": "e4-public-8210-pressure-01-seq-30",
+      "kind": "iot",
+      "job_start": "2026-10-28T07:56:10.985684+00:00",
+      "analytics_complete": "2026-10-28T07:56:11.010996+00:00",
+      "advisory_available": "2026-10-28T07:56:11.087848+00:00",
+      "assessments": [
+        "assessment-364708653adee9692cad",
+        "assessment-fe7d6f1781a14bb53d37",
+        "assessment-24a3fbcd397811bf99dc",
+        "assessment-c86fe38c44a96f026070",
+        "assessment-972aa4d5a82bb7a538b1",
+        "assessment-7914a6c5abf15fe43cbf",
+        "assessment-c08a25e799bb20a0d890",
+        "assessment-bac7806ecfc19e05a230"
+      ],
+      "advisory_commit_confirmed_at": "2026-10-28T07:56:11.093991+00:00"
+    },
+    "browser_visible_at": "2026-10-28T07:56:11.598955+00:00",
+    "receipt_to_browser_visible_s": 8.930598974227905
+  },
+  "audit_counts": {
+    "accepted": 6075,
+    "publisher_epoch_changed": 19,
+    "out_of_order_acquisition": 422,
+    "duplicate_observation": 67,
+    "duplicate_delivery": 145,
+    "opcua_disconnected": 3,
+    "artifact_uploaded": 3
+  },
+  "duplicate_durable_observation_ids": 0,
+  "repeated_event_open_effects": 0,
+  "job_status_counts": {
+    "completed": 6075
+  },
+  "retried_jobs": 2,
+  "failed_jobs": [],
+  "inspections": [
+    {
+      "id": "inspection-e4-public-8240",
+      "geometric_statuses": [
+        "valid"
+      ],
+      "geometry_regions": 1,
+      "thermal_statuses": [
+        "inconclusive",
+        "valid"
+      ],
+      "thermal_regions": 0
+    },
+    {
+      "id": "inspection-e4-public-8241",
+      "geometric_statuses": [
+        "valid"
+      ],
+      "geometry_regions": 0,
+      "thermal_statuses": [
+        "inconclusive",
+        "valid"
+      ],
+      "thermal_regions": 1
+    },
+    {
+      "id": "inspection-e4-public-8242",
+      "geometric_statuses": [
+        "insufficient_coverage"
+      ],
+      "geometry_regions": 0,
+      "thermal_statuses": [
+        "inconclusive",
+        "valid"
+      ],
+      "thermal_regions": 0
+    }
+  ],
+  "browser": {
+    "errors": [],
+    "checks": {
+      "model_loaded": true,
+      "actual_assets": true,
+      "asset_selection": true,
+      "stored_trend_chart": true,
+      "inspection_selection": true,
+      "thermal_image": true,
+      "geometric_measurement": true,
+      "monitoring_view": true,
+      "evidence_trace": true,
+      "red_advisory": true,
+      "acknowledgment": true,
+      "stream_reconnect": true
+    },
+    "screenshots": [
+      "E4-7_dashboard.png"
+    ],
+    "started_wall_s": 1793175173.8483648,
+    "browser_last_delivery_wall_s": 1793175208.956339,
+    "external_requests": [],
+    "render_metrics": {
+      "dom": 453,
+      "heap": 47400000,
+      "stream": 6000
+    },
+    "finished_wall_s": 1793175209.0264034
+  },
+  "live_browser": {
+    "first_red_visible_at": "2026-10-28T07:56:11.598955+00:00",
+    "last_stream_id": 18670
+  },
+  "security": {
+    "unauthorized_connection_results": [
+      "Not authorized",
+      "Not authorized"
+    ],
+    "unauthorized_topic_persisted": 0
+  },
+  "environment": {
+    "platform": "Linux-6.18.54.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "processor": "x86_64",
+    "cpu_count": 20
+  },
+  "resource_samples": 287,
+  "peak_database_bytes": 188577459,
+  "software": {
+    "twinguard": "0.6.0",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "open3d": "0.19.0",
+    "fastapi": "0.162.0",
+    "sqlalchemy": "2.1.6",
+    "alembic": "1.20.1",
+    "psycopg": "3.3.6",
+    "paho-mqtt": "2.1.0",
+    "asyncua": "1.1.8",
+    "playwright": "1.64.1"
+  },
+  "python": "3.12.3",
+  "images": [
+    "{\"Containers\":\"1\",\"CreatedAt\":\"2026-10-28 07:52:17 +0000 UTC\",\"CreatedSince\":\"36 seconds ago\",\"Digest\":\"\\u003cnone\\u003e\",\"ID\":\"d4e5a216b435\",\"Repository\":\"twinguard-edge-frontend\",\"SharedSize\":\"N/A\",\"Size\":\"94.1MB\",\"Tag\":\"local\",\"UniqueSize\":\"N/A\"}",
+    "{\"Containers\":\"1\",\"CreatedAt\":\"2026-10-28 07:52:11 +0000 UTC\",\"CreatedSince\":\"42 seconds ago\",\"Digest\":\"\\u003cnone\\u003e\",\"ID\":\"5656fa705aff\",\"Repository\":\"twinguard-edge-worker\",\"SharedSize\":\"N/A\",\"Size\":\"3.09GB\",\"Tag\":\"local\",\"UniqueSize\":\"N/A\"}",
+    "{\"Containers\":\"4\",\"CreatedAt\":\"2026-10-28 07:52:07 +0000 UTC\",\"CreatedSince\":\"46 seconds ago\",\"Digest\":\"\\u003cnone\\u003e\",\"ID\":\"bb79380c6ee5\",\"Repository\":\"twinguard-edge-api\",\"SharedSize\":\"N/A\",\"Size\":\"658MB\",\"Tag\":\"local\",\"UniqueSize\":\"N/A\"}",
+    "{\"Containers\":\"0\",\"CreatedAt\":\"2026-10-28 06:11:48 +0000 UTC\",\"CreatedSince\":\"2 hours ago\",\"Digest\":\"\\u003cnone\\u003e\",\"ID\":\"de4635852c4e\",\"Repository\":\"twinguard-phase4-api\",\"SharedSize\":\"N/A\",\"Size\":\"323MB\",\"Tag\":\"latest\",\"UniqueSize\":\"N/A\"}",
+    "{\"Containers\":\"0\",\"CreatedAt\":\"2026-10-28 01:43:58 +0000 UTC\",\"CreatedSince\":\"6 hours ago\",\"Digest\":\"\\u003cnone\\u003e\",\"ID\":\"4b150b48b411\",\"Repository\":\"node\",\"SharedSize\":\"N/A\",\"Size\":\"329MB\",\"Tag\":\"22-slim\",\"UniqueSize\":\"N/A\"}",
+    "{\"Containers\":\"0\",\"CreatedAt\":\"2026-10-27 16:11:05 +0000 UTC\",\"CreatedSince\":\"16 hours ago\",\"Digest\":\"\\u003cnone\\u003e\",\"ID\":\"f97e8e365fcc\",\"Repository\":\"twinguard-phase31-api\",\"SharedSize\":\"N/A\",\"Size\":\"325MB\",\"Tag\":\"latest\",\"UniqueSize\":\"N/A\"}",
+    "{\"Containers\":\"0\",\"CreatedAt\":\"2026-10-27 14:47:30 +0000 UTC\",\"CreatedSince\":\"17 hours ago\",\"Digest\":\"\\u003cnone\\u003e\",\"ID\":\"45c9fc864ad3\",\"Repository\":\"twinguard-phase3-api\",\"SharedSize\":\"N/A\",\"Size\":\"324MB\",\"Tag\":\"latest\",\"UniqueSize\":\"N/A\"}",
+    "{\"Containers\":\"0\",\"CreatedAt\":\"2026-10-27 13:30:49 +0000 UTC\",\"CreatedSince\":\"18 hours ago\",\"Digest\":\"\\u003cnone\\u003e\",\"ID\":\"bb14c1347032\",\"Repository\":\"twinguard-phase2-check-api\",\"SharedSize\":\"N/A\",\"Size\":\"323MB\",\"Tag\":\"latest\",\"UniqueSize\":\"N/A\"}",
+    "{\"Containers\":\"0\",\"CreatedAt\":\"2026-10-27 13:30:49 +0000 UTC\",\"CreatedSince\":\"18 hours ago\",\"Digest\":\"\\u003cnone\\u003e\",\"ID\":\"bb14c1347032\",\"Repository\":\"twinguard-phase2\",\"SharedSize\":\"N/A\",\"Size\":\"323MB\",\"Tag\":\"validation\",\"UniqueSize\":\"N/A\"}",
+    "{\"Containers\":\"0\",\"CreatedAt\":\"2026-10-27 11:57:58 +0000 UTC\",\"CreatedSince\":\"20 hours ago\",\"Digest\":\"\\u003cnone\\u003e\",\"ID\":\"b054b7253598\",\"Repository\":\"twinguard-phase1\",\"SharedSize\":\"N/A\",\"Size\":\"322MB\",\"Tag\":\"validation\",\"UniqueSize\":\"N/A\"}",
+    "{\"Containers\":\"0\",\"CreatedAt\":\"2026-10-27 11:57:58 +0000 UTC\",\"CreatedSince\":\"20 hours ago\",\"Digest\":\"\\u003cnone\\u003e\",\"ID\":\"b054b7253598\",\"Repository\":\"twinguard-phase1-check-api\",\"SharedSize\":\"N/A\",\"Size\":\"322MB\",\"Tag\":\"latest\",\"UniqueSize\":\"N/A\"}",
+    "{\"Containers\":\"0\",\"CreatedAt\":\"2026-10-27 10:59:56 +0000 UTC\",\"CreatedSince\":\"21 hours ago\",\"Digest\":\"\\u003cnone\\u003e\",\"ID\":\"4701e93f1dca\",\"Repository\":\"twinguard-phase0-check-api\",\"SharedSize\":\"N/A\",\"Size\":\"315MB\",\"Tag\":\"latest\",\"UniqueSize\":\"N/A\"}",
+    "{\"Containers\":\"0\",\"CreatedAt\":\"2026-10-27 10:59:56 +0000 UTC\",\"CreatedSince\":\"21 hours ago\",\"Digest\":\"\\u003cnone\\u003e\",\"ID\":\"4701e93f1dca\",\"Repository\":\"twinguard-phase0\",\"SharedSize\":\"N/A\",\"Size\":\"315MB\",\"Tag\":\"validation\",\"UniqueSize\":\"N/A\"}",
+    "{\"Containers\":\"4\",\"CreatedAt\":\"2026-10-23 06:46:50 +0000 UTC\",\"CreatedSince\":\"5 days ago\",\"Digest\":\"\\u003cnone\\u003e\",\"ID\":\"860aeb5d63ce\",\"Repository\":\"eclipse-mosquitto\",\"SharedSize\":\"N/A\",\"Size\":\"41.8MB\",\"Tag\":\"2\",\"UniqueSize\":\"N/A\"}",
+    "{\"Containers\":\"4\",\"CreatedAt\":\"2026-10-21 22:57:32 +0000 UTC\",\"CreatedSince\":\"6 days ago\",\"Digest\":\"\\u003cnone\\u003e\",\"ID\":\"266d3c257594\",\"Repository\":\"postgres\",\"SharedSize\":\"N/A\",\"Size\":\"424MB\",\"Tag\":\"17-alpine\",\"UniqueSize\":\"N/A\"}",
+    "{\"Containers\":\"0\",\"CreatedAt\":\"2026-03-24 23:11:15 +0000 UTC\",\"CreatedSince\":\"7 months ago\",\"Digest\":\"\\u003cnone\\u003e\",\"ID\":\"a8b39bd9cf0f\",\"Repository\":\"nginx\",\"SharedSize\":\"N/A\",\"Size\":\"93.4MB\",\"Tag\":\"1.28-alpine\",\"UniqueSize\":\"N/A\"}",
+    "{\"Containers\":\"0\",\"CreatedAt\":\"2026-03-23 21:33:59 +0000 UTC\",\"CreatedSince\":\"7 months ago\",\"Digest\":\"\\u003cnone\\u003e\",\"ID\":\"11a3eb1597e8\",\"Repository\":\"hello-world\",\"SharedSize\":\"N/A\",\"Size\":\"25.9kB\",\"Tag\":\"latest\",\"UniqueSize\":\"N/A\"}",
+    "{\"Containers\":\"0\",\"CreatedAt\":\"2025-10-16 07:53:56 +0000 UTC\",\"CreatedSince\":\"12 months ago\",\"Digest\":\"\",\"ID\":\"11dd3a2f44ad\",\"Repository\":\"hyperledger/besu\",\"SharedSize\":\"N/A\",\"Size\":\"858MB\",\"Tag\":\"\\u003cnone\\u003e\",\"UniqueSize\":\"N/A\"}"
+  ],
+  "frozen_file_sha256": {
+    "requirements-edge.lock": "bc7bebbe00d5495e2c2b9df6534b93ff50bc77463658d317a3162b233b3d0185",
+    "requirements-analytics.lock": "4649d7fccda65d27d9abaaa4455bdfc53f1b2c284924c34b8dbf327d082e5066",
+    "frontend/package-lock.json": "54bd590292755fca56c3782fc6bb3d698d583cb64c09bb7efd2cd284be2c4dbd",
+    "configs/fusion/calibration/geometry_b3.json": "4c96d06b1d70dd5acdd7956d488ce6f799a2aa479ca1617414370911085dd8cb",
+    "configs/fusion/calibration/geometry_b31.json": "d88aaf2249b34cbac353bc5a40c04d9fecbdf9a8908ed3325fbe42ec71eb54ba",
+    "configs/fusion/calibration/operating_model.json": "fafa60d866ee9f51677d0ecc305728293ad6faccc7880e1c83777868de83aeeb",
+    "configs/fusion/calibration/provenance.json": "11f9d36126183a9254f6280a5348eea46f130138fefc029617a4c6492fc9e65b",
+    "configs/fusion/calibration/thermal_model.json": "f215b995a1422a395685a752952a2e861cb0dbba525924592ff91d06edb2b8e0",
+    "configs/fusion/calibration/thermal_model.npz": "ad2d14c4b08a046d7ed134ab8e6eaf2ff0be12557d5711c9505fa12f66945044",
+    "configs/analytics/accepted_reference.json": "6ddaccaecca322be7f9a82c643545eb51220d4e046f5162e1e2575676a80f05f",
+    "configs/edge/assets.json": "5455f31b90fc54225b15356b83cb0abe1f628f4a89cf9c3f8a789c482486ad4a",
+    "configs/edge/plant.glb": "54d41aefbd5b5e287b1eb0f176b208e19ae16ecc79cbbeb086aa8a63171872f7",
+    "configs/edge/simulation-sources.json": "e192f91405349737f4383029eea3efdc92fc4ecce0d2a0f94da4d13117ab7905",
+    "configs/edge/site-review-sources.json": "6383025c57c253a04687f4a99173fdd4d22a614ccfa1e3f36f887945d80b2c1e",
+    "configs/fusion/hazards.yaml": "47ddd05dfa6ebe3e1343e173e4307e1693d106f5a7d53488a4a8393c93fd1b9c",
+    "configs/fusion/site-template.yaml": "836c82fd0f41f05f10a875ebbf57633d1a521b97e6b8f5616ea051d42e18048d"
+  },
+  "measurement_notes": [
+    "Software-loopback on one workstation; not hardware/field latency.",
+    "Commit confirmation is an observed post-transaction upper bound.",
+    "Browser first-red visibility is one observed activation, not a latency quantile.",
+    "OPC UA polls snapshots; not every simulator write is promised.",
+    "Independent normal/critical sources: three each; targeted outage tests: one per service."
+  ],
+  "original_browser_checks": {
+    "errors": [],
+    "checks": {
+      "model_loaded": true,
+      "actual_assets": true,
+      "asset_selection": true,
+      "stored_trend_chart": true,
+      "inspection_selection": true,
+      "thermal_image": true,
+      "geometric_measurement": true,
+      "monitoring_view": true,
+      "evidence_trace": true,
+      "red_advisory": true,
+      "stream_reconnect": true
+    },
+    "screenshots": [
+      "E4-7_dashboard.png"
+    ],
+    "started_wall_s": 1793174929.3843591,
+    "browser_last_delivery_wall_s": 1793174983.1017854,
+    "external_requests": [],
+    "render_metrics": {
+      "dom": 453,
+      "heap": 53500000,
+      "stream": 7900
+    },
+    "finished_wall_s": 1793174983.2385156
+  },
+  "critical_temporal_baseline": {
+    "stale": 180,
+    "current": 6
+  },
+  "critical_priority_correction": {
+    "source_commit": "c62a159b72d70cd147078fd4826f064eff702119",
+    "run": "/home/mallikarjun/workspace/TwinGuard/experiments/outputs/phase5-E4-priority-verified",
+    "ordinary_pending_jobs_at_start": 302,
+    "critical_temporal_states": {
+      "current": 186
+    },
+    "receipt_to_committed_advisory_s": {
+      "n": 186,
+      "p50": 0.5911434888839722,
+      "p95": 2.249488651752472,
+      "p99": 4.5885762691497805,
+      "max": 4.652112007141113
+    },
+    "first_receipt_to_browser_red_s": 0.9745690822601318,
+    "dataset_count": 3,
+    "inputs": "Identical public pressure datasets 8210\u20138212; fresh database and confirmed ordinary job backlog; no artificial transport backlog.",
+    "comparison_limit": "Focused corrective run, not a repeated full outage/resource benchmark; workloads are related but not identical to the original full run."
+  },
+  "correction_history": [
+    {
+      "run": "phase5-E4-formal",
+      "status": "interrupted development",
+      "reason": "Original timestamps of separate replay datasets could mix operating context; source-provenance binding corrected."
+    },
+    {
+      "run": "phase5-E4-validated",
+      "status": "executed with failures",
+      "reason": "OPC UA immutable timestamp constructor and missing Open3D native libraries; all failures retained."
+    },
+    {
+      "run": "phase5-E4-corrected-integration",
+      "status": "targeted corrected workflows",
+      "reason": "Actual operating protocols, L1/thermal positives and L2 inconclusiveness verified."
+    },
+    {
+      "run": "phase5-E4-release",
+      "status": "full executed benchmark",
+      "reason": "All jobs completed, completeness/restarts/browser demonstrated; FIFO freshness limitation identified."
+    },
+    {
+      "run": "phase5-E4-priority-final",
+      "status": "combined transport overload",
+      "reason": "124 current/62 stale readings; initial input backlog meant some data was already stale before ingestion. Retained, not counted as a clean priority comparison."
+    },
+    {
+      "run": "phase5-E4-priority-verified",
+      "status": "focused priority correction",
+      "reason": "Ordinary messages confirmed durable before critical publishing; original thresholds/clock rules preserved."
+    }
+  ],
+  "resources_summary": {
+    "sample_count": 287,
+    "peak_summed_container_cpu_percent": 475.32,
+    "peak_memory_mib_by_service": {
+      "frontend-1": 19.84,
+      "fast-worker-1": 62.4,
+      "ingestion-1": 54.13,
+      "api-1": 177.8,
+      "inspection-worker-1": 272.8,
+      "database-1": 207.7,
+      "broker-1": 7.605,
+      "migrate-1": 42.2,
+      "opcua-simulator-1": 116.3,
+      "opcua-adapter-1": 77.96
+    },
+    "peak_pending_jobs": 349,
+    "note": "Sampled peaks, not continuous maximum; summed per-process CPU can exceed 100%. Browser runs on host."
+  },
+  "hardware_model": "12th Gen Intel(R) Core(TM) i7-12700",
+  "host_memory_kib": 16258948,
+  "capacity_estimate": {
+    "nominal_1x_observations_per_s_from_actual_source_records": 3.5722222222222224,
+    "mean_public_observation_json_bytes": 641.9889657444005,
+    "observed_database_growth_bytes_per_observation_including_jobs_traces_audit": 29721.633728590252,
+    "raw_observation_json_90day_bytes": 17832912694.86166,
+    "naive_full_platform_90day_bytes": 825595653059.2887,
+    "limits": "Projection only; excludes or differently scales indexes, vacuum/reuse, active-history growth, aggregation, WAL/backups and inspection cadence. No 90-day storage/endurance claim. Scientific/decision history is conservatively retained."
+  },
+  "artifact_bytes_full_run": 2167200
+}

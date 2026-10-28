@@ -1,0 +1,29 @@
+[
+  {
+    "inspection": "inspection-e4-public-8242",
+    "status": 200,
+    "hash_verified": true,
+    "points_shape": [
+      5452,
+      3
+    ]
+  },
+  {
+    "inspection": "inspection-e4-public-8241",
+    "status": 200,
+    "hash_verified": true,
+    "points_shape": [
+      4584,
+      3
+    ]
+  },
+  {
+    "inspection": "inspection-e4-public-8240",
+    "status": 200,
+    "hash_verified": true,
+    "points_shape": [
+      4551,
+      3
+    ]
+  }
+]

@@ -59,3 +59,7 @@ Phase 3 adds public RegistrationResult (T_baseline_current, registered-world art
 ## Phase 4 update
 
 Phase 4 adds FusionEvidence, ProcessingRecord, FusionEvidenceManifest, TemporalDecision, CompatibilityDecision, DecisionTrace, AdvisoryEvent/Notice, OperatorAction, FusionState and typed FusionPolicy/HazardRule/SensorAuthority/MonitoringRequirement/FusionBenchmark schemas. Existing Phase 3 contracts and ConditionAssessment meanings remain unchanged. Current versus historical support, scope/basis, separate availability and categorical quality are explicit. See EVIDENCE_SEMANTICS.md.
+
+## Phase 5 operational contracts
+
+EdgeEnvelope and SourceRegistration are additive public schemas. Original SensorObservation, InspectionCapture, analytical outputs and ConditionAssessment remain unchanged. SQL metadata independently stores authenticated identity, original acquisition/receipt claims, actual edge receipt/processing/availability, clock basis, replay anchor/rate, source epoch and calibration reference. Per-capture replay mapping preserves relative acquisition times. Queue priority is server generated, not a publisher assertion or a hazard outcome. Original observations and computed registered arrays remain immutable/hash-addressed. See EDGE_INGESTION.md and PERSISTENCE_AND_RECOVERY.md.

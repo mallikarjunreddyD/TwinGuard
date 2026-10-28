@@ -1,0 +1,13 @@
+{
+  "reason": "Add inspection-history selection, latest quantitative frame, measured thermal region outlines/residuals. Backend ingestion/analytics/F1 unchanged during the formal run.",
+  "files": {
+    "frontend/src/semantics.test.ts": "a8c7ecaf3d47b617ffe16b8233dc3c89a158b058be6ffe457a7b2922c41e1908",
+    "frontend/src/Plant.tsx": "ca0b3c60cd4db05cfd763d778804b6a2851d6289cd550364e2202478ceceb619",
+    "frontend/src/main.tsx": "383db15ebaf4da8a45e5a846c42afeaea12dceba074cfaa3af02fb1d9b43183b",
+    "frontend/src/style.css": "136fefafb23e9215601e79115ef508c5c7cc903179cdb6e2620ea6a80de73394",
+    "frontend/src/semantics.ts": "553797921303497f458b43d7e2bfeb80f251c725542d3abde105869a3592d8d8"
+  },
+  "frontend_image": "sha256:1e4a3f058ff85b5ec05aa789a43d2206054c6cfeb0b1aaf53f6d3a7b1cd78c6c",
+  "status": "Resolved and revalidated in the final clean E4 release",
+  "validation_run": "experiments/outputs/phase5-E4-release"
+}

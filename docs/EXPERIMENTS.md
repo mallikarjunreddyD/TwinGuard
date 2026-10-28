@@ -33,3 +33,7 @@ The held-out script refuses an existing output and verifies frozen source/model 
 ## Phase 4 update
 
 E3 is implemented with separate E3-A controlled-semantic and E3-B actual-analytics tracks and a fixed F0 two-signal comparator versus F1. configs/experiments/E3.yaml declares fresh seeds, frozen models, cadence, availability assumptions and matching. Research metrics are post-seal and separate by track; no combined headline accuracy is justified. E4 remains unimplemented. See EXPERIMENT_E3.md and PHASE4_VALIDATION.md.
+
+## Executed Phase 5 E4
+
+E4 now runs actual local MQTT/OPC UA, PostgreSQL, original analytics/F1, API and real browser workflows. Full E4: 6,072 observations / 6,075 completed jobs, 16.86 minutes; three normal workloads retained all 1,286 distinct published readings. Initial FIFO timing exposed stale critical data; the final focused priority/revision-cache correction qualified all 186 critical readings with 302 older ordinary jobs pending. The failed/transport-overload runs remain preserved. Quantiles, recovery, resources, capacity projections and comparison limits are in PHASE5_VALIDATION.md. E1/E2/E3 results and numerical algorithms are unchanged. Source/API/browser times are actual software-loopback measurements, never field latency.

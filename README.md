@@ -2,7 +2,9 @@
 
 **Development and Validation of an Uncertainty-Aware Industrial IoT Digital Twin for Condition Monitoring and UAV-Assisted Inspection of Boilers and Pressure Equipment**
 
-Phases 0–4 are implemented: plant simulation, imperfect virtual sensing, CPU point-cloud registration, qualified geometric change detection, and calibrated operating/thermal residual analytics. Full synthetic E1/E2 benchmarks are executed. Small-deformation sensitivity remains limited; hazard-aware advisory fusion is implemented; physical industrial safety validation remains future work. See [Phase 3 validation](docs/PHASE3_VALIDATION.md) for measured results and limitations.
+Phases 0–5 now provide a local software research demonstrator: original plant/sensing/analytics and F1 fusion, authenticated MQTT/read-only OPC UA, durable PostgreSQL jobs/checkpoints, and a real 3D browser dashboard. Full E4 processed 6,072 observations and 6,075 jobs. A focused scheduling correction retained current qualification for 186/186 critical readings under ordinary backlog (2.249 s p95 receipt-to-advisory; no UAV). These are software-loopback measurements, not industrial safety certification.
+
+Start with [Demo walkthrough](docs/DEMO_WALKTHROUGH.md), [Phase 5 validation and all 46 acceptance decisions](docs/PHASE5_VALIDATION.md), and [Dashboard guide](docs/DASHBOARD_GUIDE.md). Physical/site commissioning remains incomplete. Phase 6 is not implemented. Earlier phase-specific sections below retain their historical experimental context.
 
 ## Install and verify
 
@@ -11,8 +13,8 @@ Validated environment: Ubuntu/Linux, Python 3.12.3. Python 3.11+ is permitted by
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
-pip install -r requirements-dev.lock
-pip install -e '.[dev,viz,sensing,analytics]' --no-deps
+pip install -r requirements-dev.lock -r requirements-edge.lock
+pip install -e '.[dev,viz,sensing,analytics,edge]' --no-deps
 bash scripts/validate.sh
 ruff check src tests scripts
 ruff format --check src tests scripts
@@ -20,7 +22,7 @@ mypy src
 pip check
 ```
 
-For a fresh compatible dependency resolution use `pip install -e '.[dev,viz,sensing,analytics]'`. Runtime adds Trimesh; Matplotlib is optional (`.[viz]`) and used for scientific plots. NumPy supplies plant dynamics; the optional analytics extra adds Open3D and SciPy. requirements-analytics.lock pins the analytics runtime. No network is used during simulation after installation.
+For a fresh compatible dependency resolution use `pip install -e '.[dev,viz,sensing,analytics,edge]'`. Runtime adds Trimesh; Matplotlib is optional (`.[viz]`) and used for scientific plots. NumPy supplies plant dynamics; the optional analytics extra adds Open3D and SciPy. requirements-analytics.lock pins the analytics runtime. No network is used during simulation after installation.
 
 ## Run the plant
 
@@ -41,20 +43,18 @@ The last command executes S0–S5 plus a support-shift demonstration, compares a
 
 Original commands remain: `twinguard doctor`, `version`, `list-scenarios`, `validate-config scenarios/S2.yaml`, `validate-data datasets/synthetic/observation.json --kind SensorObservation`, and `export-schemas`. Use `twinguard --root /path/to/TwinGuard ...` outside the repository; explicit CLI input paths are relative to the invoking directory.
 
-## API and container
+## API and local edge platform
 
 ```bash
-uvicorn twinguard.api.app:app --reload --host 127.0.0.1 --port 8000
-curl --fail http://127.0.0.1:8000/health
-curl --fail http://127.0.0.1:8000/version
-curl --fail http://127.0.0.1:8000/capabilities
-docker compose --env-file .env.example -f deployment/compose.yaml config
-docker compose --env-file .env.example -f deployment/compose.yaml up --build --wait
-# After inspection:
-docker compose -f deployment/compose.yaml down
+./scripts/edge_build.sh
+docker compose --env-file .edge/runtime.env -f deployment/compose.yaml up -d --no-build
 ```
 
-The minimal API exposes health, version and capability inventory. Docker requires no GPU, serves no datasets or truth files and omits optional plotting libraries. The API does not run analytics or return truth-state objects.
+Dashboard: http://localhost:18780. Enter a local viewer/operator token from the generated, ignored `.edge/secrets.json`. The build creates distinct non-default credentials; none are committed. The primary stack does not expose the database/broker. Host publishers use the explicit loopback validation overlay in the walkthrough. Installation/build downloads dependencies; normal operation uses no cloud service.
+
+Use a new project/volumes for an independent experiment. If the validated `twinguard-e4-release` stack is already running, inspect it directly or stop that project before starting another on the same ports. The walkthrough includes actual source publishing, inspection processing, critical pressure without UAV, monitoring loss, acknowledgment and restart.
+
+The existing `deployment/Dockerfile` now builds the lightweight operational API; `deployment/edge/Dockerfile.worker` adds Open3D and required native libraries. `/health`, `/version` and `/capabilities` remain public metadata; operational `/api/v1/` routes require authentication. Details: [Architecture](docs/PHASE5_ARCHITECTURE.md), [Security](docs/PLATFORM_SECURITY.md), [E4](docs/EXPERIMENT_E4.md).
 
 ## Repository and roadmap
 

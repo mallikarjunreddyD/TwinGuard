@@ -1,0 +1,38 @@
+{
+  "baseline_tests": 227,
+  "pytest_passed": 266,
+  "pytest_seconds": 47.56,
+  "warnings": 1,
+  "warning": "Existing Starlette/httpx deprecation",
+  "ruff": "PASS",
+  "formatted_python_files": 126,
+  "mypy": "PASS",
+  "mypy_source_files": 91,
+  "frontend_build": "PASS",
+  "frontend_tests": 3,
+  "pip_check": "PASS",
+  "schema_export": "PASS",
+  "real_protocols": [
+    "MQTT QoS1",
+    "numeric read-only OPC UA"
+  ],
+  "docker_builds": [
+    "API",
+    "Open3D worker",
+    "React/Nginx"
+  ],
+  "browser_checks": "All 12 final checks true, no page errors",
+  "logs": {
+    "pytest": "/tmp/tg5-final-complete-tests.log",
+    "frontend": "/tmp/tg5-complete-frontend.log",
+    "typing": "/tmp/tg5-complete-mypy.log",
+    "lint": "/tmp/tg5-complete-ruff.log",
+    "format": "/tmp/tg5-complete-format.log",
+    "full_E4": "/tmp/tg5-e4-release.log",
+    "priority": "/tmp/tg5-priority-verified.log"
+  },
+  "scientific_directories_unchanged": true,
+  "browser_check_count": 12,
+  "cli_report": "PASS",
+  "cli_run_parser": "PASS"
+}

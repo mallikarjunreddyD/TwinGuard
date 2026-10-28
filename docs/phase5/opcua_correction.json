@@ -1,0 +1,8 @@
+{
+  "initial_result": "FAIL",
+  "initial_reason": "asyncua 1.1.8 DataValue is frozen; SourceTimestamp must be a constructor argument",
+  "correction": "Construct DataValue with original measured source timestamp; no change to measurements, units, status, analytics or F1.",
+  "revalidation": "Pending actual numeric channel roundtrip and interruption tests; failed formal subprofile remains preserved.",
+  "status": "Resolved and revalidated in the final clean E4 release",
+  "validation_run": "experiments/outputs/phase5-E4-release"
+}

@@ -274,7 +274,7 @@ def test_experiments():
         assert ExperimentDefinition.model_validate(
             yaml.safe_load(path.read_text())
         ).implementation_status == (
-            "implemented" if path.stem in ("E1", "E2", "E3") else "not_implemented"
+            "implemented" if path.stem in ("E1", "E2", "E3", "E4") else "not_implemented"
         )
     assert artifact_path("E1", "run-01", "cloud") == "experiments/outputs/E1/run-01/cloud"
     with pytest.raises(ValidationError):
