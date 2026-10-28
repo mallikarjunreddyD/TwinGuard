@@ -1,0 +1,23 @@
+{
+  "initial_candidate": "dd20acd",
+  "validated_source_commit": "42965802943ef44c94d434c7ca3d278789b66e04",
+  "validated_source_sha256": {
+    "src/twinguard/fusion/__init__.py": "d31265a93d2f7f39b940d67cc9229188a212829e25ac1c59d000c0ad79ed9be9",
+    "src/twinguard/fusion/adapters.py": "0e7da319a5e1470be1ae8e2bd2c361f34091b25c25a71fc26d5f4c44ab3a9e50",
+    "src/twinguard/fusion/cli.py": "355bffb6b17973e7318dc86aec406e3482fd1a295e68b0a645d5c6bc6f518397",
+    "src/twinguard/fusion/dependence.py": "c1bb92b4587aa6b48a1b75138312bc782362259e54725ec05f640ff2564f5924",
+    "src/twinguard/fusion/engine.py": "e29a1b144d5707140807f06700dd6e0557484b317bc939b2db227c53df311bca",
+    "src/twinguard/fusion/io.py": "cfad70a589fb57fbb74e31eb0298104bcab726167475ae103228eadc6380b7e6",
+    "src/twinguard/fusion/lifecycle.py": "bee8360218698df95759e541c4151a843944eaba9227573f984491e9bdf02a69",
+    "src/twinguard/fusion/models.py": "a7fa0b63a237da6d8ed5708b44db6aa463b1824bedecf9c270584f73498da2f8",
+    "src/twinguard/fusion/policies.py": "cc1bcfbbe56de1213ae6fec283a997e75bb1654d877f3ff7fe9272b044ab0e16",
+    "src/twinguard/fusion/spatial.py": "dbd9cbe4c622ce076e5dd2bfac7c2b022fe3ef341c849b6daaf27c360c3c1b3a",
+    "src/twinguard/fusion/temporal.py": "05bfbee3425c00b868e982f18a9d3b7c332a8b3173353d2f9ac07b13d6ac199e"
+  },
+  "original_freeze": "docs/phase4/freeze.json",
+  "policy_parameters_unchanged": true,
+  "assessments_semantically_identical": 244800,
+  "validation_revision": "representation-v3-persistence",
+  "replay_runtime_s": 104.02460680500371,
+  "preserved_previous_replay": "experiments/outputs/phase4-validated-representation-v2"
+}

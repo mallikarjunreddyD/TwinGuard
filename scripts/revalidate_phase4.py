@@ -168,6 +168,7 @@ def main():
         "source_commit": subprocess.check_output(
             ["git", "rev-parse", "HEAD"], cwd=ROOT, text=True
         ).strip(),
+        "candidate_source_sha256": original["source_sha256"],
         "initial_source_commit": original["source_commit"],
         "initial_policy_sha256": original["policy_sha256"],
         "policy_sha256": policy_hash(load_policy(ROOT / "configs/fusion/hazards.yaml")),

@@ -28,3 +28,8 @@ python scripts/phase31.py figures
 ```
 
 The held-out script refuses an existing output and verifies frozen source/model hashes before starting. The committed freeze describes this exact candidate; editing algorithms requires a new untouched partition. Scripts preserve original baseline reports rather than substituting held-out measurements. Git HEAD at execution and per-artifact hashes/provenance are recorded. Plotting source data and all eight figures live under docs/phase3_1 and docs/figures/phase3_1. Reports include overall and conditional recall, abstention, per-fidelity/amplitude counts, raw/qualified/unqualified error and missing-estimate counts. Paired bootstrap uncertainty resamples independent seeds, preserving within-seed/view dependence. It does not calibrate engineering uncertainty scores.
+
+
+## Phase 4 update
+
+E3 is implemented with separate E3-A controlled-semantic and E3-B actual-analytics tracks and a fixed F0 two-signal comparator versus F1. configs/experiments/E3.yaml declares fresh seeds, frozen models, cadence, availability assumptions and matching. Research metrics are post-seal and separate by track; no combined headline accuracy is justified. E4 remains unimplemented. See EXPERIMENT_E3.md and PHASE4_VALIDATION.md.

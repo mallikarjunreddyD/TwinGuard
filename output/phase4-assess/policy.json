@@ -1,0 +1,494 @@
+{
+  "schema_version": "1.0.0",
+  "policy_id": "synthetic-hazards",
+  "version": "v1",
+  "deployment_mode": "illustrative_simulation",
+  "rationale": "Synthetic advisory research only. Green is scoped evidence completeness, not boiler safety. Real deployment requires site-specific approved limits and verified calibration.",
+  "assets": {
+    "BW-01": "water_wall",
+    "DR-01": "drum",
+    "SP-01": "pipe",
+    "SP-02": "pipe",
+    "SUP-01": "support",
+    "VL-01": "valve",
+    "REF-01": "reference",
+    "inspection-context": "inspection"
+  },
+  "authorities": [
+    {
+      "schema_version": "1.0.0",
+      "sensor_id": "temperature-01",
+      "asset_id": "BW-01",
+      "measurement_type": "temperature",
+      "unit": "degC",
+      "calibration_status": "assumed_simulation",
+      "measurement_min": -40.0,
+      "measurement_max": 500.0,
+      "critical_limit": 240.0,
+      "hysteresis": 3.0,
+      "engineering_basis": "ILLUSTRATIVE SIMULATION ONLY: fixed model nominal temperature envelope reaches 230 degC at load 1; this example uses a 10 degC reserve. Not a boiler/site/statutory limit; verified calibration and site engineering approval required."
+    },
+    {
+      "schema_version": "1.0.0",
+      "sensor_id": "pressure-01",
+      "asset_id": "BW-01",
+      "measurement_type": "pressure",
+      "unit": "Pa",
+      "calibration_status": "assumed_simulation",
+      "measurement_min": 0.0,
+      "measurement_max": 2000000.0,
+      "critical_limit": 1150000.0,
+      "hysteresis": 25000.0,
+      "engineering_basis": "ILLUSTRATIVE SIMULATION ONLY: fixed model nominal pressure envelope reaches 1100000 Pa at load 1; this example uses a 50000 Pa reserve. Not a boiler/site/statutory limit; site engineering approval required."
+    },
+    {
+      "schema_version": "1.0.0",
+      "sensor_id": "load-01",
+      "asset_id": "DR-01",
+      "measurement_type": "operating_load",
+      "unit": "1",
+      "calibration_status": "assumed_simulation",
+      "measurement_min": 0.0,
+      "measurement_max": 1.0,
+      "critical_limit": null,
+      "hysteresis": 0.0,
+      "engineering_basis": null
+    },
+    {
+      "schema_version": "1.0.0",
+      "sensor_id": "vibration-01",
+      "asset_id": "SUP-01",
+      "measurement_type": "vibration_rms",
+      "unit": "m/s2",
+      "calibration_status": "assumed_simulation",
+      "measurement_min": 0.0,
+      "measurement_max": 10.0,
+      "critical_limit": null,
+      "hysteresis": 0.0,
+      "engineering_basis": null
+    },
+    {
+      "schema_version": "1.0.0",
+      "sensor_id": "wall-thermometer",
+      "asset_id": "BW-01",
+      "measurement_type": "temperature",
+      "unit": "degC",
+      "calibration_status": "assumed_simulation",
+      "measurement_min": -40.0,
+      "measurement_max": 500.0,
+      "critical_limit": null,
+      "hysteresis": 0.0,
+      "engineering_basis": null
+    },
+    {
+      "schema_version": "1.0.0",
+      "sensor_id": "drum-thermometer",
+      "asset_id": "DR-01",
+      "measurement_type": "temperature",
+      "unit": "degC",
+      "calibration_status": "assumed_simulation",
+      "measurement_min": -40.0,
+      "measurement_max": 500.0,
+      "critical_limit": null,
+      "hysteresis": 0.0,
+      "engineering_basis": null
+    },
+    {
+      "schema_version": "1.0.0",
+      "sensor_id": "pipe-temperature",
+      "asset_id": "SP-01",
+      "measurement_type": "temperature",
+      "unit": "degC",
+      "calibration_status": "assumed_simulation",
+      "measurement_min": -40.0,
+      "measurement_max": 500.0,
+      "critical_limit": null,
+      "hysteresis": 0.0,
+      "engineering_basis": null
+    },
+    {
+      "schema_version": "1.0.0",
+      "sensor_id": "pressure-02",
+      "asset_id": "SP-02",
+      "measurement_type": "pressure",
+      "unit": "Pa",
+      "calibration_status": "assumed_simulation",
+      "measurement_min": 0.0,
+      "measurement_max": 2000000.0,
+      "critical_limit": null,
+      "hysteresis": 0.0,
+      "engineering_basis": null
+    },
+    {
+      "schema_version": "1.0.0",
+      "sensor_id": "vibration-02",
+      "asset_id": "DR-01",
+      "measurement_type": "vibration_rms",
+      "unit": "m/s2",
+      "calibration_status": "assumed_simulation",
+      "measurement_min": 0.0,
+      "measurement_max": 10.0,
+      "critical_limit": null,
+      "hysteresis": 0.0,
+      "engineering_basis": null
+    }
+  ],
+  "requirements": [
+    {
+      "schema_version": "1.0.0",
+      "requirement_id": "pressure-monitoring",
+      "asset_id": "BW-01",
+      "hypothesis": "critical_pressure_limit",
+      "scope": "engineering_limit",
+      "max_age_s": 10.0,
+      "sensor_id": "pressure-01"
+    },
+    {
+      "schema_version": "1.0.0",
+      "requirement_id": "temperature-monitoring",
+      "asset_id": "BW-01",
+      "hypothesis": "critical_temperature_limit",
+      "scope": "engineering_limit",
+      "max_age_s": 10.0,
+      "sensor_id": "temperature-01"
+    },
+    {
+      "schema_version": "1.0.0",
+      "requirement_id": "local-wall-inspection",
+      "asset_id": "BW-01",
+      "hypothesis": "localized_geometric_change",
+      "scope": "localized_wall",
+      "max_age_s": 3600.0,
+      "sensor_id": null
+    },
+    {
+      "schema_version": "1.0.0",
+      "requirement_id": "operating-pressure-coverage",
+      "asset_id": "BW-01",
+      "hypothesis": "abnormal_process_pressure_residual",
+      "scope": "operating_reference",
+      "max_age_s": 10.0,
+      "sensor_id": null
+    }
+  ],
+  "rules": [
+    {
+      "schema_version": "1.0.0",
+      "hazard_id": "critical-pressure",
+      "hypotheses": [
+        "critical_pressure_limit"
+      ],
+      "asset_types": [
+        "water_wall",
+        "pipe",
+        "drum"
+      ],
+      "modalities": [
+        "fixed_sensor"
+      ],
+      "max_age_s": 10.0,
+      "coincidence_s": 2.0,
+      "spatial_requirement": "asset",
+      "min_independent": 1,
+      "required_scope": null,
+      "severity": "red",
+      "action": "Verify instrument and urgently escalate to authorized plant personnel under site-approved procedures",
+      "rationale": "A current authoritative configured limit crossing does not require UAV corroboration",
+      "critical_limit_only": true,
+      "immediate": true,
+      "min_positive_count": 1,
+      "min_duration_s": 0.0,
+      "automatic_recovery": true,
+      "recovery_count": 2,
+      "recovery_duration_s": 5.0,
+      "clear_on_repair": false,
+      "manual_resolution": true,
+      "aggregation_window_s": 300.0,
+      "require_distinct_modalities": false
+    },
+    {
+      "schema_version": "1.0.0",
+      "hazard_id": "residual-pressure",
+      "hypotheses": [
+        "abnormal_process_pressure_residual"
+      ],
+      "asset_types": [
+        "water_wall",
+        "pipe",
+        "drum"
+      ],
+      "modalities": [
+        "fixed_sensor"
+      ],
+      "max_age_s": 10.0,
+      "coincidence_s": 30.0,
+      "spatial_requirement": "asset",
+      "min_independent": 1,
+      "required_scope": null,
+      "severity": "amber",
+      "action": "Review operating measurements and model applicability",
+      "rationale": "Reference anomaly is not automatically a configured critical event",
+      "critical_limit_only": false,
+      "immediate": false,
+      "min_positive_count": 1,
+      "min_duration_s": 0.0,
+      "automatic_recovery": true,
+      "recovery_count": 2,
+      "recovery_duration_s": 5.0,
+      "clear_on_repair": false,
+      "manual_resolution": true,
+      "aggregation_window_s": 300.0,
+      "require_distinct_modalities": false
+    },
+    {
+      "schema_version": "1.0.0",
+      "hazard_id": "critical-temperature",
+      "hypotheses": [
+        "critical_temperature_limit"
+      ],
+      "asset_types": [
+        "water_wall",
+        "pipe",
+        "drum"
+      ],
+      "modalities": [
+        "fixed_sensor"
+      ],
+      "max_age_s": 10.0,
+      "coincidence_s": 2.0,
+      "spatial_requirement": "asset",
+      "min_independent": 1,
+      "required_scope": null,
+      "severity": "red",
+      "action": "Verify instrument and urgently escalate to authorized plant personnel under site-approved procedures",
+      "rationale": "A current authoritative configured limit crossing does not require UAV corroboration",
+      "critical_limit_only": true,
+      "immediate": true,
+      "min_positive_count": 1,
+      "min_duration_s": 0.0,
+      "automatic_recovery": true,
+      "recovery_count": 2,
+      "recovery_duration_s": 5.0,
+      "clear_on_repair": false,
+      "manual_resolution": true,
+      "aggregation_window_s": 300.0,
+      "require_distinct_modalities": false
+    },
+    {
+      "schema_version": "1.0.0",
+      "hazard_id": "residual-temperature",
+      "hypotheses": [
+        "abnormal_process_temperature_residual"
+      ],
+      "asset_types": [
+        "water_wall",
+        "pipe",
+        "drum"
+      ],
+      "modalities": [
+        "fixed_sensor"
+      ],
+      "max_age_s": 10.0,
+      "coincidence_s": 30.0,
+      "spatial_requirement": "asset",
+      "min_independent": 1,
+      "required_scope": null,
+      "severity": "amber",
+      "action": "Review operating measurements and model applicability",
+      "rationale": "Reference anomaly is not automatically a configured critical event",
+      "critical_limit_only": false,
+      "immediate": false,
+      "min_positive_count": 1,
+      "min_duration_s": 0.0,
+      "automatic_recovery": true,
+      "recovery_count": 2,
+      "recovery_duration_s": 5.0,
+      "clear_on_repair": false,
+      "manual_resolution": true,
+      "aggregation_window_s": 300.0,
+      "require_distinct_modalities": false
+    },
+    {
+      "schema_version": "1.0.0",
+      "hazard_id": "localized-geometry",
+      "hypotheses": [
+        "localized_geometric_change"
+      ],
+      "asset_types": [
+        "water_wall",
+        "support"
+      ],
+      "modalities": [
+        "geometric"
+      ],
+      "max_age_s": 3600.0,
+      "coincidence_s": 30.0,
+      "spatial_requirement": "asset",
+      "min_independent": 1,
+      "required_scope": null,
+      "severity": "amber",
+      "action": "Inspect the localized finding; retain absolute/global/support scope limitations",
+      "rationale": "Qualified localized change warrants review even with normal process readings",
+      "critical_limit_only": false,
+      "immediate": false,
+      "min_positive_count": 1,
+      "min_duration_s": 0.0,
+      "automatic_recovery": false,
+      "recovery_count": 2,
+      "recovery_duration_s": 5.0,
+      "clear_on_repair": true,
+      "manual_resolution": true,
+      "aggregation_window_s": 300.0,
+      "require_distinct_modalities": false
+    },
+    {
+      "schema_version": "1.0.0",
+      "hazard_id": "thermal-context",
+      "hypotheses": [
+        "abnormal_thermal_residual"
+      ],
+      "asset_types": [
+        "water_wall",
+        "drum",
+        "inspection"
+      ],
+      "modalities": [
+        "thermal"
+      ],
+      "max_age_s": 300.0,
+      "coincidence_s": 30.0,
+      "spatial_requirement": "none",
+      "min_independent": 1,
+      "required_scope": null,
+      "severity": "amber",
+      "action": "Review the apparent-temperature image and target a qualified reinspection",
+      "rationale": "Thermal-only finding merits attention without asserting physical co-location",
+      "critical_limit_only": false,
+      "immediate": false,
+      "min_positive_count": 1,
+      "min_duration_s": 0.0,
+      "automatic_recovery": true,
+      "recovery_count": 2,
+      "recovery_duration_s": 5.0,
+      "clear_on_repair": false,
+      "manual_resolution": true,
+      "aggregation_window_s": 300.0,
+      "require_distinct_modalities": false
+    },
+    {
+      "schema_version": "1.0.0",
+      "hazard_id": "coincident-structural-thermal",
+      "hypotheses": [
+        "localized_geometric_change",
+        "abnormal_thermal_residual"
+      ],
+      "asset_types": [
+        "water_wall"
+      ],
+      "modalities": [
+        "geometric",
+        "thermal"
+      ],
+      "max_age_s": 120.0,
+      "coincidence_s": 30.0,
+      "spatial_requirement": "region",
+      "min_independent": 2,
+      "required_scope": null,
+      "severity": "red",
+      "action": "Urgent engineering review of physically corroborated findings",
+      "rationale": "Two independent recent physically associated findings warrant urgent review; image-only does not satisfy this rule",
+      "critical_limit_only": false,
+      "immediate": false,
+      "min_positive_count": 1,
+      "min_duration_s": 0.0,
+      "automatic_recovery": true,
+      "recovery_count": 2,
+      "recovery_duration_s": 5.0,
+      "clear_on_repair": false,
+      "manual_resolution": true,
+      "aggregation_window_s": 300.0,
+      "require_distinct_modalities": true
+    },
+    {
+      "schema_version": "1.0.0",
+      "hazard_id": "residual-surface-temperature",
+      "hypotheses": [
+        "abnormal_surface_temperature_residual"
+      ],
+      "asset_types": [
+        "water_wall",
+        "pipe",
+        "drum"
+      ],
+      "modalities": [
+        "fixed_sensor"
+      ],
+      "max_age_s": 10.0,
+      "coincidence_s": 30.0,
+      "spatial_requirement": "asset",
+      "min_independent": 1,
+      "required_scope": null,
+      "severity": "amber",
+      "action": "Review the calibrated fixed surface thermometer and target inspection",
+      "rationale": "Installed surface thermometer residual is distinct from bulk process temperature and critical engineering limits",
+      "critical_limit_only": false,
+      "immediate": false,
+      "min_positive_count": 1,
+      "min_duration_s": 0.0,
+      "automatic_recovery": true,
+      "recovery_count": 2,
+      "recovery_duration_s": 5.0,
+      "clear_on_repair": false,
+      "manual_resolution": true,
+      "aggregation_window_s": 300.0,
+      "require_distinct_modalities": false
+    },
+    {
+      "schema_version": "1.0.0",
+      "hazard_id": "coincident-geometric-process",
+      "hypotheses": [
+        "localized_geometric_change",
+        "abnormal_process_temperature_residual"
+      ],
+      "asset_types": [
+        "water_wall"
+      ],
+      "modalities": [
+        "geometric",
+        "fixed_sensor"
+      ],
+      "max_age_s": 30.0,
+      "coincidence_s": 10.0,
+      "spatial_requirement": "asset",
+      "min_independent": 2,
+      "required_scope": null,
+      "severity": "amber",
+      "action": "Review compatible geometric and process-temperature evidence on the same asset",
+      "rationale": "Separate sensors may support an asset-level warning only when their declared assets and times agree; this does not establish exact region overlap",
+      "critical_limit_only": false,
+      "immediate": false,
+      "min_positive_count": 1,
+      "min_duration_s": 0.0,
+      "automatic_recovery": true,
+      "recovery_count": 2,
+      "recovery_duration_s": 5.0,
+      "clear_on_repair": false,
+      "manual_resolution": true,
+      "aggregation_window_s": 300.0,
+      "require_distinct_modalities": true
+    }
+  ],
+  "algorithm_preference": [
+    "multiscale_calibrated",
+    "patch_screening",
+    "nearest_neighbor",
+    "conditioned_quality",
+    "conditioned",
+    "static"
+  ],
+  "dependence_groups": {},
+  "shared_reference_dependence": true,
+  "missing_monitoring_advisory": true,
+  "max_clock_uncertainty_s": 1.0,
+  "spatial_tolerance_m": 0.05
+}

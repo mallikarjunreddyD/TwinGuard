@@ -1,0 +1,11 @@
+{
+  "schema_version": "1.0.0",
+  "kind": "FusionEvidenceManifest",
+  "evidence_uri": "evidence.json",
+  "sha256": "bb0884c93aa744b2fa01a888f5206e95945329c0fe4eb78f9b121baea1102bb9",
+  "count": 287,
+  "provenance": {
+    "analytics_run": "experiments/outputs/phase4-full/end_to_end/case-00004/analytics-geometry",
+    "clock_quality": "unknown"
+  }
+}

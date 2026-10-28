@@ -31,3 +31,8 @@ Phase 3 software evidence: actual CPU Open3D registration, patch geometric scree
 ## Phase 3.1 update
 
 Phase 3.1 adds frozen baseline reproduction, 140 restricted diagnostic acquisitions (D1–D6), separate healthy/development calibration, and independent paired revalidation of B1/B2/B3/B3.1. The root-cause checkpoint and candidate freeze are versioned in Git. Better synthetic localized sensitivity, if demonstrated, is not physical 10 mm LiDAR capability, absolute full-wall displacement detection, or a higher TRL. L2/support limitations and qualification remain explicit.
+
+
+## Phase 4 update
+
+Phase 4 adds tested advisory decision semantics, critical single-source escalation, timestamp/coverage/dependence constraints, lifecycle and independently evaluated E3 tracks. Controlled evidence correctness is not upstream fault-detection accuracy; synthetic end-to-end results are not physical boiler validation, certification or a new TRL rating. See PHASE4_VALIDATION.md for actual measured performance and remaining limitations.

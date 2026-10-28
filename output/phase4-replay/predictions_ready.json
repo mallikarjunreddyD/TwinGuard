@@ -1,0 +1,16 @@
+{
+  "kind": "FusionPredictionsSeal",
+  "artifacts": {
+    "advisories.json": "e1346fee5c9fe833fa0275b4d0851e7d05f58426daeb0430e1ca90cb8c128eac",
+    "assessments.json": "75e8612e2c59e719d5b0f27af32a68839b4c59cc2e2bc4b2a6b70d42cda529a4",
+    "events.json": "0fa648b73bdbb76eb096fd538c7e458bc706c3c345a6bfe1a7c3946c07f3e27f",
+    "evidence.json": "b39aa5ef3b5a2ccde348a4099ac43ff39dcfa29c6f4479085a6f70077bdfc08c",
+    "history.json": "32d1710c119a52ea01ea8e7f18cc4b061e35dac4358481ebbb9fd9d9f97f9de9",
+    "input_manifest.json": "98fe8c907bc6cd1037337baa391a8da4d9edd5827b732e9e9f8cd01838697a4f",
+    "metadata.json": "4a613b68a1f770d2a9b225fabf0580ecb53340f6e56f1d304b70e4a2e2ea2b97",
+    "policy.json": "328297a647806c43ebae68b20860a6517f88ad5637f98acfe59eb117a010b8e6",
+    "processing_metrics.json": "bef640c936780903dbb9a369c0a4bc3e209cbfbf81d2f5240a4c3fdfeeaa17de",
+    "provenance.json": "72808c1d5a75d353eab2f3bae1f870caf30f6213b6b9aadaecb1ac1fc5cf6b38",
+    "state.json": "823caa718359b541e6aae4a82b372f7b90be5304435c42c6837cb62b31cd096b"
+  }
+}

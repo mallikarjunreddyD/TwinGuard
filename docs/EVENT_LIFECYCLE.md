@@ -1,0 +1,13 @@
+# Advisory lifecycle and replay
+
+Events are keyed by asset and hazard and have deterministic IDs, separate advisory severity/lifecycle, source references, activation/recovery observation times and operator actions. States include candidate, active, escalated, acknowledged and resolved. Candidate activation supports distinct acquisition counts, minimum duration and an aggregation window. Exact retransmissions and alternate algorithms do not create independent confirmations. Repeated assessments do not emit duplicate open notices.
+
+Critical rules may bypass ordinary persistence. Missing current evidence or expiration of an old positive does not clear an active event; monitoring_unavailable and historical support remain explicit. Acknowledgment records review but never establishes recovery. Hysteresis marks whether new raw readings are eligible for clearing; at least two qualified new normals spanning five seconds are required in the example. Old/out-of-order normals cannot clear a newer event. Geometry does not automatically recover from a limited negative inspection; the sample requires recorded repair/review.
+
+OperatorAction records acknowledgment, repair or explicit resolution with asset/hazard, UTC time, stable ID and rationale. Actions applied to a checkpoint are idempotent. Authorized review is an integration precondition; authentication and physical verification are outside this local research core. Repair invalidates pre-repair geometry, while earlier observations remain historical context.
+
+AdvisoryNotice.transport_status is always record_only. Monitoring-loss notices are separate from diagnosed equipment-event alerts; restored coverage clears monitoring loss, not a physical critical advisory. F0 only emits simple severity-label transitions and clears on latest values; it does not inherit F1's recovery/quality protection semantics.
+
+replay processes availability order and supplied action times. Late analysis cannot support an earlier online assessment. Retrospective mode is explicitly labeled and still honors original availability; it does not rewrite history as if late evidence had arrived sooner. State checkpoints bind policy hash and method; backwards assessment or changing policy/method requires an explicit new replay. Source histories are retained in the research state; production retention/archival and durable exactly-once delivery belong to Phase 5 integration.
+
+A qualified normal reading discards a pending activation candidate, so subsequent positives restart consecutive activation. Active composite hazards do not clear from a single-modality normal; the conservative sample requires qualified review or its declared recovery path.

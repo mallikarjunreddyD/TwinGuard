@@ -41,3 +41,8 @@ Phase 2 layers: the acquisition controller alone receives the label-free physica
 ## Phase 3 update
 
 Phase 3 implementation update: analytics consumes only core public records/artifacts plus explicit accepted-reference/calibration data. core.boundaries rejects imports of plant, sensing implementations, evaluation or private scenario controls from consumers. evaluation/experiments orchestrates privileged generation and subsequent truth-free inference; evaluation/analytics verifies persisted prediction seals before reading labels. Analytics, experiment and reporting CLI commands are implemented. API remains metadata-only and optional Open3D/SciPy do not enter its minimal image. Historical pending-analytics statements above describe the Phase 2 handoff.
+
+
+## Phase 4 update
+
+Phase 4 now implements public-output evidence adaptation, strict temporal/spatial/dependence qualification, hazard policies, advisory lifecycle and deterministic checkpoint replay within the modular monolith. Core fusion imports neither physical simulation nor restricted evaluation. Metadata API/CLI advertise the implemented advisory capability. No broker, service transport, dashboard or plant control is implemented. See FUSION_ARCHITECTURE.md.

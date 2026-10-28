@@ -1,0 +1,7 @@
+{
+  "policy_sha256": "16750164a4ec10555f26c58dd130819910e433640bd739e4b0d0e08a88eabf91",
+  "processing_runtime_s": 0.39725956303300336,
+  "mode": "online",
+  "method": "F1",
+  "input_manifest": "experiments/outputs/phase4-validated/end_to_end/case-00005/inputs/manifest.json"
+}

@@ -1,0 +1,7 @@
+{
+  "kind": "FusionRunInputSnapshot",
+  "count": 421,
+  "sha256": "b39aa5ef3b5a2ccde348a4099ac43ff39dcfa29c6f4479085a6f70077bdfc08c",
+  "evidence_uri": "evidence.json",
+  "scope": "Evidence delivered to this state by the replay horizon; original stream URI retained in metadata"
+}

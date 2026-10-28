@@ -1,0 +1,293 @@
+{
+  "V1": [
+    {
+      "id": "c06-s6100-temperature",
+      "acquired_s": 0.0,
+      "available_s": 0.20866,
+      "window_s": 10
+    },
+    {
+      "id": "c06-s6100-reference",
+      "acquired_s": 0.0,
+      "available_s": 0.216318,
+      "window_s": 10
+    },
+    {
+      "id": "c06-s6100-critical",
+      "acquired_s": 1.0,
+      "available_s": 1.207135,
+      "window_s": 10
+    }
+  ],
+  "V2": {
+    "schema_version": "1.0.0",
+    "assessment": {
+      "schema_version": "1.0.0",
+      "assessment_id": "assessment-84740bf751396be585ce",
+      "asset_id": "BW-01",
+      "assessed_at": "2026-01-01T00:00:05Z",
+      "severity": "red",
+      "confidence_status": "limited",
+      "supporting_evidence_ids": [
+        "c06-s6100-critical"
+      ],
+      "missing_or_invalid_evidence_ids": [
+        "local-wall-inspection"
+      ],
+      "recommended_action": "Verify instrument and urgently escalate to authorized plant personnel under site-approved procedures",
+      "policy_id": "synthetic-hazards",
+      "policy_version": "v1",
+      "human_review": "pending"
+    },
+    "method": "F1",
+    "policy_sha256": "16750164a4ec10555f26c58dd130819910e433640bd739e4b0d0e08a88eabf91",
+    "triggered_hazards": [
+      "critical-pressure"
+    ],
+    "positive_ids": [
+      "c06-s6100-critical"
+    ],
+    "historical_positive_ids": [],
+    "negative_ids": [
+      "c06-s6100-reference",
+      "c06-s6100-temperature"
+    ],
+    "missing_requirements": [
+      "local-wall-inspection"
+    ],
+    "rejected_ids": [],
+    "temporal": [
+      {
+        "schema_version": "1.0.0",
+        "evidence_id": "c06-s6100-critical",
+        "hazard_id": "critical-pressure",
+        "age_s": 4.0,
+        "status": "current",
+        "applicable": true,
+        "historical_context": true,
+        "reason": "Available, recent qualified observation"
+      },
+      {
+        "schema_version": "1.0.0",
+        "evidence_id": "c06-s6100-reference",
+        "hazard_id": "residual-pressure",
+        "age_s": 5.0,
+        "status": "current",
+        "applicable": true,
+        "historical_context": true,
+        "reason": "Available, recent qualified observation"
+      },
+      {
+        "schema_version": "1.0.0",
+        "evidence_id": "c06-s6100-temperature",
+        "hazard_id": "critical-temperature",
+        "age_s": 5.0,
+        "status": "current",
+        "applicable": true,
+        "historical_context": true,
+        "reason": "Available, recent qualified observation"
+      },
+      {
+        "schema_version": "1.0.0",
+        "evidence_id": "c06-s6100-critical",
+        "hazard_id": "coverage-pressure-monitoring",
+        "age_s": 4.0,
+        "status": "current",
+        "applicable": true,
+        "historical_context": true,
+        "reason": "Available, recent qualified observation"
+      },
+      {
+        "schema_version": "1.0.0",
+        "evidence_id": "c06-s6100-temperature",
+        "hazard_id": "coverage-temperature-monitoring",
+        "age_s": 5.0,
+        "status": "current",
+        "applicable": true,
+        "historical_context": true,
+        "reason": "Available, recent qualified observation"
+      },
+      {
+        "schema_version": "1.0.0",
+        "evidence_id": "c06-s6100-reference",
+        "hazard_id": "coverage-operating-pressure-coverage",
+        "age_s": 5.0,
+        "status": "current",
+        "applicable": true,
+        "historical_context": true,
+        "reason": "Available, recent qualified observation"
+      }
+    ],
+    "compatibility": [],
+    "rationale": [
+      "critical-pressure: A current authoritative configured limit crossing does not require UAV corroboration",
+      "Required monitoring missing/unqualified: local-wall-inspection"
+    ],
+    "conflicts": [
+      "Positive and negative scopes/modalities retained; negative evidence does not veto a different hypothesis"
+    ],
+    "event_ids": [
+      "event-87a9c9ff5778089eb536",
+      "monitoring-9ec782d5f08455a5028c"
+    ],
+    "replay_mode": "online",
+    "software_version": "0.5.0"
+  },
+  "V3": [
+    [
+      "c07-s6100-critical",
+      4.0,
+      "current"
+    ],
+    [
+      "c07-s6100-reference",
+      5.0,
+      "current"
+    ],
+    [
+      "c07-s6100-temperature",
+      5.0,
+      "current"
+    ],
+    [
+      "c07-s6100-geometry",
+      5.0,
+      "current"
+    ],
+    [
+      "c07-s6100-old-thermal",
+      505.0,
+      "stale"
+    ]
+  ],
+  "V5-F0": {
+    "seconds": [
+      0.0,
+      5.0,
+      10.0,
+      15.0,
+      20.0,
+      25.0,
+      30.0,
+      35.0,
+      40.0,
+      45.0,
+      50.0,
+      55.0,
+      60.0,
+      65.0,
+      70.0,
+      75.0,
+      80.0,
+      85.0,
+      90.0,
+      95.0,
+      100.0,
+      105.0,
+      110.0,
+      115.0,
+      120.0,
+      125.0
+    ],
+    "severity_codes": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  "V5-F1": {
+    "seconds": [
+      0.0,
+      5.0,
+      10.0,
+      15.0,
+      20.0,
+      25.0,
+      30.0,
+      35.0,
+      40.0,
+      45.0,
+      50.0,
+      55.0,
+      60.0,
+      65.0,
+      70.0,
+      75.0,
+      80.0,
+      85.0,
+      90.0,
+      95.0,
+      100.0,
+      105.0,
+      110.0,
+      115.0,
+      120.0,
+      125.0
+    ],
+    "severity_codes": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      2,
+      2,
+      1,
+      1,
+      1
+    ]
+  },
+  "V6-F0": {
+    "superseded": 99392,
+    "current": 169455,
+    "inconclusive": 14250,
+    "stale": 5767,
+    "missing_required_coverage": 8190
+  },
+  "V6-F1": {
+    "superseded": 99392,
+    "current": 169455,
+    "inconclusive": 14250,
+    "stale": 5767,
+    "missing_required_coverage": 8190
+  }
+}

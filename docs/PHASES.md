@@ -27,3 +27,8 @@ Phase 3 is now implemented and validated in PHASE3_VALIDATION.md; earlier statem
 ## Phase 3.1 update
 
 Phase 3.1 is a corrective research/validation increment within canonical Phase 3. It preserves original B3 and adds a calibrated wall-relative B3.1; it does not renumber phases or begin Phase 4. Fusion must distinguish relative localized measurements, original absolute comparisons and unavailable/insufficient evidence. See PHASE3_1_ROOT_CAUSE.md, PHASE3_1_IMPROVEMENTS.md and PHASE3_1_VALIDATION.md.
+
+
+## Phase 4 update
+
+Phase 4 advisory fusion and E3 are implemented. The Phase 5 handoff is the deterministic assess/replay interface, versioned public evidence/policy/assessment/event models and JSON checkpoints. MQTT/OPC UA, durable production storage, authenticated actions, notification transport and dashboards remain Phase 5 work and are not started here. Green is scoped policy coverage, not guaranteed safety.

@@ -54,3 +54,8 @@ IoT retransmissions intentionally reuse observation_id, acquisition timestamp an
 ## Phase 3 update
 
 Phase 3 adds public RegistrationResult (T_baseline_current, registered-world artifact/frame/hash, fitness/RMSE/conditioning/quality), PatchEstimate (normal, displacement, coverage and engineering score), GeometryRegion/GeometryResult (qualified association and per-asset status), OperatingPrediction (measured/predicted/residual/context/model/status) and ThermalRegion/ThermalResult (image bounds, quantitative coverage, residual quality). JSON schemas are exported from core.registry. Null quantities and inconclusive/invalid/insufficient_coverage/out_of_reference_range statuses are deliberate. No final severity is inferred. Existing GeometricDetection is optionally emitted only for qualified associated regions. Thermal numeric payloads now add saturation_mask and pixel_status (0 unavailable, 1 quantitative, 2 invalid, 3 saturated); legacy two-array payloads load but are inconclusive for quantitative analysis. valid_mask denotes availability and can include clipped pixels.
+
+
+## Phase 4 update
+
+Phase 4 adds FusionEvidence, ProcessingRecord, FusionEvidenceManifest, TemporalDecision, CompatibilityDecision, DecisionTrace, AdvisoryEvent/Notice, OperatorAction, FusionState and typed FusionPolicy/HazardRule/SensorAuthority/MonitoringRequirement/FusionBenchmark schemas. Existing Phase 3 contracts and ConditionAssessment meanings remain unchanged. Current versus historical support, scope/basis, separate availability and categorical quality are explicit. See EVIDENCE_SEMANTICS.md.

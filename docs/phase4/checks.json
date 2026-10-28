@@ -1,0 +1,31 @@
+{
+  "baseline_tests_passed": 170,
+  "final_tests_passed": 227,
+  "warnings": 1,
+  "warning": "Existing Starlette/httpx deprecation",
+  "pytest_seconds": 46.84,
+  "ruff_check": "PASS",
+  "ruff_format_files": 104,
+  "mypy_files": 81,
+  "pip_check": "PASS",
+  "doctor": "PASS",
+  "unchanged_upstream_algorithms": [
+    "plant",
+    "sensing",
+    "analytics"
+  ],
+  "api_image_build": "PASS",
+  "api_image": "twinguard-phase4-api:latest",
+  "schema_export": "PASS; additive contracts",
+  "cli_roundtrips": [
+    "validate-policy",
+    "prepare",
+    "assess",
+    "replay",
+    "report"
+  ],
+  "test_log": "/tmp/tg4-final-tests-v3.log",
+  "build_log": "/tmp/tg4-build-v3.log",
+  "final_container_health": "healthy",
+  "api_http_status": 200
+}

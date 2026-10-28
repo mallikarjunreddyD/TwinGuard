@@ -1,0 +1,38 @@
+{
+  "health": {
+    "status": "ok"
+  },
+  "version": {
+    "software_version": "0.5.0",
+    "schema_version": "1.0.0"
+  },
+  "capabilities": {
+    "phase": 4,
+    "implemented": [
+      "contracts",
+      "configuration_validation",
+      "spatial_transforms",
+      "utc_utilities",
+      "schema_export",
+      "plant_simulation",
+      "fault_injection",
+      "geometry_export",
+      "virtual_sensing",
+      "lidar_raycasting",
+      "thermal_projection",
+      "iot_acquisition",
+      "registration",
+      "geometric_change_detection",
+      "operating_analytics",
+      "thermal_residual_analysis",
+      "evidence_fusion",
+      "temporal_assessment",
+      "advisory_replay"
+    ],
+    "pending": [
+      "inspection_planning",
+      "dashboard",
+      "physical_validation"
+    ]
+  }
+}

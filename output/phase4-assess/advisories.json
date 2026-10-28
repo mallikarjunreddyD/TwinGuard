@@ -1,0 +1,32 @@
+[
+  {
+    "schema_version": "1.0.0",
+    "notice_id": "notice-8021b52a543cdaee68a0",
+    "event_id": "monitoring-354c0e75ed2e0e01928c",
+    "asset_id": "BW-01",
+    "at": "2026-01-03T00:00:00.056814Z",
+    "transition": "monitoring_unavailable",
+    "action": "Verify missing/invalid monitoring; this is unavailable evidence, not a diagnosed equipment fault",
+    "transport_status": "record_only"
+  },
+  {
+    "schema_version": "1.0.0",
+    "notice_id": "notice-e1636cc7aab3c25d4953",
+    "event_id": "event-f94995d293743d2b9003",
+    "asset_id": "BW-01",
+    "at": "2026-01-03T00:00:31.063347Z",
+    "transition": "opened-red",
+    "action": "Verify instrument and urgently escalate to authorized plant personnel under site-approved procedures",
+    "transport_status": "record_only"
+  },
+  {
+    "schema_version": "1.0.0",
+    "notice_id": "notice-526df57b8b841c8e53dd",
+    "event_id": "event-b1446553ab31a2ad777e",
+    "asset_id": "BW-01",
+    "at": "2026-01-03T00:00:31.263347Z",
+    "transition": "opened-amber",
+    "action": "Review operating measurements and model applicability",
+    "transport_status": "record_only"
+  }
+]

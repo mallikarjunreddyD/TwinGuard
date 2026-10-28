@@ -1,0 +1,10 @@
+{
+  "assessments_compared": 244800,
+  "case_method_runs": 2220,
+  "severities_confidence_actions_and_support_unchanged": true,
+  "temporal_spatial_dependence_and_events_unchanged": true,
+  "notice_records_compared": 3669,
+  "notices_identical": true,
+  "policy_parameters_unchanged": true,
+  "corrections": "Canonical semantic policy hashing; recovery/unknown-scope explanation text; standalone prepare formats. Audit metrics distinguish current hazard-specific eligibility and historical support."
+}

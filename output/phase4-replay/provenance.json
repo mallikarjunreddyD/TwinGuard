@@ -1,0 +1,10 @@
+{
+  "software_version": "0.5.0",
+  "policy_sha256": "16750164a4ec10555f26c58dd130819910e433640bd739e4b0d0e08a88eabf91",
+  "source_provenance_ids": [
+    "observations-case-00005-9eb01604a6fe7d86"
+  ],
+  "availability_bases": [
+    "simulated_replay"
+  ]
+}

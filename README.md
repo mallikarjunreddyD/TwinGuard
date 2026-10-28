@@ -2,7 +2,7 @@
 
 **Development and Validation of an Uncertainty-Aware Industrial IoT Digital Twin for Condition Monitoring and UAV-Assisted Inspection of Boilers and Pressure Equipment**
 
-Phases 0–3 are implemented: plant simulation, imperfect virtual sensing, CPU point-cloud registration, qualified geometric change detection, and calibrated operating/thermal residual analytics. Full synthetic E1/E2 benchmarks are executed. Small-deformation sensitivity remains limited; evidence fusion and industrial safety decisions remain future work. See [Phase 3 validation](docs/PHASE3_VALIDATION.md) for measured results and limitations.
+Phases 0–4 are implemented: plant simulation, imperfect virtual sensing, CPU point-cloud registration, qualified geometric change detection, and calibrated operating/thermal residual analytics. Full synthetic E1/E2 benchmarks are executed. Small-deformation sensitivity remains limited; hazard-aware advisory fusion is implemented; physical industrial safety validation remains future work. See [Phase 3 validation](docs/PHASE3_VALIDATION.md) for measured results and limitations.
 
 ## Install and verify
 
@@ -110,3 +110,7 @@ Add --smoke for a small independent matrix. Use new/empty output directories. Fu
 ## Phase 3.1 geometric investigation
 
 Original B3 remains selectable. The corrected B3.1 produces calibrated localized wall-relative evidence, with explicit unavailable coverage/calibration states. See [root causes](docs/PHASE3_1_ROOT_CAUSE.md), [corrections](docs/PHASE3_1_IMPROVEMENTS.md), and [independent validation](docs/PHASE3_1_VALIDATION.md). Reproduce stages with `python scripts/phase31.py --help`. This increment does not implement fusion or physical 10 mm metrology.
+
+## Phase 4 advisory fusion
+
+Use `twinguard fusion --help` for policy validation, preparation, assessment and replay. `twinguard experiment run E3 --config experiments/E3.yaml --output-dir experiments/outputs/my-E3` executes both research tracks; add --smoke for separate development seeds. Read [fusion architecture](docs/FUSION_ARCHITECTURE.md), [evidence semantics](docs/EVIDENCE_SEMANTICS.md), [policies](docs/HAZARD_POLICIES.md), [lifecycle](docs/EVENT_LIFECYCLE.md), [E3 design](docs/EXPERIMENT_E3.md) and [validation](docs/PHASE4_VALIDATION.md). Advisory records do not operate equipment or send notifications. Phase 5 remains unimplemented.
