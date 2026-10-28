@@ -54,6 +54,27 @@ def sites(actor=Depends(user)):
     ]
 
 
+@router.get("/snapshot")
+def snapshot(actor=Depends(user)):
+    # One SQL statement sees all current conditions and active events atomically.
+    with db().connect() as c:
+        rows = c.execute(
+            select(records.c.kind, records.c.id, records.c.body).where(
+                records.c.kind.in_(["asset", "condition"])
+                | (
+                    (records.c.kind == "event")
+                    & records.c.body["lifecycle"].as_string().not_in(["resolved", "candidate"])
+                )
+            )
+        ).all()
+    return {
+        "assets": [r.body for r in rows if r.kind == "asset"],
+        "conditions": {r.id: r.body for r in rows if r.kind == "condition"},
+        "events": [r.body for r in rows if r.kind == "event"],
+        "observed_at": now().isoformat(),
+    }
+
+
 @router.get("/assets")
 def assets(actor=Depends(user)):
     with db().connect() as c:
@@ -267,7 +288,7 @@ def artifact_file(digest: str, actor=Depends(user)):
     if not entry:
         raise HTTPException(404, "No public artifact")
     store = ArtifactStore(os.environ.get("TWINGUARD_ARTIFACTS", "/tmp/twinguard-artifacts"))
-    return FileResponse(store.path(digest), media_type="application/zip")
+    return FileResponse(store.path(digest), media_type=entry.get("media_type", "application/zip"))
 
 
 @router.get("/model")

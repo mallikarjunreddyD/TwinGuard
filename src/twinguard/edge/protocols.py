@@ -150,8 +150,11 @@ async def opc_client(endpoint, once=False):
                     reg = get(c, "source", "opcua-demo")
                 if reg is None:
                     raise ValueError("OPC UA source not registered")
+                with db.connect() as c:
+                    seq = (get(c, "source_health", "opcua-demo") or {}).get("last_sequence", 0)
                 while True:
                     for sensor in reg["sensors"]:
+                        seq += 1
                         node = client.get_node(ua.NodeId(sensor, idx))
                         dv = await node.read_data_value()
                         raw = dv.Value.Value
@@ -184,7 +187,7 @@ async def opc_client(endpoint, once=False):
                         env = Envelope(
                             message_id="opc-" + str(uuid.uuid4()),
                             source_id="opcua-demo",
-                            sequence=observation.sequence_number or 0,
+                            sequence=seq,
                             emitted_at=now(),
                             mode="simulation_replay",
                             replay_acquired_at=now(),

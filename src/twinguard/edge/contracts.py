@@ -32,12 +32,15 @@ class Envelope(Contract):
     site_id: ID = "plant-01"
     kind: Literal["observation", "inspection"] = "observation"
     sequence: int = Field(ge=0)
+    sequence_epoch: ID = "legacy"
     emitted_at: datetime
     configuration_reference: str = "v1"
     provenance_id: ID
     mode: Literal["live", "simulation_replay"] = "live"
     # Original scientific acquisition is always inside observation; this is a declared replay clock.
     replay_acquired_at: datetime | None = None
+    replay_source_anchor_at: datetime | None = None
+    replay_rate: float = Field(default=1, gt=0, allow_inf_nan=False)
     observation: SensorObservation | None = None
     artifact_sha256: str | None = Field(default=None, pattern=r"^[a-f0-9]{64}$")
 

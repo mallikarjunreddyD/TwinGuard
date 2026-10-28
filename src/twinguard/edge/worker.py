@@ -6,7 +6,7 @@ import time
 import uuid
 import tempfile
 from pathlib import Path
-from datetime import datetime
+from datetime import datetime, timedelta
 from sqlalchemy import select
 from twinguard.core.contracts import SensorObservation, InspectionCapture
 from twinguard.core.observations import load_capture_arrays
@@ -191,6 +191,14 @@ def iot(db, job):
     }
 
 
+def mapped_capture_time(acquired_at, data):
+    if data["mode"] != "simulation_replay":
+        return acquired_at
+    mapped = datetime.fromisoformat(data["effective_acquired_at"])
+    anchor = datetime.fromisoformat(data["replay_source_anchor_at"])
+    return mapped - timedelta(seconds=(anchor - acquired_at).total_seconds() / data["replay_rate"])
+
+
 def inspection(db, job):
     from twinguard.analytics.pipeline import analyze_geometry
     from twinguard.analytics.thermal import infer_thermal
@@ -229,6 +237,20 @@ def inspection(db, job):
                 )
             )
             output["geometric"] = [g.model_dump(mode="json")]
+            registered = (root / "derived" / r.registered_artifact.uri).read_bytes()
+            object_hash = store.persist(registered)
+            if object_hash != r.registered_artifact.sha256:
+                raise ValueError("Derived registered cloud hash mismatch")
+            r.registered_artifact.uri = "/api/v1/artifacts/" + object_hash
+            output["derived_artifacts"] = [
+                {
+                    "sha256": object_hash,
+                    "media_type": "application/x-npz",
+                    "size": len(registered),
+                    "origin": "computed_registered_measurements",
+                    "capture_id": lidar[-1].capture_id,
+                }
+            ]
             output["registration"] = r.model_dump(mode="json")
         for capture in [r for r in captures if r.modality == "thermal"]:
             result, thermal_arrays = infer_thermal(
@@ -260,8 +282,19 @@ def inspection(db, job):
                 }
             )
     if data["mode"] == "simulation_replay":
-        mapped = datetime.fromisoformat(data["effective_acquired_at"])
-        evidence = [e.model_copy(update={"acquired_at": mapped}) for e in evidence]
+        evidence = [
+            e.model_copy(
+                update={
+                    "acquired_at": mapped_capture_time(e.acquired_at, data),
+                    "reasons": e.reasons
+                    + [
+                        f"Controlled replay original acquisition {e.acquired_at.isoformat()}, rate {data['replay_rate']}; actual availability retained"
+                    ],
+                }
+            )
+            for e in evidence
+        ]
+
     return evidence, output
 
 
@@ -296,6 +329,8 @@ def run_one(db, kind, owner):
                 policy_hash=policy_hash(policy()),
             )
             put(c, "analysis", job["id"], result, result.get("asset_id"))
+            for artifact in result.get("derived_artifacts", []):
+                put(c, "artifact", artifact["sha256"], artifact)
             if kind == "inspection":
                 put(c, "inspection", job["id"], {**result, **job["body"]}, "BW-01")
             c.execute(

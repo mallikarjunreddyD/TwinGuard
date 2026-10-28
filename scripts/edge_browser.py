@@ -31,6 +31,9 @@ def run(output, url="http://localhost:18780"):
         page.wait_for_selector('[data-model-loaded="true"]', timeout=60000)
         page.wait_for_timeout(1500)
         result["checks"]["model_loaded"] = page.locator('[data-testid="plant-canvas"]').count() == 1
+        page.get_by_role("button", name="BW-01", exact=True).wait_for(
+            state="visible", timeout=30000
+        )
         result["checks"]["actual_assets"] = (
             page.get_by_role("button", name="BW-01", exact=True).count() == 1
         )

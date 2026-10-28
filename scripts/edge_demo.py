@@ -104,6 +104,10 @@ def stream(
     start = time.monotonic()
     source_begin = min(r.acquired_at for r in samples)
     wall_begin = now()
+    if reverse:
+        wall_begin -= timedelta(
+            seconds=(max(r.acquired_at for r in samples) - source_begin).total_seconds() / speed
+        )
     sent = []
     # One real MQTT connection, QoS1 PUBACK per message; local replay pacing is wall-clock measured.
     from twinguard.edge.protocols import mqtt_client
@@ -131,16 +135,14 @@ def stream(
                 time.sleep(max(0, start + offset - time.monotonic()))
             emission = now()
             # Original scientific record unchanged. Mapped acquisition remains causal and explicit.
-            effective = (
-                wall_begin + timedelta(seconds=offset)
-                if not reverse
-                else emission - timedelta(seconds=(len(samples) - seq) * 0.01)
-            )
+            effective = wall_begin + timedelta(seconds=offset)
             effective = min(effective, emission)
             env = Envelope(
-                message_id="mqtt-" + record.observation_id,
+                message_id="mqtt-" + record.observation_id + "-delivery-" + str(seq),
                 source_id="demo-iot",
                 sequence=seq,
+                sequence_epoch=record.provenance_id,
+                replay_rate=speed,
                 emitted_at=emission,
                 mode="simulation_replay",
                 replay_acquired_at=effective,
@@ -178,6 +180,13 @@ def stream(
         )
         response.raise_for_status()
         digest = response.json()["sha256"]
+        from twinguard.core.contracts import InspectionCapture
+
+        anchor = max(
+            r.acquired_at
+            for r in load_public_observations(data)
+            if isinstance(r, InspectionCapture)
+        )
         env = Envelope(
             message_id="inspection-" + data.name,
             source_id="demo-uav",
@@ -185,7 +194,11 @@ def stream(
             sequence=0,
             emitted_at=now(),
             mode="simulation_replay",
-            replay_acquired_at=now(),
+            replay_acquired_at=wall_begin
+            + timedelta(seconds=(anchor - source_begin).total_seconds() / speed),
+            replay_source_anchor_at=anchor,
+            replay_rate=speed,
+            sequence_epoch="public-" + data.name,
             artifact_sha256=digest,
             provenance_id="public-" + data.name,
         )
@@ -197,7 +210,8 @@ def stream(
         "wall_start": wall_begin.isoformat(),
         "finished_at": now().isoformat(),
         "messages": sent,
-        "distinct_observations": len(samples),
+        "input_records": len(samples),
+        "distinct_observations": len({r.observation_id for r in samples}),
         "mode": "controlled_simulation_replay",
         "latency_basis": "actual local loopback; source science times are original",
     }

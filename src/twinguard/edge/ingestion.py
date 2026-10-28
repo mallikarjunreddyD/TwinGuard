@@ -75,6 +75,11 @@ def ingest(db, raw, authenticated_identity, received_topic, artifact_store=None)
             )  # Registry schema is kept separate from dynamic health.
             health = get(c, "source_health", env.source_id) or {}
             prior_seq = health.get("last_sequence", prior_seq)
+            if health.get("sequence_epoch") != env.sequence_epoch:
+                prior_seq = None
+                health["last_acquired_by_sensor"] = {}
+                audit(c, "publisher_epoch_changed", source=env.source_id, epoch=env.sequence_epoch)
+            health["sequence_epoch"] = env.sequence_epoch
             if prior_seq is not None and env.sequence <= prior_seq:
                 audit(c, "out_of_order", message_id=env.message_id)
             elif prior_seq is not None and env.sequence > prior_seq + 1:
@@ -108,7 +113,11 @@ def ingest(db, raw, authenticated_identity, received_topic, artifact_store=None)
                     select(observations.c.body).where(observations.c.id == obs.observation_id)
                 ).scalar_one_or_none()
                 if old is not None:
-                    if old != obs.model_dump(mode="json"):
+                    ignored = {"received_at", "processed_at", "delivery_status"}
+                    incoming = obs.model_dump(mode="json")
+                    if {k: v for k, v in old.items() if k not in ignored} != {
+                        k: v for k, v in incoming.items() if k not in ignored
+                    }:
                         raise ValueError("conflicting_observation_identity")
                     health.update(
                         last_received=received.isoformat(),
@@ -116,9 +125,16 @@ def ingest(db, raw, authenticated_identity, received_topic, artifact_store=None)
                         clock_quality=reg.clock_quality,
                         calibration_status=reg.calibration_status,
                     )
+                    health["last_sequence"] = max(env.sequence, prior_seq or 0)
                     put(c, "source_health", env.source_id, health)
                     audit(c, "duplicate_observation", observation_id=obs.observation_id)
                     return {"status": "duplicate", "id": obs.observation_id}
+                prior_acquired = health.setdefault("last_acquired_by_sensor", {}).get(obs.sensor_id)
+                if prior_acquired and effective.isoformat() < prior_acquired:
+                    audit(c, "out_of_order_acquisition", observation_id=obs.observation_id)
+                health["last_acquired_by_sensor"][obs.sensor_id] = max(
+                    effective.isoformat(), prior_acquired or effective.isoformat()
+                )
                 meta = {
                     "authenticated_identity": authenticated_identity,
                     "claimed_source": env.source_id,
@@ -128,6 +144,7 @@ def ingest(db, raw, authenticated_identity, received_topic, artifact_store=None)
                     "trusted_clock_quality": reg.clock_quality,
                     "clock_basis": reg.clock_basis,
                     "mode": env.mode,
+                    "replay_rate": env.replay_rate,
                     "message_id": env.message_id,
                     "calibration_status": reg.calibration_status,
                     "calibration_reference": reg.calibration_reference,
@@ -173,6 +190,23 @@ def ingest(db, raw, authenticated_identity, received_topic, artifact_store=None)
                     or env.replay_acquired_at > received
                 ):
                     raise ValueError("untrusted_inspection_replay_clock")
+                if env.mode == "simulation_replay":
+                    source_anchor = max(
+                        r.acquired_at for r in captures if isinstance(r, InspectionCapture)
+                    )
+                    if env.replay_source_anchor_at != source_anchor:
+                        raise ValueError("inspection_replay_anchor_must_match_latest_capture")
+                previous_bundle = get(c, "inspection_input", env.artifact_sha256)
+                if previous_bundle:
+                    audit(c, "duplicate_inspection_bundle", sha256=env.artifact_sha256)
+                    return {"status": "duplicate", "id": previous_bundle["job_id"]}
+                put(c, "inspection_input", env.artifact_sha256, {"job_id": env.message_id})
+                health.update(
+                    last_received=received.isoformat(),
+                    quality="good",
+                    clock_quality=reg.clock_quality,
+                    calibration_status=reg.calibration_status,
+                )
                 enqueue(
                     c,
                     env.message_id,
@@ -181,6 +215,10 @@ def ingest(db, raw, authenticated_identity, received_topic, artifact_store=None)
                         "sha256": env.artifact_sha256,
                         "received": received.isoformat(),
                         "mode": env.mode,
+                        "replay_rate": env.replay_rate,
+                        "replay_source_anchor_at": env.replay_source_anchor_at.isoformat()
+                        if env.replay_source_anchor_at
+                        else None,
                         "effective_acquired_at": env.replay_acquired_at.isoformat()
                         if env.replay_acquired_at
                         else None,

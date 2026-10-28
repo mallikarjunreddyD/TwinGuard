@@ -24,7 +24,7 @@ class ArtifactStore:
             raise ValueError("invalid_object_key")
         return self.root / digest
 
-    def upload(self, data):
+    def persist(self, data):
         if len(data) > 64 * 1024 * 1024:
             raise ValueError("artifact_size_limit")
         digest = hashlib.sha256(data).hexdigest()
@@ -41,6 +41,10 @@ class ArtifactStore:
                 pass
             finally:
                 os.unlink(temporary)
+        return digest
+
+    def upload(self, data):
+        digest = self.persist(data)
         self.verify_bundle(digest)
         return digest
 

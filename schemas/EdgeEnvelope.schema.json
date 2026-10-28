@@ -265,6 +265,13 @@
       "title": "Sequence",
       "type": "integer"
     },
+    "sequence_epoch": {
+      "default": "legacy",
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]*$",
+      "title": "Sequence Epoch",
+      "type": "string"
+    },
     "emitted_at": {
       "format": "date-time",
       "title": "Emitted At",
@@ -302,6 +309,25 @@
       ],
       "default": null,
       "title": "Replay Acquired At"
+    },
+    "replay_source_anchor_at": {
+      "anyOf": [
+        {
+          "format": "date-time",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Replay Source Anchor At"
+    },
+    "replay_rate": {
+      "default": 1,
+      "exclusiveMinimum": 0,
+      "title": "Replay Rate",
+      "type": "number"
     },
     "observation": {
       "anyOf": [

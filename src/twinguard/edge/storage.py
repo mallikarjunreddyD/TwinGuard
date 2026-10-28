@@ -1,6 +1,7 @@
 """Transactional durable inbox/jobs/state/outbox; SQLite only for isolated unit tests."""
 
 import os
+from functools import lru_cache
 import uuid
 from datetime import timedelta
 from sqlalchemy import (
@@ -75,11 +76,13 @@ stream = Table(
 )
 
 
+@lru_cache(maxsize=8)
+def _cached_engine(url):
+    return create_engine(url, pool_pre_ping=True, pool_size=5, max_overflow=10)
+
+
 def engine(url=None):
-    return create_engine(
-        url or os.environ.get("TWINGUARD_DB", "sqlite:////tmp/twinguard-edge.db"),
-        pool_pre_ping=True,
-    )
+    return _cached_engine(url or os.environ.get("TWINGUARD_DB", "sqlite:////tmp/twinguard-edge.db"))
 
 
 def get(c, kind, ident, lock=False):
