@@ -1,0 +1,1 @@
+observation_id,sensor_id,asset_id,acquired_at,received_at,sequence_number,measurement_type,value,unit,uncertainty,quality,delivery_status,provenance_id,schema_version,configuration_version,source_type

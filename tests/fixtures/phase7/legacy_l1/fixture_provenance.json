@@ -1,0 +1,8 @@
+{
+  "source_case": "phase7-V1-matrix-smoke/v7diag-00001",
+  "baseline_git": "a283713ef6ecfb8b7f883b76701e39ec22e8e5ce",
+  "stage": "Original unchanged B3.1 predictions acquired and sealed before candidate implementation",
+  "public_only": true,
+  "expected_sha256": "e07c375f634735e9886c0f49659a6a4e9e7557cb8664b99e266fe8a680f22b39",
+  "rationale": "A public noisy L1 positive fixture avoids numerically tied multiscale selection on exact noiseless geometry; classification and discrete fields remain exact, float roundoff tolerance is 1e-12."
+}

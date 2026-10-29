@@ -5,6 +5,7 @@ import io
 import json
 import time
 import zipfile
+import uuid
 from pathlib import Path
 from datetime import timedelta
 import httpx
@@ -113,7 +114,9 @@ def stream(
     from twinguard.edge.protocols import mqtt_client
     from twinguard.edge.ingestion import topic
 
-    client = mqtt_client("demo-iot", secrets["demo-iot"], "publisher-demo-iot")
+    client = mqtt_client(
+        "demo-iot", secrets["demo-iot"], "publisher-demo-iot-" + uuid.uuid4().hex[:12]
+    )
     client.connect(host, port)
     client.loop_start()
     try:
@@ -187,6 +190,12 @@ def stream(
             for r in load_public_observations(data)
             if isinstance(r, InspectionCapture)
         )
+        capture_replay_at = wall_begin + timedelta(
+            seconds=(anchor - source_begin).total_seconds() / speed
+        )
+        # A truncated IoT replay can finish before the scheduled inspection anchor.
+        # Wait rather than publish an inadmissible future acquisition timestamp.
+        time.sleep(max(0, (capture_replay_at - now()).total_seconds()))
         env = Envelope(
             message_id="inspection-" + data.name,
             source_id="demo-uav",
@@ -194,8 +203,7 @@ def stream(
             sequence=0,
             emitted_at=now(),
             mode="simulation_replay",
-            replay_acquired_at=wall_begin
-            + timedelta(seconds=(anchor - source_begin).total_seconds() / speed),
+            replay_acquired_at=capture_replay_at,
             replay_source_anchor_at=anchor,
             replay_rate=speed,
             sequence_epoch="public-" + data.name,

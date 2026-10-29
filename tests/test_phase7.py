@@ -159,7 +159,7 @@ def test_new_planner_does_not_import_private_generators():
 
 
 def test_unsupported_calibration_cannot_become_healthy(tmp_path, model):
-    data = ROOT / "configs/fusion/history"
+    data = ROOT / "tests/fixtures/phase7/legacy_l1"
     captures = sorted(
         [v for v in load_public_observations(data) if isinstance(v, InspectionCapture)],
         key=lambda c: c.acquired_at,
@@ -187,8 +187,8 @@ def test_unsupported_calibration_cannot_become_healthy(tmp_path, model):
 
 
 def test_original_b31_outputs_remain_semantically_identical(tmp_path):
-    data = ROOT / "configs/fusion/history"
-    original = json.loads((ROOT / "configs/fusion/history/B3.1/geometry.json").read_text())
+    data = ROOT / "tests/fixtures/phase7/legacy_l1"
+    original = json.loads((ROOT / "tests/fixtures/phase7/legacy_l1/expected_b31.json").read_text())
     captures = sorted(
         [v for v in load_public_observations(data) if isinstance(v, InspectionCapture)],
         key=lambda c: c.acquired_at,
@@ -207,7 +207,22 @@ def test_original_b31_outputs_remain_semantically_identical(tmp_path):
     current = g.model_dump(mode="json")
     current.pop("runtime_s")
     original.pop("runtime_s")
-    assert current == original
+
+    def equivalent(left, right):
+        if isinstance(right, dict):
+            assert left.keys() == right.keys()
+            for key in right:
+                equivalent(left[key], right[key])
+        elif isinstance(right, list):
+            assert len(left) == len(right)
+            for a, b in zip(left, right):
+                equivalent(a, b)
+        elif isinstance(right, float):
+            assert left == pytest.approx(right, rel=1e-12, abs=1e-12)
+        else:
+            assert left == right
+
+    equivalent(current, original)
 
 
 def test_p32_missing_baseline_explicitly_has_no_viable_measurement(model):

@@ -10,10 +10,11 @@ from dataclasses import replace
 import argparse
 import hashlib
 import json
+import time
 import numpy as np
 import trimesh
 import twinguard.evaluation.phase7_planners as controller
-from twinguard.evaluation.campaigns import Campaign, atomic_json
+from twinguard.evaluation.campaigns import Campaign, atomic_json, digest
 from twinguard.inspection.visibility import look_at
 from twinguard.inspection.contracts import Box
 from twinguard.sensing.read import Surface
@@ -102,16 +103,21 @@ def one(task):
     try:
         result = controller.trial((str(ROOT), str(output / mode), family, seed, None))
         for row in result:
-            snap = json.loads(
-                (
-                    output
-                    / mode
-                    / "trials"
-                    / f"{family}-{seed}"
-                    / row["detector"]
-                    / "initial-snapshot.json"
-                ).read_text()
-            )
+            trials = output / mode / "trials"
+            possible = [trials / f"{family}-{seed}", *trials.glob(f"{family}-{seed}-attempt-*")]
+            chosen = None
+            for candidate in possible:
+                plan_path = candidate / row["detector"] / row["method"] / "plan.json"
+                if (
+                    plan_path.is_file()
+                    and controller.fingerprint(json.loads(plan_path.read_text()))
+                    == row["plan_hash"]
+                ):
+                    chosen = candidate
+                    break
+            if chosen is None:
+                raise ValueError("Cannot bind completed result to preserved frozen plan")
+            snap = json.loads((chosen / row["detector"] / "initial-snapshot.json").read_text())
             coverage = {i for c in snap["coverage"] for i in c["qualified_cells"]}
             row["supplemental_control"] = mode
             row["scoped_roi_cells"] = list(roi)
@@ -125,16 +131,21 @@ def one(task):
         controller.PlanningSnapshot = original_snapshot
 
 
-def main(output, smoke=False):
+def main(output, smoke=False, resume=False, workers=2):
     output = output.resolve()
-    output.mkdir(parents=True, exist_ok=False)
+    if not resume:
+        output.mkdir(parents=True, exist_ok=False)
     scene = trimesh.load(ROOT / "configs/edge/plant.glb", force="scene", process=False)
     obstacle = trimesh.creation.box(extents=[0.45, 0.12, 1.1])
     obstacle.apply_translation([0.4, 1.15, 1.6])
     scene.add_geometry(
         obstacle, node_name="ENV-STATIC-01_obstacle", geom_name="ENV-STATIC-01_obstacle"
     )
-    map_bytes = scene.export(file_type="glb")
+    map_bytes = (
+        (output / "accepted-independent-occluder.glb").read_bytes()
+        if resume
+        else scene.export(file_type="glb")
+    )
     seeds = list(range(17101, 17102) if smoke else range(17000, 17030))
     configuration = {
         "purpose": __doc__,
@@ -151,14 +162,47 @@ def main(output, smoke=False):
         "count": len(seeds) * len(MODES),
         "maximum_new_campaign_bytes": 10 * 1024**3,
     }
-    campaign = Campaign(output, configuration)
-    (output / "accepted-independent-occluder.glb").write_bytes(map_bytes)
-    tasks = [(str(output), mode, seed) for seed in seeds for mode in MODES]
+    if resume:
+        state = json.loads((output / "campaign.json").read_text())
+        before = json.loads(json.dumps(state))
+        old = dict(state["configuration"])
+        new = dict(configuration)
+        old_source = old.pop("source_sha256")
+        new_source = new.pop("source_sha256")
+        if old != json.loads(json.dumps(new)):
+            raise ValueError(
+                "Scientific candidate/protocol change cannot use infrastructure resume"
+            )
+        atomic_json(output / f"campaign.before-memory-resume-{time.time_ns()}.json", before)
+        state.setdefault("infrastructure_resumes", []).append(
+            {
+                "reason": "Measured OSError ENOMEM; single worker, four tasks per process; metadata lookup binds frozen plan after preserved interrupted attempts",
+                "prior_configuration_hash": state["configuration_hash"],
+                "old_controller_sha256": old_source,
+                "new_controller_sha256": new_source,
+                "workers": workers,
+                "tasks_per_explicit_process_shard": 1,
+                "scientific_candidates_unchanged": True,
+            }
+        )
+        state["configuration"] = configuration
+        state["configuration_hash"] = digest(configuration)
+        atomic_json(output / "campaign.json", state)
+    campaign = Campaign(output, configuration, resume=resume)
+    if not resume:
+        (output / "accepted-independent-occluder.glb").write_bytes(map_bytes)
+    tasks = [
+        (str(output), mode, seed)
+        for seed in seeds
+        for mode in MODES
+        if f"{mode}-{seed}" not in campaign.state["completed"]
+    ]
     try:
-        with ProcessPoolExecutor(max_workers=2) as pool:
-            for result in pool.map(one, tasks):
-                campaign.commit(result[0]["case_id"], result)
-        campaign.finish(len(tasks))
+        for begin in range(0, len(tasks), 1):
+            with ProcessPoolExecutor(max_workers=workers) as pool:
+                for result in pool.map(one, tasks[begin : begin + 1]):
+                    campaign.commit(result[0]["case_id"], result)
+        campaign.finish(configuration["count"])
     except Exception as exc:
         campaign.fail(exc)
         raise
@@ -170,5 +214,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--smoke", action="store_true")
+    parser.add_argument("--resume", action="store_true")
+    parser.add_argument("--workers", type=int, choices=(1, 2), default=2)
     a = parser.parse_args()
-    main(a.output, a.smoke)
+    main(a.output, a.smoke, a.resume, a.workers)

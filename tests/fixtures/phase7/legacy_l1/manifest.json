@@ -1,0 +1,169 @@
+{
+  "schema_version": "1.0.0",
+  "manifest_id": "manifest-v7diag-00001",
+  "run_id": "v7diag-00001",
+  "dataset": {
+    "schema_version": "1.0.0",
+    "dataset_id": "observations-v7diag-00001-d43eae9ec4a0b8ea",
+    "source_type": "synthetic",
+    "description": "Virtual sensor measurements from a common simulated physical plant; no physical sensor calibration or fault-detection claims",
+    "license": null,
+    "source_uri": null,
+    "real_source_ids": [],
+    "synthetic_transformations": [],
+    "artifacts": [
+      {
+        "schema_version": "1.0.0",
+        "artifact_id": "artifact-e56e11dcbe05cf12a78baf19",
+        "uri": "observations/iot/observations.csv",
+        "media_type": "application/octet-stream",
+        "sha256": "0049354e154aea88f2fd872ec244761c58049125bae3f594e39d5ae8e82bb5ba"
+      },
+      {
+        "schema_version": "1.0.0",
+        "artifact_id": "artifact-630f9e9da812c28953816eda",
+        "uri": "observations/iot/observations.jsonl",
+        "media_type": "application/octet-stream",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "schema_version": "1.0.0",
+        "artifact_id": "artifact-220b749a9d18ccf148ffea10",
+        "uri": "observations/lidar/v7diag-00001-lidar-01-t_0.json",
+        "media_type": "application/octet-stream",
+        "sha256": "dffe1f5f776c75c5f28ddf79153e704ff60c4eea4088e12978de70371d660d9a"
+      },
+      {
+        "schema_version": "1.0.0",
+        "artifact_id": "artifact-3e370a601d03f20113c5d15c",
+        "uri": "observations/lidar/v7diag-00001-lidar-01-t_0.npz",
+        "media_type": "application/octet-stream",
+        "sha256": "adfd5783c13580bc72e94a96fadcf6820f7bec91629da8cd677b1b1bdba986e2"
+      },
+      {
+        "schema_version": "1.0.0",
+        "artifact_id": "artifact-df89c59780e1f9ac6cb18314",
+        "uri": "observations/lidar/v7diag-00001-lidar-01-t_0.ply",
+        "media_type": "application/octet-stream",
+        "sha256": "0f4e975f1ac1fe7d3023148d2e8795ff29841e1a4e5cfc2abf807956f5c9f022"
+      },
+      {
+        "schema_version": "1.0.0",
+        "artifact_id": "artifact-f88b989c2ca5f4a5bf289b70",
+        "uri": "observations/lidar/v7diag-00001-lidar-01-t_60.json",
+        "media_type": "application/octet-stream",
+        "sha256": "f50a21527e9cbc953f46d6a81596855afd9c7c27c417f558deda9c1a60670a82"
+      },
+      {
+        "schema_version": "1.0.0",
+        "artifact_id": "artifact-d04329699bf0802513ce17b3",
+        "uri": "observations/lidar/v7diag-00001-lidar-01-t_60.npz",
+        "media_type": "application/octet-stream",
+        "sha256": "ebb27f89b196ed24d13f95687bc5c04c5115ef7a9701fbfa9aad2924d2f62f5c"
+      },
+      {
+        "schema_version": "1.0.0",
+        "artifact_id": "artifact-b720520e0caa26a8bafa1bbc",
+        "uri": "observations/lidar/v7diag-00001-lidar-01-t_60.ply",
+        "media_type": "application/octet-stream",
+        "sha256": "ef9cb5312236ccd71e0b52fa56f01153fe11240d1a3b3b3a53e0724e2647e8bc"
+      },
+      {
+        "schema_version": "1.0.0",
+        "artifact_id": "artifact-9efa6a17a97ed8495ef873eb",
+        "uri": "observations/sensor_installation.json",
+        "media_type": "application/octet-stream",
+        "sha256": "491a8310e7092a9af176f5b7d374ad6eef07c9161183dfeceb9decd987cf08b4"
+      }
+    ]
+  },
+  "software_version": "0.7.0",
+  "configuration_version": "v1",
+  "master_seed": 13000,
+  "acquisition_namespace": "v7diag-00001",
+  "observations": [
+    {
+      "schema_version": "1.0.0",
+      "observation_id": "v7diag-00001-lidar-01-t_0",
+      "record_uri": "observations/lidar/v7diag-00001-lidar-01-t_0.json",
+      "kind": "InspectionCapture"
+    },
+    {
+      "schema_version": "1.0.0",
+      "observation_id": "v7diag-00001-lidar-01-t_60",
+      "record_uri": "observations/lidar/v7diag-00001-lidar-01-t_60.json",
+      "kind": "InspectionCapture"
+    },
+    {
+      "schema_version": "1.0.0",
+      "observation_id": "iot-stream",
+      "record_uri": "observations/iot/observations.jsonl",
+      "kind": "SensorObservation"
+    }
+  ],
+  "artifacts": [
+    {
+      "schema_version": "1.0.0",
+      "artifact_id": "artifact-e56e11dcbe05cf12a78baf19",
+      "uri": "observations/iot/observations.csv",
+      "media_type": "application/octet-stream",
+      "sha256": "0049354e154aea88f2fd872ec244761c58049125bae3f594e39d5ae8e82bb5ba"
+    },
+    {
+      "schema_version": "1.0.0",
+      "artifact_id": "artifact-630f9e9da812c28953816eda",
+      "uri": "observations/iot/observations.jsonl",
+      "media_type": "application/octet-stream",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "schema_version": "1.0.0",
+      "artifact_id": "artifact-220b749a9d18ccf148ffea10",
+      "uri": "observations/lidar/v7diag-00001-lidar-01-t_0.json",
+      "media_type": "application/octet-stream",
+      "sha256": "dffe1f5f776c75c5f28ddf79153e704ff60c4eea4088e12978de70371d660d9a"
+    },
+    {
+      "schema_version": "1.0.0",
+      "artifact_id": "artifact-3e370a601d03f20113c5d15c",
+      "uri": "observations/lidar/v7diag-00001-lidar-01-t_0.npz",
+      "media_type": "application/octet-stream",
+      "sha256": "adfd5783c13580bc72e94a96fadcf6820f7bec91629da8cd677b1b1bdba986e2"
+    },
+    {
+      "schema_version": "1.0.0",
+      "artifact_id": "artifact-df89c59780e1f9ac6cb18314",
+      "uri": "observations/lidar/v7diag-00001-lidar-01-t_0.ply",
+      "media_type": "application/octet-stream",
+      "sha256": "0f4e975f1ac1fe7d3023148d2e8795ff29841e1a4e5cfc2abf807956f5c9f022"
+    },
+    {
+      "schema_version": "1.0.0",
+      "artifact_id": "artifact-f88b989c2ca5f4a5bf289b70",
+      "uri": "observations/lidar/v7diag-00001-lidar-01-t_60.json",
+      "media_type": "application/octet-stream",
+      "sha256": "f50a21527e9cbc953f46d6a81596855afd9c7c27c417f558deda9c1a60670a82"
+    },
+    {
+      "schema_version": "1.0.0",
+      "artifact_id": "artifact-d04329699bf0802513ce17b3",
+      "uri": "observations/lidar/v7diag-00001-lidar-01-t_60.npz",
+      "media_type": "application/octet-stream",
+      "sha256": "ebb27f89b196ed24d13f95687bc5c04c5115ef7a9701fbfa9aad2924d2f62f5c"
+    },
+    {
+      "schema_version": "1.0.0",
+      "artifact_id": "artifact-b720520e0caa26a8bafa1bbc",
+      "uri": "observations/lidar/v7diag-00001-lidar-01-t_60.ply",
+      "media_type": "application/octet-stream",
+      "sha256": "ef9cb5312236ccd71e0b52fa56f01153fe11240d1a3b3b3a53e0724e2647e8bc"
+    },
+    {
+      "schema_version": "1.0.0",
+      "artifact_id": "artifact-9efa6a17a97ed8495ef873eb",
+      "uri": "observations/sensor_installation.json",
+      "media_type": "application/octet-stream",
+      "sha256": "491a8310e7092a9af176f5b7d374ad6eef07c9161183dfeceb9decd987cf08b4"
+    }
+  ]
+}

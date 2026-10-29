@@ -37,9 +37,7 @@ def main():
     first = copy_json(E / "phase7-V5-storage-recovery/report.json", "storage_recovery.json")
     copy_json(E / "phase7-V6-lab-tls-v3/report.json", "lab_tls.json")
     copy_json(E / "phase7-V6-security", "security_checks.json")
-    copy_json(
-        E / "phase7-V6-dependency-review/report.json", "python_advisory_review.json"
-    )
+    copy_json(E / "phase7-V6-dependency-review/report.json", "python_advisory_review.json")
     inspection = copy_json(
         Path("/mnt/d/TwinGuard/phase7-V7-reviewed-reinspection/report.json"),
         "integrated_reinspection.json",

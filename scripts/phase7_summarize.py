@@ -101,6 +101,33 @@ def detector_summary():
                 "matched_regions": sum(r["matched_regions"] for r in subset),
             }
         result["methods"][method] = groups
+    supported = {
+        r["case_id"] for r in data if r["method"] == "B3.2" and r["calibration_applicable"]
+    }
+    result["same_supported_domain_subset"] = {}
+    for method in ("B3.1", "B3.2"):
+        rr = [r for r in data if r["method"] == method and r["case_id"] in supported]
+        result["same_supported_domain_subset"][method] = {
+            "scans": len(rr),
+            "faults": sum(r["fault_present"] for r in rr),
+            "localized_detected": sum(r["localized_detected"] for r in rr),
+            "healthy": sum(not r["fault_present"] for r in rr),
+            "healthy_positive": sum(r["positive"] and not r["fault_present"] for r in rr),
+            "inconclusive": sum(r["status"] != "valid" for r in rr),
+            "localized_recall": clustered(
+                rr,
+                lambda r: r["localized_detected"] and r["fault_present"],
+                lambda r: r["fault_present"],
+            ),
+            "healthy_fpr": clustered(
+                rr,
+                lambda r: r["positive"] and not r["fault_present"],
+                lambda r: not r["fault_present"],
+            ),
+        }
+    result["same_supported_domain_subset_scope"] = (
+        "Descriptive identical public applicability domains, not an overall improvement or random sample of all views; global abstention/recall remain primary."
+    )
     save(OUT / "heldout_detector_summary.json", result)
     return result
 
@@ -220,7 +247,8 @@ def stamp(value):
 
 
 def operational(name, critical_seeds):
-    directory = BASE / name
+    directory = Path(name) if Path(name).is_absolute() else BASE / name
+    label = directory.name
     records = load(directory / "records.json")
     observations = {r["id"]: r for r in load(directory / "observations.json")}
     timing = {r["id"]: r["body"] for r in records if r["kind"] == "timing"}
@@ -319,7 +347,7 @@ def operational(name, critical_seeds):
         result["api_latency_s"] = percentiles(
             [s["api_latency_s"] for s in report["samples"] if "api_latency_s" in s]
         )
-    save(OUT / (name.replace("phase7-", "") + "-summary.json"), result)
+    save(OUT / (label.replace("phase7-", "") + "-summary.json"), result)
     return result
 
 
