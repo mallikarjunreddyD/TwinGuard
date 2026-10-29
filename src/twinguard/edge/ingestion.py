@@ -2,11 +2,13 @@
 
 import hashlib
 from datetime import timedelta
-from sqlalchemy import select, func
+from sqlalchemy import select, func, text
 from .contracts import Envelope, SourceRegistration, now
 from .storage import inbox, observations, jobs, get, put, audit, enqueue, emit
 
 MAX_MESSAGE = 128 * 1024
+ORDINARY_QUEUE_LIMIT = 10000
+CRITICAL_QUEUE_RESERVE = 100
 
 
 def topic(source, site="plant-01", kind="observation"):
@@ -15,7 +17,7 @@ def topic(source, site="plant-01", kind="observation"):
     return f"twinguard/v1/{site}/{channel}/{source}/{suffix}"
 
 
-def scheduling_priority(observation, registration, effective, received):
+def scheduling_priority(observation, registration, effective, received, require_current=False):
     if (
         observation.measurement_type not in ["pressure", "temperature"]
         or registration.clock_quality != "synchronized"
@@ -47,7 +49,20 @@ def scheduling_priority(observation, registration, effective, received):
         rationale="Scheduling hint only, evaluated by the existing engineering-limit adapter. Worker/F1 independently requalify the observation.",
     )
     evidence = engineering_limit(effective_observation, record, p)
-    return 0 if evidence and evidence.authoritative_limit and evidence.finding == "positive" else 10
+    if not (evidence and evidence.authoritative_limit and evidence.finding == "positive"):
+        return 10
+    if require_current:
+        from twinguard.fusion.temporal import validate
+
+        if not any(
+            rule.critical_limit_only
+            and evidence.hypothesis in rule.hypotheses
+            and evidence.modality in rule.modalities
+            and validate(evidence, rule, done, p).applicable
+            for rule in p.rules
+        ):
+            return 10
+    return 0
 
 
 def ingest(db, raw, authenticated_identity, received_topic, artifact_store=None):
@@ -89,10 +104,14 @@ def ingest(db, raw, authenticated_identity, received_topic, artifact_store=None)
                     raise ValueError("conflicting_message_identity")
                 audit(c, "duplicate_delivery", message_id=env.message_id)
                 return {"status": "duplicate", "id": env.message_id}
+            if c.dialect.name == "postgresql":
+                c.execute(text("SELECT pg_advisory_xact_lock(7727001)"))
             depth = c.execute(
                 select(func.count()).select_from(jobs).where(jobs.c.status == "pending")
             ).scalar_one()
-            if depth >= 10000:
+            if depth >= ORDINARY_QUEUE_LIMIT + CRITICAL_QUEUE_RESERVE or (
+                depth >= ORDINARY_QUEUE_LIMIT and env.kind != "observation"
+            ):
                 raise ValueError("backpressure_queue_limit")
             body = env.model_dump(mode="json")
             c.execute(
@@ -171,6 +190,20 @@ def ingest(db, raw, authenticated_identity, received_topic, artifact_store=None)
                     effective.isoformat(), prior_acquired or effective.isoformat()
                 )
                 priority = scheduling_priority(obs, reg, effective, received)
+                if depth >= ORDINARY_QUEUE_LIMIT:
+                    if (
+                        scheduling_priority(obs, reg, effective, received, require_current=True)
+                        != 0
+                    ):
+                        raise ValueError("backpressure_queue_limit")
+                    audit(
+                        c,
+                        "reserved_critical_admission",
+                        message_id=env.message_id,
+                        depth=depth,
+                        ordinary_limit=ORDINARY_QUEUE_LIMIT,
+                        total_limit=ORDINARY_QUEUE_LIMIT + CRITICAL_QUEUE_RESERVE,
+                    )
                 meta = {
                     "authenticated_identity": authenticated_identity,
                     "claimed_source": env.source_id,

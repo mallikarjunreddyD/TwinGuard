@@ -98,7 +98,16 @@ async def opc_server(bundle, endpoint):
     server = Server()
     await server.init()
     server.set_endpoint(endpoint)
-    server.set_security_policy([ua.SecurityPolicyType.NoSecurity])
+    certificate = os.environ.get("TWINGUARD_OPCUA_SERVER_CERTIFICATE")
+    private_key = os.environ.get("TWINGUARD_OPCUA_SERVER_PRIVATE_KEY")
+    if bool(certificate) != bool(private_key):
+        raise ValueError("Both OPC UA server certificate and private key are required")
+    if certificate:
+        await server.load_certificate(certificate)
+        await server.load_private_key(private_key)
+        server.set_security_policy([ua.SecurityPolicyType.Basic256Sha256_SignAndEncrypt])
+    else:
+        server.set_security_policy([ua.SecurityPolicyType.NoSecurity])
     idx = await server.register_namespace("urn:twinguard:measured")
     obj = await server.nodes.objects.add_object(idx, "MeasuredChannels")
     nodes = {}

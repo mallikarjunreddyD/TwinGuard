@@ -159,7 +159,7 @@ def test_new_planner_does_not_import_private_generators():
 
 
 def test_unsupported_calibration_cannot_become_healthy(tmp_path, model):
-    data = ROOT / "experiments/outputs/phase7-V1-matrix-smoke/datasets/v7diag-00000"
+    data = ROOT / "configs/fusion/history"
     captures = sorted(
         [v for v in load_public_observations(data) if isinstance(v, InspectionCapture)],
         key=lambda c: c.acquired_at,
@@ -187,13 +187,8 @@ def test_unsupported_calibration_cannot_become_healthy(tmp_path, model):
 
 
 def test_original_b31_outputs_remain_semantically_identical(tmp_path):
-    data = ROOT / "experiments/outputs/phase7-V1-matrix-smoke/datasets/v7diag-00000"
-    original = json.loads(
-        (
-            ROOT
-            / "experiments/outputs/phase7-V1-matrix-smoke/predictions/v7diag-00000/B3.1/geometry.json"
-        ).read_text()
-    )
+    data = ROOT / "configs/fusion/history"
+    original = json.loads((ROOT / "configs/fusion/history/B3.1/geometry.json").read_text())
     captures = sorted(
         [v for v in load_public_observations(data) if isinstance(v, InspectionCapture)],
         key=lambda c: c.acquired_at,
@@ -241,7 +236,10 @@ def test_p32_missing_baseline_explicitly_has_no_viable_measurement(model):
     )
 
 
-def test_experiment_checkpoint_recovery_never_marks_unexecuted_cases_complete(tmp_path):
+def test_experiment_checkpoint_recovery_never_marks_unexecuted_cases_complete(
+    tmp_path, monkeypatch
+):
+    monkeypatch.setattr("twinguard.evaluation.campaigns.resource_preflight", lambda *a, **k: {})
     path = tmp_path / "campaign"
     campaign = Campaign(path, {"purpose": "controlled-test"})
     campaign.commit("one", {"value": "observed"})
@@ -261,7 +259,8 @@ def test_experiment_checkpoint_recovery_never_marks_unexecuted_cases_complete(tm
     )
 
 
-def test_checkpoint_corruption_or_changed_protocol_rejected(tmp_path):
+def test_checkpoint_corruption_or_changed_protocol_rejected(tmp_path, monkeypatch):
+    monkeypatch.setattr("twinguard.evaluation.campaigns.resource_preflight", lambda *a, **k: {})
     path = tmp_path / "campaign"
     c = Campaign(path, {"version": 1})
     c.commit("one", {"ok": True})

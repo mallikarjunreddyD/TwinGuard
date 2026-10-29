@@ -28,21 +28,32 @@ def atomic_json(path, value):
 
 def resource_preflight(reserve_bytes=0, minimum_linux_gib=10, minimum_host_gib=8):
     measurements = {}
-    for name, path, limit in [
-        ("linux", Path("/"), minimum_linux_gib),
-        ("host", Path("/mnt/c"), minimum_host_gib),
-    ]:
+    destination = os.environ.get("TWINGUARD_CAMPAIGN_STORAGE")
+    if destination:
+        target = Path(destination).resolve(strict=True)
+        checks = [
+            ("linux", Path("/"), minimum_linux_gib, 0),
+            ("source_host", Path("/mnt/c"), 1, 0),
+            ("destination", target, minimum_host_gib, reserve_bytes),
+        ]
+    else:
+        checks = [
+            ("linux", Path("/"), minimum_linux_gib, reserve_bytes),
+            ("host", Path("/mnt/c"), minimum_host_gib, reserve_bytes),
+        ]
+    for name, path, limit, reserved in checks:
         if not path.exists():
             continue
         free = shutil.disk_usage(path).free
         measurements[name] = {
+            "path": str(path),
             "free_bytes": free,
             "minimum_free_gib": limit,
-            "reserved_bytes": reserve_bytes,
+            "reserved_bytes": reserved,
         }
-        if free - reserve_bytes < limit * 1024**3:
+        if free - reserved < limit * 1024**3:
             raise RuntimeError(
-                f"{name} storage preflight failed: {free / 1024**3:.2f} GiB free, reserve {reserve_bytes / 1024**3:.2f} GiB, floor {limit} GiB; no historical data removed"
+                f"{name} storage preflight failed: {free / 1024**3:.2f} GiB free, reserve {reserved / 1024**3:.2f} GiB, floor {limit} GiB; no historical data removed"
             )
     return measurements
 
