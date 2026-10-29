@@ -52,3 +52,8 @@ New operational findings: the first full controller's global drain deadline expi
 | P6-03 | PARTIAL | Actual acquisition-level ablations completed; some components select no extra scans and their benefits remain unestablished. |
 
 All 240 main paired cases and 90 supplemental controls completed. Extra chronology: 23/30 committed; seven remain blocked by source-host storage headroom. No issue is closed on the basis of missing physical or incomplete extra evidence.
+
+
+## WSL relocation follow-up
+
+The seven storage-blocked extra chronology cases were resumed after confirming the E: WSL backing location and restored free space. All 30/30 cases now completed. This closes the extra chronology execution gap; it does not close P5-01, physical validation, or the other research limitations above.

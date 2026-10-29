@@ -2,8 +2,10 @@
   "implementation_git": "5b9390a",
   "scientific_freeze_git": "edae1e5",
   "baseline_git": "a283713ef6ecfb8b7f883b76701e39ec22e8e5ce",
-  "chronology_completed": 23,
+  "chronology_completed": 30,
   "chronology_expected": 30,
   "external_storage": "/mnt/d/TwinGuard",
-  "resource_floor_preserved": true
+  "resource_floor_preserved": true,
+  "wsl_registered_base_path": "E:\\WSL\\Ubuntu-24.04",
+  "prior_package_git": "d81d07e"
 }

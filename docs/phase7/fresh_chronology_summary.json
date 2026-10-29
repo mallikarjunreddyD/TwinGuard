@@ -1,6 +1,217 @@
 {
-  "status": "incomplete",
-  "completed": 23,
+  "status": "completed",
+  "completed": 30,
   "expected": 30,
-  "groups": {}
+  "groups": {
+    "fresh_after_aged_initial / B3.1 / P0": {
+      "trials": 30,
+      "views": 60,
+      "initial_public_unconfirmed": 30,
+      "initial_localized": 0,
+      "new_localized": 0,
+      "healthy_fp": 10,
+      "inconclusive": 20,
+      "scope_actually_qualified": 0,
+      "continued_monitoring": 0,
+      "new_qualified_area_m2": 13.741598654575128,
+      "mission_proxy_s": 669.3560113667602,
+      "new_localized_recall": {
+        "estimate": null,
+        "cluster_seeds": 30,
+        "bootstrap_replicates": 2000,
+        "ci95": null
+      },
+      "controller_cpu_s": 49.547827547999994,
+      "peak_rss_kib": 701512
+    },
+    "fresh_after_aged_initial / B3.1 / P1": {
+      "trials": 30,
+      "views": 60,
+      "initial_public_unconfirmed": 30,
+      "initial_localized": 0,
+      "new_localized": 0,
+      "healthy_fp": 0,
+      "inconclusive": 0,
+      "scope_actually_qualified": 0,
+      "continued_monitoring": 0,
+      "new_qualified_area_m2": 30.00205548050586,
+      "mission_proxy_s": 637.1638764914718,
+      "new_localized_recall": {
+        "estimate": null,
+        "cluster_seeds": 30,
+        "bootstrap_replicates": 2000,
+        "ci95": null
+      },
+      "controller_cpu_s": 56.750120493,
+      "peak_rss_kib": 702668
+    },
+    "fresh_after_aged_initial / B3.1 / P2": {
+      "trials": 30,
+      "views": 60,
+      "initial_public_unconfirmed": 30,
+      "initial_localized": 0,
+      "new_localized": 0,
+      "healthy_fp": 10,
+      "inconclusive": 20,
+      "scope_actually_qualified": 0,
+      "continued_monitoring": 0,
+      "new_qualified_area_m2": 13.741598654575128,
+      "mission_proxy_s": 669.3560113667602,
+      "new_localized_recall": {
+        "estimate": null,
+        "cluster_seeds": 30,
+        "bootstrap_replicates": 2000,
+        "ci95": null
+      },
+      "controller_cpu_s": 37.151868321,
+      "peak_rss_kib": 702668
+    },
+    "fresh_after_aged_initial / B3.1 / P3": {
+      "trials": 30,
+      "views": 60,
+      "initial_public_unconfirmed": 30,
+      "initial_localized": 0,
+      "new_localized": 0,
+      "healthy_fp": 0,
+      "inconclusive": 0,
+      "scope_actually_qualified": 0,
+      "continued_monitoring": 0,
+      "new_qualified_area_m2": 29.96365426138837,
+      "mission_proxy_s": 633.4327490579357,
+      "new_localized_recall": {
+        "estimate": null,
+        "cluster_seeds": 30,
+        "bootstrap_replicates": 2000,
+        "ci95": null
+      },
+      "controller_cpu_s": 49.592184016999994,
+      "peak_rss_kib": 702668
+    },
+    "fresh_after_aged_initial / B3.1 / P3v2": {
+      "trials": 30,
+      "views": 31,
+      "initial_public_unconfirmed": 30,
+      "initial_localized": 0,
+      "new_localized": 0,
+      "healthy_fp": 0,
+      "inconclusive": 2,
+      "scope_actually_qualified": 0,
+      "continued_monitoring": 0,
+      "new_qualified_area_m2": 14.815145500365453,
+      "mission_proxy_s": 386.80648510909117,
+      "new_localized_recall": {
+        "estimate": null,
+        "cluster_seeds": 30,
+        "bootstrap_replicates": 2000,
+        "ci95": null
+      },
+      "controller_cpu_s": 51.089744264000004,
+      "peak_rss_kib": 706108
+    },
+    "fresh_after_aged_initial / B3.2 / P0": {
+      "trials": 30,
+      "views": 60,
+      "initial_public_unconfirmed": 29,
+      "initial_localized": 0,
+      "new_localized": 0,
+      "healthy_fp": 0,
+      "inconclusive": 30,
+      "scope_actually_qualified": 0,
+      "continued_monitoring": 0,
+      "new_qualified_area_m2": 9.640719171353105,
+      "mission_proxy_s": 669.3560113667602,
+      "new_localized_recall": {
+        "estimate": null,
+        "cluster_seeds": 30,
+        "bootstrap_replicates": 2000,
+        "ci95": null
+      },
+      "controller_cpu_s": 33.176643298,
+      "peak_rss_kib": 706108
+    },
+    "fresh_after_aged_initial / B3.2 / P1": {
+      "trials": 30,
+      "views": 60,
+      "initial_public_unconfirmed": 29,
+      "initial_localized": 0,
+      "new_localized": 0,
+      "healthy_fp": 0,
+      "inconclusive": 17,
+      "scope_actually_qualified": 0,
+      "continued_monitoring": 0,
+      "new_qualified_area_m2": 8.259309640309398,
+      "mission_proxy_s": 637.1638764914718,
+      "new_localized_recall": {
+        "estimate": null,
+        "cluster_seeds": 30,
+        "bootstrap_replicates": 2000,
+        "ci95": null
+      },
+      "controller_cpu_s": 46.510425280999996,
+      "peak_rss_kib": 706108
+    },
+    "fresh_after_aged_initial / B3.2 / P2": {
+      "trials": 30,
+      "views": 60,
+      "initial_public_unconfirmed": 29,
+      "initial_localized": 0,
+      "new_localized": 0,
+      "healthy_fp": 0,
+      "inconclusive": 30,
+      "scope_actually_qualified": 0,
+      "continued_monitoring": 0,
+      "new_qualified_area_m2": 9.640719171353105,
+      "mission_proxy_s": 669.3560113667602,
+      "new_localized_recall": {
+        "estimate": null,
+        "cluster_seeds": 30,
+        "bootstrap_replicates": 2000,
+        "ci95": null
+      },
+      "controller_cpu_s": 31.087188049000005,
+      "peak_rss_kib": 706108
+    },
+    "fresh_after_aged_initial / B3.2 / P3": {
+      "trials": 30,
+      "views": 60,
+      "initial_public_unconfirmed": 29,
+      "initial_localized": 0,
+      "new_localized": 0,
+      "healthy_fp": 0,
+      "inconclusive": 22,
+      "scope_actually_qualified": 0,
+      "continued_monitoring": 0,
+      "new_qualified_area_m2": 7.248341017754947,
+      "mission_proxy_s": 631.194072597814,
+      "new_localized_recall": {
+        "estimate": null,
+        "cluster_seeds": 30,
+        "bootstrap_replicates": 2000,
+        "ci95": null
+      },
+      "controller_cpu_s": 40.499875503999995,
+      "peak_rss_kib": 706108
+    },
+    "fresh_after_aged_initial / B3.2 / P3v2": {
+      "trials": 30,
+      "views": 39,
+      "initial_public_unconfirmed": 29,
+      "initial_localized": 0,
+      "new_localized": 0,
+      "healthy_fp": 0,
+      "inconclusive": 11,
+      "scope_actually_qualified": 0,
+      "continued_monitoring": 0,
+      "new_qualified_area_m2": 5.444375652869279,
+      "mission_proxy_s": 465.1046893530979,
+      "new_localized_recall": {
+        "estimate": null,
+        "cluster_seeds": 30,
+        "bootstrap_replicates": 2000,
+        "ci95": null
+      },
+      "controller_cpu_s": 52.228163554999995,
+      "peak_rss_kib": 709336
+    }
+  }
 }

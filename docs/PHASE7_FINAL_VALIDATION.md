@@ -39,11 +39,11 @@ External evidence lives at `D:\TwinGuard` (`/mnt/d/TwinGuard`); the original157-
 Use the versioned `scripts/phase7_*` controllers with new output directories and explicit loopback compose overlays. `phase7_summarize.py`, `phase7_view_metrics.py`, `phase7_evidence_register.py` and `phase7_finalize.py` derive checked reports from preserved journals; none marks unexecuted trials successful. The new private certificates/secrets stay gitignored. Physical and site-only gates require the documented resources and independent authority before deployment.
 
 
-Execution counts:240/240main paired cases,90/90supplemental controls,180/180actual-acquisition ablation trials and1140/1140detector pairs. Extra chronology:23/30committed; remaining cases are not claimed successful.
+Execution counts:240/240main paired cases,90/90supplemental controls,180/180actual-acquisition ablation trials and1140/1140detector pairs. Extra chronology:30/30committed; remaining cases are not claimed successful.
 
 
-## Final source and operating limits
+## Completed after WSL relocation
 
-Final implementation revision: `5b9390a`. Packaging records and reports follow this revision. The heavy mixed workload's 39 stale readings remain an open software reliability boundary. A separate requested 1× replay produced 43/62 current readings because samples were already delayed before emission (publisher lag p95 10.748 seconds); its post-ingestion queue p95 was 0.339 seconds. This separate result does not establish a 1 Hz server-capacity failure. See the E4 report for the measured distinction.
+The user migrated Ubuntu-24.04 to `E:\WSL\Ubuntu-24.04`. Registration and storage were checked before resuming. All seven pending chronology cases completed under unchanged scientific configuration, bringing the additional study to 30/30. Earlier 23/30 reports describe the prior storage-blocked state; no missing trials remain in this study. The 240 main cases, 90 supplemental controls and 180 acquisition ablations were preserved without rerunning.
 
-The corrected frontend was also exercised on the final admission stack at `http://localhost:19180`: all five strict stored-value and obsolete-response checks passed. Test workers were stopped after validation to bound idle history growth; stored evidence remains available. C: has less than 1 GiB free despite D: having over 450 GiB. The retained resource floor blocks seven extra chronology cases. Linux build-cache cleanup reclaimed 2.898 GB without restoring Windows backing-drive space; filesystem trim required unavailable sudo authorization. No scientific evidence was deleted.
+The requested original-rate replay remains 43/62 current because samples were delayed before emission; publisher lag p95 was 10.748 seconds and post-ingestion queue p95 was 0.339 seconds. This does not establish a 1 Hz server-capacity failure. Heavy mixed timing and physical/site validation remain open.

@@ -28,4 +28,4 @@ Detailed per-capability objective, source/version/git, data type, calibration, t
 | TG7-COMMISSION | Approved site trust, limits and instrument authority | BLOCKED/PENDING | commissioning |
 | TG7-MIXED | Measure real inspection/critical overlap and failure boundary | FAIL 10x heavy timeliness | synthetic_software |
 | TG7-TRENDS | Render actual stored values and reject obsolete asset responses | PASS | synthetic_software |
-| TG7-FRESH | Acquire genuinely later scans after aged initial evidence | INCOMPLETE | synthetic_software |
+| TG7-FRESH | Acquire genuinely later scans after aged initial evidence | PASS execution | synthetic_software |

@@ -106,14 +106,19 @@ Mission time is a static route/acquisition proxy, not measured flight time. Cont
 
 ## Fresh-after-aged chronology controls
 
-23/30 cases completed.
+30/30 cases completed.
 
 | Control / detector / method | Trials | Initial public unconfirmed | Views | Newly localized | Healthy positive | Inconclusive | Actually scoped-qualified | Continue monitoring |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|
+| fresh_after_aged_initial / B3.1 / P0 | 30 | 30 | 60 | 0 | 10 | 20 | 0 | 0 |
+| fresh_after_aged_initial / B3.1 / P1 | 30 | 30 | 60 | 0 | 0 | 0 | 0 | 0 |
+| fresh_after_aged_initial / B3.1 / P2 | 30 | 30 | 60 | 0 | 10 | 20 | 0 | 0 |
+| fresh_after_aged_initial / B3.1 / P3 | 30 | 30 | 60 | 0 | 0 | 0 | 0 | 0 |
+| fresh_after_aged_initial / B3.1 / P3v2 | 30 | 30 | 31 | 0 | 0 | 2 | 0 | 0 |
+| fresh_after_aged_initial / B3.2 / P0 | 30 | 29 | 60 | 0 | 0 | 30 | 0 | 0 |
+| fresh_after_aged_initial / B3.2 / P1 | 30 | 29 | 60 | 0 | 0 | 17 | 0 | 0 |
+| fresh_after_aged_initial / B3.2 / P2 | 30 | 29 | 60 | 0 | 0 | 30 | 0 | 0 |
+| fresh_after_aged_initial / B3.2 / P3 | 30 | 29 | 60 | 0 | 0 | 22 | 0 | 0 |
+| fresh_after_aged_initial / B3.2 / P3v2 | 30 | 29 | 39 | 0 | 0 | 11 | 0 | 0 |
 
 Supplemental controls use fresh17000–17029 seeds, separate17100/17101 development; chronology uses17200–17229 after17300/17301 development. The first sufficient-scope pilot chose a non-visible face cell and failed qualification; the corrected protocol fixes the nominal front-face cell before final evaluation. An OOM and a recycled-executor stall were preserved and recovered with explicit one-case process shards; only execution/metadata lookup changed. No calibration, sensing noise, production planner, registration or filtering rule was retuned from heldout outcomes. All prior and interrupted evidence remains.
-
-
-## Explicit incomplete extra chronology study
-
-Only 23/30 cases are journal-committed. Source-host C: fell below the retained1GiB operating floor although output is on D:. Unused build-cache cleanup reclaimed2.898GB inside Linux but did not restore Windows backing-drive headroom. No resource guard was lowered, no missing result was synthesized, and no aggregate benefit is claimed from this partial subset. All240main cases and90supplemental controls are complete; the remaining extra chronology cases and their fragments remain pending.
