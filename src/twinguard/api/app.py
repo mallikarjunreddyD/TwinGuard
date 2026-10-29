@@ -1,3 +1,4 @@
+from twinguard.edge.demo_api import router as demo_router
 from twinguard.edge.planning_api import router as planning_router
 from twinguard.edge.api import router
 from fastapi import FastAPI
@@ -57,3 +58,5 @@ app.include_router(router)
 
 
 app.include_router(planning_router)
+
+app.include_router(demo_router)

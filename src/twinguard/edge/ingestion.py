@@ -219,6 +219,9 @@ def ingest(db, raw, authenticated_identity, received_topic, artifact_store=None)
                     "calibration_status": reg.calibration_status,
                     "calibration_reference": reg.calibration_reference,
                     "publisher_emitted_at": env.emitted_at.isoformat(),
+                    "demo_session_id": env.provenance_id
+                    if env.mode == "simulation_replay" and env.provenance_id.startswith("demo-")
+                    else None,
                 }
                 c.execute(
                     observations.insert().values(

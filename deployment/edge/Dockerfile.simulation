@@ -1,0 +1,12 @@
+# Privileged generation is confined to this optional controller image.
+ARG ANALYTICS_IMAGE=twinguard-edge-worker:local
+FROM ${ANALYTICS_IMAGE}
+USER root
+COPY src/twinguard src/twinguard
+COPY configs configs
+COPY scenarios scenarios
+COPY scripts/edge_demo.py scripts/edge_demo.py
+RUN mkdir -p /demo-data && chown 10001:10001 /demo-data
+ENV PYTHONPATH=/app/src TWINGUARD_ROOT=/app OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1
+USER twinguard
+CMD ["python", "-m", "twinguard.demo.controller"]

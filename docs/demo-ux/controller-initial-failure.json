@@ -1,0 +1,1 @@
+{"failure":"Controller image did not include development-only httpx dependency imported by the legacy CLI", "correction":"Shared uploader uses standard-library urllib; no additional runtime dependency or scientific change"}

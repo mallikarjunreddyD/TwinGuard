@@ -32,3 +32,6 @@ frontend/*.tsbuildinfo
 
 # Versioned raw research archives remain outside Git.
 experiments/releases/
+
+# Managed simulation datasets and local runtime state.
+.demo-data/

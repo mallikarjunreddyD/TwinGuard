@@ -1,0 +1,3 @@
+# Explicit visual correction pass
+
+Inspected actual rendered `first-pass-overview.png` after the light-neutral redesign. Identified an empty chart showing a narrow numerical axis around an illustrative limit despite no measurements, duplicate component-name text, and repeated missing-evidence prose that stretched the context panel. Corrected the empty chart to render only with real samples, removed duplicate identity text, structured actual missing requirements and kept exact rationale expandable. Increased control height to 44px and chart tick text to 13px. Geometry, assessment severity and data were not changed. Final after-correction screenshots are captured separately during the real acceptance workflow.

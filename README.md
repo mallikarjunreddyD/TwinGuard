@@ -135,3 +135,6 @@ Version 0.8.0 adds separately versioned optional view-qualified B3.2 and measure
 Start with [Phase7 final validation](docs/PHASE7_FINAL_VALIDATION.md), [independent results](docs/PHASE7_INDEPENDENT_VALIDATION.md), [full E4 boundaries](docs/PHASE7_E4_CORRECTED_STRESS.md), [storage](docs/PHASE7_STORAGE_VALIDATION.md), [security](docs/PHASE7_SECURITY_READINESS.md) and the [open-issue register](docs/PHASE7_VALIDATION_BACKLOG.md). Detailed completion status is governed by the per-case journals and acceptance gates. External evidence is stored under the user-provided `D:\TwinGuard` (`/mnt/d/TwinGuard`); the source checkout remains on its original drive.
 
 Release packaging and research-proposal evidence: [release readiness](docs/RELEASE_READINESS.md), [reproducibility guide](docs/REPRODUCIBILITY_GUIDE.md), and [technical evidence summary](docs/PROPOSAL_TECHNICAL_EVIDENCE_SUMMARY.md). Packaging integrity is tracked separately from research and industrial readiness.
+
+
+Interactive software demonstrator: [Simulation Lab](docs/SIMULATION_LAB.md), [browser walkthrough](docs/FINAL_DEMO_WALKTHROUGH.md), [redesign](docs/FINAL_DASHBOARD_REDESIGN.md), and [UX validation](docs/FINAL_UX_VALIDATION.md). Use the isolated demo worktree/project; research archives and frozen methods remain separate.

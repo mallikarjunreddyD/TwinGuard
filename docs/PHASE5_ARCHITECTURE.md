@@ -21,3 +21,8 @@ Separate deployment profile configuration selects illustrative simulation or con
 ## Operational limits
 
 This is one workstation with a PostgreSQL-backed queue, not a high-availability cluster. Working evidence is bounded by policy horizons plus latest samples and unresolved-event support; full public evidence and decision history remain durable. Unresolved advisory history can continue growing and needs reviewed capacity/archival management. Application database roles are not superusers; table ownership for local migrations is broader than a production service-specific SQL privilege split. No control, actuation, RUL or Phase 6 optimization is implemented.
+
+
+## Optional isolated Simulation Lab extension
+
+The subsequent UX release adds durable demo session/command records and a separate privileged generator/publisher service. The API only authenticates and validates bounded commands. Production API images retain the simulator/evaluator exclusion and no Docker socket. Existing ingestion, analytics, F1 and event lifecycle are reused unchanged. See [controller architecture](SIMULATION_CONTROLLER_ARCHITECTURE.md). This extension does not amend historical Phase 5 experimental results.

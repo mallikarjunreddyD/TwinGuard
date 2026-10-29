@@ -1,0 +1,6 @@
+import {useEffect,useState} from 'react';
+export function EventAudit({api,id,revision}:{api:(path:string)=>Promise<any>,id:string,revision:string}){
+ const [open,setOpen]=useState(false),[notices,setNotices]=useState<any[]>([]),[actions,setActions]=useState<any[]>([]),[error,setError]=useState(''),[loading,setLoading]=useState(false);
+ useEffect(()=>{if(!open)return;let active=true;setLoading(true);Promise.all([api(`events/${id}/history`),api(`events/${id}/actions`)]).then(([n,a])=>{if(active){setNotices(n);setActions(a);setError('')}}).catch(e=>{if(active)setError(String(e))}).finally(()=>{if(active)setLoading(false)});return()=>{active=false}},[open,api,id,revision]);
+ return <details onToggle={e=>setOpen(e.currentTarget.open)}><summary>Acknowledgment and lifecycle history</summary>{loading&&<p role="status">Loading event history…</p>}{error&&<p role="alert">{error}</p>}{actions.map(a=><p key={a.action_id}><strong>{a.kind}</strong> · {a.actor} · {new Date(a.at).toLocaleString()}<br/>{a.rationale}</p>)}{!loading&&!actions.length&&<p>No operator acknowledgment recorded.</p>}{notices.map(n=><p key={n.notice_id}>{n.transition} · {new Date(n.at).toLocaleString()}<br/>{n.action}</p>)}<small>Acknowledgment records human review. It does not resolve a condition or clear its supporting evidence.</small></details>
+}

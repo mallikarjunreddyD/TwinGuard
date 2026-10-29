@@ -1,0 +1,26 @@
+# Profile-guard browser verification only: shares the isolated LAB database, never a site plant.
+services:
+  site-review-api:
+    image: twinguard-demo-ux-api:local
+    profiles: [review-check]
+    env_file: ../.edge/runtime.env
+    environment:
+      TWINGUARD_USERS: /run/secrets/users.json
+      TWINGUARD_PROFILE: site-review
+      TWINGUARD_DEMO_ENABLED: '1'
+    volumes:
+      - ../.edge/users.json:/run/secrets/users.json:ro
+      - edge-data:/data:ro
+    networks: [edge]
+    cpus: 0.5
+    mem_limit: 768m
+  site-review-frontend:
+    image: twinguard-demo-ux-frontend:local
+    profiles: [review-check]
+    volumes:
+      - ./edge/nginx.site-review.conf:/etc/nginx/conf.d/default.conf:ro
+    ports: ['127.0.0.1:19390:8080']
+    networks: [edge, access]
+    depends_on: [site-review-api]
+    cpus: 0.25
+    mem_limit: 256m

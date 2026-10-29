@@ -108,9 +108,12 @@ def observation_query(
     sensor: str | None = None,
     since: datetime | None = None,
     until: datetime | None = None,
+    demo_session: str | None = Query(default=None, max_length=80),
     actor=Depends(user),
 ):
     q = select(observations).where(observations.c.asset == asset_id)
+    if demo_session:
+        q = q.where(observations.c.metadata["demo_session_id"].as_string() == demo_session)
     if sensor:
         q = q.where(observations.c.sensor == sensor)
     if since:
@@ -205,6 +208,22 @@ def event_history(event_id: str, limit: int = Query(100, ge=1, le=1000), actor=D
             .limit(limit)
         )
         return list(c.execute(q).scalars())
+
+
+@router.get("/events/{event_id}/actions")
+def event_actions(event_id: str, actor=Depends(user)):
+    with db().connect() as c:
+        return list(
+            c.execute(
+                select(records.c.body)
+                .where(
+                    records.c.kind == "operator_action",
+                    records.c.body["target_event"].as_string() == event_id,
+                )
+                .order_by(records.c.at)
+                .limit(100)
+            ).scalars()
+        )
 
 
 class ActionBody(BaseModel):

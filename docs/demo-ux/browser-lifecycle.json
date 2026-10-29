@@ -1,0 +1,115 @@
+{
+  "started_at_utc": "2026-10-29T14:49:03.295253+00:00",
+  "checks": {
+    "login_overview_actual_model": true,
+    "browser_start_actual_mqtt_and_edge": true,
+    "pause_suspends_actual_mqtt": true,
+    "resume_same_session_and_epoch": true,
+    "stop_ends_publisher_only": true,
+    "stored_values_survive_stop": true,
+    "actual_stored_chart_drawn": true,
+    "browser_refresh_restores_durable_session": true,
+    "unknown_asset_truthfully_explained": true,
+    "tablet_no_horizontal_overflow": true,
+    "keyboard_focus_visible": true
+  },
+  "screenshots": [
+    "docs/demo-ux/screenshots/after-overview-first.png",
+    "docs/demo-ux/screenshots/after-simulation-idle.png",
+    "docs/demo-ux/screenshots/after-simulation-running.png",
+    "docs/demo-ux/screenshots/after-simulation-paused.png",
+    "docs/demo-ux/screenshots/after-measurements.png",
+    "docs/demo-ux/screenshots/after-unknown-asset.png",
+    "docs/demo-ux/screenshots/after-selected-BW-01.png",
+    "docs/demo-ux/screenshots/after-monitoring.png",
+    "docs/demo-ux/screenshots/after-inspections.png",
+    "docs/demo-ux/screenshots/after-advisories.png",
+    "docs/demo-ux/screenshots/after-inspection-planning.png",
+    "docs/demo-ux/screenshots/after-tablet.png"
+  ],
+  "scenarios": {
+    "healthy_session": "demo-05ab79933db0510d9fe15a234517696b",
+    "healthy_final": {
+      "id": "demo-05ab79933db0510d9fe15a234517696b",
+      "configuration_version": "demo-v1",
+      "configuration": {
+        "scenario": "healthy",
+        "fidelity": "L1",
+        "speed": 2,
+        "inspections": false,
+        "seed": 21000
+      },
+      "actor": "operator-local",
+      "created_at": "2026-10-29T14:49:06.058800+00:00",
+      "state": "stopped",
+      "desired_state": "stopped",
+      "published_observations": 24,
+      "total_observations": 434,
+      "playback_position_s": 5.009864,
+      "publisher_active": false,
+      "inspection_jobs": [],
+      "error": null,
+      "provenance": {
+        "mode": "software_simulation",
+        "no_physical_control": true,
+        "dataset_id": "demo-05ab79933db0510d9fe15a234517696b"
+      },
+      "history": [
+        {
+          "action": "start",
+          "actor": "operator-local",
+          "at": "2026-10-29T14:49:06.217127+00:00"
+        },
+        {
+          "action": "pause",
+          "actor": "operator-local",
+          "at": "2026-10-29T14:49:12.731409+00:00"
+        },
+        {
+          "action": "resume",
+          "actor": "operator-local",
+          "at": "2026-10-29T14:49:15.116673+00:00"
+        },
+        {
+          "action": "stop",
+          "actor": "operator-local",
+          "at": "2026-10-29T14:49:15.673918+00:00"
+        }
+      ],
+      "started_at": "2026-10-29T14:49:06.217069+00:00",
+      "controller_id": "15d660ca461149798563f717828ae731",
+      "phase": "publishing",
+      "preparation_started_at": "2026-10-29T14:49:07.473869+00:00",
+      "heartbeat_at": "2026-10-29T14:49:15.561439+00:00",
+      "source_begin": "2026-01-01T00:00:00+00:00",
+      "replay_wall_begin": "2026-10-29T14:49:12.887713+00:00",
+      "last_published_observation": "demo-05ab79933db0510d9fe15a234517696b-pipe-temperature-seq-1",
+      "last_delivery": {
+        "message_id": "mqtt-demo-05ab79933db0510d9fe15a234517696b-pipe-temperature-seq-1-delivery-23",
+        "observation_id": "demo-05ab79933db0510d9fe15a234517696b-pipe-temperature-seq-1",
+        "original_acquired_at": "2026-01-01T00:00:05.009864+00:00",
+        "effective_acquired_at": "2026-10-29T14:49:15.392645+00:00",
+        "emitted_at": "2026-10-29T14:49:15.560483+00:00",
+        "puback_at": "2026-10-29T14:49:15.561426+00:00",
+        "duplicate": false
+      },
+      "processing_backlog_at_publish": 1,
+      "paused_at": "2026-10-29T14:49:12.907620+00:00",
+      "paused_wall_s": 2.412224368999887,
+      "resumed_at": "2026-10-29T14:49:15.353104+00:00",
+      "ended_at": "2026-10-29T14:49:15.885044+00:00",
+      "controller_recent": true,
+      "accepted_observations": 24,
+      "processing_backlog": 2,
+      "completed_inspections": 0,
+      "last_accepted_observation": {
+        "id": "demo-05ab79933db0510d9fe15a234517696b-pipe-temperature-seq-1",
+        "received": "2026-10-29T14:49:15.810646+00:00"
+      }
+    }
+  },
+  "errors": [],
+  "observed_public_envelopes": 24,
+  "status": "passed",
+  "finished_at_utc": "2026-10-29T14:49:31.224576+00:00"
+}

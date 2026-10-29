@@ -1,0 +1,58 @@
+# Optional laboratory deployment only; never enabled in site-review mode.
+services:
+  api:
+    image: twinguard-demo-ux-api:local
+    environment:
+      TWINGUARD_USERS: /run/secrets/users.json
+      TWINGUARD_DEMO_ENABLED: '1'
+  migrate:
+    image: twinguard-demo-ux-api:local
+  ingestion:
+    image: twinguard-demo-ux-api:local
+  fast-worker:
+    image: twinguard-demo-ux-api:local
+  inspection-worker:
+    image: twinguard-demo-ux-worker:local
+    mem_limit: 2g
+    cpus: 0.75
+  planning-worker:
+    image: twinguard-demo-ux-worker:local
+    mem_limit: 1g
+    cpus: 0.5
+  frontend:
+    image: twinguard-demo-ux-frontend:local
+    ports: !override ['127.0.0.1:19380:8080']
+  database:
+    networks: [edge, access]
+    ports: ['127.0.0.1:19382:5432']
+  broker:
+    networks: [edge, access]
+    ports: ['127.0.0.1:19383:1883']
+  simulation-controller:
+    image: twinguard-demo-ux-simulation:local
+    build:
+      context: ..
+      dockerfile: deployment/edge/Dockerfile.simulation
+      args:
+        ANALYTICS_IMAGE: twinguard-demo-ux-worker:local
+    env_file: ../.edge/controller.env
+    environment:
+      TWINGUARD_PROFILE: ${TWINGUARD_PROFILE:-site-review}
+      TWINGUARD_DEMO_ENABLED: '1'
+      TWINGUARD_DEMO_DATA: /demo-data
+      TWINGUARD_DEMO_API: http://api:8000
+      TWINGUARD_MQTT_HOST: broker
+      TWINGUARD_DEMO_SECRETS: /run/secrets/controller.json
+    volumes:
+      - ../.edge/controller.json:/run/secrets/controller.json:ro
+      - demo-data:/demo-data
+    networks: [edge]
+    cpus: 0.75
+    mem_limit: 1536m
+    pids_limit: 96
+    restart: unless-stopped
+    depends_on:
+      api: {condition: service_healthy}
+      broker: {condition: service_started}
+volumes:
+  demo-data:

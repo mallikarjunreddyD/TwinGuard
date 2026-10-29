@@ -1,0 +1,670 @@
+{
+  "checks": {
+    "critical_f1_without_uav": true,
+    "operator_acknowledgment_preserves_event": true,
+    "geometry_actual_inspection_processing": true,
+    "thermal_actual_inspection_processing": true,
+    "degraded_actual_inspection_processing": true,
+    "interruption_real_missing_source": true,
+    "controller_restart_no_silent_republication": true,
+    "viewer_browser_and_api_reject_execution": true,
+    "site_review_browser_and_server_reject_execution": true,
+    "api_dashboard_restart_retains_records": true
+  },
+  "scenarios": {
+    "critical_event": {
+      "schema_version": "1.0.0",
+      "event_id": "event-875971a8423286be07b1",
+      "asset_id": "BW-01",
+      "hazard_id": "critical-pressure",
+      "severity": "red",
+      "lifecycle": "escalated",
+      "opened_at": "2026-10-29T14:21:26.692746Z",
+      "updated_at": "2026-10-29T14:21:26.692746Z",
+      "positive_ids": [
+        "limit-demo-fd7cb929be0f5393bd0a488dea290e94-pressure-01-seq-30"
+      ],
+      "positive_origins": [
+        "demo-fd7cb929be0f5393bd0a488dea290e94-pressure-01-seq-30"
+      ],
+      "positive_times": [
+        "2026-10-29T14:21:21.244569Z"
+      ],
+      "first_positive_at": "2026-10-29T14:21:21.244569Z",
+      "last_observation_at": "2026-10-29T14:21:21.244569Z",
+      "recovery_ids": [],
+      "recovery_times": [],
+      "recovery_started_at": null,
+      "recovery_last_at": null,
+      "action": "Verify instrument and urgently escalate to authorized plant personnel under site-approved procedures",
+      "monitoring_unavailable": false,
+      "policy_id": "synthetic-hazards",
+      "policy_version": "v1",
+      "policy_sha256": "16750164a4ec10555f26c58dd130819910e433640bd739e4b0d0e08a88eabf91",
+      "deployment_profile": "simulation"
+    },
+    "critical_final": {
+      "id": "demo-fd7cb929be0f5393bd0a488dea290e94",
+      "configuration_version": "demo-v1",
+      "configuration": {
+        "scenario": "critical",
+        "fidelity": "L1",
+        "speed": 2,
+        "inspections": false,
+        "seed": 21000
+      },
+      "actor": "operator-local",
+      "created_at": "2026-10-29T14:21:02.670866+00:00",
+      "state": "stopped",
+      "desired_state": "stopped",
+      "published_observations": 161,
+      "total_observations": 434,
+      "playback_position_s": 44.005347,
+      "publisher_active": false,
+      "inspection_jobs": [],
+      "error": null,
+      "provenance": {
+        "mode": "software_simulation",
+        "no_physical_control": true,
+        "dataset_id": "demo-fd7cb929be0f5393bd0a488dea290e94"
+      },
+      "history": [
+        {
+          "action": "start",
+          "actor": "operator-local",
+          "at": "2026-10-29T14:21:02.759756+00:00"
+        },
+        {
+          "action": "stop",
+          "actor": "operator-local",
+          "at": "2026-10-29T14:21:29.574596+00:00"
+        }
+      ],
+      "started_at": "2026-10-29T14:21:02.759740+00:00",
+      "controller_id": "afab7ab4a4d949e9a38cd0049642c588",
+      "phase": "publishing",
+      "preparation_started_at": "2026-10-29T14:21:02.948955+00:00",
+      "heartbeat_at": "2026-10-29T14:21:29.576055+00:00",
+      "source_begin": "2026-01-01T00:00:00+00:00",
+      "replay_wall_begin": "2026-10-29T14:21:06.242059+00:00",
+      "last_published_observation": "demo-fd7cb929be0f5393bd0a488dea290e94-temperature-01-seq-22",
+      "last_delivery": {
+        "message_id": "mqtt-demo-fd7cb929be0f5393bd0a488dea290e94-temperature-01-seq-22-delivery-160",
+        "observation_id": "demo-fd7cb929be0f5393bd0a488dea290e94-temperature-01-seq-22",
+        "original_acquired_at": "2026-01-01T00:00:44.005347+00:00",
+        "effective_acquired_at": "2026-10-29T14:21:28.244733+00:00",
+        "emitted_at": "2026-10-29T14:21:29.575487+00:00",
+        "puback_at": "2026-10-29T14:21:29.576048+00:00",
+        "duplicate": false
+      },
+      "processing_backlog_at_publish": 47,
+      "ended_at": "2026-10-29T14:21:29.790274+00:00",
+      "controller_recent": true,
+      "accepted_observations": 126,
+      "processing_backlog": 48,
+      "completed_inspections": 0,
+      "last_accepted_observation": {
+        "id": "demo-fd7cb929be0f5393bd0a488dea290e94-temperature-01-seq-17",
+        "received": "2026-10-29T14:21:30.047137+00:00"
+      }
+    },
+    "geometry": {
+      "session": {
+        "id": "demo-cd6b7f85fc39571a869ade0c47021836",
+        "configuration_version": "demo-v1",
+        "configuration": {
+          "scenario": "geometry",
+          "fidelity": "L1",
+          "speed": 10,
+          "inspections": true,
+          "seed": 21000
+        },
+        "actor": "operator-local",
+        "created_at": "2026-10-29T14:21:31.117464+00:00",
+        "state": "completed",
+        "desired_state": "stopped",
+        "published_observations": 434,
+        "total_observations": 434,
+        "playback_position_s": 120.0,
+        "publisher_active": false,
+        "inspection_jobs": [
+          {
+            "id": "inspection-demo-cd6b7f85fc39571a869ade0c47021836",
+            "status": "completed",
+            "error": null
+          }
+        ],
+        "error": null,
+        "provenance": {
+          "mode": "software_simulation",
+          "no_physical_control": true,
+          "dataset_id": "demo-cd6b7f85fc39571a869ade0c47021836"
+        },
+        "history": [
+          {
+            "action": "start",
+            "actor": "operator-local",
+            "at": "2026-10-29T14:21:31.298080+00:00"
+          }
+        ],
+        "started_at": "2026-10-29T14:21:31.298070+00:00",
+        "controller_id": "afab7ab4a4d949e9a38cd0049642c588",
+        "phase": "completed",
+        "preparation_started_at": "2026-10-29T14:21:31.630580+00:00",
+        "heartbeat_at": "2026-10-29T14:23:03.559990+00:00",
+        "source_begin": "2026-01-01T00:00:00+00:00",
+        "replay_wall_begin": "2026-10-29T14:22:18.906151+00:00",
+        "last_published_observation": "demo-cd6b7f85fc39571a869ade0c47021836-temperature-01-seq-60",
+        "last_delivery": {
+          "message_id": "mqtt-demo-cd6b7f85fc39571a869ade0c47021836-temperature-01-seq-60-delivery-432",
+          "observation_id": "demo-cd6b7f85fc39571a869ade0c47021836-temperature-01-seq-60",
+          "original_acquired_at": "2026-01-01T00:02:00+00:00",
+          "effective_acquired_at": "2026-10-29T14:22:30.906151+00:00",
+          "emitted_at": "2026-10-29T14:23:02.416622+00:00",
+          "puback_at": "2026-10-29T14:23:02.417108+00:00",
+          "duplicate": false
+        },
+        "processing_backlog_at_publish": 88,
+        "inspection_message_id": "inspection-demo-cd6b7f85fc39571a869ade0c47021836",
+        "ended_at": "2026-10-29T14:23:03.724420+00:00",
+        "controller_recent": false,
+        "accepted_observations": 428,
+        "processing_backlog": 150,
+        "completed_inspections": 1,
+        "last_accepted_observation": {
+          "id": "demo-cd6b7f85fc39571a869ade0c47021836-temperature-01-seq-60",
+          "received": "2026-10-29T14:23:41.922811+00:00"
+        }
+      },
+      "geometry_statuses": [
+        "valid"
+      ],
+      "geometric_regions": 1,
+      "thermal_statuses": [
+        "inconclusive",
+        "valid"
+      ]
+    },
+    "thermal": {
+      "session": {
+        "id": "demo-b8193525bafd53aeb9e22d881a02d9b4",
+        "configuration_version": "demo-v1",
+        "configuration": {
+          "scenario": "thermal",
+          "fidelity": "L1",
+          "speed": 10,
+          "inspections": true,
+          "seed": 21000
+        },
+        "actor": "operator-local",
+        "created_at": "2026-10-29T14:23:57.038256+00:00",
+        "state": "completed",
+        "desired_state": "stopped",
+        "published_observations": 434,
+        "total_observations": 434,
+        "playback_position_s": 120.0,
+        "publisher_active": false,
+        "inspection_jobs": [
+          {
+            "id": "inspection-demo-b8193525bafd53aeb9e22d881a02d9b4",
+            "status": "completed",
+            "error": null
+          }
+        ],
+        "error": null,
+        "provenance": {
+          "mode": "software_simulation",
+          "no_physical_control": true,
+          "dataset_id": "demo-b8193525bafd53aeb9e22d881a02d9b4"
+        },
+        "history": [
+          {
+            "action": "start",
+            "actor": "operator-local",
+            "at": "2026-10-29T14:23:57.084377+00:00"
+          }
+        ],
+        "started_at": "2026-10-29T14:23:57.084366+00:00",
+        "controller_id": "afab7ab4a4d949e9a38cd0049642c588",
+        "phase": "completed",
+        "preparation_started_at": "2026-10-29T14:23:57.346039+00:00",
+        "heartbeat_at": "2026-10-29T14:24:55.512277+00:00",
+        "source_begin": "2026-01-01T00:00:00+00:00",
+        "replay_wall_begin": "2026-10-29T14:24:04.110776+00:00",
+        "last_published_observation": "demo-b8193525bafd53aeb9e22d881a02d9b4-vibration-02-seq-24",
+        "last_delivery": {
+          "message_id": "mqtt-demo-b8193525bafd53aeb9e22d881a02d9b4-vibration-02-seq-24-delivery-432",
+          "observation_id": "demo-b8193525bafd53aeb9e22d881a02d9b4-vibration-02-seq-24",
+          "original_acquired_at": "2026-01-01T00:02:00+00:00",
+          "effective_acquired_at": "2026-10-29T14:24:16.110776+00:00",
+          "emitted_at": "2026-10-29T14:24:55.511575+00:00",
+          "puback_at": "2026-10-29T14:24:55.512266+00:00",
+          "duplicate": false
+        },
+        "processing_backlog_at_publish": 164,
+        "inspection_message_id": "inspection-demo-b8193525bafd53aeb9e22d881a02d9b4",
+        "ended_at": "2026-10-29T14:24:56.577350+00:00",
+        "controller_recent": false,
+        "accepted_observations": 428,
+        "processing_backlog": 234,
+        "completed_inspections": 1,
+        "last_accepted_observation": {
+          "id": "demo-b8193525bafd53aeb9e22d881a02d9b4-vibration-02-seq-24",
+          "received": "2026-10-29T14:25:41.484970+00:00"
+        }
+      },
+      "geometry_statuses": [
+        "valid"
+      ],
+      "geometric_regions": 1,
+      "thermal_statuses": [
+        "inconclusive",
+        "valid"
+      ]
+    },
+    "degraded": {
+      "session": {
+        "id": "demo-22849695151650f08228f1906b38c6c8",
+        "configuration_version": "demo-v1",
+        "configuration": {
+          "scenario": "degraded",
+          "fidelity": "L2",
+          "speed": 10,
+          "inspections": true,
+          "seed": 21000
+        },
+        "actor": "operator-local",
+        "created_at": "2026-10-29T14:25:55.082497+00:00",
+        "state": "completed",
+        "desired_state": "stopped",
+        "published_observations": 380,
+        "total_observations": 380,
+        "playback_position_s": 120.0,
+        "publisher_active": false,
+        "inspection_jobs": [
+          {
+            "id": "inspection-demo-22849695151650f08228f1906b38c6c8",
+            "status": "completed",
+            "error": null
+          }
+        ],
+        "error": null,
+        "provenance": {
+          "mode": "software_simulation",
+          "no_physical_control": true,
+          "dataset_id": "demo-22849695151650f08228f1906b38c6c8"
+        },
+        "history": [
+          {
+            "action": "start",
+            "actor": "operator-local",
+            "at": "2026-10-29T14:25:55.215952+00:00"
+          }
+        ],
+        "started_at": "2026-10-29T14:25:55.215934+00:00",
+        "controller_id": "afab7ab4a4d949e9a38cd0049642c588",
+        "phase": "completed",
+        "preparation_started_at": "2026-10-29T14:25:55.459511+00:00",
+        "heartbeat_at": "2026-10-29T14:26:41.277900+00:00",
+        "source_begin": "2026-01-01T00:00:00+00:00",
+        "replay_wall_begin": "2026-10-29T14:26:01.077564+00:00",
+        "last_published_observation": "demo-22849695151650f08228f1906b38c6c8-wall-thermometer-seq-24",
+        "last_delivery": {
+          "message_id": "mqtt-demo-22849695151650f08228f1906b38c6c8-wall-thermometer-seq-24-delivery-378",
+          "observation_id": "demo-22849695151650f08228f1906b38c6c8-wall-thermometer-seq-24",
+          "original_acquired_at": "2026-01-01T00:02:00+00:00",
+          "effective_acquired_at": "2026-10-29T14:26:13.077564+00:00",
+          "emitted_at": "2026-10-29T14:26:41.277467+00:00",
+          "puback_at": "2026-10-29T14:26:41.277894+00:00",
+          "duplicate": false
+        },
+        "processing_backlog_at_publish": 232,
+        "inspection_message_id": "inspection-demo-22849695151650f08228f1906b38c6c8",
+        "ended_at": "2026-10-29T14:26:41.677900+00:00",
+        "controller_recent": false,
+        "accepted_observations": 373,
+        "processing_backlog": 301,
+        "completed_inspections": 1,
+        "last_accepted_observation": {
+          "id": "demo-22849695151650f08228f1906b38c6c8-wall-thermometer-seq-24",
+          "received": "2026-10-29T14:27:14.431242+00:00"
+        }
+      },
+      "geometry_statuses": [
+        "insufficient_coverage"
+      ],
+      "geometric_regions": 0,
+      "thermal_statuses": [
+        "inconclusive",
+        "valid"
+      ]
+    },
+    "interruption": {
+      "session": {
+        "id": "demo-be168a56ae8d5e2eadcfe9c86f8658d0",
+        "configuration_version": "demo-v1",
+        "configuration": {
+          "scenario": "interruption",
+          "fidelity": "L1",
+          "speed": 10,
+          "inspections": false,
+          "seed": 21000
+        },
+        "actor": "operator-local",
+        "created_at": "2026-10-29T14:33:40.257597+00:00",
+        "state": "completed",
+        "desired_state": "stopped",
+        "published_observations": 80,
+        "total_observations": 80,
+        "playback_position_s": 20.994141,
+        "publisher_active": false,
+        "inspection_jobs": [],
+        "error": null,
+        "provenance": {
+          "mode": "software_simulation",
+          "no_physical_control": true,
+          "dataset_id": "demo-be168a56ae8d5e2eadcfe9c86f8658d0"
+        },
+        "history": [
+          {
+            "action": "start",
+            "actor": "operator-local",
+            "at": "2026-10-29T14:33:40.355982+00:00"
+          }
+        ],
+        "started_at": "2026-10-29T14:33:40.355968+00:00",
+        "controller_id": "afab7ab4a4d949e9a38cd0049642c588",
+        "phase": "completed",
+        "preparation_started_at": "2026-10-29T14:33:40.558457+00:00",
+        "heartbeat_at": "2026-10-29T14:34:06.785269+00:00",
+        "source_begin": "2026-01-01T00:00:00+00:00",
+        "replay_wall_begin": "2026-10-29T14:33:44.218613+00:00",
+        "last_published_observation": "demo-be168a56ae8d5e2eadcfe9c86f8658d0-pressure-02-seq-7",
+        "last_delivery": {
+          "message_id": "mqtt-demo-be168a56ae8d5e2eadcfe9c86f8658d0-pressure-02-seq-7-delivery-79",
+          "observation_id": "demo-be168a56ae8d5e2eadcfe9c86f8658d0-pressure-02-seq-7",
+          "original_acquired_at": "2026-01-01T00:00:20.994141+00:00",
+          "effective_acquired_at": "2026-10-29T14:33:46.318027+00:00",
+          "emitted_at": "2026-10-29T14:33:51.296169+00:00",
+          "puback_at": "2026-10-29T14:33:51.296659+00:00",
+          "duplicate": false
+        },
+        "processing_backlog_at_publish": 15,
+        "interruption_wall_s": 16,
+        "ended_at": "2026-10-29T14:34:07.488078+00:00",
+        "controller_recent": true,
+        "accepted_observations": 80,
+        "processing_backlog": 0,
+        "completed_inspections": 0,
+        "last_accepted_observation": {
+          "id": "demo-be168a56ae8d5e2eadcfe9c86f8658d0-pressure-02-seq-7",
+          "received": "2026-10-29T14:33:58.626832+00:00"
+        }
+      },
+      "source": {
+        "schema_version": "1.0.0",
+        "source_id": "demo-iot",
+        "transport_identity": "demo-iot",
+        "site_id": "plant-01",
+        "sensors": {
+          "temperature-01": {
+            "asset_id": "BW-01",
+            "measurement_type": "temperature",
+            "unit": "degC"
+          },
+          "pressure-01": {
+            "asset_id": "BW-01",
+            "measurement_type": "pressure",
+            "unit": "Pa"
+          },
+          "load-01": {
+            "asset_id": "DR-01",
+            "measurement_type": "operating_load",
+            "unit": "1"
+          },
+          "vibration-01": {
+            "asset_id": "SUP-01",
+            "measurement_type": "vibration_rms",
+            "unit": "m/s2"
+          },
+          "wall-thermometer": {
+            "asset_id": "BW-01",
+            "measurement_type": "temperature",
+            "unit": "degC"
+          },
+          "drum-thermometer": {
+            "asset_id": "DR-01",
+            "measurement_type": "temperature",
+            "unit": "degC"
+          },
+          "pipe-temperature": {
+            "asset_id": "SP-01",
+            "measurement_type": "temperature",
+            "unit": "degC"
+          },
+          "pressure-02": {
+            "asset_id": "SP-02",
+            "measurement_type": "pressure",
+            "unit": "Pa"
+          },
+          "vibration-02": {
+            "asset_id": "DR-01",
+            "measurement_type": "vibration_rms",
+            "unit": "m/s2"
+          }
+        },
+        "active": true,
+        "clock_quality": "synchronized",
+        "clock_basis": "controlled_simulation_replay",
+        "calibration_status": "assumed_simulation",
+        "calibration_reference": "assumed-v1",
+        "expected_interval_s": 5.0,
+        "configuration_reference": "v1",
+        "allow_inspections": false,
+        "capture_sensors": {},
+        "last_acquired_by_sensor": {
+          "pipe-temperature": "2026-10-29T14:33:46.218140+00:00",
+          "temperature-01": "2026-10-29T14:33:46.217798+00:00",
+          "vibration-01": "2026-10-29T14:33:46.217648+00:00",
+          "pressure-01": "2026-10-29T14:33:46.317794+00:00",
+          "pressure-02": "2026-10-29T14:33:46.318027+00:00",
+          "wall-thermometer": "2026-10-29T14:33:46.218610+00:00",
+          "vibration-02": "2026-10-29T14:33:46.218272+00:00",
+          "load-01": "2026-10-29T14:33:46.217957+00:00",
+          "drum-thermometer": "2026-10-29T14:33:46.219122+00:00"
+        },
+        "sequence_epoch": "demo-be168a56ae8d5e2eadcfe9c86f8658d0",
+        "last_received": "2026-10-29T14:33:58.626832+00:00",
+        "last_valid": "2026-10-29T14:33:58.626832+00:00",
+        "quality": "good",
+        "last_sequence": 79,
+        "channels": [
+          {
+            "sensor_id": "temperature-01",
+            "asset_id": "BW-01",
+            "measurement_type": "temperature",
+            "unit": "degC",
+            "last_received": "2026-10-29T14:33:57.224218+00:00",
+            "last_valid": "2026-10-29T14:33:57.224218+00:00",
+            "quality": "good",
+            "stale": true,
+            "clock_quality": "synchronized",
+            "calibration_status": "assumed_simulation"
+          },
+          {
+            "sensor_id": "pressure-01",
+            "asset_id": "BW-01",
+            "measurement_type": "pressure",
+            "unit": "Pa",
+            "last_received": "2026-10-29T14:33:58.418658+00:00",
+            "last_valid": "2026-10-29T14:33:58.418658+00:00",
+            "quality": "good",
+            "stale": true,
+            "clock_quality": "synchronized",
+            "calibration_status": "assumed_simulation"
+          },
+          {
+            "sensor_id": "load-01",
+            "asset_id": "DR-01",
+            "measurement_type": "operating_load",
+            "unit": "1",
+            "last_received": "2026-10-29T14:33:57.425048+00:00",
+            "last_valid": "2026-10-29T14:33:57.425048+00:00",
+            "quality": "good",
+            "stale": true,
+            "clock_quality": "synchronized",
+            "calibration_status": "assumed_simulation"
+          },
+          {
+            "sensor_id": "vibration-01",
+            "asset_id": "SUP-01",
+            "measurement_type": "vibration_rms",
+            "unit": "m/s2",
+            "last_received": "2026-10-29T14:33:57.045441+00:00",
+            "last_valid": "2026-10-29T14:33:57.045441+00:00",
+            "quality": "good",
+            "stale": true,
+            "clock_quality": "synchronized",
+            "calibration_status": "assumed_simulation"
+          },
+          {
+            "sensor_id": "wall-thermometer",
+            "asset_id": "BW-01",
+            "measurement_type": "temperature",
+            "unit": "degC",
+            "last_received": "2026-10-29T14:33:58.102148+00:00",
+            "last_valid": "2026-10-29T14:33:58.102148+00:00",
+            "quality": "good",
+            "stale": true,
+            "clock_quality": "synchronized",
+            "calibration_status": "assumed_simulation"
+          },
+          {
+            "sensor_id": "drum-thermometer",
+            "asset_id": "DR-01",
+            "measurement_type": "temperature",
+            "unit": "degC",
+            "last_received": "2026-10-29T14:33:58.206553+00:00",
+            "last_valid": "2026-10-29T14:33:58.206553+00:00",
+            "quality": "good",
+            "stale": true,
+            "clock_quality": "synchronized",
+            "calibration_status": "assumed_simulation"
+          },
+          {
+            "sensor_id": "pipe-temperature",
+            "asset_id": "SP-01",
+            "measurement_type": "temperature",
+            "unit": "degC",
+            "last_received": "2026-10-29T14:33:57.633616+00:00",
+            "last_valid": "2026-10-29T14:33:57.633616+00:00",
+            "quality": "good",
+            "stale": true,
+            "clock_quality": "synchronized",
+            "calibration_status": "assumed_simulation"
+          },
+          {
+            "sensor_id": "pressure-02",
+            "asset_id": "SP-02",
+            "measurement_type": "pressure",
+            "unit": "Pa",
+            "last_received": "2026-10-29T14:33:58.626832+00:00",
+            "last_valid": "2026-10-29T14:33:58.626832+00:00",
+            "quality": "good",
+            "stale": true,
+            "clock_quality": "synchronized",
+            "calibration_status": "assumed_simulation"
+          },
+          {
+            "sensor_id": "vibration-02",
+            "asset_id": "DR-01",
+            "measurement_type": "vibration_rms",
+            "unit": "m/s2",
+            "last_received": "2026-10-29T14:33:57.836592+00:00",
+            "last_valid": "2026-10-29T14:33:57.836592+00:00",
+            "quality": "good",
+            "stale": true,
+            "clock_quality": "synchronized",
+            "calibration_status": "assumed_simulation"
+          }
+        ],
+        "age_s": 15.133686,
+        "connection": "no_recent_data",
+        "monitoring_status": "unknown_or_unavailable"
+      },
+      "observed_end_minus_last_emission_s": 16.191909
+    },
+    "controller_restart": {
+      "id": "demo-68d6ac106aa35ecfbd2944a6539bb582",
+      "configuration_version": "demo-v1",
+      "configuration": {
+        "scenario": "healthy",
+        "fidelity": "L1",
+        "speed": 1,
+        "inspections": false,
+        "seed": 21000
+      },
+      "actor": "operator-local",
+      "created_at": "2026-10-29T14:34:14.053781+00:00",
+      "state": "failed",
+      "desired_state": "stopped",
+      "published_observations": 47,
+      "total_observations": 431,
+      "playback_position_s": 11.99286,
+      "publisher_active": false,
+      "inspection_jobs": [],
+      "error": "Controller interrupted. Last acknowledged progress retained; an in-flight delivery may have committed. Restart creates a fresh session; no automatic dataset replay.",
+      "provenance": {
+        "mode": "software_simulation",
+        "no_physical_control": true,
+        "dataset_id": "demo-68d6ac106aa35ecfbd2944a6539bb582"
+      },
+      "history": [
+        {
+          "action": "start",
+          "actor": "operator-local",
+          "at": "2026-10-29T14:34:14.098631+00:00"
+        }
+      ],
+      "started_at": "2026-10-29T14:34:14.098618+00:00",
+      "controller_id": "afab7ab4a4d949e9a38cd0049642c588",
+      "phase": "publishing",
+      "preparation_started_at": "2026-10-29T14:34:14.321859+00:00",
+      "heartbeat_at": "2026-10-29T14:34:30.219542+00:00",
+      "source_begin": "2026-01-01T00:00:00+00:00",
+      "replay_wall_begin": "2026-10-29T14:34:18.115639+00:00",
+      "last_published_observation": "demo-68d6ac106aa35ecfbd2944a6539bb582-pressure-02-seq-4",
+      "last_delivery": {
+        "message_id": "mqtt-demo-68d6ac106aa35ecfbd2944a6539bb582-pressure-02-seq-4-delivery-46",
+        "observation_id": "demo-68d6ac106aa35ecfbd2944a6539bb582-pressure-02-seq-4",
+        "original_acquired_at": "2026-01-01T00:00:11.992860+00:00",
+        "effective_acquired_at": "2026-10-29T14:34:30.108499+00:00",
+        "emitted_at": "2026-10-29T14:34:30.219038+00:00",
+        "puback_at": "2026-10-29T14:34:30.219536+00:00",
+        "duplicate": false
+      },
+      "processing_backlog_at_publish": 2,
+      "ended_at": "2026-10-29T14:34:33.830395+00:00",
+      "controller_recent": true,
+      "accepted_observations": 47,
+      "processing_backlog": 0,
+      "completed_inspections": 0,
+      "last_accepted_observation": {
+        "id": "demo-68d6ac106aa35ecfbd2944a6539bb582-pressure-02-seq-4",
+        "received": "2026-10-29T14:34:30.344377+00:00"
+      }
+    }
+  },
+  "errors": [],
+  "started_at_utc": "2026-10-29T14:21:00.498113+00:00",
+  "observed_mqtt_envelopes": 1409,
+  "status": "passed",
+  "finished_at_utc": "2026-10-29T14:34:56.245855+00:00",
+  "resumed_from": {
+    "path": ".demo-data/scenarios-initial/report.json",
+    "sha256": "1b5958dfba90dc4a42c96a20886ae1e6dfceaf531165b12bb474bc077c3e6ee9",
+    "reason": "Retain five actually executed successful checks; repair optional-phase polling and execute only remaining cases"
+  },
+  "started_resume_at_utc": "2026-10-29T14:33:38.672743+00:00",
+  "resumed_observed_public_envelopes": 127
+}

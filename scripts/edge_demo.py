@@ -8,7 +8,7 @@ import zipfile
 import uuid
 from pathlib import Path
 from datetime import timedelta
-import httpx
+from urllib.request import Request, urlopen
 from twinguard.core.contracts import SensorObservation, InspectionSchedule
 from twinguard.core.observations import load_public_observations
 from twinguard.edge.contracts import Envelope, now
@@ -17,7 +17,11 @@ from twinguard.edge.protocols import publish
 ROOT = Path(__file__).resolve().parents[1]
 
 
-def generate(output, seed=8100, kind="critical", fidelity="L1"):
+class ReplayStopped(Exception):
+    """The bounded demo publisher was stopped; the platform remains running."""
+
+
+def generate(output, seed=8100, kind="critical", fidelity="L1", include_inspections=True):
     # Only the controller imports generation. None of these modules exist in runtime images.
     from twinguard.evaluation.experiments import setup_scenario
     from twinguard.plant.config import load_plant_config
@@ -52,6 +56,8 @@ def generate(output, seed=8100, kind="critical", fidelity="L1"):
         InspectionSchedule(sensor_id=installation.thermal.sensor_id, offset_s=t, modality="thermal")
         for t in [0, 60]
     ]
+    if not include_inspections:
+        scenario.inspections = []
     simulator = PlantSimulator(
         create_baseline_plant(load_plant_config(ROOT / "configs/plant.yaml"), seed),
         scenario,
@@ -91,11 +97,14 @@ def stream(
     limit=None,
     step=False,
     control_file=None,
+    hooks=None,
+    secrets_file=None,
+    session_id=None,
 ):
     if speed <= 0:
         raise ValueError("Playback speed must be positive")
     output.mkdir(parents=True, exist_ok=False)
-    secrets = json.loads((ROOT / ".edge/secrets.json").read_text())
+    secrets = json.loads(Path(secrets_file or ROOT / ".edge/secrets.json").read_text())
     samples = [r for r in load_public_observations(data) if isinstance(r, SensorObservation)]
     samples = sorted(samples, key=lambda r: (r.acquired_at, r.sensor_id))
     if limit:
@@ -110,6 +119,49 @@ def stream(
             seconds=(max(r.acquired_at for r in samples) - source_begin).total_seconds() / speed
         )
     sent = []
+    if hooks and len(samples) > 10000:
+        raise ValueError("Simulation observation bound exceeded")
+    if hooks:
+        hooks.ready(len(samples) + int(inspections), source_begin, wall_begin)
+
+    def wait_for(offset):
+        nonlocal start, wall_begin
+        while True:
+            paused_at = time.monotonic()
+            if hooks:
+                state = hooks.control()
+                if state == "stopped":
+                    raise ReplayStopped()
+                if state == "waiting":
+                    time.sleep(0.1)
+                    continue
+                if state == "paused":
+                    hooks.state("paused")
+                    while hooks.control() == "paused":
+                        time.sleep(0.1)
+                    adjustment = time.monotonic() - paused_at
+                    start += adjustment
+                    wall_begin += timedelta(seconds=adjustment)
+                    if hasattr(hooks, "clock"):
+                        hooks.clock(wall_begin, adjustment)
+                    if hooks.control() == "stopped":
+                        raise ReplayStopped()
+                    hooks.state("running")
+            elif (
+                control_file
+                and control_file.exists()
+                and json.loads(control_file.read_text()).get("paused", False)
+            ):
+                time.sleep(0.1)
+                adjustment = time.monotonic() - paused_at
+                start += adjustment
+                wall_begin += timedelta(seconds=adjustment)
+                continue
+            remaining = start + offset - time.monotonic()
+            if remaining <= 0:
+                return
+            time.sleep(min(remaining, 0.1))
+
     # One real MQTT connection, QoS1 PUBACK per message; local replay pacing is wall-clock measured.
     from twinguard.edge.protocols import mqtt_client
     from twinguard.edge.ingestion import topic
@@ -123,19 +175,8 @@ def stream(
         for seq, record in enumerate(samples):
             if step:
                 input("Enter to publish next measured observation: ")
-            paused = time.monotonic()
-            while (
-                control_file
-                and control_file.exists()
-                and json.loads(control_file.read_text()).get("paused", False)
-            ):
-                time.sleep(0.1)
-            adjustment = time.monotonic() - paused
-            start += adjustment
-            wall_begin += timedelta(seconds=adjustment)
             offset = (record.acquired_at - source_begin).total_seconds() / speed
-            if not reverse:
-                time.sleep(max(0, start + offset - time.monotonic()))
+            wait_for(0 if reverse else offset)
             emission = now()
             # Original scientific record unchanged. Mapped acquisition remains causal and explicit.
             effective = wall_begin + timedelta(seconds=offset)
@@ -144,13 +185,13 @@ def stream(
                 message_id="mqtt-" + record.observation_id + "-delivery-" + str(seq),
                 source_id="demo-iot",
                 sequence=seq,
-                sequence_epoch=record.provenance_id,
+                sequence_epoch=session_id or record.provenance_id,
                 replay_rate=speed,
                 emitted_at=emission,
                 mode="simulation_replay",
                 replay_acquired_at=effective,
                 observation=record,
-                provenance_id=record.provenance_id,
+                provenance_id=session_id or record.provenance_id,
             )
             payload = env.model_dump_json()
             repeats = 2 if duplicates and seq % 3 == 0 else 1
@@ -170,19 +211,29 @@ def stream(
                         "duplicate": repeat > 0,
                     }
                 )
+                if hooks:
+                    hooks.published(
+                        len(sent),
+                        record,
+                        sent[-1],
+                        (record.acquired_at - source_begin).total_seconds(),
+                    )
     finally:
         client.disconnect()
         client.loop_stop()
     if inspections:
         data_bytes = bundle(data)
-        response = httpx.post(
+        request = Request(
             url + "/api/v1/inspection-imports",
-            content=data_bytes,
-            headers={"Authorization": "Bearer " + secrets["operator"]},
-            timeout=120,
+            data=data_bytes,
+            headers={
+                "Authorization": "Bearer " + secrets["operator"],
+                "Content-Type": "application/zip",
+            },
+            method="POST",
         )
-        response.raise_for_status()
-        digest = response.json()["sha256"]
+        with urlopen(request, timeout=120) as response:
+            digest = json.load(response)["sha256"]
         from twinguard.core.contracts import InspectionCapture
 
         anchor = max(
@@ -195,7 +246,10 @@ def stream(
         )
         # A truncated IoT replay can finish before the scheduled inspection anchor.
         # Wait rather than publish an inadmissible future acquisition timestamp.
-        time.sleep(max(0, (capture_replay_at - now()).total_seconds()))
+        wait_for((anchor - source_begin).total_seconds() / speed)
+        capture_replay_at = wall_begin + timedelta(
+            seconds=(anchor - source_begin).total_seconds() / speed
+        )
         env = Envelope(
             message_id="inspection-" + data.name,
             source_id="demo-uav",
@@ -206,11 +260,13 @@ def stream(
             replay_acquired_at=capture_replay_at,
             replay_source_anchor_at=anchor,
             replay_rate=speed,
-            sequence_epoch="public-" + data.name,
+            sequence_epoch=session_id or "public-" + data.name,
             artifact_sha256=digest,
-            provenance_id="public-" + data.name,
+            provenance_id=session_id or "public-" + data.name,
         )
         sent += publish([env], secrets["demo-uav"], host, port)
+        if hooks:
+            hooks.inspection(env.message_id, len(sent))
     manifest = {
         "dataset": str(data),
         "speed": speed,

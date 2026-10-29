@@ -35,3 +35,8 @@ The Inspection Planning section loads backend priorities, recommendations and hi
 Review requires an operator/admin role. Critical process context requires explicit acknowledgment before software-simulation approval. No approval authorizes a physical UAV. Completed synthetic inspection links show actual B3.1/thermal results and the prior plan they informed. Only completed linked acquisitions count as attempted views. A no_viable_viewpoint or requires_route_review result is explicit, not successful sensing.
 
 The isolated Phase 6 validation stack uses http://localhost:18880 with deployment/edge/compose.phase6-validation.yaml; the earlier Phase 5 stack remains on 18780. Tokens remain local in .edge/secrets.json. See PHASE6_VALIDATION.md for actual screenshots and test scope.
+
+
+## Interactive demonstrator update
+
+The isolated UX release adds Simulation Lab and the light-neutral operational layout. See [Simulation Lab](SIMULATION_LAB.md), [redesign](FINAL_DASHBOARD_REDESIGN.md), and [browser walkthrough](FINAL_DEMO_WALKTHROUGH.md). Source recency, publisher activity and platform connection are distinct. Unknown and inconclusive data retain their original meaning.

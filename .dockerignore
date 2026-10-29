@@ -8,3 +8,6 @@ experiments/outputs
 frontend/node_modules
 frontend/dist
 output
+
+.demo-data
+experiments/releases

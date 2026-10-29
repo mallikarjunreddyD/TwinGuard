@@ -1,0 +1,92 @@
+[
+  {
+    "id": "demo-05ab79933db0510d9fe15a234517696b",
+    "state": "stopped",
+    "published_observations": 24,
+    "accepted_observations": 24,
+    "completed_inspections": 0,
+    "publisher_active": false,
+    "error": null,
+    "scenario": "healthy"
+  },
+  {
+    "id": "demo-fd7cb929be0f5393bd0a488dea290e94",
+    "state": "stopped",
+    "published_observations": 161,
+    "accepted_observations": 160,
+    "completed_inspections": 0,
+    "publisher_active": false,
+    "error": null,
+    "scenario": "critical"
+  },
+  {
+    "id": "demo-cd6b7f85fc39571a869ade0c47021836",
+    "state": "completed",
+    "published_observations": 434,
+    "accepted_observations": 428,
+    "completed_inspections": 1,
+    "publisher_active": false,
+    "error": null,
+    "scenario": "geometry",
+    "processing_summary": {
+      "geometry_statuses": [
+        "valid"
+      ],
+      "geometric_regions": 1,
+      "thermal_statuses": [
+        "inconclusive",
+        "valid"
+      ]
+    }
+  },
+  {
+    "id": "demo-b8193525bafd53aeb9e22d881a02d9b4",
+    "state": "completed",
+    "published_observations": 434,
+    "accepted_observations": 428,
+    "completed_inspections": 1,
+    "publisher_active": false,
+    "error": null,
+    "scenario": "thermal",
+    "processing_summary": {
+      "geometry_statuses": [
+        "valid"
+      ],
+      "geometric_regions": 1,
+      "thermal_statuses": [
+        "inconclusive",
+        "valid"
+      ]
+    }
+  },
+  {
+    "id": "demo-22849695151650f08228f1906b38c6c8",
+    "state": "completed",
+    "published_observations": 380,
+    "accepted_observations": 373,
+    "completed_inspections": 1,
+    "publisher_active": false,
+    "error": null,
+    "scenario": "degraded",
+    "processing_summary": {
+      "geometry_statuses": [
+        "insufficient_coverage"
+      ],
+      "geometric_regions": 0,
+      "thermal_statuses": [
+        "inconclusive",
+        "valid"
+      ]
+    }
+  },
+  {
+    "id": "demo-be168a56ae8d5e2eadcfe9c86f8658d0",
+    "state": "completed",
+    "published_observations": 80,
+    "accepted_observations": 80,
+    "completed_inspections": 0,
+    "publisher_active": false,
+    "error": null,
+    "scenario": "interruption"
+  }
+]

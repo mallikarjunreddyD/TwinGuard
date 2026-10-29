@@ -1,0 +1,58 @@
+[
+  {
+    "path": ".demo-data/browser-corrected/report.json",
+    "sha256": "3bea0832e856c7232cc899028b71eb93a92320cb51d060412ee9da3e6550eb78",
+    "status": "failed",
+    "checks": {
+      "login_overview_actual_model": true
+    },
+    "errors": [
+      "AssertionError: Controller failed: Simulation controller failed. Previously committed observations remain. Consult authorized controller logs."
+    ]
+  },
+  {
+    "path": ".demo-data/browser-initial/report.json",
+    "sha256": "ff488ff21bf4abd6aaf6c4387bd71f1742120bf092646953b014a4eb1ade9dbe",
+    "status": "failed",
+    "checks": {
+      "login_overview_actual_model": true
+    },
+    "errors": [
+      "Initial actual scenario failed because the controller image omitted scenarios/S0.yaml. Early harness exception classification corrected; no partial run is accepted as PASS."
+    ]
+  },
+  {
+    "path": ".demo-data/browser-session-bound/report.json",
+    "sha256": "257d231cc2c249c5f0656ddacb5bbad26a92c06e408f2938011f300b8f826661",
+    "status": "failed",
+    "checks": {
+      "login_overview_actual_model": true,
+      "browser_start_actual_mqtt_and_edge": true,
+      "pause_suspends_actual_mqtt": true,
+      "resume_same_session_and_epoch": true,
+      "stop_ends_publisher_only": true,
+      "stored_values_survive_stop": true,
+      "actual_stored_chart_drawn": true,
+      "browser_refresh_restores_durable_session": true,
+      "unknown_asset_truthfully_explained": true,
+      "tablet_no_horizontal_overflow": true,
+      "keyboard_focus_visible": false
+    },
+    "errors": []
+  },
+  {
+    "path": ".demo-data/scenarios-initial/report.json",
+    "sha256": "1b5958dfba90dc4a42c96a20886ae1e6dfceaf531165b12bb474bc077c3e6ee9",
+    "status": "failed",
+    "checks": {
+      "critical_f1_without_uav": true,
+      "operator_acknowledgment_preserves_event": true,
+      "geometry_actual_inspection_processing": true,
+      "thermal_actual_inspection_processing": true,
+      "degraded_actual_inspection_processing": true
+    },
+    "errors": [
+      "KeyError: 'phase'"
+    ]
+  }
+]

@@ -68,3 +68,8 @@ docker compose --env-file .edge/runtime.env -f deployment/compose.yaml exec -T a
 ```
 
 Retry accepts only failed jobs, records the prior error/attempt count and an administrator audit, and preserves original inputs and receipt/clock metadata. Use an actual failed job ID from your deployment.
+
+
+## Browser-controlled presets
+
+For the new isolated demo stack use [the final browser walkthrough](FINAL_DEMO_WALKTHROUGH.md). Existing historical CLI examples remain historical; the new page does not execute physical plant control or arbitrary planned flights.
