@@ -1,0 +1,46 @@
+{
+  "timestamp_utc": "2026-10-29T11:16:40.138055+00:00",
+  "roots": {
+    "outputs": {
+      "files": 490230,
+      "bytes": 46138909769,
+      "aliases_not_double_counted": [
+        "phase7-V3-heldout-planners"
+      ]
+    },
+    "datasets": {
+      "files": 1804,
+      "bytes": 243326384,
+      "aliases_not_double_counted": []
+    },
+    "configs": {
+      "files": 54,
+      "bytes": 3111797,
+      "aliases_not_double_counted": []
+    },
+    "reports": {
+      "files": 241,
+      "bytes": 57024933,
+      "aliases_not_double_counted": []
+    },
+    "source": {
+      "files": 120,
+      "bytes": 726846,
+      "aliases_not_double_counted": []
+    },
+    "scripts": {
+      "files": 64,
+      "bytes": 565625,
+      "aliases_not_double_counted": []
+    },
+    "external": {
+      "files": 117071,
+      "bytes": 12697341016
+    }
+  },
+  "external_root": "/mnt/d/TwinGuard",
+  "external_inventory_status": "COMPLETE_METADATA_SCAN",
+  "partial_copy_excluded": "experiments/outputs/external-phase7",
+  "all_inventoried_files": 609584,
+  "all_inventoried_bytes": 59141006370
+}

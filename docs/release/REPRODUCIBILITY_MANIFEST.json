@@ -1,0 +1,62 @@
+{
+  "schema_version": "1.0.0",
+  "software_version": "0.8.0",
+  "release_status": "PARTIAL",
+  "starting_git": "abf5d8d488236913a88b71fd2fd1937943712c3a",
+  "scientific_freeze_git": "edae1e5",
+  "archive_location": "experiments/releases/phase7-release-finalization-v1",
+  "full_manifest_relative_path": "manifest.json",
+  "detailed_file_inventory_relative_path": "files.jsonl",
+  "construction_journal_relative_path": "inventory.partial.jsonl",
+  "journaled_files_at_snapshot": 30863,
+  "journaled_bytes_at_snapshot": 1989004953,
+  "archive_integrity_status": "BUILDING_NOT_YET_INDEPENDENTLY_VERIFIED",
+  "manifest_sha256": null,
+  "missing_or_incomplete": [
+    "Full archive construction and independent verification pending"
+  ],
+  "source_counts": {
+    "outputs": {
+      "files": 490230,
+      "bytes": 46138909769,
+      "aliases_not_double_counted": [
+        "phase7-V3-heldout-planners"
+      ]
+    },
+    "datasets": {
+      "files": 1804,
+      "bytes": 243326384,
+      "aliases_not_double_counted": []
+    },
+    "configs": {
+      "files": 54,
+      "bytes": 3111797,
+      "aliases_not_double_counted": []
+    },
+    "reports": {
+      "files": 241,
+      "bytes": 57024933,
+      "aliases_not_double_counted": []
+    },
+    "source": {
+      "files": 120,
+      "bytes": 726846,
+      "aliases_not_double_counted": []
+    },
+    "scripts": {
+      "files": 64,
+      "bytes": 565625,
+      "aliases_not_double_counted": []
+    },
+    "external": {
+      "files": 117071,
+      "bytes": 12697341016
+    }
+  },
+  "original_path_mappings": {
+    "repository": "/home/mallikarjun/workspace/TwinGuard",
+    "external": "/mnt/d/TwinGuard",
+    "wsl_backing": "E:\\WSL\\Ubuntu-24.04"
+  },
+  "created_at_utc": "2026-10-29T11:19:29.765522+00:00"
+}

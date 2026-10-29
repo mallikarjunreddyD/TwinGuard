@@ -1,0 +1,27 @@
+{
+  "status": "PARTIAL",
+  "full_archive_status": "BUILDING_NOT_VERIFIED",
+  "subset_verification": {
+    "status": "PASS",
+    "files": 3,
+    "bytes": 12455,
+    "unique_objects_verified": 3,
+    "errors": [],
+    "missing_expected_roots": [],
+    "manifest_sha256": "34c7f9656489d2bef4d1287e91e919d3b6f0976957064fd4b04f9939fbf70993"
+  },
+  "restoration_verified_files": 3,
+  "deliberately_corrupted_copy_detection": {
+    "status": "FAIL",
+    "files": 3,
+    "bytes": 12455,
+    "unique_objects_verified": 3,
+    "errors": [
+      "hash mismatch: ('outputs', 'phase7-V6-security')"
+    ],
+    "missing_expected_roots": [],
+    "manifest_sha256": "34c7f9656489d2bef4d1287e91e919d3b6f0976957064fd4b04f9939fbf70993"
+  },
+  "original_evidence_modified": false,
+  "timestamp_utc": "2026-10-29T11:13:48.156021+00:00"
+}

@@ -1,0 +1,198 @@
+{
+  "starting_revision": "abf5d8d488236913a88b71fd2fd1937943712c3a",
+  "historical_record": "docs/phase7/software_checks.json",
+  "checks": [
+    {
+      "name": "pytest",
+      "command": "OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 .venv/bin/python -m pytest -q",
+      "started_at_utc": "2026-10-29T11:06:10.312935+00:00",
+      "finished_at_utc": "2026-10-29T11:12:56.818973+00:00",
+      "exit_code": 0,
+      "output": "........................................................................ [ 21%]\n........................................................................ [ 42%]\n........................................................................ [ 64%]\n........................................................................ [ 85%]\n................................................                         [100%]\n=============================== warnings summary ===============================\n.venv/lib/python3.12/site-packages/fastapi/testclient.py:1\n  /home/mallikarjun/workspace/TwinGuard/.venv/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n336 passed, 1 warning in 399.10s (0:06:39)\n"
+    },
+    {
+      "name": "ruff",
+      "command": ".venv/bin/ruff check src tests scripts",
+      "started_at_utc": "2026-10-29T11:12:56.821236+00:00",
+      "finished_at_utc": "2026-10-29T11:12:56.832605+00:00",
+      "exit_code": 0,
+      "output": "All checks passed!\n"
+    },
+    {
+      "name": "format",
+      "command": ".venv/bin/ruff format --check src tests scripts",
+      "started_at_utc": "2026-10-29T11:12:56.833943+00:00",
+      "finished_at_utc": "2026-10-29T11:12:56.844707+00:00",
+      "exit_code": 0,
+      "output": "191 files already formatted\n"
+    },
+    {
+      "name": "mypy",
+      "command": ".venv/bin/mypy src/twinguard",
+      "started_at_utc": "2026-10-29T11:12:56.846005+00:00",
+      "finished_at_utc": "2026-10-29T11:13:08.556246+00:00",
+      "exit_code": 0,
+      "output": "Success: no issues found in 114 source files\n"
+    },
+    {
+      "name": "frontend",
+      "command": "docker run --rm -v /home/mallikarjun/workspace/TwinGuard/frontend:/app -w /app node:22-slim sh -c \"npm ci && npm test && npm run build\"",
+      "started_at_utc": "2026-10-29T11:13:08.557538+00:00",
+      "finished_at_utc": "2026-10-29T11:13:48.879340+00:00",
+      "exit_code": 0,
+      "output": "\nadded 89 packages, and audited 90 packages in 9s\n\n10 packages are looking for funding\n  run `npm fund` for details\n\nfound 0 vulnerabilities\nnpm notice\nnpm notice New major version of npm available! 10.9.9 -> 12.2.1\nnpm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1\nnpm notice To update run: npm install -g npm@12.2.1\nnpm notice\n\n> twinguard-dashboard@0.8.0 test\n> vitest run\n\n\n\u001b[1m\u001b[30m\u001b[46m RUN \u001b[49m\u001b[39m\u001b[22m \u001b[36mv5.0.5 \u001b[39m\u001b[90m/app\u001b[39m\n\n \u001b[32m\u2713\u001b[39m src/semantics.test.ts \u001b[2m(\u001b[22m\u001b[2m3 tests\u001b[22m\u001b[2m)\u001b[22m\u001b[32m 2\u001b[2mms\u001b[22m\u001b[39m\n\n\u001b[2m Test Files \u001b[22m \u001b[1m\u001b[32m1 passed\u001b[39m\u001b[22m\u001b[90m (1)\u001b[39m\n\u001b[2m      Tests \u001b[22m \u001b[1m\u001b[32m3 passed\u001b[39m\u001b[22m\u001b[90m (3)\u001b[39m\n\u001b[2m   Start at \u001b[22m 11:13:30\n\u001b[2m   Duration \u001b[22m 287ms\u001b[2m (transform 95%, import 3%, worker 1%, tests 1%)\u001b[22m\n\n\n> twinguard-dashboard@0.8.0 build\n> tsc -b && vite build\n\nvite v7.3.7 building client environment for production...\ntransforming...\n\u2713 625 modules transformed.\nrendering chunks...\ncomputing gzip size...\ndist/index.html                     0.37 kB \u2502 gzip:   0.28 kB\ndist/assets/index-CiJnYA8z.css      5.39 kB \u2502 gzip:   1.78 kB\ndist/assets/index-peBHL1DS.js   1,209.56 kB \u2502 gzip: 337.36 kB\n\n(!) Some chunks are larger than 500 kB after minification. Consider:\n- Using dynamic import() to code-split the application\n- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks\n- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.\n\u2713 built in 2.59s\n"
+    },
+    {
+      "name": "compose",
+      "command": "docker compose --env-file .edge/runtime.env -f compose.yaml config --quiet",
+      "started_at_utc": "2026-10-29T11:13:48.881007+00:00",
+      "finished_at_utc": "2026-10-29T11:13:49.478483+00:00",
+      "exit_code": 1,
+      "output": "compose file \"/home/mallikarjun/workspace/TwinGuard/compose.yaml\" is invalid: open /home/mallikarjun/workspace/TwinGuard/compose.yaml: no such file or directory\n"
+    },
+    {
+      "name": "api_smoke",
+      "command": "curl --fail --silent http://localhost:19180/health",
+      "started_at_utc": "2026-10-29T11:13:49.479719+00:00",
+      "finished_at_utc": "2026-10-29T11:13:50.371473+00:00",
+      "exit_code": 0,
+      "output": "<!doctype html><html lang=\"en\"><head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><title>TwinGuard \u2022 Edge Operations</title>  <script type=\"module\" crossorigin src=\"/assets/index-peBHL1DS.js\"></script>\n  <link rel=\"stylesheet\" crossorigin href=\"/assets/index-CiJnYA8z.css\">\n</head><body><div id=\"root\"></div></body></html>\n"
+    },
+    {
+      "name": "compose_corrected",
+      "command": "docker compose --env-file .edge/runtime.env -f deployment/compose.yaml config --quiet",
+      "started_at_utc": "2026-10-29T11:15:09.631952+00:00",
+      "finished_at_utc": "2026-10-29T11:15:09.851232+00:00",
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "name": "compose_phase7",
+      "command": "docker compose --env-file .edge/runtime.env -f deployment/compose.yaml -f deployment/edge/compose.phase7-admission-validation.yaml config --quiet",
+      "started_at_utc": "2026-10-29T11:15:09.851267+00:00",
+      "finished_at_utc": "2026-10-29T11:15:10.045114+00:00",
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "name": "api_backend_health",
+      "command": "docker exec twinguard-phase7-admission-api-1 python -c 'import urllib.request,json; d=json.load(urllib.request.urlopen(\"http://127.0.0.1:8000/health\")); assert isinstance(d,dict); print(d)'",
+      "started_at_utc": "2026-10-29T11:15:10.045147+00:00",
+      "finished_at_utc": "2026-10-29T11:15:10.303339+00:00",
+      "exit_code": 0,
+      "output": "{'status': 'ok'}\n"
+    },
+    {
+      "name": "release_archive_tests",
+      "command": ".venv/bin/python -m pytest tests/test_release_archive.py -q",
+      "started_at_utc": "2026-10-29T11:15:10.303371+00:00",
+      "finished_at_utc": "2026-10-29T11:15:11.343029+00:00",
+      "exit_code": 0,
+      "output": "........                                                                 [100%]\n8 passed in 0.06s\n"
+    },
+    {
+      "name": "final_ruff",
+      "command": ".venv/bin/ruff check src tests scripts",
+      "started_at_utc": "2026-10-29T11:15:11.343062+00:00",
+      "finished_at_utc": "2026-10-29T11:15:11.353168+00:00",
+      "exit_code": 0,
+      "output": "All checks passed!\n"
+    },
+    {
+      "name": "final_format",
+      "command": ".venv/bin/ruff format --check src tests scripts",
+      "started_at_utc": "2026-10-29T11:15:11.353199+00:00",
+      "finished_at_utc": "2026-10-29T11:15:11.362808+00:00",
+      "exit_code": 0,
+      "output": "191 files already formatted\n"
+    },
+    {
+      "name": "archive_integrity_tests_final",
+      "command": ".venv/bin/python -m pytest tests/test_release_archive.py -q",
+      "started_at_utc": "2026-10-29T11:24:49.531612+00:00",
+      "finished_at_utc": "2026-10-29T11:24:50.853950+00:00",
+      "exit_code": 0,
+      "output": "...........                                                              [100%]\n11 passed in 0.85s\n"
+    },
+    {
+      "name": "ruff_final",
+      "command": ".venv/bin/ruff check src tests scripts",
+      "started_at_utc": "2026-10-29T11:24:50.853995+00:00",
+      "finished_at_utc": "2026-10-29T11:24:50.864250+00:00",
+      "exit_code": 0,
+      "output": "All checks passed!\n"
+    },
+    {
+      "name": "format_final",
+      "command": ".venv/bin/ruff format --check src tests scripts",
+      "started_at_utc": "2026-10-29T11:24:50.864277+00:00",
+      "finished_at_utc": "2026-10-29T11:24:50.872869+00:00",
+      "exit_code": 0,
+      "output": "192 files already formatted\n"
+    },
+    {
+      "name": "mypy_final",
+      "command": ".venv/bin/mypy src/twinguard",
+      "started_at_utc": "2026-10-29T11:24:50.872896+00:00",
+      "finished_at_utc": "2026-10-29T11:24:51.096169+00:00",
+      "exit_code": 0,
+      "output": "Success: no issues found in 114 source files\n"
+    },
+    {
+      "name": "release_tools_final",
+      "command": ".venv/bin/python -m pytest tests/test_release_archive.py -q",
+      "started_at_utc": "2026-10-29T11:27:47.981718+00:00",
+      "finished_at_utc": "2026-10-29T11:27:49.038210+00:00",
+      "exit_code": 0,
+      "output": "...........                                                              [100%]\n11 passed in 0.59s\n"
+    },
+    {
+      "name": "release_lint_final",
+      "command": ".venv/bin/ruff check src tests scripts",
+      "started_at_utc": "2026-10-29T11:27:49.038226+00:00",
+      "finished_at_utc": "2026-10-29T11:27:49.047969+00:00",
+      "exit_code": 0,
+      "output": "All checks passed!\n"
+    },
+    {
+      "name": "release_format_final",
+      "command": ".venv/bin/ruff format --check src tests scripts",
+      "started_at_utc": "2026-10-29T11:27:49.047982+00:00",
+      "finished_at_utc": "2026-10-29T11:27:49.057745+00:00",
+      "exit_code": 0,
+      "output": "193 files already formatted\n"
+    }
+  ],
+  "corrections": [
+    {
+      "check": "historical formatting",
+      "change": "No source formatting correction required: current formatter already passes. Historical failure retained separately."
+    },
+    {
+      "check": "compose",
+      "change": "Initial recorder supplied nonexistent compose.yaml; actual deployment/compose.yaml checked separately."
+    },
+    {
+      "check": "api_smoke",
+      "change": "Initial frontend /health was HTML fallback and proves only frontend availability; backend JSON health separately exercised."
+    }
+  ],
+  "software_status": "PASS",
+  "archive_status": "PARTIAL",
+  "final_source_revision": null,
+  "changed_files": [
+    " M .gitignore",
+    " M README.md",
+    "?? docs/PROPOSAL_TECHNICAL_EVIDENCE_SUMMARY.md",
+    "?? docs/RELEASE_READINESS.md",
+    "?? docs/REPRODUCIBILITY_GUIDE.md",
+    "?? docs/release/",
+    "?? scripts/release/",
+    "?? tests/test_release_archive.py"
+  ],
+  "scientific_integrity_record": "SCIENTIFIC_INTEGRITY.json",
+  "warnings": [
+    "Existing Starlette/httpx deprecation",
+    "Vite production bundle >500 kB"
+  ]
+}
