@@ -1,0 +1,70 @@
+{
+  "gates": [
+    {
+      "id": "G1",
+      "status": "PASS",
+      "evidence": "Historical E1\u2013E5 and empirical reports/models/policy retained; baseline307tests and manifest"
+    },
+    {
+      "id": "G2",
+      "status": "PARTIAL / scoped correction",
+      "evidence": "Independent healthy calibration and1140pairs; same supported domains improve FP with small sensitivity loss; global abstention/recall tradeoff unresolved"
+    },
+    {
+      "id": "G3",
+      "status": "PASS evaluation; benefit limited",
+      "evidence": "All five methods under both common detectors; full paired outcomes, true-missed controls and real ablations; no unsupported superiority"
+    },
+    {
+      "id": "G4",
+      "status": "PASS",
+      "evidence": "Scientific candidate files/model unchanged from freeze; no private/future observations in production; infrastructure-only recoveries recorded"
+    },
+    {
+      "id": "G5",
+      "status": "PARTIAL \u2014 heavy mixed timeliness fails",
+      "evidence": "Light full workload186/186current; actual heavy mixed workload145/184current,39stale; admission/restarts and failure boundary retained"
+    },
+    {
+      "id": "G6",
+      "status": "PASS recovery / PARTIAL capacity",
+      "evidence": "Actual archival, SQL/CAS/raw restore, queries/index growth; no90-day endurance"
+    },
+    {
+      "id": "G7",
+      "status": "PASS feasible lab / PENDING site",
+      "evidence": "Auth/ACL/RBAC/privileges, actual lab TLS and readonly encrypted OPC UA, advisory fixes; site trust uncommissioned"
+    },
+    {
+      "id": "G8",
+      "status": "BLOCKED physical",
+      "evidence": "User confirms no equipment/data; surveyed physical protocol and blockers recorded"
+    },
+    {
+      "id": "G9",
+      "status": "PASS software scope",
+      "evidence": "Actual reviewed acquisition/F1/replan, duplicate/restart and real-data browser evidence"
+    },
+    {
+      "id": "G10",
+      "status": "PASS typed evidence",
+      "evidence": "Per-capability hashes/versions/provenance/repro commands; raw/registered point audits; negative outcomes retained"
+    },
+    {
+      "id": "G11",
+      "status": "PASS",
+      "evidence": "336pytest, Ruff/format/Mypy114, frontend3tests/build/audit and live browser/Docker checks"
+    },
+    {
+      "id": "G12",
+      "status": "PASS conservative assessment",
+      "evidence": "Software laboratory TRL4-consistent scope; industrial5/6 not established, physical/siteNO-GO"
+    }
+  ],
+  "readiness": "CONDITIONAL GO software research",
+  "physical_readiness": "NO-GO/BLOCKED",
+  "frozen_scientific_files_changed": [],
+  "main_cases": 240,
+  "supplemental_cases": 90,
+  "fresh_chronology_cases": 23
+}

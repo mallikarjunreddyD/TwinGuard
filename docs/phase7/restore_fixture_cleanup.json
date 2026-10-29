@@ -1,0 +1,14 @@
+[
+  {
+    "temporary_database": "phase7_restore_validation",
+    "action": "Removed disposable restore target after all equality and backup hashes passed; source database retained",
+    "verified_dump": "/home/mallikarjun/workspace/TwinGuard/experiments/outputs/phase7-V5-storage-recovery/database.dump",
+    "dump_sha256": "6c334691c6cee0b4a013202b4e3754977caa15a60ea7b63b91535787c366e11b"
+  },
+  {
+    "temporary_database": "phase7_restore_archive",
+    "action": "Removed disposable restore target after all equality and backup hashes passed; source database retained",
+    "verified_dump": "/home/mallikarjun/workspace/TwinGuard/experiments/outputs/phase7-V5-archive-recovery/database.dump",
+    "dump_sha256": "89a38387ac63bb56669a84d0e581fbec4aa19af91fef08406bbe526156c57334"
+  }
+]

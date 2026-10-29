@@ -1,0 +1,64 @@
+{
+  "scope": "Actual queue admission fault injection; fixture jobs are not sensor observations.\n\nInject exactly 10000 pending fixture jobs to exercise the configured global admission\nlimit through real MQTT. Remove only these fixture jobs after the test. The result\nis a capacity-boundary check, not a sustained 10000-observation throughput claim.\n",
+  "started_at": "2026-10-28T14:49:08.971065+00:00",
+  "injected_fixture_jobs": 10000,
+  "messages": [
+    {
+      "kind": "ordinary",
+      "message_id": "p7-capacity-fixture-2ae34441eae0485899a35a04f9d640d3-ordinary",
+      "observation_id": "p7-capacity-fixture-2ae34441eae0485899a35a04f9d640d3-ordinary",
+      "wire_sha256": "2a12c04065cd5072dc6052bc828549f2c28fd9e07b373e3b276eefe395ed5cb3",
+      "emitted_at": "2026-10-28T14:49:10.905586+00:00",
+      "persisted": 0,
+      "quarantine": [
+        {
+          "reason": "quarantined",
+          "at": "2026-10-28T14:49:10.918400+00:00",
+          "digest": "2a12c04065cd5072dc6052bc828549f2c28fd9e07b373e3b276eefe395ed5cb3",
+          "error": "backpressure_queue_limit",
+          "identity": "demo-iot",
+          "topic": "twinguard/v1/plant-01/iot/demo-iot/observations",
+          "bytes": 1173
+        }
+      ]
+    },
+    {
+      "kind": "critical",
+      "message_id": "p7-capacity-fixture-2ae34441eae0485899a35a04f9d640d3-critical",
+      "observation_id": "p7-capacity-fixture-2ae34441eae0485899a35a04f9d640d3-critical",
+      "wire_sha256": "e42ec067bd544424541e7b4884f1a4d337d75ee68b163971e0ce6a13027b8144",
+      "emitted_at": "2026-10-28T14:49:10.905781+00:00",
+      "persisted": 0,
+      "quarantine": [
+        {
+          "reason": "quarantined",
+          "at": "2026-10-28T14:49:11.104206+00:00",
+          "digest": "e42ec067bd544424541e7b4884f1a4d337d75ee68b163971e0ce6a13027b8144",
+          "error": "backpressure_queue_limit",
+          "identity": "demo-iot",
+          "topic": "twinguard/v1/plant-01/iot/demo-iot/observations",
+          "bytes": 1182
+        }
+      ]
+    }
+  ],
+  "measured_pending_before_publish": 10069,
+  "pubacks": [
+    {
+      "message_id": "p7-capacity-fixture-2ae34441eae0485899a35a04f9d640d3-ordinary",
+      "observation_id": "p7-capacity-fixture-2ae34441eae0485899a35a04f9d640d3-ordinary",
+      "emitted_at": "2026-10-28T14:49:10.905586+00:00",
+      "puback_at": "2026-10-28T14:49:10.907922+00:00"
+    },
+    {
+      "message_id": "p7-capacity-fixture-2ae34441eae0485899a35a04f9d640d3-critical",
+      "observation_id": "p7-capacity-fixture-2ae34441eae0485899a35a04f9d640d3-critical",
+      "emitted_at": "2026-10-28T14:49:10.905781+00:00",
+      "puback_at": "2026-10-28T14:49:10.908558+00:00"
+    }
+  ],
+  "status": "executed",
+  "critical_capacity_boundary": "Rejected critical observations are missed at saturated admission; they cannot be inferred timely from durable worker priority",
+  "removed_fixture_jobs": 10000,
+  "finished_at": "2026-10-28T14:49:14.106913+00:00"
+}

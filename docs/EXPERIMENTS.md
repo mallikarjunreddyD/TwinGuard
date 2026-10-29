@@ -41,3 +41,8 @@ E4 now runs actual local MQTT/OPC UA, PostgreSQL, original analytics/F1, API and
 ## Executed Phase 6 E5
 
 E5 is Risk-Adaptive Viewpoint Planning and Evidence-Quality Improvement. The frozen P0/P1/P2/P3 comparison contains 540 paired trials, 30 independent held-out seeds and 2,160 method runs. Original sensing/B3.1/F1 are unchanged; result seals precede truth evaluation. Coverage efficiency improves over P0, while additional discoveries remain zero and P3 new-scan localized recall is lower than P0. See EXPERIMENT_E5.md and PHASE6_VALIDATION.md for exact denominators, paired-seed intervals, scenario limitations, actual L2 probes and planning-only ablations.
+
+
+## Phase 7 independent validation campaigns
+
+Canonical E1–E5 and their historical results remain unchanged. Phase7 identities are separate: V1 retrospective/matrix (216 new pairs), independent healthy view calibration (600 pairs), V2 development, V3 heldout detectors (1140 pairs), paired planners (240 predeclared cases), acquisition ablations (180 trials), supplementary missed-view/independent-occluder/scoped-coverage controls (90 fresh cases), V4 actual full E4 plus backlog/saturation, V5 actual storage/restore, V6 feasible laboratory security and V7 reviewed integrated demonstration. See the corresponding PHASE7 reports, frozen source/model hashes, per-case journals and tracked summaries. A journal must be completed before an aggregate claim is final; incomplete/resource-stopped evidence is preserved.

@@ -1,0 +1,29 @@
+{
+  "errors": [],
+  "checks": {
+    "model_loaded": true,
+    "actual_assets": true,
+    "asset_selection": true,
+    "stored_trend_chart": true,
+    "inspection_selection": true,
+    "thermal_image": true,
+    "geometric_measurement": true,
+    "monitoring_view": true,
+    "evidence_trace": true,
+    "red_advisory": true,
+    "acknowledgment": true,
+    "stream_reconnect": true
+  },
+  "screenshots": [
+    "E4-7_dashboard.png"
+  ],
+  "started_wall_s": 1793247071.2690248,
+  "browser_last_delivery_wall_s": 1793247113.966126,
+  "external_requests": [],
+  "render_metrics": {
+    "dom": 464,
+    "heap": 56800000,
+    "stream": 6500
+  },
+  "finished_wall_s": 1793247114.052171
+}

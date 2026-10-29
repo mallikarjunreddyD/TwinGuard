@@ -1,0 +1,1718 @@
+{
+  "scope": "Actual interval and timestamp decomposition; separate from nominal publisher submission",
+  "critical_states": {
+    "current": 145,
+    "stale": 39
+  },
+  "critical_expected_published": 184,
+  "heavy_intervals": [
+    {
+      "job_id": "inspection-e4-public-18700",
+      "start": "2026-10-29T05:05:25.973526+00:00",
+      "analytics_complete": "2026-10-29T05:05:27.070902+00:00",
+      "commit": "2026-10-29T05:05:27.416903+00:00"
+    },
+    {
+      "job_id": "inspection-e4-public-18701",
+      "start": "2026-10-29T05:05:24.384493+00:00",
+      "analytics_complete": "2026-10-29T05:05:25.557713+00:00",
+      "commit": "2026-10-29T05:05:25.957882+00:00"
+    }
+  ],
+  "critical_processing_overlaps": 12,
+  "latency_stages": {
+    "emission_to_ingest_s": {
+      "n": 184,
+      "p50": 0.023570537567138672,
+      "p95": 0.1139021873474121,
+      "p99": 0.13908553123474104,
+      "max": 0.2071061134338379
+    },
+    "ingest_to_job_s": {
+      "n": 184,
+      "p50": 4.3086090087890625,
+      "p95": 10.964576530456542,
+      "p99": 11.780595343112942,
+      "max": 12.178234100341797
+    },
+    "analysis_s": {
+      "n": 184,
+      "p50": 0.04096949100494385,
+      "p95": 0.0633723258972168,
+      "p99": 0.07652188301086421,
+      "max": 0.08263587951660156
+    },
+    "fusion_and_commit_s": {
+      "n": 184,
+      "p50": 0.17058253288269043,
+      "p95": 0.22120471000671385,
+      "p99": 0.41684052467346155,
+      "max": 3.5719521045684814
+    },
+    "mapped_acquisition_to_commit_s": {
+      "n": 184,
+      "p50": 6.4672335386276245,
+      "p95": 12.516484832763672,
+      "p99": 14.01401527881622,
+      "max": 14.325063943862915
+    }
+  },
+  "rows": [
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.09979605674743652,
+      "ingest_to_job_s": 0.07582497596740723,
+      "analysis_s": 0.020341873168945312,
+      "fusion_and_commit_s": 0.12508702278137207,
+      "mapped_acquisition_to_commit_s": 3.90899395942688
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.04225301742553711,
+      "ingest_to_job_s": 0.1952970027923584,
+      "analysis_s": 0.02054309844970703,
+      "fusion_and_commit_s": 0.12549901008605957,
+      "mapped_acquisition_to_commit_s": 3.9701480865478516
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.002490997314453125,
+      "ingest_to_job_s": 0.2954730987548828,
+      "analysis_s": 0.0229949951171875,
+      "fusion_and_commit_s": 0.12166595458984375,
+      "mapped_acquisition_to_commit_s": 4.029155015945435
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.002516031265258789,
+      "ingest_to_job_s": 0.3550388813018799,
+      "analysis_s": 0.019295930862426758,
+      "fusion_and_commit_s": 0.11909914016723633,
+      "mapped_acquisition_to_commit_s": 4.082457065582275
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.01895904541015625,
+      "ingest_to_job_s": 0.38889384269714355,
+      "analysis_s": 0.019355058670043945,
+      "fusion_and_commit_s": 0.14117097854614258,
+      "mapped_acquisition_to_commit_s": 4.156400918960571
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.02411198616027832,
+      "ingest_to_job_s": 0.45798206329345703,
+      "analysis_s": 0.02271890640258789,
+      "fusion_and_commit_s": 0.12427401542663574,
+      "mapped_acquisition_to_commit_s": 4.21594500541687
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.07544088363647461,
+      "ingest_to_job_s": 0.46796607971191406,
+      "analysis_s": 0.021743059158325195,
+      "fusion_and_commit_s": 0.11493802070617676,
+      "mapped_acquisition_to_commit_s": 4.267214059829712
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.0020411014556884766,
+      "ingest_to_job_s": 0.5945978164672852,
+      "analysis_s": 0.021336078643798828,
+      "fusion_and_commit_s": 0.12241101264953613,
+      "mapped_acquisition_to_commit_s": 4.326918125152588
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.03708982467651367,
+      "ingest_to_job_s": 0.6176149845123291,
+      "analysis_s": 0.023513078689575195,
+      "fusion_and_commit_s": 0.12329411506652832,
+      "mapped_acquisition_to_commit_s": 4.388926029205322
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.017719030380249023,
+      "ingest_to_job_s": 0.6984419822692871,
+      "analysis_s": 0.022244930267333984,
+      "fusion_and_commit_s": 0.1147770881652832,
+      "mapped_acquisition_to_commit_s": 4.439716100692749
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.1188499927520752,
+      "ingest_to_job_s": 0.6448431015014648,
+      "analysis_s": 0.02768087387084961,
+      "fusion_and_commit_s": 0.12006521224975586,
+      "mapped_acquisition_to_commit_s": 4.4997100830078125
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.07199788093566895,
+      "ingest_to_job_s": 0.869117021560669,
+      "analysis_s": 0.02406597137451172,
+      "fusion_and_commit_s": 0.12734413146972656,
+      "mapped_acquisition_to_commit_s": 4.6790452003479
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.07341790199279785,
+      "ingest_to_job_s": 0.931704044342041,
+      "analysis_s": 0.025767087936401367,
+      "fusion_and_commit_s": 0.12544488906860352,
+      "mapped_acquisition_to_commit_s": 4.744034051895142
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.0017719268798828125,
+      "ingest_to_job_s": 1.070815086364746,
+      "analysis_s": 0.025755882263183594,
+      "fusion_and_commit_s": 0.15030312538146973,
+      "mapped_acquisition_to_commit_s": 4.8351781368255615
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.05614805221557617,
+      "ingest_to_job_s": 1.1100358963012695,
+      "analysis_s": 0.027981042861938477,
+      "fusion_and_commit_s": 0.13060498237609863,
+      "mapped_acquisition_to_commit_s": 4.913893938064575
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.04265308380126953,
+      "ingest_to_job_s": 1.1993489265441895,
+      "analysis_s": 0.025101900100708008,
+      "fusion_and_commit_s": 0.12290406227111816,
+      "mapped_acquisition_to_commit_s": 4.977334022521973
+    },
+    {
+      "state": "current",
+      "processing_overlap": true,
+      "emission_to_ingest_s": 0.05061006546020508,
+      "ingest_to_job_s": 1.2516629695892334,
+      "analysis_s": 0.02827596664428711,
+      "fusion_and_commit_s": 0.13184618949890137,
+      "mapped_acquisition_to_commit_s": 5.049910068511963
+    },
+    {
+      "state": "current",
+      "processing_overlap": true,
+      "emission_to_ingest_s": 0.002012014389038086,
+      "ingest_to_job_s": 1.3755958080291748,
+      "analysis_s": 0.02908015251159668,
+      "fusion_and_commit_s": 0.13339591026306152,
+      "mapped_acquisition_to_commit_s": 5.126625061035156
+    },
+    {
+      "state": "current",
+      "processing_overlap": true,
+      "emission_to_ingest_s": 0.020388126373291016,
+      "ingest_to_job_s": 1.4336140155792236,
+      "analysis_s": 0.032240867614746094,
+      "fusion_and_commit_s": 0.19623994827270508,
+      "mapped_acquisition_to_commit_s": 5.2692248821258545
+    },
+    {
+      "state": "current",
+      "processing_overlap": true,
+      "emission_to_ingest_s": 0.0022110939025878906,
+      "ingest_to_job_s": 1.6020538806915283,
+      "analysis_s": 0.049302101135253906,
+      "fusion_and_commit_s": 0.1681208610534668,
+      "mapped_acquisition_to_commit_s": 5.408214807510376
+    },
+    {
+      "state": "current",
+      "processing_overlap": true,
+      "emission_to_ingest_s": 0.11602115631103516,
+      "ingest_to_job_s": 1.6194369792938232,
+      "analysis_s": 0.0328218936920166,
+      "fusion_and_commit_s": 0.14268898963928223,
+      "mapped_acquisition_to_commit_s": 5.498318910598755
+    },
+    {
+      "state": "current",
+      "processing_overlap": true,
+      "emission_to_ingest_s": 0.06042814254760742,
+      "ingest_to_job_s": 1.76786208152771,
+      "analysis_s": 0.029791831970214844,
+      "fusion_and_commit_s": 0.12961697578430176,
+      "mapped_acquisition_to_commit_s": 5.574237823486328
+    },
+    {
+      "state": "current",
+      "processing_overlap": true,
+      "emission_to_ingest_s": 0.04031085968017578,
+      "ingest_to_job_s": 1.9835219383239746,
+      "analysis_s": 0.034397125244140625,
+      "fusion_and_commit_s": 0.44141101837158203,
+      "mapped_acquisition_to_commit_s": 6.0869481563568115
+    },
+    {
+      "state": "current",
+      "processing_overlap": true,
+      "emission_to_ingest_s": 0.0020360946655273438,
+      "ingest_to_job_s": 2.4171030521392822,
+      "analysis_s": 0.03231000900268555,
+      "fusion_and_commit_s": 0.14216184616088867,
+      "mapped_acquisition_to_commit_s": 6.180145025253296
+    },
+    {
+      "state": "current",
+      "processing_overlap": true,
+      "emission_to_ingest_s": 0.020431041717529297,
+      "ingest_to_job_s": 2.4873709678649902,
+      "analysis_s": 0.028884172439575195,
+      "fusion_and_commit_s": 0.13120794296264648,
+      "mapped_acquisition_to_commit_s": 6.25493311882019
+    },
+    {
+      "state": "current",
+      "processing_overlap": true,
+      "emission_to_ingest_s": 0.019015073776245117,
+      "ingest_to_job_s": 2.563383102416992,
+      "analysis_s": 0.03235983848571777,
+      "fusion_and_commit_s": 0.15649104118347168,
+      "mapped_acquisition_to_commit_s": 6.358661890029907
+    },
+    {
+      "state": "current",
+      "processing_overlap": true,
+      "emission_to_ingest_s": 0.06049203872680664,
+      "ingest_to_job_s": 2.6214139461517334,
+      "analysis_s": 0.04346919059753418,
+      "fusion_and_commit_s": 0.15437793731689453,
+      "mapped_acquisition_to_commit_s": 6.4678449630737305
+    },
+    {
+      "state": "current",
+      "processing_overlap": true,
+      "emission_to_ingest_s": 0.0020799636840820312,
+      "ingest_to_job_s": 2.797207832336426,
+      "analysis_s": 0.042196035385131836,
+      "fusion_and_commit_s": 0.14098000526428223,
+      "mapped_acquisition_to_commit_s": 6.569000005722046
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.002393007278442383,
+      "ingest_to_job_s": 2.8954830169677734,
+      "analysis_s": 0.034326791763305664,
+      "fusion_and_commit_s": 0.4118080139160156,
+      "mapped_acquisition_to_commit_s": 6.930670976638794
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.002187967300415039,
+      "ingest_to_job_s": 3.2548398971557617,
+      "analysis_s": 0.03389310836791992,
+      "fusion_and_commit_s": 0.14300799369812012,
+      "mapped_acquisition_to_commit_s": 7.02051305770874
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.2071061134338379,
+      "ingest_to_job_s": 3.2600948810577393,
+      "analysis_s": 0.05571103096008301,
+      "fusion_and_commit_s": 0.13738203048706055,
+      "mapped_acquisition_to_commit_s": 7.252717971801758
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.13242101669311523,
+      "ingest_to_job_s": 3.450814962387085,
+      "analysis_s": 0.04000496864318848,
+      "fusion_and_commit_s": 0.1418750286102295,
+      "mapped_acquisition_to_commit_s": 7.3516459465026855
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.0708611011505127,
+      "ingest_to_job_s": 3.6114389896392822,
+      "analysis_s": 0.036238908767700195,
+      "fusion_and_commit_s": 0.1531059741973877,
+      "mapped_acquisition_to_commit_s": 7.458925008773804
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.04705691337585449,
+      "ingest_to_job_s": 3.740446090698242,
+      "analysis_s": 0.038572072982788086,
+      "fusion_and_commit_s": 0.14180898666381836,
+      "mapped_acquisition_to_commit_s": 7.5548131465911865
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.01904582977294922,
+      "ingest_to_job_s": 3.8645970821380615,
+      "analysis_s": 0.03589797019958496,
+      "fusion_and_commit_s": 0.1355879306793213,
+      "mapped_acquisition_to_commit_s": 7.642462968826294
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.002480030059814453,
+      "ingest_to_job_s": 3.967947006225586,
+      "analysis_s": 0.0398859977722168,
+      "fusion_and_commit_s": 0.13176894187927246,
+      "mapped_acquisition_to_commit_s": 7.728606939315796
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.05795001983642578,
+      "ingest_to_job_s": 3.9978840351104736,
+      "analysis_s": 0.05441403388977051,
+      "fusion_and_commit_s": 0.137847900390625,
+      "mapped_acquisition_to_commit_s": 7.836079835891724
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.002032041549682617,
+      "ingest_to_job_s": 3.962103843688965,
+      "analysis_s": 0.04311108589172363,
+      "fusion_and_commit_s": 0.14629507064819336,
+      "mapped_acquisition_to_commit_s": 7.740067005157471
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.11693215370178223,
+      "ingest_to_job_s": 3.948669910430908,
+      "analysis_s": 0.04453396797180176,
+      "fusion_and_commit_s": 0.16831111907958984,
+      "mapped_acquisition_to_commit_s": 7.866544008255005
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.05550789833068848,
+      "ingest_to_job_s": 4.142434120178223,
+      "analysis_s": 0.0404050350189209,
+      "fusion_and_commit_s": 0.13454794883728027,
+      "mapped_acquisition_to_commit_s": 7.959476947784424
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.07766389846801758,
+      "ingest_to_job_s": 4.342533111572266,
+      "analysis_s": 0.044946908950805664,
+      "fusion_and_commit_s": 0.14129114151000977,
+      "mapped_acquisition_to_commit_s": 8.193782091140747
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.0023729801177978516,
+      "ingest_to_job_s": 4.517595052719116,
+      "analysis_s": 0.043100833892822266,
+      "fusion_and_commit_s": 0.13008403778076172,
+      "mapped_acquisition_to_commit_s": 8.28450608253479
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.05314207077026367,
+      "ingest_to_job_s": 4.549871921539307,
+      "analysis_s": 0.04856395721435547,
+      "fusion_and_commit_s": 0.1402280330657959,
+      "mapped_acquisition_to_commit_s": 8.386691093444824
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.020181894302368164,
+      "ingest_to_job_s": 4.696290016174316,
+      "analysis_s": 0.06600499153137207,
+      "fusion_and_commit_s": 0.15041303634643555,
+      "mapped_acquisition_to_commit_s": 8.519698858261108
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.057192087173461914,
+      "ingest_to_job_s": 4.7890849113464355,
+      "analysis_s": 0.06529712677001953,
+      "fusion_and_commit_s": 0.1435999870300293,
+      "mapped_acquisition_to_commit_s": 8.642564058303833
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.002897024154663086,
+      "ingest_to_job_s": 4.966426849365234,
+      "analysis_s": 0.05052995681762695,
+      "fusion_and_commit_s": 0.17032408714294434,
+      "mapped_acquisition_to_commit_s": 8.77705192565918
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.055325984954833984,
+      "ingest_to_job_s": 5.045819044113159,
+      "analysis_s": 0.04624199867248535,
+      "fusion_and_commit_s": 0.1522059440612793,
+      "mapped_acquisition_to_commit_s": 8.890750885009766
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.0019199848175048828,
+      "ingest_to_job_s": 5.2167580127716064,
+      "analysis_s": 0.05035114288330078,
+      "fusion_and_commit_s": 0.15086984634399414,
+      "mapped_acquisition_to_commit_s": 9.006428956985474
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.11428284645080566,
+      "ingest_to_job_s": 5.218508958816528,
+      "analysis_s": 0.05252408981323242,
+      "fusion_and_commit_s": 0.14735007286071777,
+      "mapped_acquisition_to_commit_s": 9.121258974075317
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.05521702766418457,
+      "ingest_to_job_s": 5.396317958831787,
+      "analysis_s": 0.05166196823120117,
+      "fusion_and_commit_s": 0.13929295539855957,
+      "mapped_acquisition_to_commit_s": 9.229033946990967
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.0021419525146484375,
+      "ingest_to_job_s": 5.691634893417358,
+      "analysis_s": 0.04969501495361328,
+      "fusion_and_commit_s": 0.14181995391845703,
+      "mapped_acquisition_to_commit_s": 9.471856832504272
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.001519918441772461,
+      "ingest_to_job_s": 5.800205945968628,
+      "analysis_s": 0.05159616470336914,
+      "fusion_and_commit_s": 0.14519190788269043,
+      "mapped_acquisition_to_commit_s": 9.58507490158081
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.020288944244384766,
+      "ingest_to_job_s": 5.891999006271362,
+      "analysis_s": 0.05434703826904297,
+      "fusion_and_commit_s": 0.17600011825561523,
+      "mapped_acquisition_to_commit_s": 9.729423999786377
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.002313852310180664,
+      "ingest_to_job_s": 6.054955959320068,
+      "analysis_s": 0.05410122871398926,
+      "fusion_and_commit_s": 0.1466078758239746,
+      "mapped_acquisition_to_commit_s": 9.844547033309937
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.05309319496154785,
+      "ingest_to_job_s": 6.117441892623901,
+      "analysis_s": 0.05248689651489258,
+      "fusion_and_commit_s": 0.15531516075134277,
+      "mapped_acquisition_to_commit_s": 9.96544599533081
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.0019690990447998047,
+      "ingest_to_job_s": 6.295553922653198,
+      "analysis_s": 0.06284809112548828,
+      "fusion_and_commit_s": 0.142042875289917,
+      "mapped_acquisition_to_commit_s": 10.08899998664856
+    },
+    {
+      "state": "stale",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.017904043197631836,
+      "ingest_to_job_s": 6.398401975631714,
+      "analysis_s": 0.05823516845703125,
+      "fusion_and_commit_s": 0.14750003814697266,
+      "mapped_acquisition_to_commit_s": 10.208775997161865
+    },
+    {
+      "state": "stale",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.0023331642150878906,
+      "ingest_to_job_s": 6.535043954849243,
+      "analysis_s": 0.05398106575012207,
+      "fusion_and_commit_s": 0.13857078552246094,
+      "mapped_acquisition_to_commit_s": 10.316504955291748
+    },
+    {
+      "state": "stale",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.0638132095336914,
+      "ingest_to_job_s": 6.570824861526489,
+      "analysis_s": 0.05263400077819824,
+      "fusion_and_commit_s": 0.1436619758605957,
+      "mapped_acquisition_to_commit_s": 10.426406860351562
+    },
+    {
+      "state": "stale",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.1092381477355957,
+      "ingest_to_job_s": 6.648216962814331,
+      "analysis_s": 0.05769991874694824,
+      "fusion_and_commit_s": 0.1394181251525879,
+      "mapped_acquisition_to_commit_s": 10.541136026382446
+    },
+    {
+      "state": "stale",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.03202700614929199,
+      "ingest_to_job_s": 7.02292799949646,
+      "analysis_s": 0.0589289665222168,
+      "fusion_and_commit_s": 0.16763806343078613,
+      "mapped_acquisition_to_commit_s": 10.868098020553589
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.08571290969848633,
+      "ingest_to_job_s": 0.0343630313873291,
+      "analysis_s": 0.02786707878112793,
+      "fusion_and_commit_s": 0.1773068904876709,
+      "mapped_acquisition_to_commit_s": 0.32524991035461426
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.05145716667175293,
+      "ingest_to_job_s": 0.18645787239074707,
+      "analysis_s": 0.02440810203552246,
+      "fusion_and_commit_s": 0.15717101097106934,
+      "mapped_acquisition_to_commit_s": 0.4196441173553467
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.023879051208496094,
+      "ingest_to_job_s": 0.3084390163421631,
+      "analysis_s": 0.02449488639831543,
+      "fusion_and_commit_s": 0.18217206001281738,
+      "mapped_acquisition_to_commit_s": 0.5390069484710693
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.06158900260925293,
+      "ingest_to_job_s": 0.39005398750305176,
+      "analysis_s": 0.02399897575378418,
+      "fusion_and_commit_s": 0.16878294944763184,
+      "mapped_acquisition_to_commit_s": 0.6450619697570801
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.022729873657226562,
+      "ingest_to_job_s": 0.5373101234436035,
+      "analysis_s": 0.022879838943481445,
+      "fusion_and_commit_s": 0.16489505767822266,
+      "mapped_acquisition_to_commit_s": 0.7478728294372559
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.07967305183410645,
+      "ingest_to_job_s": 0.5781807899475098,
+      "analysis_s": 0.0224301815032959,
+      "fusion_and_commit_s": 0.15680789947509766,
+      "mapped_acquisition_to_commit_s": 0.8378720283508301
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.003634214401245117,
+      "ingest_to_job_s": 0.748248815536499,
+      "analysis_s": 0.025299072265625,
+      "fusion_and_commit_s": 0.15366697311401367,
+      "mapped_acquisition_to_commit_s": 0.9308490753173828
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.0023598670959472656,
+      "ingest_to_job_s": 0.8417940139770508,
+      "analysis_s": 0.02298593521118164,
+      "fusion_and_commit_s": 0.14813709259033203,
+      "mapped_acquisition_to_commit_s": 1.0152769088745117
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.02322697639465332,
+      "ingest_to_job_s": 0.9045171737670898,
+      "analysis_s": 0.023944854736328125,
+      "fusion_and_commit_s": 0.15038514137268066,
+      "mapped_acquisition_to_commit_s": 1.1026251316070557
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.0925290584564209,
+      "ingest_to_job_s": 0.9203839302062988,
+      "analysis_s": 0.02947402000427246,
+      "fusion_and_commit_s": 0.15293312072753906,
+      "mapped_acquisition_to_commit_s": 1.198456048965454
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.0745699405670166,
+      "ingest_to_job_s": 1.0372722148895264,
+      "analysis_s": 0.024240970611572266,
+      "fusion_and_commit_s": 0.18439793586730957,
+      "mapped_acquisition_to_commit_s": 1.3204810619354248
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.002933025360107422,
+      "ingest_to_job_s": 1.3858721256256104,
+      "analysis_s": 0.024870872497558594,
+      "fusion_and_commit_s": 0.15197515487670898,
+      "mapped_acquisition_to_commit_s": 1.5656511783599854
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.0199432373046875,
+      "ingest_to_job_s": 1.4584717750549316,
+      "analysis_s": 0.027915000915527344,
+      "fusion_and_commit_s": 0.1496410369873047,
+      "mapped_acquisition_to_commit_s": 1.6559710502624512
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.0024080276489257812,
+      "ingest_to_job_s": 1.5664010047912598,
+      "analysis_s": 0.026062965393066406,
+      "fusion_and_commit_s": 0.15595293045043945,
+      "mapped_acquisition_to_commit_s": 1.7508249282836914
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.020102977752685547,
+      "ingest_to_job_s": 1.6432909965515137,
+      "analysis_s": 0.025545120239257812,
+      "fusion_and_commit_s": 0.15933680534362793,
+      "mapped_acquisition_to_commit_s": 1.8484828472137451
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.0257110595703125,
+      "ingest_to_job_s": 1.737541913986206,
+      "analysis_s": 0.0311429500579834,
+      "fusion_and_commit_s": 0.15398406982421875,
+      "mapped_acquisition_to_commit_s": 1.9483799934387207
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.002048969268798828,
+      "ingest_to_job_s": 1.8592150211334229,
+      "analysis_s": 0.02782583236694336,
+      "fusion_and_commit_s": 0.1459941864013672,
+      "mapped_acquisition_to_commit_s": 2.0350840091705322
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.002518892288208008,
+      "ingest_to_job_s": 1.948052167892456,
+      "analysis_s": 0.029068946838378906,
+      "fusion_and_commit_s": 0.18111395835876465,
+      "mapped_acquisition_to_commit_s": 2.1607539653778076
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.0018310546875,
+      "ingest_to_job_s": 2.0721890926361084,
+      "analysis_s": 0.03600287437438965,
+      "fusion_and_commit_s": 0.16208600997924805,
+      "mapped_acquisition_to_commit_s": 2.272109031677246
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.03863191604614258,
+      "ingest_to_job_s": 2.145581007003784,
+      "analysis_s": 0.03348898887634277,
+      "fusion_and_commit_s": 0.18167805671691895,
+      "mapped_acquisition_to_commit_s": 2.399898052215576
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.051484107971191406,
+      "ingest_to_job_s": 2.268296957015991,
+      "analysis_s": 0.034924983978271484,
+      "fusion_and_commit_s": 0.16883492469787598,
+      "mapped_acquisition_to_commit_s": 2.52354097366333
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.001773834228515625,
+      "ingest_to_job_s": 2.5887999534606934,
+      "analysis_s": 0.03540921211242676,
+      "fusion_and_commit_s": 0.16556787490844727,
+      "mapped_acquisition_to_commit_s": 2.791550874710083
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.001977205276489258,
+      "ingest_to_job_s": 2.7043569087982178,
+      "analysis_s": 0.03718900680541992,
+      "fusion_and_commit_s": 0.16919207572937012,
+      "mapped_acquisition_to_commit_s": 2.912715196609497
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.05189394950866699,
+      "ingest_to_job_s": 2.7751710414886475,
+      "analysis_s": 0.03679990768432617,
+      "fusion_and_commit_s": 0.16640996932983398,
+      "mapped_acquisition_to_commit_s": 3.030998945236206
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.03892111778259277,
+      "ingest_to_job_s": 2.90633487701416,
+      "analysis_s": 0.043372154235839844,
+      "fusion_and_commit_s": 0.19933485984802246,
+      "mapped_acquisition_to_commit_s": 3.1879630088806152
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.039047956466674805,
+      "ingest_to_job_s": 3.0596680641174316,
+      "analysis_s": 0.03794288635253906,
+      "fusion_and_commit_s": 0.17311811447143555,
+      "mapped_acquisition_to_commit_s": 3.3109209537506104
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.020378828048706055,
+      "ingest_to_job_s": 3.2082810401916504,
+      "analysis_s": 0.03963112831115723,
+      "fusion_and_commit_s": 0.17933988571166992,
+      "mapped_acquisition_to_commit_s": 3.447844982147217
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.03821301460266113,
+      "ingest_to_job_s": 3.324726104736328,
+      "analysis_s": 0.06266498565673828,
+      "fusion_and_commit_s": 0.1677689552307129,
+      "mapped_acquisition_to_commit_s": 3.5933730602264404
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.0029621124267578125,
+      "ingest_to_job_s": 3.504689931869507,
+      "analysis_s": 0.03966093063354492,
+      "fusion_and_commit_s": 0.16254115104675293,
+      "mapped_acquisition_to_commit_s": 3.7098541259765625
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.0022008419036865234,
+      "ingest_to_job_s": 3.62142014503479,
+      "analysis_s": 0.03878498077392578,
+      "fusion_and_commit_s": 0.16568493843078613,
+      "mapped_acquisition_to_commit_s": 3.8280909061431885
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.11174511909484863,
+      "ingest_to_job_s": 3.783324956893921,
+      "analysis_s": 0.042778968811035156,
+      "fusion_and_commit_s": 0.20059514045715332,
+      "mapped_acquisition_to_commit_s": 4.138444185256958
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.09084200859069824,
+      "ingest_to_job_s": 3.960740089416504,
+      "analysis_s": 0.050781965255737305,
+      "fusion_and_commit_s": 0.1877739429473877,
+      "mapped_acquisition_to_commit_s": 4.29223895072937
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.021554946899414062,
+      "ingest_to_job_s": 4.187922954559326,
+      "analysis_s": 0.043725013732910156,
+      "fusion_and_commit_s": 0.16564297676086426,
+      "mapped_acquisition_to_commit_s": 4.418845891952515
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.056463003158569336,
+      "ingest_to_job_s": 4.274684906005859,
+      "analysis_s": 0.04307889938354492,
+      "fusion_and_commit_s": 0.16672420501708984,
+      "mapped_acquisition_to_commit_s": 4.5411272048950195
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.06783604621887207,
+      "ingest_to_job_s": 4.386307954788208,
+      "analysis_s": 0.04070687294006348,
+      "fusion_and_commit_s": 0.16926312446594238,
+      "mapped_acquisition_to_commit_s": 4.664765119552612
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.05318117141723633,
+      "ingest_to_job_s": 4.522479057312012,
+      "analysis_s": 0.04065394401550293,
+      "fusion_and_commit_s": 0.15877103805541992,
+      "mapped_acquisition_to_commit_s": 4.775422096252441
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.023197174072265625,
+      "ingest_to_job_s": 4.554556846618652,
+      "analysis_s": 0.04283404350280762,
+      "fusion_and_commit_s": 0.1574540138244629,
+      "mapped_acquisition_to_commit_s": 4.786586046218872
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.0244600772857666,
+      "ingest_to_job_s": 4.672721862792969,
+      "analysis_s": 0.04123210906982422,
+      "fusion_and_commit_s": 0.15319395065307617,
+      "mapped_acquisition_to_commit_s": 4.891607999801636
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.06668591499328613,
+      "ingest_to_job_s": 4.7392120361328125,
+      "analysis_s": 0.06987690925598145,
+      "fusion_and_commit_s": 0.18930315971374512,
+      "mapped_acquisition_to_commit_s": 5.065580129623413
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.06097412109375,
+      "ingest_to_job_s": 5.073636054992676,
+      "analysis_s": 0.049597978591918945,
+      "fusion_and_commit_s": 0.16842293739318848,
+      "mapped_acquisition_to_commit_s": 5.352631092071533
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.021200895309448242,
+      "ingest_to_job_s": 5.244112014770508,
+      "analysis_s": 0.04662799835205078,
+      "fusion_and_commit_s": 0.1563420295715332,
+      "mapped_acquisition_to_commit_s": 5.468835115432739
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.006392955780029297,
+      "ingest_to_job_s": 5.375345945358276,
+      "analysis_s": 0.04631614685058594,
+      "fusion_and_commit_s": 0.16016888618469238,
+      "mapped_acquisition_to_commit_s": 5.588223934173584
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.002643108367919922,
+      "ingest_to_job_s": 5.4990949630737305,
+      "analysis_s": 0.050466060638427734,
+      "fusion_and_commit_s": 0.17115497589111328,
+      "mapped_acquisition_to_commit_s": 5.723359107971191
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.02297496795654297,
+      "ingest_to_job_s": 5.610430955886841,
+      "analysis_s": 0.04215812683105469,
+      "fusion_and_commit_s": 0.17122578620910645,
+      "mapped_acquisition_to_commit_s": 5.850941896438599
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.03994011878967285,
+      "ingest_to_job_s": 5.725072860717773,
+      "analysis_s": 0.050187110900878906,
+      "fusion_and_commit_s": 0.19854998588562012,
+      "mapped_acquisition_to_commit_s": 6.01532506942749
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.002193927764892578,
+      "ingest_to_job_s": 5.927322149276733,
+      "analysis_s": 0.047785043716430664,
+      "fusion_and_commit_s": 0.1682448387145996,
+      "mapped_acquisition_to_commit_s": 6.145545959472656
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.0023620128631591797,
+      "ingest_to_job_s": 6.056621074676514,
+      "analysis_s": 0.05415487289428711,
+      "fusion_and_commit_s": 0.17850017547607422,
+      "mapped_acquisition_to_commit_s": 6.291638135910034
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.005897045135498047,
+      "ingest_to_job_s": 6.19904899597168,
+      "analysis_s": 0.07484197616577148,
+      "fusion_and_commit_s": 0.18683409690856934,
+      "mapped_acquisition_to_commit_s": 6.4666221141815186
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.002090930938720703,
+      "ingest_to_job_s": 6.5659871101379395,
+      "analysis_s": 0.07965087890625,
+      "fusion_and_commit_s": 0.1968519687652588,
+      "mapped_acquisition_to_commit_s": 6.844580888748169
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.07725691795349121,
+      "ingest_to_job_s": 6.67991304397583,
+      "analysis_s": 0.05919694900512695,
+      "fusion_and_commit_s": 0.1935410499572754,
+      "mapped_acquisition_to_commit_s": 7.010232925415039
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.06452298164367676,
+      "ingest_to_job_s": 6.857417106628418,
+      "analysis_s": 0.061441898345947266,
+      "fusion_and_commit_s": 3.5719521045684814,
+      "mapped_acquisition_to_commit_s": 10.556262016296387
+    },
+    {
+      "state": "stale",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.002238035202026367,
+      "ingest_to_job_s": 10.470664024353027,
+      "analysis_s": 0.06340694427490234,
+      "fusion_and_commit_s": 0.16634702682495117,
+      "mapped_acquisition_to_commit_s": 10.702656030654907
+    },
+    {
+      "state": "stale",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.08787107467651367,
+      "ingest_to_job_s": 10.52616810798645,
+      "analysis_s": 0.051434993743896484,
+      "fusion_and_commit_s": 0.16551899909973145,
+      "mapped_acquisition_to_commit_s": 10.831432104110718
+    },
+    {
+      "state": "stale",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.05934309959411621,
+      "ingest_to_job_s": 10.68460988998413,
+      "analysis_s": 0.05467700958251953,
+      "fusion_and_commit_s": 0.17151594161987305,
+      "mapped_acquisition_to_commit_s": 10.970326900482178
+    },
+    {
+      "state": "stale",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.010896921157836914,
+      "ingest_to_job_s": 10.873220920562744,
+      "analysis_s": 0.05454301834106445,
+      "fusion_and_commit_s": 0.16907000541687012,
+      "mapped_acquisition_to_commit_s": 11.107730865478516
+    },
+    {
+      "state": "stale",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.003062009811401367,
+      "ingest_to_job_s": 11.01625919342041,
+      "analysis_s": 0.05486798286437988,
+      "fusion_and_commit_s": 0.1770617961883545,
+      "mapped_acquisition_to_commit_s": 11.251250982284546
+    },
+    {
+      "state": "stale",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.06244993209838867,
+      "ingest_to_job_s": 11.312664985656738,
+      "analysis_s": 0.0608820915222168,
+      "fusion_and_commit_s": 0.1785719394683838,
+      "mapped_acquisition_to_commit_s": 11.614867925643921
+    },
+    {
+      "state": "stale",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.0033478736877441406,
+      "ingest_to_job_s": 11.525820016860962,
+      "analysis_s": 0.0532689094543457,
+      "fusion_and_commit_s": 0.17195820808410645,
+      "mapped_acquisition_to_commit_s": 11.754395008087158
+    },
+    {
+      "state": "stale",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.13511991500854492,
+      "ingest_to_job_s": 11.531675100326538,
+      "analysis_s": 0.0758810043334961,
+      "fusion_and_commit_s": 0.1746659278869629,
+      "mapped_acquisition_to_commit_s": 11.919831991195679
+    },
+    {
+      "state": "stale",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.10179996490478516,
+      "ingest_to_job_s": 11.731353998184204,
+      "analysis_s": 0.08263587951660156,
+      "fusion_and_commit_s": 0.21188998222351074,
+      "mapped_acquisition_to_commit_s": 12.127679824829102
+    },
+    {
+      "state": "stale",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.021738052368164062,
+      "ingest_to_job_s": 12.021008968353271,
+      "analysis_s": 0.06317615509033203,
+      "fusion_and_commit_s": 0.17084097862243652,
+      "mapped_acquisition_to_commit_s": 12.276764154434204
+    },
+    {
+      "state": "stale",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.012492895126342773,
+      "ingest_to_job_s": 12.178234100341797,
+      "analysis_s": 0.06530308723449707,
+      "fusion_and_commit_s": 0.1807858943939209,
+      "mapped_acquisition_to_commit_s": 12.436815977096558
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.06909298896789551,
+      "ingest_to_job_s": 0.1611180305480957,
+      "analysis_s": 0.02560901641845703,
+      "fusion_and_commit_s": 0.19826793670654297,
+      "mapped_acquisition_to_commit_s": 0.4540879726409912
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.002355813980102539,
+      "ingest_to_job_s": 0.5410041809082031,
+      "analysis_s": 0.022411823272705078,
+      "fusion_and_commit_s": 0.17771196365356445,
+      "mapped_acquisition_to_commit_s": 0.7434837818145752
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.022207975387573242,
+      "ingest_to_job_s": 0.6335139274597168,
+      "analysis_s": 0.02278900146484375,
+      "fusion_and_commit_s": 0.18261194229125977,
+      "mapped_acquisition_to_commit_s": 0.8611578941345215
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.07805109024047852,
+      "ingest_to_job_s": 0.6948320865631104,
+      "analysis_s": 0.023566007614135742,
+      "fusion_and_commit_s": 0.18271780014038086,
+      "mapped_acquisition_to_commit_s": 0.9812729358673096
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.09164190292358398,
+      "ingest_to_job_s": 0.7990801334381104,
+      "analysis_s": 0.02330303192138672,
+      "fusion_and_commit_s": 0.20500683784484863,
+      "mapped_acquisition_to_commit_s": 1.1213359832763672
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.0365757942199707,
+      "ingest_to_job_s": 0.997575044631958,
+      "analysis_s": 0.024837970733642578,
+      "fusion_and_commit_s": 0.18661904335021973,
+      "mapped_acquisition_to_commit_s": 1.2470629215240479
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.04001283645629883,
+      "ingest_to_job_s": 1.1185920238494873,
+      "analysis_s": 0.02223801612854004,
+      "fusion_and_commit_s": 0.17219305038452148,
+      "mapped_acquisition_to_commit_s": 1.353044033050537
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.05688881874084473,
+      "ingest_to_job_s": 1.2095282077789307,
+      "analysis_s": 0.02779984474182129,
+      "fusion_and_commit_s": 0.1891939640045166,
+      "mapped_acquisition_to_commit_s": 1.4834108352661133
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.025064945220947266,
+      "ingest_to_job_s": 1.3716039657592773,
+      "analysis_s": 0.026417016983032227,
+      "fusion_and_commit_s": 0.17694997787475586,
+      "mapped_acquisition_to_commit_s": 1.6003649234771729
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.15008807182312012,
+      "ingest_to_job_s": 1.3617959022521973,
+      "analysis_s": 0.0282440185546875,
+      "fusion_and_commit_s": 0.171112060546875,
+      "mapped_acquisition_to_commit_s": 1.7141170501708984
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.08099889755249023,
+      "ingest_to_job_s": 1.5477819442749023,
+      "analysis_s": 0.02778315544128418,
+      "fusion_and_commit_s": 0.17871785163879395,
+      "mapped_acquisition_to_commit_s": 1.8352818489074707
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.0065670013427734375,
+      "ingest_to_job_s": 1.9413831233978271,
+      "analysis_s": 0.027863025665283203,
+      "fusion_and_commit_s": 0.17451000213623047,
+      "mapped_acquisition_to_commit_s": 2.1503231525421143
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.019591093063354492,
+      "ingest_to_job_s": 2.040724039077759,
+      "analysis_s": 0.036836862564086914,
+      "fusion_and_commit_s": 0.17775702476501465,
+      "mapped_acquisition_to_commit_s": 2.2757859230041504
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.04057502746582031,
+      "ingest_to_job_s": 2.145020008087158,
+      "analysis_s": 0.02797389030456543,
+      "fusion_and_commit_s": 0.17381715774536133,
+      "mapped_acquisition_to_commit_s": 2.3876030445098877
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.004965066909790039,
+      "ingest_to_job_s": 2.2968409061431885,
+      "analysis_s": 0.027823925018310547,
+      "fusion_and_commit_s": 0.18010210990905762,
+      "mapped_acquisition_to_commit_s": 2.5097320079803467
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.026515960693359375,
+      "ingest_to_job_s": 2.396944046020508,
+      "analysis_s": 0.037322998046875,
+      "fusion_and_commit_s": 0.18075990676879883,
+      "mapped_acquisition_to_commit_s": 2.641542911529541
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.0021491050720214844,
+      "ingest_to_job_s": 2.5561509132385254,
+      "analysis_s": 0.03160214424133301,
+      "fusion_and_commit_s": 0.17845797538757324,
+      "mapped_acquisition_to_commit_s": 2.768360137939453
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.08099007606506348,
+      "ingest_to_job_s": 2.6018309593200684,
+      "analysis_s": 0.05802798271179199,
+      "fusion_and_commit_s": 0.1863870620727539,
+      "mapped_acquisition_to_commit_s": 2.928853988647461
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.0017750263214111328,
+      "ingest_to_job_s": 6.424628019332886,
+      "analysis_s": 0.03393101692199707,
+      "fusion_and_commit_s": 0.19249391555786133,
+      "mapped_acquisition_to_commit_s": 6.652827978134155
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.06301307678222656,
+      "ingest_to_job_s": 6.505048990249634,
+      "analysis_s": 0.042910099029541016,
+      "fusion_and_commit_s": 0.2038888931274414,
+      "mapped_acquisition_to_commit_s": 6.815703868865967
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.08260083198547363,
+      "ingest_to_job_s": 6.8101019859313965,
+      "analysis_s": 0.03576207160949707,
+      "fusion_and_commit_s": 0.18444609642028809,
+      "mapped_acquisition_to_commit_s": 7.115459203720093
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.021474123001098633,
+      "ingest_to_job_s": 7.005829811096191,
+      "analysis_s": 0.033959150314331055,
+      "fusion_and_commit_s": 0.19401884078979492,
+      "mapped_acquisition_to_commit_s": 7.255281925201416
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.0022630691528320312,
+      "ingest_to_job_s": 7.167288064956665,
+      "analysis_s": 0.03660988807678223,
+      "fusion_and_commit_s": 0.20345401763916016,
+      "mapped_acquisition_to_commit_s": 7.409635066986084
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.023092985153198242,
+      "ingest_to_job_s": 7.297343969345093,
+      "analysis_s": 0.05058407783508301,
+      "fusion_and_commit_s": 0.20673394203186035,
+      "mapped_acquisition_to_commit_s": 7.578474044799805
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.0664680004119873,
+      "ingest_to_job_s": 7.4259960651397705,
+      "analysis_s": 0.0393218994140625,
+      "fusion_and_commit_s": 0.18903613090515137,
+      "mapped_acquisition_to_commit_s": 7.720822095870972
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.02127385139465332,
+      "ingest_to_job_s": 7.612598180770874,
+      "analysis_s": 0.03753495216369629,
+      "fusion_and_commit_s": 0.18442988395690918,
+      "mapped_acquisition_to_commit_s": 7.8567140102386475
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.0025091171264648438,
+      "ingest_to_job_s": 7.766915798187256,
+      "analysis_s": 0.037286996841430664,
+      "fusion_and_commit_s": 0.18812918663024902,
+      "mapped_acquisition_to_commit_s": 7.9948410987854
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.018131017684936523,
+      "ingest_to_job_s": 7.88783597946167,
+      "analysis_s": 0.03694796562194824,
+      "fusion_and_commit_s": 0.18843793869018555,
+      "mapped_acquisition_to_commit_s": 8.131948947906494
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.002089977264404297,
+      "ingest_to_job_s": 8.04253888130188,
+      "analysis_s": 0.045484066009521484,
+      "fusion_and_commit_s": 0.1955859661102295,
+      "mapped_acquisition_to_commit_s": 8.285717010498047
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.12837004661560059,
+      "ingest_to_job_s": 8.27077603340149,
+      "analysis_s": 0.03935813903808594,
+      "fusion_and_commit_s": 0.1921398639678955,
+      "mapped_acquisition_to_commit_s": 8.632179975509644
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.06860899925231934,
+      "ingest_to_job_s": 8.47854495048523,
+      "analysis_s": 0.04430103302001953,
+      "fusion_and_commit_s": 0.18948984146118164,
+      "mapped_acquisition_to_commit_s": 8.78094482421875
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.04286313056945801,
+      "ingest_to_job_s": 8.648673057556152,
+      "analysis_s": 0.04033684730529785,
+      "fusion_and_commit_s": 0.1905350685119629,
+      "mapped_acquisition_to_commit_s": 8.922584056854248
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.002067089080810547,
+      "ingest_to_job_s": 8.83483099937439,
+      "analysis_s": 0.037416934967041016,
+      "fusion_and_commit_s": 0.17637991905212402,
+      "mapped_acquisition_to_commit_s": 9.050694942474365
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.017472028732299805,
+      "ingest_to_job_s": 8.947144031524658,
+      "analysis_s": 0.047833919525146484,
+      "fusion_and_commit_s": 0.1922001838684082,
+      "mapped_acquisition_to_commit_s": 9.206003189086914
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.001953125,
+      "ingest_to_job_s": 9.11777400970459,
+      "analysis_s": 0.04339194297790527,
+      "fusion_and_commit_s": 0.22317004203796387,
+      "mapped_acquisition_to_commit_s": 9.386289119720459
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.0026390552520751953,
+      "ingest_to_job_s": 9.295861959457397,
+      "analysis_s": 0.04036307334899902,
+      "fusion_and_commit_s": 0.19071602821350098,
+      "mapped_acquisition_to_commit_s": 9.529580116271973
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.0029838085174560547,
+      "ingest_to_job_s": 9.439603090286255,
+      "analysis_s": 0.04312300682067871,
+      "fusion_and_commit_s": 0.18765902519226074,
+      "mapped_acquisition_to_commit_s": 9.67336893081665
+    },
+    {
+      "state": "current",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.05562710762023926,
+      "ingest_to_job_s": 9.531990051269531,
+      "analysis_s": 0.04785299301147461,
+      "fusion_and_commit_s": 0.1991558074951172,
+      "mapped_acquisition_to_commit_s": 9.835763931274414
+    },
+    {
+      "state": "stale",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.018571853637695312,
+      "ingest_to_job_s": 9.919012069702148,
+      "analysis_s": 0.0479280948638916,
+      "fusion_and_commit_s": 0.18884801864624023,
+      "mapped_acquisition_to_commit_s": 10.174360036849976
+    },
+    {
+      "state": "stale",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.13683199882507324,
+      "ingest_to_job_s": 9.948060989379883,
+      "analysis_s": 0.04532504081726074,
+      "fusion_and_commit_s": 0.2453310489654541,
+      "mapped_acquisition_to_commit_s": 10.377263069152832
+    },
+    {
+      "state": "stale",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.07641100883483887,
+      "ingest_to_job_s": 10.21402883529663,
+      "analysis_s": 0.0506901741027832,
+      "fusion_and_commit_s": 0.23479580879211426,
+      "mapped_acquisition_to_commit_s": 10.575925827026367
+    },
+    {
+      "state": "stale",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.01925516128540039,
+      "ingest_to_job_s": 10.469141006469727,
+      "analysis_s": 0.051091909408569336,
+      "fusion_and_commit_s": 0.2233278751373291,
+      "mapped_acquisition_to_commit_s": 10.76378083229065
+    },
+    {
+      "state": "stale",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.005079984664916992,
+      "ingest_to_job_s": 10.674349069595337,
+      "analysis_s": 0.05064892768859863,
+      "fusion_and_commit_s": 0.19620704650878906,
+      "mapped_acquisition_to_commit_s": 10.926285028457642
+    },
+    {
+      "state": "stale",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.050379037857055664,
+      "ingest_to_job_s": 10.789700984954834,
+      "analysis_s": 0.04929184913635254,
+      "fusion_and_commit_s": 0.20212602615356445,
+      "mapped_acquisition_to_commit_s": 11.092557907104492
+    },
+    {
+      "state": "stale",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.02326202392578125,
+      "ingest_to_job_s": 10.980698108673096,
+      "analysis_s": 0.050087928771972656,
+      "fusion_and_commit_s": 0.19357705116271973,
+      "mapped_acquisition_to_commit_s": 11.248065948486328
+    },
+    {
+      "state": "stale",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.001878976821899414,
+      "ingest_to_job_s": 11.158007144927979,
+      "analysis_s": 0.05404186248779297,
+      "fusion_and_commit_s": 0.22264909744262695,
+      "mapped_acquisition_to_commit_s": 11.436577081680298
+    },
+    {
+      "state": "stale",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.0020940303802490234,
+      "ingest_to_job_s": 11.56273889541626,
+      "analysis_s": 0.05572104454040527,
+      "fusion_and_commit_s": 0.18503499031066895,
+      "mapped_acquisition_to_commit_s": 11.805588960647583
+    },
+    {
+      "state": "stale",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.026027917861938477,
+      "ingest_to_job_s": 8.107002019882202,
+      "analysis_s": 0.05142807960510254,
+      "fusion_and_commit_s": 0.18433403968811035,
+      "mapped_acquisition_to_commit_s": 11.955657958984375
+    },
+    {
+      "state": "stale",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.02555704116821289,
+      "ingest_to_job_s": 8.256479024887085,
+      "analysis_s": 0.0533299446105957,
+      "fusion_and_commit_s": 0.18724989891052246,
+      "mapped_acquisition_to_commit_s": 12.108726978302002
+    },
+    {
+      "state": "stale",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.1071329116821289,
+      "ingest_to_job_s": 8.325468063354492,
+      "analysis_s": 0.05118203163146973,
+      "fusion_and_commit_s": 0.19021105766296387,
+      "mapped_acquisition_to_commit_s": 12.262458086013794
+    },
+    {
+      "state": "stale",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.02743816375732422,
+      "ingest_to_job_s": 8.461406946182251,
+      "analysis_s": 0.05632901191711426,
+      "fusion_and_commit_s": 0.2177579402923584,
+      "mapped_acquisition_to_commit_s": 12.349854946136475
+    },
+    {
+      "state": "stale",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.002802133560180664,
+      "ingest_to_job_s": 8.674319982528687,
+      "analysis_s": 0.05730104446411133,
+      "fusion_and_commit_s": 0.2099459171295166,
+      "mapped_acquisition_to_commit_s": 12.53054404258728
+    },
+    {
+      "state": "stale",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.018139123916625977,
+      "ingest_to_job_s": 8.840116024017334,
+      "analysis_s": 0.05881190299987793,
+      "fusion_and_commit_s": 0.20871305465698242,
+      "mapped_acquisition_to_commit_s": 12.711894989013672
+    },
+    {
+      "state": "stale",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.019765138626098633,
+      "ingest_to_job_s": 9.018297910690308,
+      "analysis_s": 0.06220293045043945,
+      "fusion_and_commit_s": 0.1910381317138672,
+      "mapped_acquisition_to_commit_s": 12.878481149673462
+    },
+    {
+      "state": "stale",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.03930997848510742,
+      "ingest_to_job_s": 9.354554891586304,
+      "analysis_s": 0.0577390193939209,
+      "fusion_and_commit_s": 0.19423699378967285,
+      "mapped_acquisition_to_commit_s": 13.232661962509155
+    },
+    {
+      "state": "stale",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.019068002700805664,
+      "ingest_to_job_s": 9.53772521018982,
+      "analysis_s": 0.05878186225891113,
+      "fusion_and_commit_s": 0.22181296348571777,
+      "mapped_acquisition_to_commit_s": 13.425217866897583
+    },
+    {
+      "state": "stale",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.03724503517150879,
+      "ingest_to_job_s": 9.715472936630249,
+      "analysis_s": 0.07048201560974121,
+      "fusion_and_commit_s": 0.24358797073364258,
+      "mapped_acquisition_to_commit_s": 13.65363097190857
+    },
+    {
+      "state": "stale",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.0028009414672851562,
+      "ingest_to_job_s": 9.97816514968872,
+      "analysis_s": 0.060086965560913086,
+      "fusion_and_commit_s": 0.19359707832336426,
+      "mapped_acquisition_to_commit_s": 13.820775032043457
+    },
+    {
+      "state": "stale",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.04047894477844238,
+      "ingest_to_job_s": 10.106454133987427,
+      "analysis_s": 0.05741405487060547,
+      "fusion_and_commit_s": 0.1935138702392578,
+      "mapped_acquisition_to_commit_s": 13.984686851501465
+    },
+    {
+      "state": "stale",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.07543802261352539,
+      "ingest_to_job_s": 10.235876083374023,
+      "analysis_s": 0.06301593780517578,
+      "fusion_and_commit_s": 0.1967151165008545,
+      "mapped_acquisition_to_commit_s": 14.157207012176514
+    },
+    {
+      "state": "stale",
+      "processing_overlap": false,
+      "emission_to_ingest_s": 0.00232696533203125,
+      "ingest_to_job_s": 10.48425006866455,
+      "analysis_s": 0.06140398979187012,
+      "fusion_and_commit_s": 0.19095587730407715,
+      "mapped_acquisition_to_commit_s": 14.325063943862915
+    }
+  ]
+}

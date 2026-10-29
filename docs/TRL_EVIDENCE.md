@@ -44,3 +44,8 @@ The executed local platform provides authenticated MQTT/read-only numeric OPC UA
 ## Phase 6 evidence
 
 Actual accepted-map planning, imperfect subsequent acquisitions, unchanged B3.1/F1, durable reviewed plans and a running browser are demonstrated. The held-out E5 evidence includes mixed/negative outcomes, wider-view false positives and persistent L2 inconclusiveness. These are synthetic software/research results, not physical sensor accuracy, certified flight safety, independent relevant-environment evidence or an increased industrial-product TRL. See PHASE6_VALIDATION.md and PHASE7_VALIDATION_BACKLOG.md.
+
+
+## Phase 7 update
+
+Independent view-domain calibration/heldout sensing, paired planners, actual acquisition ablations, full E4, PostgreSQL/archived-message restore, laboratory security and reviewed browser reinspection provide additional software evidence. Negative recall/abstention and critical-timeliness results remain explicit. Physical data/equipment are unavailable. See PHASE7_INDEPENDENT_VALIDATION.md, PHASE7_E4_CORRECTED_STRESS.md and PHASE7_TRL_ASSESSMENT.md. Integrated laboratory software evidence is consistent with a conservative TRL4 scope; industrial TRL5/6 is not established.

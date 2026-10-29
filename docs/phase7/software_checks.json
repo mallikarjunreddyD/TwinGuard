@@ -1,0 +1,48 @@
+{
+  "source_git_before_final_packaging": "a35c790ada32d6aee1262697462f088407ac9630",
+  "commands": {
+    "pytest": "OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 .venv/bin/python -m pytest -q",
+    "ruff": ".venv/bin/ruff check src tests scripts",
+    "format": ".venv/bin/ruff format --check src tests scripts",
+    "mypy": ".venv/bin/mypy src/twinguard",
+    "frontend": "npm test -- --run && npm run build (node:22-slim)"
+  },
+  "outputs": {
+    "pytest": "........................................................................ [ 21%]\n........................................................................ [ 42%]\n........................................................................ [ 64%]\n........................................................................ [ 85%]\n................................................                         [100%]\n=============================== warnings summary ===============================\n.venv/lib/python3.12/site-packages/fastapi/testclient.py:1\n  /home/mallikarjun/workspace/TwinGuard/.venv/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n336 passed, 1 warning in 109.02s (0:01:49)\n",
+    "ruff": "All checks passed!\n",
+    "format": "unformatted: File would be reformatted\n  --> scripts/phase7_write_reports.py:40:15\n   |\n39 |     copy_json(E / \"phase7-V6-security\", \"security_checks.json\")\n   -     copy_json(\n   -         E / \"phase7-V6-dependency-review/report.json\", \"python_advisory_review.json\"\n   -     )\n40 +     copy_json(E / \"phase7-V6-dependency-review/report.json\", \"python_advisory_review.json\")\n41 |     inspection = copy_json(\n   |\n\n1 file would be reformatted, 185 files already formatted\n",
+    "mypy": "Success: no issues found in 114 source files\n",
+    "frontend": "\n> twinguard-dashboard@0.8.0 test\n> vitest run --run\n\n\n\u001b[1m\u001b[30m\u001b[46m RUN \u001b[49m\u001b[39m\u001b[22m \u001b[36mv5.0.5 \u001b[39m\u001b[90m/app\u001b[39m\n\n \u001b[32m\u2713\u001b[39m src/semantics.test.ts \u001b[2m(\u001b[22m\u001b[2m3 tests\u001b[22m\u001b[2m)\u001b[22m\u001b[32m 4\u001b[2mms\u001b[22m\u001b[39m\n\n\u001b[2m Test Files \u001b[22m \u001b[1m\u001b[32m1 passed\u001b[39m\u001b[22m\u001b[90m (1)\u001b[39m\n\u001b[2m      Tests \u001b[22m \u001b[1m\u001b[32m3 passed\u001b[39m\u001b[22m\u001b[90m (3)\u001b[39m\n\u001b[2m   Start at \u001b[22m 04:30:52\n\u001b[2m   Duration \u001b[22m 288ms\u001b[2m (import 50%, transform 20%, worker 17%, tests 13%)\u001b[22m\n\nnpm notice\nnpm notice New major version of npm available! 10.9.9 -> 12.2.1\nnpm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1\nnpm notice To update run: npm install -g npm@12.2.1\nnpm notice\n\n> twinguard-dashboard@0.8.0 build\n> tsc -b && vite build\n\nvite v7.3.7 building client environment for production...\ntransforming...\n\u2713 625 modules transformed.\nrendering chunks...\ncomputing gzip size...\n\n(!) Some chunks are larger than 500 kB after minification. Consider:\n- Using dynamic import() to code-split the application\n- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks\n- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.\ndist/index.html                     0.37 kB \u2502 gzip:   0.28 kB\ndist/assets/index-CiJnYA8z.css      5.39 kB \u2502 gzip:   1.78 kB\ndist/assets/index-peBHL1DS.js   1,209.56 kB \u2502 gzip: 337.36 kB\n\u2713 built in 5.30s\n",
+    "frontend_image": " Image twinguard-edge-frontend:local Building \n#1 [internal] load local bake definitions\n#1 reading from stdin 1.02kB done\n#1 DONE 0.0s\n\n#2 [internal] load build definition from Dockerfile.frontend\n#2 transferring dockerfile: 313B done\n#2 DONE 0.0s\n\n#3 [internal] load metadata for docker.io/library/nginx:1.28-alpine\n#3 DONE 0.1s\n\n#4 [internal] load metadata for docker.io/library/node:22-slim\n#4 DONE 0.1s\n\n#5 [internal] load .dockerignore\n#5 transferring context: 146B done\n#5 DONE 0.0s\n\n#6 [internal] load build context\n#6 DONE 0.0s\n\n#7 [build 1/6] FROM docker.io/library/node:22-slim@sha256:4b150b48b4116e2a22f2c39cc27025fbf4f153e2078fd3b14d159fdb5c7279da\n#7 resolve docker.io/library/node:22-slim@sha256:4b150b48b4116e2a22f2c39cc27025fbf4f153e2078fd3b14d159fdb5c7279da 0.1s done\n#7 DONE 0.1s\n\n#8 [stage-1 1/3] FROM docker.io/library/nginx:1.28-alpine@sha256:a8b39bd9cf0f83869a2162827a0caf6137ddf759d50a171451b335cecc87d236\n#8 resolve docker.io/library/nginx:1.28-alpine@sha256:a8b39bd9cf0f83869a2162827a0caf6137ddf759d50a171451b335cecc87d236 0.1s done\n#8 DONE 0.1s\n\n#6 [internal] load build context\n#6 transferring context: 18.70kB done\n#6 DONE 0.0s\n\n#9 [build 2/6] WORKDIR /web\n#9 CACHED\n\n#10 [build 3/6] COPY frontend/package*.json ./\n#10 CACHED\n\n#11 [build 4/6] RUN npm ci\n#11 CACHED\n\n#12 [build 5/6] COPY frontend ./\n#12 DONE 0.1s\n\n#13 [build 6/6] RUN npm run build\n#13 0.629 \n#13 0.629 > twinguard-dashboard@0.8.0 build\n#13 0.629 > tsc -b && vite build\n#13 0.629 \n#13 4.728 vite v7.3.7 building client environment for production...\n#13 4.821 transforming...\n#13 12.21 \u2713 625 modules transformed.\n#13 12.92 rendering chunks...\n#13 12.93 computing gzip size...\n#13 12.97 dist/index.html                     0.37 kB \u2502 gzip:   0.28 kB\n#13 12.97 dist/assets/index-CiJnYA8z.css      5.39 kB \u2502 gzip:   1.78 kB\n#13 12.97 dist/assets/index-peBHL1DS.js   1,209.56 kB \u2502 gzip: 337.36 kB\n#13 12.97 \n#13 12.97 (!) Some chunks are larger than 500 kB after minification. Consider:\n#13 12.97 - Using dynamic import() to code-split the application\n#13 12.97 - Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks\n#13 12.97 - Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.\n#13 12.97 \u2713 built in 8.21s\n#13 DONE 13.1s\n\n#14 [stage-1 2/3] COPY deployment/edge/nginx.conf /etc/nginx/conf.d/default.conf\n#14 CACHED\n\n#15 [stage-1 3/3] COPY --from=build /web/dist /usr/share/nginx/html\n#15 DONE 0.1s\n\n#16 exporting to image\n#16 exporting layers\n#16 exporting layers 0.3s done\n#16 exporting manifest sha256:66906eb2c4c9cdef6ec5e495bcd1fa0c9bc225b6df93a978290d784df18af0bd 0.0s done\n#16 exporting config sha256:c205efd512bd15512e4cf9b1d00f97dba29490252aea825240b797664eb74508 0.0s done\n#16 exporting attestation manifest sha256:af893832efb94be7c5557e400bdb7ee20e6e254dbda458d4c4d054006d0a5665\n#16 exporting attestation manifest sha256:af893832efb94be7c5557e400bdb7ee20e6e254dbda458d4c4d054006d0a5665 0.1s done\n#16 exporting manifest list sha256:600ae7ee449a13d3b37d705326db160fdf5836e64aefcb63bc9ad7c8462674c9 0.0s done\n#16 naming to docker.io/library/twinguard-edge-frontend:local\n#16 naming to docker.io/library/twinguard-edge-frontend:local done\n#16 unpacking to docker.io/library/twinguard-edge-frontend:local 0.1s done\n#16 DONE 0.7s\n\n#17 resolving provenance for metadata file\n#17 DONE 0.0s\n Image twinguard-edge-frontend:local Built \n"
+  },
+  "investigated_failures": [
+    {
+      "run": "/tmp/tg7-final-tests-after-admission.log",
+      "result": "335 passed,1 parity comparison failed on noiseless L0 multiscale selection ties; no detector/quality gate changed",
+      "resolution": "Committed independent pre-correction noisy L1 positive fixture; exact discrete-field parity and1e-12 float roundoff tolerance; final336pass"
+    },
+    {
+      "run": "/mnt/d/TwinGuard/phase7-V7-strict-trends/report.json",
+      "result": "Old/first strict browser checks exposed real asset-response race and clearing during stream refresh",
+      "resolution": "Obsolete responses ignored; current-asset values retained on same-asset stream refresh; actual100samples,SVGlineandracecheckpass"
+    }
+  ],
+  "known_nonblocking_warnings": [
+    "Existing Starlette/httpx deprecation",
+    "Vite bundle chunk >500kB"
+  ],
+  "private_secrets_tracked": false,
+  "strict_browser": {
+    "scope": "Real stored observation/line rendering and deliberately delayed obsolete asset responses; no fabricated measurements",
+    "checks": {
+      "actual_stored_samples": true,
+      "actual_line_geometry": true,
+      "measured_pressure_unit": true,
+      "obsolete_delayed_asset_response_ignored": true,
+      "no_javascript_errors": true
+    },
+    "stored_samples_displayed": 100,
+    "javascript_errors": [],
+    "status": "passed"
+  }
+}

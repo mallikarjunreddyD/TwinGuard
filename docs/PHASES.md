@@ -40,3 +40,8 @@ Phase 5 integrated local research demonstrator is implemented and executed: real
 ## Phase 6 update
 
 Inspection planning software, public coverage/visibility, constrained P0–P3, leased worker/API/dashboard and actual closed-loop synthetic reinspection are implemented. E5 executed 540 paired trials / 2,160 method runs. Overall research validation is PARTIAL: coverage efficiency improves, targeted discovery superiority is unsupported, and calibration/scenario generalization remains limited. Read PHASE6_VALIDATION.md. Phase 7 is a conditional validation-research handoff only and has not begun; P5-01–P5-04 remain OPEN.
+
+
+## Phase 7 update
+
+Phase7 implementation and actual validation are recorded in PHASE7_FINAL_VALIDATION.md and the individual workstream reports. Original B3.1/P0–P3 remain; optional B3.2/P3v2 are separately versioned and are not promoted on reduced false positives alone. New full operational tests retain stale/missed critical readings, growth and site/physical blockers. Earlier statements above that Phase7 has not begun are historical handoff context.

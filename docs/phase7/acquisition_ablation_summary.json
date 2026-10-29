@@ -1,0 +1,126 @@
+{
+  "status": "completed",
+  "cases": 180,
+  "groups": {
+    "B3.1 / no_adaptive_replanning": {
+      "trials": 30,
+      "views": 0,
+      "new_localized": 0,
+      "initial_localized": 30,
+      "inconclusive": 0,
+      "new_area_m2": 0.0,
+      "actual_initial_acquisitions_per_trial": 2,
+      "interpretation": "Zero selected views imply an uninformative reinspection ablation even though fresh initial sensing was executed"
+    },
+    "B3.1 / no_calibration_applicability": {
+      "trials": 30,
+      "views": 0,
+      "new_localized": 0,
+      "initial_localized": 30,
+      "inconclusive": 0,
+      "new_area_m2": 0.0,
+      "actual_initial_acquisitions_per_trial": 2,
+      "interpretation": "Zero selected views imply an uninformative reinspection ablation even though fresh initial sensing was executed"
+    },
+    "B3.1 / no_coverage_history": {
+      "trials": 30,
+      "views": 58,
+      "new_localized": 28,
+      "initial_localized": 30,
+      "inconclusive": 3,
+      "new_area_m2": 42.1893255337115,
+      "actual_initial_acquisitions_per_trial": 2,
+      "interpretation": "Zero selected views imply an uninformative reinspection ablation even though fresh initial sensing was executed"
+    },
+    "B3.1 / no_redundancy_penalty": {
+      "trials": 30,
+      "views": 14,
+      "new_localized": 14,
+      "initial_localized": 30,
+      "inconclusive": 0,
+      "new_area_m2": 11.418350409359352,
+      "actual_initial_acquisitions_per_trial": 2,
+      "interpretation": "Zero selected views imply an uninformative reinspection ablation even though fresh initial sensing was executed"
+    },
+    "B3.1 / no_registration_suitability": {
+      "trials": 30,
+      "views": 0,
+      "new_localized": 0,
+      "initial_localized": 30,
+      "inconclusive": 0,
+      "new_area_m2": 0.0,
+      "actual_initial_acquisitions_per_trial": 2,
+      "interpretation": "Zero selected views imply an uninformative reinspection ablation even though fresh initial sensing was executed"
+    },
+    "B3.1 / no_risk_priority": {
+      "trials": 30,
+      "views": 0,
+      "new_localized": 0,
+      "initial_localized": 30,
+      "inconclusive": 0,
+      "new_area_m2": 0.0,
+      "actual_initial_acquisitions_per_trial": 2,
+      "interpretation": "Zero selected views imply an uninformative reinspection ablation even though fresh initial sensing was executed"
+    },
+    "B3.2 / no_adaptive_replanning": {
+      "trials": 30,
+      "views": 30,
+      "new_localized": 4,
+      "initial_localized": 0,
+      "inconclusive": 16,
+      "new_area_m2": 8.946917211900443,
+      "actual_initial_acquisitions_per_trial": 2,
+      "interpretation": "Zero selected views imply an uninformative reinspection ablation even though fresh initial sensing was executed"
+    },
+    "B3.2 / no_calibration_applicability": {
+      "trials": 30,
+      "views": 49,
+      "new_localized": 8,
+      "initial_localized": 0,
+      "inconclusive": 28,
+      "new_area_m2": 11.66675545129099,
+      "actual_initial_acquisitions_per_trial": 2,
+      "interpretation": "Zero selected views imply an uninformative reinspection ablation even though fresh initial sensing was executed"
+    },
+    "B3.2 / no_coverage_history": {
+      "trials": 30,
+      "views": 58,
+      "new_localized": 15,
+      "initial_localized": 0,
+      "inconclusive": 21,
+      "new_area_m2": 20.47978238628548,
+      "actual_initial_acquisitions_per_trial": 2,
+      "interpretation": "Zero selected views imply an uninformative reinspection ablation even though fresh initial sensing was executed"
+    },
+    "B3.2 / no_redundancy_penalty": {
+      "trials": 30,
+      "views": 50,
+      "new_localized": 12,
+      "initial_localized": 0,
+      "inconclusive": 16,
+      "new_area_m2": 16.937717141421672,
+      "actual_initial_acquisitions_per_trial": 2,
+      "interpretation": "Zero selected views imply an uninformative reinspection ablation even though fresh initial sensing was executed"
+    },
+    "B3.2 / no_registration_suitability": {
+      "trials": 30,
+      "views": 43,
+      "new_localized": 11,
+      "initial_localized": 0,
+      "inconclusive": 19,
+      "new_area_m2": 14.558614718377374,
+      "actual_initial_acquisitions_per_trial": 2,
+      "interpretation": "Zero selected views imply an uninformative reinspection ablation even though fresh initial sensing was executed"
+    },
+    "B3.2 / no_risk_priority": {
+      "trials": 30,
+      "views": 26,
+      "new_localized": 2,
+      "initial_localized": 0,
+      "inconclusive": 10,
+      "new_area_m2": 7.066363605572633,
+      "actual_initial_acquisitions_per_trial": 2,
+      "interpretation": "Zero selected views imply an uninformative reinspection ablation even though fresh initial sensing was executed"
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "critical_states": {
+    "current": 43,
+    "stale": 19
+  },
+  "rate": "Original1x source replay on a long-lived populated test instance, not field hardware",
+  "actual_heavy_jobs": 2,
+  "critical_overlap_count": 3,
+  "all_assigned_priority_zero": true,
+  "latency": {
+    "queue_s": {
+      "n": 62,
+      "p50": 0.15475594997406006,
+      "p95": 0.33870776891708354,
+      "p99": 0.4379102087020875,
+      "max": 0.5356261730194092
+    },
+    "analysis_s": {
+      "n": 62,
+      "p50": 0.04314589500427246,
+      "p95": 0.06784539222717284,
+      "p99": 0.0828990364074707,
+      "max": 0.09301900863647461
+    },
+    "fusion_commit_s": {
+      "n": 62,
+      "p50": 0.19492101669311523,
+      "p95": 0.23080140352249143,
+      "p99": 0.25539025068283083,
+      "max": 0.26851797103881836
+    }
+  },
+  "checkpoint_evidence_count": 778,
+  "checkpoint_json_bytes": 1497380,
+  "unresolved_event_positive_references": 755,
+  "publisher_schedule_lag_s": {
+    "n": 62,
+    "p50": 7.159629940986633,
+    "p95": 10.74753839969635,
+    "p99": 10.74780746936798,
+    "max": 10.747890949249268
+  },
+  "emission_to_ingestion_s": {
+    "n": 62,
+    "p50": 0.01892852783203125,
+    "p95": 0.06851887702941893,
+    "p99": 0.10179814100265504,
+    "max": 0.1101992130279541
+  },
+  "interpretation": "Stale readings in this original-rate request were already late when emitted. Fast post-receipt processing does not restore freshness; this does not establish a1Hz F1 service-capacity failure. Root cause of replay pacing delay is not uniquely attributed."
+}

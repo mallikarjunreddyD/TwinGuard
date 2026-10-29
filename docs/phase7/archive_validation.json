@@ -1,0 +1,234 @@
+{
+  "started_at_utc": "2026-10-28T14:48:00.535051+00:00",
+  "scope": "Explicit days=0 accelerated retention on Phase7 test DB, not 90-day endurance",
+  "batches": [
+    {
+      "rows": 256,
+      "raw_bytes": 351319,
+      "archive_bytes": 27516,
+      "sha256": "99c327f0253f79ce148dbf2e66db729a12eecea174fb5c90967284ebc0c0276a"
+    },
+    {
+      "rows": 256,
+      "raw_bytes": 351575,
+      "archive_bytes": 27555,
+      "sha256": "5ff32b42333d2f7024c6c433abf9338c79cc60a33b3c9e19cff8711e28dabb11"
+    },
+    {
+      "rows": 256,
+      "raw_bytes": 352044,
+      "archive_bytes": 27334,
+      "sha256": "4c2c51ecc9c4a8b1b946235c3d5807407c7528bb3abedf0c9d445bf8c7bd22c9"
+    },
+    {
+      "rows": 256,
+      "raw_bytes": 351563,
+      "archive_bytes": 27340,
+      "sha256": "e1a9a531f3578d88f7812f1fcbfaa518c08cee171370b38e972ce89535f8a616"
+    },
+    {
+      "rows": 256,
+      "raw_bytes": 352274,
+      "archive_bytes": 27370,
+      "sha256": "d219c4eb681aa6def237c5ca1860cbb5825d001a3b14380626a4d098d37e1639"
+    },
+    {
+      "rows": 256,
+      "raw_bytes": 351594,
+      "archive_bytes": 27356,
+      "sha256": "638e3ce3c9339bb3e15dbde3c597fd4a48bc64c3b6af4209989b221dd841afc3"
+    },
+    {
+      "rows": 256,
+      "raw_bytes": 351993,
+      "archive_bytes": 27381,
+      "sha256": "1c6de57086e547a0394789e9e85984aefb1aee89f4c530d30494316f348da965"
+    },
+    {
+      "rows": 256,
+      "raw_bytes": 352043,
+      "archive_bytes": 27529,
+      "sha256": "27355705f8fc940446ee7c0575e63bff8c19030c401ad85b6c1749c073427928"
+    },
+    {
+      "rows": 256,
+      "raw_bytes": 351652,
+      "archive_bytes": 27535,
+      "sha256": "0292fea633e7fcb7b991c9e07802cf57f3c08d531ed5cde4211f0b93a5701d62"
+    },
+    {
+      "rows": 256,
+      "raw_bytes": 352254,
+      "archive_bytes": 27407,
+      "sha256": "e96ebab4f4d84df7f4873c95d54c19b41206f1997b87e84b7ed2e54f9f82e925"
+    },
+    {
+      "rows": 256,
+      "raw_bytes": 351653,
+      "archive_bytes": 27358,
+      "sha256": "c4b0277d046e76c124a99d4d716421a69a630f0d8a026134d50fe466b6708253"
+    },
+    {
+      "rows": 256,
+      "raw_bytes": 352104,
+      "archive_bytes": 27206,
+      "sha256": "a562ae6f0c2a10359a326a5d2dee56cc1302b450ff0bd6736b7dd76deb617865"
+    },
+    {
+      "rows": 256,
+      "raw_bytes": 352068,
+      "archive_bytes": 27350,
+      "sha256": "2e359391e1b19b3f4b291bf784e889defa7ddaa4864b95c0dac93799b3080faf"
+    },
+    {
+      "rows": 256,
+      "raw_bytes": 351169,
+      "archive_bytes": 27321,
+      "sha256": "28ed82c740aff10fcb716135060663a335b76d1babc1c53b3a9eb6aace7dc58e"
+    },
+    {
+      "rows": 256,
+      "raw_bytes": 353706,
+      "archive_bytes": 26577,
+      "sha256": "ca09445a3bae7aeaecccc46ae34370324564aa49167604539cc1db708077dae2"
+    },
+    {
+      "rows": 256,
+      "raw_bytes": 353828,
+      "archive_bytes": 26673,
+      "sha256": "f0aae476e974334d09ef6f23474309ad9193cef7e6b975c8d000bd91b0b357a3"
+    },
+    {
+      "rows": 256,
+      "raw_bytes": 351962,
+      "archive_bytes": 27470,
+      "sha256": "55b7d62d2d4292bd25195c38bb2bc424bae7f22e9e41dc1e0de2549f44b2e1d1"
+    },
+    {
+      "rows": 256,
+      "raw_bytes": 352746,
+      "archive_bytes": 27419,
+      "sha256": "2a3b696d6e31425e6696d81e6a7d308ab9d9ff25503385a5c8b26de5cee4b1b9"
+    },
+    {
+      "rows": 256,
+      "raw_bytes": 353642,
+      "archive_bytes": 27423,
+      "sha256": "304cf9e2617ccfcfcdf8e440a9c27aa8ca41942a78850df8006f8ac0442cfee7"
+    },
+    {
+      "rows": 256,
+      "raw_bytes": 353319,
+      "archive_bytes": 27473,
+      "sha256": "0a92a9dcc52ea38940479e71a154497325a6ccb1cc097db059ee0b2d159d5254"
+    }
+  ],
+  "concurrent_source_writes": "May change history hashes; scientific row identifiers are independently checked for deletion",
+  "before": {
+    "evidence": {
+      "count": 7371,
+      "sha256": "a5a9b80337ea45a4acd46cec72d8de544c7e91c9c1d0d84c765cd57d51992ee2"
+    },
+    "event": {
+      "count": 5,
+      "sha256": "ba2bf8e0d130aac9c993994706a5600abe775c93e15fe92756d47f991676ec97"
+    },
+    "trace": {
+      "count": 41560,
+      "sha256": "bfd00083f45d88a3ff7c9bea92b4026768d8c774ce64775386e19986faba30ce"
+    },
+    "condition": {
+      "count": 8,
+      "sha256": "78fcdffffa362fc119f95362026eb2f1fc0cc2e07bef2e9037cff11b2095c772"
+    },
+    "processing": {
+      "count": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "policy": {
+      "count": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "source": {
+      "count": 3,
+      "sha256": "7b3e9a4e013c4f6cc142c43a6f25867eec166bb1b3c00ac7ce7354f81dd9ced3"
+    },
+    "inspection_result": {
+      "count": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "inspection_plan": {
+      "count": 78,
+      "sha256": "bd06f0b29bf957a39eb5d3b85b87d7421877f2ffdee6284daf52c579b8c6477f"
+    }
+  },
+  "before_database_bytes": 172652211,
+  "before_inbox_logical_bytes": 6402711,
+  "archiving_s": 10.52879755899994,
+  "after": {
+    "evidence": {
+      "count": 7436,
+      "sha256": "68526b0521a8590765de41523c9062f6054496fcae1fdc4bea7fc7520a4d6f9c"
+    },
+    "event": {
+      "count": 5,
+      "sha256": "ba2bf8e0d130aac9c993994706a5600abe775c93e15fe92756d47f991676ec97"
+    },
+    "trace": {
+      "count": 41936,
+      "sha256": "f741ebcc75351f66d1ffd48af2d17b90c1226aaa41d6d1867a10c84cf533d26a"
+    },
+    "condition": {
+      "count": 8,
+      "sha256": "49d284eb9957355cada34a983de6ac432371bd29698997ccbfec5176a5648c13"
+    },
+    "processing": {
+      "count": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "policy": {
+      "count": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "source": {
+      "count": 3,
+      "sha256": "7b3e9a4e013c4f6cc142c43a6f25867eec166bb1b3c00ac7ce7354f81dd9ced3"
+    },
+    "inspection_result": {
+      "count": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "inspection_plan": {
+      "count": 79,
+      "sha256": "b34416d673997e9bb0d76445e1516c45609e0f17b5a02a38502b612bfec46601"
+    }
+  },
+  "after_database_bytes": 174257843,
+  "after_inbox_logical_bytes": 185364,
+  "retained_scientific_rows": 49056,
+  "deleted_scientific_rows": 0,
+  "recovered_samples": 20,
+  "duplicate_replays": [
+    {
+      "status": "duplicate",
+      "id": "mqtt-e4-public-18000-drum-thermometer-seq-0-delivery-0"
+    },
+    {
+      "status": "duplicate",
+      "id": "mqtt-e4-public-18000-drum-thermometer-seq-1-delivery-43"
+    },
+    {
+      "status": "duplicate",
+      "id": "mqtt-e4-public-18000-drum-thermometer-seq-2-delivery-73"
+    }
+  ],
+  "raw_bytes": 7044508,
+  "archive_bytes": 546593,
+  "archived_rows": 5120,
+  "status": "passed",
+  "limitations": [
+    "MVCC relation allocation may grow despite smaller logical payload; VACUUM FULL not run during live stress",
+    "SQL F1 trace/evidence growth remains and is included in projections",
+    "Archive directory is mandatory in backup/restore"
+  ]
+}

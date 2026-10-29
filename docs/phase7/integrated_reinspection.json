@@ -1,0 +1,11 @@
+{
+  "plan_id": "plan-f4298fe636b0c97a49c7ca79",
+  "viewpoint_id": "view-0596a0214be5723311629d4e",
+  "inspection_job_id": "simulation-73c3f1785966435187d2ea290b7bb956",
+  "replan_id": "plan-93cb5852814e72f580a6cbf0",
+  "status": "valid",
+  "regions": 2,
+  "coverage_records": 1,
+  "F1_severity": "amber",
+  "operator_scope": "Local software-test principal only; no human/physical commissioning evidence"
+}

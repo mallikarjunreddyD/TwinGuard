@@ -1,0 +1,74 @@
+{
+  "started_at": "2026-10-29T04:02:22.235283+00:00",
+  "scope": "Actual software browser/operator simulation and durable duplicate/restart test; no physical flight or human/site acceptance",
+  "duplicate_pubacks": [
+    {
+      "message_id": "simulation-73c3f1785966435187d2ea290b7bb956",
+      "observation_id": null,
+      "emitted_at": "2026-10-29T04:00:55.711437+00:00",
+      "puback_at": "2026-10-29T04:02:22.236607+00:00"
+    },
+    {
+      "message_id": "simulation-73c3f1785966435187d2ea290b7bb956",
+      "observation_id": null,
+      "emitted_at": "2026-10-29T04:00:55.711437+00:00",
+      "puback_at": "2026-10-29T04:02:22.236966+00:00"
+    }
+  ],
+  "event_ids_before": [
+    "event-40f5171a8f90c2e4e865",
+    "event-746e40fdc25b3a1b9035",
+    "event-af8348b67644ee8ac72c",
+    "event-b730354d794b71bd189c",
+    "event-be42c1ddd57910101a70",
+    "event-e4f8a99f0a5c3de77ca9",
+    "monitoring-0240720105815e4135f5",
+    "monitoring-51e348077e8ff1415175",
+    "monitoring-e6f32ee882649d464292"
+  ],
+  "event_ids_after": [
+    "event-40f5171a8f90c2e4e865",
+    "event-746e40fdc25b3a1b9035",
+    "event-af8348b67644ee8ac72c",
+    "event-b730354d794b71bd189c",
+    "event-be42c1ddd57910101a70",
+    "event-e4f8a99f0a5c3de77ca9",
+    "monitoring-0240720105815e4135f5",
+    "monitoring-51e348077e8ff1415175",
+    "monitoring-e6f32ee882649d464292"
+  ],
+  "no_duplicate_event_open": true,
+  "inspection_job_rows": 1,
+  "duplicate_audit_count": 2,
+  "browser": {
+    "errors": [],
+    "checks": {
+      "model_loaded": true,
+      "actual_assets": true,
+      "asset_selection": true,
+      "stored_trend_chart": true,
+      "inspection_selection": true,
+      "thermal_image": true,
+      "geometric_measurement": true,
+      "monitoring_view": true,
+      "evidence_trace": true,
+      "red_advisory": true,
+      "acknowledgment": true,
+      "stream_reconnect": true
+    },
+    "screenshots": [
+      "E4-7_dashboard.png"
+    ],
+    "started_wall_s": 1793246559.7866628,
+    "browser_last_delivery_wall_s": 1793246595.0590441,
+    "external_requests": [],
+    "render_metrics": {
+      "dom": 464,
+      "heap": 64000000,
+      "stream": 5800
+    },
+    "finished_wall_s": 1793246595.142706
+  },
+  "status": "passed",
+  "finished_at": "2026-10-29T04:03:25.470618+00:00"
+}

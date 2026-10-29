@@ -1,0 +1,697 @@
+{
+  "status": "completed",
+  "completed": 90,
+  "expected": 90,
+  "groups": {
+    "independent_occluder / B3.1 / P0": {
+      "trials": 30,
+      "views": 60,
+      "initial_public_unconfirmed": 0,
+      "initial_localized": 30,
+      "new_localized": 15,
+      "healthy_fp": 0,
+      "inconclusive": 42,
+      "scope_actually_qualified": 0,
+      "continued_monitoring": 0,
+      "new_qualified_area_m2": 9.63990193053907,
+      "mission_proxy_s": 629.6934633460605,
+      "new_localized_recall": {
+        "estimate": 0.5,
+        "cluster_seeds": 30,
+        "bootstrap_replicates": 2000,
+        "ci95": [
+          0.3333333333333333,
+          0.6666666666666666
+        ]
+      },
+      "controller_cpu_s": 42.61089593199984,
+      "peak_rss_kib": 730280
+    },
+    "independent_occluder / B3.1 / P1": {
+      "trials": 30,
+      "views": 60,
+      "initial_public_unconfirmed": 0,
+      "initial_localized": 30,
+      "new_localized": 28,
+      "healthy_fp": 0,
+      "inconclusive": 8,
+      "scope_actually_qualified": 0,
+      "continued_monitoring": 0,
+      "new_qualified_area_m2": 32.171456046646654,
+      "mission_proxy_s": 688.5963138166849,
+      "new_localized_recall": {
+        "estimate": 0.9333333333333333,
+        "cluster_seeds": 30,
+        "bootstrap_replicates": 2000,
+        "ci95": [
+          0.8333333333333334,
+          1.0
+        ]
+      },
+      "controller_cpu_s": 63.882527447999955,
+      "peak_rss_kib": 730280
+    },
+    "independent_occluder / B3.1 / P2": {
+      "trials": 30,
+      "views": 60,
+      "initial_public_unconfirmed": 0,
+      "initial_localized": 30,
+      "new_localized": 15,
+      "healthy_fp": 0,
+      "inconclusive": 42,
+      "scope_actually_qualified": 0,
+      "continued_monitoring": 0,
+      "new_qualified_area_m2": 9.63990193053907,
+      "mission_proxy_s": 629.6934633460605,
+      "new_localized_recall": {
+        "estimate": 0.5,
+        "cluster_seeds": 30,
+        "bootstrap_replicates": 2000,
+        "ci95": [
+          0.3333333333333333,
+          0.6666666666666666
+        ]
+      },
+      "controller_cpu_s": 31.57116602099991,
+      "peak_rss_kib": 730280
+    },
+    "independent_occluder / B3.1 / P3": {
+      "trials": 30,
+      "views": 60,
+      "initial_public_unconfirmed": 0,
+      "initial_localized": 30,
+      "new_localized": 27,
+      "healthy_fp": 0,
+      "inconclusive": 8,
+      "scope_actually_qualified": 0,
+      "continued_monitoring": 0,
+      "new_qualified_area_m2": 30.65724114014262,
+      "mission_proxy_s": 678.6155630271923,
+      "new_localized_recall": {
+        "estimate": 0.9,
+        "cluster_seeds": 30,
+        "bootstrap_replicates": 2000,
+        "ci95": [
+          0.7666666666666667,
+          1.0
+        ]
+      },
+      "controller_cpu_s": 57.962572481000215,
+      "peak_rss_kib": 730280
+    },
+    "independent_occluder / B3.1 / P3v2": {
+      "trials": 30,
+      "views": 0,
+      "initial_public_unconfirmed": 0,
+      "initial_localized": 30,
+      "new_localized": 0,
+      "healthy_fp": 0,
+      "inconclusive": 0,
+      "scope_actually_qualified": 0,
+      "continued_monitoring": 0,
+      "new_qualified_area_m2": 0.0,
+      "mission_proxy_s": 0.0,
+      "new_localized_recall": {
+        "estimate": 0.0,
+        "cluster_seeds": 30,
+        "bootstrap_replicates": 2000,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "controller_cpu_s": 18.77469381700001,
+      "peak_rss_kib": 730280
+    },
+    "independent_occluder / B3.2 / P0": {
+      "trials": 30,
+      "views": 60,
+      "initial_public_unconfirmed": 30,
+      "initial_localized": 0,
+      "new_localized": 13,
+      "healthy_fp": 0,
+      "inconclusive": 45,
+      "scope_actually_qualified": 0,
+      "continued_monitoring": 0,
+      "new_qualified_area_m2": 16.236411242630833,
+      "mission_proxy_s": 629.6934633460605,
+      "new_localized_recall": {
+        "estimate": 0.43333333333333335,
+        "cluster_seeds": 30,
+        "bootstrap_replicates": 2000,
+        "ci95": [
+          0.26666666666666666,
+          0.6
+        ]
+      },
+      "controller_cpu_s": 29.886009990999877,
+      "peak_rss_kib": 730280
+    },
+    "independent_occluder / B3.2 / P1": {
+      "trials": 30,
+      "views": 60,
+      "initial_public_unconfirmed": 30,
+      "initial_localized": 0,
+      "new_localized": 0,
+      "healthy_fp": 0,
+      "inconclusive": 60,
+      "scope_actually_qualified": 0,
+      "continued_monitoring": 0,
+      "new_qualified_area_m2": 0.0,
+      "mission_proxy_s": 688.5963138166849,
+      "new_localized_recall": {
+        "estimate": 0.0,
+        "cluster_seeds": 30,
+        "bootstrap_replicates": 2000,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "controller_cpu_s": 23.607909732000053,
+      "peak_rss_kib": 730280
+    },
+    "independent_occluder / B3.2 / P2": {
+      "trials": 30,
+      "views": 60,
+      "initial_public_unconfirmed": 30,
+      "initial_localized": 0,
+      "new_localized": 13,
+      "healthy_fp": 0,
+      "inconclusive": 45,
+      "scope_actually_qualified": 0,
+      "continued_monitoring": 0,
+      "new_qualified_area_m2": 16.236411242630833,
+      "mission_proxy_s": 629.6934633460605,
+      "new_localized_recall": {
+        "estimate": 0.43333333333333335,
+        "cluster_seeds": 30,
+        "bootstrap_replicates": 2000,
+        "ci95": [
+          0.26666666666666666,
+          0.6
+        ]
+      },
+      "controller_cpu_s": 29.64023504000001,
+      "peak_rss_kib": 730280
+    },
+    "independent_occluder / B3.2 / P3": {
+      "trials": 30,
+      "views": 60,
+      "initial_public_unconfirmed": 30,
+      "initial_localized": 0,
+      "new_localized": 16,
+      "healthy_fp": 0,
+      "inconclusive": 40,
+      "scope_actually_qualified": 0,
+      "continued_monitoring": 0,
+      "new_qualified_area_m2": 12.647320144239844,
+      "mission_proxy_s": 669.8824060863861,
+      "new_localized_recall": {
+        "estimate": 0.5333333333333333,
+        "cluster_seeds": 30,
+        "bootstrap_replicates": 2000,
+        "ci95": [
+          0.3333333333333333,
+          0.7
+        ]
+      },
+      "controller_cpu_s": 41.938468718000266,
+      "peak_rss_kib": 730280
+    },
+    "independent_occluder / B3.2 / P3v2": {
+      "trials": 30,
+      "views": 7,
+      "initial_public_unconfirmed": 30,
+      "initial_localized": 0,
+      "new_localized": 2,
+      "healthy_fp": 0,
+      "inconclusive": 5,
+      "scope_actually_qualified": 0,
+      "continued_monitoring": 0,
+      "new_qualified_area_m2": 1.0705131154300207,
+      "mission_proxy_s": 86.89002219411454,
+      "new_localized_recall": {
+        "estimate": 0.06666666666666667,
+        "cluster_seeds": 30,
+        "bootstrap_replicates": 2000,
+        "ci95": [
+          0.0,
+          0.16666666666666666
+        ]
+      },
+      "controller_cpu_s": 29.260297931000174,
+      "peak_rss_kib": 730280
+    },
+    "missed_left / B3.1 / P0": {
+      "trials": 30,
+      "views": 60,
+      "initial_public_unconfirmed": 30,
+      "initial_localized": 0,
+      "new_localized": 30,
+      "healthy_fp": 0,
+      "inconclusive": 11,
+      "scope_actually_qualified": 0,
+      "continued_monitoring": 0,
+      "new_qualified_area_m2": 69.82244546867952,
+      "mission_proxy_s": 669.3560113667602,
+      "new_localized_recall": {
+        "estimate": 1.0,
+        "cluster_seeds": 30,
+        "bootstrap_replicates": 2000,
+        "ci95": [
+          1.0,
+          1.0
+        ]
+      },
+      "controller_cpu_s": 62.54496979200006,
+      "peak_rss_kib": 737388
+    },
+    "missed_left / B3.1 / P1": {
+      "trials": 30,
+      "views": 60,
+      "initial_public_unconfirmed": 30,
+      "initial_localized": 0,
+      "new_localized": 28,
+      "healthy_fp": 0,
+      "inconclusive": 1,
+      "scope_actually_qualified": 0,
+      "continued_monitoring": 0,
+      "new_qualified_area_m2": 62.845812482820165,
+      "mission_proxy_s": 637.1638764914718,
+      "new_localized_recall": {
+        "estimate": 0.9333333333333333,
+        "cluster_seeds": 30,
+        "bootstrap_replicates": 2000,
+        "ci95": [
+          0.8333333333333334,
+          1.0
+        ]
+      },
+      "controller_cpu_s": 69.00541515699993,
+      "peak_rss_kib": 737388
+    },
+    "missed_left / B3.1 / P2": {
+      "trials": 30,
+      "views": 60,
+      "initial_public_unconfirmed": 30,
+      "initial_localized": 0,
+      "new_localized": 30,
+      "healthy_fp": 0,
+      "inconclusive": 11,
+      "scope_actually_qualified": 0,
+      "continued_monitoring": 0,
+      "new_qualified_area_m2": 69.82244546867952,
+      "mission_proxy_s": 669.3560113667602,
+      "new_localized_recall": {
+        "estimate": 1.0,
+        "cluster_seeds": 30,
+        "bootstrap_replicates": 2000,
+        "ci95": [
+          1.0,
+          1.0
+        ]
+      },
+      "controller_cpu_s": 51.68956905699994,
+      "peak_rss_kib": 737388
+    },
+    "missed_left / B3.1 / P3": {
+      "trials": 30,
+      "views": 60,
+      "initial_public_unconfirmed": 30,
+      "initial_localized": 0,
+      "new_localized": 28,
+      "healthy_fp": 0,
+      "inconclusive": 1,
+      "scope_actually_qualified": 0,
+      "continued_monitoring": 0,
+      "new_qualified_area_m2": 63.1281828202783,
+      "mission_proxy_s": 634.1789745446429,
+      "new_localized_recall": {
+        "estimate": 0.9333333333333333,
+        "cluster_seeds": 30,
+        "bootstrap_replicates": 2000,
+        "ci95": [
+          0.8333333333333334,
+          1.0
+        ]
+      },
+      "controller_cpu_s": 62.1586899229999,
+      "peak_rss_kib": 737388
+    },
+    "missed_left / B3.1 / P3v2": {
+      "trials": 30,
+      "views": 30,
+      "initial_public_unconfirmed": 30,
+      "initial_localized": 0,
+      "new_localized": 28,
+      "healthy_fp": 0,
+      "inconclusive": 0,
+      "scope_actually_qualified": 0,
+      "continued_monitoring": 0,
+      "new_qualified_area_m2": 38.6538397485355,
+      "mission_proxy_s": 374.4545651412655,
+      "new_localized_recall": {
+        "estimate": 0.9333333333333333,
+        "cluster_seeds": 30,
+        "bootstrap_replicates": 2000,
+        "ci95": [
+          0.8333333333333334,
+          1.0
+        ]
+      },
+      "controller_cpu_s": 62.02620104199988,
+      "peak_rss_kib": 737388
+    },
+    "missed_left / B3.2 / P0": {
+      "trials": 30,
+      "views": 60,
+      "initial_public_unconfirmed": 30,
+      "initial_localized": 0,
+      "new_localized": 25,
+      "healthy_fp": 0,
+      "inconclusive": 30,
+      "scope_actually_qualified": 0,
+      "continued_monitoring": 0,
+      "new_qualified_area_m2": 52.75561733736147,
+      "mission_proxy_s": 669.3560113667602,
+      "new_localized_recall": {
+        "estimate": 0.8333333333333334,
+        "cluster_seeds": 30,
+        "bootstrap_replicates": 2000,
+        "ci95": [
+          0.7,
+          0.9666666666666667
+        ]
+      },
+      "controller_cpu_s": 39.60456501600002,
+      "peak_rss_kib": 737388
+    },
+    "missed_left / B3.2 / P1": {
+      "trials": 30,
+      "views": 60,
+      "initial_public_unconfirmed": 30,
+      "initial_localized": 0,
+      "new_localized": 7,
+      "healthy_fp": 0,
+      "inconclusive": 23,
+      "scope_actually_qualified": 0,
+      "continued_monitoring": 0,
+      "new_qualified_area_m2": 16.715088968860325,
+      "mission_proxy_s": 637.1638764914718,
+      "new_localized_recall": {
+        "estimate": 0.23333333333333334,
+        "cluster_seeds": 30,
+        "bootstrap_replicates": 2000,
+        "ci95": [
+          0.1,
+          0.4
+        ]
+      },
+      "controller_cpu_s": 54.34347193800021,
+      "peak_rss_kib": 737388
+    },
+    "missed_left / B3.2 / P2": {
+      "trials": 30,
+      "views": 60,
+      "initial_public_unconfirmed": 30,
+      "initial_localized": 0,
+      "new_localized": 25,
+      "healthy_fp": 0,
+      "inconclusive": 30,
+      "scope_actually_qualified": 0,
+      "continued_monitoring": 0,
+      "new_qualified_area_m2": 52.75561733736147,
+      "mission_proxy_s": 669.3560113667602,
+      "new_localized_recall": {
+        "estimate": 0.8333333333333334,
+        "cluster_seeds": 30,
+        "bootstrap_replicates": 2000,
+        "ci95": [
+          0.7,
+          0.9666666666666667
+        ]
+      },
+      "controller_cpu_s": 41.10538666299998,
+      "peak_rss_kib": 737388
+    },
+    "missed_left / B3.2 / P3": {
+      "trials": 30,
+      "views": 60,
+      "initial_public_unconfirmed": 30,
+      "initial_localized": 0,
+      "new_localized": 3,
+      "healthy_fp": 0,
+      "inconclusive": 31,
+      "scope_actually_qualified": 0,
+      "continued_monitoring": 0,
+      "new_qualified_area_m2": 13.49853459755543,
+      "mission_proxy_s": 626.7167196775706,
+      "new_localized_recall": {
+        "estimate": 0.1,
+        "cluster_seeds": 30,
+        "bootstrap_replicates": 2000,
+        "ci95": [
+          0.0,
+          0.2
+        ]
+      },
+      "controller_cpu_s": 51.242833474,
+      "peak_rss_kib": 737388
+    },
+    "missed_left / B3.2 / P3v2": {
+      "trials": 30,
+      "views": 40,
+      "initial_public_unconfirmed": 30,
+      "initial_localized": 0,
+      "new_localized": 10,
+      "healthy_fp": 0,
+      "inconclusive": 9,
+      "scope_actually_qualified": 0,
+      "continued_monitoring": 0,
+      "new_qualified_area_m2": 16.99914522630826,
+      "mission_proxy_s": 472.97942052129827,
+      "new_localized_recall": {
+        "estimate": 0.3333333333333333,
+        "cluster_seeds": 30,
+        "bootstrap_replicates": 2000,
+        "ci95": [
+          0.16666666666666666,
+          0.5
+        ]
+      },
+      "controller_cpu_s": 65.14958287499982,
+      "peak_rss_kib": 737388
+    },
+    "sufficient_scope / B3.1 / P0": {
+      "trials": 30,
+      "views": 60,
+      "initial_public_unconfirmed": 30,
+      "initial_localized": 0,
+      "new_localized": 0,
+      "healthy_fp": 12,
+      "inconclusive": 17,
+      "scope_actually_qualified": 21,
+      "continued_monitoring": 0,
+      "new_qualified_area_m2": 13.206359000689886,
+      "mission_proxy_s": 669.3560113667602,
+      "new_localized_recall": {
+        "estimate": null,
+        "cluster_seeds": 30,
+        "bootstrap_replicates": 2000,
+        "ci95": null
+      },
+      "controller_cpu_s": 61.67294394199994,
+      "peak_rss_kib": 737388
+    },
+    "sufficient_scope / B3.1 / P1": {
+      "trials": 30,
+      "views": 60,
+      "initial_public_unconfirmed": 30,
+      "initial_localized": 0,
+      "new_localized": 0,
+      "healthy_fp": 7,
+      "inconclusive": 3,
+      "scope_actually_qualified": 21,
+      "continued_monitoring": 0,
+      "new_qualified_area_m2": 24.560318824438877,
+      "mission_proxy_s": 638.2709804875631,
+      "new_localized_recall": {
+        "estimate": null,
+        "cluster_seeds": 30,
+        "bootstrap_replicates": 2000,
+        "ci95": null
+      },
+      "controller_cpu_s": 68.69179140200022,
+      "peak_rss_kib": 737388
+    },
+    "sufficient_scope / B3.1 / P2": {
+      "trials": 30,
+      "views": 60,
+      "initial_public_unconfirmed": 30,
+      "initial_localized": 0,
+      "new_localized": 0,
+      "healthy_fp": 12,
+      "inconclusive": 17,
+      "scope_actually_qualified": 21,
+      "continued_monitoring": 0,
+      "new_qualified_area_m2": 13.206359000689886,
+      "mission_proxy_s": 669.3560113667602,
+      "new_localized_recall": {
+        "estimate": null,
+        "cluster_seeds": 30,
+        "bootstrap_replicates": 2000,
+        "ci95": null
+      },
+      "controller_cpu_s": 51.133319405000115,
+      "peak_rss_kib": 737388
+    },
+    "sufficient_scope / B3.1 / P3": {
+      "trials": 30,
+      "views": 60,
+      "initial_public_unconfirmed": 30,
+      "initial_localized": 0,
+      "new_localized": 0,
+      "healthy_fp": 15,
+      "inconclusive": 0,
+      "scope_actually_qualified": 21,
+      "continued_monitoring": 0,
+      "new_qualified_area_m2": 14.957271690575874,
+      "mission_proxy_s": 537.390121549236,
+      "new_localized_recall": {
+        "estimate": null,
+        "cluster_seeds": 30,
+        "bootstrap_replicates": 2000,
+        "ci95": null
+      },
+      "controller_cpu_s": 72.239342931,
+      "peak_rss_kib": 737388
+    },
+    "sufficient_scope / B3.1 / P3v2": {
+      "trials": 30,
+      "views": 0,
+      "initial_public_unconfirmed": 30,
+      "initial_localized": 0,
+      "new_localized": 0,
+      "healthy_fp": 0,
+      "inconclusive": 0,
+      "scope_actually_qualified": 21,
+      "continued_monitoring": 23,
+      "new_qualified_area_m2": 0.0,
+      "mission_proxy_s": 0.0,
+      "new_localized_recall": {
+        "estimate": null,
+        "cluster_seeds": 30,
+        "bootstrap_replicates": 2000,
+        "ci95": null
+      },
+      "controller_cpu_s": 16.35615836100004,
+      "peak_rss_kib": 737388
+    },
+    "sufficient_scope / B3.2 / P0": {
+      "trials": 30,
+      "views": 60,
+      "initial_public_unconfirmed": 30,
+      "initial_localized": 0,
+      "new_localized": 0,
+      "healthy_fp": 5,
+      "inconclusive": 30,
+      "scope_actually_qualified": 26,
+      "continued_monitoring": 0,
+      "new_qualified_area_m2": 7.6345923863412395,
+      "mission_proxy_s": 669.3560113667602,
+      "new_localized_recall": {
+        "estimate": null,
+        "cluster_seeds": 30,
+        "bootstrap_replicates": 2000,
+        "ci95": null
+      },
+      "controller_cpu_s": 40.869867642,
+      "peak_rss_kib": 737388
+    },
+    "sufficient_scope / B3.2 / P1": {
+      "trials": 30,
+      "views": 60,
+      "initial_public_unconfirmed": 30,
+      "initial_localized": 0,
+      "new_localized": 0,
+      "healthy_fp": 4,
+      "inconclusive": 24,
+      "scope_actually_qualified": 26,
+      "continued_monitoring": 0,
+      "new_qualified_area_m2": 8.593234566252322,
+      "mission_proxy_s": 634.687511823709,
+      "new_localized_recall": {
+        "estimate": null,
+        "cluster_seeds": 30,
+        "bootstrap_replicates": 2000,
+        "ci95": null
+      },
+      "controller_cpu_s": 52.277915004999926,
+      "peak_rss_kib": 737388
+    },
+    "sufficient_scope / B3.2 / P2": {
+      "trials": 30,
+      "views": 60,
+      "initial_public_unconfirmed": 30,
+      "initial_localized": 0,
+      "new_localized": 0,
+      "healthy_fp": 5,
+      "inconclusive": 30,
+      "scope_actually_qualified": 26,
+      "continued_monitoring": 0,
+      "new_qualified_area_m2": 7.6345923863412395,
+      "mission_proxy_s": 669.3560113667602,
+      "new_localized_recall": {
+        "estimate": null,
+        "cluster_seeds": 30,
+        "bootstrap_replicates": 2000,
+        "ci95": null
+      },
+      "controller_cpu_s": 40.93026802799983,
+      "peak_rss_kib": 737388
+    },
+    "sufficient_scope / B3.2 / P3": {
+      "trials": 30,
+      "views": 60,
+      "initial_public_unconfirmed": 30,
+      "initial_localized": 0,
+      "new_localized": 0,
+      "healthy_fp": 7,
+      "inconclusive": 7,
+      "scope_actually_qualified": 26,
+      "continued_monitoring": 0,
+      "new_qualified_area_m2": 11.688779089946745,
+      "mission_proxy_s": 537.390121549236,
+      "new_localized_recall": {
+        "estimate": null,
+        "cluster_seeds": 30,
+        "bootstrap_replicates": 2000,
+        "ci95": null
+      },
+      "controller_cpu_s": 60.60176231300009,
+      "peak_rss_kib": 737388
+    },
+    "sufficient_scope / B3.2 / P3v2": {
+      "trials": 30,
+      "views": 0,
+      "initial_public_unconfirmed": 30,
+      "initial_localized": 0,
+      "new_localized": 0,
+      "healthy_fp": 0,
+      "inconclusive": 0,
+      "scope_actually_qualified": 26,
+      "continued_monitoring": 29,
+      "new_qualified_area_m2": 0.0,
+      "mission_proxy_s": 0.0,
+      "new_localized_recall": {
+        "estimate": null,
+        "cluster_seeds": 30,
+        "bootstrap_replicates": 2000,
+        "ci95": null
+      },
+      "controller_cpu_s": 16.429845470999883,
+      "peak_rss_kib": 737388
+    }
+  }
+}

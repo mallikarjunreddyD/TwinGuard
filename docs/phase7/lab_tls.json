@@ -1,0 +1,23 @@
+{
+  "scope": "Fresh two-day self-signed laboratory CA only; no approved site CA, identity commissioning or trusted clock claim",
+  "results": {
+    "https_ca_verified_status": 200,
+    "https_untrusted_ca_rejected": true,
+    "mqtt_tls_verified_connection": [
+      "Success"
+    ],
+    "opcua": {
+      "encrypted_read": {
+        "value_present": true,
+        "source_timestamp_present": true,
+        "policy": "Basic256Sha256 SignAndEncrypt",
+        "server_certificate_pinned": true
+      },
+      "write_rejected": true,
+      "write_status": "User does not have permission to perform the requested operation.(BadUserAccessDenied)",
+      "unencrypted_rejected": true,
+      "unencrypted_error": "UaError"
+    }
+  },
+  "status": "executed"
+}

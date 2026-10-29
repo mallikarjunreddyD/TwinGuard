@@ -1,0 +1,9 @@
+{
+  "critical_states": {
+    "current": 187
+  },
+  "critical_readings": 187,
+  "heavy_intervals": [],
+  "critical_processing_overlaps": 0,
+  "scope": "Actual processing interval overlap, not nominal task submission"
+}

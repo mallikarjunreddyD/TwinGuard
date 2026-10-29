@@ -1,0 +1,1677 @@
+{
+  "campaign": "/mnt/d/TwinGuard/phase7-V4-mixed-boundary-retest-v3",
+  "status": "executed",
+  "started_at": "2026-10-29T05:04:12.478734+00:00",
+  "finished_at": "2026-10-29T05:13:08.122457+00:00",
+  "critical_expected_published": 184,
+  "critical_states": {
+    "current": 145,
+    "stale": 39
+  },
+  "receipt_to_advisory_s": {
+    "n": 184,
+    "p50": 4.506629586219788,
+    "p95": 11.20523371696472,
+    "p99": 12.064834721088406,
+    "max": 12.424323081970215
+  },
+  "critical_rows": [
+    {
+      "observation_id": "e4-public-18610-pressure-01-seq-30",
+      "publisher_emitted_at": "2026-10-29T05:05:21.420676+00:00",
+      "mapped_acquired_at": "2026-10-29T05:05:17.832732+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 0.2212538719177246,
+      "mapped_acquisition_to_advisory_s": 3.90899395942688,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18610-pressure-01-seq-31",
+      "publisher_emitted_at": "2026-10-29T05:05:21.518905+00:00",
+      "mapped_acquired_at": "2026-10-29T05:05:17.932349+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 0.341339111328125,
+      "mapped_acquisition_to_advisory_s": 3.9701480865478516,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18610-pressure-01-seq-32",
+      "publisher_emitted_at": "2026-10-29T05:05:21.617646+00:00",
+      "mapped_acquired_at": "2026-10-29T05:05:18.031116+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 0.44013404846191406,
+      "mapped_acquisition_to_advisory_s": 4.029155015945435,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18610-pressure-01-seq-33",
+      "publisher_emitted_at": "2026-10-29T05:05:21.717966+00:00",
+      "mapped_acquired_at": "2026-10-29T05:05:18.131459+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 0.49343395233154297,
+      "mapped_acquisition_to_advisory_s": 4.082457065582275,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18610-pressure-01-seq-34",
+      "publisher_emitted_at": "2026-10-29T05:05:21.819427+00:00",
+      "mapped_acquired_at": "2026-10-29T05:05:18.231405+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 0.5494198799133301,
+      "mapped_acquisition_to_advisory_s": 4.156400918960571,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18610-pressure-01-seq-35",
+      "publisher_emitted_at": "2026-10-29T05:05:21.918932+00:00",
+      "mapped_acquired_at": "2026-10-29T05:05:18.332074+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 0.6049749851226807,
+      "mapped_acquisition_to_advisory_s": 4.21594500541687,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18610-pressure-01-seq-36",
+      "publisher_emitted_at": "2026-10-29T05:05:22.019752+00:00",
+      "mapped_acquired_at": "2026-10-29T05:05:18.432626+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 0.604647159576416,
+      "mapped_acquisition_to_advisory_s": 4.267214059829712,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18610-pressure-01-seq-37",
+      "publisher_emitted_at": "2026-10-29T05:05:22.117522+00:00",
+      "mapped_acquired_at": "2026-10-29T05:05:18.530990+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 0.7383449077606201,
+      "mapped_acquisition_to_advisory_s": 4.326918125152588,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18610-pressure-01-seq-38",
+      "publisher_emitted_at": "2026-10-29T05:05:22.218784+00:00",
+      "mapped_acquired_at": "2026-10-29T05:05:18.631370+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 0.7644221782684326,
+      "mapped_acquisition_to_advisory_s": 4.388926029205322,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18610-pressure-01-seq-39",
+      "publisher_emitted_at": "2026-10-29T05:05:22.318481+00:00",
+      "mapped_acquired_at": "2026-10-29T05:05:18.731948+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 0.8354640007019043,
+      "mapped_acquisition_to_advisory_s": 4.439716100692749,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18610-pressure-01-seq-40",
+      "publisher_emitted_at": "2026-10-29T05:05:22.420842+00:00",
+      "mapped_acquired_at": "2026-10-29T05:05:18.832571+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 0.7925891876220703,
+      "mapped_acquisition_to_advisory_s": 4.4997100830078125,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18610-pressure-01-seq-41",
+      "publisher_emitted_at": "2026-10-29T05:05:22.517707+00:00",
+      "mapped_acquired_at": "2026-10-29T05:05:18.931187+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 1.0205271244049072,
+      "mapped_acquisition_to_advisory_s": 4.6790452003479,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18610-pressure-01-seq-42",
+      "publisher_emitted_at": "2026-10-29T05:05:22.620151+00:00",
+      "mapped_acquired_at": "2026-10-29T05:05:19.032451+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 1.082916021347046,
+      "mapped_acquisition_to_advisory_s": 4.744034051895142,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18610-pressure-01-seq-43",
+      "publisher_emitted_at": "2026-10-29T05:05:22.717628+00:00",
+      "mapped_acquired_at": "2026-10-29T05:05:19.131096+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 1.2468740940093994,
+      "mapped_acquisition_to_advisory_s": 4.8351781368255615,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18610-pressure-01-seq-44",
+      "publisher_emitted_at": "2026-10-29T05:05:22.821862+00:00",
+      "mapped_acquired_at": "2026-10-29T05:05:19.232738+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 1.2686219215393066,
+      "mapped_acquisition_to_advisory_s": 4.913893938064575,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18610-pressure-01-seq-45",
+      "publisher_emitted_at": "2026-10-29T05:05:22.919153+00:00",
+      "mapped_acquired_at": "2026-10-29T05:05:19.331827+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 1.3473548889160156,
+      "mapped_acquisition_to_advisory_s": 4.977334022521973,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18610-pressure-01-seq-46",
+      "publisher_emitted_at": "2026-10-29T05:05:23.020372+00:00",
+      "mapped_acquired_at": "2026-10-29T05:05:19.432857+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 1.4117851257324219,
+      "mapped_acquisition_to_advisory_s": 5.049910068511963,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18610-pressure-01-seq-47",
+      "publisher_emitted_at": "2026-10-29T05:05:23.118138+00:00",
+      "mapped_acquired_at": "2026-10-29T05:05:19.531597+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 1.538071870803833,
+      "mapped_acquisition_to_advisory_s": 5.126625061035156,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18610-pressure-01-seq-48",
+      "publisher_emitted_at": "2026-10-29T05:05:23.219188+00:00",
+      "mapped_acquired_at": "2026-10-29T05:05:19.632446+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 1.6620948314666748,
+      "mapped_acquisition_to_advisory_s": 5.2692248821258545,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18610-pressure-01-seq-49",
+      "publisher_emitted_at": "2026-10-29T05:05:23.317735+00:00",
+      "mapped_acquired_at": "2026-10-29T05:05:19.731208+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 1.819476842880249,
+      "mapped_acquisition_to_advisory_s": 5.408214807510376,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18610-pressure-01-seq-50",
+      "publisher_emitted_at": "2026-10-29T05:05:23.420008+00:00",
+      "mapped_acquired_at": "2026-10-29T05:05:19.832658+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 1.794947862625122,
+      "mapped_acquisition_to_advisory_s": 5.498318910598755,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18610-pressure-01-seq-51",
+      "publisher_emitted_at": "2026-10-29T05:05:23.518669+00:00",
+      "mapped_acquired_at": "2026-10-29T05:05:19.932130+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 1.9272708892822266,
+      "mapped_acquisition_to_advisory_s": 5.574237823486328,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18610-pressure-01-seq-52",
+      "publisher_emitted_at": "2026-10-29T05:05:23.620031+00:00",
+      "mapped_acquired_at": "2026-10-29T05:05:20.032724+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 2.4593300819396973,
+      "mapped_acquisition_to_advisory_s": 6.0869481563568115,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18610-pressure-01-seq-53",
+      "publisher_emitted_at": "2026-10-29T05:05:23.718741+00:00",
+      "mapped_acquired_at": "2026-10-29T05:05:20.132207+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 2.5915749073028564,
+      "mapped_acquisition_to_advisory_s": 6.180145025253296,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18610-pressure-01-seq-54",
+      "publisher_emitted_at": "2026-10-29T05:05:23.818420+00:00",
+      "mapped_acquired_at": "2026-10-29T05:05:20.231381+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 2.647463083267212,
+      "mapped_acquisition_to_advisory_s": 6.25493311882019,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18610-pressure-01-seq-55",
+      "publisher_emitted_at": "2026-10-29T05:05:23.918537+00:00",
+      "mapped_acquired_at": "2026-10-29T05:05:20.331124+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 2.7522339820861816,
+      "mapped_acquisition_to_advisory_s": 6.358661890029907,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18610-pressure-01-seq-56",
+      "publisher_emitted_at": "2026-10-29T05:05:24.020953+00:00",
+      "mapped_acquired_at": "2026-10-29T05:05:20.432861+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 2.819261074066162,
+      "mapped_acquisition_to_advisory_s": 6.4678449630737305,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18610-pressure-01-seq-57",
+      "publisher_emitted_at": "2026-10-29T05:05:24.117489+00:00",
+      "mapped_acquired_at": "2026-10-29T05:05:20.530953+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 2.98038387298584,
+      "mapped_acquisition_to_advisory_s": 6.569000005722046,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18610-pressure-01-seq-58",
+      "publisher_emitted_at": "2026-10-29T05:05:24.217750+00:00",
+      "mapped_acquired_at": "2026-10-29T05:05:20.631090+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 3.3416178226470947,
+      "mapped_acquisition_to_advisory_s": 6.930670976638794,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18610-pressure-01-seq-59",
+      "publisher_emitted_at": "2026-10-29T05:05:24.319349+00:00",
+      "mapped_acquired_at": "2026-10-29T05:05:20.732765+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 3.4317409992218018,
+      "mapped_acquisition_to_advisory_s": 7.02051305770874,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18610-pressure-01-seq-60",
+      "publisher_emitted_at": "2026-10-29T05:05:24.424923+00:00",
+      "mapped_acquired_at": "2026-10-29T05:05:20.832499+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 3.453187942504883,
+      "mapped_acquisition_to_advisory_s": 7.252717971801758,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18610-pressure-01-seq-61",
+      "publisher_emitted_at": "2026-10-29T05:05:24.518863+00:00",
+      "mapped_acquired_at": "2026-10-29T05:05:20.932333+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 3.632694959640503,
+      "mapped_acquisition_to_advisory_s": 7.3516459465026855,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18610-pressure-01-seq-62",
+      "publisher_emitted_at": "2026-10-29T05:05:24.618305+00:00",
+      "mapped_acquired_at": "2026-10-29T05:05:21.031025+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 3.80078387260437,
+      "mapped_acquisition_to_advisory_s": 7.458925008773804,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18610-pressure-01-seq-63",
+      "publisher_emitted_at": "2026-10-29T05:05:24.719208+00:00",
+      "mapped_acquired_at": "2026-10-29T05:05:21.132279+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 3.9208271503448486,
+      "mapped_acquisition_to_advisory_s": 7.5548131465911865,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18610-pressure-01-seq-64",
+      "publisher_emitted_at": "2026-10-29T05:05:24.818334+00:00",
+      "mapped_acquired_at": "2026-10-29T05:05:21.231000+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 4.036082983016968,
+      "mapped_acquisition_to_advisory_s": 7.642462968826294,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18610-pressure-01-seq-65",
+      "publisher_emitted_at": "2026-10-29T05:05:24.917885+00:00",
+      "mapped_acquired_at": "2026-10-29T05:05:21.331360+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 4.139601945877075,
+      "mapped_acquisition_to_advisory_s": 7.728606939315796,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18610-pressure-01-seq-66",
+      "publisher_emitted_at": "2026-10-29T05:05:25.020609+00:00",
+      "mapped_acquired_at": "2026-10-29T05:05:21.432625+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 4.190145969390869,
+      "mapped_acquisition_to_advisory_s": 7.836079835891724,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18610-pressure-01-seq-69",
+      "publisher_emitted_at": "2026-10-29T05:05:25.318371+00:00",
+      "mapped_acquired_at": "2026-10-29T05:05:21.731846+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 4.151510000228882,
+      "mapped_acquisition_to_advisory_s": 7.740067005157471,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18610-pressure-01-seq-70",
+      "publisher_emitted_at": "2026-10-29T05:05:25.420673+00:00",
+      "mapped_acquired_at": "2026-10-29T05:05:21.832576+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 4.1615149974823,
+      "mapped_acquisition_to_advisory_s": 7.866544008255005,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18610-pressure-01-seq-71",
+      "publisher_emitted_at": "2026-10-29T05:05:25.519479+00:00",
+      "mapped_acquired_at": "2026-10-29T05:05:21.932897+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 4.317387104034424,
+      "mapped_acquisition_to_advisory_s": 7.959476947784424,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18610-pressure-01-seq-72",
+      "publisher_emitted_at": "2026-10-29T05:05:25.620152+00:00",
+      "mapped_acquired_at": "2026-10-29T05:05:22.032805+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 4.528771162033081,
+      "mapped_acquisition_to_advisory_s": 8.193782091140747,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18610-pressure-01-seq-73",
+      "publisher_emitted_at": "2026-10-29T05:05:25.722835+00:00",
+      "mapped_acquired_at": "2026-10-29T05:05:22.131482+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 4.6907799243927,
+      "mapped_acquisition_to_advisory_s": 8.28450608253479,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18610-pressure-01-seq-74",
+      "publisher_emitted_at": "2026-10-29T05:05:25.827491+00:00",
+      "mapped_acquired_at": "2026-10-29T05:05:22.232606+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 4.738663911819458,
+      "mapped_acquisition_to_advisory_s": 8.386691093444824,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18610-pressure-01-seq-75",
+      "publisher_emitted_at": "2026-10-29T05:05:25.918766+00:00",
+      "mapped_acquired_at": "2026-10-29T05:05:22.331957+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 4.912708044052124,
+      "mapped_acquisition_to_advisory_s": 8.519698858261108,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18610-pressure-01-seq-76",
+      "publisher_emitted_at": "2026-10-29T05:05:26.020124+00:00",
+      "mapped_acquired_at": "2026-10-29T05:05:22.432734+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 4.997982025146484,
+      "mapped_acquisition_to_advisory_s": 8.642564058303833,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18610-pressure-01-seq-77",
+      "publisher_emitted_at": "2026-10-29T05:05:26.119275+00:00",
+      "mapped_acquired_at": "2026-10-29T05:05:22.532401+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 5.187280893325806,
+      "mapped_acquisition_to_advisory_s": 8.77705192565918,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18610-pressure-01-seq-78",
+      "publisher_emitted_at": "2026-10-29T05:05:26.223274+00:00",
+      "mapped_acquired_at": "2026-10-29T05:05:22.632116+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 5.244266986846924,
+      "mapped_acquisition_to_advisory_s": 8.890750885009766,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18610-pressure-01-seq-79",
+      "publisher_emitted_at": "2026-10-29T05:05:26.318945+00:00",
+      "mapped_acquired_at": "2026-10-29T05:05:22.732415+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 5.417979001998901,
+      "mapped_acquisition_to_advisory_s": 9.006428956985474,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18610-pressure-01-seq-80",
+      "publisher_emitted_at": "2026-10-29T05:05:26.421132+00:00",
+      "mapped_acquired_at": "2026-10-29T05:05:22.832539+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 5.4183831214904785,
+      "mapped_acquisition_to_advisory_s": 9.121258974075317,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18610-pressure-01-seq-81",
+      "publisher_emitted_at": "2026-10-29T05:05:26.518043+00:00",
+      "mapped_acquired_at": "2026-10-29T05:05:22.931499+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 5.587272882461548,
+      "mapped_acquisition_to_advisory_s": 9.229033946990967,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18610-pressure-01-seq-82",
+      "publisher_emitted_at": "2026-10-29T05:05:26.617927+00:00",
+      "mapped_acquired_at": "2026-10-29T05:05:23.031362+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 5.883149862289429,
+      "mapped_acquisition_to_advisory_s": 9.471856832504272,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18610-pressure-01-seq-83",
+      "publisher_emitted_at": "2026-10-29T05:05:26.717921+00:00",
+      "mapped_acquired_at": "2026-10-29T05:05:23.131360+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 5.9969940185546875,
+      "mapped_acquisition_to_advisory_s": 9.58507490158081,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18610-pressure-01-seq-84",
+      "publisher_emitted_at": "2026-10-29T05:05:26.818641+00:00",
+      "mapped_acquired_at": "2026-10-29T05:05:23.231852+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 6.1223461627960205,
+      "mapped_acquisition_to_advisory_s": 9.729423999786377,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18610-pressure-01-seq-85",
+      "publisher_emitted_at": "2026-10-29T05:05:26.917576+00:00",
+      "mapped_acquired_at": "2026-10-29T05:05:23.331008+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 6.255665063858032,
+      "mapped_acquisition_to_advisory_s": 9.844547033309937,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18610-pressure-01-seq-86",
+      "publisher_emitted_at": "2026-10-29T05:05:27.019945+00:00",
+      "mapped_acquired_at": "2026-10-29T05:05:23.432836+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 6.325243949890137,
+      "mapped_acquisition_to_advisory_s": 9.96544599533081,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18610-pressure-01-seq-87",
+      "publisher_emitted_at": "2026-10-29T05:05:27.117771+00:00",
+      "mapped_acquired_at": "2026-10-29T05:05:23.531185+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 6.5004448890686035,
+      "mapped_acquisition_to_advisory_s": 10.08899998664856,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18610-pressure-01-seq-88",
+      "publisher_emitted_at": "2026-10-29T05:05:27.218804+00:00",
+      "mapped_acquired_at": "2026-10-29T05:05:23.632069+00:00",
+      "state": "stale",
+      "receipt_to_advisory_s": 6.604137182235718,
+      "mapped_acquisition_to_advisory_s": 10.208775997161865,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18610-pressure-01-seq-89",
+      "publisher_emitted_at": "2026-10-29T05:05:27.318230+00:00",
+      "mapped_acquired_at": "2026-10-29T05:05:23.731654+00:00",
+      "state": "stale",
+      "receipt_to_advisory_s": 6.727595806121826,
+      "mapped_acquisition_to_advisory_s": 10.316504955291748,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18610-pressure-01-seq-90",
+      "publisher_emitted_at": "2026-10-29T05:05:27.427142+00:00",
+      "mapped_acquired_at": "2026-10-29T05:05:23.831669+00:00",
+      "state": "stale",
+      "receipt_to_advisory_s": 6.767120838165283,
+      "mapped_acquisition_to_advisory_s": 10.426406860351562,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18610-pressure-01-seq-91",
+      "publisher_emitted_at": "2026-10-29T05:05:27.517948+00:00",
+      "mapped_acquired_at": "2026-10-29T05:05:23.931385+00:00",
+      "state": "stale",
+      "receipt_to_advisory_s": 6.845335006713867,
+      "mapped_acquisition_to_advisory_s": 10.541136026382446,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18610-pressure-01-seq-92",
+      "publisher_emitted_at": "2026-10-29T05:05:27.618143+00:00",
+      "mapped_acquired_at": "2026-10-29T05:05:24.031567+00:00",
+      "state": "stale",
+      "receipt_to_advisory_s": 7.249495029449463,
+      "mapped_acquisition_to_advisory_s": 10.868098020553589,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18611-pressure-01-seq-31",
+      "publisher_emitted_at": "2026-10-29T05:08:20.393445+00:00",
+      "mapped_acquired_at": "2026-10-29T05:08:20.393445+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 0.23953700065612793,
+      "mapped_acquisition_to_advisory_s": 0.32524991035461426,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18611-pressure-01-seq-32",
+      "publisher_emitted_at": "2026-10-29T05:08:20.495463+00:00",
+      "mapped_acquired_at": "2026-10-29T05:08:20.495313+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 0.36803698539733887,
+      "mapped_acquisition_to_advisory_s": 0.4196441173553467,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18611-pressure-01-seq-33",
+      "publisher_emitted_at": "2026-10-29T05:08:20.594940+00:00",
+      "mapped_acquired_at": "2026-10-29T05:08:20.594918+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 0.5151059627532959,
+      "mapped_acquisition_to_advisory_s": 0.5390069484710693,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18611-pressure-01-seq-34",
+      "publisher_emitted_at": "2026-10-29T05:08:20.695619+00:00",
+      "mapped_acquired_at": "2026-10-29T05:08:20.694982+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 0.5828359127044678,
+      "mapped_acquisition_to_advisory_s": 0.6450619697570801,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18611-pressure-01-seq-35",
+      "publisher_emitted_at": "2026-10-29T05:08:20.793925+00:00",
+      "mapped_acquired_at": "2026-10-29T05:08:20.793867+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 0.7250850200653076,
+      "mapped_acquisition_to_advisory_s": 0.7478728294372559,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18611-pressure-01-seq-36",
+      "publisher_emitted_at": "2026-10-29T05:08:20.895765+00:00",
+      "mapped_acquired_at": "2026-10-29T05:08:20.894985+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 0.7574188709259033,
+      "mapped_acquisition_to_advisory_s": 0.8378720283508301,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18611-pressure-01-seq-37",
+      "publisher_emitted_at": "2026-10-29T05:08:20.994758+00:00",
+      "mapped_acquired_at": "2026-10-29T05:08:20.994758+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 0.9272148609161377,
+      "mapped_acquisition_to_advisory_s": 0.9308490753173828,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18611-pressure-01-seq-38",
+      "publisher_emitted_at": "2026-10-29T05:08:21.093511+00:00",
+      "mapped_acquired_at": "2026-10-29T05:08:21.093511+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 1.0129170417785645,
+      "mapped_acquisition_to_advisory_s": 1.0152769088745117,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18611-pressure-01-seq-39",
+      "publisher_emitted_at": "2026-10-29T05:08:21.194526+00:00",
+      "mapped_acquired_at": "2026-10-29T05:08:21.193975+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 1.0788471698760986,
+      "mapped_acquisition_to_advisory_s": 1.1026251316070557,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18611-pressure-01-seq-40",
+      "publisher_emitted_at": "2026-10-29T05:08:21.297437+00:00",
+      "mapped_acquired_at": "2026-10-29T05:08:21.294301+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 1.1027910709381104,
+      "mapped_acquisition_to_advisory_s": 1.198456048965454,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18611-pressure-01-seq-41",
+      "publisher_emitted_at": "2026-10-29T05:08:21.393503+00:00",
+      "mapped_acquired_at": "2026-10-29T05:08:21.393503+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 1.2459111213684082,
+      "mapped_acquisition_to_advisory_s": 1.3204810619354248,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18611-pressure-01-seq-42",
+      "publisher_emitted_at": "2026-10-29T05:08:21.493069+00:00",
+      "mapped_acquired_at": "2026-10-29T05:08:21.493069+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 1.562718152999878,
+      "mapped_acquisition_to_advisory_s": 1.5656511783599854,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18611-pressure-01-seq-43",
+      "publisher_emitted_at": "2026-10-29T05:08:21.593171+00:00",
+      "mapped_acquired_at": "2026-10-29T05:08:21.593171+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 1.6360278129577637,
+      "mapped_acquisition_to_advisory_s": 1.6559710502624512,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18611-pressure-01-seq-44",
+      "publisher_emitted_at": "2026-10-29T05:08:21.693877+00:00",
+      "mapped_acquired_at": "2026-10-29T05:08:21.693877+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 1.7484169006347656,
+      "mapped_acquisition_to_advisory_s": 1.7508249282836914,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18611-pressure-01-seq-45",
+      "publisher_emitted_at": "2026-10-29T05:08:21.794250+00:00",
+      "mapped_acquired_at": "2026-10-29T05:08:21.794043+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 1.8281729221343994,
+      "mapped_acquisition_to_advisory_s": 1.8484828472137451,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18611-pressure-01-seq-46",
+      "publisher_emitted_at": "2026-10-29T05:08:21.894300+00:00",
+      "mapped_acquired_at": "2026-10-29T05:08:21.894300+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 1.9226689338684082,
+      "mapped_acquisition_to_advisory_s": 1.9483799934387207,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18611-pressure-01-seq-47",
+      "publisher_emitted_at": "2026-10-29T05:08:21.993745+00:00",
+      "mapped_acquired_at": "2026-10-29T05:08:21.993745+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 2.0330350399017334,
+      "mapped_acquisition_to_advisory_s": 2.0350840091705322,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18611-pressure-01-seq-48",
+      "publisher_emitted_at": "2026-10-29T05:08:22.093328+00:00",
+      "mapped_acquired_at": "2026-10-29T05:08:22.093328+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 2.1582350730895996,
+      "mapped_acquisition_to_advisory_s": 2.1607539653778076,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18611-pressure-01-seq-49",
+      "publisher_emitted_at": "2026-10-29T05:08:22.193471+00:00",
+      "mapped_acquired_at": "2026-10-29T05:08:22.193471+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 2.270277976989746,
+      "mapped_acquisition_to_advisory_s": 2.272109031677246,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18611-pressure-01-seq-50",
+      "publisher_emitted_at": "2026-10-29T05:08:22.294603+00:00",
+      "mapped_acquired_at": "2026-10-29T05:08:22.294085+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 2.360748052597046,
+      "mapped_acquisition_to_advisory_s": 2.399898052215576,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18611-pressure-01-seq-51",
+      "publisher_emitted_at": "2026-10-29T05:08:22.393859+00:00",
+      "mapped_acquired_at": "2026-10-29T05:08:22.393859+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 2.4720568656921387,
+      "mapped_acquisition_to_advisory_s": 2.52354097366333,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18611-pressure-01-seq-52",
+      "publisher_emitted_at": "2026-10-29T05:08:22.493158+00:00",
+      "mapped_acquired_at": "2026-10-29T05:08:22.493158+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 2.7897770404815674,
+      "mapped_acquisition_to_advisory_s": 2.791550874710083,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18611-pressure-01-seq-53",
+      "publisher_emitted_at": "2026-10-29T05:08:22.593557+00:00",
+      "mapped_acquired_at": "2026-10-29T05:08:22.593557+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 2.910737991333008,
+      "mapped_acquisition_to_advisory_s": 2.912715196609497,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18611-pressure-01-seq-54",
+      "publisher_emitted_at": "2026-10-29T05:08:22.695090+00:00",
+      "mapped_acquired_at": "2026-10-29T05:08:22.694366+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 2.9783809185028076,
+      "mapped_acquisition_to_advisory_s": 3.030998945236206,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18611-pressure-01-seq-55",
+      "publisher_emitted_at": "2026-10-29T05:08:22.794097+00:00",
+      "mapped_acquired_at": "2026-10-29T05:08:22.794097+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 3.1490418910980225,
+      "mapped_acquisition_to_advisory_s": 3.1879630088806152,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18611-pressure-01-seq-56",
+      "publisher_emitted_at": "2026-10-29T05:08:22.895911+00:00",
+      "mapped_acquired_at": "2026-10-29T05:08:22.894767+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 3.2707290649414062,
+      "mapped_acquisition_to_advisory_s": 3.3109209537506104,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18611-pressure-01-seq-57",
+      "publisher_emitted_at": "2026-10-29T05:08:22.994702+00:00",
+      "mapped_acquired_at": "2026-10-29T05:08:22.994488+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 3.4272520542144775,
+      "mapped_acquisition_to_advisory_s": 3.447844982147217,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18611-pressure-01-seq-58",
+      "publisher_emitted_at": "2026-10-29T05:08:23.094935+00:00",
+      "mapped_acquired_at": "2026-10-29T05:08:23.094935+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 3.5551600456237793,
+      "mapped_acquisition_to_advisory_s": 3.5933730602264404,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18611-pressure-01-seq-59",
+      "publisher_emitted_at": "2026-10-29T05:08:23.193805+00:00",
+      "mapped_acquired_at": "2026-10-29T05:08:23.193805+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 3.7068920135498047,
+      "mapped_acquisition_to_advisory_s": 3.7098541259765625,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18611-pressure-01-seq-60",
+      "publisher_emitted_at": "2026-10-29T05:08:23.293328+00:00",
+      "mapped_acquired_at": "2026-10-29T05:08:23.293328+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 3.825890064239502,
+      "mapped_acquisition_to_advisory_s": 3.8280909061431885,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18611-pressure-01-seq-61",
+      "publisher_emitted_at": "2026-10-29T05:08:23.394230+00:00",
+      "mapped_acquired_at": "2026-10-29T05:08:23.394230+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 4.026699066162109,
+      "mapped_acquisition_to_advisory_s": 4.138444185256958,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18611-pressure-01-seq-62",
+      "publisher_emitted_at": "2026-10-29T05:08:23.497460+00:00",
+      "mapped_acquired_at": "2026-10-29T05:08:23.495359+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 4.199295997619629,
+      "mapped_acquisition_to_advisory_s": 4.29223895072937,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18611-pressure-01-seq-63",
+      "publisher_emitted_at": "2026-10-29T05:08:23.593296+00:00",
+      "mapped_acquired_at": "2026-10-29T05:08:23.593296+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 4.397290945053101,
+      "mapped_acquisition_to_advisory_s": 4.418845891952515,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18611-pressure-01-seq-64",
+      "publisher_emitted_at": "2026-10-29T05:08:23.695496+00:00",
+      "mapped_acquired_at": "2026-10-29T05:08:23.695320+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 4.484488010406494,
+      "mapped_acquisition_to_advisory_s": 4.5411272048950195,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18611-pressure-01-seq-65",
+      "publisher_emitted_at": "2026-10-29T05:08:23.795547+00:00",
+      "mapped_acquired_at": "2026-10-29T05:08:23.794896+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 4.596277952194214,
+      "mapped_acquisition_to_advisory_s": 4.664765119552612,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18611-pressure-01-seq-66",
+      "publisher_emitted_at": "2026-10-29T05:08:23.895460+00:00",
+      "mapped_acquired_at": "2026-10-29T05:08:23.895123+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 4.721904039382935,
+      "mapped_acquisition_to_advisory_s": 4.775422096252441,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18611-pressure-01-seq-68",
+      "publisher_emitted_at": "2026-10-29T05:08:24.102789+00:00",
+      "mapped_acquired_at": "2026-10-29T05:08:24.094245+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 4.754844903945923,
+      "mapped_acquisition_to_advisory_s": 4.786586046218872,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18611-pressure-01-seq-69",
+      "publisher_emitted_at": "2026-10-29T05:08:24.195384+00:00",
+      "mapped_acquired_at": "2026-10-29T05:08:24.195384+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 4.867147922515869,
+      "mapped_acquisition_to_advisory_s": 4.891607999801636,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18611-pressure-01-seq-70",
+      "publisher_emitted_at": "2026-10-29T05:08:24.294785+00:00",
+      "mapped_acquired_at": "2026-10-29T05:08:24.294283+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 4.998392105102539,
+      "mapped_acquisition_to_advisory_s": 5.065580129623413,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18611-pressure-01-seq-71",
+      "publisher_emitted_at": "2026-10-29T05:08:24.393803+00:00",
+      "mapped_acquired_at": "2026-10-29T05:08:24.393803+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 5.291656970977783,
+      "mapped_acquisition_to_advisory_s": 5.352631092071533,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18611-pressure-01-seq-72",
+      "publisher_emitted_at": "2026-10-29T05:08:24.494193+00:00",
+      "mapped_acquired_at": "2026-10-29T05:08:24.493641+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 5.447082042694092,
+      "mapped_acquisition_to_advisory_s": 5.468835115432739,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18611-pressure-01-seq-73",
+      "publisher_emitted_at": "2026-10-29T05:08:24.593266+00:00",
+      "mapped_acquired_at": "2026-10-29T05:08:24.593266+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 5.581830978393555,
+      "mapped_acquisition_to_advisory_s": 5.588223934173584,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18611-pressure-01-seq-74",
+      "publisher_emitted_at": "2026-10-29T05:08:24.693199+00:00",
+      "mapped_acquired_at": "2026-10-29T05:08:24.693199+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 5.7207159996032715,
+      "mapped_acquisition_to_advisory_s": 5.723359107971191,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18611-pressure-01-seq-75",
+      "publisher_emitted_at": "2026-10-29T05:08:24.798454+00:00",
+      "mapped_acquired_at": "2026-10-29T05:08:24.794302+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 5.823814868927002,
+      "mapped_acquisition_to_advisory_s": 5.850941896438599,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18611-pressure-01-seq-76",
+      "publisher_emitted_at": "2026-10-29T05:08:24.895633+00:00",
+      "mapped_acquired_at": "2026-10-29T05:08:24.894058+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 5.9738099575042725,
+      "mapped_acquisition_to_advisory_s": 6.01532506942749,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18611-pressure-01-seq-77",
+      "publisher_emitted_at": "2026-10-29T05:08:24.993269+00:00",
+      "mapped_acquired_at": "2026-10-29T05:08:24.993269+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 6.143352031707764,
+      "mapped_acquisition_to_advisory_s": 6.145545959472656,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18611-pressure-01-seq-78",
+      "publisher_emitted_at": "2026-10-29T05:08:25.093349+00:00",
+      "mapped_acquired_at": "2026-10-29T05:08:25.093349+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 6.289276123046875,
+      "mapped_acquisition_to_advisory_s": 6.291638135910034,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18611-pressure-01-seq-79",
+      "publisher_emitted_at": "2026-10-29T05:08:25.193928+00:00",
+      "mapped_acquired_at": "2026-10-29T05:08:25.193928+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 6.4607250690460205,
+      "mapped_acquisition_to_advisory_s": 6.4666221141815186,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18611-pressure-01-seq-80",
+      "publisher_emitted_at": "2026-10-29T05:08:25.293509+00:00",
+      "mapped_acquired_at": "2026-10-29T05:08:25.293509+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 6.842489957809448,
+      "mapped_acquisition_to_advisory_s": 6.844580888748169,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18611-pressure-01-seq-81",
+      "publisher_emitted_at": "2026-10-29T05:08:25.394557+00:00",
+      "mapped_acquired_at": "2026-10-29T05:08:25.394232+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 6.932651042938232,
+      "mapped_acquisition_to_advisory_s": 7.010232925415039,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18611-pressure-01-seq-82",
+      "publisher_emitted_at": "2026-10-29T05:08:25.495622+00:00",
+      "mapped_acquired_at": "2026-10-29T05:08:25.494694+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 10.490811109542847,
+      "mapped_acquisition_to_advisory_s": 10.556262016296387,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18611-pressure-01-seq-83",
+      "publisher_emitted_at": "2026-10-29T05:08:25.594086+00:00",
+      "mapped_acquired_at": "2026-10-29T05:08:25.594086+00:00",
+      "state": "stale",
+      "receipt_to_advisory_s": 10.70041799545288,
+      "mapped_acquisition_to_advisory_s": 10.702656030654907,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18611-pressure-01-seq-84",
+      "publisher_emitted_at": "2026-10-29T05:08:25.695047+00:00",
+      "mapped_acquired_at": "2026-10-29T05:08:25.694608+00:00",
+      "state": "stale",
+      "receipt_to_advisory_s": 10.743122100830078,
+      "mapped_acquisition_to_advisory_s": 10.831432104110718,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18611-pressure-01-seq-85",
+      "publisher_emitted_at": "2026-10-29T05:08:25.794940+00:00",
+      "mapped_acquired_at": "2026-10-29T05:08:25.794759+00:00",
+      "state": "stale",
+      "receipt_to_advisory_s": 10.910802841186523,
+      "mapped_acquisition_to_advisory_s": 10.970326900482178,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18611-pressure-01-seq-86",
+      "publisher_emitted_at": "2026-10-29T05:08:25.893881+00:00",
+      "mapped_acquired_at": "2026-10-29T05:08:25.893881+00:00",
+      "state": "stale",
+      "receipt_to_advisory_s": 11.096833944320679,
+      "mapped_acquisition_to_advisory_s": 11.107730865478516,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18611-pressure-01-seq-87",
+      "publisher_emitted_at": "2026-10-29T05:08:25.994351+00:00",
+      "mapped_acquired_at": "2026-10-29T05:08:25.994351+00:00",
+      "state": "stale",
+      "receipt_to_advisory_s": 11.248188972473145,
+      "mapped_acquisition_to_advisory_s": 11.251250982284546,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18611-pressure-01-seq-88",
+      "publisher_emitted_at": "2026-10-29T05:08:26.095499+00:00",
+      "mapped_acquired_at": "2026-10-29T05:08:26.095200+00:00",
+      "state": "stale",
+      "receipt_to_advisory_s": 11.552119016647339,
+      "mapped_acquisition_to_advisory_s": 11.614867925643921,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18611-pressure-01-seq-89",
+      "publisher_emitted_at": "2026-10-29T05:08:26.193329+00:00",
+      "mapped_acquired_at": "2026-10-29T05:08:26.193329+00:00",
+      "state": "stale",
+      "receipt_to_advisory_s": 11.751047134399414,
+      "mapped_acquisition_to_advisory_s": 11.754395008087158,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18611-pressure-01-seq-90",
+      "publisher_emitted_at": "2026-10-29T05:08:26.297759+00:00",
+      "mapped_acquired_at": "2026-10-29T05:08:26.295269+00:00",
+      "state": "stale",
+      "receipt_to_advisory_s": 11.782222032546997,
+      "mapped_acquisition_to_advisory_s": 11.919831991195679,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18611-pressure-01-seq-91",
+      "publisher_emitted_at": "2026-10-29T05:08:26.394200+00:00",
+      "mapped_acquired_at": "2026-10-29T05:08:26.394200+00:00",
+      "state": "stale",
+      "receipt_to_advisory_s": 12.025879859924316,
+      "mapped_acquisition_to_advisory_s": 12.127679824829102,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18611-pressure-01-seq-92",
+      "publisher_emitted_at": "2026-10-29T05:08:26.493703+00:00",
+      "mapped_acquired_at": "2026-10-29T05:08:26.493703+00:00",
+      "state": "stale",
+      "receipt_to_advisory_s": 12.25502610206604,
+      "mapped_acquisition_to_advisory_s": 12.276764154434204,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18611-pressure-01-seq-93",
+      "publisher_emitted_at": "2026-10-29T05:08:26.593158+00:00",
+      "mapped_acquired_at": "2026-10-29T05:08:26.593158+00:00",
+      "state": "stale",
+      "receipt_to_advisory_s": 12.424323081970215,
+      "mapped_acquisition_to_advisory_s": 12.436815977096558,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18612-pressure-01-seq-31",
+      "publisher_emitted_at": "2026-10-29T05:10:51.074094+00:00",
+      "mapped_acquired_at": "2026-10-29T05:10:51.074094+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 0.3849949836730957,
+      "mapped_acquisition_to_advisory_s": 0.4540879726409912,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18612-pressure-01-seq-32",
+      "publisher_emitted_at": "2026-10-29T05:10:51.172943+00:00",
+      "mapped_acquired_at": "2026-10-29T05:10:51.172943+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 0.7411279678344727,
+      "mapped_acquisition_to_advisory_s": 0.7434837818145752,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18612-pressure-01-seq-33",
+      "publisher_emitted_at": "2026-10-29T05:10:51.273595+00:00",
+      "mapped_acquired_at": "2026-10-29T05:10:51.273560+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 0.8389148712158203,
+      "mapped_acquisition_to_advisory_s": 0.8611578941345215,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18612-pressure-01-seq-34",
+      "publisher_emitted_at": "2026-10-29T05:10:51.376752+00:00",
+      "mapped_acquired_at": "2026-10-29T05:10:51.374646+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 0.901115894317627,
+      "mapped_acquisition_to_advisory_s": 0.9812729358673096,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18612-pressure-01-seq-35",
+      "publisher_emitted_at": "2026-10-29T05:10:51.477180+00:00",
+      "mapped_acquired_at": "2026-10-29T05:10:51.474876+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 1.0273900032043457,
+      "mapped_acquisition_to_advisory_s": 1.1213359832763672,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18612-pressure-01-seq-36",
+      "publisher_emitted_at": "2026-10-29T05:10:51.574963+00:00",
+      "mapped_acquired_at": "2026-10-29T05:10:51.573508+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 1.2090320587158203,
+      "mapped_acquisition_to_advisory_s": 1.2470629215240479,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18612-pressure-01-seq-37",
+      "publisher_emitted_at": "2026-10-29T05:10:51.673762+00:00",
+      "mapped_acquired_at": "2026-10-29T05:10:51.673754+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 1.3130230903625488,
+      "mapped_acquisition_to_advisory_s": 1.353044033050537,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18612-pressure-01-seq-38",
+      "publisher_emitted_at": "2026-10-29T05:10:51.774733+00:00",
+      "mapped_acquired_at": "2026-10-29T05:10:51.774733+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 1.4265220165252686,
+      "mapped_acquisition_to_advisory_s": 1.4834108352661133,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18612-pressure-01-seq-39",
+      "publisher_emitted_at": "2026-10-29T05:10:51.875108+00:00",
+      "mapped_acquired_at": "2026-10-29T05:10:51.874779+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 1.5749709606170654,
+      "mapped_acquisition_to_advisory_s": 1.6003649234771729,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18612-pressure-01-seq-40",
+      "publisher_emitted_at": "2026-10-29T05:10:51.977783+00:00",
+      "mapped_acquired_at": "2026-10-29T05:10:51.974906+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 1.5611519813537598,
+      "mapped_acquisition_to_advisory_s": 1.7141170501708984,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18612-pressure-01-seq-41",
+      "publisher_emitted_at": "2026-10-29T05:10:52.073203+00:00",
+      "mapped_acquired_at": "2026-10-29T05:10:52.073203+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 1.7542829513549805,
+      "mapped_acquisition_to_advisory_s": 1.8352818489074707,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18612-pressure-01-seq-42",
+      "publisher_emitted_at": "2026-10-29T05:10:52.173112+00:00",
+      "mapped_acquired_at": "2026-10-29T05:10:52.173112+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 2.143756151199341,
+      "mapped_acquisition_to_advisory_s": 2.1503231525421143,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18612-pressure-01-seq-43",
+      "publisher_emitted_at": "2026-10-29T05:10:52.274344+00:00",
+      "mapped_acquired_at": "2026-10-29T05:10:52.273467+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 2.2553179264068604,
+      "mapped_acquisition_to_advisory_s": 2.2757859230041504,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18612-pressure-01-seq-44",
+      "publisher_emitted_at": "2026-10-29T05:10:52.374959+00:00",
+      "mapped_acquired_at": "2026-10-29T05:10:52.374742+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 2.346811056137085,
+      "mapped_acquisition_to_advisory_s": 2.3876030445098877,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18612-pressure-01-seq-45",
+      "publisher_emitted_at": "2026-10-29T05:10:52.473649+00:00",
+      "mapped_acquired_at": "2026-10-29T05:10:52.473649+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 2.5047669410705566,
+      "mapped_acquisition_to_advisory_s": 2.5097320079803467,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18612-pressure-01-seq-46",
+      "publisher_emitted_at": "2026-10-29T05:10:52.573882+00:00",
+      "mapped_acquired_at": "2026-10-29T05:10:52.573882+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 2.6150269508361816,
+      "mapped_acquisition_to_advisory_s": 2.641542911529541,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18612-pressure-01-seq-47",
+      "publisher_emitted_at": "2026-10-29T05:10:52.674362+00:00",
+      "mapped_acquired_at": "2026-10-29T05:10:52.674362+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 2.7662110328674316,
+      "mapped_acquisition_to_advisory_s": 2.768360137939453,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18612-pressure-01-seq-48",
+      "publisher_emitted_at": "2026-10-29T05:10:52.775657+00:00",
+      "mapped_acquired_at": "2026-10-29T05:10:52.774039+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 2.8462460041046143,
+      "mapped_acquisition_to_advisory_s": 2.928853988647461,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18612-pressure-01-seq-49",
+      "publisher_emitted_at": "2026-10-29T05:10:52.874852+00:00",
+      "mapped_acquired_at": "2026-10-29T05:10:52.874852+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 6.651052951812744,
+      "mapped_acquisition_to_advisory_s": 6.652827978134155,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18612-pressure-01-seq-50",
+      "publisher_emitted_at": "2026-10-29T05:10:52.974923+00:00",
+      "mapped_acquired_at": "2026-10-29T05:10:52.974080+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 6.751847982406616,
+      "mapped_acquisition_to_advisory_s": 6.815703868865967,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18612-pressure-01-seq-51",
+      "publisher_emitted_at": "2026-10-29T05:10:53.076311+00:00",
+      "mapped_acquired_at": "2026-10-29T05:10:53.073763+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 7.030310153961182,
+      "mapped_acquisition_to_advisory_s": 7.115459203720093,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18612-pressure-01-seq-52",
+      "publisher_emitted_at": "2026-10-29T05:10:53.174583+00:00",
+      "mapped_acquired_at": "2026-10-29T05:10:53.174583+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 7.233807802200317,
+      "mapped_acquisition_to_advisory_s": 7.255281925201416,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18612-pressure-01-seq-53",
+      "publisher_emitted_at": "2026-10-29T05:10:53.273196+00:00",
+      "mapped_acquired_at": "2026-10-29T05:10:53.273176+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 7.407351970672607,
+      "mapped_acquisition_to_advisory_s": 7.409635066986084,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18612-pressure-01-seq-54",
+      "publisher_emitted_at": "2026-10-29T05:10:53.374289+00:00",
+      "mapped_acquired_at": "2026-10-29T05:10:53.373570+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 7.554661989212036,
+      "mapped_acquisition_to_advisory_s": 7.578474044799805,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18612-pressure-01-seq-55",
+      "publisher_emitted_at": "2026-10-29T05:10:53.474535+00:00",
+      "mapped_acquired_at": "2026-10-29T05:10:53.474535+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 7.654354095458984,
+      "mapped_acquisition_to_advisory_s": 7.720822095870972,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18612-pressure-01-seq-56",
+      "publisher_emitted_at": "2026-10-29T05:10:53.574681+00:00",
+      "mapped_acquired_at": "2026-10-29T05:10:53.573804+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 7.8345630168914795,
+      "mapped_acquisition_to_advisory_s": 7.8567140102386475,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18612-pressure-01-seq-57",
+      "publisher_emitted_at": "2026-10-29T05:10:53.673316+00:00",
+      "mapped_acquired_at": "2026-10-29T05:10:53.673316+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 7.9923319816589355,
+      "mapped_acquisition_to_advisory_s": 7.9948410987854,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18612-pressure-01-seq-58",
+      "publisher_emitted_at": "2026-10-29T05:10:53.773982+00:00",
+      "mapped_acquired_at": "2026-10-29T05:10:53.773386+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 8.113221883773804,
+      "mapped_acquisition_to_advisory_s": 8.131948947906494,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18612-pressure-01-seq-59",
+      "publisher_emitted_at": "2026-10-29T05:10:53.873568+00:00",
+      "mapped_acquired_at": "2026-10-29T05:10:53.873550+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 8.28360891342163,
+      "mapped_acquisition_to_advisory_s": 8.285717010498047,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18612-pressure-01-seq-60",
+      "publisher_emitted_at": "2026-10-29T05:10:53.976071+00:00",
+      "mapped_acquired_at": "2026-10-29T05:10:53.974535+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 8.50227403640747,
+      "mapped_acquisition_to_advisory_s": 8.632179975509644,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18612-pressure-01-seq-61",
+      "publisher_emitted_at": "2026-10-29T05:10:54.073322+00:00",
+      "mapped_acquired_at": "2026-10-29T05:10:54.073322+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 8.71233582496643,
+      "mapped_acquisition_to_advisory_s": 8.78094482421875,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18612-pressure-01-seq-62",
+      "publisher_emitted_at": "2026-10-29T05:10:54.174955+00:00",
+      "mapped_acquired_at": "2026-10-29T05:10:54.174779+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 8.879544973373413,
+      "mapped_acquisition_to_advisory_s": 8.922584056854248,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18612-pressure-01-seq-63",
+      "publisher_emitted_at": "2026-10-29T05:10:54.274833+00:00",
+      "mapped_acquired_at": "2026-10-29T05:10:54.274833+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 9.048627853393555,
+      "mapped_acquisition_to_advisory_s": 9.050694942474365,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18612-pressure-01-seq-64",
+      "publisher_emitted_at": "2026-10-29T05:10:54.374852+00:00",
+      "mapped_acquired_at": "2026-10-29T05:10:54.373499+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 9.187178134918213,
+      "mapped_acquisition_to_advisory_s": 9.206003189086914,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18612-pressure-01-seq-65",
+      "publisher_emitted_at": "2026-10-29T05:10:54.473110+00:00",
+      "mapped_acquired_at": "2026-10-29T05:10:54.473110+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 9.384335994720459,
+      "mapped_acquisition_to_advisory_s": 9.386289119720459,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18612-pressure-01-seq-66",
+      "publisher_emitted_at": "2026-10-29T05:10:54.573361+00:00",
+      "mapped_acquired_at": "2026-10-29T05:10:54.573361+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 9.526941061019897,
+      "mapped_acquisition_to_advisory_s": 9.529580116271973,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18612-pressure-01-seq-67",
+      "publisher_emitted_at": "2026-10-29T05:10:54.673211+00:00",
+      "mapped_acquired_at": "2026-10-29T05:10:54.673211+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 9.670385122299194,
+      "mapped_acquisition_to_advisory_s": 9.67336893081665,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18612-pressure-01-seq-68",
+      "publisher_emitted_at": "2026-10-29T05:10:54.775724+00:00",
+      "mapped_acquired_at": "2026-10-29T05:10:54.774586+00:00",
+      "state": "current",
+      "receipt_to_advisory_s": 9.778998851776123,
+      "mapped_acquisition_to_advisory_s": 9.835763931274414,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18612-pressure-01-seq-69",
+      "publisher_emitted_at": "2026-10-29T05:10:54.874669+00:00",
+      "mapped_acquired_at": "2026-10-29T05:10:54.874669+00:00",
+      "state": "stale",
+      "receipt_to_advisory_s": 10.15578818321228,
+      "mapped_acquisition_to_advisory_s": 10.174360036849976,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18612-pressure-01-seq-70",
+      "publisher_emitted_at": "2026-10-29T05:10:54.976459+00:00",
+      "mapped_acquired_at": "2026-10-29T05:10:54.974745+00:00",
+      "state": "stale",
+      "receipt_to_advisory_s": 10.238717079162598,
+      "mapped_acquisition_to_advisory_s": 10.377263069152832,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18612-pressure-01-seq-71",
+      "publisher_emitted_at": "2026-10-29T05:10:55.073250+00:00",
+      "mapped_acquired_at": "2026-10-29T05:10:55.073250+00:00",
+      "state": "stale",
+      "receipt_to_advisory_s": 10.499514818191528,
+      "mapped_acquisition_to_advisory_s": 10.575925827026367,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18612-pressure-01-seq-72",
+      "publisher_emitted_at": "2026-10-29T05:10:55.174151+00:00",
+      "mapped_acquired_at": "2026-10-29T05:10:55.173186+00:00",
+      "state": "stale",
+      "receipt_to_advisory_s": 10.743560791015625,
+      "mapped_acquisition_to_advisory_s": 10.76378083229065,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18612-pressure-01-seq-73",
+      "publisher_emitted_at": "2026-10-29T05:10:55.273252+00:00",
+      "mapped_acquired_at": "2026-10-29T05:10:55.273252+00:00",
+      "state": "stale",
+      "receipt_to_advisory_s": 10.921205043792725,
+      "mapped_acquisition_to_advisory_s": 10.926285028457642,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18612-pressure-01-seq-74",
+      "publisher_emitted_at": "2026-10-29T05:10:55.374628+00:00",
+      "mapped_acquired_at": "2026-10-29T05:10:55.373568+00:00",
+      "state": "stale",
+      "receipt_to_advisory_s": 11.041118860244751,
+      "mapped_acquisition_to_advisory_s": 11.092557907104492,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18612-pressure-01-seq-75",
+      "publisher_emitted_at": "2026-10-29T05:10:55.473677+00:00",
+      "mapped_acquired_at": "2026-10-29T05:10:55.473236+00:00",
+      "state": "stale",
+      "receipt_to_advisory_s": 11.224363088607788,
+      "mapped_acquisition_to_advisory_s": 11.248065948486328,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18612-pressure-01-seq-76",
+      "publisher_emitted_at": "2026-10-29T05:10:55.573447+00:00",
+      "mapped_acquired_at": "2026-10-29T05:10:55.573447+00:00",
+      "state": "stale",
+      "receipt_to_advisory_s": 11.434698104858398,
+      "mapped_acquisition_to_advisory_s": 11.436577081680298,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18612-pressure-01-seq-77",
+      "publisher_emitted_at": "2026-10-29T05:10:55.674212+00:00",
+      "mapped_acquired_at": "2026-10-29T05:10:55.674212+00:00",
+      "state": "stale",
+      "receipt_to_advisory_s": 11.803494930267334,
+      "mapped_acquisition_to_advisory_s": 11.805588960647583,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18612-pressure-01-seq-78",
+      "publisher_emitted_at": "2026-10-29T05:10:59.360260+00:00",
+      "mapped_acquired_at": "2026-10-29T05:10:55.773394+00:00",
+      "state": "stale",
+      "receipt_to_advisory_s": 8.342764139175415,
+      "mapped_acquisition_to_advisory_s": 11.955657958984375,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18612-pressure-01-seq-79",
+      "publisher_emitted_at": "2026-10-29T05:10:59.459835+00:00",
+      "mapped_acquired_at": "2026-10-29T05:10:55.873724+00:00",
+      "state": "stale",
+      "receipt_to_advisory_s": 8.497058868408203,
+      "mapped_acquisition_to_advisory_s": 12.108726978302002,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18612-pressure-01-seq-80",
+      "publisher_emitted_at": "2026-10-29T05:10:59.562819+00:00",
+      "mapped_acquired_at": "2026-10-29T05:10:55.974355+00:00",
+      "state": "stale",
+      "receipt_to_advisory_s": 8.566861152648926,
+      "mapped_acquisition_to_advisory_s": 12.262458086013794,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18612-pressure-01-seq-82",
+      "publisher_emitted_at": "2026-10-29T05:10:59.761293+00:00",
+      "mapped_acquired_at": "2026-10-29T05:10:56.174370+00:00",
+      "state": "stale",
+      "receipt_to_advisory_s": 8.735493898391724,
+      "mapped_acquisition_to_advisory_s": 12.349854946136475,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18612-pressure-01-seq-83",
+      "publisher_emitted_at": "2026-10-29T05:10:59.860524+00:00",
+      "mapped_acquired_at": "2026-10-29T05:10:56.274349+00:00",
+      "state": "stale",
+      "receipt_to_advisory_s": 8.941566944122314,
+      "mapped_acquisition_to_advisory_s": 12.53054404258728,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18612-pressure-01-seq-84",
+      "publisher_emitted_at": "2026-10-29T05:10:59.959956+00:00",
+      "mapped_acquired_at": "2026-10-29T05:10:56.373841+00:00",
+      "state": "stale",
+      "receipt_to_advisory_s": 9.107640981674194,
+      "mapped_acquisition_to_advisory_s": 12.711894989013672,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18612-pressure-01-seq-85",
+      "publisher_emitted_at": "2026-10-29T05:11:00.061117+00:00",
+      "mapped_acquired_at": "2026-10-29T05:10:56.473940+00:00",
+      "state": "stale",
+      "receipt_to_advisory_s": 9.271538972854614,
+      "mapped_acquisition_to_advisory_s": 12.878481149673462,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18612-pressure-01-seq-86",
+      "publisher_emitted_at": "2026-10-29T05:11:00.160670+00:00",
+      "mapped_acquired_at": "2026-10-29T05:10:56.573849+00:00",
+      "state": "stale",
+      "receipt_to_advisory_s": 9.606530904769897,
+      "mapped_acquisition_to_advisory_s": 13.232661962509155,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18612-pressure-01-seq-87",
+      "publisher_emitted_at": "2026-10-29T05:11:00.262498+00:00",
+      "mapped_acquired_at": "2026-10-29T05:10:56.674668+00:00",
+      "state": "stale",
+      "receipt_to_advisory_s": 9.818320035934448,
+      "mapped_acquisition_to_advisory_s": 13.425217866897583,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18612-pressure-01-seq-88",
+      "publisher_emitted_at": "2026-10-29T05:11:00.361325+00:00",
+      "mapped_acquired_at": "2026-10-29T05:10:56.774482+00:00",
+      "state": "stale",
+      "receipt_to_advisory_s": 10.029542922973633,
+      "mapped_acquisition_to_advisory_s": 13.65363097190857,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18612-pressure-01-seq-89",
+      "publisher_emitted_at": "2026-10-29T05:11:00.459456+00:00",
+      "mapped_acquired_at": "2026-10-29T05:10:56.873331+00:00",
+      "state": "stale",
+      "receipt_to_advisory_s": 10.231849193572998,
+      "mapped_acquisition_to_advisory_s": 13.820775032043457,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18612-pressure-01-seq-90",
+      "publisher_emitted_at": "2026-10-29T05:11:00.560432+00:00",
+      "mapped_acquired_at": "2026-10-29T05:10:56.973606+00:00",
+      "state": "stale",
+      "receipt_to_advisory_s": 10.35738205909729,
+      "mapped_acquisition_to_advisory_s": 13.984686851501465,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18612-pressure-01-seq-91",
+      "publisher_emitted_at": "2026-10-29T05:11:00.660899+00:00",
+      "mapped_acquired_at": "2026-10-29T05:10:57.074737+00:00",
+      "state": "stale",
+      "receipt_to_advisory_s": 10.495607137680054,
+      "mapped_acquisition_to_advisory_s": 14.157207012176514,
+      "severity": "red"
+    },
+    {
+      "observation_id": "e4-public-18612-pressure-01-seq-92",
+      "publisher_emitted_at": "2026-10-29T05:11:00.759103+00:00",
+      "mapped_acquired_at": "2026-10-29T05:10:57.172976+00:00",
+      "state": "stale",
+      "receipt_to_advisory_s": 10.736609935760498,
+      "mapped_acquisition_to_advisory_s": 14.325063943862915,
+      "severity": "red"
+    }
+  ],
+  "all_expected_current": false
+}

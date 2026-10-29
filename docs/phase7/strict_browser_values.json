@@ -1,0 +1,13 @@
+{
+  "scope": "Real stored observation/line rendering and deliberately delayed obsolete asset responses; no fabricated measurements",
+  "checks": {
+    "actual_stored_samples": true,
+    "actual_line_geometry": true,
+    "measured_pressure_unit": true,
+    "obsolete_delayed_asset_response_ignored": true,
+    "no_javascript_errors": true
+  },
+  "stored_samples_displayed": 100,
+  "javascript_errors": [],
+  "status": "passed"
+}

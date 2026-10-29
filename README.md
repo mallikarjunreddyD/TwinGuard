@@ -2,7 +2,9 @@
 
 **Development and Validation of an Uncertainty-Aware Industrial IoT Digital Twin for Condition Monitoring and UAV-Assisted Inspection of Boilers and Pressure Equipment**
 
-Phases 0–5 now provide a local software research demonstrator: original plant/sensing/analytics and F1 fusion, authenticated MQTT/read-only OPC UA, durable PostgreSQL jobs/checkpoints, and a real 3D browser dashboard. Full E4 processed 6,072 observations and 6,075 jobs. A focused scheduling correction retained current qualification for 186/186 critical readings under ordinary backlog (2.249 s p95 receipt-to-advisory; no UAV). These are software-loopback measurements, not industrial safety certification.
+Phase 7 (version 0.8.0) provides a local software research demonstrator with independent calibration/detection/planning studies, measured operational boundaries, recovery tests and laboratory security checks. B3.1 remains the default; optional B3.2/P3v2 have explicit support and recall limitations. Physical data/equipment and site commissioning are unavailable. See the [Phase7 validation report](docs/PHASE7_FINAL_VALIDATION.md) for the current readiness decision and evidence.
+
+The following Phase5 figures are retained as historical context. Phases 0–5 now provide a local software research demonstrator: original plant/sensing/analytics and F1 fusion, authenticated MQTT/read-only OPC UA, durable PostgreSQL jobs/checkpoints, and a real 3D browser dashboard. Full E4 processed 6,072 observations and 6,075 jobs. A focused scheduling correction retained current qualification for 186/186 critical readings under ordinary backlog (2.249 s p95 receipt-to-advisory; no UAV). These are software-loopback measurements, not industrial safety certification.
 
 Start with [Demo walkthrough](docs/DEMO_WALKTHROUGH.md), [Phase 5 validation and all 46 acceptance decisions](docs/PHASE5_VALIDATION.md), and [Dashboard guide](docs/DASHBOARD_GUIDE.md). Physical/site commissioning remains incomplete. Phase 6 planning is implemented with PARTIAL research validation; see the Phase 6 section below. Earlier phase-specific sections below retain their historical experimental context.
 
@@ -124,3 +126,10 @@ twinguard inspection validate-config --config configs/inspection/planner.yaml
 twinguard inspection plan --snapshot <public-snapshot.json> --method P3 --budget-views 2 --budget-s 70 --output-dir <new-directory>
 twinguard experiment run E5 --config experiments/E5.yaml --output-dir <new-E5-directory>
 ```
+
+
+## Phase 7 validation
+
+Version 0.8.0 adds separately versioned optional view-qualified B3.2 and measurement-qualified P3v2 while retaining B3.1 and P0–P3. Independent measurements show a substantial abstention/recall tradeoff, not established detector superiority. Fresh full E4 tests exposed stale critical readings and admission loss at saturation. Real backup/restore and lab security/browser workflows are documented. Physical data and equipment are unavailable; industrial deployment and TRL6 are not claimed.
+
+Start with [Phase7 final validation](docs/PHASE7_FINAL_VALIDATION.md), [independent results](docs/PHASE7_INDEPENDENT_VALIDATION.md), [full E4 boundaries](docs/PHASE7_E4_CORRECTED_STRESS.md), [storage](docs/PHASE7_STORAGE_VALIDATION.md), [security](docs/PHASE7_SECURITY_READINESS.md) and the [open-issue register](docs/PHASE7_VALIDATION_BACKLOG.md). Detailed completion status is governed by the per-case journals and acceptance gates. External evidence is stored under the user-provided `D:\TwinGuard` (`/mnt/d/TwinGuard`); the source checkout remains on its original drive.

@@ -1,0 +1,17 @@
+{
+  "role_flags": {
+    "rolsuper": false,
+    "rolcreatedb": false,
+    "rolcreaterole": false,
+    "rolreplication": false,
+    "rolbypassrls": false
+  },
+  "server_file_read": {
+    "rejected": true,
+    "error_class": "ProgrammingError"
+  },
+  "create_role": {
+    "rejected": true,
+    "error_class": "ProgrammingError"
+  }
+}
